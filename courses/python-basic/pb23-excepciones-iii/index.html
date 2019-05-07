@@ -27,11 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales A continuación, veremos el uso de los operadores lógicos and y or, y del operador in. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de
- la distancia a la que vive del centro, el número de hermanos, y el salario familiar.  print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;) distancia_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;)) print(&quot;Distancia a la escuela: &quot; &#43; str(distancia_escuela)) numero_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;)) print(&quot;Número de hermanos: &quot; &#43; str(numero_hermanos)) salario_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;)) print(&quot;Salario anual bruto: &quot; &#43; str(salario_familiar)) if distancia_escuela &gt; 40 and numero_hermanos &gt; 2 and salario_familiar &lt;= 20000: print(&quot;Tienes derecho a beca&quot;) else: print(&quot;No tienes derecho a beca&quot;)  Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:">
+  <meta name="description" content="Vídeo   Notas personales Estudiemos cómo lanzar excepciones, de forma intencionada, a través de la instrucción raise. Veremos su utilidad cuando trabajemos, más adelante, con clases.
+Generemos un sencillo programa cuyo objetivo sea evaluar nuestra edad:
+def evalua_edad(edad): if edad &lt; 20: return &quot;Eres muy joven.&quot; elif edad &lt; 40: return &quot;Eres joven.&quot; elif edad &lt; 65: return &quot;Eres maduro.&quot; elif edad &lt; 100: return &quot;Cuídate.&quot; print(evalua_edad(18)) # Eres muy joven.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb13-condicionales-iv/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb23-excepciones-iii/">
 
   
 
@@ -120,7 +121,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb13-condicionales-iv/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb23-excepciones-iii/">
 
   
   
@@ -134,22 +135,23 @@
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb13-condicionales-iv/">
-  <meta property="og:title" content="13. Condicionales IV | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales A continuación, veremos el uso de los operadores lógicos and y or, y del operador in. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de
- la distancia a la que vive del centro, el número de hermanos, y el salario familiar.  print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;) distancia_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;)) print(&quot;Distancia a la escuela: &quot; &#43; str(distancia_escuela)) numero_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;)) print(&quot;Número de hermanos: &quot; &#43; str(numero_hermanos)) salario_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;)) print(&quot;Salario anual bruto: &quot; &#43; str(salario_familiar)) if distancia_escuela &gt; 40 and numero_hermanos &gt; 2 and salario_familiar &lt;= 20000: print(&quot;Tienes derecho a beca&quot;) else: print(&quot;No tienes derecho a beca&quot;)  Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb23-excepciones-iii/">
+  <meta property="og:title" content="23. Excepciones III | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Estudiemos cómo lanzar excepciones, de forma intencionada, a través de la instrucción raise. Veremos su utilidad cuando trabajemos, más adelante, con clases.
+Generemos un sencillo programa cuyo objetivo sea evaluar nuestra edad:
+def evalua_edad(edad): if edad &lt; 20: return &quot;Eres muy joven.&quot; elif edad &lt; 40: return &quot;Eres joven.&quot; elif edad &lt; 65: return &quot;Eres maduro.&quot; elif edad &lt; 100: return &quot;Cuídate.&quot; print(evalua_edad(18)) # Eres muy joven."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-01T00:02:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-07T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-01T00:02:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-07T00:00:01&#43;01:00">
   
 
   
 
-  <title>13. Condicionales IV | Infinitos Contrastes</title>
+  
+
+  <title>23. Excepciones III | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -445,7 +447,7 @@
         <a href="/courses/python-basic/pb12-condicionales-iii/">12. Condicionales III</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb13-condicionales-iv/">13. Condicionales IV</a>
       </li>
       
@@ -485,7 +487,7 @@
         <a href="/courses/python-basic/pb22-excepciones-ii/">22. Excepciones II</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb23-excepciones-iii/">23. Excepciones III</a>
       </li>
       
@@ -506,7 +508,7 @@
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">13. Condicionales IV</h1>
+          <h1 itemprop="name">23. Excepciones III</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -515,88 +517,121 @@
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/rDGsWYnQEJY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/dLH-oay4Bts" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>A continuación, veremos el uso de los operadores lógicos <code>and</code> y <code>or</code>, y del operador <code>in</code>. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de</p>
+<p>Estudiemos cómo lanzar excepciones, de forma intencionada, a través de la instrucción <code>raise</code>. Veremos su utilidad cuando trabajemos, más adelante, con clases.</p>
 
-<ul>
-<li>la distancia a la que vive del centro,</li>
-<li>el número de hermanos, y</li>
-<li>el salario familiar.</li>
-</ul>
+<p>Generemos un sencillo programa cuyo objetivo sea evaluar nuestra edad:</p>
 
-<pre><code class="language-python">print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;)
+<pre><code class="language-python">def evalua_edad(edad):
+    if edad &lt; 20:
+        return &quot;Eres muy joven.&quot;
+    elif edad &lt; 40:
+        return &quot;Eres joven.&quot;
+    elif edad &lt; 65:
+        return &quot;Eres maduro.&quot;
+    elif edad &lt; 100:
+        return &quot;Cuídate.&quot;
 
-distancia_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;))
-print(&quot;Distancia a la escuela: &quot; + str(distancia_escuela))
 
-numero_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;))
-print(&quot;Número de hermanos: &quot; + str(numero_hermanos))
-
-salario_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;))
-print(&quot;Salario anual bruto: &quot; + str(salario_familiar))
-
-if distancia_escuela &gt; 40 and numero_hermanos &gt; 2 and salario_familiar &lt;= 20000:
-    print(&quot;Tienes derecho a beca&quot;)
-else:
-    print(&quot;No tienes derecho a beca&quot;)
+print(evalua_edad(18))  # Eres muy joven.
+print(evalua_edad(70))  # Cuídate.
 </code></pre>
 
-<p>Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:</p>
+<p>Sin embargo, la función así definida presenta este curioso comportamiento:</p>
 
-<pre><code class="language-python">print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;)
-
-distancia_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;))
-print(&quot;Distancia a la escuela: &quot; + str(distancia_escuela))
-
-numero_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;))
-print(&quot;Número de hermanos: &quot; + str(numero_hermanos))
-
-salario_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;))
-print(&quot;Salario anual bruto: &quot; + str(salario_familiar))
-
-if distancia_escuela &gt; 40 or numero_hermanos &gt; 2 or salario_familiar &lt;= 20000:
-    print(&quot;Tienes derecho a beca&quot;)
-else:
-    print(&quot;No tienes derecho a beca&quot;)
+<pre><code class="language-python">print(evalua_edad(-15))  # Eres muy joven.
 </code></pre>
 
-<p>Estudiemos ahora el uso del operador <code>in</code>. Crearemos un programa donde un alumno debe escoger una asignatura opcional de entre un listado predeterminado:</p>
+<p>Evidentemente, podemos arreglar esta situación mediante estructuras condicionales, pero veremos a continuación cómo emplear la instrucción <code>raise</code> para abordar el presente caso.</p>
 
-<pre><code class="language-python">print(&quot;Asignaturas optativas - Curso 2018/19&quot;)
+<pre><code class="language-python">def evalua_edad(edad):
+    if edad &lt; 0:
+        raise TypeError(&quot;No se permiten edades negativas.&quot;)
+    if edad &lt; 20:
+        return &quot;Eres muy joven.&quot;
+    elif edad &lt; 40:
+        return &quot;Eres joven.&quot;
+    elif edad &lt; 65:
+        return &quot;Eres maduro.&quot;
+    elif edad &lt; 100:
+        return &quot;Cuídate.&quot;
 
-print(&quot;- Informática gráfica&quot;)
-print(&quot;- Pruebas de software&quot;)
-print(&quot;- Usabilidad y accesibilidad&quot;)
 
-asignatura = input(&quot;Escoge la asignatura optativa: &quot;)
-
-if asignatura in (&quot;Informática gráfica&quot;, &quot;Pruebas de software&quot;, &quot;Usabilidad y accesibilidad&quot;):
-    print(&quot;Asignatura elegida: &quot; + asignatura)
-else:
-    print(&quot;La asignatura escogida no está contemplada.&quot;)
+print(evalua_edad(18))
+print(evalua_edad(70))
+print(evalua_edad(-15))
 </code></pre>
 
-<p><em>Python</em> es <strong>case sensitive</strong> (distingue entre mayúsculas y minúsculas). Para solucionar esta situación, utilizamos las funciones <code>lower()</code> y <code>upper()</code>, funciones que escriben, respectivamente, una cadena de caracteres toda en minúsculas o mayúsculas.</p>
+<p>Al ejecutar el anterior programa, obtenemos:</p>
 
-<pre><code class="language-python">print(&quot;Asignaturas optativas - Curso 2018/19&quot;)
+<pre><code class="language-bash">Eres muy joven.
+Cuídate.
+Traceback (most recent call last):
+  File &quot;prac23_excepciones3_2.py&quot;, line 16, in &lt;module&gt;
+    print(evalua_edad(-15))
+  File &quot;prac23_excepciones3_2.py&quot;, line 3, in evalua_edad
+    raise TypeError(&quot;No se permiten edades negativas.&quot;)
+TypeError: No se permiten edades negativas.
+</code></pre>
 
-print(&quot;- Informática gráfica&quot;)
-print(&quot;- Pruebas de software&quot;)
-print(&quot;- Usabilidad y accesibilidad&quot;)
+<p><em>Nota</em>: hemos de usar alguno de los tipos de error disponibles en <em>Python</em>, no pdemos cualquier cadena de texto sin más ahí. No obstante, dicho esto, cuando generemos clases podremos elaborar también errores personalizados.</p>
 
-opcion = input(&quot;Escoge la asignatura optativa: &quot;)
+<p>Pasemos a programar un algoritmo que calcule la raíz cuadrada de un número mayor o igual que cero:</p>
 
-asignatura = opcion.lower()
+<pre><code class="language-python">import math
 
-if asignatura in (&quot;informática gráfica&quot;, &quot;pruebas de software&quot;, &quot;usabilidad y accesibilidad&quot;):
-    print(&quot;Asignatura elegida: &quot; + asignatura)
-else:
-    print(&quot;La asignatura escogida no está contemplada.&quot;)
+
+def calcula_raiz(num):
+    if num &lt; 0:
+        raise ValueError(&quot;El número no puede ser negativo.&quot;)
+    else:
+        return math.sqrt(num)
+
+
+op = (int(input(&quot;Introduce un número mayor o igual que cero: &quot;)))
+
+print(calcula_raiz(op))
+
+print(&quot;Programa terminado.&quot;)
+</code></pre>
+
+<p>Controlemos la excepción que aparece si introducimos un número negativo:</p>
+
+<pre><code class="language-python">import math
+
+
+def calcula_raiz(num):
+    if num &lt; 0:
+        raise ValueError(&quot;El número no puede ser negativo.&quot;)
+    else:
+        return math.sqrt(num)
+
+
+op = (int(input(&quot;Introduce un número mayor o igual que cero: &quot;)))
+
+try:
+    print(calcula_raiz(op))
+except ValueError as ErrorDeNumeroNegativo:
+    print(ErrorDeNumeroNegativo)
+
+print(&quot;Programa terminado.&quot;)
+</code></pre>
+
+<p>Un par de ejecuciones del anterior programa podrían ser:</p>
+
+<pre><code class="language-bash">Introduce un número mayor o igual que cero: 144
+12.0
+Programa terminado.
+</code></pre>
+
+<pre><code class="language-bash">Introduce un número mayor o igual que cero: -144
+El número no puede ser negativo.
+Programa terminado.
 </code></pre>
 
           </div>
@@ -614,15 +649,9 @@ else:
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb12-condicionales-iii/" rel="next">12. Condicionales III</a>
+    <a href="/courses/python-basic/pb22-excepciones-ii/" rel="next">22. Excepciones II</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb14-bucles-i/" rel="prev">14. Bucles I</a>
-  </div>
   
 </div>
 
@@ -631,7 +660,7 @@ else:
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-01
+          Última actualización el 2019-05-07
         </div>
 
       </article>
