@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Problema 22: trabajando con distintos sistemas de numeración.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/2018/10/27/empezando-con-teoria-de-numeros-vi/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2018/10/27/empezando-con-teoria-de-numeros-vi/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/2018/10/27/empezando-con-teoria-de-numeros-vi/">
+  <meta property="og:title" content="Empezando con teoría de números (VI) | Infinitos Contrastes">
+  <meta property="og:description" content="Problema 22: trabajando con distintos sistemas de numeración."><meta property="og:image" content="https://imalexissaez.github.io/2018/10/27/empezando-con-teoria-de-numeros-vi/featured.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-10-27T05:59:39&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-10-27T05:59:39&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Empezando con teoría de números (VI) | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-header d-xl-none">
+  <div class="featured-image" style="background-image: url('/2018/10/27/empezando-con-teoria-de-numeros-vi/featured_hue1a300acec02a460660556f71c36e2d5_124936_800x0_resize_q90_lanczos.jpg');"></div>
+  <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dnevozhai" target="_blank">Denys Nevozhai</a>, disponible en <a href="https://unsplash.com/photos/P1Irb5y18-A" target="_blank">Unsplash</a>.</span>
+</div>
+
+
+<div class="container-fluid split-header d-none d-xl-block">
+  <div class="row">
+    <div class="col-6">
+      <div class="split-header-content">
+        <h1 itemprop="name">Empezando con teoría de números (VI)</h1>
+
+        
+        <p class="page-subtitle">Problema 22</p>
+        
+
+        
+
+
+
+<meta content="2018-10-27 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-10-27 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-10-27</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/10/27/empezando-con-teoria-de-numeros-vi/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/oposiciones/">Oposiciones</a></span>
+  
+
+  
+
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Empezando%20con%20teor%c3%ada%20de%20n%c3%bameros%20%28VI%29&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f10%2f27%2fempezando-con-teoria-de-numeros-vi%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fimalexissaez.github.io%2f2018%2f10%2f27%2fempezando-con-teoria-de-numeros-vi%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f10%2f27%2fempezando-con-teoria-de-numeros-vi%2f&amp;title=Empezando%20con%20teor%c3%ada%20de%20n%c3%bameros%20%28VI%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f10%2f27%2fempezando-con-teoria-de-numeros-vi%2f&amp;title=Empezando%20con%20teor%c3%ada%20de%20n%c3%bameros%20%28VI%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Empezando%20con%20teor%c3%ada%20de%20n%c3%bameros%20%28VI%29&amp;body=https%3a%2f%2fimalexissaez.github.io%2f2018%2f10%2f27%2fempezando-con-teoria-de-numeros-vi%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="split-header-image">
+        <img src="/2018/10/27/empezando-con-teoria-de-numeros-vi/featured_hue1a300acec02a460660556f71c36e2d5_124936_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dnevozhai" target="_blank">Denys Nevozhai</a>, disponible en <a href="https://unsplash.com/photos/P1Irb5y18-A" target="_blank">Unsplash</a>.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-container d-xl-none">
+  <h1 itemprop="name">Empezando con teoría de números (VI)</h1>
+
+  
+  <p class="page-subtitle">Problema 22</p>
+  
+
+  
+
+
+
+<meta content="2018-10-27 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-10-27 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-10-27</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/10/27/empezando-con-teoria-de-numeros-vi/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/oposiciones/">Oposiciones</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p><strong>Problema 22 (Comunidad Valenciana, 2006):</strong></p>
+
+<ul>
+<li>a) Halla la base del sistema de numeración en la que $$3753_{(x} - 3586_{(x} = 189_{(x}.$$</li>
+<li>b) Una vez hallado el valor de $x$, deduce el criterio de divisibilidad entre $x-1$ de dicha base.</li>
+<li>c) Después, justifica si alguno de los números dados es divisible por $x-1$ en dicha base.</li>
+<li>d) Por último, pasa el primero de los números dados a base $9$.</li>
+</ul>
+
+<hr />
+
+<p>Para el apartado a), por el <em>Teorema Fundamental de la Numeración</em>, sabemos que</p>
+
+<p>$$
+\begin{aligned}
+3753_{(x} &amp;= 3x^0 + 5x^1 + 7x^2 + 3x^3 = 3+5x+7x^2+3x^3,\\ 3586_{(x} &amp;= 6x^0 + 8x^1 + 5x^2 + 3x^3 = 6+8x+5x^2+3x^3,\\ 189_{(x} &amp;= 9x^0 + 8x^1 + 1x^2 = 9+8x+x^2,
+\end{aligned}
+$$</p>
+
+<p>por lo que la igualdad planteada en el enunciado es equivalente a:</p>
+
+<p>$$
+3+5x+7x^2+3x^3 - (6+8x+5x^2+3x^3) = 9+8x+x^2.
+$$</p>
+
+<p>Operando, esta se convierte en $x^2-11x-12=0$, y como</p>
+
+<p>$$
+x^2-11x-12 = (x-12)(x+1),
+$$</p>
+
+<p>concluimos que la base del sistema de numeración en la que se satisface la anterior igualdad es $x=12$ ($x=-1$ queda descartada automáticamente pues toda base ha de ser un número natural estrictamente mayor que $1$. Es más, a modo anecdótico, si las soluciones hubiesen sido $x=7$ y $x=12$, también habríamos descartado de forma automática la primera, pues en la expresión de los números implicados en la igualdad hay dígitos mayores o iguales que $7$).</p>
+
+<p>Para el apartado b), consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $12$. Utilizando el mismo resultado anterior, sabemos que podemos expresarlo como</p>
+
+<p>$$
+a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_112+\cdots+a_{n-2}12^{n-1}+a_{n-1}12^{n-1}.
+$$</p>
+
+<p>De cara a encontrar el criterio de divisibilidad del $11$ emplearemos las propiedades de las congruencias sobre las potencias de $12$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que</p>
+
+<p>$$
+a_0+a_112+a_212^2+\cdots+a_{n-1}12^{n-1}\equiv 0\pmod{11}.
+$$</p>
+
+<p>Ahora, como $12\equiv 1\pmod{11}$, fácilmente apreciamos que</p>
+
+<p>$$
+12^2\equiv 1^2\pmod{11}\equiv 1\pmod{11}
+$$</p>
+
+<p>y, en general, $12^i\equiv 1\pmod{11}$, para cada $i\in\mathbb{N}$, por lo que</p>
+
+<p>$$
+a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
+$$</p>
+
+<p>es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$, en base $12$, es divisible por $11$ siempre y cuando la suma de sus dígitos sea múltiplo de $11$.</p>
+
+<p>En el apartado c), a partir de la condición obtenida arriba, podemos concluir que</p>
+
+<ul>
+<li>$3+7+5+3 = 18\equiv 7\pmod{11}$,</li>
+<li>$3+5+8+6 = 22\equiv 0\pmod{11}$,</li>
+<li>$1+8+9 = 18\equiv 7\pmod{11}$,</li>
+</ul>
+
+<p>esto es, $3586_{(12}$ es el único número, de entre los tres propuestos, divisible por $11$.</p>
+
+<p>Finalmente, en el apartado d) tenemos que</p>
+
+<p>$$
+\begin{aligned}
+3753_{(12} &amp;= 3\cdot12^0 + 5\cdot12^1 + 7\cdot12^2 + 3\cdot12^3 \\ &amp;= 5184+1008+60+3 \\ &amp;= 6255_{(10},
+\end{aligned}
+$$</p>
+
+<p>y dividiendo ahora sucesivamente por $9$,</p>
+
+<p>$$
+\begin{aligned}
+6255 &amp;= 9\cdot 695 + 0,\\ 695 &amp;= 9\cdot 77 + 2,\\ 77 &amp;= 9\cdot 8 + 5,
+\end{aligned}
+$$</p>
+
+<p>arribamos a que $6255_{(10} = 8520_{(9}$, de manera que $3753_{(12} = 8520_{(9}$ por la unicidad que nos concede el <em>Teorema Fundamental de la Numeración</em>.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/criterios-de-divisibilidad/">Criterios de divisibilidad</a>
+  
+  <a class="badge badge-light" href="/tags/problemas/">Problemas</a>
+  
+  <a class="badge badge-light" href="">Teorema Fundamental de la Numeración</a>
+  
+  <a class="badge badge-light" href="">Teoría de números</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Matemático</h6>
+      <p class="card-text" itemprop="description">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Relacionado</h3>
+        <ul>
+          
+          <li><a href="/2018/10/24/empezando-con-teoria-de-numeros-v/">Empezando con teoría de números (V)</a></li>
+          
+          <li><a href="/2018/10/17/empezando-con-teoria-de-numeros-iv/">Empezando con teoría de números (IV)</a></li>
+          
+          <li><a href="/2018/10/13/empezando-con-teoria-de-numeros-iii/">Empezando con teoría de números (III)</a></li>
+          
+          <li><a href="/2018/10/11/empezando-con-teoria-de-numeros-ii/">Empezando con teoría de números (II)</a></li>
+          
+          <li><a href="/2018/10/09/empezando-con-teoria-de-numeros-i/">Empezando con teoría de números (I)</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "infinitos-contrastes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+    
+    <script src="/js/mathjax-config.js"></script>
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+
+  </body>
+</html>
+

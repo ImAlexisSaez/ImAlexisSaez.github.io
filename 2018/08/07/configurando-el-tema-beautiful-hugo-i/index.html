@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Lección 5: instalamos el tema Beautiful Hugo y editamos en detalle su archivo de configuración.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/">
+  <meta property="og:title" content="Configurando el tema Beautiful Hugo (I) | Infinitos Contrastes">
+  <meta property="og:description" content="Lección 5: instalamos el tema Beautiful Hugo y editamos en detalle su archivo de configuración."><meta property="og:image" content="https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/featured.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-08-07T05:59:39&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-08-07T05:59:39&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Configurando el tema Beautiful Hugo (I) | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-header d-xl-none">
+  <div class="featured-image" style="background-image: url('/2018/08/07/configurando-el-tema-beautiful-hugo-i/featured_hu0ac64a89a9eee8e9791b784fb63e620d_168363_800x0_resize_q90_lanczos.jpg');"></div>
+  <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@willianjusten" target="_blank">Willian Justen de Vasconcellos</a>, disponible en <a href="https://unsplash.com/photos/Cdb3-cWZBeo" target="_blank">Unsplash</a>.</span>
+</div>
+
+
+<div class="container-fluid split-header d-none d-xl-block">
+  <div class="row">
+    <div class="col-6">
+      <div class="split-header-content">
+        <h1 itemprop="name">Configurando el tema Beautiful Hugo (I)</h1>
+
+        
+        <p class="page-subtitle">Primeros pasos con el tema</p>
+        
+
+        
+
+
+
+<meta content="2018-08-07 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-08-07 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-08-07</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutoriales/">Tutoriales</a></span>
+  
+
+  
+
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/metablog/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Configurando%20el%20tema%20Beautiful%20Hugo%20%28I%29&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f07%2fconfigurando-el-tema-beautiful-hugo-i%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f07%2fconfigurando-el-tema-beautiful-hugo-i%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f07%2fconfigurando-el-tema-beautiful-hugo-i%2f&amp;title=Configurando%20el%20tema%20Beautiful%20Hugo%20%28I%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f07%2fconfigurando-el-tema-beautiful-hugo-i%2f&amp;title=Configurando%20el%20tema%20Beautiful%20Hugo%20%28I%29"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Configurando%20el%20tema%20Beautiful%20Hugo%20%28I%29&amp;body=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f07%2fconfigurando-el-tema-beautiful-hugo-i%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="split-header-image">
+        <img src="/2018/08/07/configurando-el-tema-beautiful-hugo-i/featured_hu0ac64a89a9eee8e9791b784fb63e620d_168363_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@willianjusten" target="_blank">Willian Justen de Vasconcellos</a>, disponible en <a href="https://unsplash.com/photos/Cdb3-cWZBeo" target="_blank">Unsplash</a>.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-container d-xl-none">
+  <h1 itemprop="name">Configurando el tema Beautiful Hugo (I)</h1>
+
+  
+  <p class="page-subtitle">Primeros pasos con el tema</p>
+  
+
+  
+
+
+
+<meta content="2018-08-07 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-08-07 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-08-07</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutoriales/">Tutoriales</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/metablog/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Continuemos esta serie de artículos, pertenecientes al <a href="/proyecto/metablog/">Proyecto Metablog</a>, donde examinamos con detalle la creación de sitios web utilizando <em>Hugo</em>. Hoy veremos cómo instalar y configurar el tema <a href="https://themes.gohugo.io/beautifulhugo/" target="_blank">Beautiful Hugo</a>.</p>
+
+<p>En la <a href="/2018/07/17/configurando-el-tema-ananke/">anterior entrada</a> vimos el proceso a seguir para el tema <em>Anake</em>. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para <em>Infinitos Contrastes</em>. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la <a href="https://themes.gohugo.io/" target="_blank">sección de temas</a> de la web oficial de <em>Hugo</em>, encontré, para mi fortuna, el tema <em>Beautiful Hugo</em>, una adaptación del tema <em>Beautiful Jekyll</em> que ya utilicé en su momento como plantilla para mi sitio web.</p>
+
+<p>Me encanta este tema por el protagonismo que ofrece al contenido, evitando toda esa miríada de elementos que algunas plantillas incorporan y que distraen enormemente la atención a la hora de consultar la información contenida en los artículos. Además, viene con el interesante añadido para un matemático de incorporar, de serie, la configuración adecuada para escribir fórmulas vía <em>KaTeX</em> (es un detalle con cierta trampa, ya que buenas batallas estoy lidiando, en ocasiones, para que las expresiones matemáticas se visualicen como deberían).</p>
+
+<p>Así pues, procedamos a su instalación. Para ello, en la terminal, desde el directorio raíz donde hayamos escogido alojar localmente nuestro sitio web, tecleamos:</p>
+
+<pre><code class="language-bash">cd themes
+</code></pre>
+
+<p>y clonamos, en esta carpeta, el tema <em>Beautiful Hugo</em> escribiendo:</p>
+
+<pre><code class="language-bash">git clone https://github.com/halogenica/beautifulhugo.git beautifulhugo
+</code></pre>
+
+<p>Al igual que el tema <em>Anake</em>, <em>Beautiful Hugo</em> viene acompañado, para nuestro gozo y disfrute, con un pequeño sitio web de muestra, ubicado en la carpeta <code>exampleSite</code> (siendo la ruta completa <code>\themes\beautifulhugo\exampleSite</code>). A través del <em>Explorador de archivos</em> de <em>Windows</em> podemos comprobar que su contenido es el que se muestra en la siguiente imagen:</p>
+
+
+
+
+<figure>
+
+<img src="20180807-img01.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Contenido del sitio web de ejemplo</h4>
+  
+</figcaption>
+
+</figure>
+
+<p>Procedemos entonces a copiar las carpetas <code>contents</code>, <code>layouts</code> y <code>static</code>, así como el archivo <code>config.toml</code> y las pegamos en el directorio raíz de nuestro sitio web. A estas alturas de la película, dependiendo de la intensidad con la que hayamos estado experimentando con diversas plantillas, recomendaría incluso eliminar previamente las mencionadas carpetas y el citado fichero antes de proceder a la acción de pegar, para así evitar la aparición de extraños conflictos en un futuro próximo.</p>
+
+<p>Ahora, editamos el archivo <code>config.toml</code>, utilizando <em>Sublime Text 3</em> para ello, con el objetivo de empezar a personalizar la configuración de esta plantilla. Algunos de los detalles que a continuación veremos son muy similares a los que discutimos durante el artículo dedicado al tema <em>Anake</em>, por lo que en esta ocasión el ritmo de exposición será más ligero.</p>
+
+<p>El primer bloque de código que encontramos es:</p>
+
+<pre><code class="language-toml">baseurl = &quot;https://username.github.io&quot;
+DefaultContentLanguage = &quot;en&quot;
+#DefaultContentLanguage = &quot;ja&quot;
+title = &quot;Beautiful Hugo&quot;
+theme = &quot;beautifulhugo&quot;
+metaDataFormat = &quot;yaml&quot;
+pygmentsStyle = &quot;trac&quot;
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#pygmentsUseClassic = true
+#pygmentOptions = &quot;linenos=inline&quot;
+#disqusShortname = &quot;XXX&quot;
+#googleAnalytics = &quot;XXX&quot;
+</code></pre>
+
+<p>Algunas variables nos resultarán familiares, por lo que seremos capaces inmediatamente de asignarles sus correspondientes valores. Por ejemplo, las primeras líneas, en mi caso, han quedado como sigue:</p>
+
+<pre><code class="language-toml">#
+# Configuración básica del sitio
+#
+title   = &quot;Infinitos Contrastes&quot;            # Título de la web
+theme   = &quot;beautifulhugo&quot;                   # Tema 
+baseurl = &quot;https://imalexissaez.github.io/&quot; # URL base
+metaDataFormat         = &quot;yaml&quot;             # Formato de las cabeceras de las entradas
+DefaultContentLanguage = &quot;es&quot;               # Lenguaje de la web (activa localización)
+</code></pre>
+
+<p>Ninguna sorpresa aquí. Entre los descriptivos nombres que poseen las variables y los comentarios que he añadido, no es descabellado suponer que todos configuraremos de manera adecuada el anterior bloque.</p>
+
+<p>Ahora bien, el siguiente apartado sí que merece explicación por mi parte:</p>
+
+<pre><code class="language-toml">#
+# Configuración de los bloques de código fuente
+# Guía en: https://gohugo.io/content-management/syntax-highlighting/
+#
+pygmentsStyle                 = &quot;trac&quot;
+pygmentsUseClasses            = true
+pygmentsCodeFences            = true
+pygmentsCodefencesGuessSyntax = true
+</code></pre>
+
+<p>He dejado en los comentarios un enlace a la guía oficial para la configuración del <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank">resaltado de código</a> a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos <em>CSS</em> que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor <code>&quot;trac&quot;</code>, en mi opinión, es el que más a juego va con <em>Beautiful Hugo</em>. Por otro lado, como este tema utiliza la librería <a href="https://highlightjs.org/" target="_blank">highlight.js</a> (en lugar de la que <em>Hugo</em> incorpora por defecto) para el mencionado resaltado, hemos de asignar <code>true</code> a la variable <code>pygmentsUseClasses</code>.</p>
+
+<p>A continuación, habilitamos la posibilidad de escribir código fuente en &ldquo;<em>fences</em>&rdquo;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la <a href="https://kramdown.gettalong.org/quickref.html#code-blocks" target="_blank">guía oficial</a> de <em>Kramdown</em> sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el <em>shortcode</em> <code>highlight</code> se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.</p>
+
+<p>Además, aunque hemos activado la opción de adivinar el lenguaje de programación por su sintaxis, recomendaría aquí que ayudásemos en lo posible a la librería y le indicáramos cuál estamos empleando, para que así aplique la configuración adecuada para él. Actuar así es crítico cuando, como en este artículo, compartimos pequeños bloques de código, de forma que es bastante complicado acertar con el lenguaje de programación dada la escasa información que suministramos.</p>
+
+<p>Finalmente, nos limitaremos a introducir los valores correspondientes a las cuentas que habremos creado para <em>Disqus</em> y para las estadísticas de <em>Google</em> en el siguiente bloque de código:</p>
+
+<pre><code class="language-toml">#
+# Configuración de los comentarios (Disqus)
+#
+disqusShortname = &quot;&quot;
+
+#
+# Configuración de las estadísticas (Google Analytics)
+#
+googleAnalytics = &quot;&quot;
+</code></pre>
+
+<p>Nuestra siguiente parada será en la sección dedicada a la configuración de los parámetros del sitio web, que originalmente presenta el aspecto que se muestra a continuación:</p>
+
+<pre><code class="language-toml">[Params]
+#  homeTitle = &quot;Beautiful Hugo Theme&quot; # Set a different text for the header on the home page
+  subtitle = &quot;Build a beautiful and simple website in minutes&quot;
+  logo = &quot;img/avatar-icon.png&quot;
+  favicon = &quot;img/favicon.ico&quot;
+  dateFormat = &quot;January 2, 2006&quot;
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  useHLJS = true
+  socialShare = true
+#  gcse = &quot;012345678901234567890:abcdefghijk&quot; # Get your code from google.com/cse. Make sure to go to &quot;Look and Feel&quot; and change Layout to &quot;Full Width&quot; and Theme to &quot;Classic&quot;
+
+#[[Params.bigimg]]
+#  src = &quot;img/triangle.jpg&quot;
+#  desc = &quot;Triangle&quot;
+#[[Params.bigimg]]
+#  src = &quot;img/sphere.jpg&quot;
+#  desc = &quot;Sphere&quot;
+#  # position: see values of CSS background-position.
+#  position = &quot;center top&quot;
+#[[Params.bigimg]]
+#  src = &quot;img/hexagon.jpg&quot;
+#  desc = &quot;Hexagon&quot;
+</code></pre>
+
+<p>Empecemos analizando la primera parte que, en mi caso, ha quedado como sigue:</p>
+
+<pre><code class="language-toml">#
+# Configuración de parámetros del sitio web
+#
+[Params]
+  subtitle    = &quot;Laboratorio de experimentos de un matemático&quot; # Subtítulo
+  logo        = &quot;img/avatar.jpg&quot;                               # Logo
+  favicon     = &quot;img/favicon.ico&quot;                              # Favicon
+  dateFormat  = &quot;02-01-2006&quot;                                   # Formato de la fecha
+  commit      = false                                          # commit en footer
+  rss         = true                                           # Sindicación
+  comments    = true                                           # Comentarios activados por defecto
+  readingTime = true                                           # Estimación del tiempo de lectura
+  useHLJS     = true                                           # Highlight.js para resaltado
+  socialShare = true                                           # Compartir entradas en redes sociales
+</code></pre>
+
+<p>ya que:</p>
+
+<ul>
+<li>No he visto la necesidad de utilizar la variable <code>homeTitle</code> para modificar el texto que aparece al acceder al sitio web. Me parece adecuado que sea el nombre de la página web: <em>Infinitos Contrastes</em>, pero, como siempre, &ldquo;para gustos, los colores&rdquo;. La variable <code>subtitle</code> sí que me resulta interesante para ofrecer una breve descripción o eslogan de nuestra página web.</li>
+<li>Los valores para las variables <code>logo</code> y <code>favicon</code> deben apuntar a las rutas donde ubiquemos las respectivas imágenes. Por defecto, las hojas de estilo <em>CSS</em>, las librerías escritas con <em>JavaScript</em> y las imágenes las almacenaremos en el interior del directorio <code>static</code>. Como <em>Hugo</em> supone este hecho, no es necesario que antecedamos cada ruta con <code>static</code>, pero debemos ubicar cada recurso adecuadamente.</li>
+<li>La localización de <em>Hugo</em> a idiomas diferentes al inglés es todavía un aspecto que admite gran margen de mejora. Aunque <em>Beautiful Hugo</em> incorpora la posibilidad de declarar ciertos textos para distintos idiomas, el tratamiento de las fechas no es todavía el adecuado para las opciones disponibles. Con el objeto de evitar entrar en agotadoras batallas, me he decantado finalmente por un formato &ldquo;neutro&rdquo; para expresar la fecha, en el sentido de que únicamente incluye números, evitando así que en la página aparezcan los nombres de los días de la semana o los de los meses en inglés.</li>
+<li>La variable <code>commit</code> nos permite insertar el código SHA correspondiente al <em>commit</em> que generó la última versión del sitio web. No he considerado que dicha información fuera a proporcionar demasiada utilidad para una página como la mía, así que he declarado su valor como <code>false</code>.</li>
+<li>El resto de las variables activan, pues su valor es <code>true</code>, respectivamente, la sindicación vía <em>RSS</em>, la posibilidad de realizar comentarios en los distintos artículos de la web (vía <em>Disqus</em>), una estimación del tiempo de lectura para cada entrada (utilizando como referencia 200 palabras por minuto), el uso de la librería <em>highlight.js</em> para resaltar código y el acceso a compartir nuestro contenido en distintas redes sociales.</li>
+</ul>
+
+<p>Como la entrada está empezando a adquirir una extensión considerable. Vamos a poner aquí un punto y seguido, dejando para el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> el análisis del resto de la configuración del archivo <code>config.toml</code>.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
+  
+  <a class="badge badge-light" href="/tags/beautiful-hugo/">Beautiful Hugo</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Matemático</h6>
+      <p class="card-text" itemprop="description">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Relacionado</h3>
+        <ul>
+          
+          <li><a href="/2018/07/17/configurando-el-tema-ananke/">Configurando el tema Ananke</a></li>
+          
+          <li><a href="/2018/07/15/curso-de-hugo-en-youtube/">Curso de Hugo en YouTube</a></li>
+          
+          <li><a href="/2018/07/11/creando-un-sitio-web-con-hugo/">Creando un sitio web con Hugo</a></li>
+          
+          <li><a href="/2018/07/08/instalando-hugo-en-windows/">Instalando Hugo en Windows</a></li>
+          
+          <li><a href="/2018/07/04/migrando-a-hugo/">Migrando a Hugo</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "infinitos-contrastes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+
+  </body>
+</html>
+

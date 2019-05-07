@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Breve análisis del artículo &#39;Degrees of freedom in planning, running, analyzing, and reporting psychological studies. A checklist to avoid p-hacking&#39;.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/">
+  <meta property="og:title" content="Los 34 grados de libertad de un estudio | Infinitos Contrastes">
+  <meta property="og:description" content="Breve análisis del artículo &#39;Degrees of freedom in planning, running, analyzing, and reporting psychological studies. A checklist to avoid p-hacking&#39;."><meta property="og:image" content="https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/featured.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-08-02T05:59:39&#43;02:00">
+  
+  <meta property="article:modified_time" content="2018-08-02T05:59:39&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Los 34 grados de libertad de un estudio | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-header d-xl-none">
+  <div class="featured-image" style="background-image: url('/2018/08/02/los-34-grados-de-libertad-de-un-estudio/featured_hu3e03b6fab59ebd622a9dd0a67f615cc7_134127_800x0_resize_q90_lanczos.jpg');"></div>
+  <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@joaosilas" target="_blank">João Silas</a>, disponible en <a href="https://unsplash.com/photos/I_LgQ8JZFGE" target="_blank">Unsplash</a>.</span>
+</div>
+
+
+<div class="container-fluid split-header d-none d-xl-block">
+  <div class="row">
+    <div class="col-6">
+      <div class="split-header-content">
+        <h1 itemprop="name">Los 34 grados de libertad de un estudio</h1>
+
+        
+        <p class="page-subtitle">Tentaciones a evitar</p>
+        
+
+        
+
+
+
+<meta content="2018-08-02 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-08-02 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-08-02</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/08/02/los-34-grados-de-libertad-de-un-estudio/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="">Estadística</a></span>
+  
+
+  
+
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Los%2034%20grados%20de%20libertad%20de%20un%20estudio&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f02%2flos-34-grados-de-libertad-de-un-estudio%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f02%2flos-34-grados-de-libertad-de-un-estudio%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f02%2flos-34-grados-de-libertad-de-un-estudio%2f&amp;title=Los%2034%20grados%20de%20libertad%20de%20un%20estudio"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f02%2flos-34-grados-de-libertad-de-un-estudio%2f&amp;title=Los%2034%20grados%20de%20libertad%20de%20un%20estudio"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Los%2034%20grados%20de%20libertad%20de%20un%20estudio&amp;body=https%3a%2f%2fimalexissaez.github.io%2f2018%2f08%2f02%2flos-34-grados-de-libertad-de-un-estudio%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="split-header-image">
+        <img src="/2018/08/02/los-34-grados-de-libertad-de-un-estudio/featured_hu3e03b6fab59ebd622a9dd0a67f615cc7_134127_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@joaosilas" target="_blank">João Silas</a>, disponible en <a href="https://unsplash.com/photos/I_LgQ8JZFGE" target="_blank">Unsplash</a>.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-container d-xl-none">
+  <h1 itemprop="name">Los 34 grados de libertad de un estudio</h1>
+
+  
+  <p class="page-subtitle">Tentaciones a evitar</p>
+  
+
+  
+
+
+
+<meta content="2018-08-02 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2018-08-02 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2018-08-02</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2018/08/02/los-34-grados-de-libertad-de-un-estudio/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="">Estadística</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Hace unos días, completé la lectura del estupendo artículo <em>&ldquo;Degrees of freedom in planning, running, analyzing, and reporting psychological studies. A checklist to avoid p-hacking&rdquo;</em>, cuya lista de autores es casi tan extensa como el propio título, y de acceso abierto a través de <a href="http://journal.frontiersin.org/article/10.3389/fpsyg.2016.01832/abstract" target="_blank">este enlace</a>.</p>
+
+<p>En la línea de la famosa idea conocida como <em>&ldquo;The Garden of Forking Paths&rdquo;</em>, acuñada por <em>Andrew Gelman</em>, el mencionado documento lista los múltiples grados de libertad existentes en todas y cada una de las fases de un estudio. Ahora bien, ¿a qué nos referimos cuando hablamos de los grados de libertad de un estudio?</p>
+
+<p>Sin entrar aquí en demasiado detalle, se trata de ciertas decisiones arbitrarias (intencionadas o no) que los investigadores toman en sus investigaciones a la hora de diseñarlas, recoger los datos de interés, analizar éstos y posteriormente reportarlos en publicaciones científicas. Es lógico entonces que nos planteemos la siguiente cuestión: ¿qué efecto poseen los grados de libertad de un estudio sobre las conclusiones alcanzadas?</p>
+
+<p>Entre otras, las dos principales consecuencias son, por un lado, el incremento de la probabilidad de hallar resultados que no son más que falsos positivos, y, por otra parte, la posibilidad de inflar las estimaciones para los tamaños de los efectos observados. Así pues, ¿es posible evitar su aparición en un estudio?</p>
+
+<p>A día de hoy, el mejor método (aunque dista de ser perfecto) para que un estudio esté libre de grados de libertad es utilizar, de manera precisa y muy detallada, un recurso conocido como <em>pre-registro</em> (<em>preregistration</em> en inglés). La idea es presentar, e incluso someter a revisión de pares, el plan que seguirá cierta investigación antes de realizar la propia recolección de los datos de interés.</p>
+
+<p>En el citado artículo se ofrece un listado (no totalmente exhaustivo) de los grados de libertad que puede presentar un estudio, restringiendo este al marco de referencia habitual utilizado para el contraste de hipótesis. De esta forma, los autores advierten que habría que eliminar o añadir ciertos grados de libertad si es otra la metodología empleada.</p>
+
+<p>Algunos de los mencionados grados de libertad están relacionados entre sí (recomiendo consultar la tabla que figura en la última página del artículo) o incluso pueden llegar a dar la impresión de aparecer por duplicado. No obstante, se justifica este hecho por la importancia de adoptar cierta decisión en una fase del estudio u otra.</p>
+
+<p>A modo de resumen, estos son los 34 grados de libertad de un estudio, desglosados en función de las distintas etapas de una investigación:</p>
+
+<ul>
+<li><em>Fase de generación de hipótesis</em>:
+
+<ul>
+<li><em>[T1]</em> Llevar a cabo investigaciones exploratorias. Esto conduce a una práctica conocida como <em>&ldquo;HARKing&rdquo;</em> (<em>&ldquo;Hypothesizing After Results are Known&rdquo;</em>, que vendría a ser generar hipótesis una vez se conocen los resultados).</li>
+<li><em>[T2]</em> Declarar hipótesis imprecisas que no indiquen la dirección del posible efecto. Es un tipo especial de <em>&ldquo;HARKing&rdquo;</em>, ya que el investigador puede luego analizar los datos de dos maneras alternativas.</li>
+</ul></li>
+<li><em>Fase de diseño</em>:
+
+<ul>
+<li><em>[D1]</em> Crear múltiples condiciones y variables independientes manipuladas. A medida que el diseño de un estudio adquiere complejidad, esta práctica puede conducir a posibles futuras decisiones con respecto a los niveles de las variables que se están considerando o sobre las condiciones en la que centra el foco de atención.</li>
+<li><em>[D2]</em> Medir variables adicionales sin decidir de antemano si éstas serán bien covariables, bien variables independientes, bien variables mediadoras, o bien variables moderadoras.</li>
+<li><em>[D3]</em> Registrar la misma variable dependiente de diferentes formas alternativas. Esta práctica puede tentar al investigador a adoptar al final la escala que favorezca la aparición de resultados significativos.</li>
+<li><em>[D4]</em> Medir variables dependientes (o incluso probar teorías) adicionales, diseñadas en principio como secundarias en el estudio, que luego adopten un rol primario en los resultados del estudio si las variables principales fallan a la hora de mostrar efecto alguno (esto podría considerarse también como una especie de <em>&ldquo;HARKing&rdquo;</em>).</li>
+<li><em>[D5]</em> Incorporar variables adicionales que permitan, <em>a posteriori</em>, al investigador, la exclusión del análisis de ciertos (o incluso grupos de) participantes, con el propósito de encontrar así resultados significativos.</li>
+<li><em>[D6]</em> No realizar un análisis del poder estadístico del estudio. Es más, el investigador suele adoptar una posición extremadamente optimista al respecto de este asunto cuando trabaja con muestras pequeñas, lo cual se traduce en estudios de bajo poder estadístico.</li>
+<li><em>[D7]</em> No informar acerca del plan de muestreo, permitiendo así la posibilidad de realizar, de manera consecutiva, múltiples pequeños estudios hasta dar con el resultado significativo deseado (y sin haber controlado el efecto que esta práctica posee sobre el <em>error de tipo I</em>).</li>
+</ul></li>
+<li><em>Fase de recolección de datos</em>:
+
+<ul>
+<li><em>[C1]</em> No asignar los participantes de un estudio a las condiciones de forma aleatoria, lo cual da lugar a la posible aparición de variables de confusión.</li>
+<li><em>[C2]</em> No escoger de manera acertada la técnica de enmascaramiento (simple, doble o triple ciego), bien para los participantes, bien para los investigadores, pudiendo sesgar así los resultados del estudio.</li>
+<li><em>[C3]</em> Corregir, codificar o descartar datos durante la fase de recolección, de una forma no coherente con la técnica de enmascaramiento asociada al estudio.</li>
+<li><em>[C4]</em> Determinar la regla de parada de recolección de datos en función de si se ha obtenido, o no, el resultado deseado.</li>
+</ul></li>
+<li><em>Fase de análisis</em>: los puntos que se listan a continuación en este apartado son una serie de decisiones con marcado carácter <a href="https://es.wikipedia.org/wiki/Ad_hoc" target="_blank"><em>ad hoc</em></a> por parte del investigador.
+
+<ul>
+<li><em>[A1]</em> Seleccionar entre diferentes opciones de tratamiento para los datos incompletos o perdidos.</li>
+<li><em>[A2]</em> Especificar el pre-procesamiento de los datos (limpieza, normalización, suavizado o correcciones).</li>
+<li><em>[A3]</em> Dictaminar cómo lidiar con las violaciones de los supuestos estadísticos.</li>
+<li><em>[A4]</em> Decidir cómo tratar con los valores atípicos.</li>
+<li><em>[A5]</em> Determinar la variable dependiente de entre las múltiples alternativas existentes asociadas a una misma teoría.</li>
+<li><em>[A6]</em> Probar diferentes maneras de anotar o registrar (o emplear distintas escalas para) una variable dependiente.</li>
+<li><em>[A7]</em> Optar por una teoría alternativa como principal resultado.</li>
+<li><em>[A8]</em> Escoger las variables independientes de entre un conjunto de variables independientes manipuladas.</li>
+<li><em>[A9]</em> Usar las variables independientes manipuladas de diversas formas.</li>
+<li><em>[A10]</em> Incluir diferentes variables probándolas bien como covariables, bien como variables independientes, bien como variables mediadoras, bien como variables moderadoras.</li>
+<li><em>[A11]</em> Utilizar las variables independientes no manipuladas de distintas maneras.</li>
+<li><em>[A12]</em> Usar un criterio alternativo de inclusión y exclusión de participantes.</li>
+<li><em>[A13]</em> La propia determinación del modelo estadístico.</li>
+<li><em>[A14]</em> La elección del método de estimación, el programa informático donde se va a llevar a cabo el análisis de datos, y la forma en la que se calculan los errores estándar.</li>
+<li><em>[A15]</em> La elección del criterio de inferencia.</li>
+</ul></li>
+<li><em>Fase de informe</em>:
+
+<ul>
+<li><em>[R1]</em> No asegurar la reproducibilidad del estudio.</li>
+<li><em>[R2]</em> No habilitar (o facilitar la posibilidad de) la replicación del estudio.</li>
+<li><em>[R3]</em> Para los estudios que han sido pre-registrados, no mencionar, falsificar o identificar erróneamente su pre-registro.</li>
+<li><em>[R4]</em> No informar de los denominados &ldquo;estudios fallidos&rdquo; que fueron originalmente considerados relevantes para la investigación propuesta.</li>
+<li><em>[R5]</em> No informar adecuadamente de los resultados y los <em>p</em>-valores.</li>
+<li><em>[R6]</em> Formular hipótesis después de observar los resultados (el ya nombrado <em>&ldquo;HARKing&rdquo;</em>).</li>
+</ul></li>
+</ul>
+
+<p>Los autores dedican en el artículo, a cada uno de los anteriores 34 puntos, algunos párrafos para contextualizarlos, explicar su influencia sobre los resultados y ofrecer buenas prácticas para evitar que hagan acto de presencia en el estudio.</p>
+
+<p>En resumen, una lectura que merece la pena y que recomiendo encarecidamente.</p>
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/grados-de-libertad/">Grados de libertad</a>
+  
+  <a class="badge badge-light" href="/tags/papers/">Papers</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Matemático</h6>
+      <p class="card-text" itemprop="description">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "infinitos-contrastes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+
+  </body>
+</html>
+

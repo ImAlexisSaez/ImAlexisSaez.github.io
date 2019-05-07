@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Vídeo   Notas personales Estudiemos el uso de la instrucción yield from, cuya utilidad reside en la simplificación del código de los generadores en el caso de utilizar bucles anidados.
+Por ejemplo, elaboremos un generador que nos devuelva ciudades:
+def devuelve_ciudades(*ciudades): for elemento in ciudades: yield elemento # Creamos objeto generador ciudades_devueltas = devuelve_ciudades(&quot;Madrid&quot;, &quot;Barcelona&quot;, &quot;Bilbao&quot;, &quot;Valencia&quot;) print(next(ciudades_devueltas)) # Madrid print(next(ciudades_devueltas)) # Barcelona  Nota: en Python, cuando colocamos un * delante de un parámetro, estamos indicando que podemos pasar un número indeterminado de argumentos, que los recibirá en forma de tupla.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb20-generadores-ii/">
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb20-generadores-ii/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb20-generadores-ii/">
+  <meta property="og:title" content="20. Generadores II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Estudiemos el uso de la instrucción yield from, cuya utilidad reside en la simplificación del código de los generadores en el caso de utilizar bucles anidados.
+Por ejemplo, elaboremos un generador que nos devuelva ciudades:
+def devuelve_ciudades(*ciudades): for elemento in ciudades: yield elemento # Creamos objeto generador ciudades_devueltas = devuelve_ciudades(&quot;Madrid&quot;, &quot;Barcelona&quot;, &quot;Bilbao&quot;, &quot;Valencia&quot;) print(next(ciudades_devueltas)) # Madrid print(next(ciudades_devueltas)) # Barcelona  Nota: en Python, cuando colocamos un * delante de un parámetro, estamos indicando que podemos pasar un número indeterminado de argumentos, que los recibirá en forma de tupla."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-05-05T00:03:01&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-05-05T00:03:01&#43;01:00">
+  
+
+  
+
+  
+
+  <title>20. Generadores II | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Buscar..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/python-basic/">Presentación</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/python-basic/pb01-presentacion-del-curso/">Lecciones</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/python-basic/pb01-presentacion-del-curso/">1. Presentación</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb02-introduccion/">2. Introducción</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb03-sintaxis-basica/">3. Sintaxis básica</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb04-tipos-y-variables/">4. Tipos y variables</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb05-funciones-i/">5. Funciones I</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb06-funciones-ii/">6. Funciones II</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb07-listas/">7. Listas</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb08-tuplas/">8. Tuplas</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb09-diccionarios/">9. Diccionarios</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb10-condicionales-i/">10. Condicionales I</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb11-condicionales-ii/">11. Condicionales II</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb12-condicionales-iii/">12. Condicionales III</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb13-condicionales-iv/">13. Condicionales IV</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb14-bucles-i/">14. Bucles I</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb15-bucles-ii/">15. Bucles II</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb16-bucles-iii/">16. Bucles III</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb17-bucles-iv/">17. Bucles IV</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb18-bucles-v/">18. Bucles V</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb19-generadores-i/">19. Generadores I</a>
+      </li>
+      
+      <li class="active">
+        <a href="/courses/python-basic/pb20-generadores-ii/">20. Generadores II</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb21-excepciones-i/">21. Excepciones I</a>
+      </li>
+      
+      <li >
+        <a href="/courses/python-basic/pb22-excepciones-ii/">22. Excepciones II</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">20. Generadores II</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="vídeo">Vídeo</h2>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/ucaHqGII350" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="notas-personales">Notas personales</h2>
+
+<p>Estudiemos el uso de la instrucción <code>yield from</code>, cuya utilidad reside en la simplificación del código de los generadores en el caso de utilizar bucles anidados.</p>
+
+<p>Por ejemplo, elaboremos un generador que nos devuelva ciudades:</p>
+
+<pre><code class="language-python">def devuelve_ciudades(*ciudades):
+    for elemento in ciudades:
+        yield elemento
+
+
+# Creamos objeto generador
+ciudades_devueltas = devuelve_ciudades(&quot;Madrid&quot;, &quot;Barcelona&quot;, &quot;Bilbao&quot;,
+                                       &quot;Valencia&quot;)
+
+print(next(ciudades_devueltas))  # Madrid
+
+print(next(ciudades_devueltas))  # Barcelona
+</code></pre>
+
+<p><em>Nota</em>: en <em>Python</em>, cuando colocamos un <code>*</code> delante de un parámetro, estamos indicando que podemos pasar un número indeterminado de argumentos, que los recibirá en forma de tupla.</p>
+
+<p>Imaginemos que ahora deseamos acceder a los elementos de cada una de las ciudades (sus letras en este caso):</p>
+
+<pre><code class="language-python">def devuelve_ciudades(*ciudades):
+    for elemento in ciudades:
+        for sub_elemento in elemento:
+            yield sub_elemento
+
+
+# Creamos objeto generador
+ciudades_devueltas = devuelve_ciudades(&quot;Madrid&quot;, &quot;Barcelona&quot;, &quot;Bilbao&quot;,
+                                       &quot;Valencia&quot;)
+
+print(next(ciudades_devueltas))  # M
+
+print(next(ciudades_devueltas))  # a
+</code></pre>
+
+<p>El anterior ejemplo lo podemos simplificar utilizando la instrucción <code>yield from</code>:</p>
+
+<pre><code class="language-python">def devuelve_ciudades(*ciudades):
+    for elemento in ciudades:
+        yield from elemento
+
+
+# Creamos objeto generador
+ciudades_devueltas = devuelve_ciudades(&quot;Madrid&quot;, &quot;Barcelona&quot;, &quot;Bilbao&quot;,
+                                       &quot;Valencia&quot;)
+
+print(next(ciudades_devueltas))  # M
+
+print(next(ciudades_devueltas))  # a
+</code></pre>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Anterior</div>
+    <a href="/courses/python-basic/pb19-generadores-i/" rel="next">19. Generadores I</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Siguiente</div>
+    <a href="/courses/python-basic/pb21-excepciones-i/" rel="prev">21. Excepciones I</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Última actualización el 2019-05-05
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+
+  </body>
+</html>
+
+
