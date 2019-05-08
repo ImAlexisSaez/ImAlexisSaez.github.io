@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Tue, 07 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 05:59:39 +0200</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -2506,6 +2506,132 @@ Programa terminado.
 El número no puede ser negativo.
 Programa terminado.
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Secantes dos a dos, pero tres a tres no concurrentes</title>
+      <link>https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/</link>
+      <pubDate>Wed, 08 May 2019 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 75:&lt;/strong&gt; Trazamos en un plano $n$ rectas secantes dos a dos, pero tres a tres no concurrentes, ¿en cuántas regiones queda dividido el plano?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Claramente observamos, en la siguiente imagen, que dos rectas secantes dividen el plano en cuatro regiones. Al añadir una nueva recta, de manera que las tres no sean concurrentes en un punto, necesariamente aparecerán dos nuevos puntos de intersección con las rectas originales (puesto que la incorporada no puede ser paralela a las existentes, al existir la restricción de que las rectas sean secantes dos a dos), hecho que implica que la recta subdivide en dos tres de las cuatro regiones en las que se encontraba dividido el plano, produciendo entonces en total siete regiones ($4+3 = 7$).&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20190508-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Representación gráfica.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Una cuarta recta, que fuese secante dos a dos con las tres anteriores, daría lugar a tres nuevos puntos de intersección, situación que provocaría que cuatro de las anteriores regiones quedasen, cada una de ellas, subdividas en dos nuevas regiones. En total, contaríamos pues con once regiones ($7 + 4 = 11$).&lt;/p&gt;
+
+&lt;p&gt;En general, denotemos por $R_n$ al número de regiones en que el plano queda dividido por $n$ rectas que son secantes dos a dos, pero tres a tres no concurrentes. Al incorporar una nueva recta, que será secante dos a dos con todas las anteriores, esta dará lugar a $n$ nuevos puntos de intersección (ya que no será concurrente tres a tres con ninguno de los pares presentes), hecho que provoca que, de las $R_n$ regiones que se contaban antes de introducir la nueva recta, $n+1$ queden, cada una de ellas, subdividas en dos regiones. Así, es cierto que, para cada número natural $n$,&lt;/p&gt;
+
+&lt;p&gt;$$
+R_{n+1} = R_n + (n+1),
+$$&lt;/p&gt;
+
+&lt;p&gt;dando lugar a una ecuación en diferencias lineal completa de orden uno. Su ecuación homogénea asociada es $R_{n+1} - R_n = 0$, con ecuación característica correspondiente $\lambda - 1 = 0$, esto es, $\lambda = 1$. Así, la solución para dicha ecuación homogénea es $R_h = c_1$, con $c_1\in\mathbb{R}$.&lt;/p&gt;
+
+&lt;p&gt;Ahora, como el término independiente, $n+1$, es un polinomio de grado uno en $n$ y $\lambda = 1$ es una raíz simple de la ecuación característica, proponemos como solución particular $n^1(an+b) = an^2+bn$ y sustituyendo en la ecuación en diferencias inicial, queda&lt;/p&gt;
+
+&lt;p&gt;$$
+a(n+1)^2 + b(n+1) - an^2 - bn = n+1.
+$$&lt;/p&gt;
+
+&lt;p&gt;Operando, llegamos a que $2an + (a+b) = n+1$ e igualando coeficientes $a = b = 1 / 2$, por lo que la solución particular a la ecuación en diferencias planteada es, para cada número natural $n$, $R_p = (n^2+n)/2$.&lt;/p&gt;
+
+&lt;p&gt;Por consiguiente, la solución general a la ecuación en diferencias propuestas, que es la suma de la solución para la ecuación homogénea y la solución particular, es&lt;/p&gt;
+
+&lt;p&gt;$$
+R_n = c_1 + \dfrac{n^2+n}{2},
+$$&lt;/p&gt;
+
+&lt;p&gt;con $c_1\in\mathbb{R}$. Dado que para $n = 2$ hemos establecido, al principio del ejercicio, que $R_2 = 4$, sustituyendo podemos averiguar el valor de $c_1$. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+4 = c_1 + \dfrac{2^2+2}{2},
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es, $c_1 = 1$ y concluimos que, para cada número natural $n$,&lt;/p&gt;
+
+&lt;p&gt;$$
+R_n = \dfrac{n^2+n+2}{2}
+$$&lt;/p&gt;
+
+&lt;p&gt;es el número de regiones en que queda dividido un plano cuando trazamos $n$ rectas secantes dos a dos, pero tres a tres no concurrentes.&lt;/p&gt;
+
+&lt;p&gt;Alternativamente, por tanteo de unos cuantos casos particulares para los primeros valores de $n$, obtenemos la siguiente tabla&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;$n$&lt;/th&gt;
+&lt;th&gt;$1$&lt;/th&gt;
+&lt;th&gt;$2$&lt;/th&gt;
+&lt;th&gt;$3$&lt;/th&gt;
+&lt;th&gt;$4$&lt;/th&gt;
+&lt;th&gt;$5$&lt;/th&gt;
+&lt;th&gt;$6$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$R_n$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$4$&lt;/td&gt;
+&lt;td&gt;$7$&lt;/td&gt;
+&lt;td&gt;$11$&lt;/td&gt;
+&lt;td&gt;$16$&lt;/td&gt;
+&lt;td&gt;$22$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$\Delta R_n$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$3$&lt;/td&gt;
+&lt;td&gt;$4$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;td&gt;$6$&lt;/td&gt;
+&lt;td&gt;$7$&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;$\Delta^2 R_n$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Por consiguiente, la sucesión $(R_n)$ es una progresión aritmética de orden dos, luego, por los resultados teóricos asociados a este tipo de sucesiones,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+R_n &amp;amp;= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 R_1\\ &amp;amp;= 1\cdot2 + (n-1)\cdot2 + \dfrac{(n-1)(n-2)}{2}\cdot1\\ &amp;amp;= \dfrac{4 + 4(n-1) + (n-1)(n-2)}{2}\\ &amp;amp;= \dfrac{n^2+n+2}{2},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;arribando al mismo resultado que antes.&lt;/p&gt;
 </description>
     </item>
     
@@ -13310,7 +13436,7 @@ $$&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/tags/combinatoria/&#34;&gt;Combinatoria&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/&#34;&gt;75&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
