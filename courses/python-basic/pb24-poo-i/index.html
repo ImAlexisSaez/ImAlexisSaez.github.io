@@ -27,12 +27,13 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Una tupla es una lista inmutable que
- no permite añadir, eliminar, mover elementos&hellip; permite la extracción de porciones, que continuan siendo tuplas, y posibilita búsquedas de índice (.index()) y comprobaciones de si un elemento pertenece o no a ella (in).  Son útiles porque
- son más rápidas en cuanto a ejecución se refiere, requieren menos espacio (mayor optimización), formatean cadenas de texto, y pueden utilizarse como claves en un diccionario, a diferencia de las listas.">
+  <meta name="description" content="Vídeo   Notas personales Python es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:
+ Programación orientada a procedimientos. Programación orientada a objetos.  Programación orientada a procedimientos Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;
+Entre sus principales desventajas encontramos:
+ Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb08-tuplas/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
 
   
 
@@ -121,7 +122,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb08-tuplas/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
 
   
   
@@ -135,23 +136,24 @@
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb08-tuplas/">
-  <meta property="og:title" content="8. Tuplas | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Una tupla es una lista inmutable que
- no permite añadir, eliminar, mover elementos&hellip; permite la extracción de porciones, que continuan siendo tuplas, y posibilita búsquedas de índice (.index()) y comprobaciones de si un elemento pertenece o no a ella (in).  Son útiles porque
- son más rápidas en cuanto a ejecución se refiere, requieren menos espacio (mayor optimización), formatean cadenas de texto, y pueden utilizarse como claves en un diccionario, a diferencia de las listas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
+  <meta property="og:title" content="24. Programación orientada a objetos I | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Python es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:
+ Programación orientada a procedimientos. Programación orientada a objetos.  Programación orientada a procedimientos Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;
+Entre sus principales desventajas encontramos:
+ Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado)."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-04-30T00:01:00&#43;01:00">
+  <meta property="article:published_time" content="2019-05-08T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-04-30T00:01:00&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-08T00:00:01&#43;01:00">
   
 
   
 
-  <title>8. Tuplas | Infinitos Contrastes</title>
+  
+
+  <title>24. Programación orientada a objetos I | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -427,7 +429,7 @@
         <a href="/courses/python-basic/pb07-listas/">7. Listas</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb08-tuplas/">8. Tuplas</a>
       </li>
       
@@ -491,7 +493,7 @@
         <a href="/courses/python-basic/pb23-excepciones-iii/">23. Excepciones III</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb24-poo-i/">24. POO I</a>
       </li>
       
@@ -512,7 +514,7 @@
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">8. Tuplas</h1>
+          <h1 itemprop="name">24. Programación orientada a objetos I</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -521,97 +523,89 @@
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/Ufqh8aoR9hE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/5Ohme4A2Weg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Una <strong>tupla</strong> es una lista inmutable que</p>
+<p><em>Python</em> es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:</p>
+
+<ol>
+<li>Programación orientada a procedimientos.</li>
+<li>Programación orientada a objetos.</li>
+</ol>
+
+<h3 id="programación-orientada-a-procedimientos">Programación orientada a procedimientos</h3>
+
+<p>Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;</p>
+
+<p>Entre sus principales desventajas encontramos:</p>
 
 <ul>
-<li>no permite añadir, eliminar, mover elementos&hellip;</li>
-<li>permite la extracción de porciones, que continuan siendo tuplas, y</li>
-<li>posibilita búsquedas de índice (<code>.index()</code>) y comprobaciones de si un elemento pertenece o no a ella (<code>in</code>).</li>
+<li>Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).</li>
+<li>En aplicaciones complejas, el código resulta difícil de descifrar.</li>
+<li>Las aplicaciones generadas suelen ser poco reutilizables.</li>
+<li>Si existen fallos en alguna línea del código, es muy probable que el programa caiga en su totalidad.</li>
+<li>Aparición frecuente de <strong>código espaguetti</strong> (saltos en el flujo de ejecución del programa).</li>
+<li>Es difícil de depurar el código por otros programadores en caso de necesidad o error.</li>
 </ul>
 
-<p>Son útiles porque</p>
+<h3 id="programación-orientada-a-objetos">Programación orientada a objetos</h3>
+
+<p>La programación orientada a objetos consiste en trasladar el comportamiento que tienen los objetos en la vida real al código de programación. Los objetos tienen un estado, un comportamiento (¿qué puede hacer?) y unas propiedades.</p>
+
+<p>Por ejemplo, pensemos en el objeto &ldquo;coche&rdquo;:</p>
 
 <ul>
-<li>son más rápidas en cuanto a ejecución se refiere,</li>
-<li>requieren menos espacio (mayor optimización),</li>
-<li>formatean cadenas de texto, y</li>
-<li>pueden utilizarse como claves en un diccionario, a diferencia de las listas.</li>
+<li>¿Cuál es el estado de un coche? Puede estar parado, circulando, aparcado&hellip;</li>
+<li>¿Qué propiedades tiene un coche? Tiene un color, un peso, un tamaño&hellip;</li>
+<li>¿Qué comportamiento tiene un coche? Puede arrancar, frenar, acelerar, girar&hellip;</li>
 </ul>
 
-<p>Su sintaxis es <code>nombre = (elem1, elem2, elem3...)</code>, siendo el uso de los paréntesis opcional aunque recomendable. El acceso a los elementos funciona como en las listas.</p>
+<table>
+<thead>
+<tr>
+<th>Objeto</th>
+<th>Coche</th>
+</tr>
+</thead>
 
-<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 10, 1, 1995)
+<tbody>
+<tr>
+<td>Propiedades (atributos)</td>
+<td>Color, peso, alto, largo&hellip;</td>
+</tr>
 
-print(mi_tupla) # (&quot;Alexis&quot;, 10, 1, 1995)
-print(mi_tupla[1]) # 10
-print(mi_tupla[-1]) # 1995
-</code></pre>
+<tr>
+<td>Comportamiento</td>
+<td>Arrancar, frenar, girar, acelerar&hellip;</td>
+</tr>
+</tbody>
+</table>
 
-<p>Existen funciones que nos permiten convertir tuplas en listas (<code>list()</code>) y viceversa (<code>tuple()</code>):</p>
+<p>Algunos ejemplos de lenguajes de programación que emplean este paradigma son: C++, Java, VisualNet&hellip;</p>
 
-<pre><code class="language-python">mi_lista = list(mi_tupla)
-print(mi_lista) # [&quot;Alexis&quot;, 10, 1, 1995]
+<p>Entre las principales ventajas encontramos:</p>
 
-mi_tupla = tuple(mi_lista)
-print(mi_tupla) # (&quot;Alexis&quot;, 10, 1, 1995)
-</code></pre>
+<ul>
+<li>Los programas están divididos en &ldquo;trozos&rdquo;, &ldquo;partes&rdquo;, &ldquo;módulos&rdquo; o &ldquo;clases&rdquo;, es decir, existe <strong>modularización</strong>.</li>
+<li>El código es muy reutilizable. Aparece en el concepto de <strong>herencia</strong>.</li>
+<li>Si existen fallos en alguna línea del código, el programa es posible que continue con su funcionamiento, debido al <strong>control de excepciones</strong>.</li>
+<li>Surge el concepto de <strong>encapsulamiento</strong>.</li>
+</ul>
 
-<p>Comprobamos la pertenencia de un elemento a la tupla mediante <code>in</code>:</p>
+<p>El vocabulario más frecuente de este paradigma de programación incluye palabras o expresiones como:</p>
 
-<pre><code class="language-python">print(&quot;Alexis&quot; in mi_tupla) # True
-print(3.14 in mi_tupla) # False
-</code></pre>
-
-<p>Con <code>.count()</code> obtenemos el número de elementos que se encuentran dentro de una tupla:</p>
-
-<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 1, 2, 2, True, 2, &quot;Alexis&quot;)
-
-print(mi_tupla.count(&quot;Alexis&quot;)) # 2
-print(mi_tupla.count(1)) # 2 (True cuenta como 1)
-print(mi_tupla.count(2)) # 3
-</code></pre>
-
-<p>El método <code>len</code> nos permite hallar la longitud de una tupla, siendo el índice del último elemento igual a <code>len - 1</code>:</p>
-
-<pre><code class="language-python">print(len(mi_tupla)) # 7
-print(mi_tupla[len(mi_tupla) - 1]) # &quot;Alexis&quot;
-</code></pre>
-
-<p>Podemos crear tuplas unitarias siguiendo el patrón <code>nombre = (elem,)</code>:</p>
-
-<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;,)
-
-print(type(mi_tupla)) # &lt;class 'tuple'&gt;
-print(len(mi_tupla)) # 1
-</code></pre>
-
-<p>Como mencionamos, los paréntesis son opcionales:</p>
-
-<pre><code class="language-python">mi_tupla = &quot;Alexis&quot;, 3.14, True, 10
-
-print(type(mi_tupla)) # &lt;class 'tuple'&gt;
-print(mi_tupla) # (&quot;Alexis&quot;, 3.14, True, 10)
-</code></pre>
-
-<p>Esta sintaxis se conoce como <strong>empaquetado de tupla</strong> y hemos de ser cautos, pues en un futuro, al combinarla con el uso de funciones, puede dar lugar a confusiones.</p>
-
-<p>El proceso inverso, <strong>desempaquetado de tuplas</strong>, nos permite asignar los elementos de una tupla a diferentes variables:</p>
-
-<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 3.14, True, 10)
-
-nombre, pi, alto, mes = mi_tupla
-
-print(nombre) # Alexis
-print(pi) # 3.14
-print(alto) # True
-print(mes) # 10
-</code></pre>
+<ul>
+<li>Clase.</li>
+<li>Objeto.</li>
+<li>Ejemplar de clase. Instancia de clase. Ejemplarizar una clase. Instanciar una clase.</li>
+<li>Modularización.</li>
+<li>Encapsulamiento / encapsulación.</li>
+<li>Herencia.</li>
+<li>Polimorfismo.</li>
+</ul>
 
           </div>
 
@@ -628,15 +622,9 @@ print(mes) # 10
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb07-listas/" rel="next">7. Listas</a>
+    <a href="/courses/python-basic/pb23-excepciones-iii/" rel="next">23. Excepciones III</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb09-diccionarios/" rel="prev">9. Diccionarios</a>
-  </div>
   
 </div>
 
@@ -645,7 +633,7 @@ print(mes) # 10
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-04-30
+          Última actualización el 2019-05-08
         </div>
 
       </article>
