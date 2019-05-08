@@ -2654,6 +2654,121 @@ Programa terminado.
     </item>
     
     <item>
+      <title>26. Programación orientada a objetos III</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb26-poo-iii/</link>
+      <pubDate>Wed, 08 May 2019 00:00:03 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb26-poo-iii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Y_SiIgxc-xI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Traslademos a código fuente algunos de los conceptos examinados en las dos lecciones anteriores. La sintaxis para crear la clase &lt;code&gt;Coche&lt;/code&gt; sería:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    instrucciones
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Empecemos declarando las &lt;strong&gt;propiedades&lt;/strong&gt; de la clase &lt;code&gt;Coche&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Definamos &lt;strong&gt;comportamientos&lt;/strong&gt; para los futuros objetos que pertenezcan a esta clase, que vienen determinados por distintos métodos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def function(self):
+        pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En &lt;em&gt;Sublime Text 3&lt;/em&gt; cuando empezamos a escribir &lt;code&gt;def&lt;/code&gt; nos ofrece dos opciones, crear una &lt;strong&gt;función&lt;/strong&gt; o un &lt;strong&gt;método&lt;/strong&gt;. La principal diferencia radica en que la primera no pertenece a ninguna clase, al contrario que la segunda. Podemos, a través de los cursores, escoger en el editor la opción que apunta a un método y se nos proporciona la sintaxis de uno por defecto, como el que se muestra arriba.&lt;/p&gt;
+
+&lt;p&gt;Una vez editado, el código queda:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: &lt;code&gt;self&lt;/code&gt; hace referencia al propio objeto perteneciente a la clase, es decir, a la instancia perteneciente a la clase.&lt;/p&gt;
+
+&lt;p&gt;Construyamos un objeto de la clase &lt;code&gt;Coche&lt;/code&gt; y veamos cómo acceder a sus propiedades:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche = Coche()  # Instanciación de una clase
+
+print(&amp;quot;Largo del coche: &amp;quot;, mi_coche.largo_chasis)  # Largo del coche:  250
+print(&amp;quot;Número de ruedas: &amp;quot;, mi_coche.ruedas)  # Número de ruedas:  4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Trabajemos en el método declarado, para ello, escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, ahora:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;En marcha: &amp;quot;, mi_coche.en_marcha)  # En marcha:  False
+mi_coche.arrancar()
+print(&amp;quot;En marcha: &amp;quot;, mi_coche.en_marcha)  # En marcha:  True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esta última acción la podríamos haber llevado a cabo a través de otro comportamiento, &lt;code&gt;estado&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+
+    def estado(self):
+        if self.en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+
+print(mi_coche.estado())  # El coche está parado.
+mi_coche.arrancar()
+print(mi_coche.estado())  # El coche está en marcha.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En resumen, hemos creado la clase &lt;code&gt;Coche&lt;/code&gt;, que se caracteriza por poseer cuatro propiedades y dos comportamientos.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Secantes dos a dos, pero tres a tres no concurrentes</title>
       <link>https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/</link>
       <pubDate>Wed, 08 May 2019 05:59:39 +0200</pubDate>
