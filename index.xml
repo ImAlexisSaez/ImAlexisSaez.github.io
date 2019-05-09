@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Wed, 08 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -2765,6 +2765,190 @@ print(mi_coche.estado())  # El coche está en marcha.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;En resumen, hemos creado la clase &lt;code&gt;Coche&lt;/code&gt;, que se caracteriza por poseer cuatro propiedades y dos comportamientos.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>27. Programación orientada a objetos IV</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/</link>
+      <pubDate>Thu, 09 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/x5CY8fVyYLo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Partamos del código del último ejemplo de la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+
+    def estado(self):
+        if self.en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Generemos dos objetos y comparémoslos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche1 = Coche()
+mi_coche2 = Coche()
+
+print(&amp;quot;Largo mi_coche1: &amp;quot;, mi_coche1.largo_chasis)  # Largo mi_coche1:  250
+print(&amp;quot;Largo mi_coche2: &amp;quot;, mi_coche2.largo_chasis)  # Largo mi_coche2:  250
+
+mi_coche1.arrancar()
+print(mi_coche1.estado())  # El coche está en marcha.
+print(mi_coche2.estado())  # El coche está parado.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sería buena idea que el método &lt;code&gt;arrancar()&lt;/code&gt;, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método &lt;code&gt;estado()&lt;/code&gt; para que nos ofrezca información del coche:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.largo_chasis, &amp;quot;cm.&amp;quot;)
+
+
+mi_coche1 = Coche()
+mi_coche2 = Coche()
+
+print(mi_coche1.arrancar(True))  # El coche está en marcha.
+print(mi_coche2.arrancar(False))  # # El coche está parado.
+mi_coche1.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+mi_coche2.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como &lt;strong&gt;estado inicial&lt;/strong&gt;. Para especificar dicho estado utilizaremos un &lt;strong&gt;constructor&lt;/strong&gt;, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def __init__(self):
+    propiedades
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, el código de la clase quedaría:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.largo_chasis, &amp;quot;cm.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.ruedas = 5
+
+mi_coche2.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El coche está parado.
+El coche tiene 5 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de &lt;strong&gt;encapsulación&lt;/strong&gt;, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con &lt;code&gt;__&lt;/code&gt; el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.__ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.__ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.largo_chasis, &amp;quot;cm.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.__ruedas = 5
+
+mi_coche2.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El coche está parado.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso &lt;code&gt;en_marcha&lt;/code&gt;, ya que queremos modificarla únicamente desde el interior de la clase.&lt;/p&gt;
+
+&lt;p&gt;La clase entonces quedaría:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+        if self.__en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.__ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.__ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.__largo_chasis,
+              &amp;quot;cm.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.&lt;/p&gt;
 </description>
     </item>
     

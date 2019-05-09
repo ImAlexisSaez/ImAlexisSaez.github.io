@@ -27,12 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los bucles.
-La utilidad de un bucle es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En Python tenemos dos tipos de bucles:
- determinados: sabemos a priori cuántas veces se repetirá el bloque de código, e indeterminados: desconocemos a priori el número de repeticiones del bloque de código.">
+  <meta name="description" content="Vídeo   Notas personales Partamos del código del último ejemplo de la lección anterior:
+class Coche(): largo_chasis = 250 ancho_chasis = 120 ruedas = 4 en_marcha = False def arrancar(self): self.en_marcha = True def estado(self): if self.en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot;  Generemos dos objetos y comparémoslos:
+mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis) # Largo mi_coche1: 250 print(&quot;Largo mi_coche2: &quot;, mi_coche2.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
 
   
 
@@ -121,7 +121,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
 
   
   
@@ -135,23 +135,23 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
-  <meta property="og:title" content="14. Bucles I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los bucles.
-La utilidad de un bucle es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En Python tenemos dos tipos de bucles:
- determinados: sabemos a priori cuántas veces se repetirá el bloque de código, e indeterminados: desconocemos a priori el número de repeticiones del bloque de código."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
+  <meta property="og:title" content="27. Programación orientada a objetos IV | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Partamos del código del último ejemplo de la lección anterior:
+class Coche(): largo_chasis = 250 ancho_chasis = 120 ruedas = 4 en_marcha = False def arrancar(self): self.en_marcha = True def estado(self): if self.en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot;  Generemos dos objetos y comparémoslos:
+mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis) # Largo mi_coche1: 250 print(&quot;Largo mi_coche2: &quot;, mi_coche2."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-01T00:02:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-09T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-01T00:02:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-09T00:00:01&#43;01:00">
   
 
   
 
-  <title>14. Bucles I | Infinitos Contrastes</title>
+  
+
+  <title>27. Programación orientada a objetos IV | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -451,7 +451,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         <a href="/courses/python-basic/pb13-condicionales-iv/">13. Condicionales IV</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb14-bucles-i/">14. Bucles I</a>
       </li>
       
@@ -503,7 +503,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         <a href="/courses/python-basic/pb26-poo-iii/">26. POO III</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb27-poo-iv/">27. POO IV</a>
       </li>
       
@@ -546,7 +546,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">14. Bucles I</h1>
+          <h1 itemprop="name">27. Programación orientada a objetos IV</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -555,70 +555,175 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/GQGhU1526Oo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/x5CY8fVyYLo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los <strong>bucles</strong>.</p>
+<p>Partamos del código del último ejemplo de la lección anterior:</p>
 
-<p>La utilidad de un <strong>bucle</strong> es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En <em>Python</em> tenemos dos tipos de bucles:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
 
-<ul>
-<li><em>determinados</em>: sabemos a priori cuántas veces se repetirá el bloque de código, e</li>
-<li><em>indeterminados</em>: desconocemos a priori el número de repeticiones del bloque de código.</li>
-</ul>
+    def arrancar(self):
+        self.en_marcha = True
 
-<p>Empecemos viendo el primer tipo, al que pertenece la instrucción <code>for</code>, cuya sintaxis es:</p>
-
-<pre><code class="language-python">for variable in elemento_a_recorrer:
-    instrucciones
+    def estado(self):
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
 </code></pre>
 
-<p>donde el <code>elemento_a_recorrer</code> puede ser una lista, una tupla, una cadena de texto&hellip;</p>
+<p>Generemos dos objetos y comparémoslos:</p>
 
-<p>Por ejemplo, para imprimir tres veces una palabra, una posible estrategia sería:</p>
+<pre><code class="language-python">mi_coche1 = Coche()
+mi_coche2 = Coche()
 
-<pre><code class="language-python">for i in [1, 2, 3]:
-    print(&quot;Hola&quot;)
+print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis)  # Largo mi_coche1:  250
+print(&quot;Largo mi_coche2: &quot;, mi_coche2.largo_chasis)  # Largo mi_coche2:  250
+
+mi_coche1.arrancar()
+print(mi_coche1.estado())  # El coche está en marcha.
+print(mi_coche2.estado())  # El coche está parado.
 </code></pre>
 
-<p>Aunque hemos utilizado una lista de números, no es imprescindible. El siguiente ejemplo consigue el mismo resultado:</p>
+<p>Sería buena idea que el método <code>arrancar()</code>, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método <code>estado()</code> para que nos ofrezca información del coche:</p>
 
-<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(&quot;Hola&quot;)
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+
+
+mi_coche1 = Coche()
+mi_coche2 = Coche()
+
+print(mi_coche1.arrancar(True))  # El coche está en marcha.
+print(mi_coche2.arrancar(False))  # # El coche está parado.
+mi_coche1.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+mi_coche2.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 </code></pre>
 
-<p>En ambos casos, el elemento a recorrer es una lista de tres elementos y es por ello que el mensaje <code>&quot;Hola&quot;</code> se repite en tres ocasiones, tantas como el mencionado número de elementos de la correspondiente lista.</p>
+<p>En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como <strong>estado inicial</strong>. Para especificar dicho estado utilizaremos un <strong>constructor</strong>, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por</p>
 
-<p>Si en lugar de un texto predeterminado optamos por imprimir la propia variable en ambos casos, el resultado es:</p>
-
-<pre><code class="language-python">for i in [1, 2, 3]:
-    print(i)
-
-# 1
-# 2
-# 3
+<pre><code class="language-python">def __init__(self):
+    propiedades
 </code></pre>
 
-<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(i)
+<p>Así, el código de la clase quedaría:</p>
 
-# enero
-# febrero
-# marzo
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
 </code></pre>
 
-<p>La variable no tiene que denominarse necesariamente <code>i</code>:</p>
+<p>¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?</p>
 
-<pre><code class="language-python">for meses in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(meses)
+<pre><code class="language-python">mi_coche2 = Coche()
 
-# enero
-# febrero
-# marzo
+print(mi_coche2.arrancar(False))
+
+mi_coche2.ruedas = 5
+
+mi_coche2.estado()
 </code></pre>
+
+<pre><code class="language-bash">El coche está parado.
+El coche tiene 5 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+
+<p>Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de <strong>encapsulación</strong>, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con <code>__</code> el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:</p>
+
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.__ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+</code></pre>
+
+<pre><code class="language-python">mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.__ruedas = 5
+
+mi_coche2.estado()
+</code></pre>
+
+<pre><code class="language-bash">El coche está parado.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+
+<p>En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso <code>en_marcha</code>, ya que queremos modificarla únicamente desde el interior de la clase.</p>
+
+<p>La clase entonces quedaría:</p>
+
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+        if self.__en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
+              &quot;cm.&quot;)
+</code></pre>
+
+<p>De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.</p>
 
           </div>
 
@@ -635,15 +740,9 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb13-condicionales-iv/" rel="next">13. Condicionales IV</a>
+    <a href="/courses/python-basic/pb26-poo-iii/" rel="next">26. Programación orientada a objetos III</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb15-bucles-ii/" rel="prev">15. Bucles II</a>
-  </div>
   
 </div>
 
@@ -652,7 +751,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-01
+          Última actualización el 2019-05-09
         </div>
 
       </article>
