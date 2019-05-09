@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 09 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 00:00:03 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -3137,6 +3137,75 @@ AttributeError: &#39;Coche&#39; object has no attribute &#39;__chequeo_interno&#
 &lt;p&gt;Es decir, &lt;em&gt;Python&lt;/em&gt; arroja un error. No nos deja llamar al método &lt;code&gt;__chequeo_interno()&lt;/code&gt; desde fuera de la propia clase &lt;code&gt;Coche&lt;/code&gt; porque está encapsulado.&lt;/p&gt;
 
 &lt;p&gt;¿Cuándo encapsular una variable o un método? No existe una &amp;ldquo;regla de oro&amp;rdquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>29. Programación orientada a objetos VI</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb29-poo-vi/</link>
+      <pubDate>Thu, 09 May 2019 00:00:03 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb29-poo-vi/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/u_VbLsIyzRk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En programación orientada a objetos, el concepto de &lt;strong&gt;herencia&lt;/strong&gt; intenta dar una réplica aproximada de su contrapartida en la vida real. De una clase, denominada en ocasiones &lt;strong&gt;clase padre&lt;/strong&gt; o &lt;strong&gt;superclase&lt;/strong&gt;, heredarán otras clases atributos, métodos&amp;hellip; Se conocen estas últimas como &lt;strong&gt;subclases&lt;/strong&gt; de la anterior (y también como &lt;strong&gt;superclases&lt;/strong&gt; si de ellas también heredan otras).&lt;/p&gt;
+
+&lt;p&gt;La principal utilidad de la herencia es la reutilización de código cuando se generan clases &amp;ldquo;similares&amp;rdquo;. Hemos de estudiar las características y comportamientos que poseen en común todos los objetos con los que deseamos trabajar. Todo ello lo englobaremos en una &lt;strong&gt;superclase&lt;/strong&gt;, de la cual luego heredarán otras clases, que aun teniendo características en común, también es cierto que existen otras peculiaridades que las diferencian.&lt;/p&gt;
+
+&lt;p&gt;Veamos un ejemplo práctico:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Clase Padre
+class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+
+
+# Clase hija
+class Moto(Vehiculo):
+    pass
+
+
+mi_moto = Moto(&amp;quot;Honda&amp;quot;, &amp;quot;CBR&amp;quot;)
+
+mi_moto.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Marca: Honda 
+Modelo: CBR 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Estamos utilizando métodos de la clase &lt;code&gt;Vehiculo&lt;/code&gt; a través de la clase &lt;code&gt;Moto&lt;/code&gt; gracias a la herencia.&lt;/p&gt;
 </description>
     </item>
     
