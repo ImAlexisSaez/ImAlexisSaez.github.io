@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 09 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 09 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -2949,6 +2949,194 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>28. Programación orientada a objetos V</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb28-poo-v/</link>
+      <pubDate>Thu, 09 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb28-poo-v/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/OU-e2uhoGxE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+        if self.__en_marcha:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.__ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.__ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.__largo_chasis,
+              &amp;quot;cm.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Encapsular un método es hacer que sea únicamente accesible desde la propia clase, no desde fuera.&lt;/p&gt;
+
+&lt;p&gt;Como aplicación práctica de este procedimiento, generemos un método que compruebe que todo está en orden antes de arrancar, &lt;code&gt;chequeo_interno(self)&lt;/code&gt;, que llamaremos desde &lt;code&gt;arrancar()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+
+        if self.__en_marcha:
+            chequeo = self.chequeo_interno()
+
+        if self.__en_marcha and chequeo:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        elif self.__en_marcha and not chequeo:
+            return &amp;quot;Algo ha ido mal en el chequeo. No podemos arrancar.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.__ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.__ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.__largo_chasis,
+              &amp;quot;cm.&amp;quot;)
+
+    def chequeo_interno(self):
+        print(&amp;quot;Realizando chequeo interno.&amp;quot;)
+
+        self.gas = &amp;quot;Ok&amp;quot;
+        self.aceite = &amp;quot;Ok&amp;quot;
+        self.puertas = &amp;quot;Ok&amp;quot;
+
+        if self.gas == &amp;quot;Ok&amp;quot; and self.aceite == &amp;quot;Ok&amp;quot; and self.puertas == &amp;quot;Ok&amp;quot;:
+            return True
+        else:
+            return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, si ahora tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche1 = Coche()
+
+print(mi_coche1.arrancar(True))
+
+mi_coche1.estado()
+
+print(&amp;quot;---- Segundo vehículo ----&amp;quot;)
+
+mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El resultado será:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Realizando chequeo interno.
+El coche está en marcha.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+---- Segundo vehículo ----
+El coche está parado.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El método &lt;code&gt;chequeo_interno()&lt;/code&gt; es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &amp;ldquo;protegerlo&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+print(mi_coche2.chequeo_interno())  # Absurdo en este caso
+mi_coche2.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El coche está parado.
+Realizando chequeo interno.
+True
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para encapsular el mencionado método, utilizamos la estrategia de &lt;code&gt;__&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+
+        if self.__en_marcha:
+            chequeo = self.__chequeo_interno()
+
+        if self.__en_marcha and chequeo:
+            return &amp;quot;El coche está en marcha.&amp;quot;
+        elif self.__en_marcha and not chequeo:
+            return &amp;quot;Algo ha ido mal en el chequeo. No podemos arrancar.&amp;quot;
+        else:
+            return &amp;quot;El coche está parado.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;El coche tiene&amp;quot;, self.__ruedas, &amp;quot;ruedas. Un ancho de&amp;quot;,
+              self.__ancho_chasis, &amp;quot;cm y un largo de&amp;quot;, self.__largo_chasis,
+              &amp;quot;cm.&amp;quot;)
+
+    def __chequeo_interno(self):
+        print(&amp;quot;Realizando chequeo interno.&amp;quot;)
+
+        self.gas = &amp;quot;Ok&amp;quot;
+        self.aceite = &amp;quot;Ok&amp;quot;
+        self.puertas = &amp;quot;Ok&amp;quot;
+
+        if self.gas == &amp;quot;Ok&amp;quot; and self.aceite == &amp;quot;Ok&amp;quot; and self.puertas == &amp;quot;Ok&amp;quot;:
+            return True
+        else:
+            return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De forma que si ahora escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+print(mi_coche2.__chequeo_interno())
+mi_coche2.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El resultado es:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El coche está parado.
+Traceback (most recent call last):
+  File &amp;quot;prac28_poo5_1.py&amp;quot;, line 50, in &amp;lt;module&amp;gt;
+    print(mi_coche2.__chequeo_interno())
+AttributeError: &#39;Coche&#39; object has no attribute &#39;__chequeo_interno&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es decir, &lt;em&gt;Python&lt;/em&gt; arroja un error. No nos deja llamar al método &lt;code&gt;__chequeo_interno()&lt;/code&gt; desde fuera de la propia clase &lt;code&gt;Coche&lt;/code&gt; porque está encapsulado.&lt;/p&gt;
+
+&lt;p&gt;¿Cuándo encapsular una variable o un método? No existe una &amp;ldquo;regla de oro&amp;rdquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.&lt;/p&gt;
 </description>
     </item>
     
