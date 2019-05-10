@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Fri, 10 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -3697,6 +3697,97 @@ Modelo: HCI30
 En marcha: False 
 Acelerando: False 
 Frenando: False
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>32. Programación orientada a objetos IX</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/</link>
+      <pubDate>Fri, 10 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/kV1cN_bqcSw&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección abordaremos el concepto de &lt;strong&gt;polimorfismo&lt;/strong&gt;. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto propiedades como comportamientos asociados.&lt;/p&gt;
+
+&lt;p&gt;Como &lt;em&gt;Python&lt;/em&gt; es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.&lt;/p&gt;
+
+&lt;p&gt;Veamos un ejemplo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Coche():
+    def desplazamiento(self):
+        print(&amp;quot;Me desplazo utilizando cuatro ruedas.&amp;quot;)
+
+
+class Moto():
+    def desplazamiento(self):
+        print(&amp;quot;Me desplazo utilizando dos ruedas.&amp;quot;)
+
+
+class Camion():
+    def desplazamiento(self):
+        print(&amp;quot;Me desplazo utilizando seis ruedas.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, si ahora tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_vehiculo = Moto()
+
+mi_vehiculo.desplazamiento()
+
+mi_vehiculo2 = Coche()
+
+mi_vehiculo2.desplazamiento()
+
+mi_vehiculo3 = Camion()
+
+mi_vehiculo3.desplazamiento()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Me desplazo utilizando dos ruedas.
+Me desplazo utilizando cuatro ruedas.
+Me desplazo utilizando seis ruedas.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.&lt;/p&gt;
+
+&lt;p&gt;No obstante, nos podemos aprovechar de la magia del polimorfimo creando una función como se muestra a continuación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def desplazamiento_vehiculo(vehiculo):
+    vehiculo.desplazamiento()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y como el objeto &lt;code&gt;vehiculo&lt;/code&gt; posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), &lt;em&gt;Python&lt;/em&gt; en todo momento sabrá a qué método &lt;code&gt;desplazamiento()&lt;/code&gt; acudir en cada momento.&lt;/p&gt;
+
+&lt;p&gt;Así, si escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_vehiculo = Camion()
+
+desplazamiento_vehiculo(mi_vehiculo)
+
+mi_vehiculo = Coche()
+
+desplazamiento_vehiculo(mi_vehiculo)
+
+mi_vehiculo = Moto()
+
+desplazamiento_vehiculo(mi_vehiculo)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Me desplazo utilizando seis ruedas.
+Me desplazo utilizando cuatro ruedas.
+Me desplazo utilizando dos ruedas.
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
