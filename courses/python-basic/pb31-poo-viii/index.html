@@ -27,13 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Python es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:
- Programación orientada a procedimientos. Programación orientada a objetos.  Programación orientada a procedimientos Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;
-Entre sus principales desventajas encontramos:
- Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).">
+  <meta name="description" content="Vídeo   Notas personales En esta lección estudiaremos el uso de las funciones
+ super() e isinstance().  Partimos del último ejemplo de la lección anterior:
+class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
 
   
 
@@ -122,7 +121,7 @@ Entre sus principales desventajas encontramos:
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
 
   
   
@@ -136,24 +135,23 @@ Entre sus principales desventajas encontramos:
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb24-poo-i/">
-  <meta property="og:title" content="24. Programación orientada a objetos I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Python es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:
- Programación orientada a procedimientos. Programación orientada a objetos.  Programación orientada a procedimientos Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;
-Entre sus principales desventajas encontramos:
- Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado)."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
+  <meta property="og:title" content="31. Programación orientada a objetos VIII | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección estudiaremos el uso de las funciones
+ super() e isinstance().  Partimos del último ejemplo de la lección anterior:
+class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-08T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-10T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-08T00:00:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-10T00:00:01&#43;01:00">
   
 
   
 
-  <title>24. Programación orientada a objetos I | Infinitos Contrastes</title>
+  
+
+  <title>31. Programación orientada a objetos VIII | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -493,7 +491,7 @@ Entre sus principales desventajas encontramos:
         <a href="/courses/python-basic/pb23-excepciones-iii/">23. Excepciones III</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb24-poo-i/">24. POO I</a>
       </li>
       
@@ -521,7 +519,7 @@ Entre sus principales desventajas encontramos:
         <a href="/courses/python-basic/pb30-poo-vii/">30. POO VII</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb31-poo-viii/">31. POO VIII</a>
       </li>
       
@@ -546,11 +544,7 @@ Entre sus principales desventajas encontramos:
 <li>
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a>
-<ul>
-<li><a href="#programación-orientada-a-procedimientos">Programación orientada a procedimientos</a></li>
-<li><a href="#programación-orientada-a-objetos">Programación orientada a objetos</a></li>
-</ul></li>
+<li><a href="#notas-personales">Notas personales</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -568,7 +562,7 @@ Entre sus principales desventajas encontramos:
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">24. Programación orientada a objetos I</h1>
+          <h1 itemprop="name">31. Programación orientada a objetos VIII</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -577,89 +571,273 @@ Entre sus principales desventajas encontramos:
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/5Ohme4A2Weg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/oe04X1B14YY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p><em>Python</em> es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:</p>
-
-<ol>
-<li>Programación orientada a procedimientos.</li>
-<li>Programación orientada a objetos.</li>
-</ol>
-
-<h3 id="programación-orientada-a-procedimientos">Programación orientada a procedimientos</h3>
-
-<p>Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;</p>
-
-<p>Entre sus principales desventajas encontramos:</p>
+<p>En esta lección estudiaremos el uso de las funciones</p>
 
 <ul>
-<li>Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).</li>
-<li>En aplicaciones complejas, el código resulta difícil de descifrar.</li>
-<li>Las aplicaciones generadas suelen ser poco reutilizables.</li>
-<li>Si existen fallos en alguna línea del código, es muy probable que el programa caiga en su totalidad.</li>
-<li>Aparición frecuente de <strong>código espaguetti</strong> (saltos en el flujo de ejecución del programa).</li>
-<li>Es difícil de depurar el código por otros programadores en caso de necesidad o error.</li>
+<li><code>super()</code> e</li>
+<li><code>isinstance()</code>.</li>
 </ul>
 
-<h3 id="programación-orientada-a-objetos">Programación orientada a objetos</h3>
+<p>Partimos del último ejemplo de la lección anterior:</p>
 
-<p>La programación orientada a objetos consiste en trasladar el comportamiento que tienen los objetos en la vida real al código de programación. Los objetos tienen un estado, un comportamiento (¿qué puede hacer?) y unas propiedades.</p>
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
 
-<p>Por ejemplo, pensemos en el objeto &ldquo;coche&rdquo;:</p>
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+
+
+class VehiculoElec():
+    def __init__(self):
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+</code></pre>
+
+<p>Si queremos crear un objeto de la clase <code>BicicletaElec</code> que posea una marca y un modelo, tenemos dos opciones disponibles:</p>
 
 <ul>
-<li>¿Cuál es el estado de un coche? Puede estar parado, circulando, aparcado&hellip;</li>
-<li>¿Qué propiedades tiene un coche? Tiene un color, un peso, un tamaño&hellip;</li>
-<li>¿Qué comportamiento tiene un coche? Puede arrancar, frenar, acelerar, girar&hellip;</li>
+<li>Acudir al método <code>__init__()</code> de la clase <code>VehiculoElec</code> y copiar las líneas que nos interesen del método homónimo de la clase <code>Vehiculo</code>. No obstante, este enfoque es, cuanto menos, poco elegante.</li>
+<li>Utilizar la función <code>super()</code>, cuya utilidad reside en que procede a llamar al método de la clase padre.</li>
 </ul>
 
-<table>
-<thead>
-<tr>
-<th>Objeto</th>
-<th>Coche</th>
-</tr>
-</thead>
+<p>Veamos esta segunda aproximación con un ejemplo un tanto más sencillo:</p>
 
-<tbody>
-<tr>
-<td>Propiedades (atributos)</td>
-<td>Color, peso, alto, largo&hellip;</td>
-</tr>
+<pre><code class="language-python">class Persona():
+    def __init__(self, nombre, edad, residencia):
+        self.nombre = nombre
+        self.edad = edad
+        self.residencia = residencia
 
-<tr>
-<td>Comportamiento</td>
-<td>Arrancar, frenar, girar, acelerar&hellip;</td>
-</tr>
-</tbody>
-</table>
+    def describir(self):
+        print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
+              self.residencia)
 
-<p>Algunos ejemplos de lenguajes de programación que emplean este paradigma son: C++, Java, VisualNet&hellip;</p>
 
-<p>Entre las principales ventajas encontramos:</p>
+class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        self.salario = salario
+        self.antiguedad = antiguedad
+</code></pre>
+
+<p>Ahora podríamos comenzar a construir objetos de ambas clases:</p>
+
+<pre><code class="language-python">antonio = Persona(&quot;Antonio&quot;, 55, &quot;España&quot;)
+
+antonio.describir()
+</code></pre>
+
+<pre><code class="language-bash">Nombre: Antonio 
+Edad: 55 
+Residencia: España
+</code></pre>
+
+<p>Para constuir un objeto de la clase <code>Empleado</code>, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de <code>Persona</code>. No obstante, a la hora de emplear el método <code>describir()</code> encontraremos problemas tal y como están programadas ambas clases:</p>
+
+<pre><code class="language-python">juan = Empleado(1500, 15)
+
+juan.describir()
+</code></pre>
+
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;prac31_poo8_2.py&quot;, line 24, in &lt;module&gt;
+    juan.describir()
+  File &quot;prac31_poo8_2.py&quot;, line 8, in describir
+    print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
+AttributeError: 'Empleado' object has no attribute 'nombre'
+</code></pre>
+
+<p>Podemos reescribir el constructor de la clase <code>Empleado</code>, haciendo uso de la función <code>super()</code>, como sigue:</p>
+
+<pre><code class="language-python">class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        super().__init__(&quot;Juan&quot;, 33, &quot;Italia&quot;)
+        self.salario = salario
+        self.antiguedad = antiguedad
+</code></pre>
+
+<p>De manera que ahora el código no arrojará error alguno:</p>
+
+<pre><code class="language-python">juan = Empleado(1500, 15)
+
+juan.describir()
+</code></pre>
+
+<pre><code class="language-bash">Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+</code></pre>
+
+<p>No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:</p>
+
+<pre><code class="language-python">class Empleado(Persona):
+    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado,
+                 residencia_empleado):
+        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
+        self.salario = salario
+        self.antiguedad = antiguedad
+
+    def describir(self):
+        super().describir()
+        print(&quot;Salario:&quot;, self.salario, &quot;\nAntigüedad:&quot;, self.antiguedad)
+</code></pre>
+
+<p>De paso, hemos mejorado también el método <code>describir()</code>, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,</p>
+
+<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
+
+juan.describir()
+</code></pre>
+
+<pre><code class="language-bash">Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+Salario: 1500 
+Antigüedad: 15
+</code></pre>
+
+<p>La función <code>isinstance()</code> nos informa si un objeto es instancia de una clase determinada:</p>
+
+<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
+
+juan.describir()
+
+print(isinstance(juan, Persona))  # True
+print(isinstance(juan, Empleado))  # True
+
+marco = Persona(&quot;Marco&quot;, 51, &quot;Francia&quot;)
+
+print(isinstance(marco, Persona))  # True
+print(isinstance(marco, Empleado))  # False
+</code></pre>
+
+<p>Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.</p>
+
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+
+
+class VehiculoElec(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+</code></pre>
+
+<p>Notemos que:</p>
 
 <ul>
-<li>Los programas están divididos en &ldquo;trozos&rdquo;, &ldquo;partes&rdquo;, &ldquo;módulos&rdquo; o &ldquo;clases&rdquo;, es decir, existe <strong>modularización</strong>.</li>
-<li>El código es muy reutilizable. Aparece en el concepto de <strong>herencia</strong>.</li>
-<li>Si existen fallos en alguna línea del código, el programa es posible que continue con su funcionamiento, debido al <strong>control de excepciones</strong>.</li>
-<li>Surge el concepto de <strong>encapsulamiento</strong>.</li>
+<li>Hemos utilizado la función <code>super()</code> en el método <code>__init__()</code> de <code>VehiculoElec</code>.</li>
+<li>Hemos declarado que la clase <code>VehiculoElec</code> hereda de <code>Vehiculo</code>.</li>
 </ul>
 
-<p>El vocabulario más frecuente de este paradigma de programación incluye palabras o expresiones como:</p>
+<p>Así,</p>
 
-<ul>
-<li>Clase.</li>
-<li>Objeto.</li>
-<li>Ejemplar de clase. Instancia de clase. Ejemplarizar una clase. Instanciar una clase.</li>
-<li>Modularización.</li>
-<li>Encapsulamiento / encapsulación.</li>
-<li>Herencia.</li>
-<li>Polimorfismo.</li>
-</ul>
+<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
+
+mi_bici.estado()
+</code></pre>
+
+<pre><code class="language-bash">Marca: Orbea 
+Modelo: HCI30 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
 
           </div>
 
@@ -676,15 +854,9 @@ Entre sus principales desventajas encontramos:
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb23-excepciones-iii/" rel="next">23. Excepciones III</a>
+    <a href="/courses/python-basic/pb30-poo-vii/" rel="next">30. Programación orientada a objetos VII</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb25-poo-ii/" rel="prev">25. Programación orientada a objetos II</a>
-  </div>
   
 </div>
 
@@ -693,7 +865,7 @@ Entre sus principales desventajas encontramos:
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-08
+          Última actualización el 2019-05-10
         </div>
 
       </article>

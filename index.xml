@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 09 May 2019 00:00:04 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -3409,6 +3409,288 @@ mi_bici.estado()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;La ejecución ya no arroja errores, mostrando el siguiente resultado:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Marca: Orbea 
+Modelo: HCI30 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>31. Programación orientada a objetos VIII</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/</link>
+      <pubDate>Fri, 10 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/oe04X1B14YY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección estudiaremos el uso de las funciones&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;super()&lt;/code&gt; e&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isinstance()&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Partimos del último ejemplo de la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &amp;quot;La furgoneta está cargada.&amp;quot;
+        else:
+            return &amp;quot;La furgoneta no está cargada.&amp;quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &amp;quot;&amp;quot;
+
+    def caballito(self):
+        self.hcaballito = &amp;quot;Voy haciendo el caballito.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena, &amp;quot;\n&amp;quot;, self.hcaballito)
+
+
+class VehiculoElec():
+    def __init__(self):
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si queremos crear un objeto de la clase &lt;code&gt;BicicletaElec&lt;/code&gt; que posea una marca y un modelo, tenemos dos opciones disponibles:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Acudir al método &lt;code&gt;__init__()&lt;/code&gt; de la clase &lt;code&gt;VehiculoElec&lt;/code&gt; y copiar las líneas que nos interesen del método homónimo de la clase &lt;code&gt;Vehiculo&lt;/code&gt;. No obstante, este enfoque es, cuanto menos, poco elegante.&lt;/li&gt;
+&lt;li&gt;Utilizar la función &lt;code&gt;super()&lt;/code&gt;, cuya utilidad reside en que procede a llamar al método de la clase padre.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Veamos esta segunda aproximación con un ejemplo un tanto más sencillo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Persona():
+    def __init__(self, nombre, edad, residencia):
+        self.nombre = nombre
+        self.edad = edad
+        self.residencia = residencia
+
+    def describir(self):
+        print(&amp;quot;Nombre:&amp;quot;, self.nombre, &amp;quot;\nEdad:&amp;quot;, self.edad, &amp;quot;\nResidencia:&amp;quot;,
+              self.residencia)
+
+
+class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        self.salario = salario
+        self.antiguedad = antiguedad
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora podríamos comenzar a construir objetos de ambas clases:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;antonio = Persona(&amp;quot;Antonio&amp;quot;, 55, &amp;quot;España&amp;quot;)
+
+antonio.describir()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Nombre: Antonio 
+Edad: 55 
+Residencia: España
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para constuir un objeto de la clase &lt;code&gt;Empleado&lt;/code&gt;, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de &lt;code&gt;Persona&lt;/code&gt;. No obstante, a la hora de emplear el método &lt;code&gt;describir()&lt;/code&gt; encontraremos problemas tal y como están programadas ambas clases:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;juan = Empleado(1500, 15)
+
+juan.describir()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;prac31_poo8_2.py&amp;quot;, line 24, in &amp;lt;module&amp;gt;
+    juan.describir()
+  File &amp;quot;prac31_poo8_2.py&amp;quot;, line 8, in describir
+    print(&amp;quot;Nombre:&amp;quot;, self.nombre, &amp;quot;\nEdad:&amp;quot;, self.edad, &amp;quot;\nResidencia:&amp;quot;,
+AttributeError: &#39;Empleado&#39; object has no attribute &#39;nombre&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Podemos reescribir el constructor de la clase &lt;code&gt;Empleado&lt;/code&gt;, haciendo uso de la función &lt;code&gt;super()&lt;/code&gt;, como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        super().__init__(&amp;quot;Juan&amp;quot;, 33, &amp;quot;Italia&amp;quot;)
+        self.salario = salario
+        self.antiguedad = antiguedad
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De manera que ahora el código no arrojará error alguno:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;juan = Empleado(1500, 15)
+
+juan.describir()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Empleado(Persona):
+    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado,
+                 residencia_empleado):
+        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
+        self.salario = salario
+        self.antiguedad = antiguedad
+
+    def describir(self):
+        super().describir()
+        print(&amp;quot;Salario:&amp;quot;, self.salario, &amp;quot;\nAntigüedad:&amp;quot;, self.antiguedad)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De paso, hemos mejorado también el método &lt;code&gt;describir()&lt;/code&gt;, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;juan = Empleado(1500, 15, &amp;quot;Juan&amp;quot;, 33, &amp;quot;Italia&amp;quot;)
+
+juan.describir()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+Salario: 1500 
+Antigüedad: 15
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La función &lt;code&gt;isinstance()&lt;/code&gt; nos informa si un objeto es instancia de una clase determinada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;juan = Empleado(1500, 15, &amp;quot;Juan&amp;quot;, 33, &amp;quot;Italia&amp;quot;)
+
+juan.describir()
+
+print(isinstance(juan, Persona))  # True
+print(isinstance(juan, Empleado))  # True
+
+marco = Persona(&amp;quot;Marco&amp;quot;, 51, &amp;quot;Francia&amp;quot;)
+
+print(isinstance(marco, Persona))  # True
+print(isinstance(marco, Empleado))  # False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &amp;quot;La furgoneta está cargada.&amp;quot;
+        else:
+            return &amp;quot;La furgoneta no está cargada.&amp;quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &amp;quot;&amp;quot;
+
+    def caballito(self):
+        self.hcaballito = &amp;quot;Voy haciendo el caballito.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena, &amp;quot;\n&amp;quot;, self.hcaballito)
+
+
+class VehiculoElec(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notemos que:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hemos utilizado la función &lt;code&gt;super()&lt;/code&gt; en el método &lt;code&gt;__init__()&lt;/code&gt; de &lt;code&gt;VehiculoElec&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Hemos declarado que la clase &lt;code&gt;VehiculoElec&lt;/code&gt; hereda de &lt;code&gt;Vehiculo&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Así,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_bici = BicicletaElec(&amp;quot;Orbea&amp;quot;, &amp;quot;HCI30&amp;quot;)
+
+mi_bici.estado()
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Marca: Orbea 
 Modelo: HCI30 
