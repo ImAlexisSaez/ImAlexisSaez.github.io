@@ -3793,6 +3793,94 @@ Me desplazo utilizando dos ruedas.
     </item>
     
     <item>
+      <title>33. Métodos de cadenas</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb33-cadenas/</link>
+      <pubDate>Sat, 11 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb33-cadenas/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/zH0VsRuD2ok&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Examinemos algunos de los métodos disponibles en &lt;em&gt;Python&lt;/em&gt; a la hora de trabajar con cadenas de texto, que son objetos de tipo &lt;code&gt;String&lt;/code&gt;. Entre los más habituales encontramos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;upper()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lower()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;capitalize()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;count()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;find()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isdigit()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isalum()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;isalpha()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;split()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;strip()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;replace()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;rfind()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para obtener más información sobre su utilización, conviene que visitemos &lt;a href=&#34;http://pyspanishdoc.sourceforge.net/lib/string-methods.html&#34; target=&#34;_blank&#34;&gt;esta página&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Veamos algunos ejemplos sencillos que ilustren el uso de algunos de los anteriores métodos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nombre_usuario = input(&amp;quot;Introduce tu nombre de usuario: &amp;quot;)
+
+print(&amp;quot;El nombre es:&amp;quot;, nombre_usuario)
+print(&amp;quot;El nombre es:&amp;quot;, nombre_usuario.upper())
+print(&amp;quot;El nombre es:&amp;quot;, nombre_usuario.lower())
+print(&amp;quot;El nombre es:&amp;quot;, nombre_usuario.capitalize())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Introduce tu nombre de usuario: Alexis Sáez
+El nombre es: Alexis Sáez
+El nombre es: ALEXIS SÁEZ
+El nombre es: alexis sáez
+El nombre es: Alexis sáez
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Algunas de estas funciones resultan útiles a la hora de validar los datos que un usuario proporciona a nuestros programas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;edad = input(&amp;quot;Introduce la edad: &amp;quot;)
+
+while not edad.isdigit():
+    print(&amp;quot;Por favor, introduce un valor numérico.&amp;quot;)
+    edad = input(&amp;quot;Introduce la edad: &amp;quot;)
+
+if int(edad) &amp;lt; 18:
+    print(&amp;quot;No puede pasar.&amp;quot;)
+else:
+    print(&amp;quot;Puede pasar.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Introduce la edad: 8iu9
+Por favor, introduce un valor numérico.
+Introduce la edad: o9098
+Por favor, introduce un valor numérico.
+Introduce la edad: 99
+Puede pasar.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Ejercicio&lt;/strong&gt;: crea un programa que pida introducir una dirección de email por teclado. El programa debe imprimir en consola si la dirección de email es correcta o no en función de si esta tiene el símbolo &lt;code&gt;@&lt;/code&gt;. Si tiene una &lt;code&gt;@&lt;/code&gt; la dirección será correcta. Si tiene más de una o ninguna &lt;code&gt;@&lt;/code&gt; la dirección será errónea. Si la &lt;code&gt;@&lt;/code&gt; está al comienzo de la dirección de email o al final, la dirección también será errónea&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;email = input(&amp;quot;Introduce email: &amp;quot;)
+
+if email.count(&amp;quot;@&amp;quot;) == 1 and email.count(&amp;quot;@&amp;quot;, 1, len(email) - 1) == 1:
+    print(&amp;quot;La dirección de correo es correcta.&amp;quot;)
+else:
+    print(&amp;quot;La dirección de correo es incorrecta.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Buscando el total de soluciones de una inecuación</title>
       <link>https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/</link>
       <pubDate>Sat, 11 May 2019 05:59:39 +0200</pubDate>
