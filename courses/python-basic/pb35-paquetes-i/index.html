@@ -27,12 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Una clase es un modelo donde se redactan las características comunes de un grupo de objetos.
-Una instancia (o ejemplar u objeto) es un miembro concreto de una clase.
-La modularización surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas.">
+  <meta name="description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
+Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
+Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado prac35_calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
 
   
 
@@ -121,7 +121,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
 
   
   
@@ -135,23 +135,23 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
-  <meta property="og:title" content="25. Programación orientada a objetos II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Una clase es un modelo donde se redactan las características comunes de un grupo de objetos.
-Una instancia (o ejemplar u objeto) es un miembro concreto de una clase.
-La modularización surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
+  <meta property="og:title" content="35. Paquetes I | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
+Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
+Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado prac35_calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-08T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-05-12T00:00:02&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-08T00:00:02&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-12T00:00:02&#43;01:00">
   
 
   
 
-  <title>25. Programación orientada a objetos II | Infinitos Contrastes</title>
+  
+
+  <title>35. Paquetes I | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -495,7 +495,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         <a href="/courses/python-basic/pb24-poo-i/">24. POO I</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb25-poo-ii/">25. POO II</a>
       </li>
       
@@ -535,7 +535,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         <a href="/courses/python-basic/pb34-modulos/">34. Módulos</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb35-paquetes-i/">35. Paquetes I</a>
       </li>
       
@@ -578,7 +578,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">25. Programación orientada a objetos II</h1>
+          <h1 itemprop="name">35. Paquetes I</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -587,37 +587,116 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/2UNrSiKEI8w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Una <strong>clase</strong> es un modelo donde se redactan las características comunes de un grupo de objetos.</p>
+<p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
 
-<p>Una <strong>instancia</strong> (o <strong>ejemplar</strong> u <strong>objeto</strong>) es un miembro concreto de una clase.</p>
+<p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
 
-<p>La <strong>modularización</strong> surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas.</p>
+<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>prac35_calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
-<p>La <strong>encapsulación</strong> nos permite proteger el funcionamiento interno de cierto bloque de código, para que no pueda accederse o alterarse desde el exterior de manera inadecuada. No obstante, todas las clases de un programa estarán &ldquo;conectadas&rdquo; entre sí de cierta manera (mediante <strong>métodos de acceso</strong> a ciertas características de cada una de las clases).</p>
+<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>prac35_calculos</code> funcionará como un paquete.</p>
 
-<p>El mencionado acceso se llevará a cabo empleando la <strong>nomenclatura del punto</strong>. Por ejemplo, supongamos que hemos creado un objeto, de la clase <code>coche</code>, llamado <code>miCoche</code>. Para acceder a sus propiedades, utilizaremos la sintaxis:</p>
+<p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
 
-<ul>
-<li><code>miCoche.color = ''rojo''</code></li>
-<li><code>miCoche.peso = 1500</code></li>
-<li><code>miCoche.ancho = 2000</code></li>
-<li><code>miCoche.alto = 900</code></li>
-</ul>
+<pre><code class="language-python">def sumar(op1, op2):
+    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
 
-<p>De forma similar, el acceso al comportamiento de este objeto se realizará mediante la mencionada nomenclatura:</p>
 
-<ul>
-<li><code>miCoche.arranca()</code></li>
-<li><code>miCoche.frena()</code></li>
-<li><code>miCoche.gira()</code></li>
-<li><code>miCoche.acelera()</code></li>
-</ul>
+def restar(op1, op2):
+    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+
+
+def dividir(dividendo, divisor):
+    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
+
+
+def potenciar(base, exponente):
+    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
+
+
+def redondear(numero):
+    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+</code></pre>
+
+<p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
+
+<pre><code class="language-python">from prac35_calculos.calculos_generales import dividir
+
+dividir(10, 3)
+</code></pre>
+
+<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+</code></pre>
+
+<p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+
+<pre><code class="language-python">from prac35_calculos.calculos_generales import *
+
+dividir(10, 3)
+
+redondear(4.6)
+
+potenciar(2, 10)
+</code></pre>
+
+<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+El resultado del redondeo es: 5
+El resultado de la potenciación es: 1024
+</code></pre>
+
+<p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
+
+<p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
+
+<p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
+
+<pre><code class="language-python">def sumar(op1, op2):
+    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
+
+
+def restar(op1, op2):
+    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+
+
+def dividir(dividendo, divisor):
+    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
+</code></pre>
+
+<p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
+
+<pre><code class="language-python">def potenciar(base, exponente):
+    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
+
+
+def redondear(numero):
+    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+</code></pre>
+
+<p>Para utilizar estos últimos módulos creados, tecleamos:</p>
+
+<pre><code class="language-python">from prac35_calculos.basicos.operaciones_basicas import sumar
+from prac35_calculos.redondeo_potencia.redondea_y_potencia import potenciar
+
+sumar(5, 7)
+potenciar(2, 10)
+</code></pre>
+
+<pre><code class="language-bash">El resultado de la suma es: 12
+El resultado de la potenciación es: 1024
+</code></pre>
 
           </div>
 
@@ -634,15 +713,9 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb24-poo-i/" rel="next">24. Programación orientada a objetos I</a>
+    <a href="/courses/python-basic/pb34-modulos/" rel="next">34. Módulos</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb26-poo-iii/" rel="prev">26. Programación orientada a objetos III</a>
-  </div>
   
 </div>
 
@@ -651,7 +724,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-08
+          Última actualización el 2019-05-12
         </div>
 
       </article>
