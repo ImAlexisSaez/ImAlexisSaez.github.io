@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sat, 11 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -3877,6 +3877,175 @@ if email.count(&amp;quot;@&amp;quot;) == 1 and email.count(&amp;quot;@&amp;quot;
 else:
     print(&amp;quot;La dirección de correo es incorrecta.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>34. Módulos</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb34-modulos/</link>
+      <pubDate>Sun, 12 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb34-modulos/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/t93x-vnFvP4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Un &lt;strong&gt;módulo&lt;/strong&gt; es un archivo con extensión &lt;code&gt;.py&lt;/code&gt;, &lt;code&gt;.pyc&lt;/code&gt; (Python compilado) o fichero escrito en &lt;em&gt;C&lt;/em&gt; para &lt;em&gt;CPython&lt;/em&gt;, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.&lt;/p&gt;
+
+&lt;p&gt;Sirve para organizar y reutilizar el código (&lt;strong&gt;modularización&lt;/strong&gt; y &lt;strong&gt;reutilización&lt;/strong&gt;). Se genera uno creando un archivo con extensión &lt;code&gt;.py&lt;/code&gt; (o &lt;code&gt;.pyc&lt;/code&gt; o archivo en C) y guardándolo donde nos interese.&lt;/p&gt;
+
+&lt;p&gt;Vamos a crear un módulo que, siguiendo la organización del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; de código, se llamará &lt;code&gt;prac34_modulo_matematicas.py&lt;/code&gt;. En su interior tecleamos las siguientes líneas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sumar(op1, op2):
+    print(&amp;quot;El resultado de la suma es:&amp;quot;, op1 + op2)
+
+
+def restar(op1, op2):
+    print(&amp;quot;El resultado de la resta es:&amp;quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&amp;quot;El resultado de la multiplicación es:&amp;quot;, op1 * op2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, generamos otro archivo, &lt;code&gt;prac34_script1.py&lt;/code&gt;, e importamos el anterior módulo, utilizando para ello la instrucción &lt;code&gt;import&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import prac34_modulo_matematicas as modulo
+
+modulo.sumar(5, 7)
+
+modulo.restar(9, 5)
+
+modulo.multiplicar(4, 9)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 12
+El resultado de la resta es: 4
+El resultado de la multiplicación es: 36
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción &lt;code&gt;as&lt;/code&gt;, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.&lt;/p&gt;
+
+&lt;p&gt;Una alternativa a esta estrategia la encontramos en el fichero &lt;code&gt;prac34_script2.py&lt;/code&gt;, donde se utiliza &lt;code&gt;from ... import ...&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import sumar
+
+sumar(5, 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 12
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En el bloque de código anterior, únicamente hemos importado la función &lt;code&gt;sumar()&lt;/code&gt; de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter &lt;code&gt;*&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import sumar, restar
+
+sumar(5, 7)
+
+restar(12, 6)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 12
+El resultado de la resta es: 6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import *
+
+sumar(5, 7)
+
+restar(12, 6)
+
+multiplicar(12, 12)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 12
+El resultado de la resta es: 6
+El resultado de la multiplicación es: 144
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter &lt;code&gt;*&lt;/code&gt; provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.&lt;/p&gt;
+
+&lt;p&gt;Creemos un módulo, &lt;code&gt;prac34_modulo_vehiculos.py&lt;/code&gt; con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &amp;quot;La furgoneta está cargada.&amp;quot;
+        else:
+            return &amp;quot;La furgoneta no está cargada.&amp;quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &amp;quot;&amp;quot;
+
+    def caballito(self):
+        self.hcaballito = &amp;quot;Voy haciendo el caballito.&amp;quot;
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena, &amp;quot;\n&amp;quot;, self.hcaballito)
+
+
+class VehiculoElec(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y ahora, en el fichero &lt;code&gt;prac34_script5.py&lt;/code&gt; tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_vehiculos import *
+
+mi_coche = Vehiculo(&amp;quot;Mazda&amp;quot;, &amp;quot;MX5&amp;quot;)
+mi_coche.estado()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Marca: Mazda 
+Modelo: MX5 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Python&lt;/em&gt; busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el &lt;code&gt;syspath&lt;/code&gt; (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de &lt;em&gt;Python&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Si no tenemos los módulos en ninguna de ambas ubicaciones, &lt;em&gt;Python&lt;/em&gt; arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de &lt;strong&gt;paquetes&lt;/strong&gt; en la próxima lección.&lt;/p&gt;
 </description>
     </item>
     
