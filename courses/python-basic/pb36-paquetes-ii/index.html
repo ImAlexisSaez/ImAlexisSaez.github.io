@@ -27,11 +27,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:
-class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis = 120 self.__ruedas = 4 self.__en_marcha = False def arrancar(self, arrancamos): self.__en_marcha = arrancamos if self.__en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot; def estado(self): print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;, self.__ancho_chasis, &quot;cm y un largo de&quot;, self.">
+  <meta name="description" content="Vídeo   Notas personales Veamos cómo crear paquetes distribuibles para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:
+ Crear el paquete. Instalar el paquete.  En la lección anterior generamos el paquete prac35_calculos como una carpeta en el interior del directorio del repositorio donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, prac35_paquetes1_3.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb28-poo-v/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/">
 
   
 
@@ -120,7 +120,7 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb28-poo-v/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/">
 
   
   
@@ -134,22 +134,22 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb28-poo-v/">
-  <meta property="og:title" content="28. Programación orientada a objetos V | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:
-class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis = 120 self.__ruedas = 4 self.__en_marcha = False def arrancar(self, arrancamos): self.__en_marcha = arrancamos if self.__en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot; def estado(self): print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;, self.__ancho_chasis, &quot;cm y un largo de&quot;, self."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/">
+  <meta property="og:title" content="36. Paquetes distribuibles | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Veamos cómo crear paquetes distribuibles para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:
+ Crear el paquete. Instalar el paquete.  En la lección anterior generamos el paquete prac35_calculos como una carpeta en el interior del directorio del repositorio donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, prac35_paquetes1_3."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-09T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-05-13T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-09T00:00:02&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-13T00:00:01&#43;01:00">
   
 
   
 
-  <title>28. Programación orientada a objetos V | Infinitos Contrastes</title>
+  
+
+  <title>36. Paquetes distribuibles | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -505,7 +505,7 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
         <a href="/courses/python-basic/pb27-poo-iv/">27. POO IV</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb28-poo-v/">28. POO V</a>
       </li>
       
@@ -537,7 +537,7 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
         <a href="/courses/python-basic/pb35-paquetes-i/">35. Paquetes I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb36-paquetes-ii/">36. Paquetes II</a>
       </li>
       
@@ -580,7 +580,7 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">28. Programación orientada a objetos V</h1>
+          <h1 itemprop="name">36. Paquetes distribuibles</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -589,179 +589,73 @@ class Coche(): def __init__(self): self.__largo_chasis = 250 self.__ancho_chasis
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/OU-e2uhoGxE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/Zf9sN-w0BVE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:</p>
+<p>Veamos cómo crear <strong>paquetes distribuibles</strong> para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:</p>
 
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
+<ol>
+<li>Crear el paquete.</li>
+<li>Instalar el paquete.</li>
+</ol>
 
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-        if self.__en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
+<p>En la lección anterior generamos el paquete <code>prac35_calculos</code> como una carpeta en el interior del directorio del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, <code>prac35_paquetes1_3.py</code>.</p>
 
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
+<p>Ahora bien, si movemos este último archivo a otro directorio, <em>Python</em> seguramente no será capaz de encontrar el paquete <code>prac35_calculos</code>. Para solventar esta situación, hemos de proceder a su instalación.</p>
+
+<p>En primer lugar, creamos un archivo denominado <code>setup.py</code> en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&hellip;). En su interior, tecleamos:</p>
+
+<pre><code class="language-python">from setuptools import setup
+
+setup(name=&quot;prac35_calculos&quot;,
+      version=&quot;1.0&quot;,
+      description=&quot;Paquete de cálculos matemáticos&quot;,
+      author=&quot;Alexis Sáez&quot;,
+      author_email=&quot;cucoalexis@hotmail.com&quot;,
+      url=&quot;https://imalexissaez.github.io/&quot;,
+      packages=[&quot;prac35_calculos&quot;])
 </code></pre>
 
-<p>Encapsular un método es hacer que sea únicamente accesible desde la propia clase, no desde fuera.</p>
+<p>A continuación, abrimos la terminal de <em>Windows</em> y nos dirigimos a la carpeta donde hemos almacenado el fichero <code>setup.py</code> (la instrucción <code>cd</code> es clave en este proceso). Escribimos ahora</p>
 
-<p>Como aplicación práctica de este procedimiento, generemos un método que compruebe que todo está en orden antes de arrancar, <code>chequeo_interno(self)</code>, que llamaremos desde <code>arrancar()</code>.</p>
-
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-
-        if self.__en_marcha:
-            chequeo = self.chequeo_interno()
-
-        if self.__en_marcha and chequeo:
-            return &quot;El coche está en marcha.&quot;
-        elif self.__en_marcha and not chequeo:
-            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-
-    def chequeo_interno(self):
-        print(&quot;Realizando chequeo interno.&quot;)
-
-        self.gas = &quot;Ok&quot;
-        self.aceite = &quot;Ok&quot;
-        self.puertas = &quot;Ok&quot;
-
-        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
-            return True
-        else:
-            return False
+<pre><code class="language-bash">python setup.py sdist
 </code></pre>
 
-<p>Así, si ahora tecleamos:</p>
+<p>Si todo ha ido bien, habrán aparecido dos nuevas carpetas:</p>
 
-<pre><code class="language-python">mi_coche1 = Coche()
+<ul>
+<li><code>prac35_calculos.egg-info</code></li>
+<li><code>dist</code></li>
+</ul>
 
-print(mi_coche1.arrancar(True))
+<p>En esta última hallamos el archivo comprimido denominado <code>prac35_calculos-1.0.tar.gz</code>. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.</p>
 
-mi_coche1.estado()
+<p>Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de <em>Windows</em> acudimos al directorio donde resida el fichero comprimido y tecleamos:</p>
 
-print(&quot;---- Segundo vehículo ----&quot;)
-
-mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-
-mi_coche2.estado()
+<pre><code class="language-bash">pip3 install prac35_calculos-1.0.tar.gz
 </code></pre>
 
-<p>El resultado será:</p>
+<p>Recibiremos rápidamente en la consola el mensaje &ldquo;Successfully installed prac35-calculos-1.0&rdquo;.</p>
 
-<pre><code class="language-bash">Realizando chequeo interno.
-El coche está en marcha.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
----- Segundo vehículo ----
-El coche está parado.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+<p>Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:</p>
+
+<pre><code class="language-python">from prac35_calculos.calculos_generales import sumar
+
+sumar(6, 7)
 </code></pre>
 
-<p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &ldquo;protegerlo&rdquo;.</p>
-
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-print(mi_coche2.chequeo_interno())  # Absurdo en este caso
-mi_coche2.estado()
+<pre><code class="language-bash">El resultado de la suma es: 13
 </code></pre>
 
-<pre><code class="language-bash">El coche está parado.
-Realizando chequeo interno.
-True
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+<p><em>Nota</em>: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, <code>prac36_test_paquete</code>, y allí he ubicado el archivo <code>prac36_paquetes2.py</code>. De no haber instalado correctamente el paquete, <em>Python</em> habría sido incapaz de encontrar la función <code>sumar()</code> utilizando la instrucción dada arriba.</p>
+
+<p>Finalmente, para desinstalar el paquete, desde la terminal de <em>Windows</em> tecleamos:</p>
+
+<pre><code class="language-bash">pip3 uninstall prac35_calculos-1.0.tar.gz
 </code></pre>
-
-<p>Para encapsular el mencionado método, utilizamos la estrategia de <code>__</code>:</p>
-
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-
-        if self.__en_marcha:
-            chequeo = self.__chequeo_interno()
-
-        if self.__en_marcha and chequeo:
-            return &quot;El coche está en marcha.&quot;
-        elif self.__en_marcha and not chequeo:
-            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-
-    def __chequeo_interno(self):
-        print(&quot;Realizando chequeo interno.&quot;)
-
-        self.gas = &quot;Ok&quot;
-        self.aceite = &quot;Ok&quot;
-        self.puertas = &quot;Ok&quot;
-
-        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
-            return True
-        else:
-            return False
-</code></pre>
-
-<p>De forma que si ahora escribimos:</p>
-
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-print(mi_coche2.__chequeo_interno())
-mi_coche2.estado()
-</code></pre>
-
-<p>El resultado es:</p>
-
-<pre><code class="language-bash">El coche está parado.
-Traceback (most recent call last):
-  File &quot;prac28_poo5_1.py&quot;, line 50, in &lt;module&gt;
-    print(mi_coche2.__chequeo_interno())
-AttributeError: 'Coche' object has no attribute '__chequeo_interno'
-</code></pre>
-
-<p>Es decir, <em>Python</em> arroja un error. No nos deja llamar al método <code>__chequeo_interno()</code> desde fuera de la propia clase <code>Coche</code> porque está encapsulado.</p>
-
-<p>¿Cuándo encapsular una variable o un método? No existe una &ldquo;regla de oro&rdquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.</p>
 
           </div>
 
@@ -778,15 +672,9 @@ AttributeError: 'Coche' object has no attribute '__chequeo_interno'
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb27-poo-iv/" rel="next">27. Programación orientada a objetos IV</a>
+    <a href="/courses/python-basic/pb35-paquetes-i/" rel="next">35. Paquetes I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb29-poo-vi/" rel="prev">29. Programación orientada a objetos VI</a>
-  </div>
   
 </div>
 
@@ -795,7 +683,7 @@ AttributeError: 'Coche' object has no attribute '__chequeo_interno'
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-09
+          Última actualización el 2019-05-13
         </div>
 
       </article>

@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sun, 12 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -4175,6 +4175,88 @@ El resultado de la potenciación es: 1024
     </item>
     
     <item>
+      <title>36. Paquetes distribuibles</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/</link>
+      <pubDate>Mon, 13 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Zf9sN-w0BVE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Veamos cómo crear &lt;strong&gt;paquetes distribuibles&lt;/strong&gt; para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Crear el paquete.&lt;/li&gt;
+&lt;li&gt;Instalar el paquete.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En la lección anterior generamos el paquete &lt;code&gt;prac35_calculos&lt;/code&gt; como una carpeta en el interior del directorio del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, &lt;code&gt;prac35_paquetes1_3.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, si movemos este último archivo a otro directorio, &lt;em&gt;Python&lt;/em&gt; seguramente no será capaz de encontrar el paquete &lt;code&gt;prac35_calculos&lt;/code&gt;. Para solventar esta situación, hemos de proceder a su instalación.&lt;/p&gt;
+
+&lt;p&gt;En primer lugar, creamos un archivo denominado &lt;code&gt;setup.py&lt;/code&gt; en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&amp;hellip;). En su interior, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from setuptools import setup
+
+setup(name=&amp;quot;prac35_calculos&amp;quot;,
+      version=&amp;quot;1.0&amp;quot;,
+      description=&amp;quot;Paquete de cálculos matemáticos&amp;quot;,
+      author=&amp;quot;Alexis Sáez&amp;quot;,
+      author_email=&amp;quot;cucoalexis@hotmail.com&amp;quot;,
+      url=&amp;quot;https://imalexissaez.github.io/&amp;quot;,
+      packages=[&amp;quot;prac35_calculos&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, abrimos la terminal de &lt;em&gt;Windows&lt;/em&gt; y nos dirigimos a la carpeta donde hemos almacenado el fichero &lt;code&gt;setup.py&lt;/code&gt; (la instrucción &lt;code&gt;cd&lt;/code&gt; es clave en este proceso). Escribimos ahora&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;python setup.py sdist
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si todo ha ido bien, habrán aparecido dos nuevas carpetas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;prac35_calculos.egg-info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dist&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En esta última hallamos el archivo comprimido denominado &lt;code&gt;prac35_calculos-1.0.tar.gz&lt;/code&gt;. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.&lt;/p&gt;
+
+&lt;p&gt;Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de &lt;em&gt;Windows&lt;/em&gt; acudimos al directorio donde resida el fichero comprimido y tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install prac35_calculos-1.0.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Recibiremos rápidamente en la consola el mensaje &amp;ldquo;Successfully installed prac35-calculos-1.0&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac35_calculos.calculos_generales import sumar
+
+sumar(6, 7)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, &lt;code&gt;prac36_test_paquete&lt;/code&gt;, y allí he ubicado el archivo &lt;code&gt;prac36_paquetes2.py&lt;/code&gt;. De no haber instalado correctamente el paquete, &lt;em&gt;Python&lt;/em&gt; habría sido incapaz de encontrar la función &lt;code&gt;sumar()&lt;/code&gt; utilizando la instrucción dada arriba.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, para desinstalar el paquete, desde la terminal de &lt;em&gt;Windows&lt;/em&gt; tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 uninstall prac35_calculos-1.0.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Buscando el total de soluciones de una inecuación</title>
       <link>https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/</link>
       <pubDate>Sat, 11 May 2019 05:59:39 +0200</pubDate>
@@ -5443,6 +5525,9 @@ de nuevas especialidades en los cuerpos docentes de profesores de Enseñanza Sec
 &lt;li&gt;CORRECCIÓN de errores de la Orden 7 / 2019, de 28 de febrero, de la Conselleria de Educación, Investigación, Cultura y Deporte, por la que se convoca procedimiento selectivo de ingreso y procedimiento para la adquisición de nuevas especialidades en los cuerpos docentes de profesores de Enseñanza Secundaria, profesores de escuelas oficiales de idiomas, profesores de Música y artes Escénicas, profesores de Artes Plásticas y Diseño y profesores técnicos de Formación Profesional. [&lt;a href=&#34;http://www.dogv.gva.es/datos/2019/03/29/pdf/2019_3122.pdf&#34; target=&#34;_blank&#34;&gt;2019 / 3122&lt;/a&gt;]&lt;/li&gt;
 &lt;li&gt;RESOLUCIÓN de 2 de abril de 2019, del director general de Centros y Personal Docente, por la que se declaran aprobadas las listas provisionales de personas admitidas y excluidas para participar en los procedimientos selectivos de ingreso y adquisición de nuevas especialidades en los cuerpos docentes de profesores de Enseñanza Secundaria, profesores de escuelas oficiales de idiomas, profesores de Música y Artes Escénicas, profesores de Artes Plásticas y Diseño y profesores técnicos de Formación Profesional. [&lt;a href=&#34;http://www.dogv.gva.es/datos/2019/04/04/pdf/2019_3373.pdf&#34; target=&#34;_blank&#34;&gt;2019 / 3373&lt;/a&gt;]&lt;/li&gt;
 &lt;li&gt;RESOLUCIÓN de 2 de abril de 2019, del director general de Centros y Personal Docente, por la que se convoca a las personas aspirantes no exentas de la realización de la prueba de valenciano nivel C1 y se nombra el tribunal que ha de evaluarla, en el marco del procedimiento selectivo para ingreso en los cuerpos docentes del profesorado de Enseñanza Secundaria, profesorado de escuelas oficiales de idiomas, profesorado de Música y Artes Escénicas, profesorado de Artes Plásticas y Diseño y profesorado técnico de Formación Profesional. [&lt;a href=&#34;http://www.dogv.gva.es/datos/2019/04/04/pdf/2019_3379.pdf&#34; target=&#34;_blank&#34;&gt;2019 / 3379&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;RESOLUCIÓN de 9 de mayo de 2019, del director general de Centros y Personal Docente, por la que se convoca a los aspirantes no exentos de la realización de la prueba de castellano para extranjeros y se nombra el tribunal que ha de juzgar la prueba previa de castellano para extranjeros, en el marco del procedimiento selectivo convocado por las Órdenes 7 / 2019 y 6 / 2019, de 28 de febrero, de la Conselleria de Educación, Investigación, Cultura y Deporte.
+[&lt;a href=&#34;http://www.dogv.gva.es/datos/2019/05/13/pdf/2019_4840.pdf&#34; target=&#34;_blank&#34;&gt;2019 / 4840&lt;/a&gt;]&lt;/li&gt;
+&lt;li&gt;RESOLUCIÓN de 9 de mayo de 2019, del director general de Centros y Personal Docente, por la que se convoca a las personas aspirantes no exentas, a la realización de la prueba para la obtención del Certificado de Capacitación para la Enseñanza en Valenciano y se nombra el tribunal que ha de evaluarla, en el marco del procedimiento selectivo de ingreso y procedimiento para la adquisición de nuevas especialidades en los cuerpos docentes de profesores de Enseñanza Secundaria, profesores de escuelas oficiales de idiomas, profesores de Música y Artes Escénicas, profesores de Artes Plásticas y Diseño y profesores técnicos de Formación Profesional, convocado por Orden 7 / 2019, de 28 de febrero. [&lt;a href=&#34;http://www.dogv.gva.es/datos/2019/05/13/pdf/2019_4842.pdf&#34; target=&#34;_blank&#34;&gt;2019 / 4842&lt;/a&gt;]&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
