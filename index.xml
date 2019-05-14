@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Tue, 14 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -4382,6 +4382,178 @@ archivo2.close()
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Si acudimos a la carpeta &lt;code&gt;prac37_files&lt;/code&gt;, comprobaremos la existencia de un fichero denominado &lt;code&gt;archivo2.txt&lt;/code&gt;, que contiene tres líneas.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>38. Archivos II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/</link>
+      <pubDate>Tue, 14 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/0dEYVSRYl_s&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo &lt;code&gt;io&lt;/code&gt;, analizando en esta ocasión cómo manejar punteros en texto.&lt;/p&gt;
+
+&lt;p&gt;Para ello, movamos el último archivo de texto generado en la lección anterior (&lt;code&gt;archivo2.txt&lt;/code&gt;) a la carpeta &lt;code&gt;prac38_files&lt;/code&gt;, para así mantener la coherencia de la estructura de ficheros del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;. Tras ello, tecleemos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si no indicamos lo contrario, la función &lt;code&gt;.read()&lt;/code&gt; sitúa el puntero al inicio del archivo y comienza entonces su lectura. Cuando finaliza esta, la posición del puntero se ubica tras el último carácter. Esto implica que si ahora escribimos de nuevo la instrucción &lt;code&gt;print(archivo.read())&lt;/code&gt;, nada se mostraría en la consola, puesto que tras la posición que ha quedado el puntero no existe información alguna.&lt;/p&gt;
+
+&lt;p&gt;Se puede inicializar la posición del puntero utilizando la función &lt;code&gt;.seek()&lt;/code&gt;, que como argumento recibe el carácter desde el que deseamos comenzar la lectura del archivo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+print(archivo.read())
+
+archivo.seek(0)  # Reinicio posición puntero
+
+print(archivo.read())
+
+archivo.seek(10)  # Establezco posición puntero en carácter 10
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+pendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Con el método &lt;code&gt;.read()&lt;/code&gt; también podemos modificar la función del puntero, aunque de manera algo diferente a cómo se lleva a cabo el proceso con &lt;code&gt;.seek()&lt;/code&gt;. La primera lee hasta la posición del puntero que le indiquemos como argumento, mientras que la segunda posiciona el puntero en una posición y la lectura se efectúa a partir de dicha posición.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+print(archivo.read(11))
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Es un estup
+endo día para estudiar Python
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para situar el puntero justo en medio de un archivo de texto podemos emplear la siguiente estrategia:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+archivo.seek(len(archivo.read()) / 2)
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;r Python
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;¿Y si queremos situar el puntero al final de la primera línea?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+archivo.seek(len(archivo.readline()))
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Un archivo lo podemos abrir, simultáneamente, en modo lectura y escritura (&lt;code&gt;&amp;quot;r+&amp;quot;&lt;/code&gt;), para realizar ambas acciones a la vez si nos es preciso. Generemos un fichero denominado &lt;code&gt;archivo3.txt&lt;/code&gt;, con el mismo contenido que aquel con el que llevamos trabajando a lo largo de toda esta lección. Después, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
+
+archivo.write(&amp;quot;Comienzo del texto: &amp;quot;)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Comienzo del texto: para estudiar Python
+en Youtube.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al abrir el archivo, el puntero se posiciona al principio del mismo. Así, cuando usamos el método &lt;code&gt;.write()&lt;/code&gt;, efectivamente sobreescribimos el contenido que originalmente hubiera (en tantas posiciones como longitud posea la nueva cadena de texto).&lt;/p&gt;
+
+&lt;p&gt;Así, para incluir una línea en mitad del documento (la segunda en este caso particular), un posible enfoque sería:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo = open(&amp;quot;prac38_files/archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
+
+lineas = archivo.readlines()
+
+lineas[1] = &amp;quot;Esta línea ha sido incluida desde el exterior.\n&amp;quot;
+
+archivo.seek(0)
+
+archivo.writelines(lineas)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Comienzo del texto: para estudiar Python
+Esta línea ha sido incluida desde el exterior.
+¡Mañana más!
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

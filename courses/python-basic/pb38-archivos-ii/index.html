@@ -27,11 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Comencemos definiendo una función que suma dos números dados (5 y 7), mediante el mecanismo aprendido en la lección anterior:
-def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar tantas veces como queramos la función suma(). No obstante, su utilidad así declarada es bastante limitada. Nos gustaría que no siempre sumara los dos mismos valores, sino aquellos que nos interesen en cada llamada.">
+  <meta name="description" content="Vídeo   Notas personales Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo io, analizando en esta ocasión cómo manejar punteros en texto.
+Para ello, movamos el último archivo de texto generado en la lección anterior (archivo2.txt) a la carpeta prac38_files, para así mantener la coherencia de la estructura de ficheros del repositorio. Tras ello, tecleemos:
+from io import open archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;) print(archivo.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb06-funciones-ii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/">
 
   
 
@@ -120,7 +121,7 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb06-funciones-ii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/">
 
   
   
@@ -134,22 +135,23 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb06-funciones-ii/">
-  <meta property="og:title" content="6. Funciones II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Comencemos definiendo una función que suma dos números dados (5 y 7), mediante el mecanismo aprendido en la lección anterior:
-def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar tantas veces como queramos la función suma(). No obstante, su utilidad así declarada es bastante limitada. Nos gustaría que no siempre sumara los dos mismos valores, sino aquellos que nos interesen en cada llamada."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/">
+  <meta property="og:title" content="38. Archivos II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo io, analizando en esta ocasión cómo manejar punteros en texto.
+Para ello, movamos el último archivo de texto generado en la lección anterior (archivo2.txt) a la carpeta prac38_files, para así mantener la coherencia de la estructura de ficheros del repositorio. Tras ello, tecleemos:
+from io import open archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;) print(archivo."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-04-29T00:01:03&#43;01:00">
+  <meta property="article:published_time" content="2019-05-14T00:00:02&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-04-29T00:01:03&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-14T00:00:02&#43;01:00">
   
 
   
 
-  <title>6. Funciones II | Infinitos Contrastes</title>
+  
+
+  <title>38. Archivos II | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -417,7 +419,7 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
         <a href="/courses/python-basic/pb05-funciones-i/">5. Funciones I</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb06-funciones-ii/">6. Funciones II</a>
       </li>
       
@@ -545,7 +547,7 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
         <a href="/courses/python-basic/pb37-archivos-i/">37. Archivos I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb38-archivos-ii/">38. Archivos II</a>
       </li>
       
@@ -588,7 +590,7 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">6. Funciones II</h1>
+          <h1 itemprop="name">38. Archivos II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -597,80 +599,163 @@ def suma(): num1 = 5 num2 = 7 print(num1 &#43; num2) suma()  Podemos reutilizar 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/vawEHhV_HFA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/0dEYVSRYl_s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Comencemos definiendo una función que suma dos números dados (5 y 7), mediante el mecanismo aprendido en la lección anterior:</p>
+<p>Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo <code>io</code>, analizando en esta ocasión cómo manejar punteros en texto.</p>
 
-<pre><code class="language-python">def suma():
-    num1 = 5
-    num2 = 7
-    print(num1 + num2)
+<p>Para ello, movamos el último archivo de texto generado en la lección anterior (<code>archivo2.txt</code>) a la carpeta <code>prac38_files</code>, para así mantener la coherencia de la estructura de ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>. Tras ello, tecleemos:</p>
 
-suma()
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read())
+
+archivo.close()
 </code></pre>
 
-<p>Podemos reutilizar tantas veces como queramos la función <code>suma()</code>. No obstante, su utilidad así declarada es bastante limitada. Nos gustaría que no siempre sumara los dos mismos valores, sino aquellos que nos interesen en cada llamada. Para ello emplearemos los <strong>parámetros</strong> o <strong>argumentos</strong>.</p>
-
-<p><em>Nota</em>: aunque el autor del curso se refiere a los términos &ldquo;parámetros&rdquo; y &ldquo;argumentos&rdquo; casi como si fueran sinónimos, en realidad hay un sutil matiz que los diferencia: los <strong>parámetros</strong> son las variables que aparecen en la definición de una función o método; cuando se produce la llamada a dicha función, los <strong>argumentos</strong> son los datos que pasamos a los parámetros de la mencionada función.</p>
-
-<p>Definamos de nuevo la función <code>suma()</code>, ahora con dos parámetros, con el objetivo de que realice la suma de dos números que pasaremos como argumentos:</p>
-
-<pre><code class="language-python">def suma(num1, num2):
-    print(num1 + num2)
-
-suma(5, 7) # 12
-suma(2, 3) # 5
-suma(35, 358) # 393
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
 </code></pre>
 
-<p>Tal y como está declarada la nueva función de suma, <strong>obligatoriamente</strong> hemos de pasarle dos argumentos o sino aparecerán errores.</p>
+<p>Si no indicamos lo contrario, la función <code>.read()</code> sitúa el puntero al inicio del archivo y comienza entonces su lectura. Cuando finaliza esta, la posición del puntero se ubica tras el último carácter. Esto implica que si ahora escribimos de nuevo la instrucción <code>print(archivo.read())</code>, nada se mostraría en la consola, puesto que tras la posición que ha quedado el puntero no existe información alguna.</p>
 
-<pre><code class="language-python">suma(7)
-# TypeError: suma() missing 1 required positional argument: 'num2'
+<p>Se puede inicializar la posición del puntero utilizando la función <code>.seek()</code>, que como argumento recibe el carácter desde el que deseamos comenzar la lectura del archivo.</p>
+
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read())
+
+archivo.seek(0)  # Reinicio posición puntero
+
+print(archivo.read())
+
+archivo.seek(10)  # Establezco posición puntero en carácter 10
+
+print(archivo.read())
+
+archivo.close()
 </code></pre>
 
-<pre><code class="language-python">suma(1, 2, 3)
-# TypeError: suma() takes 2 positional arguments but 3 were given
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+pendo día para estudiar Python
+en Youtube.
+¡Mañana más!
 </code></pre>
 
-<p>Puede resultar conveniente, por legibilidad, pasar los argumentos a una función utilizando el esquema <code>parámetro=valor</code>.</p>
+<p>Con el método <code>.read()</code> también podemos modificar la función del puntero, aunque de manera algo diferente a cómo se lleva a cabo el proceso con <code>.seek()</code>. La primera lee hasta la posición del puntero que le indiquemos como argumento, mientras que la segunda posiciona el puntero en una posición y la lectura se efectúa a partir de dicha posición.</p>
 
-<pre><code class="language-python">suma(num1=5, num2=7) # 12
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read(11))
+print(archivo.read())
+
+archivo.close()
 </code></pre>
 
-<p>Además, las funciones</p>
-
-<ul>
-<li>pueden poseer parámetros de diferentes tipos y</li>
-<li>devuelven valores siempre y cuando empleemos la instrucción <code>return</code>.</li>
-</ul>
-
-<pre><code class="language-python">def suma(num1, num2):
-    resultado = num1 + num2
-    return resultado
-
-suma(5, 7)
+<pre><code class="language-bash">Es un estup
+endo día para estudiar Python
+en Youtube.
+¡Mañana más!
 </code></pre>
 
-<p>La ejecución del anterior bloque de código no muestra resultado alguno en la consola. La función devuelve el resultado, pero no lo hemos imprimido. Así,</p>
+<p>Para situar el puntero justo en medio de un archivo de texto podemos emplear la siguiente estrategia:</p>
 
-<pre><code class="language-python">print(suma(5, 7)) # 12
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;)
+
+archivo.seek(len(archivo.read()) / 2)
+
+print(archivo.read())
+
+archivo.close()
 </code></pre>
 
-<p>Una ventaja de utilizar la instrucción <code>return</code> reside en que podemos almacenar los valores que devuelve una función en variables y trabajar posteriormente con ellas.</p>
-
-<pre><code class="language-python">almacena_resultado = suma(5, 8)
-print(almacena_resultado) # 13
-
-actualiza_resultado = suma(almacena_resultado, 8)
-print(actualiza_resultado) # 13 + 8 = 21
+<pre><code class="language-bash">r Python
+en Youtube.
+¡Mañana más!
 </code></pre>
 
-<p><em>Nota técnica</em>: <em>Python</em> pasa siempre los valores por referencia, no por valor.</p>
+<p>¿Y si queremos situar el puntero al final de la primera línea?</p>
+
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo2.txt&quot;, &quot;r&quot;)
+
+archivo.seek(len(archivo.readline()))
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+
+<pre><code class="language-bash">
+en Youtube.
+¡Mañana más!
+</code></pre>
+
+<p>Un archivo lo podemos abrir, simultáneamente, en modo lectura y escritura (<code>&quot;r+&quot;</code>), para realizar ambas acciones a la vez si nos es preciso. Generemos un fichero denominado <code>archivo3.txt</code>, con el mismo contenido que aquel con el que llevamos trabajando a lo largo de toda esta lección. Después, tecleamos:</p>
+
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo3.txt&quot;, &quot;r+&quot;)  # lectura y escritura
+
+archivo.write(&quot;Comienzo del texto: &quot;)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+
+<pre><code class="language-bash">Comienzo del texto: para estudiar Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+
+<p>Al abrir el archivo, el puntero se posiciona al principio del mismo. Así, cuando usamos el método <code>.write()</code>, efectivamente sobreescribimos el contenido que originalmente hubiera (en tantas posiciones como longitud posea la nueva cadena de texto).</p>
+
+<p>Así, para incluir una línea en mitad del documento (la segunda en este caso particular), un posible enfoque sería:</p>
+
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;prac38_files/archivo3.txt&quot;, &quot;r+&quot;)  # lectura y escritura
+
+lineas = archivo.readlines()
+
+lineas[1] = &quot;Esta línea ha sido incluida desde el exterior.\n&quot;
+
+archivo.seek(0)
+
+archivo.writelines(lineas)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+
+<pre><code class="language-bash">Comienzo del texto: para estudiar Python
+Esta línea ha sido incluida desde el exterior.
+¡Mañana más!
+</code></pre>
 
           </div>
 
@@ -687,15 +772,9 @@ print(actualiza_resultado) # 13 + 8 = 21
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb05-funciones-i/" rel="next">5. Funciones I</a>
+    <a href="/courses/python-basic/pb37-archivos-i/" rel="next">37. Archivos I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb07-listas/" rel="prev">7. Listas</a>
-  </div>
   
 </div>
 
@@ -704,7 +783,7 @@ print(actualiza_resultado) # 13 + 8 = 21
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-04-29
+          Última actualización el 2019-05-14
         </div>
 
       </article>
