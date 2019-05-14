@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 13 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -4253,6 +4253,135 @@ sumar(6, 7)
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 uninstall prac35_calculos-1.0.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>37. Archivos I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb37-archivos-i/</link>
+      <pubDate>Tue, 14 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb37-archivos-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/V87m9SltcI8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección abordaremos cómo trabajar con ficheros externos de texto, utilizando para tal empresa el módulo &lt;code&gt;io&lt;/code&gt;. Nuestro objetivo será conseguir la &lt;strong&gt;persistencia de datos&lt;/strong&gt;, es decir, salvaguardar los datos que estamos manipulando para que no se pierdan al finalizar una sesión de &lt;em&gt;Python&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Existen dos alternativas para conseguir el mencionado objetivo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Manejar archivos externos.&lt;/li&gt;
+&lt;li&gt;Trabajar con bases de datos (BBDD).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Las fases necesarias para guardar cierta información en archivos externos son:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Creación del archivo externo.&lt;/li&gt;
+&lt;li&gt;Apertura del archivo externo.&lt;/li&gt;
+&lt;li&gt;Manipulación del archivo externo.&lt;/li&gt;
+&lt;li&gt;Cierre del archivo externo.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;La documentación del módulo &lt;code&gt;io&lt;/code&gt; la podemos encontrar en &lt;a href=&#34;https://docs.python.org/3/library/io.html&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Veamos un ejemplo sencillo en el que crearemos un archivo donde almacenar una frase. Empecemos tecleando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: un archivo lo podemos abrir en modo lectura (&lt;code&gt;r&lt;/code&gt;), escritura (&lt;code&gt;w&lt;/code&gt;), agregar (&lt;code&gt;a&lt;/code&gt;)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Si ahora acudimos al interior de la carpeta &lt;code&gt;prac37_files&lt;/code&gt;, encontraremos un archivo de texto vacío denominado &lt;code&gt;archivo.txt&lt;/code&gt;. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; mantenga una estructura coherente.&lt;/p&gt;
+
+&lt;p&gt;A continuación, veamos cómo incluir información (texto) en dicho archivo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+# Creación + Apertura
+archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
+
+frase = &amp;quot;Es un estupendo día para estudiar Python\nen Youtube.&amp;quot;
+
+# Manipulación
+archivo_texto.write(frase)
+
+# Cierre
+archivo_texto.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De esta manera, hemos incluido el texto declarado en la variable &lt;code&gt;frase&lt;/code&gt; en el fichero &lt;code&gt;archivo.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Acto seguido, estudiemos cómo abrir un archivo en modo lectura y acceder a su contenido:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+texto = archivo_texto.read()
+
+archivo_texto.close()
+
+print(texto)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Es un estupendo día para estudiar Python
+en Youtube.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Otro método que nos puede resultar de utilidad a la hora de leer un archivo es &lt;code&gt;readlines()&lt;/code&gt;, que accede a la información almacenada línea a línea y la guarda en una lista:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+
+lineas_texto = archivo_texto.readlines()
+
+archivo_texto.close()
+
+print(lineas_texto)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[&#39;Es un estupendo día para estudiar Python\n&#39;, &#39;en Youtube.&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al ser una lista, podemos utilizar ahora todo lo que hemos aprendido sobre ellas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(lineas_texto[0])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Es un estupendo día para estudiar Python
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, veamos cómo abrir un archivo para agregar información. Para no alterar el contenido de &lt;code&gt;archivo.txt&lt;/code&gt;, almacenaremos sus frases en una variable, las escribiremos en un nuevo fichero, &lt;code&gt;archivo2.txt&lt;/code&gt;, y sobre este último será donde agreguemos contenido adicional:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
+
+archivo1 = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+texto = archivo1.read()
+archivo1.close()
+
+archivo2 = open(&amp;quot;prac37_files/archivo2.txt&amp;quot;, &amp;quot;w&amp;quot;)
+archivo2.write(texto)
+archivo2.close()
+
+archivo2 = open(&amp;quot;prac37_files/archivo2.txt&amp;quot;, &amp;quot;a&amp;quot;)
+archivo2.write(&amp;quot;\n¡Mañana más!&amp;quot;)
+archivo2.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si acudimos a la carpeta &lt;code&gt;prac37_files&lt;/code&gt;, comprobaremos la existencia de un fichero denominado &lt;code&gt;archivo2.txt&lt;/code&gt;, que contiene tres líneas.&lt;/p&gt;
 </description>
     </item>
     
