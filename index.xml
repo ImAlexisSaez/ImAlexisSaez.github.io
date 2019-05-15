@@ -4558,6 +4558,78 @@ Esta línea ha sido incluida desde el exterior.
     </item>
     
     <item>
+      <title>39. Serialización I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb39-serializacion-i/</link>
+      <pubDate>Wed, 15 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb39-serializacion-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/SOimkkfQIOM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección estudiaremos cómo serializar colecciones de ciertos objetos. La &lt;strong&gt;serialización&lt;/strong&gt; consiste en guardar en un fichero externo una lista, un diccionario o, incluso, un objeto; con la particularidad de que la codificación de dicho fichero es binaria.&lt;/p&gt;
+
+&lt;p&gt;Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet, ya que su distribución es más sencilla, o bien si deseamos guardarlo en un dispositivo de almacenamiento externo o en una base de datos.&lt;/p&gt;
+
+&lt;p&gt;Para tal empresa utilizaremos la biblioteca de &lt;em&gt;Python&lt;/em&gt; &lt;code&gt;pickle&lt;/code&gt;, para aprovechar los métodos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dump()&lt;/code&gt;: vuelca datos en un fichero binario externo, y&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;load()&lt;/code&gt;: carga datos de un fichero binario externo.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Veamos un ejemplo sencillo de aplicación de ambas funciones. Almacenaremos en un archivo binario externo una lista de nombres y, posteriormente, la rescataremos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+nombres = [&amp;quot;Pedro&amp;quot;, &amp;quot;Ana&amp;quot;, &amp;quot;María&amp;quot;, &amp;quot;Isabel&amp;quot;]
+
+fichero = open(&amp;quot;prac39_files/lista_nombres&amp;quot;, &amp;quot;wb&amp;quot;)
+
+pickle.dump(nombres, fichero)
+
+fichero.close()
+
+del fichero
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A la hora de crear el fichero externo en modo escritura, con el método &lt;code&gt;open()&lt;/code&gt;, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;La instrucción &lt;code&gt;del&lt;/code&gt; borra el puntero de la memoria hacia la variable &lt;code&gt;fichero&lt;/code&gt;, dejando de estar disponible su acceso a partir de ese momento.&lt;/li&gt;
+&lt;li&gt;Al ejecutar el anterior bloque de código, en la carpeta denominada &lt;code&gt;prac39_files&lt;/code&gt; (designada así para conservar la coherencia en la estructura del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;), aparecerá un archivo externo de tipo binario denominado &lt;code&gt;lista_nombres&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+fichero = open(&amp;quot;prac39_files/lista_nombres&amp;quot;, &amp;quot;rb&amp;quot;)
+
+lista = pickle.load(fichero)
+
+fichero.close()
+
+print(lista)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[&#39;Pedro&#39;, &#39;Ana&#39;, &#39;María&#39;, &#39;Isabel&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función &lt;code&gt;open()&lt;/code&gt; ha de tomar el valor de argumento &lt;code&gt;&amp;quot;rb&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Refinando el ejercicio del último día</title>
       <link>https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/</link>
       <pubDate>Wed, 15 May 2019 05:59:39 +0200</pubDate>
