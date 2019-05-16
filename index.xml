@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Wed, 15 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -4626,6 +4626,145 @@ print(lista)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función &lt;code&gt;open()&lt;/code&gt; ha de tomar el valor de argumento &lt;code&gt;&amp;quot;rb&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>40. Serialización II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb40-serializacion-ii/</link>
+      <pubDate>Thu, 16 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb40-serializacion-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/CkfDnMC79b4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.&lt;/p&gt;
+
+&lt;p&gt;Aprovechemos la clase &lt;code&gt;Vehiculo&lt;/code&gt; que generamos anteriormente y cuyo código fuente recordemos era:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, importemos la librería &lt;code&gt;pickle&lt;/code&gt; y creemos una lista con algunas instancias de la clase &lt;code&gt;Vehiculo&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+coche1 = Vehiculo(&amp;quot;Mazda&amp;quot;, &amp;quot;MX5&amp;quot;)
+coche2 = Vehiculo(&amp;quot;Seat&amp;quot;, &amp;quot;León&amp;quot;)
+coche3 = Vehiculo(&amp;quot;Renault&amp;quot;, &amp;quot;Megane&amp;quot;)
+
+coches = [coche1, coche2, coche3]
+
+fichero = open(&amp;quot;prac40_files/coches&amp;quot;, &amp;quot;wb&amp;quot;)
+
+pickle.dump(coches, fichero)
+
+fichero.close()
+
+del fichero
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función &lt;code&gt;open()&lt;/code&gt; es &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Al ejecutar el anterior bloque de código, aparecerá en la carpeta &lt;code&gt;prac40_files&lt;/code&gt; (para mantener coherencia en la estructura del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;) el fichero &lt;code&gt;coches&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para rescatar la información de este archivo que acabamos de generar, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+
+class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&amp;quot;Marca:&amp;quot;, self.marca, &amp;quot;\nModelo:&amp;quot;, self.modelo, &amp;quot;\nEn marcha:&amp;quot;,
+              self.enmarcha, &amp;quot;\nAcelerando:&amp;quot;, self.acelera, &amp;quot;\nFrenando:&amp;quot;,
+              self.frena)
+
+
+fichero = open(&amp;quot;prac40_files/coches&amp;quot;, &amp;quot;rb&amp;quot;)
+
+coches = pickle.load(fichero)
+
+print(coches)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[&amp;lt;__main__.Vehiculo object at 0x00000259428D65C0&amp;gt;, &amp;lt;__main__.Vehiculo object at 0x00000259428F7F28&amp;gt;, &amp;lt;__main__.Vehiculo object at 0x00000259428F7F98&amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Efectivamente, disponemos ahora de una lista con tres objetos. No obstante, recordemos que tenemos el método &lt;code&gt;estado&lt;/code&gt; para acceder a información de interés sobre dichos objetos. Así, si escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for coche in coches:
+    print(coche.estado())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Marca: Mazda 
+Modelo: MX5 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+Marca: Seat 
+Modelo: León 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+Marca: Renault 
+Modelo: Megane 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase &lt;code&gt;Vehiculo&lt;/code&gt; es necesario que figure asimismo (en caso contrario arroja &lt;em&gt;Python&lt;/em&gt; un error). El problema radica en que el nuevo archivo no tiene información sobre la clase &lt;code&gt;Vehiculo&lt;/code&gt; ni, por supuesto, del método &lt;code&gt;estado()&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
