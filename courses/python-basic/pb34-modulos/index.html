@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -39,16 +39,6 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -72,8 +62,8 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -92,7 +82,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -557,6 +547,10 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -579,6 +573,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -615,7 +610,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
 
 <p>Sirve para organizar y reutilizar el código (<strong>modularización</strong> y <strong>reutilización</strong>). Se genera uno creando un archivo con extensión <code>.py</code> (o <code>.pyc</code> o archivo en C) y guardándolo donde nos interese.</p>
 
-<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> de código, se llamará <code>prac34_modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
+<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
 
 <pre><code class="language-python">def sumar(op1, op2):
     print(&quot;El resultado de la suma es:&quot;, op1 + op2)
@@ -629,9 +624,9 @@ def multiplicar(op1, op2):
     print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
 </code></pre>
 
-<p>Ahora, generamos otro archivo, <code>prac34_script1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
+<p>Ahora, generamos otro archivo, <code>script_1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
 
-<pre><code class="language-python">import prac34_modulo_matematicas as modulo
+<pre><code class="language-python">import modulo_matematicas as modulo
 
 modulo.sumar(5, 7)
 
@@ -647,9 +642,9 @@ El resultado de la multiplicación es: 36
 
 <p>Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción <code>as</code>, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.</p>
 
-<p>Una alternativa a esta estrategia la encontramos en el fichero <code>prac34_script2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
+<p>Una alternativa a esta estrategia la encontramos en el fichero <code>script_2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
 
-<pre><code class="language-python">from prac34_modulo_matematicas import sumar
+<pre><code class="language-python">from modulo_matematicas import sumar
 
 sumar(5, 7)
 </code></pre>
@@ -659,7 +654,7 @@ sumar(5, 7)
 
 <p>En el bloque de código anterior, únicamente hemos importado la función <code>sumar()</code> de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
 
-<pre><code class="language-python">from prac34_modulo_matematicas import sumar, restar
+<pre><code class="language-python">from modulo_matematicas import sumar, restar
 
 sumar(5, 7)
 
@@ -670,7 +665,7 @@ restar(12, 6)
 El resultado de la resta es: 6
 </code></pre>
 
-<pre><code class="language-python">from prac34_modulo_matematicas import *
+<pre><code class="language-python">from modulo_matematicas import *
 
 sumar(5, 7)
 
@@ -686,7 +681,7 @@ El resultado de la multiplicación es: 144
 
 <p>No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter <code>*</code> provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.</p>
 
-<p>Creemos un módulo, <code>prac34_modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
+<p>Creemos un módulo, <code>modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
 
 <pre><code class="language-python">class Vehiculo():
     def __init__(self, marca, modelo):
@@ -741,9 +736,9 @@ class VehiculoElec(Vehiculo):
         self.cargando = True
 </code></pre>
 
-<p>Y ahora, en el fichero <code>prac34_script5.py</code> tecleamos:</p>
+<p>Y ahora, en el fichero <code>script_5.py</code> tecleamos:</p>
 
-<pre><code class="language-python">from prac34_modulo_vehiculos import *
+<pre><code class="language-python">from modulo_vehiculos import *
 
 mi_coche = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
 mi_coche.estado()
@@ -759,6 +754,10 @@ Frenando: False
 <p><em>Python</em> busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el <code>syspath</code> (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de <em>Python</em>).</p>
 
 <p>Si no tenemos los módulos en ninguna de ambas ubicaciones, <em>Python</em> arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de <strong>paquetes</strong> en la próxima lección.</p>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -834,7 +833,7 @@ Frenando: False
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -920,7 +919,7 @@ Frenando: False
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

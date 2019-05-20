@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -40,16 +40,6 @@ Existen dos alternativas para conseguir el mencionado objetivo:
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -73,8 +63,8 @@ Existen dos alternativas para conseguir el mencionado objetivo:
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -93,7 +83,7 @@ Existen dos alternativas para conseguir el mencionado objetivo:
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -559,6 +549,10 @@ Existen dos alternativas para conseguir el mencionado objetivo:
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -581,6 +575,7 @@ Existen dos alternativas para conseguir el mencionado objetivo:
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -637,19 +632,19 @@ Existen dos alternativas para conseguir el mencionado objetivo:
 
 <pre><code class="language-python">from io import open
 
-archivo_texto = open(&quot;prac37_files/archivo.txt&quot;, &quot;w&quot;)
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;w&quot;)
 </code></pre>
 
 <p><em>Nota</em>: un archivo lo podemos abrir en modo lectura (<code>r</code>), escritura (<code>w</code>), agregar (<code>a</code>)&hellip;</p>
 
-<p>Si ahora acudimos al interior de la carpeta <code>prac37_files</code>, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> mantenga una estructura coherente.</p>
+<p>Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> mantenga una estructura coherente.</p>
 
 <p>A continuación, veamos cómo incluir información (texto) en dicho archivo:</p>
 
 <pre><code class="language-python">from io import open
 
 # Creación + Apertura
-archivo_texto = open(&quot;prac37_files/archivo.txt&quot;, &quot;w&quot;)
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;w&quot;)
 
 frase = &quot;Es un estupendo día para estudiar Python\nen Youtube.&quot;
 
@@ -666,7 +661,7 @@ archivo_texto.close()
 
 <pre><code class="language-python">from io import open
 
-archivo_texto = open(&quot;prac37_files/archivo.txt&quot;, &quot;r&quot;)
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
 
 texto = archivo_texto.read()
 
@@ -683,7 +678,7 @@ en Youtube.
 
 <pre><code class="language-python">from io import open
 
-archivo_texto = open(&quot;prac37_files/archivo.txt&quot;, &quot;r&quot;)
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
 
 lineas_texto = archivo_texto.readlines()
 
@@ -707,20 +702,24 @@ print(lineas_texto)
 
 <pre><code class="language-python">from io import open
 
-archivo1 = open(&quot;prac37_files/archivo.txt&quot;, &quot;r&quot;)
+archivo1 = open(&quot;archivo.txt&quot;, &quot;r&quot;)
 texto = archivo1.read()
 archivo1.close()
 
-archivo2 = open(&quot;prac37_files/archivo2.txt&quot;, &quot;w&quot;)
+archivo2 = open(&quot;archivo2.txt&quot;, &quot;w&quot;)
 archivo2.write(texto)
 archivo2.close()
 
-archivo2 = open(&quot;prac37_files/archivo2.txt&quot;, &quot;a&quot;)
+archivo2 = open(&quot;archivo2.txt&quot;, &quot;a&quot;)
 archivo2.write(&quot;\n¡Mañana más!&quot;)
 archivo2.close()
 </code></pre>
 
-<p>Si acudimos a la carpeta <code>prac37_files</code>, comprobaremos la existencia de un fichero denominado <code>archivo2.txt</code>, que contiene tres líneas.</p>
+<p>Si acudimos a la carpeta, comprobaremos la existencia de un fichero denominado <code>archivo2.txt</code>, que contiene tres líneas.</p>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/37/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -796,7 +795,7 @@ archivo2.close()
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -882,7 +881,7 @@ archivo2.close()
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

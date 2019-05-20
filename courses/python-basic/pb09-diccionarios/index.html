@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -39,16 +39,6 @@ Su principal característica reside en que cada dato se almacena asociado a una 
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -72,8 +62,8 @@ Su principal característica reside en que cada dato se almacena asociado a una 
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -92,7 +82,7 @@ Su principal característica reside en que cada dato se almacena asociado a una 
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -557,6 +547,10 @@ Su principal característica reside en que cada dato se almacena asociado a una 
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -579,6 +573,7 @@ Su principal característica reside en que cada dato se almacena asociado a una 
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -624,31 +619,31 @@ Su principal característica reside en que cada dato se almacena asociado a una 
            &quot;Reino Unido&quot;: &quot;Londres&quot;,
            &quot;España&quot;: &quot;Madrid&quot;}
 
-print(mi_dicc[&quot;Francia&quot;]) # París
-print(mi_dicc[&quot;España&quot;]) # Madrid
+print(mi_dicc[&quot;Francia&quot;])  # París
+print(mi_dicc[&quot;España&quot;])  # Madrid
 
-print(mi_dicc) # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid'}
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid'}
 </code></pre>
 
 <p>Agregamos nuevos elementos al diccionario con el patrón <code>nombre[clave] = valor</code>:</p>
 
 <pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Lisboa&quot;
 
-print(mi_dicc) # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Lisboa'}
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Lisboa'}
 </code></pre>
 
 <p>Modificamos un valor asignado a una clave simplemente sobreescribiéndolo:</p>
 
 <pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Roma&quot;
 
-print(mi_dicc) # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Roma'}
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Roma'}
 </code></pre>
 
 <p>Suprimimos elementos con <code>del</code>:</p>
 
 <pre><code class="language-python">del mi_dicc[&quot;Reino Unido&quot;]
 
-print(mi_dicc) # {'Alemania': 'Berlin', 'Francia': 'París', 'España': 'Madrid', 'Italia': 'Roma'}
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'España': 'Madrid', 'Italia': 'Roma'}
 </code></pre>
 
 <p>Generemos un diccionario que presente diferentes tipos de datos:</p>
@@ -657,7 +652,7 @@ print(mi_dicc) # {'Alemania': 'Berlin', 'Francia': 'París', 'España': 'Madrid'
            23: &quot;Jordan&quot;,
            &quot;Mosqueteros&quot;: 3}
 
-print(mi_dicc) # {'Alemania': 'Berlín', 23: 'Jordan', 'Mosqueteros': 3}
+print(mi_dicc)  # {'Alemania': 'Berlín', 23: 'Jordan', 'Mosqueteros': 3}
 </code></pre>
 
 <p>Empleemos una tupla (el procedimiento sería similar si optamos por una lista) para asignar la clave a cada uno de los valores:</p>
@@ -668,10 +663,10 @@ mi_dicc = {mi_tupla[0]: &quot;Madrid&quot;,
            mi_tupla[2]: &quot;Londres&quot;,
            mi_tupla[3]: &quot;Berlín&quot;}
 
-print(mi_dicc) # {'España': 'Madrid', 'Francia': 'París', 'Reino Unido': 'Londres', 'Alemania': 'Berlín'}
+print(mi_dicc)  # {'España': 'Madrid', 'Francia': 'París', 'Reino Unido': 'Londres', 'Alemania': 'Berlín'}
 
-print(mi_dicc[&quot;España&quot;]) # Madrid
-print(mi_dicc[mi_tupla[0]]) # Madrid
+print(mi_dicc[&quot;España&quot;])  # Madrid
+print(mi_dicc[mi_tupla[0]])  # Madrid
 </code></pre>
 
 <p>También podemos almacenar tuplas (o listas&hellip;) como valores:</p>
@@ -681,9 +676,9 @@ print(mi_dicc[mi_tupla[0]]) # Madrid
            &quot;Equipo&quot;: &quot;Chicago&quot;,
            &quot;Anillos&quot;: (1991, 1992, 1993, 1996, 1997, 1998)}
 
-print(mi_dicc) # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': (1991, 1992, 1993, 1996, 1997, 1998)}
-print(mi_dicc[&quot;Equipo&quot;]) # Chicago
-print(mi_dicc[&quot;Anillos&quot;]) # (1991, 1992, 1993, 1996, 1997, 1998)
+print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': (1991, 1992, 1993, 1996, 1997, 1998)}
+print(mi_dicc[&quot;Equipo&quot;])  # Chicago
+print(mi_dicc[&quot;Anillos&quot;])  # (1991, 1992, 1993, 1996, 1997, 1998)
 </code></pre>
 
 <p>Asimismo, guardemos un diccionario dentro de otro:</p>
@@ -693,8 +688,8 @@ print(mi_dicc[&quot;Anillos&quot;]) # (1991, 1992, 1993, 1996, 1997, 1998)
            &quot;Equipo&quot;: &quot;Chicago&quot;,
            &quot;Anillos&quot;: {&quot;Temporadas&quot;: (1991, 1992, 1993, 1996, 1997, 1998)}}
 
-print(mi_dicc) # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}}
-print(mi_dicc[&quot;Anillos&quot;]) # {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}
+print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}}
+print(mi_dicc[&quot;Anillos&quot;])  # {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}
 </code></pre>
 
 <p>Algunos métodos interesantes a conocer son:</p>
@@ -705,10 +700,14 @@ print(mi_dicc[&quot;Anillos&quot;]) # {'Temporadas': (1991, 1992, 1993, 1996, 19
 <li><code>len()</code>, para averiguar la longitud de un diccionario:</li>
 </ul>
 
-<pre><code class="language-python">print(mi_dicc.keys()) # dict_keys([23, 'Nombre', 'Equipo', 'Anillos'])
-print(mi_dicc.values()) # dict_values(['Jordan', 'Michael', 'Chicago', {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}])
-print(len(mi_dicc)) # 4
+<pre><code class="language-python">print(mi_dicc.keys())  # dict_keys([23, 'Nombre', 'Equipo', 'Anillos'])
+print(mi_dicc.values())  # dict_values(['Jordan', 'Michael', 'Chicago', {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}])
+print(len(mi_dicc))  # 4
 </code></pre>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/09/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -784,7 +783,7 @@ print(len(mi_dicc)) # 4
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -870,7 +869,7 @@ print(len(mi_dicc)) # 4
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

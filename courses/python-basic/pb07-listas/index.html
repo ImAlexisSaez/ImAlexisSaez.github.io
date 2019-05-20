@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -40,16 +40,6 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -73,8 +63,8 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -93,7 +83,7 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -559,6 +549,10 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -581,6 +575,7 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -621,11 +616,11 @@ A continuación, creemos una lista con cuatro elementos de tipo texto y veamos c
 
 <pre><code class="language-python">mi_lista = [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
 
-print(mi_lista) # Imprime la lista completa: [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
-print(mi_lista[:]) # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
+print(mi_lista[:])  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
 
-print(mi_lista[2]) # Marta
-print(mi_lista[0]) # María
+print(mi_lista[2])  # Marta
+print(mi_lista[0])  # María
 </code></pre>
 
 <p>Si empleamos índices que superan el rango de elementos de una lista, <em>Python</em> nos arroja un error:</p>
@@ -648,49 +643,49 @@ print(mi_lista[-3]) # Pepe
 
 <p>Además, podemos acceder a porciones de una lista, mediante la sintaxis <code>nombre[a:b]</code>, que extrae todos los elementos comprendidos entre los índices <code>a</code> y el anterior a <code>b</code>. Por ejemplo:</p>
 
-<pre><code class="language-python">print(mi_lista[0:2]) # [&quot;María&quot;, &quot;Pepe&quot;]
-print(mi_lista[0:1]) # [&quot;María&quot;]
-print(mi_lista[-3:-1]) # [&quot;Pepe&quot;, &quot;Marta&quot;]
+<pre><code class="language-python">print(mi_lista[0:2])  # [&quot;María&quot;, &quot;Pepe&quot;]
+print(mi_lista[0:1])  # [&quot;María&quot;]
+print(mi_lista[-3:-1])  # [&quot;Pepe&quot;, &quot;Marta&quot;]
 </code></pre>
 
 <p>Se pueden omitir algunos de los anteriores índices indicados y <em>Python</em> sobreentiende que comienza o acaba en el extremo correspondiente:</p>
 
-<pre><code class="language-python">print(mi_lista[:2]) # [&quot;María&quot;, &quot;Pepe&quot;]
-print(mi_lista[2:]) # [&quot;Marta&quot;, &quot;Antonio&quot;]
-print(mi_lista[-2:]) # [&quot;Marta&quot;, &quot;Antonio&quot;]
+<pre><code class="language-python">print(mi_lista[:2])  # [&quot;María&quot;, &quot;Pepe&quot;]
+print(mi_lista[2:])  # [&quot;Marta&quot;, &quot;Antonio&quot;]
+print(mi_lista[-2:])  # [&quot;Marta&quot;, &quot;Antonio&quot;]
 </code></pre>
 
 <p><em>Nota técnica</em>: cuando accedemos a una porción, se conserva el tipo lista, pero no así si se extrae un único elemento en particular.</p>
 
-<pre><code class="language-python">print(type(mi_lista[2])) # &lt;class 'str'&gt;
-print(type(mi_lista[2:3])) # &lt;class 'list'&gt;
+<pre><code class="language-python">print(type(mi_lista[2]))  # &lt;class 'str'&gt;
+print(type(mi_lista[2:3]))  # &lt;class 'list'&gt;
 </code></pre>
 
 <p>Agregamos elementos al final de la lista utilizando <code>.append()</code>:</p>
 
 <pre><code class="language-python">mi_lista.append(&quot;Sandra&quot;)
-print(mi_lista) # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
 </code></pre>
 
 <p>Usaremos <code>.insert(posición, elemento)</code>, si buscamos añadir un elemento en un punto intermedio:</p>
 
 <pre><code class="language-python">mi_lista.insert(2, &quot;Paco&quot;)
-print(mi_lista) # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Paco&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Paco&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
 </code></pre>
 
 <p>Es posible agregar varios elementos al final de una lista utilizando <code>.extend()</code> y pasando como argumento otra lista:</p>
 
 <pre><code class="language-python">mi_compra = [&quot;Manzanas&quot;]
-print(mi_compra) # [&quot;Manzanas&quot;]
+print(mi_compra)  # [&quot;Manzanas&quot;]
 
 mi_compra.extend([&quot;Aguacates&quot;, &quot;Sandía&quot;])
-print(mi_compra) # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
+print(mi_compra)  # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
 </code></pre>
 
 <p>Para acceder al índice de un elemento, empleamos <code>.index(elemento)</code>:</p>
 
-<pre><code class="language-python">print(mi_lista.index(&quot;Antonio&quot;)) # 4
-print(mi_compra.index(&quot;Sandía&quot;)) # 2
+<pre><code class="language-python">print(mi_lista.index(&quot;Antonio&quot;))  # 4
+print(mi_compra.index(&quot;Sandía&quot;))  # 2
 </code></pre>
 
 <p>Si intentamos acceder al índice de elementos que no están incluidos en la lista, <em>Python</em> arroja un error:</p>
@@ -702,32 +697,32 @@ print(mi_compra.index(&quot;Sandía&quot;)) # 2
 <p>En una lista, puede haber elementos iguales en posiciones distintas. La función <code>.index()</code> nos devolverá el valor del índice del primer elemento repetido:</p>
 
 <pre><code class="language-python">mi_compra.extend(mi_compra)
-print(mi_compra) # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;, &quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
-print(mi_compra.index(&quot;Manzanas&quot;)) # 0
+print(mi_compra)  # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;, &quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
+print(mi_compra.index(&quot;Manzanas&quot;))  # 0
 </code></pre>
 
 <p>Para comprobar si un elemento se encuentra o no en una lista, utilizamos <code>in</code>:</p>
 
-<pre><code class="language-python">print(&quot;Pepe&quot; in mi_lista) # True
-print(&quot;Ana&quot; in mi_lista) # False
+<pre><code class="language-python">print(&quot;Pepe&quot; in mi_lista)  # True
+print(&quot;Ana&quot; in mi_lista)  # False
 </code></pre>
 
 <p>Tal y como mencionamos arriba, una lista puede almacenar sin problemas elementos de diferentes tipos:</p>
 
 <pre><code class="language-python">mezcla = [&quot;Alexis&quot;, True, 10, 3.14]
-print(mezcla) # [&quot;Alexis&quot;, True, 10, 3.14]
+print(mezcla)  # [&quot;Alexis&quot;, True, 10, 3.14]
 </code></pre>
 
 <p>Para eliminar elementos, usamos <code>.remove()</code>:</p>
 
 <pre><code class="language-python">mezcla.remove(True)
-print(mezcla) # [&quot;Alexis&quot;, 10, 3.14]
+print(mezcla)  # [&quot;Alexis&quot;, 10, 3.14]
 </code></pre>
 
 <p>En particular, podemos suprimir el último elemento de una lista mediante <code>.pop()</code>:</p>
 
 <pre><code class="language-python">mezcla.pop()
-print(mezcla) # [&quot;Alexis&quot;, 10]
+print(mezcla)  # [&quot;Alexis&quot;, 10]
 </code></pre>
 
 <p>El operador <code>+</code> concatena listas:</p>
@@ -735,13 +730,17 @@ print(mezcla) # [&quot;Alexis&quot;, 10]
 <pre><code class="language-python">lista1 = [&quot;Ana&quot;, 5]
 lista2 = [True, 2.1]
 lista3 = lista1 + lista2
-print(lista3) # [&quot;Ana&quot;, 5, True, 2.1]
+print(lista3)  # [&quot;Ana&quot;, 5, True, 2.1]
 </code></pre>
 
 <p>El operador <code>*</code> repite la lista un número determinado de veces.</p>
 
-<pre><code class="language-python">print(lista1 * 2) # [&quot;Ana&quot;, 5, &quot;Ana&quot;, 5]
+<pre><code class="language-python">print(lista1 * 2)  # [&quot;Ana&quot;, 5, &quot;Ana&quot;, 5]
 </code></pre>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/07/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -817,7 +816,7 @@ print(lista3) # [&quot;Ana&quot;, 5, True, 2.1]
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -903,7 +902,7 @@ print(lista3) # [&quot;Ana&quot;, 5, True, 2.1]
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

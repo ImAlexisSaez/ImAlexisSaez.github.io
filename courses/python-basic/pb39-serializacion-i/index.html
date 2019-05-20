@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -39,16 +39,6 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -72,8 +62,8 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -92,7 +82,7 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -557,6 +547,10 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -579,6 +573,7 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -628,7 +623,7 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
 
 nombres = [&quot;Pedro&quot;, &quot;Ana&quot;, &quot;María&quot;, &quot;Isabel&quot;]
 
-fichero = open(&quot;prac39_files/lista_nombres&quot;, &quot;wb&quot;)
+fichero = open(&quot;lista_nombres&quot;, &quot;wb&quot;)
 
 pickle.dump(nombres, fichero)
 
@@ -642,14 +637,14 @@ del fichero
 <ul>
 <li>A la hora de crear el fichero externo en modo escritura, con el método <code>open()</code>, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento <code>&quot;wb&quot;</code>.</li>
 <li>La instrucción <code>del</code> borra el puntero de la memoria hacia la variable <code>fichero</code>, dejando de estar disponible su acceso a partir de ese momento.</li>
-<li>Al ejecutar el anterior bloque de código, en la carpeta denominada <code>prac39_files</code> (designada así para conservar la coherencia en la estructura del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
+<li>Al ejecutar el anterior bloque de código, en la carpeta correspondiente del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
 </ul>
 
 <p>A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.</p>
 
 <pre><code class="language-python">import pickle
 
-fichero = open(&quot;prac39_files/lista_nombres&quot;, &quot;rb&quot;)
+fichero = open(&quot;lista_nombres&quot;, &quot;rb&quot;)
 
 lista = pickle.load(fichero)
 
@@ -662,6 +657,10 @@ print(lista)
 </code></pre>
 
 <p><em>Nota</em>: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función <code>open()</code> ha de tomar el valor de argumento <code>&quot;rb&quot;</code>.</p>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/39/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -737,7 +736,7 @@ print(lista)
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -823,7 +822,7 @@ print(lista)
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -40,16 +40,6 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -73,8 +63,8 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -93,7 +83,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -559,6 +549,10 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -581,6 +575,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -650,7 +645,7 @@ coche3 = Vehiculo(&quot;Renault&quot;, &quot;Megane&quot;)
 
 coches = [coche1, coche2, coche3]
 
-fichero = open(&quot;prac40_files/coches&quot;, &quot;wb&quot;)
+fichero = open(&quot;coches&quot;, &quot;wb&quot;)
 
 pickle.dump(coches, fichero)
 
@@ -663,7 +658,7 @@ del fichero
 
 <ul>
 <li>Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función <code>open()</code> es <code>&quot;wb&quot;</code>.</li>
-<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta <code>prac40_files</code> (para mantener coherencia en la estructura del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>) el fichero <code>coches</code>.</li>
+<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>) el fichero <code>coches</code>.</li>
 </ul>
 
 <p>Para rescatar la información de este archivo que acabamos de generar, tecleamos:</p>
@@ -694,7 +689,7 @@ class Vehiculo():
               self.frena)
 
 
-fichero = open(&quot;prac40_files/coches&quot;, &quot;rb&quot;)
+fichero = open(&quot;coches&quot;, &quot;rb&quot;)
 
 coches = pickle.load(fichero)
 
@@ -732,6 +727,10 @@ None
 
 <p><em>Nota</em>: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase <code>Vehiculo</code> es necesario que figure asimismo (en caso contrario arroja <em>Python</em> un error). El problema radica en que el nuevo archivo no tiene información sobre la clase <code>Vehiculo</code> ni, por supuesto, del método <code>estado()</code>.</p>
 
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/40/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+
           </div>
 
           
@@ -750,6 +749,12 @@ None
     <a href="/courses/python-basic/pb39-serializacion-i/" rel="next">39. Serialización I</a>
   </div>
   
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Siguiente</div>
+    <a href="/courses/python-basic/pb41-guardado-permanente/" rel="prev">41. Guardado permanente</a>
+  </div>
   
 </div>
 
@@ -800,7 +805,7 @@ None
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -886,7 +891,7 @@ None
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

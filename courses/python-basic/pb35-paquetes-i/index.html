@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -29,23 +29,13 @@
   
   <meta name="description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
 Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado prac35_calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.">
+Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
 
   
 
-
-  
-
-  
-
-  
-
-  
-
-  
 
   
 
@@ -73,8 +63,8 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -93,7 +83,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -139,7 +129,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   <meta property="og:title" content="35. Paquetes I | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
 Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado prac35_calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2019-05-12T00:00:02&#43;01:00">
@@ -559,6 +549,10 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -581,6 +575,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -617,9 +612,9 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
 
 <p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
 
-<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>prac35_calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
-<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>prac35_calculos</code> funcionará como un paquete.</p>
+<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
 
 <p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
 
@@ -649,7 +644,7 @@ def redondear(numero):
 
 <p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
 
-<pre><code class="language-python">from prac35_calculos.calculos_generales import dividir
+<pre><code class="language-python">from calculos.calculos_generales import dividir
 
 dividir(10, 3)
 </code></pre>
@@ -659,7 +654,7 @@ dividir(10, 3)
 
 <p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
 
-<pre><code class="language-python">from prac35_calculos.calculos_generales import *
+<pre><code class="language-python">from calculos.calculos_generales import *
 
 dividir(10, 3)
 
@@ -707,8 +702,8 @@ def redondear(numero):
 
 <p>Para utilizar estos últimos módulos creados, tecleamos:</p>
 
-<pre><code class="language-python">from prac35_calculos.basicos.operaciones_basicas import sumar
-from prac35_calculos.redondeo_potencia.redondea_y_potencia import potenciar
+<pre><code class="language-python">from calculos.basicos.operaciones_basicas import sumar
+from calculos.redondeo_potencia.redondea_y_potencia import potenciar
 
 sumar(5, 7)
 potenciar(2, 10)
@@ -717,6 +712,10 @@ potenciar(2, 10)
 <pre><code class="language-bash">El resultado de la suma es: 12
 El resultado de la potenciación es: 1024
 </code></pre>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -792,7 +791,7 @@ El resultado de la potenciación es: 1024
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -878,7 +877,7 @@ El resultado de la potenciación es: 1024
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

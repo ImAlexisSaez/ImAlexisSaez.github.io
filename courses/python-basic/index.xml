@@ -147,7 +147,7 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
       
       <guid>https://imalexissaez.github.io/courses/python-basic/pb13-condicionales-iv/</guid>
       <description>Vídeo   Notas personales A continuación, veremos el uso de los operadores lógicos and y or, y del operador in. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de
- la distancia a la que vive del centro, el número de hermanos, y el salario familiar.  print(&amp;quot;Programa de evaluación de becas - Curso 2018/19&amp;quot;) distancia_escuela = int(input(&amp;quot;Introduce la distancia a la escuela (en km): &amp;quot;)) print(&amp;quot;Distancia a la escuela: &amp;quot; + str(distancia_escuela)) numero_hermanos = int(input(&amp;quot;Introduce el número de hermanos en el centro: &amp;quot;)) print(&amp;quot;Número de hermanos: &amp;quot; + str(numero_hermanos)) salario_familiar = int(input(&amp;quot;Introduce el salario anual bruto: &amp;quot;)) print(&amp;quot;Salario anual bruto: &amp;quot; + str(salario_familiar)) if distancia_escuela &amp;gt; 40 and numero_hermanos &amp;gt; 2 and salario_familiar &amp;lt;= 20000: print(&amp;quot;Tienes derecho a beca&amp;quot;) else: print(&amp;quot;No tienes derecho a beca&amp;quot;)  Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:</description>
+ la distancia a la que vive del centro, el número de hermanos, y el salario familiar.  print(&amp;quot;Programa de evaluación de becas - Curso 2018/19&amp;quot;) dist_escuela = int(input(&amp;quot;Introduce la distancia a la escuela (en km): &amp;quot;)) print(&amp;quot;Distancia a la escuela: &amp;quot; + str(dist_escuela)) num_hermanos = int(input(&amp;quot;Introduce el número de hermanos en el centro: &amp;quot;)) print(&amp;quot;Número de hermanos: &amp;quot; + str(num_hermanos)) sal_familiar = int(input(&amp;quot;Introduce el salario anual bruto: &amp;quot;)) print(&amp;quot;Salario anual bruto: &amp;quot; + str(sal_familiar)) if dist_escuela &amp;gt; 40 and num_hermanos &amp;gt; 2 and sal_familiar &amp;lt;= 20000: print(&amp;quot;Tienes derecho a beca&amp;quot;) else: print(&amp;quot;No tienes derecho a beca&amp;quot;)  Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:</description>
     </item>
     
     <item>
@@ -384,7 +384,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
       <guid>https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/</guid>
       <description>Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
 Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado prac35_calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.</description>
+Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.</description>
     </item>
     
     <item>
@@ -394,7 +394,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
       
       <guid>https://imalexissaez.github.io/courses/python-basic/pb36-paquetes-ii/</guid>
       <description>Vídeo   Notas personales Veamos cómo crear paquetes distribuibles para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:
- Crear el paquete. Instalar el paquete.  En la lección anterior generamos el paquete prac35_calculos como una carpeta en el interior del directorio del repositorio donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, prac35_paquetes1_3.</description>
+ Crear el paquete. Instalar el paquete.  En la lección anterior generamos el paquete calculos como una carpeta en el interior del directorio del repositorio donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, paquetes_1.</description>
     </item>
     
     <item>
@@ -415,8 +415,8 @@ Existen dos alternativas para conseguir el mencionado objetivo:
       
       <guid>https://imalexissaez.github.io/courses/python-basic/pb38-archivos-ii/</guid>
       <description>Vídeo   Notas personales Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo io, analizando en esta ocasión cómo manejar punteros en texto.
-Para ello, movamos el último archivo de texto generado en la lección anterior (archivo2.txt) a la carpeta prac38_files, para así mantener la coherencia de la estructura de ficheros del repositorio. Tras ello, tecleemos:
-from io import open archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;) print(archivo.</description>
+Para ello, movamos el último archivo de texto generado en la lección anterior (archivo2.txt) a la carpeta, para así mantener la coherencia de la estructura de ficheros del repositorio. Tras ello, tecleemos:
+from io import open archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;) print(archivo.</description>
     </item>
     
     <item>
@@ -438,6 +438,17 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
       <description>Vídeo   Notas personales En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.
 Aprovechemos la clase Vehiculo que generamos anteriormente y cuyo código fuente recordemos era:
 class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.</description>
+    </item>
+    
+    <item>
+      <title>41. Guardado permanente</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb41-guardado-permanente/</link>
+      <pubDate>Mon, 20 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb41-guardado-permanente/</guid>
+      <description>Vídeo   Notas personales En esta lección, continuaremos estudiando cómo guardar datos de forma permanente en ficheros externos, reforzando así los contenidos aprendidos hasta el momento.
+Empecemos importando la librería pickle y creando una clase sencilla: Persona.
+import pickle class Persona: def __init__(self, nombre, genero, edad): self.nombre = nombre self.genero = genero self.edad = edad print(&amp;quot;Se ha creado una persona nueva con el nombre de&amp;quot;, self.nombre) def __str__(self): return &amp;quot;{} {} {}&amp;quot;.</description>
     </item>
     
   </channel>

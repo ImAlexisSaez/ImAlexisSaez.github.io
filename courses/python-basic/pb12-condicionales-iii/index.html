@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.3.0">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
 
   
 
@@ -39,16 +39,6 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
   
 
   
-
-  
-
-  
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -72,8 +62,8 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -92,7 +82,7 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.9e398b7a64ee2c82769da9724cdbf0cc.css">
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
 
   
 
@@ -557,6 +547,10 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
         <a href="/courses/python-basic/pb40-serializacion-ii/">40. Serialización II</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb41-guardado-permanente/">41. Guardado</a>
+      </li>
+      
     </ul>
     
 
@@ -579,6 +573,7 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -623,30 +618,35 @@ Antes de nada, siguiendo las instrucciones de este post, creamos un atajo para e
     else:
         print(&quot;La edad es incorrecta.&quot;)
 
-comprueba_edad(5) # La edad es correcta.
-comprueba_edad(135) # La edad es incorrecta.
-comprueba_edad(-7) # La edad es incorrecta.
+
+comprueba_edad(5)  # La edad es correcta.
+comprueba_edad(135)  # La edad es incorrecta.
+comprueba_edad(-7)  # La edad es incorrecta.
 </code></pre>
 
 <p>Creemos ahora un programa que evaluará el salario de diferentes trabajadores de una empresa:</p>
 
-<pre><code class="language-python">salario_presidente = int(input(&quot;Introduce el salario del presidente: &quot;))
-print(&quot;Salario presidente: &quot; + str(salario_presidente))
+<pre><code class="language-python">sal_presidente = int(input(&quot;Introduce el salario del presidente: &quot;))
+print(&quot;Salario presidente: &quot; + str(sal_presidente))
 
-salario_director = int(input(&quot;Introduce el salario del director: &quot;))
-print(&quot;Salario director: &quot; + str(salario_director))
+sal_director = int(input(&quot;Introduce el salario del director: &quot;))
+print(&quot;Salario director: &quot; + str(sal_director))
 
-salario_jefe_area = int(input(&quot;Introduce el salario del jefe de área: &quot;))
-print(&quot;Salario jefe de área: &quot; + str(salario_jefe_area))
+sal_jefe_area = int(input(&quot;Introduce el salario del jefe de área: &quot;))
+print(&quot;Salario jefe de área: &quot; + str(sal_jefe_area))
 
-salario_administrativo = int(input(&quot;Introduce el salario del administrativo: &quot;))
-print(&quot;Salario administrativo: &quot; + str(salario_administrativo))
+sal_administrativo = int(input(&quot;Introduce el salario del administrativo: &quot;))
+print(&quot;Salario administrativo: &quot; + str(sal_administrativo))
 
-if salario_administrativo &lt; salario_jefe_area &lt; salario_director &lt; salario_presidente:
+if sal_administrativo &lt; sal_jefe_area &lt; sal_director &lt; sal_presidente:
     print(&quot;Todo funciona correctamente.&quot;)
 else:
     print(&quot;Algo falla en esta empresa.&quot;)
 </code></pre>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/12/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -722,7 +722,7 @@ else:
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
         
       
 
@@ -808,7 +808,7 @@ else:
     
     
     
-    <script src="/js/academic.min.3258b3a711acd6208568ec000de4beec.js"></script>
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
 
   </body>
 </html>

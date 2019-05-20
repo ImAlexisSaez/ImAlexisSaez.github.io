@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sat, 18 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -318,7 +318,7 @@ Los números son diferentes.
 
 &lt;p&gt;Ejecutamos (o llamamos) una función tecleando &lt;code&gt;nombre_función(parámetros)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;A continuación, dejamos de lado el IDLE de &lt;em&gt;Sublime Text 3&lt;/em&gt; y pasamos a compilar directamente ficheros desde el propio editor. Para ello, desplegamos el menú &lt;code&gt;Tools&lt;/code&gt; y en el apartado &lt;code&gt;Build System&lt;/code&gt; escogemos la opción &lt;code&gt;Python&lt;/code&gt;. Acto seguido, creamos el fichero &lt;code&gt;primeras_funciones.py&lt;/code&gt;, que contendrá la instrucción&lt;/p&gt;
+&lt;p&gt;A continuación, dejamos de lado el IDLE de &lt;em&gt;Sublime Text 3&lt;/em&gt; y pasamos a compilar directamente ficheros desde el propio editor. Para ello, desplegamos el menú &lt;code&gt;Tools&lt;/code&gt; y en el apartado &lt;code&gt;Build System&lt;/code&gt; escogemos la opción &lt;code&gt;Python&lt;/code&gt;. Acto seguido, creamos el fichero &lt;code&gt;funciones.py&lt;/code&gt;, que contendrá la instrucción&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Estamos aprendiendo Python.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -357,7 +357,7 @@ print(&amp;quot;Poco a poco iremos avanzando.&amp;quot;)
 
 &lt;p&gt;Las funciones nos permiten reutilizar código para, precisamente, evitar que actuemos como arriba. Definamos una función llamada &lt;code&gt;mensaje()&lt;/code&gt; y ejecutémosla tantas veces como deseemos.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mensaje(): 
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mensaje():
     print(&amp;quot;Estamos aprendiendo Python.&amp;quot;)
     print(&amp;quot;Estamos aprendiendo instrucciones básicas.&amp;quot;)
     print(&amp;quot;Poco a poco iremos avanzando.&amp;quot;)
@@ -380,6 +380,10 @@ print(&amp;quot;Ejecutando código fuera de función&amp;quot;)
 
 mensaje()
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/05/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -408,6 +412,7 @@ mensaje()
     num2 = 7
     print(num1 + num2)
 
+
 suma()
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -420,9 +425,10 @@ suma()
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def suma(num1, num2):
     print(num1 + num2)
 
-suma(5, 7) # 12
-suma(2, 3) # 5
-suma(35, 358) # 393
+
+suma(5, 7)  # 12
+suma(2, 3)  # 5
+suma(35, 358)  # 393
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Tal y como está declarada la nueva función de suma, &lt;strong&gt;obligatoriamente&lt;/strong&gt; hemos de pasarle dos argumentos o sino aparecerán errores.&lt;/p&gt;
@@ -437,7 +443,7 @@ suma(35, 358) # 393
 
 &lt;p&gt;Puede resultar conveniente, por legibilidad, pasar los argumentos a una función utilizando el esquema &lt;code&gt;parámetro=valor&lt;/code&gt;.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;suma(num1=5, num2=7) # 12
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;suma(num1=5, num2=7)  # 12
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Además, las funciones&lt;/p&gt;
@@ -451,24 +457,29 @@ suma(35, 358) # 393
     resultado = num1 + num2
     return resultado
 
+
 suma(5, 7)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;La ejecución del anterior bloque de código no muestra resultado alguno en la consola. La función devuelve el resultado, pero no lo hemos imprimido. Así,&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(suma(5, 7)) # 12
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(suma(5, 7))  # 12
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Una ventaja de utilizar la instrucción &lt;code&gt;return&lt;/code&gt; reside en que podemos almacenar los valores que devuelve una función en variables y trabajar posteriormente con ellas.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;almacena_resultado = suma(5, 8)
-print(almacena_resultado) # 13
+print(almacena_resultado)  # 13
 
 actualiza_resultado = suma(almacena_resultado, 8)
-print(actualiza_resultado) # 13 + 8 = 21
+print(actualiza_resultado)  # 13 + 8 = 21
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: &lt;em&gt;Python&lt;/em&gt; pasa siempre los valores por referencia, no por valor.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/06/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -498,11 +509,11 @@ print(actualiza_resultado) # 13 + 8 = 21
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_lista = [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
 
-print(mi_lista) # Imprime la lista completa: [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
-print(mi_lista[:]) # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
+print(mi_lista)  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
+print(mi_lista[:])  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
 
-print(mi_lista[2]) # Marta
-print(mi_lista[0]) # María
+print(mi_lista[2])  # Marta
+print(mi_lista[0])  # María
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Si empleamos índices que superan el rango de elementos de una lista, &lt;em&gt;Python&lt;/em&gt; nos arroja un error:&lt;/p&gt;
@@ -525,49 +536,49 @@ print(mi_lista[-3]) # Pepe
 
 &lt;p&gt;Además, podemos acceder a porciones de una lista, mediante la sintaxis &lt;code&gt;nombre[a:b]&lt;/code&gt;, que extrae todos los elementos comprendidos entre los índices &lt;code&gt;a&lt;/code&gt; y el anterior a &lt;code&gt;b&lt;/code&gt;. Por ejemplo:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista[0:2]) # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;]
-print(mi_lista[0:1]) # [&amp;quot;María&amp;quot;]
-print(mi_lista[-3:-1]) # [&amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista[0:2])  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;]
+print(mi_lista[0:1])  # [&amp;quot;María&amp;quot;]
+print(mi_lista[-3:-1])  # [&amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Se pueden omitir algunos de los anteriores índices indicados y &lt;em&gt;Python&lt;/em&gt; sobreentiende que comienza o acaba en el extremo correspondiente:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista[:2]) # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;]
-print(mi_lista[2:]) # [&amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
-print(mi_lista[-2:]) # [&amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista[:2])  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;]
+print(mi_lista[2:])  # [&amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
+print(mi_lista[-2:])  # [&amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: cuando accedemos a una porción, se conserva el tipo lista, pero no así si se extrae un único elemento en particular.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(type(mi_lista[2])) # &amp;lt;class &#39;str&#39;&amp;gt;
-print(type(mi_lista[2:3])) # &amp;lt;class &#39;list&#39;&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(type(mi_lista[2]))  # &amp;lt;class &#39;str&#39;&amp;gt;
+print(type(mi_lista[2:3]))  # &amp;lt;class &#39;list&#39;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Agregamos elementos al final de la lista utilizando &lt;code&gt;.append()&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_lista.append(&amp;quot;Sandra&amp;quot;)
-print(mi_lista) # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;, &amp;quot;Sandra&amp;quot;]
+print(mi_lista)  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;, &amp;quot;Sandra&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Usaremos &lt;code&gt;.insert(posición, elemento)&lt;/code&gt;, si buscamos añadir un elemento en un punto intermedio:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_lista.insert(2, &amp;quot;Paco&amp;quot;)
-print(mi_lista) # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Paco&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;, &amp;quot;Sandra&amp;quot;]
+print(mi_lista)  # [&amp;quot;María&amp;quot;, &amp;quot;Pepe&amp;quot;, &amp;quot;Paco&amp;quot;, &amp;quot;Marta&amp;quot;, &amp;quot;Antonio&amp;quot;, &amp;quot;Sandra&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Es posible agregar varios elementos al final de una lista utilizando &lt;code&gt;.extend()&lt;/code&gt; y pasando como argumento otra lista:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_compra = [&amp;quot;Manzanas&amp;quot;]
-print(mi_compra) # [&amp;quot;Manzanas&amp;quot;]
+print(mi_compra)  # [&amp;quot;Manzanas&amp;quot;]
 
 mi_compra.extend([&amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;])
-print(mi_compra) # [&amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;]
+print(mi_compra)  # [&amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Para acceder al índice de un elemento, empleamos &lt;code&gt;.index(elemento)&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista.index(&amp;quot;Antonio&amp;quot;)) # 4
-print(mi_compra.index(&amp;quot;Sandía&amp;quot;)) # 2
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_lista.index(&amp;quot;Antonio&amp;quot;))  # 4
+print(mi_compra.index(&amp;quot;Sandía&amp;quot;))  # 2
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Si intentamos acceder al índice de elementos que no están incluidos en la lista, &lt;em&gt;Python&lt;/em&gt; arroja un error:&lt;/p&gt;
@@ -579,32 +590,32 @@ print(mi_compra.index(&amp;quot;Sandía&amp;quot;)) # 2
 &lt;p&gt;En una lista, puede haber elementos iguales en posiciones distintas. La función &lt;code&gt;.index()&lt;/code&gt; nos devolverá el valor del índice del primer elemento repetido:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_compra.extend(mi_compra)
-print(mi_compra) # [&amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;, &amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;]
-print(mi_compra.index(&amp;quot;Manzanas&amp;quot;)) # 0
+print(mi_compra)  # [&amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;, &amp;quot;Manzanas&amp;quot;, &amp;quot;Aguacates&amp;quot;, &amp;quot;Sandía&amp;quot;]
+print(mi_compra.index(&amp;quot;Manzanas&amp;quot;))  # 0
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Para comprobar si un elemento se encuentra o no en una lista, utilizamos &lt;code&gt;in&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Pepe&amp;quot; in mi_lista) # True
-print(&amp;quot;Ana&amp;quot; in mi_lista) # False
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Pepe&amp;quot; in mi_lista)  # True
+print(&amp;quot;Ana&amp;quot; in mi_lista)  # False
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Tal y como mencionamos arriba, una lista puede almacenar sin problemas elementos de diferentes tipos:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mezcla = [&amp;quot;Alexis&amp;quot;, True, 10, 3.14]
-print(mezcla) # [&amp;quot;Alexis&amp;quot;, True, 10, 3.14]
+print(mezcla)  # [&amp;quot;Alexis&amp;quot;, True, 10, 3.14]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Para eliminar elementos, usamos &lt;code&gt;.remove()&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mezcla.remove(True)
-print(mezcla) # [&amp;quot;Alexis&amp;quot;, 10, 3.14]
+print(mezcla)  # [&amp;quot;Alexis&amp;quot;, 10, 3.14]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;En particular, podemos suprimir el último elemento de una lista mediante &lt;code&gt;.pop()&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mezcla.pop()
-print(mezcla) # [&amp;quot;Alexis&amp;quot;, 10]
+print(mezcla)  # [&amp;quot;Alexis&amp;quot;, 10]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;El operador &lt;code&gt;+&lt;/code&gt; concatena listas:&lt;/p&gt;
@@ -612,13 +623,17 @@ print(mezcla) # [&amp;quot;Alexis&amp;quot;, 10]
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lista1 = [&amp;quot;Ana&amp;quot;, 5]
 lista2 = [True, 2.1]
 lista3 = lista1 + lista2
-print(lista3) # [&amp;quot;Ana&amp;quot;, 5, True, 2.1]
+print(lista3)  # [&amp;quot;Ana&amp;quot;, 5, True, 2.1]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;El operador &lt;code&gt;*&lt;/code&gt; repite la lista un número determinado de veces.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(lista1 * 2) # [&amp;quot;Ana&amp;quot;, 5, &amp;quot;Ana&amp;quot;, 5]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(lista1 * 2)  # [&amp;quot;Ana&amp;quot;, 5, &amp;quot;Ana&amp;quot;, 5]
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/07/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -661,55 +676,55 @@ print(lista3) # [&amp;quot;Ana&amp;quot;, 5, True, 2.1]
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_tupla = (&amp;quot;Alexis&amp;quot;, 10, 1, 1995)
 
-print(mi_tupla) # (&amp;quot;Alexis&amp;quot;, 10, 1, 1995)
-print(mi_tupla[1]) # 10
-print(mi_tupla[-1]) # 1995
+print(mi_tupla)  # (&amp;quot;Alexis&amp;quot;, 10, 1, 1995)
+print(mi_tupla[1])  # 10
+print(mi_tupla[-1])  # 1995
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Existen funciones que nos permiten convertir tuplas en listas (&lt;code&gt;list()&lt;/code&gt;) y viceversa (&lt;code&gt;tuple()&lt;/code&gt;):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_lista = list(mi_tupla)
-print(mi_lista) # [&amp;quot;Alexis&amp;quot;, 10, 1, 1995]
+print(mi_lista)  # [&amp;quot;Alexis&amp;quot;, 10, 1, 1995]
 
 mi_tupla = tuple(mi_lista)
-print(mi_tupla) # (&amp;quot;Alexis&amp;quot;, 10, 1, 1995)
+print(mi_tupla)  # (&amp;quot;Alexis&amp;quot;, 10, 1, 1995)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Comprobamos la pertenencia de un elemento a la tupla mediante &lt;code&gt;in&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Alexis&amp;quot; in mi_tupla) # True
-print(3.14 in mi_tupla) # False
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Alexis&amp;quot; in mi_tupla)  # True
+print(3.14 in mi_tupla)  # False
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Con &lt;code&gt;.count()&lt;/code&gt; obtenemos el número de elementos que se encuentran dentro de una tupla:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_tupla = (&amp;quot;Alexis&amp;quot;, 1, 2, 2, True, 2, &amp;quot;Alexis&amp;quot;)
 
-print(mi_tupla.count(&amp;quot;Alexis&amp;quot;)) # 2
-print(mi_tupla.count(1)) # 2 (True cuenta como 1)
-print(mi_tupla.count(2)) # 3
+print(mi_tupla.count(&amp;quot;Alexis&amp;quot;))  # 2
+print(mi_tupla.count(1))  # 2 (True cuenta como 1)
+print(mi_tupla.count(2))  # 3
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;El método &lt;code&gt;len&lt;/code&gt; nos permite hallar la longitud de una tupla, siendo el índice del último elemento igual a &lt;code&gt;len - 1&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(len(mi_tupla)) # 7
-print(mi_tupla[len(mi_tupla) - 1]) # &amp;quot;Alexis&amp;quot;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(len(mi_tupla))  # 7
+print(mi_tupla[len(mi_tupla) - 1])  # &amp;quot;Alexis&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Podemos crear tuplas unitarias siguiendo el patrón &lt;code&gt;nombre = (elem,)&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_tupla = (&amp;quot;Alexis&amp;quot;,)
 
-print(type(mi_tupla)) # &amp;lt;class &#39;tuple&#39;&amp;gt;
-print(len(mi_tupla)) # 1
+print(type(mi_tupla))  # &amp;lt;class &#39;tuple&#39;&amp;gt;
+print(len(mi_tupla))  # 1
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Como mencionamos, los paréntesis son opcionales:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_tupla = &amp;quot;Alexis&amp;quot;, 3.14, True, 10
 
-print(type(mi_tupla)) # &amp;lt;class &#39;tuple&#39;&amp;gt;
-print(mi_tupla) # (&amp;quot;Alexis&amp;quot;, 3.14, True, 10)
+print(type(mi_tupla))  # &amp;lt;class &#39;tuple&#39;&amp;gt;
+print(mi_tupla)  # (&amp;quot;Alexis&amp;quot;, 3.14, True, 10)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Esta sintaxis se conoce como &lt;strong&gt;empaquetado de tupla&lt;/strong&gt; y hemos de ser cautos, pues en un futuro, al combinarla con el uso de funciones, puede dar lugar a confusiones.&lt;/p&gt;
@@ -720,11 +735,15 @@ print(mi_tupla) # (&amp;quot;Alexis&amp;quot;, 3.14, True, 10)
 
 nombre, pi, alto, mes = mi_tupla
 
-print(nombre) # Alexis
-print(pi) # 3.14
-print(alto) # True
-print(mes) # 10
+print(nombre)  # Alexis
+print(pi)  # 3.14
+print(alto)  # True
+print(mes)  # 10
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/08/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -759,31 +778,31 @@ print(mes) # 10
            &amp;quot;Reino Unido&amp;quot;: &amp;quot;Londres&amp;quot;,
            &amp;quot;España&amp;quot;: &amp;quot;Madrid&amp;quot;}
 
-print(mi_dicc[&amp;quot;Francia&amp;quot;]) # París
-print(mi_dicc[&amp;quot;España&amp;quot;]) # Madrid
+print(mi_dicc[&amp;quot;Francia&amp;quot;])  # París
+print(mi_dicc[&amp;quot;España&amp;quot;])  # Madrid
 
-print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;}
+print(mi_dicc)  # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Agregamos nuevos elementos al diccionario con el patrón &lt;code&gt;nombre[clave] = valor&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_dicc[&amp;quot;Italia&amp;quot;] = &amp;quot;Lisboa&amp;quot;
 
-print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Lisboa&#39;}
+print(mi_dicc)  # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Lisboa&#39;}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Modificamos un valor asignado a una clave simplemente sobreescribiéndolo:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_dicc[&amp;quot;Italia&amp;quot;] = &amp;quot;Roma&amp;quot;
 
-print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}
+print(mi_dicc)  # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Suprimimos elementos con &lt;code&gt;del&lt;/code&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;del mi_dicc[&amp;quot;Reino Unido&amp;quot;]
 
-print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}
+print(mi_dicc)  # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Generemos un diccionario que presente diferentes tipos de datos:&lt;/p&gt;
@@ -792,7 +811,7 @@ print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;
            23: &amp;quot;Jordan&amp;quot;,
            &amp;quot;Mosqueteros&amp;quot;: 3}
 
-print(mi_dicc) # {&#39;Alemania&#39;: &#39;Berlín&#39;, 23: &#39;Jordan&#39;, &#39;Mosqueteros&#39;: 3}
+print(mi_dicc)  # {&#39;Alemania&#39;: &#39;Berlín&#39;, 23: &#39;Jordan&#39;, &#39;Mosqueteros&#39;: 3}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Empleemos una tupla (el procedimiento sería similar si optamos por una lista) para asignar la clave a cada uno de los valores:&lt;/p&gt;
@@ -803,10 +822,10 @@ mi_dicc = {mi_tupla[0]: &amp;quot;Madrid&amp;quot;,
            mi_tupla[2]: &amp;quot;Londres&amp;quot;,
            mi_tupla[3]: &amp;quot;Berlín&amp;quot;}
 
-print(mi_dicc) # {&#39;España&#39;: &#39;Madrid&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;Alemania&#39;: &#39;Berlín&#39;}
+print(mi_dicc)  # {&#39;España&#39;: &#39;Madrid&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;Alemania&#39;: &#39;Berlín&#39;}
 
-print(mi_dicc[&amp;quot;España&amp;quot;]) # Madrid
-print(mi_dicc[mi_tupla[0]]) # Madrid
+print(mi_dicc[&amp;quot;España&amp;quot;])  # Madrid
+print(mi_dicc[mi_tupla[0]])  # Madrid
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;También podemos almacenar tuplas (o listas&amp;hellip;) como valores:&lt;/p&gt;
@@ -816,9 +835,9 @@ print(mi_dicc[mi_tupla[0]]) # Madrid
            &amp;quot;Equipo&amp;quot;: &amp;quot;Chicago&amp;quot;,
            &amp;quot;Anillos&amp;quot;: (1991, 1992, 1993, 1996, 1997, 1998)}
 
-print(mi_dicc) # {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}
-print(mi_dicc[&amp;quot;Equipo&amp;quot;]) # Chicago
-print(mi_dicc[&amp;quot;Anillos&amp;quot;]) # (1991, 1992, 1993, 1996, 1997, 1998)
+print(mi_dicc)  # {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}
+print(mi_dicc[&amp;quot;Equipo&amp;quot;])  # Chicago
+print(mi_dicc[&amp;quot;Anillos&amp;quot;])  # (1991, 1992, 1993, 1996, 1997, 1998)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Asimismo, guardemos un diccionario dentro de otro:&lt;/p&gt;
@@ -828,8 +847,8 @@ print(mi_dicc[&amp;quot;Anillos&amp;quot;]) # (1991, 1992, 1993, 1996, 1997, 199
            &amp;quot;Equipo&amp;quot;: &amp;quot;Chicago&amp;quot;,
            &amp;quot;Anillos&amp;quot;: {&amp;quot;Temporadas&amp;quot;: (1991, 1992, 1993, 1996, 1997, 1998)}}
 
-print(mi_dicc) # {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}}
-print(mi_dicc[&amp;quot;Anillos&amp;quot;]) # {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}
+print(mi_dicc)  # {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}}
+print(mi_dicc[&amp;quot;Anillos&amp;quot;])  # {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Algunos métodos interesantes a conocer son:&lt;/p&gt;
@@ -840,10 +859,14 @@ print(mi_dicc[&amp;quot;Anillos&amp;quot;]) # {&#39;Temporadas&#39;: (1991, 1992
 &lt;li&gt;&lt;code&gt;len()&lt;/code&gt;, para averiguar la longitud de un diccionario:&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_dicc.keys()) # dict_keys([23, &#39;Nombre&#39;, &#39;Equipo&#39;, &#39;Anillos&#39;])
-print(mi_dicc.values()) # dict_values([&#39;Jordan&#39;, &#39;Michael&#39;, &#39;Chicago&#39;, {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}])
-print(len(mi_dicc)) # 4
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(mi_dicc.keys())  # dict_keys([23, &#39;Nombre&#39;, &#39;Equipo&#39;, &#39;Anillos&#39;])
+print(mi_dicc.values())  # dict_values([&#39;Jordan&#39;, &#39;Michael&#39;, &#39;Chicago&#39;, {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}])
+print(len(mi_dicc))  # 4
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/09/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -879,9 +902,10 @@ print(len(mi_dicc)) # 4
         valoracion = &amp;quot;Suspenso&amp;quot;
     return valoracion
 
-print(evaluacion(6)) # Aprobado
-print(evaluacion(1)) # Suspenso
-print(evaluacion(2.1)) # Suspenso
+
+print(evaluacion(6))  # Aprobado
+print(evaluacion(1))  # Suspenso
+print(evaluacion(2.1))  # Suspenso
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Programemos una versión interactiva del anterior bloque de instrucciones, donde el usuario ha de introducir la nota durante la ejecución del código (a través de la función &lt;code&gt;input()&lt;/code&gt;). Para ello, necesitamos activar la consola mediante el menú &lt;code&gt;Tools&lt;/code&gt;, opción &lt;code&gt;SublimeREPL&lt;/code&gt; y en el apartado &lt;code&gt;Python&lt;/code&gt; seleccionamos &lt;code&gt;Python - RUN current file&lt;/code&gt;.&lt;/p&gt;
@@ -891,6 +915,7 @@ print(evaluacion(2.1)) # Suspenso
     if nota &amp;lt; 5:
         valoracion = &amp;quot;Suspenso&amp;quot;
     return valoracion
+
 
 print(&amp;quot;Programa de evaluación de notas de alumnos&amp;quot;)
 
@@ -911,6 +936,7 @@ print(evaluacion(nota_alumno))
     if nota &amp;lt; 5:
         valoracion = &amp;quot;Suspenso&amp;quot;
     return valoracion
+
 
 print(&amp;quot;Programa de evaluación de notas de alumnos&amp;quot;)
 
@@ -934,6 +960,7 @@ Aprobado
         valoracion = &amp;quot;Suspenso&amp;quot;
     return valoracion
 
+
 print(&amp;quot;Programa de evaluación de notas de alumnos&amp;quot;)
 
 nota_alumno = input(&amp;quot;Introduce la nota del alumno: &amp;quot;)
@@ -947,6 +974,10 @@ print(evaluacion(int(nota_alumno)))
 Introduce la nota del alumno: 8
 Aprobado
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/10/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1095,6 +1126,7 @@ Nota incorrecta.
     else:
         return n1
 
+
 num1 = int(input(&amp;quot;Introduce el primer número: &amp;quot;))
 num2 = int(input(&amp;quot;Introduce el segundo número: &amp;quot;))
 
@@ -1123,6 +1155,10 @@ media = (num1 + num2 + num3) / 3
 
 print(&amp;quot;La media aritmética es: &amp;quot; + str(media))
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/11/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1156,30 +1192,35 @@ print(&amp;quot;La media aritmética es: &amp;quot; + str(media))
     else:
         print(&amp;quot;La edad es incorrecta.&amp;quot;)
 
-comprueba_edad(5) # La edad es correcta.
-comprueba_edad(135) # La edad es incorrecta.
-comprueba_edad(-7) # La edad es incorrecta.
+
+comprueba_edad(5)  # La edad es correcta.
+comprueba_edad(135)  # La edad es incorrecta.
+comprueba_edad(-7)  # La edad es incorrecta.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Creemos ahora un programa que evaluará el salario de diferentes trabajadores de una empresa:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;salario_presidente = int(input(&amp;quot;Introduce el salario del presidente: &amp;quot;))
-print(&amp;quot;Salario presidente: &amp;quot; + str(salario_presidente))
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sal_presidente = int(input(&amp;quot;Introduce el salario del presidente: &amp;quot;))
+print(&amp;quot;Salario presidente: &amp;quot; + str(sal_presidente))
 
-salario_director = int(input(&amp;quot;Introduce el salario del director: &amp;quot;))
-print(&amp;quot;Salario director: &amp;quot; + str(salario_director))
+sal_director = int(input(&amp;quot;Introduce el salario del director: &amp;quot;))
+print(&amp;quot;Salario director: &amp;quot; + str(sal_director))
 
-salario_jefe_area = int(input(&amp;quot;Introduce el salario del jefe de área: &amp;quot;))
-print(&amp;quot;Salario jefe de área: &amp;quot; + str(salario_jefe_area))
+sal_jefe_area = int(input(&amp;quot;Introduce el salario del jefe de área: &amp;quot;))
+print(&amp;quot;Salario jefe de área: &amp;quot; + str(sal_jefe_area))
 
-salario_administrativo = int(input(&amp;quot;Introduce el salario del administrativo: &amp;quot;))
-print(&amp;quot;Salario administrativo: &amp;quot; + str(salario_administrativo))
+sal_administrativo = int(input(&amp;quot;Introduce el salario del administrativo: &amp;quot;))
+print(&amp;quot;Salario administrativo: &amp;quot; + str(sal_administrativo))
 
-if salario_administrativo &amp;lt; salario_jefe_area &amp;lt; salario_director &amp;lt; salario_presidente:
+if sal_administrativo &amp;lt; sal_jefe_area &amp;lt; sal_director &amp;lt; sal_presidente:
     print(&amp;quot;Todo funciona correctamente.&amp;quot;)
 else:
     print(&amp;quot;Algo falla en esta empresa.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/12/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1211,16 +1252,16 @@ else:
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;Programa de evaluación de becas - Curso 2018/19&amp;quot;)
 
-distancia_escuela = int(input(&amp;quot;Introduce la distancia a la escuela (en km): &amp;quot;))
-print(&amp;quot;Distancia a la escuela: &amp;quot; + str(distancia_escuela))
+dist_escuela = int(input(&amp;quot;Introduce la distancia a la escuela (en km): &amp;quot;))
+print(&amp;quot;Distancia a la escuela: &amp;quot; + str(dist_escuela))
 
-numero_hermanos = int(input(&amp;quot;Introduce el número de hermanos en el centro: &amp;quot;))
-print(&amp;quot;Número de hermanos: &amp;quot; + str(numero_hermanos))
+num_hermanos = int(input(&amp;quot;Introduce el número de hermanos en el centro: &amp;quot;))
+print(&amp;quot;Número de hermanos: &amp;quot; + str(num_hermanos))
 
-salario_familiar = int(input(&amp;quot;Introduce el salario anual bruto: &amp;quot;))
-print(&amp;quot;Salario anual bruto: &amp;quot; + str(salario_familiar))
+sal_familiar = int(input(&amp;quot;Introduce el salario anual bruto: &amp;quot;))
+print(&amp;quot;Salario anual bruto: &amp;quot; + str(sal_familiar))
 
-if distancia_escuela &amp;gt; 40 and numero_hermanos &amp;gt; 2 and salario_familiar &amp;lt;= 20000:
+if dist_escuela &amp;gt; 40 and num_hermanos &amp;gt; 2 and sal_familiar &amp;lt;= 20000:
     print(&amp;quot;Tienes derecho a beca&amp;quot;)
 else:
     print(&amp;quot;No tienes derecho a beca&amp;quot;)
@@ -1255,7 +1296,8 @@ print(&amp;quot;- Usabilidad y accesibilidad&amp;quot;)
 
 asignatura = input(&amp;quot;Escoge la asignatura optativa: &amp;quot;)
 
-if asignatura in (&amp;quot;Informática gráfica&amp;quot;, &amp;quot;Pruebas de software&amp;quot;, &amp;quot;Usabilidad y accesibilidad&amp;quot;):
+if asignatura in (&amp;quot;Informática gráfica&amp;quot;, &amp;quot;Pruebas de software&amp;quot;,
+                  &amp;quot;Usabilidad y accesibilidad&amp;quot;):
     print(&amp;quot;Asignatura elegida: &amp;quot; + asignatura)
 else:
     print(&amp;quot;La asignatura escogida no está contemplada.&amp;quot;)
@@ -1273,11 +1315,16 @@ opcion = input(&amp;quot;Escoge la asignatura optativa: &amp;quot;)
 
 asignatura = opcion.lower()
 
-if asignatura in (&amp;quot;informática gráfica&amp;quot;, &amp;quot;pruebas de software&amp;quot;, &amp;quot;usabilidad y accesibilidad&amp;quot;):
+if asignatura in (&amp;quot;informática gráfica&amp;quot;, &amp;quot;pruebas de software&amp;quot;,
+                  &amp;quot;usabilidad y accesibilidad&amp;quot;):
     print(&amp;quot;Asignatura elegida: &amp;quot; + asignatura)
 else:
     print(&amp;quot;La asignatura escogida no está contemplada.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/13/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1357,6 +1404,10 @@ else:
 # febrero
 # marzo
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/14/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1447,6 +1498,7 @@ else:
     else:
         print(&amp;quot;El email no es correcto.&amp;quot;)
 
+
 direcc = input(&amp;quot;Introduce tu dirección de correo electrónico: &amp;quot;)
 
 evalua_email(direcc)
@@ -1468,6 +1520,7 @@ evalua_email(direcc)
     else:
         print(&amp;quot;El email no es correcto.&amp;quot;)
 
+
 direcc = input(&amp;quot;Introduce tu dirección de correo electrónico: &amp;quot;)
 
 evalua_email(direcc)
@@ -1484,6 +1537,10 @@ evalua_email(direcc)
 # 3
 # 4
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/15/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1575,6 +1632,7 @@ else:
         valido = False
     return valido
 
+
 password = input(&amp;quot;Introduce contraseña: &amp;quot;)
 
 if evalua_password(password):
@@ -1602,6 +1660,7 @@ else:
 
     return punto and arroba
 
+
 mail = input(&amp;quot;Introduce dirección de correo electrónico: &amp;quot;)
 
 if evalua_mail(mail):
@@ -1609,6 +1668,10 @@ if evalua_mail(mail):
 else:
     print(&amp;quot;Dirección de correo electrónico INVÁLIDA.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/16/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1678,7 +1741,7 @@ print(&amp;quot;Programa de cálculo de raíces cuadradas&amp;quot;)
 
 numero = int(input(&amp;quot;Introduce un número: &amp;quot;))
 
-intentos = 0 # Para ejecutar el bucle while un número de veces determinado
+intentos = 0  # Para ejecutar el bucle while un número de veces determinado
 
 while numero &amp;lt; 0:
     print(&amp;quot;No se puede hallar la raíz de un número negativo.&amp;quot;)
@@ -1726,14 +1789,18 @@ print(&amp;quot;- Introduce tantos números positivos como desees sumar.&amp;quo
 print(&amp;quot;- Introduce un número negativo para calcular la suma.&amp;quot;)
 
 suma = 0
-num  = int(input(&amp;quot;Introduce un número positivo: &amp;quot;))
+num = int(input(&amp;quot;Introduce un número positivo: &amp;quot;))
 
 while num &amp;gt; 0:
     suma += num
-    num  = int(input(&amp;quot;Introduce un número positivo: &amp;quot;))
+    num = int(input(&amp;quot;Introduce un número positivo: &amp;quot;))
 
 print(f&amp;quot;La suma de los valores positivos introducios es {suma}.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/17/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1792,7 +1859,7 @@ print(f&amp;quot;La suma de los valores positivos introducios es {suma}.&amp;quo
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;nombre = &amp;quot;Píldoras Informáticas&amp;quot;
 
-print(len(nombre)) # 21 (considera espacio en blanco como carácter)
+print(len(nombre))  # 21 (considera espacio en blanco como carácter)
 
 contador = 0
 
@@ -1801,13 +1868,13 @@ for i in nombre:
         continue
     contador += 1
 
-print(contador) # 20
+print(contador)  # 20
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Cuando queremos crear una clase (o función), tan pequeña como sea posible, pero que seguramente en un futuro ampliemos, la instrucción &lt;code&gt;pass&lt;/code&gt; es de suma utilidad:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class mi_clase:
-    pass # A implementar más tarde
+    pass  # A implementar más tarde
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Por lo que respecta a la instrucción &lt;code&gt;else&lt;/code&gt;, veamos un código para comprobar si una dirección de correo electrónico posee o no una arroba:&lt;/p&gt;
@@ -1825,6 +1892,10 @@ print(arroba)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hemos de ser cautos, pues generalmente asociamos la instrucción &lt;code&gt;else&lt;/code&gt; a estructuras condicionales y no a bucles. Fijarse en la identación del programa es clave.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/18/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1923,6 +1994,10 @@ print(&amp;quot;Aquí podría ir más código.&amp;quot;)
 
 print(next(devuelve_pares))  # 6
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/19/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1996,6 +2071,10 @@ print(next(ciudades_devueltas))  # M
 
 print(next(ciudades_devueltas))  # a
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/20/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -2154,6 +2233,10 @@ ValueError: invalid literal for int() with base 10: &#39;a&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Python&lt;/em&gt; arroja un error de tipo &lt;code&gt;ValueError&lt;/code&gt; que también habríamos de controlar a través de un bloque &lt;code&gt;try&lt;/code&gt; - &lt;code&gt;except&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/21/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -2375,6 +2458,10 @@ ZeroDivisionError: float division by zero
 &lt;p&gt;La cadena de texto &lt;code&gt;&amp;quot;Cálculo finalizado&amp;quot;&lt;/code&gt; se muestra por pantalla, independientemente de la presencia o no de excepciones durante la ejecución del algoritmo.&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: toda instrucción &lt;code&gt;try&lt;/code&gt; ha de estar acompañada bien de su correspondiente &lt;code&gt;except&lt;/code&gt;, bien de &lt;code&gt;finally&lt;/code&gt;, bien de ambas; pero no puede aparecer en solitario.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/22/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -2506,6 +2593,10 @@ Programa terminado.
 El número no puede ser negativo.
 Programa terminado.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/23/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -2765,6 +2856,10 @@ print(mi_coche.estado())  # El coche está en marcha.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;En resumen, hemos creado la clase &lt;code&gt;Coche&lt;/code&gt;, que se caracteriza por poseer cuatro propiedades y dos comportamientos.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/26/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -2949,6 +3044,10 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/27/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3137,6 +3236,10 @@ AttributeError: &#39;Coche&#39; object has no attribute &#39;__chequeo_interno&#
 &lt;p&gt;Es decir, &lt;em&gt;Python&lt;/em&gt; arroja un error. No nos deja llamar al método &lt;code&gt;__chequeo_interno()&lt;/code&gt; desde fuera de la propia clase &lt;code&gt;Coche&lt;/code&gt; porque está encapsulado.&lt;/p&gt;
 
 &lt;p&gt;¿Cuándo encapsular una variable o un método? No existe una &amp;ldquo;regla de oro&amp;rdquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/28/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3206,6 +3309,10 @@ Frenando: False
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Estamos utilizando métodos de la clase &lt;code&gt;Vehiculo&lt;/code&gt; a través de la clase &lt;code&gt;Moto&lt;/code&gt; gracias a la herencia.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/29/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3416,6 +3523,10 @@ En marcha: False
 Acelerando: False 
 Frenando: False
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/30/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3698,6 +3809,10 @@ En marcha: False
 Acelerando: False 
 Frenando: False
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/31/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3789,6 +3904,10 @@ desplazamiento_vehiculo(mi_vehiculo)
 Me desplazo utilizando cuatro ruedas.
 Me desplazo utilizando dos ruedas.
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/32/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3877,6 +3996,10 @@ if email.count(&amp;quot;@&amp;quot;) == 1 and email.count(&amp;quot;@&amp;quot;
 else:
     print(&amp;quot;La dirección de correo es incorrecta.&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/33/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -3902,7 +4025,7 @@ else:
 
 &lt;p&gt;Sirve para organizar y reutilizar el código (&lt;strong&gt;modularización&lt;/strong&gt; y &lt;strong&gt;reutilización&lt;/strong&gt;). Se genera uno creando un archivo con extensión &lt;code&gt;.py&lt;/code&gt; (o &lt;code&gt;.pyc&lt;/code&gt; o archivo en C) y guardándolo donde nos interese.&lt;/p&gt;
 
-&lt;p&gt;Vamos a crear un módulo que, siguiendo la organización del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; de código, se llamará &lt;code&gt;prac34_modulo_matematicas.py&lt;/code&gt;. En su interior tecleamos las siguientes líneas:&lt;/p&gt;
+&lt;p&gt;Vamos a crear un módulo que, siguiendo la organización del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; de código, se llamará &lt;code&gt;modulo_matematicas.py&lt;/code&gt;. En su interior tecleamos las siguientes líneas:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def sumar(op1, op2):
     print(&amp;quot;El resultado de la suma es:&amp;quot;, op1 + op2)
@@ -3916,9 +4039,9 @@ def multiplicar(op1, op2):
     print(&amp;quot;El resultado de la multiplicación es:&amp;quot;, op1 * op2)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Ahora, generamos otro archivo, &lt;code&gt;prac34_script1.py&lt;/code&gt;, e importamos el anterior módulo, utilizando para ello la instrucción &lt;code&gt;import&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Ahora, generamos otro archivo, &lt;code&gt;script_1.py&lt;/code&gt;, e importamos el anterior módulo, utilizando para ello la instrucción &lt;code&gt;import&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import prac34_modulo_matematicas as modulo
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import modulo_matematicas as modulo
 
 modulo.sumar(5, 7)
 
@@ -3934,9 +4057,9 @@ El resultado de la multiplicación es: 36
 
 &lt;p&gt;Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción &lt;code&gt;as&lt;/code&gt;, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.&lt;/p&gt;
 
-&lt;p&gt;Una alternativa a esta estrategia la encontramos en el fichero &lt;code&gt;prac34_script2.py&lt;/code&gt;, donde se utiliza &lt;code&gt;from ... import ...&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Una alternativa a esta estrategia la encontramos en el fichero &lt;code&gt;script_2.py&lt;/code&gt;, donde se utiliza &lt;code&gt;from ... import ...&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import sumar
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from modulo_matematicas import sumar
 
 sumar(5, 7)
 &lt;/code&gt;&lt;/pre&gt;
@@ -3946,7 +4069,7 @@ sumar(5, 7)
 
 &lt;p&gt;En el bloque de código anterior, únicamente hemos importado la función &lt;code&gt;sumar()&lt;/code&gt; de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter &lt;code&gt;*&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import sumar, restar
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from modulo_matematicas import sumar, restar
 
 sumar(5, 7)
 
@@ -3957,7 +4080,7 @@ restar(12, 6)
 El resultado de la resta es: 6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_matematicas import *
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from modulo_matematicas import *
 
 sumar(5, 7)
 
@@ -3973,7 +4096,7 @@ El resultado de la multiplicación es: 144
 
 &lt;p&gt;No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter &lt;code&gt;*&lt;/code&gt; provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.&lt;/p&gt;
 
-&lt;p&gt;Creemos un módulo, &lt;code&gt;prac34_modulo_vehiculos.py&lt;/code&gt; con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:&lt;/p&gt;
+&lt;p&gt;Creemos un módulo, &lt;code&gt;modulo_vehiculos.py&lt;/code&gt; con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Vehiculo():
     def __init__(self, marca, modelo):
@@ -4028,9 +4151,9 @@ class VehiculoElec(Vehiculo):
         self.cargando = True
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Y ahora, en el fichero &lt;code&gt;prac34_script5.py&lt;/code&gt; tecleamos:&lt;/p&gt;
+&lt;p&gt;Y ahora, en el fichero &lt;code&gt;script_5.py&lt;/code&gt; tecleamos:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac34_modulo_vehiculos import *
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from modulo_vehiculos import *
 
 mi_coche = Vehiculo(&amp;quot;Mazda&amp;quot;, &amp;quot;MX5&amp;quot;)
 mi_coche.estado()
@@ -4046,6 +4169,10 @@ Frenando: False
 &lt;p&gt;&lt;em&gt;Python&lt;/em&gt; busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el &lt;code&gt;syspath&lt;/code&gt; (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de &lt;em&gt;Python&lt;/em&gt;).&lt;/p&gt;
 
 &lt;p&gt;Si no tenemos los módulos en ninguna de ambas ubicaciones, &lt;em&gt;Python&lt;/em&gt; arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de &lt;strong&gt;paquetes&lt;/strong&gt; en la próxima lección.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/34/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4071,9 +4198,9 @@ Frenando: False
 
 &lt;p&gt;Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado &lt;code&gt;__init__.py&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado &lt;code&gt;prac35_calculos&lt;/code&gt;, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado &lt;code&gt;calculos&lt;/code&gt;, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;En su interior creamos el mencionado archivo &lt;code&gt;__init__.py&lt;/code&gt; (sin contenido alguno), acción que le transmite a &lt;em&gt;Python&lt;/em&gt; la información de que la carpeta &lt;code&gt;prac35_calculos&lt;/code&gt; funcionará como un paquete.&lt;/p&gt;
+&lt;p&gt;En su interior creamos el mencionado archivo &lt;code&gt;__init__.py&lt;/code&gt; (sin contenido alguno), acción que le transmite a &lt;em&gt;Python&lt;/em&gt; la información de que la carpeta &lt;code&gt;calculos&lt;/code&gt; funcionará como un paquete.&lt;/p&gt;
 
 &lt;p&gt;Añadimos ahora a la carpeta el módulo &lt;code&gt;calculos_generales.py&lt;/code&gt;, cuyo contenido es el siguiente:&lt;/p&gt;
 
@@ -4103,7 +4230,7 @@ def redondear(numero):
 
 &lt;p&gt;Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac35_calculos.calculos_generales import dividir
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from calculos.calculos_generales import dividir
 
 dividir(10, 3)
 &lt;/code&gt;&lt;/pre&gt;
@@ -4113,7 +4240,7 @@ dividir(10, 3)
 
 &lt;p&gt;Recordemos que podemos importar todo el contenido del módulo utilizando el carácter &lt;code&gt;*&lt;/code&gt;:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac35_calculos.calculos_generales import *
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from calculos.calculos_generales import *
 
 dividir(10, 3)
 
@@ -4161,8 +4288,8 @@ def redondear(numero):
 
 &lt;p&gt;Para utilizar estos últimos módulos creados, tecleamos:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac35_calculos.basicos.operaciones_basicas import sumar
-from prac35_calculos.redondeo_potencia.redondea_y_potencia import potenciar
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from calculos.basicos.operaciones_basicas import sumar
+from calculos.redondeo_potencia.redondea_y_potencia import potenciar
 
 sumar(5, 7)
 potenciar(2, 10)
@@ -4171,6 +4298,10 @@ potenciar(2, 10)
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 12
 El resultado de la potenciación es: 1024
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/35/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4199,9 +4330,9 @@ El resultado de la potenciación es: 1024
 &lt;li&gt;Instalar el paquete.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;En la lección anterior generamos el paquete &lt;code&gt;prac35_calculos&lt;/code&gt; como una carpeta en el interior del directorio del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, &lt;code&gt;prac35_paquetes1_3.py&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En la lección anterior generamos el paquete &lt;code&gt;calculos&lt;/code&gt; como una carpeta en el interior del directorio del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, &lt;code&gt;paquetes_1.py&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, si movemos este último archivo a otro directorio, &lt;em&gt;Python&lt;/em&gt; seguramente no será capaz de encontrar el paquete &lt;code&gt;prac35_calculos&lt;/code&gt;. Para solventar esta situación, hemos de proceder a su instalación.&lt;/p&gt;
+&lt;p&gt;Ahora bien, si movemos este último archivo a otro directorio, &lt;em&gt;Python&lt;/em&gt; seguramente no será capaz de encontrar el paquete &lt;code&gt;calculos&lt;/code&gt;. Para solventar esta situación, hemos de proceder a su instalación.&lt;/p&gt;
 
 &lt;p&gt;En primer lugar, creamos un archivo denominado &lt;code&gt;setup.py&lt;/code&gt; en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&amp;hellip;). En su interior, tecleamos:&lt;/p&gt;
 
@@ -4224,22 +4355,22 @@ setup(name=&amp;quot;prac35_calculos&amp;quot;,
 &lt;p&gt;Si todo ha ido bien, habrán aparecido dos nuevas carpetas:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;prac35_calculos.egg-info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;calculos.egg-info&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;dist&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;En esta última hallamos el archivo comprimido denominado &lt;code&gt;prac35_calculos-1.0.tar.gz&lt;/code&gt;. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.&lt;/p&gt;
+&lt;p&gt;En esta última hallamos el archivo comprimido denominado &lt;code&gt;calculos-1.0.tar.gz&lt;/code&gt;. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.&lt;/p&gt;
 
 &lt;p&gt;Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de &lt;em&gt;Windows&lt;/em&gt; acudimos al directorio donde resida el fichero comprimido y tecleamos:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install prac35_calculos-1.0.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install calculos-1.0.tar.gz
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Recibiremos rápidamente en la consola el mensaje &amp;ldquo;Successfully installed prac35-calculos-1.0&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Recibiremos rápidamente en la consola el mensaje &amp;ldquo;Successfully installed calculos-1.0&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from prac35_calculos.calculos_generales import sumar
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from calculos.calculos_generales import sumar
 
 sumar(6, 7)
 &lt;/code&gt;&lt;/pre&gt;
@@ -4247,12 +4378,16 @@ sumar(6, 7)
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El resultado de la suma es: 13
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, &lt;code&gt;prac36_test_paquete&lt;/code&gt;, y allí he ubicado el archivo &lt;code&gt;prac36_paquetes2.py&lt;/code&gt;. De no haber instalado correctamente el paquete, &lt;em&gt;Python&lt;/em&gt; habría sido incapaz de encontrar la función &lt;code&gt;sumar()&lt;/code&gt; utilizando la instrucción dada arriba.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, &lt;code&gt;test_paquete&lt;/code&gt;, y allí he ubicado el archivo &lt;code&gt;paquetes.py&lt;/code&gt;. De no haber instalado correctamente el paquete, &lt;em&gt;Python&lt;/em&gt; habría sido incapaz de encontrar la función &lt;code&gt;sumar()&lt;/code&gt; utilizando la instrucción dada arriba.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, para desinstalar el paquete, desde la terminal de &lt;em&gt;Windows&lt;/em&gt; tecleamos:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 uninstall prac35_calculos-1.0.tar.gz
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 uninstall calculos
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/36/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4298,19 +4433,19 @@ sumar(6, 7)
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
+archivo_texto = open(&amp;quot;archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: un archivo lo podemos abrir en modo lectura (&lt;code&gt;r&lt;/code&gt;), escritura (&lt;code&gt;w&lt;/code&gt;), agregar (&lt;code&gt;a&lt;/code&gt;)&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;Si ahora acudimos al interior de la carpeta &lt;code&gt;prac37_files&lt;/code&gt;, encontraremos un archivo de texto vacío denominado &lt;code&gt;archivo.txt&lt;/code&gt;. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; mantenga una estructura coherente.&lt;/p&gt;
+&lt;p&gt;Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado &lt;code&gt;archivo.txt&lt;/code&gt;. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt; mantenga una estructura coherente.&lt;/p&gt;
 
 &lt;p&gt;A continuación, veamos cómo incluir información (texto) en dicho archivo:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
 # Creación + Apertura
-archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
+archivo_texto = open(&amp;quot;archivo.txt&amp;quot;, &amp;quot;w&amp;quot;)
 
 frase = &amp;quot;Es un estupendo día para estudiar Python\nen Youtube.&amp;quot;
 
@@ -4327,7 +4462,7 @@ archivo_texto.close()
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo_texto = open(&amp;quot;archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 texto = archivo_texto.read()
 
@@ -4344,7 +4479,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo_texto = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo_texto = open(&amp;quot;archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 lineas_texto = archivo_texto.readlines()
 
@@ -4368,20 +4503,24 @@ print(lineas_texto)
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo1 = open(&amp;quot;prac37_files/archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo1 = open(&amp;quot;archivo.txt&amp;quot;, &amp;quot;r&amp;quot;)
 texto = archivo1.read()
 archivo1.close()
 
-archivo2 = open(&amp;quot;prac37_files/archivo2.txt&amp;quot;, &amp;quot;w&amp;quot;)
+archivo2 = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;w&amp;quot;)
 archivo2.write(texto)
 archivo2.close()
 
-archivo2 = open(&amp;quot;prac37_files/archivo2.txt&amp;quot;, &amp;quot;a&amp;quot;)
+archivo2 = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;a&amp;quot;)
 archivo2.write(&amp;quot;\n¡Mañana más!&amp;quot;)
 archivo2.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Si acudimos a la carpeta &lt;code&gt;prac37_files&lt;/code&gt;, comprobaremos la existencia de un fichero denominado &lt;code&gt;archivo2.txt&lt;/code&gt;, que contiene tres líneas.&lt;/p&gt;
+&lt;p&gt;Si acudimos a la carpeta, comprobaremos la existencia de un fichero denominado &lt;code&gt;archivo2.txt&lt;/code&gt;, que contiene tres líneas.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/37/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4405,11 +4544,11 @@ archivo2.close()
 
 &lt;p&gt;Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo &lt;code&gt;io&lt;/code&gt;, analizando en esta ocasión cómo manejar punteros en texto.&lt;/p&gt;
 
-&lt;p&gt;Para ello, movamos el último archivo de texto generado en la lección anterior (&lt;code&gt;archivo2.txt&lt;/code&gt;) a la carpeta &lt;code&gt;prac38_files&lt;/code&gt;, para así mantener la coherencia de la estructura de ficheros del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;. Tras ello, tecleemos:&lt;/p&gt;
+&lt;p&gt;Para ello, movamos el último archivo de texto generado en la lección anterior (&lt;code&gt;archivo2.txt&lt;/code&gt;) a la carpeta, para así mantener la coherencia de la estructura de ficheros del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;. Tras ello, tecleemos:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 print(archivo.read())
 
@@ -4427,7 +4566,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 print(archivo.read())
 
@@ -4457,7 +4596,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 print(archivo.read(11))
 print(archivo.read())
@@ -4475,7 +4614,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 archivo.seek(len(archivo.read()) / 2)
 
@@ -4493,7 +4632,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
+archivo = open(&amp;quot;archivo2.txt&amp;quot;, &amp;quot;r&amp;quot;)
 
 archivo.seek(len(archivo.readline()))
 
@@ -4511,7 +4650,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
+archivo = open(&amp;quot;archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
 
 archivo.write(&amp;quot;Comienzo del texto: &amp;quot;)
 
@@ -4533,7 +4672,7 @@ en Youtube.
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from io import open
 
-archivo = open(&amp;quot;prac38_files/archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
+archivo = open(&amp;quot;archivo3.txt&amp;quot;, &amp;quot;r+&amp;quot;)  # lectura y escritura
 
 lineas = archivo.readlines()
 
@@ -4554,6 +4693,10 @@ archivo.close()
 Esta línea ha sido incluida desde el exterior.
 ¡Mañana más!
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/38/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4592,7 +4735,7 @@ Esta línea ha sido incluida desde el exterior.
 
 nombres = [&amp;quot;Pedro&amp;quot;, &amp;quot;Ana&amp;quot;, &amp;quot;María&amp;quot;, &amp;quot;Isabel&amp;quot;]
 
-fichero = open(&amp;quot;prac39_files/lista_nombres&amp;quot;, &amp;quot;wb&amp;quot;)
+fichero = open(&amp;quot;lista_nombres&amp;quot;, &amp;quot;wb&amp;quot;)
 
 pickle.dump(nombres, fichero)
 
@@ -4606,14 +4749,14 @@ del fichero
 &lt;ul&gt;
 &lt;li&gt;A la hora de crear el fichero externo en modo escritura, con el método &lt;code&gt;open()&lt;/code&gt;, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;La instrucción &lt;code&gt;del&lt;/code&gt; borra el puntero de la memoria hacia la variable &lt;code&gt;fichero&lt;/code&gt;, dejando de estar disponible su acceso a partir de ese momento.&lt;/li&gt;
-&lt;li&gt;Al ejecutar el anterior bloque de código, en la carpeta denominada &lt;code&gt;prac39_files&lt;/code&gt; (designada así para conservar la coherencia en la estructura del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;), aparecerá un archivo externo de tipo binario denominado &lt;code&gt;lista_nombres&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Al ejecutar el anterior bloque de código, en la carpeta correspondiente del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;), aparecerá un archivo externo de tipo binario denominado &lt;code&gt;lista_nombres&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
 
-fichero = open(&amp;quot;prac39_files/lista_nombres&amp;quot;, &amp;quot;rb&amp;quot;)
+fichero = open(&amp;quot;lista_nombres&amp;quot;, &amp;quot;rb&amp;quot;)
 
 lista = pickle.load(fichero)
 
@@ -4626,6 +4769,10 @@ print(lista)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función &lt;code&gt;open()&lt;/code&gt; ha de tomar el valor de argumento &lt;code&gt;&amp;quot;rb&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/39/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -4684,7 +4831,7 @@ coche3 = Vehiculo(&amp;quot;Renault&amp;quot;, &amp;quot;Megane&amp;quot;)
 
 coches = [coche1, coche2, coche3]
 
-fichero = open(&amp;quot;prac40_files/coches&amp;quot;, &amp;quot;wb&amp;quot;)
+fichero = open(&amp;quot;coches&amp;quot;, &amp;quot;wb&amp;quot;)
 
 pickle.dump(coches, fichero)
 
@@ -4697,7 +4844,7 @@ del fichero
 
 &lt;ul&gt;
 &lt;li&gt;Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función &lt;code&gt;open()&lt;/code&gt; es &lt;code&gt;&amp;quot;wb&amp;quot;&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Al ejecutar el anterior bloque de código, aparecerá en la carpeta &lt;code&gt;prac40_files&lt;/code&gt; (para mantener coherencia en la estructura del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;) el fichero &lt;code&gt;coches&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;) el fichero &lt;code&gt;coches&lt;/code&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Para rescatar la información de este archivo que acabamos de generar, tecleamos:&lt;/p&gt;
@@ -4728,7 +4875,7 @@ class Vehiculo():
               self.frena)
 
 
-fichero = open(&amp;quot;prac40_files/coches&amp;quot;, &amp;quot;rb&amp;quot;)
+fichero = open(&amp;quot;coches&amp;quot;, &amp;quot;rb&amp;quot;)
 
 coches = pickle.load(fichero)
 
@@ -4765,6 +4912,263 @@ None
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase &lt;code&gt;Vehiculo&lt;/code&gt; es necesario que figure asimismo (en caso contrario arroja &lt;em&gt;Python&lt;/em&gt; un error). El problema radica en que el nuevo archivo no tiene información sobre la clase &lt;code&gt;Vehiculo&lt;/code&gt; ni, por supuesto, del método &lt;code&gt;estado()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/40/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>41. Guardado permanente</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb41-guardado-permanente/</link>
+      <pubDate>Mon, 20 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb41-guardado-permanente/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/J3qvf1fTCsU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuaremos estudiando cómo guardar datos de forma permanente en ficheros externos, reforzando así los contenidos aprendidos hasta el momento.&lt;/p&gt;
+
+&lt;p&gt;Empecemos importando la librería &lt;code&gt;pickle&lt;/code&gt; y creando una clase sencilla: &lt;code&gt;Persona&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+
+class Persona:
+    def __init__(self, nombre, genero, edad):
+        self.nombre = nombre
+        self.genero = genero
+        self.edad = edad
+        print(&amp;quot;Se ha creado una persona nueva con el nombre de&amp;quot;, self.nombre)
+
+    def __str__(self):
+        return &amp;quot;{} {} {}&amp;quot;.format(self.nombre, self.genero, self.edad)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: el método &lt;code&gt;__str__()&lt;/code&gt; convierte en cadena de texto la información de un objeto.&lt;/p&gt;
+
+&lt;p&gt;Así, si ahora tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;sandra = Persona(&amp;quot;Sandra&amp;quot;, &amp;quot;Femenino&amp;quot;, &amp;quot;29&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Se ha creado una persona nueva con el nombre de Sandra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El objetivo será crear algunos objetos de dicha clase, almacenarlos en una lista (empresa que realizaremos a través de otra clase, &lt;code&gt;ListaPersonas&lt;/code&gt;) y después volcar la información en un fichero externo, al cual podamos acceder en cualquier instante.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pickle
+
+
+class Persona:
+    def __init__(self, nombre, genero, edad):
+        self.nombre = nombre
+        self.genero = genero
+        self.edad = edad
+        print(&amp;quot;Se ha creado una persona nueva con el nombre de&amp;quot;, self.nombre)
+
+    def __str__(self):
+        return &amp;quot;{} {} {}&amp;quot;.format(self.nombre, self.genero, self.edad)
+
+
+class ListaPersonas:
+    personas = []
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+
+lista_personas = ListaPersonas()
+
+sandra = Persona(&amp;quot;Sandra&amp;quot;, &amp;quot;Femenino&amp;quot;, &amp;quot;29&amp;quot;)
+lista_personas.agregar_personas(sandra)
+
+antonio = Persona(&amp;quot;Antonio&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;39&amp;quot;)
+lista_personas.agregar_personas(antonio)
+
+ana = Persona(&amp;quot;Ana&amp;quot;, &amp;quot;Femenino&amp;quot;, &amp;quot;20&amp;quot;)
+lista_personas.agregar_personas(ana)
+
+lista_personas.mostrar_personas()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Se ha creado una persona nueva con el nombre de Sandra
+Se ha creado una persona nueva con el nombre de Antonio
+Se ha creado una persona nueva con el nombre de Ana
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Almacenemos ahora la lista de personas que hemos generado en un fichero externo. Para ello, incluiremos los pasos necesarios del mencionado proceso en el constructor de la clase &lt;code&gt;ListaPersonas&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&amp;quot;lista_de_personas&amp;quot;, &amp;quot;ab+&amp;quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&amp;quot;Se cargaron {} personas.&amp;quot;.format(len(self.personas)))
+        except EOFError:
+            print(&amp;quot;El fichero está vacío.&amp;quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+
+lista_personas = ListaPersonas()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El fichero está vacío.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en la función &lt;code&gt;open()&lt;/code&gt;, el valor del argumento &lt;code&gt;&amp;quot;ab+&amp;quot;&lt;/code&gt; nos permite agregar información a un fichero de codificación binaria.&lt;/p&gt;
+
+&lt;p&gt;A continuación, modifiquemos el método &lt;code&gt;agregar_personas()&lt;/code&gt; para que una vez añadida a la lista la nueva información, la almacene en el fichero externo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&amp;quot;lista_de_personas&amp;quot;, &amp;quot;ab+&amp;quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&amp;quot;Se cargaron {} personas.&amp;quot;.format(len(self.personas)))
+        except EOFError:
+            print(&amp;quot;El fichero está vacío.&amp;quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+        self.guardar_personas()
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+    def guardar_personas(self):
+        fichero = open(&amp;quot;lista_de_personas&amp;quot;, &amp;quot;wb&amp;quot;)
+        pickle.dump(self.personas, fichero)
+        fichero.close()
+        del fichero
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, si ejecutamos ahora el siguiente bloque de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lista_personas = ListaPersonas()
+
+sandra = Persona(&amp;quot;Sandra&amp;quot;, &amp;quot;Femenino&amp;quot;, &amp;quot;29&amp;quot;)
+lista_personas.agregar_personas(sandra)
+
+antonio = Persona(&amp;quot;Antonio&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;39&amp;quot;)
+lista_personas.agregar_personas(antonio)
+
+ana = Persona(&amp;quot;Ana&amp;quot;, &amp;quot;Femenino&amp;quot;, &amp;quot;20&amp;quot;)
+lista_personas.agregar_personas(ana)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El fichero está vacío.
+Se ha creado una persona nueva con el nombre de Sandra
+Se ha creado una persona nueva con el nombre de Antonio
+Se ha creado una persona nueva con el nombre de Ana
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Recuperemos la información guardada en el fichero externo, utilizando para ello un método que añadiremos a la clase &lt;code&gt;ListaPersonas&lt;/code&gt;, &lt;code&gt;mostrar_informacion&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&amp;quot;lista_de_personas&amp;quot;, &amp;quot;ab+&amp;quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&amp;quot;Se cargaron {} personas.&amp;quot;.format(len(self.personas)))
+        except EOFError:
+            print(&amp;quot;El fichero está vacío.&amp;quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+        self.guardar_personas()
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+    def guardar_personas(self):
+        fichero = open(&amp;quot;lista_de_personas&amp;quot;, &amp;quot;wb&amp;quot;)
+        pickle.dump(self.personas, fichero)
+        fichero.close()
+        del fichero
+
+    def mostrar_informacion(self):
+        print(&amp;quot;La información del fichero externo es la siguiente:&amp;quot;)
+        for persona in self.personas:
+            print(persona.__str__())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lista_personas.mostrar_informacion()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;La información del fichero externo es la siguiente:
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Agreguemos una nueva persona. Para ello, tecleamos por ejemplo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;juan = Persona(&amp;quot;Juan&amp;quot;, &amp;quot;Masculino&amp;quot;, &amp;quot;47&amp;quot;)
+lista_personas.agregar_personas(juan)
+
+lista_personas.mostrar_informacion()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Se ha creado una persona nueva con el nombre de Juan
+La información del fichero externo es la siguiente:
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+Juan Masculino 47
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/41/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
