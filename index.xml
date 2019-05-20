@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 20 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -5169,6 +5169,123 @@ Juan Masculino 47
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/41/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>42. Interfaces gráficas I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb42-interfaces-graficas-i/</link>
+      <pubDate>Mon, 20 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb42-interfaces-graficas-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/hTUJC8HsC2I&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, comenzamos el estudio de las &lt;strong&gt;interfaces gráficas&lt;/strong&gt; en &lt;em&gt;Python&lt;/em&gt;, analizando para ello la librería &lt;code&gt;Tkinter&lt;/code&gt;. Las interfaces gráficas, también denominadas GUI, son intermediarios entre el programa y el usuario. Están formadas por un conjunto de gráficos como ventanas, botones, menús, casillas de verificación, etc.&lt;/p&gt;
+
+&lt;p&gt;Además de la mencionada, existen otras librerías alternativas para trabajar con interfaces gráficas:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;WxPython&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PyQT&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PyGTK&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code&gt;Tkinter&lt;/code&gt; es un &amp;ldquo;puente&amp;rdquo; entre &lt;em&gt;Python&lt;/em&gt; y la librería &lt;code&gt;TCL / TK&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;La estructura de una interfaz gráfica en &lt;em&gt;Python&lt;/em&gt; es:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Raíz&lt;/em&gt;: la ventana de la aplicación propiamente dicha.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Frame&lt;/em&gt;: estructura que agrupa diversos elementos.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Widgets&lt;/em&gt;: elementos de la aplicación. En ocasiones, al &lt;em&gt;frame&lt;/em&gt; también se le considera un &lt;em&gt;widget&lt;/em&gt; más.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;A continuación, veamos cómo construir la raíz:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk
+
+raiz = Tk()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al ejecutar el anterior bloque de código aparece una ventana en blanco en nuestro escritorio, con algunos botones que permiten interactuar con ella a la manera que estamos habituados.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb42-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primera ventana.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Para que una ventana pueda mantenerse en ejecución, debe estar en una especie de &amp;ldquo;bucle infinito&amp;rdquo; (a la espera o escucha de eventos), estado que conseguimos a través de la función &lt;code&gt;mainloop()&lt;/code&gt;, que, por el momento, habrá de estar siempre al final de nuestros programas.&lt;/p&gt;
+
+&lt;p&gt;La documentación para la librería &lt;code&gt;Tkinter&lt;/code&gt; la podemos encontrar siguiendo &lt;a href=&#34;https://docs.python.org/3/library/tk.html&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Modifiquemos algunas de las características que esta ventana posee por defecto:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk
+
+raiz = Tk()
+
+raiz.title(&amp;quot;Ventana de pruebas&amp;quot;)
+raiz.resizable(width=False, height=False)  # raiz.resizable(0, 0)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+raiz.geometry(&amp;quot;450x300&amp;quot;)
+raiz.config(bg=&amp;quot;lightblue&amp;quot;)
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title()&lt;/code&gt; nos permite cambiar el título de la ventana generada.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;resizable()&lt;/code&gt; acepta dos valores booleanos para indicar si permitimos que se modifique la anchura o la altura de la ventana. Según los argumentos escogidos, incluso queda deshabilitado el botón de maximizar ventana.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;iconbitmap()&lt;/code&gt; nos da la posibilidad de cambiar el icono de la ventana generada, que, por defecto, es una especie de pluma. Para ello, hemos de almacenar en el directorio de la aplicación (o tener bien localizada su ruta) un archivo de extensión &lt;code&gt;.ico&lt;/code&gt; (buscar en &lt;em&gt;Google&lt;/em&gt; &amp;ldquo;conversor .ico&amp;rdquo; para acceder a aplicaciones online que nos generen este tipo de ficheros).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;geometry()&lt;/code&gt; configura el ancho y el alto de la ventana.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config()&lt;/code&gt;, entre otras acciones, nos permite cambiar el color del fondo.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb42-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Modificando propiedades de la ventana.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Hasta el momento, las ventanas requieren de la consola de &lt;em&gt;Python&lt;/em&gt; para su funcionamiento. Si queremos que este sea independiente de ella, hemos de modificar la extensión de la aplicación de &lt;code&gt;.py&lt;/code&gt; a &lt;code&gt;.pyw&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/42/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
