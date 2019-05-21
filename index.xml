@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 20 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -5286,6 +5286,157 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/42/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>43. Interfaces gráficas II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/</link>
+      <pubDate>Tue, 21 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/M80CzDC1Crc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Después de introducir, en la lección anterior, la &lt;em&gt;raíz&lt;/em&gt; de una interfaz gráfica, en esta abordaremos la construcción y uso de &lt;em&gt;frames&lt;/em&gt;. Comencemos recuperando el código fuente de la &amp;ldquo;aplicación&amp;rdquo; que generamos con anterioridad:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk
+
+raiz = Tk()
+
+raiz.title(&amp;quot;Ventana de pruebas&amp;quot;)
+raiz.resizable(width=False, height=False)  # raiz.resizable(0, 0)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+raiz.geometry(&amp;quot;450x300&amp;quot;)
+raiz.config(bg=&amp;quot;lightblue&amp;quot;)
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método &lt;code&gt;pack()&lt;/code&gt;. Además, prescindiremos de la instrucción &lt;code&gt;raiz.geometry()&lt;/code&gt;, para así estar en condiciones de configurar el tamaño del &lt;em&gt;frame&lt;/em&gt; (la raíz se adaptará automáticamente al tamaño de sus elementos internos):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame
+
+raiz = Tk()
+
+raiz.title(&amp;quot;Ventana de pruebas&amp;quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+raiz.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame()
+frame.pack()
+frame.config(bg=&amp;quot;tomato&amp;quot;, width=&amp;quot;450&amp;quot;, height=&amp;quot;300&amp;quot;)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A primera vista, al ejecutar el aterior bloque de código, da la sensación de que hemos perdido el color de fondo declarado para la aplicación (&lt;code&gt;lightblue&lt;/code&gt;). No obstante, como ahora permitimos manipular el tamaño de la ventana (mediante la instrucción &lt;code&gt;raiz.resizable(width=True, height=True)&lt;/code&gt;), al agrandarla comprobamos que todo funciona correctamente.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Los dos colores de fondo siguen disponibles.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en &lt;a href=&#34;http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter&#34; target=&#34;_blank&#34;&gt;esta página&lt;/a&gt; podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería &lt;code&gt;tkinter&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, observamos que el &lt;em&gt;frame&lt;/em&gt; tiene un tamaño fijo, por mucho que manipulemos el tamaño de la ventana, las dimensiones del &lt;em&gt;frame&lt;/em&gt; no se alteran, así como su posición, que permanece centrada en la parte superior de la ventana de la aplicación. Este comportamiento es el dado por defecto, que podemos configurar de manera diferente, si así lo deseamos, a través del método &lt;code&gt;pack()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame
+
+raiz = Tk()
+
+raiz.title(&amp;quot;Ventana de pruebas&amp;quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+raiz.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame()
+frame.pack(side=&amp;quot;left&amp;quot;, anchor=&amp;quot;s&amp;quot;, fill=&amp;quot;x&amp;quot;, expand=&amp;quot;True&amp;quot;)
+frame.config(bg=&amp;quot;tomato&amp;quot;, width=&amp;quot;450&amp;quot;, height=&amp;quot;300&amp;quot;)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Modificando propiedades del &lt;em&gt;frame&lt;/em&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Las opciones de configuración de los &lt;em&gt;frames&lt;/em&gt; son ciertamente numerosas. Por ejemplo, podemos añadirle un borde (parámetros &lt;code&gt;bd&lt;/code&gt; y &lt;code&gt;relief&lt;/code&gt;) o cambiar el icono del ratón cuando se adentra en el interior del &lt;em&gt;frame&lt;/em&gt; (parámetro &lt;code&gt;cursor&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame
+
+raiz = Tk()
+
+raiz.title(&amp;quot;Ventana de pruebas&amp;quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+raiz.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame()
+frame.pack(side=&amp;quot;left&amp;quot;, anchor=&amp;quot;s&amp;quot;)
+frame.config(bg=&amp;quot;tomato&amp;quot;,
+             width=&amp;quot;450&amp;quot;,
+             height=&amp;quot;300&amp;quot;,
+             bd=35,
+             relief=&amp;quot;groove&amp;quot;,
+             cursor=&amp;quot;pirate&amp;quot;)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Añadiendo un marco al &lt;em&gt;frame&lt;/em&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Obviamente, todo aquello que hemos visto de cara a configurar un &lt;em&gt;frame&lt;/em&gt; es aplicable a la propia &lt;em&gt;raíz&lt;/em&gt; y dependerá de cómo deseemos diseñar nuestra aplicación.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/43/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

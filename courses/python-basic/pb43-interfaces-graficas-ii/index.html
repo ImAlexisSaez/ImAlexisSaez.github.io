@@ -27,12 +27,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los bucles.
-La utilidad de un bucle es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En Python tenemos dos tipos de bucles:
- determinados: sabemos a priori cuántas veces se repetirá el bloque de código, e indeterminados: desconocemos a priori el número de repeticiones del bloque de código.">
+  <meta name="description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
+from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack().">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
 
   
 
@@ -111,7 +110,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
 
   
   
@@ -125,23 +124,22 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb14-bucles-i/">
-  <meta property="og:title" content="14. Bucles I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los bucles.
-La utilidad de un bucle es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En Python tenemos dos tipos de bucles:
- determinados: sabemos a priori cuántas veces se repetirá el bloque de código, e indeterminados: desconocemos a priori el número de repeticiones del bloque de código."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
+  <meta property="og:title" content="43. Interfaces gráficas II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
+from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack()."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-01T00:02:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-21T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-01T00:02:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-21T00:00:01&#43;01:00">
   
 
   
 
-  <title>14. Bucles I | Infinitos Contrastes</title>
+  
+
+  <title>43. Interfaces gráficas II | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -441,7 +439,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         <a href="/courses/python-basic/pb13-condicionales-iv/">13. Condicionales IV</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb14-bucles-i/">14. Bucles I</a>
       </li>
       
@@ -557,7 +555,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         <a href="/courses/python-basic/pb42-interfaces-graficas-i/">42. Interfaces I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb43-interfaces-graficas-ii/">43. Interfaces II</a>
       </li>
       
@@ -601,7 +599,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">14. Bucles I</h1>
+          <h1 itemprop="name">43. Interfaces gráficas II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -610,74 +608,142 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/GQGhU1526Oo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/M80CzDC1Crc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los <strong>bucles</strong>.</p>
+<p>Después de introducir, en la lección anterior, la <em>raíz</em> de una interfaz gráfica, en esta abordaremos la construcción y uso de <em>frames</em>. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:</p>
 
-<p>La utilidad de un <strong>bucle</strong> es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En <em>Python</em> tenemos dos tipos de bucles:</p>
+<pre><code class="language-python">from tkinter import Tk
 
-<ul>
-<li><em>determinados</em>: sabemos a priori cuántas veces se repetirá el bloque de código, e</li>
-<li><em>indeterminados</em>: desconocemos a priori el número de repeticiones del bloque de código.</li>
-</ul>
+raiz = Tk()
 
-<p>Empecemos viendo el primer tipo, al que pertenece la instrucción <code>for</code>, cuya sintaxis es:</p>
-
-<pre><code class="language-python">for variable in elemento_a_recorrer:
-    instrucciones
+raiz.title(&quot;Ventana de pruebas&quot;)
+raiz.resizable(width=False, height=False)  # raiz.resizable(0, 0)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+raiz.geometry(&quot;450x300&quot;)
+raiz.config(bg=&quot;lightblue&quot;)
+raiz.mainloop()
 </code></pre>
 
-<p>donde el <code>elemento_a_recorrer</code> puede ser una lista, una tupla, una cadena de texto&hellip;</p>
+<p>A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método <code>pack()</code>. Además, prescindiremos de la instrucción <code>raiz.geometry()</code>, para así estar en condiciones de configurar el tamaño del <em>frame</em> (la raíz se adaptará automáticamente al tamaño de sus elementos internos):</p>
 
-<p>Por ejemplo, para imprimir tres veces una palabra, una posible estrategia sería:</p>
+<pre><code class="language-python">from tkinter import Tk, Frame
 
-<pre><code class="language-python">for i in [1, 2, 3]:
-    print(&quot;Hola&quot;)
+raiz = Tk()
+
+raiz.title(&quot;Ventana de pruebas&quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+raiz.config(bg=&quot;lightblue&quot;)
+
+frame = Frame()
+frame.pack()
+frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
+
+raiz.mainloop()
 </code></pre>
 
-<p>Aunque hemos utilizado una lista de números, no es imprescindible. El siguiente ejemplo consigue el mismo resultado:</p>
+<p>A primera vista, al ejecutar el aterior bloque de código, da la sensación de que hemos perdido el color de fondo declarado para la aplicación (<code>lightblue</code>). No obstante, como ahora permitimos manipular el tamaño de la ventana (mediante la instrucción <code>raiz.resizable(width=True, height=True)</code>), al agrandarla comprobamos que todo funciona correctamente.</p>
 
-<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(&quot;Hola&quot;)
+
+
+
+<figure>
+
+<img src="/courses/python-basic/pb43-img01.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Los dos colores de fondo siguen disponibles.</h4>
+  
+</figcaption>
+
+</figure>
+
+<p><em>Nota</em>: en <a href="http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter" target="_blank">esta página</a> podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería <code>tkinter</code>.</p>
+
+<p>Por otro lado, observamos que el <em>frame</em> tiene un tamaño fijo, por mucho que manipulemos el tamaño de la ventana, las dimensiones del <em>frame</em> no se alteran, así como su posición, que permanece centrada en la parte superior de la ventana de la aplicación. Este comportamiento es el dado por defecto, que podemos configurar de manera diferente, si así lo deseamos, a través del método <code>pack()</code>.</p>
+
+<pre><code class="language-python">from tkinter import Tk, Frame
+
+raiz = Tk()
+
+raiz.title(&quot;Ventana de pruebas&quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+raiz.config(bg=&quot;lightblue&quot;)
+
+frame = Frame()
+frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;, fill=&quot;x&quot;, expand=&quot;True&quot;)
+frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
+
+raiz.mainloop()
 </code></pre>
 
-<p>En ambos casos, el elemento a recorrer es una lista de tres elementos y es por ello que el mensaje <code>&quot;Hola&quot;</code> se repite en tres ocasiones, tantas como el mencionado número de elementos de la correspondiente lista.</p>
 
-<p>Si en lugar de un texto predeterminado optamos por imprimir la propia variable en ambos casos, el resultado es:</p>
 
-<pre><code class="language-python">for i in [1, 2, 3]:
-    print(i)
 
-# 1
-# 2
-# 3
+<figure>
+
+<img src="/courses/python-basic/pb43-img02.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Modificando propiedades del <em>frame</em>.</h4>
+  
+</figcaption>
+
+</figure>
+
+<p>Las opciones de configuración de los <em>frames</em> son ciertamente numerosas. Por ejemplo, podemos añadirle un borde (parámetros <code>bd</code> y <code>relief</code>) o cambiar el icono del ratón cuando se adentra en el interior del <em>frame</em> (parámetro <code>cursor</code>):</p>
+
+<pre><code class="language-python">from tkinter import Tk, Frame
+
+raiz = Tk()
+
+raiz.title(&quot;Ventana de pruebas&quot;)
+raiz.resizable(width=True, height=True)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+raiz.config(bg=&quot;lightblue&quot;)
+
+frame = Frame()
+frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;)
+frame.config(bg=&quot;tomato&quot;,
+             width=&quot;450&quot;,
+             height=&quot;300&quot;,
+             bd=35,
+             relief=&quot;groove&quot;,
+             cursor=&quot;pirate&quot;)
+
+raiz.mainloop()
 </code></pre>
 
-<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(i)
 
-# enero
-# febrero
-# marzo
-</code></pre>
 
-<p>La variable no tiene que denominarse necesariamente <code>i</code>:</p>
 
-<pre><code class="language-python">for meses in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
-    print(meses)
+<figure>
 
-# enero
-# febrero
-# marzo
-</code></pre>
+<img src="/courses/python-basic/pb43-img03.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Añadiendo un marco al <em>frame</em>.</h4>
+  
+</figcaption>
+
+</figure>
+
+<p>Obviamente, todo aquello que hemos visto de cara a configurar un <em>frame</em> es aplicable a la propia <em>raíz</em> y dependerá de cómo deseemos diseñar nuestra aplicación.</p>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/14/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/43/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -694,15 +760,9 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb13-condicionales-iv/" rel="next">13. Condicionales IV</a>
+    <a href="/courses/python-basic/pb42-interfaces-graficas-i/" rel="next">42. Interfaces gráficas I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb15-bucles-ii/" rel="prev">15. Bucles II</a>
-  </div>
   
 </div>
 
@@ -711,7 +771,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-01
+          Última actualización el 2019-05-21
         </div>
 
       </article>
