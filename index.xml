@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Tue, 21 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 21 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -5226,7 +5226,7 @@ raiz.mainloop()
 
 &lt;figure&gt;
 
-&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb42-img01.png&#34; /&gt;
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb42-img01.png&#34; /&gt;
 
 
 
@@ -5270,7 +5270,7 @@ raiz.mainloop()
 
 &lt;figure&gt;
 
-&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb42-img02.png&#34; /&gt;
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb42-img02.png&#34; /&gt;
 
 
 
@@ -5346,7 +5346,7 @@ raiz.mainloop()
 
 &lt;figure&gt;
 
-&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img01.png&#34; /&gt;
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb43-img01.png&#34; /&gt;
 
 
 
@@ -5382,7 +5382,7 @@ raiz.mainloop()
 
 &lt;figure&gt;
 
-&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img02.png&#34; /&gt;
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb43-img02.png&#34; /&gt;
 
 
 
@@ -5421,7 +5421,7 @@ raiz.mainloop()
 
 &lt;figure&gt;
 
-&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/pb43-img03.png&#34; /&gt;
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb43-img03.png&#34; /&gt;
 
 
 
@@ -5437,6 +5437,215 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/43/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>44. Interfaces gráficas III</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb44-interfaces-graficas-iii/</link>
+      <pubDate>Tue, 21 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb44-interfaces-graficas-iii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Nf4-gvf-tNg&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, analizaremos cómo trabajar con el &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Label&lt;/code&gt;, perteneciente a la librería &lt;code&gt;tkinter&lt;/code&gt;, que nos permite mostrar texto o imágenes en nuestras interfaces gráficas. No es un elemento con el que podamos interactuar, es decir, no podremos borrarlo, arrastrarlo, etc.&lt;/p&gt;
+
+&lt;p&gt;Su sintaxis es:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;variable = Label(contenedor, opciones)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En &lt;a href=&#34;http://effbot.org/tkinterbook/label.htm&#34; target=&#34;_blank&#34;&gt;esta página&lt;/a&gt; podemos consultar qué opciones disponibles ofrece el &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Label&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para ver en acción este &lt;em&gt;widget&lt;/em&gt;, reutilicemos como base parte del código generado en lecciones anteriores:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Label&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=500, height=400)
+
+frame.pack()
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Añadimos ahora, antes de la instrucción &lt;code&gt;root.mainloop()&lt;/code&gt;, las líneas de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;label = Label(frame, text=&amp;quot;Mi primera etiqueta.&amp;quot;)
+label.pack()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb44-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Label&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Quedando el resultado de la ejecución como una ventana bastante reducida porque, recordemos, la raíz se adapta al tamaño de sus elementos integrados (aunque le hayamos indicado ciertas dimensiones previamente). Ello se debe al uso del método &lt;code&gt;pack()&lt;/code&gt;. Veamos el efecto que produce utilizar la función &lt;code&gt;place()&lt;/code&gt; en su lugar, pasándole las coordenadas donde deseamos situar el &lt;em&gt;widget&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Label&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=500, height=400)
+
+frame.pack()
+
+label = Label(frame, text=&amp;quot;Mi primera etiqueta.&amp;quot;)
+label.place(x=100, y=200)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb44-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Utilizando la función &lt;code&gt;place()&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: &lt;em&gt;Python&lt;/em&gt; utiliza un curioso sistema de coordenadas. La coordenada &lt;code&gt;x&lt;/code&gt; indica la distancia horizontal al comienzo del &lt;em&gt;widget&lt;/em&gt; tal como estamos acostumbrados en matemáticas. Sin embargo, la coordenada &lt;code&gt;y&lt;/code&gt; indica la distancia vertical al comienzo del &lt;em&gt;widget&lt;/em&gt; tomando como referencia la parte superior de la ventana y siendo los valores positivos desplazamientos hacia abajo.&lt;/p&gt;
+
+&lt;p&gt;Si no vamos a utilizar en ningún momento la variable &lt;code&gt;label&lt;/code&gt;, podemos aligerar un tanto el código escribiendo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Label&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=500, height=400)
+
+frame.pack()
+
+Label(frame, text=&amp;quot;Mi primera etiqueta.&amp;quot;).place(x=100, y=200)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A partir de aquí, ya únicamente nos queda experimentar con las diferentes opciones asociadas al &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Label&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Label&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=500, height=400)
+
+frame.pack()
+
+Label(frame, text=&amp;quot;Mi primera etiqueta.&amp;quot;, fg=&amp;quot;tomato&amp;quot;,
+      font=(&amp;quot;Arial&amp;quot;, 18)).place(x=100, y=200)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb44-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Probando opciones adicionales para &lt;code&gt;Label&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Adicionalmente, el &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Label&lt;/code&gt; nos permite incluir (de forma nativa en la librería &lt;code&gt;tkinter&lt;/code&gt;) imágenes de tipo &lt;em&gt;gif&lt;/em&gt; o &lt;em&gt;png&lt;/em&gt;. Por ejemplo, insertemos en nuestra aplicación &lt;a href=&#34;https://www.freepng.es/png-lwhgke/&#34; target=&#34;_blank&#34;&gt;esta imagen&lt;/a&gt;, que, en un alarde de originalidad, llamaremos &lt;code&gt;avengers.png&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Label, PhotoImage
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Label&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=500, height=400)
+
+frame.pack()
+
+imagen = PhotoImage(file=&amp;quot;avengers.png&amp;quot;)
+
+Label(frame, image=imagen).pack()  # .place() es otra posibilidad
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb44-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Una imagen como &lt;code&gt;Label&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para que la ventana se adaptase automáticamente al tamaño de la imagen descargada, he utilizado el método &lt;code&gt;pack()&lt;/code&gt; en lugar de la función &lt;code&gt;place()&lt;/code&gt;. No obstante, con ambas opciones se puede conseguir el mismo resultado si ajustamos de manera fina sus correspondientes opciones.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/44/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
