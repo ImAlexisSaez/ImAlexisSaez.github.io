@@ -5650,6 +5650,357 @@ root.mainloop()
     </item>
     
     <item>
+      <title>45. Interfaces gráficas IV</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb45-interfaces-graficas-iv/</link>
+      <pubDate>Wed, 22 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb45-interfaces-graficas-iv/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/YRs8j0QGEn0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, tras haber estudiado en la anterior el &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Label&lt;/code&gt;, abordaremos el uso del &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Entry&lt;/code&gt;, cuyo funcionamento es realmente similar a nivel de sintaxis. Este último habilita, en nuestras ventanas, la posibilidad de introducir un cuadro de texto, desde el cual el usuario puede suministrar cierta información.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Entry
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+cuadro_texto = Entry(root)
+cuadro_texto.pack()
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Entry&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;A partir de ahora, podemos reutilizar los conceptos y propiedades aprendidas hasta el momento:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+cuadro_texto = Entry(frame)
+cuadro_texto.place(x=100, y=100)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Insertando el &lt;em&gt;widget&lt;/em&gt; en un &lt;em&gt;frame&lt;/em&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Empecemos a combinar &lt;em&gt;widgets&lt;/em&gt; añadiendo al lado del cuadro de texto una etiqueta que rece &amp;ldquo;Nombre:&amp;ldquo;, como si quisiéramos elaborar un formulario de registro de datos personales. Utilizando la función &lt;code&gt;place()&lt;/code&gt; es posible, pero resulta muy complicado cuadrar adecuadamente todos los espacios de la ventana de la aplicación.&lt;/p&gt;
+
+&lt;p&gt;Existen dos alternativas a la hora de abordar esta situación:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pack()&lt;/code&gt;, aunque ya sabemos que después se ajustará la ventana al tamaño de sus elementos internos, ignorando pues las dimensiones que establecimos en su declaración.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grid()&lt;/code&gt;, construye una tabla dentro de la interfaz gráfica con tantas filas y columnas como nosotros queramos. Tras ello, podemos ubicar en la casilla que deseemos el elemento que nos interese.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Estudiemos el uso de esta última función mencionada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0)
+
+cuadro_nombre = Entry(frame)
+cuadro_nombre.grid(row=0, column=1)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Probando el método &lt;code&gt;grid()&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Por defecto, los elementos se alinean centrados dentro de su correspondiente casilla de la rejilla. Con el parámetro &lt;code&gt;sticky&lt;/code&gt; y los cuatro puntos cardinales (&lt;code&gt;n&lt;/code&gt;, &lt;code&gt;e&lt;/code&gt;, &lt;code&gt;s&lt;/code&gt;, &lt;code&gt;w&lt;/code&gt; y sus combinaciones por parejas) podemos modificar dicho comportamiento.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;)
+
+cuadro_nombre = Entry(frame)
+cuadro_nombre.grid(row=0, column=1)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1)
+
+tfno_label = Label(frame, text=&amp;quot;Teléfono (fijo):&amp;quot;)
+tfno_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;)
+
+tfno_texto = Entry(frame)
+tfno_texto.grid(row=3, column=1)
+
+movil_label = Label(frame, text=&amp;quot;Teléfono (móvil):&amp;quot;)
+movil_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;)
+
+movil_texto = Entry(frame)
+movil_texto.grid(row=4, column=1)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;El parámetro &lt;code&gt;sticky&lt;/code&gt; en acción.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Para evitar que los elementos aparezcan tan juntos, los parámetros &lt;code&gt;padx&lt;/code&gt; y &lt;code&gt;pady&lt;/code&gt; pueden resultarnos de utilidad, ya que nos permiten configurar la distancia del elemento al límite del contenedor donde se haya ubicado.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+cuadro_nombre = Entry(frame)
+cuadro_nombre.grid(row=0, column=1, padx=2, pady=2)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1, padx=2, pady=2)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1, padx=2, pady=2)
+
+tfno_label = Label(frame, text=&amp;quot;Teléfono (fijo):&amp;quot;)
+tfno_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+tfno_texto = Entry(frame)
+tfno_texto.grid(row=3, column=1, padx=2, pady=2)
+
+movil_label = Label(frame, text=&amp;quot;Teléfono (móvil):&amp;quot;)
+movil_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;)
+
+movil_texto = Entry(frame)
+movil_texto.grid(row=4, column=1)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img05.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Separando elementos con &lt;code&gt;padx&lt;/code&gt; y &lt;code&gt;pady&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Ahora, ya únicamente nos resta experimentar con la configuración de los distintos &lt;em&gt;widgets&lt;/em&gt; estudiados, empleando para ello principalmente la función &lt;code&gt;config()&lt;/code&gt; asociada a cada &lt;em&gt;widget&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, veamos cómo añadir un cuadro de texto que nos permita introducir contraseñas. Buscamos que al suministrar la información, esta aparezca &amp;ldquo;oculta&amp;rdquo; tras asteriscos. El parámetro &lt;code&gt;show&lt;/code&gt; de la función &lt;code&gt;config()&lt;/code&gt; cumple dicho cometido:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+cuadro_nombre = Entry(frame)
+cuadro_nombre.grid(row=0, column=1, padx=2, pady=2)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1, padx=2, pady=2)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1, padx=2, pady=2)
+
+tfno_label = Label(frame, text=&amp;quot;Teléfono (fijo):&amp;quot;)
+tfno_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+tfno_texto = Entry(frame)
+tfno_texto.grid(row=3, column=1, padx=2, pady=2)
+
+movil_label = Label(frame, text=&amp;quot;Teléfono (móvil):&amp;quot;)
+movil_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;)
+
+movil_texto = Entry(frame)
+movil_texto.grid(row=4, column=1)
+
+pass_label = Label(frame, text=&amp;quot;Constraseña:&amp;quot;)
+pass_label.grid(row=5, column=0, sticky=&amp;quot;e&amp;quot;)
+
+pass_texto = Entry(frame)
+pass_texto.grid(row=5, column=1)
+pass_texto.config(show=&amp;quot;*&amp;quot;)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb45-img06.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Una contraseña más segura con &lt;code&gt;show&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/45/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Breve introducción a los problemas de rutas</title>
       <link>https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/</link>
       <pubDate>Wed, 22 May 2019 05:59:39 +0200</pubDate>
