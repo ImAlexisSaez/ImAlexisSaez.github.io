@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Tue, 21 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 22 May 2019 05:59:39 +0200</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -5646,6 +5646,112 @@ root.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/44/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Breve introducción a los problemas de rutas</title>
+      <link>https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/</link>
+      <pubDate>Wed, 22 May 2019 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 79:&lt;/strong&gt; ¿Cuántas rutas existen, desde la esquina inferior izquierda de una cuadrícula $n\times n$ a la esquina superior derecha, si los viajes se restringen solo a pasos de longitud unitaria a la derecha o hacia arriba?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Antes de abordar el problema en su versión general, tal y como reza el enunciado, estudiemos un caso concreto, como el que se muestra en la siguiente figura. En ella, hemos tomado $n=5$ y sobre la cuadrícula aparecen delineadas dos de las posibles rutas (una en verde y otra en rojo) que parten del origen de coordenadas $(0,0)$ y llegan hasta el punto $(5,5)$. Esto es, ambas parten desde la esquina inferior izquierda de la mencionada cuadrícula y arriban a su esquina superior derecha.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20190522-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Representación simplificada del problema.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Si denotamos por $D$ a los pasos de longitud unitaria que se recorren hacia la derecha y por $A$ a los correspondientes que se efectúan hacia arriba, rápidamente apreciamos que, en cada una de las rutas que podamos imaginar, habrá cinco $D$ y otras cinco $A$. Es decir, toda ruta es una reordenación de la cadena $DDDDDAAAAA$. El número de tales cadenas que podemos escribir asciende al total de permutaciones con repetición de diez elementos, donde uno de ellos se repite cinco veces, mientras que el otro lo hace en el mismo número de ocasiones. Así, hay&lt;/p&gt;
+
+&lt;p&gt;$$
+PR_{10}^{5,5} = \dfrac{10!}{5!5!} = \dfrac{10\cdot9\cdot8\cdot7\cdot6}{5!} = 252
+$$&lt;/p&gt;
+
+&lt;p&gt;rutas posibles cuando $n=5$.&lt;/p&gt;
+
+&lt;p&gt;Alternativamente, podemos enfocar el problema como sigue: para llegar desde una esquina a la otra es necesario que efectuemos un total de diez de pasos, de los cuales cinco habrán de ser hacia la derecha (el mismo razonamiento es válido si consideramos dar los pasos hacia arriba). Como el orden en el que los demos no es importante, el número de maneras de dar cinco pasos a la derecha de un total de diez pasos equivale al total de combinaciones de diez elementos tomados de cinco es cinco, es decir,&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{10,5} = \dbinom{10}{5} = \dfrac{10\cdot9\cdot8\cdot7\cdot6}{5!} = 252.
+$$&lt;/p&gt;
+
+&lt;p&gt;Si ahora consideramos una cuadrícula rectangular, de manera que la esquina superior derecha de la misma la situamos en el punto $(5,7)$, razonaríamos de manera análoga a como hicimos en el párrafo anterior. ¿Cuántos pasos hemos de efectuar para llegar desde el origen de coordenadas hasta el punto $(5,7)$? En las condiciones que impone el enunciado del ejercicio, serían $5+7=12$ los pasos requeridos. El número de rutas, entonces, ascendería al total de combinaciones de doce elementos tomados de cinco en cinco, $C_{12,5}$ (o bien $C_{12,7}$ si hacemos el razonamiento fijándonos en los pasos que deben darse hacia arriba), esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{12,5} = C_{12,7} = \dbinom{12}{5} = \dfrac{12\cdot11\cdot10\cdot9\cdot8}{5!} = 792
+$$&lt;/p&gt;
+
+&lt;p&gt;son las rutas posibles en este caso.&lt;/p&gt;
+
+&lt;p&gt;En general, dada una cuadrícula $m\times n$ el número de rutas que existen, desde su esquina inferior izquierda hasta su esquina superior derecha, si los viajes se restringen a pasos de longitud unitaria a la derecha o hacia arriba asciende a&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{m+n,n} = \dbinom{m+n}{n}\qquad\text{o}\qquad C_{m+n,m}=\dbinom{m+n}{m}.
+$$&lt;/p&gt;
+
+&lt;p&gt;En nuestro caso concreto, como $m=n$, dicha cifra será&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{2n,n} = \dbinom{2n}{n}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Imaginemos, a continuación, que nos indican que estamos situados en el punto $(1,2)$. ¿Cuántas rutas distintas existen desde dicho punto a la esquina superior derecha de la cuadrícula, $(n,n)$? Esta cuestión la resolveríamos aplicando una traslación, puesto que el número de rutas entre los puntos $(1,2)$ y $(n,n)$ equivale al total de rutas entre $(0,0)$ y $(n-1,n-2)$ (simplemente hemos efectuado una traslación de vector $(1,2)$, es decir, sustraemos el mencionado vector a ambos puntos para obtener los finalmente mostrados). Dicha cifra, aplicando lo visto en párrafos anteriores, será&lt;/p&gt;
+
+&lt;p&gt;$$
+\dbinom{n-1+n-2}{n-1} = \dbinom{2n-3}{n-1} = C_{2n-3,n-1}
+$$&lt;/p&gt;
+
+&lt;p&gt;o bien $C_{2n-3,n-2}$.&lt;/p&gt;
+
+&lt;p&gt;Consideremos ahora que la longitud de una ruta equivale al número de pasos realizados. Así, podríamos preguntamos, ¿cuántas rutas de longitud seis existen? Una ruta de longitud seis, en las condiciones que impone en el enunciado de este ejercicio, puede llevarnos a cualquiera de los puntos que se indican en la siguiente figura, por lo que la tarea se reduce entonces a contar el número de rutas existente desde el origen de coordenadas a cada uno de ellos.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20190522-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Posibles longitudes de rutas.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Así, de $(0,0)$ a $(0,6)$ hay un total de $C_{6,0}$ rutas; de $(0,0)$ a $(1,5)$ encontramos $C_{6,1}$ rutas; de $(0,0)$ a $(2,4)$ hallamos $C_{6,2}$ rutas; y así sucesivamente. En total son&lt;/p&gt;
+
+&lt;p&gt;$$
+\dbinom{6}{0} + \dbinom{6}{1} + \dbinom{6}{2} + \dbinom{6}{3} + \dbinom{6}{4} + \dbinom{6}{5} + \dbinom{6}{6} = 2^6 = 64,
+$$&lt;/p&gt;
+
+&lt;p&gt;ya que,&lt;/p&gt;
+
+&lt;p&gt;$$
+\dbinom{n}{0} + \dbinom{n}{1} + \dbinom{n}{2} + \cdots + \dbinom{n}{n} = \sum_{k=0}^{n}{\dbinom{n}{k}} = (1+1)^n = 2^n.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por tanto, si ahora nos preguntasen por el total de rutas de longitud diez, directamente podríamos decir que son $2^{10} = 1024$.&lt;/p&gt;
+
+&lt;p&gt;Este clásico problema, conocido como el de las &lt;em&gt;rutas equiprobables&lt;/em&gt;, nos permite dar respuesta a preguntas como: ¿de cuántas maneras podemos obtener cinco caras y cinco cruces al lanzar una moneda diez veces? En ejercicios anteriores, utilizando técnicas de combinatoria, hallamos que dicha cantidad equivalía a $PR_{10}^{5,5}$ o bien $C_{10,5}$. Un enfoque alternativo sería por conteo de rutas desde el origen de coordenadas hasta el punto de interés, $(5,5)$ en esta ocasión. Por otro lado, el total de rutas de longitud seis es, en otros términos, la cantidad de secuencias que podemos obtener al lanzar una moneda seis veces, que, por combinatoria, sabemos asciende a $VR_{2,6} = 2^6 = 64$. Así, los ejercicios de rutas fácilmente se extrapolan a otros contextos (sobre todo de monedas) y podemos resolver con ellas interrogantes del estilo: dado que he obtenido una cada y dos cruces, ¿de cuántas formas posibles puedo llegar a conseguir diez caras y diez cruces? La respuesta, como vimos en párrafos anteriores, la encontraríamos rápidamente tras aplicar una traslación de vector $(1,2)$ y contar después del número de rutas entre el origen de coordenadas y el punto $(9,8)$.&lt;/p&gt;
 </description>
     </item>
     
@@ -16714,7 +16820,7 @@ $$&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/tags/combinatoria/&#34;&gt;Combinatoria&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/&#34;&gt;75&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/&#34;&gt;76&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/&#34;&gt;77&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/18/marchando-uno-de-numeros-combinatorios-generalizados/&#34;&gt;78&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/&#34;&gt;75&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/&#34;&gt;76&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/&#34;&gt;77&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/18/marchando-uno-de-numeros-combinatorios-generalizados/&#34;&gt;78&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/&#34;&gt;79&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
