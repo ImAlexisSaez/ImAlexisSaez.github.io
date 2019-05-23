@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Wed, 22 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 23 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -5997,6 +5997,269 @@ root.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/45/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>46. Interfaces gráficas V</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb46-interfaces-graficas-v/</link>
+      <pubDate>Thu, 23 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb46-interfaces-graficas-v/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/nZF9SwhmPRo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, presentaremos dos &lt;em&gt;widgets&lt;/em&gt; nuevos: &lt;code&gt;Text&lt;/code&gt; y &lt;code&gt;Button&lt;/code&gt;. El primero de ellos nos permite introducir un texto de extensión considerable en un cuadro, mientras que el segundo simplemente se trata de la clase asociada a los botones que habitualmente pulsamos en cualquier aplicación.&lt;/p&gt;
+
+&lt;p&gt;Retomemos el último ejemplo de la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Entry, Label
+
+root = Tk()
+
+root.title(&amp;quot;Probando el widget Entry&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+cuadro_nombre = Entry(frame)
+cuadro_nombre.grid(row=0, column=1, padx=2, pady=2)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1, padx=2, pady=2)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1, padx=2, pady=2)
+
+tfno_label = Label(frame, text=&amp;quot;Teléfono (fijo):&amp;quot;)
+tfno_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+tfno_texto = Entry(frame)
+tfno_texto.grid(row=3, column=1, padx=2, pady=2)
+
+movil_label = Label(frame, text=&amp;quot;Teléfono (móvil):&amp;quot;)
+movil_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;)
+
+movil_texto = Entry(frame)
+movil_texto.grid(row=4, column=1)
+
+pass_label = Label(frame, text=&amp;quot;Constraseña:&amp;quot;)
+pass_label.grid(row=5, column=0, sticky=&amp;quot;e&amp;quot;)
+
+pass_texto = Entry(frame)
+pass_texto.grid(row=5, column=1)
+pass_texto.config(show=&amp;quot;*&amp;quot;)
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Añadamos, a continuación del campo declarado para la introducción de la contraseña, uno dedicado a la biografía de la persona que está rellenando el formulario. Ello nos permitirá hacer uso de la clase &lt;code&gt;Text&lt;/code&gt;, que habremos de importar al inicio del código. Así, si escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bio_label = Label(frame, text=&amp;quot;Biografía:&amp;quot;)
+bio_label.grid(row=6, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+bio_texto = Text(frame, width=15, height=5)
+bio_texto.grid(row=6, column=1, padx=2, pady=2)
+
+scroll_vert = Scrollbar(frame, command=bio_texto.yview)
+scroll_vert.grid(row=6, column=2, sticky=&amp;quot;nsew&amp;quot;)
+bio_texto.config(yscrollcommand=scroll_vert.set)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb46-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Text&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Conviene que declaremos unas longitudes adecuadas mediante los parámetros &lt;code&gt;width&lt;/code&gt; y &lt;code&gt;height&lt;/code&gt;, ya que las asignadas por defecto son ciertamente elevadas.&lt;/li&gt;
+&lt;li&gt;El &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Text&lt;/code&gt; automáticamente permite la posibilidad de &lt;em&gt;scroll&lt;/em&gt;, aunque si deseamos que aparezca una barra de desplazamiento lateral, hemos de indicarlo. Para ello, se requiere la construcción de un objeto de la clase &lt;code&gt;Scrollbar&lt;/code&gt; (que hemos de importar de la librería &lt;code&gt;tkinter&lt;/code&gt;) y asociarlo al cuadro de texto generado. La correspondiente instrucción que se ocupa de tal tarea en el bloque de código anterior es:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;scroll_vert = Scrollbar(frame, command=bio_texto.yview)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Acto seguido, mediante el método &lt;code&gt;grid()&lt;/code&gt;, y teniendo cuidado con el valor correspondiente para el parámetro &lt;code&gt;column&lt;/code&gt;, terminamos haciendo que aparezca en la ventana de la aplicación. Para que se adapte al tamaño del cuadro de texto asociado, una posible estrategia es incluir &lt;code&gt;sticky=&amp;quot;nsew&amp;quot;&lt;/code&gt; en la declaración del &lt;em&gt;scroll&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Por otro lado, si queremos que se posicione la barra de desplazamiento al nivel del texto que estamos introduciendo, incluiremos la instrucción &lt;code&gt;bio_texto.config(yscrollcommand=scroll_vert.set)&lt;/code&gt; tras la declaración de la variable &lt;code&gt;scroll_vert&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pasemos ahora a añadir un botón a nuestra interfaz gráfica, para lo cual haremos uso de la clase &lt;code&gt;Button&lt;/code&gt;. Posicionemos uno en la raíz (&lt;code&gt;root&lt;/code&gt;) de la ventana de la aplicación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;boton_envio = Button(root, text=&amp;quot;Enviar&amp;quot;)
+boton_envio.pack()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb46-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Button&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;A continuación, veamos cómo añadir cierta funcionalidad al botón generado. Para ello, incluimos en su declaración el parámetro &lt;code&gt;command=codigo_boton&lt;/code&gt;,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;boton_envio = Button(root, text=&amp;quot;Enviar&amp;quot;, command=codigo_boton)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;donde &lt;code&gt;codigo_boton&lt;/code&gt; será una función que contendrá el código con las acciones que deseemos se lleven a cabo cuando el usuario pulse sobre el botón.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, aunque no sea la característica habitual de este tipo de botones, hagamos que cuando el usuario pulse sobre el mencionado botón, se escriba nuestro nombre automáticamente en el cuadro de texto correspondiente. Así, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def codigo_boton():
+    mi_nombre.set(&amp;quot;Alexis&amp;quot;)
+
+
+root = Tk()
+
+mi_nombre = StringVar()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La instrucción &lt;code&gt;mi_nombre = StringVar()&lt;/code&gt; únicamente le indica a &lt;em&gt;Python&lt;/em&gt; que la variable &lt;code&gt;mi_nombre&lt;/code&gt; es una cadena de caracteres. Como viene siendo habitual, habremos de importar la correspondiente clase al comienzo del código (o, directamente, utilizar el esquema &lt;code&gt;from ... import *&lt;/code&gt;). Ahora, modificamos la declaración del cuadro de texto asociado al nombre del usuario introduciendo el parámetro &lt;code&gt;textvariable&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cuadro_nombre = Entry(frame, textvariable=mi_nombre)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: no podemos utilizar &lt;code&gt;StringVar()&lt;/code&gt; antes de definir la raíz (&lt;code&gt;root&lt;/code&gt;) de la aplicación.&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb46-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;¡El botón está vivo!¡Vivo!&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Si la función &lt;code&gt;set()&lt;/code&gt; nos permite declarar el valor de un cuadro de texto, para obtener la información que el usuario introduzca en uno, utilizaremos, en próximas lecciones, el método &lt;code&gt;get()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, comparto el código completo de esta última aplicación generada, para tener acceso así a una visión global de la misma:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk, Frame, Button, Entry, Label, Scrollbar, StringVar, Text
+
+
+def codigo_boton():
+    mi_nombre.set(&amp;quot;Alexis&amp;quot;)
+
+
+root = Tk()
+
+mi_nombre = StringVar()
+
+root.title(&amp;quot;Probando los widgets Text y Button&amp;quot;)
+root.resizable(width=True, height=True)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+root.config(bg=&amp;quot;lightblue&amp;quot;)
+
+frame = Frame(root, width=450, height=300)
+frame.pack()
+
+nombre_label = Label(frame, text=&amp;quot;Nombre:&amp;quot;)
+nombre_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+cuadro_nombre = Entry(frame, textvariable=mi_nombre)
+cuadro_nombre.grid(row=0, column=1, padx=2, pady=2)
+
+apellido_label = Label(frame, text=&amp;quot;Apellido:&amp;quot;)
+apellido_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+apellido_texto = Entry(frame)
+apellido_texto.grid(row=1, column=1, padx=2, pady=2)
+
+direccion_label = Label(frame, text=&amp;quot;Dirección:&amp;quot;)
+direccion_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+direccion_texto = Entry(frame)
+direccion_texto.grid(row=2, column=1, padx=2, pady=2)
+
+tfno_label = Label(frame, text=&amp;quot;Teléfono (fijo):&amp;quot;)
+tfno_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+tfno_texto = Entry(frame)
+tfno_texto.grid(row=3, column=1, padx=2, pady=2)
+
+movil_label = Label(frame, text=&amp;quot;Teléfono (móvil):&amp;quot;)
+movil_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+movil_texto = Entry(frame)
+movil_texto.grid(row=4, column=1, padx=2, pady=2)
+
+pass_label = Label(frame, text=&amp;quot;Constraseña:&amp;quot;)
+pass_label.grid(row=5, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+pass_texto = Entry(frame)
+pass_texto.grid(row=5, column=1, padx=2, pady=2)
+pass_texto.config(show=&amp;quot;*&amp;quot;)
+
+bio_label = Label(frame, text=&amp;quot;Biografía:&amp;quot;)
+bio_label.grid(row=6, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+bio_texto = Text(frame, width=15, height=5)
+bio_texto.grid(row=6, column=1, padx=2, pady=2)
+
+scroll_vert = Scrollbar(frame, command=bio_texto.yview)
+scroll_vert.grid(row=6, column=2, sticky=&amp;quot;nsew&amp;quot;)
+bio_texto.config(yscrollcommand=scroll_vert.set)
+
+boton_envio = Button(root, text=&amp;quot;Enviar&amp;quot;, command=codigo_boton)
+boton_envio.pack()
+
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/46/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
