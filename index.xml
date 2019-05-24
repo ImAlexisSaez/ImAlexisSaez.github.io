@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 23 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 24 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -6559,6 +6559,139 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/47/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>48. Interfaces gráficas VII</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb48-interfaces-graficas-vii/</link>
+      <pubDate>Fri, 24 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb48-interfaces-graficas-vii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/oIzt6ESA7nU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Una vez elaborada la interfaz gráfica de la calculadora, en esta lección abordaremos cómo programar parte de la funcionalidad de la misma. Para empezar, nuestro objetivo será conseguir que al pulsar los diferentes botones numéricos aparezcan sus valores asociados en la pantalla.&lt;/p&gt;
+
+&lt;p&gt;Empecemos creando una variable para almacenar una cadena de texto y asociémosla a la pantalla:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;numero_pantalla = StringVar()
+
+pantalla = Entry(frame, textvariable=numero_pantalla)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, creemos una función que, por ejemplo, escriba el número &lt;code&gt;4&lt;/code&gt; en pantalla:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Pulsaciones teclado
+def numero_pulsado():
+    numero_pantalla.set(&amp;quot;4&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, asociémosla al botón correspondiente:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;boton4 = Button(frame, text=&amp;quot;4&amp;quot;, width=3, command=numero_pulsado)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, al pulsar en el botón del número cuatro, aparece un &lt;code&gt;4&lt;/code&gt; en la pantalla. Vemos que si pulsamos en varias ocasiones, no se añaden más cuatros, que sería el comportamiento deseable. Modifiquemos la función &lt;code&gt;numero_pulsado()&lt;/code&gt; para conseguir tal efecto. Para ello, obtendremos la información actual de la pantalla y le agregaremos el número &lt;code&gt;4&lt;/code&gt; después:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Pulsaciones teclado
+def numero_pulsado():
+    numero_pantalla.set(numero_pantalla.get() + &amp;quot;4&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para generalizar, necesitaremos el uso de funciones &lt;em&gt;lambda&lt;/em&gt; o &lt;em&gt;anónimas&lt;/em&gt; en la declaración de los botones. De no utilizarlas, tal y como transcurre el flujo del programa, al llegar a la línea de la declaración de &lt;code&gt;boton4&lt;/code&gt;, se produciría directamente la llamada de la función &lt;code&gt;numero_pulsado(&amp;quot;4&amp;quot;)&lt;/code&gt;, mostrando (sin que el usuario pulse sobre nada) un &lt;code&gt;4&lt;/code&gt; en la pantalla al abrir la calculadura y, además, deshabilitando la funcionalidad del botón, puesto que al seguir pulsando sobre él no añade más cuatros.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def numero_pulsado(num):
+    numero_pantalla.set(numero_pantalla.get() + num)
+
+boton4 = Button(frame, text=&amp;quot;4&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;4&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para finalizar, incluyo el código completo de la aplicación elaborada hasta este instante, para obtener así una visión global de la calculadora:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Button, Entry, Frame, StringVar, Tk
+
+# Raíz
+raiz = Tk()
+raiz.title(&amp;quot;Calculadora&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+# Frame
+frame = Frame(raiz)
+frame.pack()
+
+# Variables
+numero_pantalla = StringVar()
+
+# Pantalla
+pantalla = Entry(frame, textvariable=numero_pantalla)
+pantalla.grid(row=1, column=1, padx=10, pady=10, columnspan=4)
+pantalla.config(background=&amp;quot;black&amp;quot;, fg=&amp;quot;#03f943&amp;quot;, justify=&amp;quot;right&amp;quot;)
+
+
+# Pulsaciones teclado
+def numero_pulsado(num):
+    numero_pantalla.set(numero_pantalla.get() + num)
+
+
+# Fila 1 de botones
+boton7 = Button(frame, text=&amp;quot;7&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;7&amp;quot;))
+boton7.grid(row=2, column=1)
+boton8 = Button(frame, text=&amp;quot;8&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;8&amp;quot;))
+boton8.grid(row=2, column=2)
+boton9 = Button(frame, text=&amp;quot;9&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;9&amp;quot;))
+boton9.grid(row=2, column=3)
+boton_div = Button(frame, text=&amp;quot;/&amp;quot;, width=3)
+boton_div.grid(row=2, column=4)
+
+# Fila 2 de botones
+boton4 = Button(frame, text=&amp;quot;4&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;4&amp;quot;))
+boton4.grid(row=3, column=1)
+boton5 = Button(frame, text=&amp;quot;5&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;5&amp;quot;))
+boton5.grid(row=3, column=2)
+boton6 = Button(frame, text=&amp;quot;6&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;6&amp;quot;))
+boton6.grid(row=3, column=3)
+boton_mult = Button(frame, text=&amp;quot;*&amp;quot;, width=3)
+boton_mult.grid(row=3, column=4)
+
+# Fila 3 de botones
+boton1 = Button(frame, text=&amp;quot;1&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;1&amp;quot;))
+boton1.grid(row=4, column=1)
+boton2 = Button(frame, text=&amp;quot;2&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;2&amp;quot;))
+boton2.grid(row=4, column=2)
+boton3 = Button(frame, text=&amp;quot;3&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;3&amp;quot;))
+boton3.grid(row=4, column=3)
+boton_rest = Button(frame, text=&amp;quot;-&amp;quot;, width=3)
+boton_rest.grid(row=4, column=4)
+
+# Fila 4 de botones
+boton0 = Button(frame, text=&amp;quot;0&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;0&amp;quot;))
+boton0.grid(row=5, column=1)
+boton_coma = Button(frame,
+                    text=&amp;quot;.&amp;quot;,
+                    width=3,
+                    command=lambda: numero_pulsado(&amp;quot;.&amp;quot;))
+boton_coma.grid(row=5, column=2)
+boton_igual = Button(frame, text=&amp;quot;=&amp;quot;, width=3)
+boton_igual.grid(row=5, column=3)
+boton_suma = Button(frame, text=&amp;quot;+&amp;quot;, width=3)
+boton_suma.grid(row=5, column=4)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/48/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
