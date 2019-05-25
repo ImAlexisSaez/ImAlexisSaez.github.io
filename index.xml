@@ -6892,6 +6892,409 @@ raiz.mainloop()
     </item>
     
     <item>
+      <title>50. Interfaces gráficas IX</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb50-interfaces-graficas-ix/</link>
+      <pubDate>Sat, 25 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb50-interfaces-graficas-ix/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/YfYUOUGMaXU&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;Partamos, en esta lección, del siguiente código fuente, que incluye, además de la función para sumar, las correspondientes a las operaciones resta, multiplicación y división:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Button, Entry, Frame, StringVar, Tk
+
+# Raíz
+raiz = Tk()
+raiz.title(&amp;quot;Calculadora&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+# Frame
+frame = Frame(raiz)
+frame.pack()
+
+# Variables
+numero_pantalla = StringVar()
+operacion = &amp;quot;&amp;quot;
+resultado = 0
+reset_pantalla = False
+
+# Pantalla
+pantalla = Entry(frame, textvariable=numero_pantalla)
+pantalla.grid(row=1, column=1, padx=10, pady=10, columnspan=4)
+pantalla.config(background=&amp;quot;black&amp;quot;, fg=&amp;quot;#03f943&amp;quot;, justify=&amp;quot;right&amp;quot;)
+
+
+# Pulsaciones teclado
+def numero_pulsado(num):
+    global operacion, reset_pantalla
+    if reset_pantalla:
+        numero_pantalla.set(num)
+        reset_pantalla = False
+    else:
+        numero_pantalla.set(numero_pantalla.get() + num)
+
+
+# Función suma
+def suma(num):
+    global operacion, reset_pantalla, resultado
+    operacion = &amp;quot;suma&amp;quot;
+    resultado += int(num)
+    reset_pantalla = True
+    numero_pantalla.set(resultado)
+
+
+# Función resta
+num1 = 0
+contador_resta = 0
+
+
+def resta(num):
+    global contador_resta, num1, operacion, reset_pantalla, resultado
+    if contador_resta == 0:
+        num1 = int(num)
+        resultado = num1
+    else:
+        if contador_resta == 1:
+            resultado = num1 - int(num)
+        else:
+            resultado = int(resultado) - int(num)
+        numero_pantalla.set(resultado)
+        resultado = numero_pantalla.get()
+    contador_resta = contador_resta + 1
+    operacion = &amp;quot;resta&amp;quot;
+    reset_pantalla = True
+
+
+# Función multiplicación
+contador_multi = 0
+
+
+def multiplica(num):
+    global contador_multi, num1, operacion, reset_pantalla, resultado
+    if contador_multi == 0:
+        num1 = int(num)
+        resultado = num1
+    else:
+        if contador_multi == 1:
+            resultado = num1 * int(num)
+        else:
+            resultado = int(resultado) * int(num)
+        numero_pantalla.set(resultado)
+        resultado = numero_pantalla.get()
+    contador_multi = contador_multi + 1
+    operacion = &amp;quot;multiplicacion&amp;quot;
+    reset_pantalla = True
+
+
+# Función división
+contador_divi = 0
+
+
+def divide(num):
+    global contador_divi, num1, operacion, reset_pantalla, resultado
+    if contador_divi == 0:
+        num1 = float(num)
+        resultado = num1
+    else:
+        if contador_resta == 1:
+            resultado = num1 / float(num)
+        else:
+            resultado = float(resultado) / float(num)
+        numero_pantalla.set(resultado)
+        resultado = numero_pantalla.get()
+    contador_divi = contador_divi + 1
+    operacion = &amp;quot;division&amp;quot;
+    reset_pantalla = True
+
+
+# Función el_resultado (para el botón igual)
+def el_resultado():
+    global contador_divi, contador_multi, contador_resta, operacion, resultado
+    if operacion == &amp;quot;suma&amp;quot;:
+        numero_pantalla.set(resultado + int(numero_pantalla.get()))
+        resultado = 0
+    elif operacion == &amp;quot;resta&amp;quot;:
+        numero_pantalla.set(int(resultado) - int(numero_pantalla.get()))
+        resultado = 0
+        contador_resta = 0
+    elif operacion == &amp;quot;multiplicacion&amp;quot;:
+        numero_pantalla.set(int(resultado) * int(numero_pantalla.get()))
+        resultado = 0
+        contador_multi = 0
+    elif operacion == &amp;quot;division&amp;quot;:
+        numero_pantalla.set(int(resultado) / int(numero_pantalla.get()))
+        resultado = 0
+        contador_divi = 0
+
+
+# Fila 1 de botones
+boton7 = Button(frame, text=&amp;quot;7&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;7&amp;quot;))
+boton7.grid(row=2, column=1)
+boton8 = Button(frame, text=&amp;quot;8&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;8&amp;quot;))
+boton8.grid(row=2, column=2)
+boton9 = Button(frame, text=&amp;quot;9&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;9&amp;quot;))
+boton9.grid(row=2, column=3)
+boton_div = Button(frame,
+                   text=&amp;quot;/&amp;quot;,
+                   width=3,
+                   command=lambda: divide(numero_pantalla.get()))
+boton_div.grid(row=2, column=4)
+
+# Fila 2 de botones
+boton4 = Button(frame, text=&amp;quot;4&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;4&amp;quot;))
+boton4.grid(row=3, column=1)
+boton5 = Button(frame, text=&amp;quot;5&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;5&amp;quot;))
+boton5.grid(row=3, column=2)
+boton6 = Button(frame, text=&amp;quot;6&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;6&amp;quot;))
+boton6.grid(row=3, column=3)
+boton_mult = Button(frame,
+                    text=&amp;quot;*&amp;quot;,
+                    width=3,
+                    command=lambda: multiplica(numero_pantalla.get()))
+boton_mult.grid(row=3, column=4)
+
+# Fila 3 de botones
+boton1 = Button(frame, text=&amp;quot;1&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;1&amp;quot;))
+boton1.grid(row=4, column=1)
+boton2 = Button(frame, text=&amp;quot;2&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;2&amp;quot;))
+boton2.grid(row=4, column=2)
+boton3 = Button(frame, text=&amp;quot;3&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;3&amp;quot;))
+boton3.grid(row=4, column=3)
+boton_rest = Button(frame,
+                    text=&amp;quot;-&amp;quot;,
+                    width=3,
+                    command=lambda: resta(numero_pantalla.get()))
+boton_rest.grid(row=4, column=4)
+
+# Fila 4 de botones
+boton0 = Button(frame, text=&amp;quot;0&amp;quot;, width=3, command=lambda: numero_pulsado(&amp;quot;0&amp;quot;))
+boton0.grid(row=5, column=1)
+boton_coma = Button(frame,
+                    text=&amp;quot;.&amp;quot;,
+                    width=3,
+                    command=lambda: numero_pulsado(&amp;quot;.&amp;quot;))
+boton_coma.grid(row=5, column=2)
+boton_igual = Button(frame, text=&amp;quot;=&amp;quot;, width=3, command=lambda: el_resultado())
+boton_igual.grid(row=5, column=3)
+boton_suma = Button(frame,
+                    text=&amp;quot;+&amp;quot;,
+                    width=3,
+                    command=lambda: suma(numero_pantalla.get()))
+boton_suma.grid(row=5, column=4)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, veremos cómo trabajar con botones de radio, es decir, con la clase &lt;code&gt;Radiobutton&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Radiobutton, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Botones de radio&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+Radiobutton(raiz, text=&amp;quot;Femenino&amp;quot;).pack()
+Radiobutton(raiz, text=&amp;quot;Masculino&amp;quot;).pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb50-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Radiobutton&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;A primera vista, observamos dos inconvenientes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;aparecen ambas opciones seleccionadas al abrir la aplicación y&lt;/li&gt;
+&lt;li&gt;por mucho que pulse sobre ellas, la selección no se modifica.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para abordar esta situación, comenzamos creando una variable global, &lt;code&gt;opcion&lt;/code&gt;, perteneciente a la clase &lt;code&gt;IntVar&lt;/code&gt; y se la asignamos a ambos botones a través del parámetro &lt;code&gt;variable&lt;/code&gt;; junto con un valor para cada uno de ellos, utilizando el parámetro &lt;code&gt;value&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import IntVar, Radiobutton, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Botones de radio&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+opcion = IntVar()
+
+Radiobutton(raiz, text=&amp;quot;Femenino&amp;quot;, variable=opcion, value=1).pack()
+Radiobutton(raiz, text=&amp;quot;Masculino&amp;quot;, variable=opcion, value=2).pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb50-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Permitiendo la posibilidad de seleccionar una de las opciones.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: si asignamos &lt;code&gt;value=0&lt;/code&gt; a alguno de los botones, aparecerá seleccionado por defecto cuando abramos la aplicación. Esta característica puede resultar de cierta utilidad en algunos contextos.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, ¿cómo rescatamos el valor que ha seleccionado el usuario? Al igual que sucedía en el caso de la calculadora, recurriremos al uso de funciones en esta ocasión.&lt;/p&gt;
+
+&lt;p&gt;Así, generemos una, denominada &lt;code&gt;imprimir&lt;/code&gt;, que imprima en la consola de &lt;em&gt;Python&lt;/em&gt; el valor del botón seleccionado:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import IntVar, Label, Radiobutton, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Botones de radio&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+opcion = IntVar()
+
+
+def imprimir():
+    print(opcion.get())
+
+
+Label(raiz, text=&amp;quot;Género:&amp;quot;).pack()
+Radiobutton(raiz, text=&amp;quot;Femenino&amp;quot;, variable=opcion, value=1,
+            command=imprimir).pack()
+Radiobutton(raiz, text=&amp;quot;Masculino&amp;quot;, variable=opcion, value=2,
+            command=imprimir).pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Modifiquemos el código para ver dichos valores en la propia interfaz:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import IntVar, Label, Radiobutton, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Botones de radio&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+opcion = IntVar()
+
+
+def imprimir():
+    if opcion.get() == 1:
+        etiqueta.config(text=&amp;quot;Has elegido género femenino.&amp;quot;)
+    else:
+        etiqueta.config(text=&amp;quot;Has elegido género masculino.&amp;quot;)
+
+
+Label(raiz, text=&amp;quot;Género:&amp;quot;).pack()
+Radiobutton(raiz, text=&amp;quot;Femenino&amp;quot;, variable=opcion, value=1,
+            command=imprimir).pack()
+Radiobutton(raiz, text=&amp;quot;Masculino&amp;quot;, variable=opcion, value=2,
+            command=imprimir).pack()
+
+etiqueta = Label(raiz)
+etiqueta.pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb50-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Mostrando la opción seleccionada en la ventana de la aplicación.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Incorporar un botón adicional que contemple otros géneros es sencillo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import IntVar, Label, Radiobutton, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Botones de radio&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+opcion = IntVar()
+
+
+def imprimir():
+    if opcion.get() == 1:
+        etiqueta.config(text=&amp;quot;Has elegido género femenino.&amp;quot;)
+    elif opcion.get() == 2:
+        etiqueta.config(text=&amp;quot;Has elegido género masculino.&amp;quot;)
+    else:
+        etiqueta.config(text=&amp;quot;Has elegido otras opciones para género.&amp;quot;)
+
+
+Label(raiz, text=&amp;quot;Género:&amp;quot;).pack()
+Radiobutton(raiz, text=&amp;quot;Femenino&amp;quot;, variable=opcion, value=1,
+            command=imprimir).pack()
+Radiobutton(raiz, text=&amp;quot;Masculino&amp;quot;, variable=opcion, value=2,
+            command=imprimir).pack()
+Radiobutton(raiz, text=&amp;quot;Otras opciones&amp;quot;, variable=opcion, value=3,
+            command=imprimir).pack()
+
+etiqueta = Label(raiz)
+etiqueta.pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb50-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Añadiendo una nueva opción a las disponibles.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/50/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Seguimos de rutas</title>
       <link>https://imalexissaez.github.io/2019/05/25/seguimos_de_rutas/</link>
       <pubDate>Sat, 25 May 2019 05:59:39 +0200</pubDate>
