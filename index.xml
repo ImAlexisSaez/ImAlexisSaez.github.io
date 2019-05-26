@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sat, 25 May 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -7291,6 +7291,151 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/50/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>51. Interfaces gráficas X</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb51-interfaces-graficas-x/</link>
+      <pubDate>Sun, 26 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb51-interfaces-graficas-x/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/TzeU61X-dnI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, introduciremos el funcionamiento de la clase &lt;code&gt;Checkbutton&lt;/code&gt;, que se encarga de gestionar los clásicos &lt;em&gt;botones de selección&lt;/em&gt; (también denominados &lt;em&gt;casillas de verificación&lt;/em&gt;). Estos nos permiten la posibilidad de realizar una selección múltiple sobre distintas opciones ofrecidas.&lt;/p&gt;
+
+&lt;p&gt;Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, donde el usuario ha de escoger qué tipo de destinos prefiere para sus vacaciones.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Checkbutton, Frame, IntVar, Label, PhotoImage, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Casillas de verificación&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+playa = IntVar()
+montana = IntVar()
+turismo_rural = IntVar()
+
+
+def opciones_viaje():
+    opcion_escogida = &amp;quot;&amp;quot;
+    if playa.get() == 1:
+        opcion_escogida += &amp;quot; playa&amp;quot;
+    if montana.get() == 1:
+        opcion_escogida += &amp;quot; montaña&amp;quot;
+    if turismo_rural.get() == 1:
+        opcion_escogida += &amp;quot; turismo rural&amp;quot;
+    texto_final.config(text=opcion_escogida)
+
+
+foto = PhotoImage(file=&amp;quot;helicoptero.png&amp;quot;)
+Label(raiz, image=foto).pack()
+
+frame = Frame(raiz)
+frame.pack()
+
+Label(frame, text=&amp;quot;Escoge destinos:&amp;quot;, width=50).pack()
+
+Checkbutton(frame,
+            text=&amp;quot;Playa&amp;quot;,
+            variable=playa,
+            onvalue=1,
+            offvalue=0,
+            command=opciones_viaje).pack()
+Checkbutton(frame,
+            text=&amp;quot;Montaña&amp;quot;,
+            variable=montana,
+            onvalue=1,
+            offvalue=0,
+            command=opciones_viaje).pack()
+Checkbutton(frame,
+            text=&amp;quot;Turismo rural&amp;quot;,
+            variable=turismo_rural,
+            onvalue=1,
+            offvalue=0,
+            command=opciones_viaje).pack()
+
+texto_final = Label(frame)
+texto_final.pack()
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para empezar, el siguiente bloque de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;foto = PhotoImage(file=&amp;quot;helicoptero.png&amp;quot;)
+Label(raiz, image=foto).pack()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;nos permite introducir, como cabecera de nuestra aplicación, la imagen de un helicóptero (disponible en &lt;a href=&#34;https://www.freepng.es/png-ct7rpy/download.html&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;A continuación, las líneas de código asociadas a la primera casilla de verificación son&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;Checkbutton(frame,
+            text=&amp;quot;Playa&amp;quot;,
+            variable=playa,
+            onvalue=1,
+            offvalue=0,
+            command=opciones_viaje).pack()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Observamos que dicha casilla está ubicada en el &lt;em&gt;frame&lt;/em&gt; &lt;code&gt;frame&lt;/code&gt; y muestra como texto, en la ventana de la aplicación, la palabra &lt;code&gt;Playa&lt;/code&gt;. Para posibilitar la interacción con ella, almacenamos su valor en la variable &lt;code&gt;playa&lt;/code&gt;, siendo este &lt;code&gt;1&lt;/code&gt; cuando esté seleccionada y &lt;code&gt;0&lt;/code&gt; en otro caso. Finalmente, su comportamiento se gestiona a través de la función &lt;code&gt;opciones_viaje()&lt;/code&gt;, tal y como figura en el valor del parámetro &lt;code&gt;command&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta a la variable &lt;code&gt;playa&lt;/code&gt;, así como al resto, las declaramos utilizando la clase &lt;code&gt;IntVar&lt;/code&gt;, puesto que nuestra intención es almacenar en ellas valores enteros:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;playa = IntVar()
+montana = IntVar()
+turismo_rural = IntVar()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, mostraremos las opciones seleccionadas por el usuario empleando una etiqueta para ello, de ahí que figure el siguiente bloque de código al final del programa:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;texto_final = Label(frame)
+texto_final.pack()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, la función que gestiona el comportamiento de las casillas de verificación simplemente se ocupa de establecer el texto de la variable &lt;code&gt;texto_final&lt;/code&gt; según una serie de bloques condicionales:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def opciones_viaje():
+    opcion_escogida = &amp;quot;&amp;quot;
+    if playa.get() == 1:
+        opcion_escogida += &amp;quot; playa&amp;quot;
+    if montana.get() == 1:
+        opcion_escogida += &amp;quot; montaña&amp;quot;
+    if turismo_rural.get() == 1:
+        opcion_escogida += &amp;quot; turismo rural&amp;quot;
+    texto_final.config(text=opcion_escogida)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb51-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Checkbutton&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/51/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
