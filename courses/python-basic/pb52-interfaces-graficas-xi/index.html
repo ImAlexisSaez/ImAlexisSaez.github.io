@@ -27,12 +27,13 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Partamos del código del último ejemplo de la lección anterior:
-class Coche(): largo_chasis = 250 ancho_chasis = 120 ruedas = 4 en_marcha = False def arrancar(self): self.en_marcha = True def estado(self): if self.en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot;  Generemos dos objetos y comparémoslos:
-mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis) # Largo mi_coche1: 250 print(&quot;Largo mi_coche2: &quot;, mi_coche2.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos el estudio del widget Menu, que nos permitirá la posibilidad de crear barras de menús.
+Comencemos utilizando el siguiente esqueleto de aplicación:
+from tkinter import Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.mainloop()  A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
+barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/">
 
   
 
@@ -111,7 +112,7 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/">
 
   
   
@@ -125,23 +126,24 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb27-poo-iv/">
-  <meta property="og:title" content="27. Programación orientada a objetos IV | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Partamos del código del último ejemplo de la lección anterior:
-class Coche(): largo_chasis = 250 ancho_chasis = 120 ruedas = 4 en_marcha = False def arrancar(self): self.en_marcha = True def estado(self): if self.en_marcha: return &quot;El coche está en marcha.&quot; else: return &quot;El coche está parado.&quot;  Generemos dos objetos y comparémoslos:
-mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis) # Largo mi_coche1: 250 print(&quot;Largo mi_coche2: &quot;, mi_coche2."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/">
+  <meta property="og:title" content="52. Interfaces gráficas XI | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos el estudio del widget Menu, que nos permitirá la posibilidad de crear barras de menús.
+Comencemos utilizando el siguiente esqueleto de aplicación:
+from tkinter import Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.mainloop()  A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
+barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-09T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-27T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-09T00:00:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-27T00:00:01&#43;01:00">
   
 
   
 
-  <title>27. Programación orientada a objetos IV | Infinitos Contrastes</title>
+  
+
+  <title>52. Interfaces gráficas XI | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -493,7 +495,7 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
         <a href="/courses/python-basic/pb26-poo-iii/">26. POO III</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb27-poo-iv/">27. POO IV</a>
       </li>
       
@@ -593,7 +595,7 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
         <a href="/courses/python-basic/pb51-interfaces-graficas-x/">51. Interfaces X</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb52-interfaces-graficas-xi/">52. Interfaces XI</a>
       </li>
       
@@ -637,7 +639,7 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">27. Programación orientada a objetos IV</h1>
+          <h1 itemprop="name">52. Interfaces gráficas XI</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -646,179 +648,126 @@ mi_coche1 = Coche() mi_coche2 = Coche() print(&quot;Largo mi_coche1: &quot;, mi_
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/x5CY8fVyYLo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/Dv1ALaWwScI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Partamos del código del último ejemplo de la lección anterior:</p>
+<p>En esta lección, abordaremos el estudio del <em>widget</em> <code>Menu</code>, que nos permitirá la posibilidad de crear barras de menús.</p>
 
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
+<p>Comencemos utilizando el siguiente esqueleto de aplicación:</p>
 
-    def arrancar(self):
-        self.en_marcha = True
+<pre><code class="language-python">from tkinter import Tk
 
-    def estado(self):
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
+raiz = Tk()
+raiz.title(&quot;Menús&quot;)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+
+raiz.mainloop()
 </code></pre>
 
-<p>Generemos dos objetos y comparémoslos:</p>
+<p>A continuación, generamos una variable, <code>barra_menu</code>, que será la encargada de almacenar el menú:</p>
 
-<pre><code class="language-python">mi_coche1 = Coche()
-mi_coche2 = Coche()
-
-print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis)  # Largo mi_coche1:  250
-print(&quot;Largo mi_coche2: &quot;, mi_coche2.largo_chasis)  # Largo mi_coche2:  250
-
-mi_coche1.arrancar()
-print(mi_coche1.estado())  # El coche está en marcha.
-print(mi_coche2.estado())  # El coche está parado.
+<pre><code class="language-python">barra_menu = Menu(raiz)
 </code></pre>
 
-<p>Sería buena idea que el método <code>arrancar()</code>, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método <code>estado()</code> para que nos ofrezca información del coche:</p>
+<p>y configuramos el valor del parámetro <code>menu</code> de la <em>raíz</em> para que figure en nuestra aplicación:</p>
 
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
-
-
-mi_coche1 = Coche()
-mi_coche2 = Coche()
-
-print(mi_coche1.arrancar(True))  # El coche está en marcha.
-print(mi_coche2.arrancar(False))  # # El coche está parado.
-mi_coche1.estado()
-# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-mi_coche2.estado()
-# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+<pre><code class="language-python">raiz.config(menu=barra_menu)
 </code></pre>
 
-<p>En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como <strong>estado inicial</strong>. Para especificar dicho estado utilizaremos un <strong>constructor</strong>, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por</p>
+<p>Acto seguido, establecemos los elementos que conformarán nuestro menú. Por ejemplo, para crear uno denominado <em>Archivo</em>, generamos la variable <code>archivo_menu</code>, indicándole que pertenece a la barra de menús <code>barra_menu</code>.</p>
 
-<pre><code class="language-python">def __init__(self):
-    propiedades
+<pre><code class="language-python">archivo_menu = Menu(barra_menu)
 </code></pre>
 
-<p>Así, el código de la clase quedaría:</p>
+<p>No obstante, si ejecutamos el código, todavía no aparece barra de menús alguna. Añadamos el texto correspondiente a cada elemento. Así,</p>
 
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.largo_chasis = 250
-        self.ancho_chasis = 120
-        self.ruedas = 4
-        self.en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+<pre><code class="language-python">barra_menu.add_cascade(label=&quot;Archivo&quot;, menu=archivo_menu)
 </code></pre>
 
-<p>¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?</p>
+<p>Ahora, ya únicamente nos resta la tarea de añadir elementos de submenú. Para ello, tras la línea de declaración del elemento <code>archivo_menu</code>, tecleamos:</p>
 
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-
-mi_coche2.ruedas = 5
-
-mi_coche2.estado()
+<pre><code class="language-python">archivo_menu.add_command(label=&quot;Nuevo&quot;)
+archivo_menu.add_command(label=&quot;Abrir&quot;)
+archivo_menu.add_command(label=&quot;Guardar&quot;)
+archivo_menu.add_command(label=&quot;Guardar como...&quot;)
+archivo_menu.add_command(label=&quot;Cerrar&quot;)
+archivo_menu.add_command(label=&quot;Salir&quot;)
 </code></pre>
 
-<pre><code class="language-bash">El coche está parado.
-El coche tiene 5 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+<p>Aparece una barra separadora, que identificamos por los símbolos <code>- - - -</code>, al pulsar sobre cualquier elemento de la barra de menús. Para suprimirla, modificamos como sigue la línea de declaración de la variable <code>archivo_menu</code>:</p>
+
+<pre><code class="language-python">archivo_menu = Menu(barra_menu, tearoff=0)
 </code></pre>
 
-<p>Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de <strong>encapsulación</strong>, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con <code>__</code> el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:</p>
+<p>No obstante, aunque la mencionada barra separada no nos interesaba, sí que podemos desear diferenciar, de alguna manera, los diversos elementos de un submenú, para que así queden agrupados por cierto criterio. Con tal objetivo, donde nos convenga, introducimos la instrucción</p>
 
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.largo_chasis = 250
-        self.ancho_chasis = 120
-        self.__ruedas = 4
-        self.en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+<pre><code class="language-python">archivo_menu.add_separator()
 </code></pre>
 
-<pre><code class="language-python">mi_coche2 = Coche()
+<p>Para acabar, comparto el código completo de la aplicación, para obtener así una visión global del funcionamiento de la clase <code>Menu</code>.</p>
 
-print(mi_coche2.arrancar(False))
+<pre><code class="language-python">from tkinter import Menu, Tk
 
-mi_coche2.__ruedas = 5
+raiz = Tk()
+raiz.title(&quot;Menús&quot;)
+raiz.iconbitmap(&quot;icon.ico&quot;)
 
-mi_coche2.estado()
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&quot;Nuevo&quot;)
+archivo_menu.add_command(label=&quot;Abrir&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Guardar&quot;)
+archivo_menu.add_command(label=&quot;Guardar como...&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Cerrar&quot;)
+archivo_menu.add_command(label=&quot;Salir&quot;)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&quot;Copiar&quot;)
+edicion_menu.add_command(label=&quot;Cortar&quot;)
+edicion_menu.add_command(label=&quot;Pegar&quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&quot;Licencia&quot;)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&quot;Acerca de...&quot;)
+
+barra_menu.add_cascade(label=&quot;Archivo&quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&quot;Edición&quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&quot;Herramientas&quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
+
+raiz.mainloop()
 </code></pre>
 
-<pre><code class="language-bash">El coche está parado.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
 
-<p>En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso <code>en_marcha</code>, ya que queremos modificarla únicamente desde el interior de la clase.</p>
 
-<p>La clase entonces quedaría:</p>
 
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
+<figure>
 
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-        if self.__en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
+<img src="/courses/python-basic/img/pb52-img01.png" />
 
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-</code></pre>
 
-<p>De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.</p>
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Primer contacto con la clase <code>Menu</code>.</h4>
+  
+</figcaption>
+
+</figure>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/27/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/52/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -835,15 +784,9 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb26-poo-iii/" rel="next">26. Programación orientada a objetos III</a>
+    <a href="/courses/python-basic/pb51-interfaces-graficas-x/" rel="next">51. Interfaces gráficas X</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb28-poo-v/" rel="prev">28. Programación orientada a objetos V</a>
-  </div>
   
 </div>
 
@@ -852,7 +795,7 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-09
+          Última actualización el 2019-05-27
         </div>
 
       </article>

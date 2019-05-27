@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sun, 26 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -7436,6 +7436,141 @@ texto_final.pack()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/51/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>52. Interfaces gráficas XI</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/</link>
+      <pubDate>Mon, 27 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Dv1ALaWwScI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, abordaremos el estudio del &lt;em&gt;widget&lt;/em&gt; &lt;code&gt;Menu&lt;/code&gt;, que nos permitirá la posibilidad de crear barras de menús.&lt;/p&gt;
+
+&lt;p&gt;Comencemos utilizando el siguiente esqueleto de aplicación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Menús&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, generamos una variable, &lt;code&gt;barra_menu&lt;/code&gt;, que será la encargada de almacenar el menú:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;barra_menu = Menu(raiz)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y configuramos el valor del parámetro &lt;code&gt;menu&lt;/code&gt; de la &lt;em&gt;raíz&lt;/em&gt; para que figure en nuestra aplicación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;raiz.config(menu=barra_menu)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, establecemos los elementos que conformarán nuestro menú. Por ejemplo, para crear uno denominado &lt;em&gt;Archivo&lt;/em&gt;, generamos la variable &lt;code&gt;archivo_menu&lt;/code&gt;, indicándole que pertenece a la barra de menús &lt;code&gt;barra_menu&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu = Menu(barra_menu)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, si ejecutamos el código, todavía no aparece barra de menús alguna. Añadamos el texto correspondiente a cada elemento. Así,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;barra_menu.add_cascade(label=&amp;quot;Archivo&amp;quot;, menu=archivo_menu)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, ya únicamente nos resta la tarea de añadir elementos de submenú. Para ello, tras la línea de declaración del elemento &lt;code&gt;archivo_menu&lt;/code&gt;, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu.add_command(label=&amp;quot;Nuevo&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Abrir&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Guardar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Guardar como...&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aparece una barra separadora, que identificamos por los símbolos &lt;code&gt;- - - -&lt;/code&gt;, al pulsar sobre cualquier elemento de la barra de menús. Para suprimirla, modificamos como sigue la línea de declaración de la variable &lt;code&gt;archivo_menu&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu = Menu(barra_menu, tearoff=0)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, aunque la mencionada barra separada no nos interesaba, sí que podemos desear diferenciar, de alguna manera, los diversos elementos de un submenú, para que así queden agrupados por cierto criterio. Con tal objetivo, donde nos convenga, introducimos la instrucción&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu.add_separator()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para acabar, comparto el código completo de la aplicación, para obtener así una visión global del funcionamiento de la clase &lt;code&gt;Menu&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Menu, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Menús&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&amp;quot;Nuevo&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Abrir&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Guardar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Guardar como...&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&amp;quot;Copiar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Cortar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Pegar&amp;quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&amp;quot;Licencia&amp;quot;)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;)
+
+barra_menu.add_cascade(label=&amp;quot;Archivo&amp;quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&amp;quot;Edición&amp;quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&amp;quot;Herramientas&amp;quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&amp;quot;Ayuda&amp;quot;, menu=ayuda_menu)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb52-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primer contacto con la clase &lt;code&gt;Menu&lt;/code&gt;.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/52/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
