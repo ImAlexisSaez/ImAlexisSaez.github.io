@@ -579,5 +579,15 @@ Para comenzar, recuperemos el código fuente generado en la lección anterior:
 from tkinter import Menu, Tk raiz = Tk() raiz.title(&amp;quot;Menús&amp;quot;) raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;) barra_menu = Menu(raiz) raiz.config(menu=barra_menu, width=300, height=300) archivo_menu = Menu(barra_menu, tearoff=0) archivo_menu.add_command(label=&amp;quot;Nuevo&amp;quot;) archivo_menu.add_command(label=&amp;quot;Abrir&amp;quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&amp;quot;Guardar&amp;quot;) archivo_menu.add_command(label=&amp;quot;Guardar como...&amp;quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;) archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;) edicion_menu = Menu(barra_menu, tearoff=0) edicion_menu.</description>
     </item>
     
+    <item>
+      <title>54. Interfaces gráficas XIII</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb54-interfaces-graficas-xiii/</link>
+      <pubDate>Tue, 28 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb54-interfaces-graficas-xiii/</guid>
+      <description>Vídeo   Notas personales En esta lección, construiremos la típica ventana emergente que nos permite abrir un archivo en una aplicación. Para empezar, recuperemos el código fuente generado en las últimas lecciones:
+from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showinfo(title=&amp;quot;Acerca de...&amp;quot;, message=&amp;quot;Aplicación creada por Alexis Sáez.&amp;quot;) def aviso_licencia(): messagebox.showwarning(title=&amp;quot;Licencia&amp;quot;, message=&amp;quot;Producto bajo licencia GNU.&amp;quot;) def salir_aplicacion(): respuesta = messagebox.askquestion( title=&amp;quot;Salir&amp;quot;, message=&amp;quot;¿Desear salir de la aplicación?&amp;quot;) if respuesta == &amp;quot;yes&amp;quot;: raiz.</description>
+    </item>
+    
   </channel>
 </rss>
