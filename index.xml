@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 27 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -7571,6 +7571,278 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/52/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>53. Interfaces gráficas XII</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/</link>
+      <pubDate>Tue, 28 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/xUGUglpaTJc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.&lt;/p&gt;
+
+&lt;p&gt;Para comenzar, recuperemos el código fuente generado en la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Menu, Tk
+
+raiz = Tk()
+raiz.title(&amp;quot;Menús&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&amp;quot;Nuevo&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Abrir&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Guardar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Guardar como...&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&amp;quot;Copiar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Cortar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Pegar&amp;quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&amp;quot;Licencia&amp;quot;)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;)
+
+barra_menu.add_cascade(label=&amp;quot;Archivo&amp;quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&amp;quot;Edición&amp;quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&amp;quot;Herramientas&amp;quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&amp;quot;Ayuda&amp;quot;, menu=ayuda_menu)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, nuestro objetivo será construir una ventana emergente que aparezca cuando el usuario pulse sobre la opción &lt;em&gt;Acerca de&amp;hellip;&lt;/em&gt;, ubicada en el menú &lt;em&gt;Ayuda&lt;/em&gt;. Para ello, empecemos creando una función que será la responsable de generar la mencionada ventana emergente:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def info_adicional():
+    messagebox.showinfo(title=&amp;quot;Acerca de...&amp;quot;,
+                        message=&amp;quot;Aplicación creada por Alexis Sáez.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hemos de importar el módulo &lt;code&gt;messagebox&lt;/code&gt; al principio de nuestro código.&lt;/li&gt;
+&lt;li&gt;El parámetro &lt;code&gt;title&lt;/code&gt; gestiona el texto que aparecerá en la barra que figura en la parte superior de la ventana emergente.&lt;/li&gt;
+&lt;li&gt;El parámetro &lt;code&gt;text&lt;/code&gt; declara el texto que se ubicará en el cuerpo de la ventana emergente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Acto seguido, modificamos la declaración del submenú &lt;em&gt;Acerca de&amp;hellip;&lt;/em&gt; como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ayuda_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;, command=info_adicional)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb53-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Primera ventana emergente.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Estas ventanas emergentes admiten enormes posibilidades de configuración y podemos adaptarlas según nuestra intención sea informar al usuario de algún detalle concreto (como el ejemplo que se muestra en la imagen que figura arriba), avisarle de algún error, etc. Los símbolos y la disposición de los diferentes botones asociados variarían en función de nuestro objetivo.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, generemos una ventana emergente que nos avise del estado de la licencia de nuestra aplicación. Para ello, creamos la siguiente función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def aviso_licencia():
+    messagebox.showwarning(title=&amp;quot;Licencia&amp;quot;,
+                           message=&amp;quot;Producto bajo licencia GNU.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y modificamos la correspondiente opción del menú &lt;em&gt;Ayuda&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ayuda_menu.add_command(label=&amp;quot;Licencia&amp;quot;, command=aviso_licencia)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb53-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Ventana emergente de aviso.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Acto seguido, veamos un nuevo tipo de ventana emergente, que asociaremos al submenú &lt;em&gt;Salir&lt;/em&gt; y que nos pedirá confirmación antes de proceder a cerrar la aplicación. Con tal objetivo en mente, empecemos construyendo la función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def salir_aplicacion():
+    messagebox.askquestion(title=&amp;quot;Salir&amp;quot;,
+                           message=&amp;quot;¿Desear salir de la aplicación?&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;para luego modificar la opción del menú &lt;em&gt;Archivo&lt;/em&gt; asociada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;, command=salir_aplicacion)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb53-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Ventana emergente con pregunta.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Ahora, si pulsamos sobre el botón &lt;em&gt;No&lt;/em&gt;, volvemos a la aplicación, como cabría esperar. No obstante, al pulsar sobre el botón &lt;em&gt;Sí&lt;/em&gt; debería salir de la aplicación y no sucede tal acción, puesto que hemos de programar todavía dicho comportamiento.&lt;/p&gt;
+
+&lt;p&gt;La función &lt;code&gt;askquestion()&lt;/code&gt; devuelve una cadena de texto en función del botón pulsado, &lt;code&gt;&amp;quot;yes&amp;quot;&lt;/code&gt; o &lt;code&gt;&amp;quot;no&amp;quot;&lt;/code&gt;, por lo que basta modificar la función &lt;code&gt;salir_aplicacion()&lt;/code&gt; como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def salir_aplicacion():
+    respuesta = messagebox.askquestion(
+        title=&amp;quot;Salir&amp;quot;, message=&amp;quot;¿Desear salir de la aplicación?&amp;quot;)
+    if respuesta == &amp;quot;yes&amp;quot;:
+        raiz.destroy()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La función &lt;code&gt;destroy()&lt;/code&gt; posee un nombre lo suficientemente explicativo para que intuyamos cómo afecta a la &lt;em&gt;raíz&lt;/em&gt; de la aplicación.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con la función &lt;code&gt;askokcancel()&lt;/code&gt; tenemos una variante de la anterior ventana emergente, cuyos botones son del tipo &lt;em&gt;Aceptar&lt;/em&gt; y &lt;em&gt;Cancelar&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;A continuación, veamos una ventana emergente de tipo &amp;ldquo;reintentar&amp;rdquo;, asociada a la opción &lt;em&gt;Cerrar&lt;/em&gt; del menú &lt;em&gt;Archivo&lt;/em&gt;. Para ello, construimos la siguiente función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def cerrar_documento():
+    messagebox.askretrycancel(
+        title=&amp;quot;Reintentar&amp;quot;,
+        message=&amp;quot;No es posible cerrar. Documento bloqueado.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y modificamos el correspondiente elemento del menú &lt;em&gt;Archivo&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;, command=cerrar_documento)
+&lt;/code&gt;&lt;/pre&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;https://imalexissaez.github.io/courses/python-basic/img/pb53-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Ventana emergente para reintentar una acción.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Finalmente, como viene siendo habitual en este subapartado del curso dedicado a las interfaces gráficas, comparto el código completo de la aplicación generada para así ofrecer una visión global de la misma.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Menu, messagebox, Tk
+
+
+def info_adicional():
+    messagebox.showinfo(title=&amp;quot;Acerca de...&amp;quot;,
+                        message=&amp;quot;Aplicación creada por Alexis Sáez.&amp;quot;)
+
+
+def aviso_licencia():
+    messagebox.showwarning(title=&amp;quot;Licencia&amp;quot;,
+                           message=&amp;quot;Producto bajo licencia GNU.&amp;quot;)
+
+
+def salir_aplicacion():
+    respuesta = messagebox.askquestion(
+        title=&amp;quot;Salir&amp;quot;, message=&amp;quot;¿Desear salir de la aplicación?&amp;quot;)
+    if respuesta == &amp;quot;yes&amp;quot;:
+        raiz.destroy()
+
+
+def cerrar_documento():
+    messagebox.askretrycancel(
+        title=&amp;quot;Reintentar&amp;quot;,
+        message=&amp;quot;No es posible cerrar. Documento bloqueado.&amp;quot;)
+
+
+raiz = Tk()
+raiz.title(&amp;quot;Menús&amp;quot;)
+raiz.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&amp;quot;Nuevo&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Abrir&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Guardar&amp;quot;)
+archivo_menu.add_command(label=&amp;quot;Guardar como...&amp;quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&amp;quot;Cerrar&amp;quot;, command=cerrar_documento)
+archivo_menu.add_command(label=&amp;quot;Salir&amp;quot;, command=salir_aplicacion)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&amp;quot;Copiar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Cortar&amp;quot;)
+edicion_menu.add_command(label=&amp;quot;Pegar&amp;quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&amp;quot;Licencia&amp;quot;, command=aviso_licencia)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;, command=info_adicional)
+
+barra_menu.add_cascade(label=&amp;quot;Archivo&amp;quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&amp;quot;Edición&amp;quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&amp;quot;Herramientas&amp;quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&amp;quot;Ayuda&amp;quot;, menu=ayuda_menu)
+
+raiz.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/53/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

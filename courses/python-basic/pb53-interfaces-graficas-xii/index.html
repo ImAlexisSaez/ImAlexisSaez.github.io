@@ -27,11 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack().">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.
+Para comenzar, recuperemos el código fuente generado en la lección anterior:
+from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) barra_menu = Menu(raiz) raiz.config(menu=barra_menu, width=300, height=300) archivo_menu = Menu(barra_menu, tearoff=0) archivo_menu.add_command(label=&quot;Nuevo&quot;) archivo_menu.add_command(label=&quot;Abrir&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Guardar&quot;) archivo_menu.add_command(label=&quot;Guardar como...&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Cerrar&quot;) archivo_menu.add_command(label=&quot;Salir&quot;) edicion_menu = Menu(barra_menu, tearoff=0) edicion_menu.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/">
 
   
 
@@ -110,7 +111,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/">
 
   
   
@@ -124,22 +125,23 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
-  <meta property="og:title" content="43. Interfaces gráficas II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack()."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/">
+  <meta property="og:title" content="53. Interfaces gráficas XII | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.
+Para comenzar, recuperemos el código fuente generado en la lección anterior:
+from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) barra_menu = Menu(raiz) raiz.config(menu=barra_menu, width=300, height=300) archivo_menu = Menu(barra_menu, tearoff=0) archivo_menu.add_command(label=&quot;Nuevo&quot;) archivo_menu.add_command(label=&quot;Abrir&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Guardar&quot;) archivo_menu.add_command(label=&quot;Guardar como...&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Cerrar&quot;) archivo_menu.add_command(label=&quot;Salir&quot;) edicion_menu = Menu(barra_menu, tearoff=0) edicion_menu."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-21T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-05-28T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-21T00:00:01&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-28T00:00:01&#43;01:00">
   
 
   
 
-  <title>43. Interfaces gráficas II | Infinitos Contrastes</title>
+  
+
+  <title>53. Interfaces gráficas XII | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -555,7 +557,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
         <a href="/courses/python-basic/pb42-interfaces-graficas-i/">42. Interfaces I</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb43-interfaces-graficas-ii/">43. Interfaces II</a>
       </li>
       
@@ -595,7 +597,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
         <a href="/courses/python-basic/pb52-interfaces-graficas-xi/">52. Interfaces XI</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb53-interfaces-graficas-xii/">53. Interfaces XII</a>
       </li>
       
@@ -639,7 +641,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">43. Interfaces gráficas II</h1>
+          <h1 itemprop="name">53. Interfaces gráficas XII</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -648,80 +650,74 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/M80CzDC1Crc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/xUGUglpaTJc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Después de introducir, en la lección anterior, la <em>raíz</em> de una interfaz gráfica, en esta abordaremos la construcción y uso de <em>frames</em>. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:</p>
+<p>En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.</p>
 
-<pre><code class="language-python">from tkinter import Tk
+<p>Para comenzar, recuperemos el código fuente generado en la lección anterior:</p>
+
+<pre><code class="language-python">from tkinter import Menu, Tk
 
 raiz = Tk()
-
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=False, height=False)  # raiz.resizable(0, 0)
+raiz.title(&quot;Menús&quot;)
 raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.geometry(&quot;450x300&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
+
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&quot;Nuevo&quot;)
+archivo_menu.add_command(label=&quot;Abrir&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Guardar&quot;)
+archivo_menu.add_command(label=&quot;Guardar como...&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Cerrar&quot;)
+archivo_menu.add_command(label=&quot;Salir&quot;)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&quot;Copiar&quot;)
+edicion_menu.add_command(label=&quot;Cortar&quot;)
+edicion_menu.add_command(label=&quot;Pegar&quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&quot;Licencia&quot;)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&quot;Acerca de...&quot;)
+
+barra_menu.add_cascade(label=&quot;Archivo&quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&quot;Edición&quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&quot;Herramientas&quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
+
 raiz.mainloop()
 </code></pre>
 
-<p>A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método <code>pack()</code>. Además, prescindiremos de la instrucción <code>raiz.geometry()</code>, para así estar en condiciones de configurar el tamaño del <em>frame</em> (la raíz se adaptará automáticamente al tamaño de sus elementos internos):</p>
+<p>A continuación, nuestro objetivo será construir una ventana emergente que aparezca cuando el usuario pulse sobre la opción <em>Acerca de&hellip;</em>, ubicada en el menú <em>Ayuda</em>. Para ello, empecemos creando una función que será la responsable de generar la mencionada ventana emergente:</p>
 
-<pre><code class="language-python">from tkinter import Tk, Frame
-
-raiz = Tk()
-
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-
-frame = Frame()
-frame.pack()
-frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
-
-raiz.mainloop()
+<pre><code class="language-python">def info_adicional():
+    messagebox.showinfo(title=&quot;Acerca de...&quot;,
+                        message=&quot;Aplicación creada por Alexis Sáez.&quot;)
 </code></pre>
 
-<p>A primera vista, al ejecutar el aterior bloque de código, da la sensación de que hemos perdido el color de fondo declarado para la aplicación (<code>lightblue</code>). No obstante, como ahora permitimos manipular el tamaño de la ventana (mediante la instrucción <code>raiz.resizable(width=True, height=True)</code>), al agrandarla comprobamos que todo funciona correctamente.</p>
+<p><em>Notas</em>:</p>
 
+<ul>
+<li>Hemos de importar el módulo <code>messagebox</code> al principio de nuestro código.</li>
+<li>El parámetro <code>title</code> gestiona el texto que aparecerá en la barra que figura en la parte superior de la ventana emergente.</li>
+<li>El parámetro <code>text</code> declara el texto que se ubicará en el cuerpo de la ventana emergente.</li>
+</ul>
 
+<p>Acto seguido, modificamos la declaración del submenú <em>Acerca de&hellip;</em> como sigue:</p>
 
-
-<figure>
-
-<img src="/courses/python-basic/img/pb43-img01.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Los dos colores de fondo siguen disponibles.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p><em>Nota</em>: en <a href="http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter" target="_blank">esta página</a> podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería <code>tkinter</code>.</p>
-
-<p>Por otro lado, observamos que el <em>frame</em> tiene un tamaño fijo, por mucho que manipulemos el tamaño de la ventana, las dimensiones del <em>frame</em> no se alteran, así como su posición, que permanece centrada en la parte superior de la ventana de la aplicación. Este comportamiento es el dado por defecto, que podemos configurar de manera diferente, si así lo deseamos, a través del método <code>pack()</code>.</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame
-
-raiz = Tk()
-
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-
-frame = Frame()
-frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;, fill=&quot;x&quot;, expand=&quot;True&quot;)
-frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
-
-raiz.mainloop()
+<pre><code class="language-python">ayuda_menu.add_command(label=&quot;Acerca de...&quot;, command=info_adicional)
 </code></pre>
 
 
@@ -729,38 +725,29 @@ raiz.mainloop()
 
 <figure>
 
-<img src="/courses/python-basic/img/pb43-img02.png" />
+<img src="/courses/python-basic/img/pb53-img01.png" />
 
 
 
 <figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Modificando propiedades del <em>frame</em>.</h4>
+  <h4>Primera ventana emergente.</h4>
   
 </figcaption>
 
 </figure>
 
-<p>Las opciones de configuración de los <em>frames</em> son ciertamente numerosas. Por ejemplo, podemos añadirle un borde (parámetros <code>bd</code> y <code>relief</code>) o cambiar el icono del ratón cuando se adentra en el interior del <em>frame</em> (parámetro <code>cursor</code>):</p>
+<p>Estas ventanas emergentes admiten enormes posibilidades de configuración y podemos adaptarlas según nuestra intención sea informar al usuario de algún detalle concreto (como el ejemplo que se muestra en la imagen que figura arriba), avisarle de algún error, etc. Los símbolos y la disposición de los diferentes botones asociados variarían en función de nuestro objetivo.</p>
 
-<pre><code class="language-python">from tkinter import Tk, Frame
+<p>Por ejemplo, generemos una ventana emergente que nos avise del estado de la licencia de nuestra aplicación. Para ello, creamos la siguiente función:</p>
 
-raiz = Tk()
+<pre><code class="language-python">def aviso_licencia():
+    messagebox.showwarning(title=&quot;Licencia&quot;,
+                           message=&quot;Producto bajo licencia GNU.&quot;)
+</code></pre>
 
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
+<p>y modificamos la correspondiente opción del menú <em>Ayuda</em>:</p>
 
-frame = Frame()
-frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;)
-frame.config(bg=&quot;tomato&quot;,
-             width=&quot;450&quot;,
-             height=&quot;300&quot;,
-             bd=35,
-             relief=&quot;groove&quot;,
-             cursor=&quot;pirate&quot;)
-
-raiz.mainloop()
+<pre><code class="language-python">ayuda_menu.add_command(label=&quot;Licencia&quot;, command=aviso_licencia)
 </code></pre>
 
 
@@ -768,22 +755,158 @@ raiz.mainloop()
 
 <figure>
 
-<img src="/courses/python-basic/img/pb43-img03.png" />
+<img src="/courses/python-basic/img/pb53-img02.png" />
 
 
 
 <figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Añadiendo un marco al <em>frame</em>.</h4>
+  <h4>Ventana emergente de aviso.</h4>
   
 </figcaption>
 
 </figure>
 
-<p>Obviamente, todo aquello que hemos visto de cara a configurar un <em>frame</em> es aplicable a la propia <em>raíz</em> y dependerá de cómo deseemos diseñar nuestra aplicación.</p>
+<p>Acto seguido, veamos un nuevo tipo de ventana emergente, que asociaremos al submenú <em>Salir</em> y que nos pedirá confirmación antes de proceder a cerrar la aplicación. Con tal objetivo en mente, empecemos construyendo la función:</p>
+
+<pre><code class="language-python">def salir_aplicacion():
+    messagebox.askquestion(title=&quot;Salir&quot;,
+                           message=&quot;¿Desear salir de la aplicación?&quot;)
+</code></pre>
+
+<p>para luego modificar la opción del menú <em>Archivo</em> asociada:</p>
+
+<pre><code class="language-python">archivo_menu.add_command(label=&quot;Salir&quot;, command=salir_aplicacion)
+</code></pre>
+
+
+
+
+<figure>
+
+<img src="/courses/python-basic/img/pb53-img03.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Ventana emergente con pregunta.</h4>
+  
+</figcaption>
+
+</figure>
+
+<p>Ahora, si pulsamos sobre el botón <em>No</em>, volvemos a la aplicación, como cabría esperar. No obstante, al pulsar sobre el botón <em>Sí</em> debería salir de la aplicación y no sucede tal acción, puesto que hemos de programar todavía dicho comportamiento.</p>
+
+<p>La función <code>askquestion()</code> devuelve una cadena de texto en función del botón pulsado, <code>&quot;yes&quot;</code> o <code>&quot;no&quot;</code>, por lo que basta modificar la función <code>salir_aplicacion()</code> como sigue:</p>
+
+<pre><code class="language-python">def salir_aplicacion():
+    respuesta = messagebox.askquestion(
+        title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;)
+    if respuesta == &quot;yes&quot;:
+        raiz.destroy()
+</code></pre>
+
+<p>La función <code>destroy()</code> posee un nombre lo suficientemente explicativo para que intuyamos cómo afecta a la <em>raíz</em> de la aplicación.</p>
+
+<p><em>Nota</em>: con la función <code>askokcancel()</code> tenemos una variante de la anterior ventana emergente, cuyos botones son del tipo <em>Aceptar</em> y <em>Cancelar</em>.</p>
+
+<p>A continuación, veamos una ventana emergente de tipo &ldquo;reintentar&rdquo;, asociada a la opción <em>Cerrar</em> del menú <em>Archivo</em>. Para ello, construimos la siguiente función:</p>
+
+<pre><code class="language-python">def cerrar_documento():
+    messagebox.askretrycancel(
+        title=&quot;Reintentar&quot;,
+        message=&quot;No es posible cerrar. Documento bloqueado.&quot;)
+</code></pre>
+
+<p>y modificamos el correspondiente elemento del menú <em>Archivo</em>:</p>
+
+<pre><code class="language-python">archivo_menu.add_command(label=&quot;Cerrar&quot;, command=cerrar_documento)
+</code></pre>
+
+
+
+
+<figure>
+
+<img src="/courses/python-basic/img/pb53-img04.png" />
+
+
+
+<figcaption data-pre="Figura " data-post=":" class="numbered">
+  <h4>Ventana emergente para reintentar una acción.</h4>
+  
+</figcaption>
+
+</figure>
+
+<p>Finalmente, como viene siendo habitual en este subapartado del curso dedicado a las interfaces gráficas, comparto el código completo de la aplicación generada para así ofrecer una visión global de la misma.</p>
+
+<pre><code class="language-python">from tkinter import Menu, messagebox, Tk
+
+
+def info_adicional():
+    messagebox.showinfo(title=&quot;Acerca de...&quot;,
+                        message=&quot;Aplicación creada por Alexis Sáez.&quot;)
+
+
+def aviso_licencia():
+    messagebox.showwarning(title=&quot;Licencia&quot;,
+                           message=&quot;Producto bajo licencia GNU.&quot;)
+
+
+def salir_aplicacion():
+    respuesta = messagebox.askquestion(
+        title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;)
+    if respuesta == &quot;yes&quot;:
+        raiz.destroy()
+
+
+def cerrar_documento():
+    messagebox.askretrycancel(
+        title=&quot;Reintentar&quot;,
+        message=&quot;No es posible cerrar. Documento bloqueado.&quot;)
+
+
+raiz = Tk()
+raiz.title(&quot;Menús&quot;)
+raiz.iconbitmap(&quot;icon.ico&quot;)
+
+barra_menu = Menu(raiz)
+
+raiz.config(menu=barra_menu, width=300, height=300)
+
+archivo_menu = Menu(barra_menu, tearoff=0)
+archivo_menu.add_command(label=&quot;Nuevo&quot;)
+archivo_menu.add_command(label=&quot;Abrir&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Guardar&quot;)
+archivo_menu.add_command(label=&quot;Guardar como...&quot;)
+archivo_menu.add_separator()
+archivo_menu.add_command(label=&quot;Cerrar&quot;, command=cerrar_documento)
+archivo_menu.add_command(label=&quot;Salir&quot;, command=salir_aplicacion)
+
+edicion_menu = Menu(barra_menu, tearoff=0)
+edicion_menu.add_command(label=&quot;Copiar&quot;)
+edicion_menu.add_command(label=&quot;Cortar&quot;)
+edicion_menu.add_command(label=&quot;Pegar&quot;)
+
+herramientas_menu = Menu(barra_menu, tearoff=0)
+
+ayuda_menu = Menu(barra_menu, tearoff=0)
+ayuda_menu.add_command(label=&quot;Licencia&quot;, command=aviso_licencia)
+ayuda_menu.add_separator()
+ayuda_menu.add_command(label=&quot;Acerca de...&quot;, command=info_adicional)
+
+barra_menu.add_cascade(label=&quot;Archivo&quot;, menu=archivo_menu)
+barra_menu.add_cascade(label=&quot;Edición&quot;, menu=edicion_menu)
+barra_menu.add_cascade(label=&quot;Herramientas&quot;, menu=herramientas_menu)
+barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
+
+raiz.mainloop()
+</code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/43/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/53/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -800,15 +923,9 @@ raiz.mainloop()
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb42-interfaces-graficas-i/" rel="next">42. Interfaces gráficas I</a>
+    <a href="/courses/python-basic/pb52-interfaces-graficas-xi/" rel="next">52. Interfaces gráficas XI</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb44-interfaces-graficas-iii/" rel="prev">44. Interfaces gráficas III</a>
-  </div>
   
 </div>
 
@@ -817,7 +934,7 @@ raiz.mainloop()
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-21
+          Última actualización el 2019-05-28
         </div>
 
       </article>
