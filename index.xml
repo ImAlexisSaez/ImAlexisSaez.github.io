@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Tue, 28 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -9860,6 +9860,112 @@ raiz.mainloop()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/54/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>55. Bases de datos I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb55-bases-de-datos-i/</link>
+      <pubDate>Wed, 29 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb55-bases-de-datos-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/ZJuVQ9jUg-A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, cambiamos de tercio y abordamos el tratamiento de las bases de datos (BBDD) en &lt;em&gt;Python&lt;/em&gt;. Estudiaremos cómo crearlas, conectar con ellas e insertar registros en su interior.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Python&lt;/em&gt; es capaz de gestionar la información que se encuentra almacenada en diferentes gestores de bases de datos, como, por ejemplo:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;SQL Server&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Oracle&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;MySQL&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;SQLite&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;PostgreSQL&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En este curso trabajaremos, principalmente, con &lt;em&gt;MySQL&lt;/em&gt; y &lt;em&gt;SQLite&lt;/em&gt; debido a su popularidad. No obstante, ello requiere que tengamos unos mínimos conocimientos del lenguaje utilizado para realizar consultas en bases de datos: &lt;strong&gt;SQL&lt;/strong&gt; (&lt;em&gt;Structured Query Language&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta a &lt;em&gt;SQLite&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Es un sistema de gestión de BBDD relacional.&lt;/li&gt;
+&lt;li&gt;Está escrito en &lt;em&gt;C&lt;/em&gt;, siendo de código abierto.&lt;/li&gt;
+&lt;li&gt;La BBDD forma parte integral del programa y se guarda como un único fichero en &lt;em&gt;host&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Así, entre sus ventajas, encontramos que ocupa muy poco espacio en disco y memoria, es muy eficiente y rápido, es multiplataforma, no requiere configuración o administración y es de dominio público, esto es, sin costo alguno añadido. Sin embargo, también posee asociadas una serie de desventajas, como que no admite cláusulas anidadas (de tipo &lt;code&gt;where&lt;/code&gt;), no existen usuarios (no permite acceso simultáneo por parte de varios usuarios) y carece de clave foránea cuando se crea en modo consola.&lt;/p&gt;
+
+&lt;p&gt;A continuación, los pasos a seguir para conectar con una BBDD son:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Abrir (o crear) una conexión.&lt;/li&gt;
+&lt;li&gt;Crear un puntero (o cursor).&lt;/li&gt;
+&lt;li&gt;Ejecutar una consulta (&lt;em&gt;query&lt;/em&gt;) &lt;em&gt;SQL&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Manejar los resultados de la consulta.
+
+&lt;ul&gt;
+&lt;li&gt;Insertar, leer, actualizar, borrar (&lt;em&gt;Create&lt;/em&gt;, &lt;em&gt;Read&lt;/em&gt;, &lt;em&gt;Update&lt;/em&gt;, &lt;em&gt;Delete&lt;/em&gt;).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Cerrar puntero.&lt;/li&gt;
+&lt;li&gt;Cerrar conexión.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;En &lt;em&gt;Python&lt;/em&gt;, comenzamos importando la librería &lt;code&gt;sqlite3&lt;/code&gt; para luego crear la conexión con la BBDD. La primera vez que realizamos este proceso, al no haber disponible ninguna, procederemos a su creación.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al ejecutar el anterior bloque de código, aparece en el correspondiente directorio una BBDD de datos vacía, de nombre &lt;code&gt;base-de-datos&lt;/code&gt;. Veamos, acto seguido, cómo crear nuestra primera tabla:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;CREATE TABLE PRODUCTOS (NOMBRE_ARTICULO VARCHAR(50), PRECIO INTEGER, SECCION VARCHAR(20))&amp;quot;)
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tras crear el puntero o cursor, &lt;code&gt;mi_cursor&lt;/code&gt;, lanzamos, a través de la función &lt;code&gt;execute()&lt;/code&gt;, el comando &lt;em&gt;SQL&lt;/em&gt; correspondiente a la creación de una tabla que poseerá tres columnas. Si ejecutamos el anterior bloque de código, observaremos que el tamaño del fichero &lt;code&gt;base-de-datos&lt;/code&gt; se incrementa y deja de estar vacío.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: podemos investigar qué contiene el archivo &lt;code&gt;base-de-datos&lt;/code&gt;, de manera visual, mediante la herramienta &lt;a href=&#34;https://sqlitebrowser.org/&#34; target=&#34;_blank&#34;&gt;DB Browser for SQLite&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;A continuación, analicemos cómo insertar información en la tabla que acabamos de crear. Para ello, comentamos la anterior línea de código, que precisamente generaba la tabla (porque ya existe y entonces &lt;em&gt;Python&lt;/em&gt; arrojaría un error llegado a ese momento), y ejecutamos, a través del cursor, la instrucción de &lt;em&gt;SQL&lt;/em&gt; apropiada. Tras ello, verificamos que deseamos realizar el cambio en la tabla, utiliando el método &lt;code&gt;commit()&lt;/code&gt; asociado a la conexión:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES(&#39;BALÓN&#39;, 15, &#39;DEPORTES&#39;)&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: cuando trabajamos con cadenas de caracteres que poseen comillas anidadas, hemos de alternar los simbolos &lt;code&gt;&#39;&lt;/code&gt; y &lt;code&gt;&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/55/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

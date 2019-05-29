@@ -27,12 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Una clase es un modelo donde se redactan las características comunes de un grupo de objetos.
-Una instancia (o ejemplar u objeto) es un miembro concreto de una clase.
-La modularización surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, cambiamos de tercio y abordamos el tratamiento de las bases de datos (BBDD) en Python. Estudiaremos cómo crearlas, conectar con ellas e insertar registros en su interior.
+Python es capaz de gestionar la información que se encuentra almacenada en diferentes gestores de bases de datos, como, por ejemplo:
+ SQL Server Oracle MySQL SQLite PostgreSQL  En este curso trabajaremos, principalmente, con MySQL y SQLite debido a su popularidad.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb55-bases-de-datos-i/">
 
   
 
@@ -111,7 +111,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb55-bases-de-datos-i/">
 
   
   
@@ -125,23 +125,23 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb25-poo-ii/">
-  <meta property="og:title" content="25. Programación orientada a objetos II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Una clase es un modelo donde se redactan las características comunes de un grupo de objetos.
-Una instancia (o ejemplar u objeto) es un miembro concreto de una clase.
-La modularización surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb55-bases-de-datos-i/">
+  <meta property="og:title" content="55. Bases de datos I | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, cambiamos de tercio y abordamos el tratamiento de las bases de datos (BBDD) en Python. Estudiaremos cómo crearlas, conectar con ellas e insertar registros en su interior.
+Python es capaz de gestionar la información que se encuentra almacenada en diferentes gestores de bases de datos, como, por ejemplo:
+ SQL Server Oracle MySQL SQLite PostgreSQL  En este curso trabajaremos, principalmente, con MySQL y SQLite debido a su popularidad."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-08T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-05-29T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-08T00:00:02&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-29T00:00:01&#43;01:00">
   
 
   
 
-  <title>25. Programación orientada a objetos II | Infinitos Contrastes</title>
+  
+
+  <title>55. Bases de datos I | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -485,7 +485,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         <a href="/courses/python-basic/pb24-poo-i/">24. POO I</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb25-poo-ii/">25. POO II</a>
       </li>
       
@@ -605,7 +605,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         <a href="/courses/python-basic/pb54-interfaces-graficas-xiii/">54. Interfaces XIII</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb55-bases-de-datos-i/">55. BBDD I</a>
       </li>
       
@@ -631,6 +631,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
 <ul>
 <li><a href="#vídeo">Vídeo</a></li>
 <li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -648,7 +649,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">25. Programación orientada a objetos II</h1>
+          <h1 itemprop="name">55. Bases de datos I</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -657,37 +658,97 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/2UNrSiKEI8w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/ZJuVQ9jUg-A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Una <strong>clase</strong> es un modelo donde se redactan las características comunes de un grupo de objetos.</p>
+<p>En esta lección, cambiamos de tercio y abordamos el tratamiento de las bases de datos (BBDD) en <em>Python</em>. Estudiaremos cómo crearlas, conectar con ellas e insertar registros en su interior.</p>
 
-<p>Una <strong>instancia</strong> (o <strong>ejemplar</strong> u <strong>objeto</strong>) es un miembro concreto de una clase.</p>
-
-<p>La <strong>modularización</strong> surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas.</p>
-
-<p>La <strong>encapsulación</strong> nos permite proteger el funcionamiento interno de cierto bloque de código, para que no pueda accederse o alterarse desde el exterior de manera inadecuada. No obstante, todas las clases de un programa estarán &ldquo;conectadas&rdquo; entre sí de cierta manera (mediante <strong>métodos de acceso</strong> a ciertas características de cada una de las clases).</p>
-
-<p>El mencionado acceso se llevará a cabo empleando la <strong>nomenclatura del punto</strong>. Por ejemplo, supongamos que hemos creado un objeto, de la clase <code>coche</code>, llamado <code>miCoche</code>. Para acceder a sus propiedades, utilizaremos la sintaxis:</p>
+<p><em>Python</em> es capaz de gestionar la información que se encuentra almacenada en diferentes gestores de bases de datos, como, por ejemplo:</p>
 
 <ul>
-<li><code>miCoche.color = ''rojo''</code></li>
-<li><code>miCoche.peso = 1500</code></li>
-<li><code>miCoche.ancho = 2000</code></li>
-<li><code>miCoche.alto = 900</code></li>
+<li><em>SQL Server</em></li>
+<li><em>Oracle</em></li>
+<li><em>MySQL</em></li>
+<li><em>SQLite</em></li>
+<li><em>PostgreSQL</em></li>
 </ul>
 
-<p>De forma similar, el acceso al comportamiento de este objeto se realizará mediante la mencionada nomenclatura:</p>
+<p>En este curso trabajaremos, principalmente, con <em>MySQL</em> y <em>SQLite</em> debido a su popularidad. No obstante, ello requiere que tengamos unos mínimos conocimientos del lenguaje utilizado para realizar consultas en bases de datos: <strong>SQL</strong> (<em>Structured Query Language</em>).</p>
+
+<p>Por lo que respecta a <em>SQLite</em>:</p>
 
 <ul>
-<li><code>miCoche.arranca()</code></li>
-<li><code>miCoche.frena()</code></li>
-<li><code>miCoche.gira()</code></li>
-<li><code>miCoche.acelera()</code></li>
+<li>Es un sistema de gestión de BBDD relacional.</li>
+<li>Está escrito en <em>C</em>, siendo de código abierto.</li>
+<li>La BBDD forma parte integral del programa y se guarda como un único fichero en <em>host</em>.</li>
 </ul>
+
+<p>Así, entre sus ventajas, encontramos que ocupa muy poco espacio en disco y memoria, es muy eficiente y rápido, es multiplataforma, no requiere configuración o administración y es de dominio público, esto es, sin costo alguno añadido. Sin embargo, también posee asociadas una serie de desventajas, como que no admite cláusulas anidadas (de tipo <code>where</code>), no existen usuarios (no permite acceso simultáneo por parte de varios usuarios) y carece de clave foránea cuando se crea en modo consola.</p>
+
+<p>A continuación, los pasos a seguir para conectar con una BBDD son:</p>
+
+<ol>
+<li>Abrir (o crear) una conexión.</li>
+<li>Crear un puntero (o cursor).</li>
+<li>Ejecutar una consulta (<em>query</em>) <em>SQL</em>.</li>
+<li>Manejar los resultados de la consulta.
+
+<ul>
+<li>Insertar, leer, actualizar, borrar (<em>Create</em>, <em>Read</em>, <em>Update</em>, <em>Delete</em>).</li>
+</ul></li>
+<li>Cerrar puntero.</li>
+<li>Cerrar conexión.</li>
+</ol>
+
+<p>En <em>Python</em>, comenzamos importando la librería <code>sqlite3</code> para luego crear la conexión con la BBDD. La primera vez que realizamos este proceso, al no haber disponible ninguna, procederemos a su creación.</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_conexion.close()
+</code></pre>
+
+<p>Al ejecutar el anterior bloque de código, aparece en el correspondiente directorio una BBDD de datos vacía, de nombre <code>base-de-datos</code>. Veamos, acto seguido, cómo crear nuestra primera tabla:</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;CREATE TABLE PRODUCTOS (NOMBRE_ARTICULO VARCHAR(50), PRECIO INTEGER, SECCION VARCHAR(20))&quot;)
+
+mi_conexion.close()
+</code></pre>
+
+<p>Tras crear el puntero o cursor, <code>mi_cursor</code>, lanzamos, a través de la función <code>execute()</code>, el comando <em>SQL</em> correspondiente a la creación de una tabla que poseerá tres columnas. Si ejecutamos el anterior bloque de código, observaremos que el tamaño del fichero <code>base-de-datos</code> se incrementa y deja de estar vacío.</p>
+
+<p><em>Nota</em>: podemos investigar qué contiene el archivo <code>base-de-datos</code>, de manera visual, mediante la herramienta <a href="https://sqlitebrowser.org/" target="_blank">DB Browser for SQLite</a>.</p>
+
+<p>A continuación, analicemos cómo insertar información en la tabla que acabamos de crear. Para ello, comentamos la anterior línea de código, que precisamente generaba la tabla (porque ya existe y entonces <em>Python</em> arrojaría un error llegado a ese momento), y ejecutamos, a través del cursor, la instrucción de <em>SQL</em> apropiada. Tras ello, verificamos que deseamos realizar el cambio en la tabla, utiliando el método <code>commit()</code> asociado a la conexión:</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES('BALÓN', 15, 'DEPORTES')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+
+<p><em>Nota técnica</em>: cuando trabajamos con cadenas de caracteres que poseen comillas anidadas, hemos de alternar los simbolos <code>'</code> y <code>&quot;</code>.</p>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/55/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -704,15 +765,9 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb24-poo-i/" rel="next">24. Programación orientada a objetos I</a>
+    <a href="/courses/python-basic/pb54-interfaces-graficas-xiii/" rel="next">54. Interfaces gráficas XIII</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb26-poo-iii/" rel="prev">26. Programación orientada a objetos III</a>
-  </div>
   
 </div>
 
@@ -721,7 +776,7 @@ La modularización surge cuando un programa está compuesto de diversas clases. 
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-08
+          Última actualización el 2019-05-29
         </div>
 
       </article>
