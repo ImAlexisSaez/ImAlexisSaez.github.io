@@ -27,12 +27,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
-Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, aprenderemos cómo insertar varios registros simultáneamente en nuestra base de datos (BBDD), así como después estudiaremos cómo recuperar información de la BBDD.
+En primer lugar, importemos la librería sqlite3 y construyamos, tanto la conexión a la BBDD, como un cursor. Con tal objetivo en mente, tecleamos:
+import sqlite3 mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;) mi_cursor = mi_conexion.cursor()  A continuación, mediante una lista de tuplas, establecemos los productos que nos interese insertar en la BBDD:">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb56-bases-de-datos-ii/">
 
   
 
@@ -111,7 +111,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb56-bases-de-datos-ii/">
 
   
   
@@ -125,23 +125,23 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
-  <meta property="og:title" content="35. Paquetes I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
-Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb56-bases-de-datos-ii/">
+  <meta property="og:title" content="56. Bases de datos II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, aprenderemos cómo insertar varios registros simultáneamente en nuestra base de datos (BBDD), así como después estudiaremos cómo recuperar información de la BBDD.
+En primer lugar, importemos la librería sqlite3 y construyamos, tanto la conexión a la BBDD, como un cursor. Con tal objetivo en mente, tecleamos:
+import sqlite3 mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;) mi_cursor = mi_conexion.cursor()  A continuación, mediante una lista de tuplas, establecemos los productos que nos interese insertar en la BBDD:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-12T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-05-29T00:00:02&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-12T00:00:02&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-29T00:00:02&#43;01:00">
   
 
   
 
-  <title>35. Paquetes I | Infinitos Contrastes</title>
+  
+
+  <title>56. Bases de datos II | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -525,7 +525,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
         <a href="/courses/python-basic/pb34-modulos/">34. Módulos</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb35-paquetes-i/">35. Paquetes I</a>
       </li>
       
@@ -609,7 +609,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
         <a href="/courses/python-basic/pb55-bases-de-datos-i/">55. BBDD I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb56-bases-de-datos-ii/">56. BBDD II</a>
       </li>
       
@@ -653,7 +653,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">35. Paquetes I</h1>
+          <h1 itemprop="name">56. Bases de datos II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -662,120 +662,90 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/eM0MkDc34qo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
+<p>En esta lección, aprenderemos cómo insertar varios registros simultáneamente en nuestra base de datos (BBDD), así como después estudiaremos cómo recuperar información de la BBDD.</p>
 
-<p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
+<p>En primer lugar, importemos la librería <code>sqlite3</code> y construyamos, tanto la conexión a la BBDD, como un cursor. Con tal objetivo en mente, tecleamos:</p>
 
-<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<pre><code class="language-python">import sqlite3
 
-<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
 
-<p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
-
-<pre><code class="language-python">def sumar(op1, op2):
-    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
-
-
-def restar(op1, op2):
-    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
-
-
-def multiplicar(op1, op2):
-    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
-
-
-def dividir(dividendo, divisor):
-    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
-
-
-def potenciar(base, exponente):
-    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
-
-
-def redondear(numero):
-    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+mi_cursor = mi_conexion.cursor()
 </code></pre>
 
-<p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
+<p>A continuación, mediante una lista de tuplas, establecemos los productos que nos interese insertar en la BBDD:</p>
 
-<pre><code class="language-python">from calculos.calculos_generales import dividir
-
-dividir(10, 3)
+<pre><code class="language-python">productos = [(&quot;Camiseta&quot;, 10, &quot;Deportes&quot;), (&quot;Jarrón&quot;, 90, &quot;Cerámica&quot;),
+             (&quot;Camión&quot;, 20, &quot;Juguetería&quot;)]
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+<p>y con el método <code>executemany()</code> ejecutamos la instrucción <em>SQL</em> adecuada:</p>
+
+<pre><code class="language-python">mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (?, ?, ?)&quot;, productos)
 </code></pre>
 
-<p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<p><em>Nota técnica</em>: en las instrucciones de <em>SQL</em> parametrizadas, hemos de insertar tantos interrogantes, <code>?</code>, como campos posee cada registro.</p>
 
-<pre><code class="language-python">from calculos.calculos_generales import *
+<p>Finalmente, confirmamos los cambios y cerramos la conexión abierta:</p>
 
-dividir(10, 3)
+<pre><code class="language-python">mi_conexion.commit()
 
-redondear(4.6)
-
-potenciar(2, 10)
+mi_conexion.close()
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
-El resultado del redondeo es: 5
-El resultado de la potenciación es: 1024
+<p>Acto seguido, veamos cómo accedemos a la información registrada en la BBDD. Para ello, simplemente hemos de ejecutar, desde el cursor, una instrucción de <em>SQL</em> de tipo <code>SELECT</code>, para luego almacenar en una variable la información utilizando el método <code>fetchall()</code>:</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS&quot;)
+
+productos = mi_cursor.fetchall()
+
+print(productos)
+
+mi_conexion.close()
 </code></pre>
 
-<p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
-
-<p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
-
-<p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
-
-<pre><code class="language-python">def sumar(op1, op2):
-    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
-
-
-def restar(op1, op2):
-    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
-
-
-def multiplicar(op1, op2):
-    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
-
-
-def dividir(dividendo, divisor):
-    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
+<pre><code class="language-bash">[('BALÓN', 15, 'DEPORTES'), ('Camiseta', 10, 'Deportes'), ('Jarrón', 90, 'Cerámica'), ('Camión', 20, 'Juguetería')]
 </code></pre>
 
-<p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
+<p>Ahora, aplicando aquello que conocemos sobre listas, podemos mostrar la información de manera más cómoda para el usuario:</p>
 
-<pre><code class="language-python">def potenciar(base, exponente):
-    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
+<pre><code class="language-python">import sqlite3
 
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
 
-def redondear(numero):
-    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS&quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.close()
 </code></pre>
 
-<p>Para utilizar estos últimos módulos creados, tecleamos:</p>
-
-<pre><code class="language-python">from calculos.basicos.operaciones_basicas import sumar
-from calculos.redondeo_potencia.redondea_y_potencia import potenciar
-
-sumar(5, 7)
-potenciar(2, 10)
-</code></pre>
-
-<pre><code class="language-bash">El resultado de la suma es: 12
-El resultado de la potenciación es: 1024
+<pre><code class="language-bash">('BALÓN', 15, 'DEPORTES')
+('Camiseta', 10, 'Deportes')
+('Jarrón', 90, 'Cerámica')
+('Camión', 20, 'Juguetería')
 </code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/56/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -792,15 +762,9 @@ El resultado de la potenciación es: 1024
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb34-modulos/" rel="next">34. Módulos</a>
+    <a href="/courses/python-basic/pb55-bases-de-datos-i/" rel="next">55. Bases de datos I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb36-paquetes-ii/" rel="prev">36. Paquetes distribuibles</a>
-  </div>
   
 </div>
 
@@ -809,7 +773,7 @@ El resultado de la potenciación es: 1024
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-12
+          Última actualización el 2019-05-29
         </div>
 
       </article>

@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Wed, 29 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -9966,6 +9966,105 @@ mi_conexion.close()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/55/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>56. Bases de datos II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb56-bases-de-datos-ii/</link>
+      <pubDate>Wed, 29 May 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb56-bases-de-datos-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/eM0MkDc34qo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, aprenderemos cómo insertar varios registros simultáneamente en nuestra base de datos (BBDD), así como después estudiaremos cómo recuperar información de la BBDD.&lt;/p&gt;
+
+&lt;p&gt;En primer lugar, importemos la librería &lt;code&gt;sqlite3&lt;/code&gt; y construyamos, tanto la conexión a la BBDD, como un cursor. Con tal objetivo en mente, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, mediante una lista de tuplas, establecemos los productos que nos interese insertar en la BBDD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;productos = [(&amp;quot;Camiseta&amp;quot;, 10, &amp;quot;Deportes&amp;quot;), (&amp;quot;Jarrón&amp;quot;, 90, &amp;quot;Cerámica&amp;quot;),
+             (&amp;quot;Camión&amp;quot;, 20, &amp;quot;Juguetería&amp;quot;)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y con el método &lt;code&gt;executemany()&lt;/code&gt; ejecutamos la instrucción &lt;em&gt;SQL&lt;/em&gt; adecuada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_cursor.executemany(&amp;quot;INSERT INTO PRODUCTOS VALUES (?, ?, ?)&amp;quot;, productos)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: en las instrucciones de &lt;em&gt;SQL&lt;/em&gt; parametrizadas, hemos de insertar tantos interrogantes, &lt;code&gt;?&lt;/code&gt;, como campos posee cada registro.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, confirmamos los cambios y cerramos la conexión abierta:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, veamos cómo accedemos a la información registrada en la BBDD. Para ello, simplemente hemos de ejecutar, desde el cursor, una instrucción de &lt;em&gt;SQL&lt;/em&gt; de tipo &lt;code&gt;SELECT&lt;/code&gt;, para luego almacenar en una variable la información utilizando el método &lt;code&gt;fetchall()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;SELECT * FROM PRODUCTOS&amp;quot;)
+
+productos = mi_cursor.fetchall()
+
+print(productos)
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[(&#39;BALÓN&#39;, 15, &#39;DEPORTES&#39;), (&#39;Camiseta&#39;, 10, &#39;Deportes&#39;), (&#39;Jarrón&#39;, 90, &#39;Cerámica&#39;), (&#39;Camión&#39;, 20, &#39;Juguetería&#39;)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, aplicando aquello que conocemos sobre listas, podemos mostrar la información de manera más cómoda para el usuario:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;base-de-datos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;SELECT * FROM PRODUCTOS&amp;quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;(&#39;BALÓN&#39;, 15, &#39;DEPORTES&#39;)
+(&#39;Camiseta&#39;, 10, &#39;Deportes&#39;)
+(&#39;Jarrón&#39;, 90, &#39;Cerámica&#39;)
+(&#39;Camión&#39;, 20, &#39;Juguetería&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/56/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
