@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Wed, 29 May 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -10065,6 +10065,144 @@ mi_conexion.close()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/56/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>57. Bases de datos III</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb57-bases-de-datos-iii/</link>
+      <pubDate>Thu, 30 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb57-bases-de-datos-iii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/HVd6mPiD3pc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos cómo gestionar las claves principales de nuestras bases de datos (BBDD). Los registros de una BBDD relacional han de estar identificados de manera única mediante un &lt;strong&gt;campo clave&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hasta el momento, hemos creado una tabla en nuestra BBDD e insertado algunos registros, pero carece de dicho campo clave. Analicemos cómo añadir esta característica a las tablas de una BBDD. Para ello, partamos del siguiente bloque de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En primer lugar, generemos una tabla, denominada &lt;code&gt;PRODUCTOS&lt;/code&gt;, cuyos registros se van a caracterizar por poseer cuatro campos, uno de ellos clave. Así, tras la declaración del cursor, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mi_cursor.execute(&#39;&#39;&#39;
+    CREATE TABLE PRODUCTOS (
+    CODIGO_ARTICULO VARCHAR(4) PRIMARY KEY,
+    NOMBRE_ARTICULO VARCHAR(50),
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    &#39;&#39;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Como apreciamos, la única novedad, con respecto a lecciones anteriores, es la aparición de la instrucción &lt;code&gt;PRIMARY KEY&lt;/code&gt;, que convierte en clave el respectivo campo declarado, &lt;code&gt;CODIGO_ARTICULO&lt;/code&gt; en este caso concreto. Por otro lado, el número que figura en el tipo de campo &lt;code&gt;VARCHAR&lt;/code&gt; indica su longitud máxima.&lt;/p&gt;
+
+&lt;p&gt;Acto seguido, insertamos algunos registros en la tabla &lt;code&gt;PRODUCTOS&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;productos = [(&amp;quot;AR01&amp;quot;, &amp;quot;Pelota&amp;quot;, 20, &amp;quot;Juguetería&amp;quot;),
+             (&amp;quot;AR02&amp;quot;, &amp;quot;Pantalón&amp;quot;, 15, &amp;quot;Confección&amp;quot;),
+             (&amp;quot;AR03&amp;quot;, &amp;quot;Destornillador&amp;quot;, 25, &amp;quot;Ferretería&amp;quot;),
+             (&amp;quot;AR04&amp;quot;, &amp;quot;Jarrón&amp;quot;, 45, &amp;quot;Cerámica&amp;quot;)]
+
+mi_cursor.executemany(&amp;quot;INSERT INTO PRODUCTOS VALUES (?, ?, ?, ?)&amp;quot;, productos)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al ejecutar el programa, observamos que en el directorio donde hemos almacenado el código aparece un archivo denominado &lt;code&gt;gestion-productos&lt;/code&gt;, que contiene la BBDD recién generada.&lt;/p&gt;
+
+&lt;p&gt;A continuación, insertemos un nuevo registro en la BBDD:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES (&#39;AR05&#39;, &#39;Tren&#39;, 15, &#39;Juguetería&#39;)&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si ahora intentamos añadir un nuevo artículo a la BBDD cuyo código coincida con uno de los asignados a los cuatro productos existentes, &lt;em&gt;Python&lt;/em&gt; nos arrojará un error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES (&#39;AR03&#39;, &#39;Portátil&#39;, 750, &#39;Informática&#39;)&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;bbdd_3.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
+    mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES (&#39;AR03&#39;, &#39;Portátil&#39;, 750, &#39;Informática&#39;)&amp;quot;)
+sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.CODIGO_ARTICULO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En la práctica, por comodidad, la construcción e inserción del campo clave se suele automatizar. Para ello, la estrategia consiste en crear un campo clave de tipo entero que sea autoincrementable.&lt;/p&gt;
+
+&lt;p&gt;Retomemos el primer ejemplo examinado en esta lección (modificando el fichero que contiene la BBDD) y estudiemos cómo implementar la funcionalidad comentada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos-2&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&#39;&#39;&#39;
+    CREATE TABLE PRODUCTOS (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOMBRE_ARTICULO VARCHAR(50),
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    &#39;&#39;&#39;)
+
+productos = [(&amp;quot;Pelota&amp;quot;, 20, &amp;quot;Juguetería&amp;quot;),
+             (&amp;quot;Pantalón&amp;quot;, 15, &amp;quot;Confección&amp;quot;),
+             (&amp;quot;Destornillador&amp;quot;, 25, &amp;quot;Ferretería&amp;quot;),
+             (&amp;quot;Jarrón&amp;quot;, 45, &amp;quot;Cerámica&amp;quot;)]
+
+mi_cursor.executemany(&amp;quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&amp;quot;, productos)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Por convención, los campos de una tabla que van a ser automatizados reciben el nombre de &lt;code&gt;ID&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Con la instrucción &lt;code&gt;AUTOINCREMENT&lt;/code&gt; conseguimos la mencionada gestión automática del campo entero que ahora hemos declarado como clave.&lt;/li&gt;
+&lt;li&gt;La instrucción donde realizamos la llamada a la función &lt;code&gt;executemany()&lt;/code&gt; hemos de modificarla, con respecto a lo programado anteriormente, ya que las tuplas de &lt;code&gt;productos&lt;/code&gt; poseen tres elementos, mientras que figuran cuatro símbolos &lt;code&gt;?&lt;/code&gt; en el comando &lt;em&gt;SQL&lt;/em&gt; &lt;code&gt;INSERT INTO&lt;/code&gt;. Para solucionar este escollo, sustituimos el primer &lt;code&gt;?&lt;/code&gt; por la instrucción &lt;code&gt;NULL&lt;/code&gt;, acción que permitirá a &lt;em&gt;Python&lt;/em&gt; gestionar el campo clave de forma automática.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/57/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
