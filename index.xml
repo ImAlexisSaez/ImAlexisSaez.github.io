@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 30 May 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 31 May 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -10203,6 +10203,146 @@ mi_conexion.close()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/57/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>58. Bases de datos IV</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/</link>
+      <pubDate>Fri, 31 May 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/m_FzVf9JTV8&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, abordaremos la cláusula &lt;code&gt;UNIQUE&lt;/code&gt; y operaciones &lt;em&gt;CRUD&lt;/em&gt; (&lt;em&gt;Create, Read, Update, Delete&lt;/em&gt;). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&#39;&#39;&#39;
+    CREATE TABLE PRODUCTOS (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOMBRE_ARTICULO VARCHAR(50) UNIQUE,
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    &#39;&#39;&#39;)
+
+productos = [(&amp;quot;Pelota&amp;quot;, 20, &amp;quot;Juguetería&amp;quot;),
+             (&amp;quot;Pantalón&amp;quot;, 15, &amp;quot;Confección&amp;quot;),
+             (&amp;quot;Destornillador&amp;quot;, 25, &amp;quot;Ferretería&amp;quot;),
+             (&amp;quot;Jarrón&amp;quot;, 45, &amp;quot;Cerámica&amp;quot;)]
+
+mi_cursor.executemany(&amp;quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&amp;quot;,
+                      productos)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Recordemos que al incorporar &lt;code&gt;PRIMARY KEY&lt;/code&gt; en el campo &lt;code&gt;ID&lt;/code&gt; (nuestro anterior campo &lt;code&gt;CODIGO_ARTICULO&lt;/code&gt;) lo convertimos en clave y, de manera implícita, estamos forzando que la infomación registrada en él no pueda repetirse.&lt;/li&gt;
+&lt;li&gt;Añadiendo &lt;code&gt;UNIQUE&lt;/code&gt; al campo &lt;code&gt;NOMBRE_ARTICULO&lt;/code&gt; impedimos la posibilidad de que dos artículos posean el mismo nombre. Esta cláusula la podemos ubicar en tantos campos como deseemos.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;¿Qué sucede ahora si intentamos insertar un registro cuyo para &lt;code&gt;NOMBRE_ARTICULO&lt;/code&gt; ya figura en la base de datos (BBDD)?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES (NULL, &#39;Pelota&#39;, 57, &#39;Deportes&#39;)&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;bbdd_2.py&amp;quot;, line 7, in &amp;lt;module&amp;gt;
+    mi_cursor.execute(&amp;quot;INSERT INTO PRODUCTOS VALUES (NULL, &#39;Pelota&#39;, 57, &#39;Deportes&#39;)&amp;quot;)
+sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.NOMBRE_ARTICULO
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esto es, &lt;em&gt;Python&lt;/em&gt; arroja un error de integridad por violarse la restricción de unicidad para el campo &lt;code&gt;NOMBRE_ARTICULO&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A continuación, abordemos las operaciones de tipo operaciones &lt;em&gt;CRUD&lt;/em&gt; (&lt;em&gt;Create, Read, Update, Delete&lt;/em&gt;). Aunque las dos primeras ya las hemos analizado en lecciones anteriores, recordemos brevemente cómo realizar una de tipo &lt;em&gt;Read&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;SELECT * FROM PRODUCTOS WHERE SECCION=&#39;Confección&#39;&amp;quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;(2, &#39;Pantalón&#39;, 15, &#39;Confección&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: las instrucciones suministradas a la BBDD son &lt;em&gt;case sensitive&lt;/em&gt;, es decir, hemos de proceder con cautela a la hora de introducir los datos y utilizar adecuadamente las mayúsculas y las minúsculas (además de los acentos y otros posibles caracteres conflictivos).&lt;/p&gt;
+
+&lt;p&gt;Para realizar una actualización de registro (operación de tipo &lt;em&gt;Update&lt;/em&gt;), simplemente hemos de modificar la instrucción &lt;em&gt;SQL&lt;/em&gt; de manera acertada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;UPDATE PRODUCTOS SET PRECIO=35 WHERE NOMBRE_ARTICULO=&#39;Pelota&#39;&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, para borrar registros (operación de tipo &lt;em&gt;Delete&lt;/em&gt;), la manera de proceder es similar a la vista antes, ya que únicamente hemos de emplear la instrucción &lt;em&gt;SQL&lt;/em&gt; adecuada (y borrar por un criterio que no ocasione conflictos con otros registros almacenados en la BBDD):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import sqlite3
+
+mi_conexion = sqlite3.connect(&amp;quot;gestion-productos&amp;quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&amp;quot;DELETE FROM PRODUCTOS WHERE ID=1&amp;quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: cuando utilicemos una cláusula &lt;code&gt;DELETE&lt;/code&gt;, no hemos de olvidar jamás añadir otra de tipo &lt;code&gt;WHERE&lt;/code&gt; o terminaremos suprimiendo la tabla completa en lugar de uno o varios registros.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/58/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -27,13 +27,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos el concepto de polimorfismo. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.
-Como Python es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.
-Veamos un ejemplo:
-class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuatro ruedas.&quot;) class Moto(): def desplazamiento(self): print(&quot;Me desplazo utilizando dos ruedas.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos la cláusula UNIQUE y operaciones CRUD (Create, Read, Update, Delete). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:
+import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_cursor = mi_conexion.cursor() mi_cursor.execute(&#39;&#39;&#39; CREATE TABLE PRODUCTOS ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE_ARTICULO VARCHAR(50) UNIQUE, PRECIO INTEGER, SECCION VARCHAR(20)) &#39;&#39;&#39;) productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;), (&quot;Pantalón&quot;, 15, &quot;Confección&quot;), (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;), (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)] mi_cursor.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
 
   
 
@@ -112,7 +110,7 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
 
   
   
@@ -126,24 +124,22 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/">
-  <meta property="og:title" content="32. Programación orientada a objetos IX | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos el concepto de polimorfismo. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.
-Como Python es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.
-Veamos un ejemplo:
-class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuatro ruedas.&quot;) class Moto(): def desplazamiento(self): print(&quot;Me desplazo utilizando dos ruedas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
+  <meta property="og:title" content="58. Bases de datos IV | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos la cláusula UNIQUE y operaciones CRUD (Create, Read, Update, Delete). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:
+import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_cursor = mi_conexion.cursor() mi_cursor.execute(&#39;&#39;&#39; CREATE TABLE PRODUCTOS ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE_ARTICULO VARCHAR(50) UNIQUE, PRECIO INTEGER, SECCION VARCHAR(20)) &#39;&#39;&#39;) productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;), (&quot;Pantalón&quot;, 15, &quot;Confección&quot;), (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;), (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)] mi_cursor."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-10T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-05-31T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-10T00:00:02&#43;01:00">
-  
-
+  <meta property="article:modified_time" content="2019-05-31T00:00:01&#43;01:00">
   
 
   
 
-  <title>32. Programación orientada a objetos IX | Infinitos Contrastes</title>
+  
+
+  <title>58. Bases de datos IV | Infinitos Contrastes</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -515,7 +511,7 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
         <a href="/courses/python-basic/pb31-poo-viii/">31. POO VIII</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb32-poo-ix/">32. POO IX</a>
       </li>
       
@@ -619,7 +615,7 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
         <a href="/courses/python-basic/pb57-bases-de-datos-iii/">57. BBDD III</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb58-bases-de-datos-iv/">58. BBDD IV</a>
       </li>
       
@@ -663,7 +659,7 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">32. Programación orientada a objetos IX</h1>
+          <h1 itemprop="name">58. Bases de datos IV</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -672,86 +668,131 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/kV1cN_bqcSw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/m_FzVf9JTV8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>En esta lección, abordaremos el concepto de <strong>polimorfismo</strong>. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.</p>
+<p>En esta lección, abordaremos la cláusula <code>UNIQUE</code> y operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:</p>
 
-<p>Como <em>Python</em> es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.</p>
+<pre><code class="language-python">import sqlite3
 
-<p>Veamos un ejemplo:</p>
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
 
-<pre><code class="language-python">class Coche():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)
+mi_cursor = mi_conexion.cursor()
 
+mi_cursor.execute('''
+    CREATE TABLE PRODUCTOS (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOMBRE_ARTICULO VARCHAR(50) UNIQUE,
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    ''')
 
-class Moto():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando dos ruedas.&quot;)
+productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;),
+             (&quot;Pantalón&quot;, 15, &quot;Confección&quot;),
+             (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;),
+             (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)]
 
+mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&quot;,
+                      productos)
 
-class Camion():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando seis ruedas.&quot;)
+mi_conexion.commit()
+
+mi_conexion.close()
 </code></pre>
 
-<p>Así, si ahora tecleamos:</p>
+<p><em>Notas</em>:</p>
 
-<pre><code class="language-python">mi_vehiculo = Moto()
+<ul>
+<li>Recordemos que al incorporar <code>PRIMARY KEY</code> en el campo <code>ID</code> (nuestro anterior campo <code>CODIGO_ARTICULO</code>) lo convertimos en clave y, de manera implícita, estamos forzando que la infomación registrada en él no pueda repetirse.</li>
+<li>Añadiendo <code>UNIQUE</code> al campo <code>NOMBRE_ARTICULO</code> impedimos la posibilidad de que dos artículos posean el mismo nombre. Esta cláusula la podemos ubicar en tantos campos como deseemos.</li>
+</ul>
 
-mi_vehiculo.desplazamiento()
+<p>¿Qué sucede ahora si intentamos insertar un registro cuyo para <code>NOMBRE_ARTICULO</code> ya figura en la base de datos (BBDD)?</p>
 
-mi_vehiculo2 = Coche()
+<pre><code class="language-python">import sqlite3
 
-mi_vehiculo2.desplazamiento()
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
 
-mi_vehiculo3 = Camion()
+mi_cursor = mi_conexion.cursor()
 
-mi_vehiculo3.desplazamiento()
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
 </code></pre>
 
-<pre><code class="language-bash">Me desplazo utilizando dos ruedas.
-Me desplazo utilizando cuatro ruedas.
-Me desplazo utilizando seis ruedas.
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;bbdd_2.py&quot;, line 7, in &lt;module&gt;
+    mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
+sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.NOMBRE_ARTICULO
 </code></pre>
 
-<p>Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.</p>
+<p>Esto es, <em>Python</em> arroja un error de integridad por violarse la restricción de unicidad para el campo <code>NOMBRE_ARTICULO</code>.</p>
 
-<p>No obstante, nos podemos aprovechar de la magia del polimorfismo creando una función como se muestra a continuación:</p>
+<p>A continuación, abordemos las operaciones de tipo operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Aunque las dos primeras ya las hemos analizado en lecciones anteriores, recordemos brevemente cómo realizar una de tipo <em>Read</em>:</p>
 
-<pre><code class="language-python">def desplazamiento_vehiculo(vehiculo):
-    vehiculo.desplazamiento()
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS WHERE SECCION='Confección'&quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.commit()
+
+mi_conexion.close()
 </code></pre>
 
-<p>Y como el objeto <code>vehiculo</code> posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), <em>Python</em> en todo momento sabrá a qué método <code>desplazamiento()</code> acudir en cada instante.</p>
-
-<p>Así, si escribimos:</p>
-
-<pre><code class="language-python">mi_vehiculo = Camion()
-
-desplazamiento_vehiculo(mi_vehiculo)
-
-mi_vehiculo = Coche()
-
-desplazamiento_vehiculo(mi_vehiculo)
-
-mi_vehiculo = Moto()
-
-desplazamiento_vehiculo(mi_vehiculo)
+<pre><code class="language-bash">(2, 'Pantalón', 15, 'Confección')
 </code></pre>
 
-<pre><code class="language-bash">Me desplazo utilizando seis ruedas.
-Me desplazo utilizando cuatro ruedas.
-Me desplazo utilizando dos ruedas.
+<p><em>Nota</em>: las instrucciones suministradas a la BBDD son <em>case sensitive</em>, es decir, hemos de proceder con cautela a la hora de introducir los datos y utilizar adecuadamente las mayúsculas y las minúsculas (además de los acentos y otros posibles caracteres conflictivos).</p>
+
+<p>Para realizar una actualización de registro (operación de tipo <em>Update</em>), simplemente hemos de modificar la instrucción <em>SQL</em> de manera acertada:</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;UPDATE PRODUCTOS SET PRECIO=35 WHERE NOMBRE_ARTICULO='Pelota'&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
 </code></pre>
+
+<p>Finalmente, para borrar registros (operación de tipo <em>Delete</em>), la manera de proceder es similar a la vista antes, ya que únicamente hemos de emplear la instrucción <em>SQL</em> adecuada (y borrar por un criterio que no ocasione conflictos con otros registros almacenados en la BBDD):</p>
+
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;DELETE FROM PRODUCTOS WHERE ID=1&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+
+<p><em>Nota</em>: cuando utilicemos una cláusula <code>DELETE</code>, no hemos de olvidar jamás añadir otra de tipo <code>WHERE</code> o terminaremos suprimiendo la tabla completa en lugar de uno o varios registros.</p>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/32/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/58/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -768,15 +809,9 @@ Me desplazo utilizando dos ruedas.
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb31-poo-viii/" rel="next">31. Programación orientada a objetos VIII</a>
+    <a href="/courses/python-basic/pb57-bases-de-datos-iii/" rel="next">57. Bases de datos III</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb33-cadenas/" rel="prev">33. Métodos de cadenas</a>
-  </div>
   
 </div>
 
@@ -785,7 +820,7 @@ Me desplazo utilizando dos ruedas.
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-10
+          Última actualización el 2019-05-31
         </div>
 
       </article>
