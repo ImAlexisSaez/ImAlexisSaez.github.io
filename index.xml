@@ -10207,6 +10207,62 @@ mi_conexion.close()
     </item>
     
     <item>
+      <title>Política, votos y un poco de combinatoria</title>
+      <link>https://imalexissaez.github.io/2019/05/29/politica-votos-y-un-poco-de-combinatoria/</link>
+      <pubDate>Wed, 29 May 2019 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2019/05/29/politica-votos-y-un-poco-de-combinatoria/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 81:&lt;/strong&gt; Dos candidatos $A$ y $B$ se presentan a una elección. Si $A$ recibe $a$ votos y $B$ recibe $b$ votos, con $a&amp;gt;b$, ¿cuál es la probabilidad de que, en todo momento del escrutinio, $A$ vaya por delante de $B$?&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;El presente ejercicio es ciertamente similar a uno de los apartados del &lt;a href=&#34;https://imalexissaez.github.io/2019/05/25/seguimos_de_rutas/&#34;&gt;anterior problema&lt;/a&gt;, por lo que seguiremos el procedimiento allí esbozado. Para empezar, como no tenemos mayores indicaciones sobre cómo transcurre el escrutinio, asumiremos que todos los sucesos posibles de este experimento aleatorio son equiprobables, hecho que nos permitirá calcular probabilidades haciendo uso de la &lt;em&gt;Regla de Laplace&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta al total de casos posibles, este asciende al número de trayectorias que parten desde el origen de coordenadas y arriban hasta el punto $(a,b)$, que sabemos es&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{a+b,a} = \dbinom{a+b}{a}.
+$$&lt;/p&gt;
+
+&lt;p&gt;A continuación, de cara a obtener el cardinal del conjunto de casos favorables, sabemos que, a la postre, $a&amp;gt;b$. Por otro lado, la condición de que, durante el escrutinio, el candidato $A$ se mantenga siempre por delante del $B$, se traduce en que las trayectorias que partan del origen de coordenadas y lleguen hasta el punto $(a,b)$, se mantengan siempre por debajo de la diagonal $y=x$, sin intersecarla en momento alguno.&lt;/p&gt;
+
+&lt;p&gt;Para ello, las rutas favorables a la situación comentada han de comenzar, necesariamente, desde el punto $(1,0)$. Así pues, hallemos el total de trayectorias existentes entre el punto $(1,0)$ y el punto $(a,b)$ que, por traslación, sabemos es equivalente a la cantidad de rutas entre el origen de coordenadas y el punto $(a,b) - (1,0) = (a-1,b)$ y esta última cifra asciende a&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{a+b-1,b} = \dbinom{a+b-1}{b}.
+$$&lt;/p&gt;
+
+&lt;p&gt;No obstante, entre ellas habrá algunas que se caractericen por intersecar la recta diagonal $y=x$, que procederemos a sustraer utilizando el &lt;em&gt;Principio de reflexión de André&lt;/em&gt;. Aplicado a este caso particular, dicho principio afirma que el número de trayectorias que van desde el punto $(1,0)$ hasta el punto $(a,b)$ e intersecan la recta diagonal $y=x$, equivale a la cantidad de trayectorias que van desde el punto $(0,1)$ (simétrico de $(1,0)$ respecto de la recta $y=x$) hasta el punto $(a,b)$. Por traslación, estas equivalen al total de trayectorias desde el origen de coordenadas hasta el punto $(a,b) - (0,1) = (a,b-1)$, esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+C_{a+b-1,a} = \dbinom{a+b-1}{a}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por consiguiente, el número de trayectorias desde el origen de coordenadas hasta el punto $(a,b)$, que se sitúan por debajo de la recta diagonal $y=x$, son&lt;/p&gt;
+
+&lt;p&gt;$$
+\dbinom{a+b-1}{b} - \dbinom{a+b-1}{a}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Finalmente,&lt;/p&gt;
+
+&lt;p&gt;$$
+P = \dfrac{C_{a+b-1,b} - C_{a+b-1,a}}{C_{a+b,a}} = \dfrac{\dbinom{a+b-1}{b} - \dbinom{a+b-1}{a}}{\dbinom{a+b}{a}}
+$$&lt;/p&gt;
+
+&lt;p&gt;es la probabilidad de que, en todo momento del escrutinio, $A$ vaya por delante de $B$. A modo anecdótico, podemos facilitar una expresión más compacta para $P$. Desarrollando,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+P &amp;amp;= \dfrac{\dfrac{(a+b-1)!}{b!(a-1)!} - \dfrac{(a+b-1)!}{a!(b-1)!}}{\dfrac{(a+b)!}{a!b!}} = \dfrac{\dfrac{a(a+b-1)!}{a!b!} - \dfrac{b(a+b-1)!}{a!b!}}{\dfrac{(a+b)!}{a!b!}}\\ &amp;amp;= \dfrac{(a-b)(a+b-1)!}{(a+b)(a+b-1)!} = \dfrac{a-b}{a+b},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;llegamos a una sencilla expresión para rápidamente calcular la probabilidad de interés.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Data Science (Coursera)</title>
       <link>https://imalexissaez.github.io/proyecto/applied-data-science-with-python/</link>
       <pubDate>Tue, 28 May 2019 00:00:01 +0100</pubDate>
@@ -21562,7 +21618,7 @@ $$&lt;/p&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/tags/combinatoria/&#34;&gt;Combinatoria&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/&#34;&gt;75&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/&#34;&gt;76&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/&#34;&gt;77&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/18/marchando-uno-de-numeros-combinatorios-generalizados/&#34;&gt;78&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/&#34;&gt;79&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/25/seguimos_de_rutas/&#34;&gt;80&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://imalexissaez.github.io/2019/03/13/comenzando-con-la-combinatoria-i/&#34;&gt;59&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/16/comenzando-con-la-combinatoria-ii/&#34;&gt;60&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/20/comenzando-con-la-combinatoria-iii/&#34;&gt;61&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/&#34;&gt;62&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/&#34;&gt;63&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/&#34;&gt;64&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/03/buscando-el-numero-de-terminos-ando/&#34;&gt;65&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/&#34;&gt;66&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/&#34;&gt;67&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/&#34;&gt;68&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/17/contando-diagonales-en-un-poligono/&#34;&gt;69&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/20/organizando-las-bajadas-del-ascensor/&#34;&gt;70&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/24/presentando-desarreglos/&#34;&gt;71&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/04/27/cuando-bailar-se-convierte-en-un-problema-matematico/&#34;&gt;72&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/&#34;&gt;73&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/04/tres-dados-buscando-sumar-diez/&#34;&gt;74&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/&#34;&gt;75&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/&#34;&gt;76&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/&#34;&gt;77&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/18/marchando-uno-de-numeros-combinatorios-generalizados/&#34;&gt;78&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/22/breve-introduccion-a-los-problemas-de-rutas/&#34;&gt;79&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/25/seguimos_de_rutas/&#34;&gt;80&lt;/a&gt;, &lt;a href=&#34;https://imalexissaez.github.io/2019/05/29/politica-votos-y-un-poco-de-combinatoria/&#34;&gt;81&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
