@@ -2048,6 +2048,4601 @@ r
     </item>
     
     <item>
+      <title>Módulo 2</title>
+      <link>https://imalexissaez.github.io/courses/applied-data-science-with-python/curso1-modulo2/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/applied-data-science-with-python/curso1-modulo2/</guid>
+      <description>
+
+&lt;h2 id=&#34;1-introducción&#34;&gt;1. Introducción&lt;/h2&gt;
+
+&lt;p&gt;En este módulo, investigaremos cómo &lt;em&gt;Python&lt;/em&gt;, dado un conjunto de datos, puede realizar manipulaciones, proceder a su limpieza y llevar a cabo consultas a través de la librería &lt;code&gt;pandas&lt;/code&gt;. Para resolver dudas sobre el uso de este módulo, cuatro buenos recursos son:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;El portal &lt;a href=&#34;https://stackoverflow.com/&#34; target=&#34;_blank&#34;&gt;Stack Overflow&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Los libros &lt;a href=&#34;https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1491957662/&#34; target=&#34;_blank&#34;&gt;Python for Data Analysis&lt;/a&gt; y &lt;a href=&#34;https://www.amazon.com/Learning-Pandas-Library-Munging-Analysis/dp/153359824X/&#34; target=&#34;_blank&#34;&gt;Learning the Pandas Library&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;El agregador de blogs &lt;a href=&#34;https://planetpython.org/&#34; target=&#34;_blank&#34;&gt;Planet Python&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;El podcast &lt;a href=&#34;https://dataskeptic.com/&#34; target=&#34;_blank&#34;&gt;Data Skeptic&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;2-la-estructura-de-datos-series&#34;&gt;2. La estructura de datos Series&lt;/h2&gt;
+
+&lt;p&gt;La estructura de datos &lt;code&gt;Series&lt;/code&gt;, de la librería &lt;code&gt;pandas&lt;/code&gt;, es una especie de mezcla entre las listas y los diccionarios de &lt;em&gt;Python&lt;/em&gt; que estudiamos en el módulo anterior. Los elementos se almacenan en orden y tenemos a nuestra disposición una serie de etiquetas (&lt;em&gt;labels&lt;/em&gt;), que nos permiten un acceso a ellos por nombre.&lt;/p&gt;
+
+&lt;p&gt;Empecemos importando la propia librería &lt;code&gt;pandas&lt;/code&gt; que, por convención, habitualmente utiliza el &lt;em&gt;alias&lt;/em&gt; &lt;code&gt;pd&lt;/code&gt;. Desde el &lt;em&gt;notebook&lt;/em&gt; de &lt;em&gt;Jupyter&lt;/em&gt; podemos acceder a la documentación para la estructura de datos &lt;code&gt;Series&lt;/code&gt; si tecleamos &lt;code&gt;pd.Series?&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+pd.Series?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En primer lugar, generemos una lista de animales y convirtámosla a un objeto de la clase &lt;code&gt;Series&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;animales = [&amp;quot;Tigre&amp;quot;, &amp;quot;Oso&amp;quot;, &amp;quot;Alce&amp;quot;]
+pd.Series(animales)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    Tigre
+1      Oso
+2     Alce
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Análogamente, repitamos el proceso para una lista de números enteros:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;numeros = [1, 2, 3]
+pd.Series(numeros)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    1
+1    2
+2    3
+dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En ambos casos, observamos una primera columna de índices numéricos, que podríamos utilizar para acceder a los elementos de esta estructura de la manera que estamos habituados en &lt;em&gt;Python&lt;/em&gt;. Cabe destacar también el atributo &lt;code&gt;dtype&lt;/code&gt;, diferente para ambos objetos y que se adapta automáticamente (aunque lo podemos declarar manualmente) al tipo de los elementos de la lista. Con ello, &lt;em&gt;Python&lt;/em&gt; trabaja de manera más eficiente, tanto en memoria, como a la hora de llevar a cabo operaciones.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, la instrucción &lt;code&gt;None&lt;/code&gt; nos permite indicar la ausencia de ciertos registros en nuestros conjuntos datos (los conocidos &lt;em&gt;valores perdidos&lt;/em&gt;). No obstante, hemos de ser cautos, pues según el tipo del resto de elementos, &lt;code&gt;None&lt;/code&gt; se almacena de manera diferente.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;animales = [&amp;quot;Tigre&amp;quot;, &amp;quot;Oso&amp;quot;, None]
+pd.Series(animales)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    Tigre
+1      Oso
+2     None
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;numeros = [1, 2, None]
+pd.Series(numeros)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    1.0
+1    2.0
+2    NaN
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En el primer caso, vemos que se registra como un objeto, mientras que en el segundo lo hace como un número especial en coma flotante: &lt;code&gt;NaN&lt;/code&gt;. En cualquier caso, es diferente a &lt;code&gt;None&lt;/code&gt;, como podemos comprobar a continuación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+np.nan == None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Curiosamente, también falla el test de comparación con respecto a sí mismo. La lógica tras esta decisión es que dos valores perdidos cualesquiera no tienen porqué coincidir.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.nan == np.nan
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por tanto, para comprobar la existencia de valores perdidos, hemos de recurrir a la función &lt;code&gt;isnan()&lt;/code&gt; de la librería &lt;em&gt;NumPy&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;np.isnan(np.nan)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, veamos cómo crear un objeto de tipo &lt;code&gt;Series&lt;/code&gt; a partir de un diccionario. De proceder de tal modo, la columna de índices estará compuesta por las claves del propio diccionario (y no por números enteros):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes = {&amp;quot;Fútbol&amp;quot;: &amp;quot;España&amp;quot;,
+            &amp;quot;Golf&amp;quot;: &amp;quot;Italia&amp;quot;,
+            &amp;quot;Baloncesto&amp;quot;: &amp;quot;Francia&amp;quot;,
+            &amp;quot;Kárate&amp;quot;: &amp;quot;Japón&amp;quot;}
+d = pd.Series(deportes)
+d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Para acceder a los índices de la estructura creada, hemos de utilizar el atributo &lt;code&gt;index&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d.index
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Index([&#39;Fútbol&#39;, &#39;Golf&#39;, &#39;Baloncesto&#39;, &#39;Kárate&#39;], dtype=&#39;object&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De hecho, no tenemos que recurrir necesariamente al uso de un diccionario para acceder a etiquetas con nombres. En los ejemplos que vimos al principio de este apartado, basta que configuremos adecuadamente el valor del parámetro &lt;code&gt;index&lt;/code&gt; para conseguir la misma funcionalidad que arriba:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = pd.Series([&amp;quot;Tigre&amp;quot;, &amp;quot;Oso&amp;quot;, &amp;quot;Alce&amp;quot;], index=[&amp;quot;India&amp;quot;, &amp;quot;Estados Unidos&amp;quot;, &amp;quot;Canadá&amp;quot;])
+a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;India             Tigre
+Estados Unidos      Oso
+Canadá             Alce
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es más, mediante dicho parámetro, podemos restringir la creación del objeto &lt;code&gt;Series&lt;/code&gt; a los valores que nos interesen de un determinado diccionario (y automáticamente proveerá de valores &lt;code&gt;NaN&lt;/code&gt; si alguna de las claves no figura en el mencionado diccionario):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes = {&amp;quot;Fútbol&amp;quot;: &amp;quot;España&amp;quot;,
+            &amp;quot;Golf&amp;quot;: &amp;quot;Italia&amp;quot;,
+            &amp;quot;Baloncesto&amp;quot;: &amp;quot;Francia&amp;quot;,
+            &amp;quot;Kárate&amp;quot;: &amp;quot;Japón&amp;quot;}
+d = pd.Series(deportes, index=[&amp;quot;Fútbol&amp;quot;, &amp;quot;Golf&amp;quot;, &amp;quot;Baloncesto&amp;quot;])
+d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d = pd.Series(deportes, index=[&amp;quot;Fútbol&amp;quot;, &amp;quot;Balonmano&amp;quot;, &amp;quot;Golf&amp;quot;])
+d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol       España
+Balonmano       NaN
+Golf         Italia
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;3-extracción-de-elementos-en-series&#34;&gt;3. Extracción de elementos en Series&lt;/h2&gt;
+
+&lt;p&gt;Para empezar, retomemos uno de los últimos ejemplos de la sección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes = {&amp;quot;Fútbol&amp;quot;: &amp;quot;España&amp;quot;,
+            &amp;quot;Golf&amp;quot;: &amp;quot;Italia&amp;quot;,
+            &amp;quot;Baloncesto&amp;quot;: &amp;quot;Francia&amp;quot;,
+            &amp;quot;Kárate&amp;quot;: &amp;quot;Japón&amp;quot;}
+d = pd.Series(deportes)
+d
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Existen cuatro maneras diferentes de acceder a los valores almacenados en &lt;code&gt;deportes&lt;/code&gt;. Si nos preguntamos a qué país está asociada la etiqueta &lt;code&gt;&amp;quot;Golf&amp;quot;&lt;/code&gt; y sabemos que almacenamos este registro en segundo lugar, podemos emplear el atributo &lt;code&gt;iloc&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d.iloc[1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Italia&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, es difícil recordar el orden en el que introdujimos los datos, y más cuando cierto tiempo ha transcurrido desde entonces. Por ello, es interesante que conozcamos la existencia del atributo &lt;code&gt;loc&lt;/code&gt;, que nos permite acceder al valor mediante su etiqueta explícita:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d.loc[&amp;quot;Golf&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Italia&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: notemos que &lt;code&gt;iloc&lt;/code&gt; y &lt;code&gt;loc&lt;/code&gt; son atributos, por lo que no hemos de utilizar paréntesis &lt;code&gt;()&lt;/code&gt; cuando los empleamos.&lt;/p&gt;
+
+&lt;p&gt;La manera en que están programados los accesos en &lt;code&gt;pandas&lt;/code&gt; busca conseguir la máxima legibilidad posible. Por ejemplo, si directamente utilizamos el operador de índice &lt;code&gt;[]&lt;/code&gt; con un valor numérico, &lt;code&gt;pandas&lt;/code&gt; empleará el atributo &lt;code&gt;iloc&lt;/code&gt;; mientras que si es otro tipo de valor, recurrirá al atributo &lt;code&gt;loc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d[1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Italia&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;d[&amp;quot;Golf&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Italia&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esta manera de proceder puede ser fuente de complicaciones cuando los índices son, asimismo, valores numéricos. En esta situación, &lt;code&gt;pandas&lt;/code&gt; no puede determinar directamente si estamos accediendo a un valor vía referencia numérica o mediante etiquetas.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;numeros = {90: &amp;quot;Noventa&amp;quot;,
+           91: &amp;quot;Noventa y uno&amp;quot;,
+           92: &amp;quot;Noventa y dos&amp;quot;,
+           93: &amp;quot;Noventa y tres&amp;quot;}
+n = pd.Series(numeros)
+n
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;90           Noventa
+91     Noventa y uno
+92     Noventa y dos
+93    Noventa y tres
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;n[0]  # No accede al primer elemento, como en las listas. No hay índice etiquetado 0 aquí.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&amp;lt;ipython-input-20-56e5e6858fee&amp;gt; in &amp;lt;module&amp;gt;
+----&amp;gt; 1 n[0]  # No accede al primer elemento, como en las listas. No hay índice etiquetado 0 aquí.
+
+
+~\Anaconda3\lib\site-packages\pandas\core\series.py in __getitem__(self, key)
+    866         key = com.apply_if_callable(key, self)
+    867         try:
+--&amp;gt; 868             result = self.index.get_value(self, key)
+    869 
+    870             if not is_scalar(result):
+
+
+~\Anaconda3\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+   4373         try:
+   4374             return self._engine.get_value(s, k,
+-&amp;gt; 4375                                           tz=getattr(series.dtype, &#39;tz&#39;, None))
+   4376         except KeyError as e1:
+   4377             if len(self) &amp;gt; 0 and (self.holds_integer() or self.is_boolean()):
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.Int64HashTable.get_item()
+
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.Int64HashTable.get_item()
+
+
+KeyError: 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;n.iloc[0]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En estos casos, como acabamos de ver arriba, conviene utilizar explícitamente los atributos &lt;code&gt;iloc&lt;/code&gt; y &lt;code&gt;loc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A continuación, veamos cómo trabajar con los valores de un objeto de tipo &lt;code&gt;Series&lt;/code&gt;. Por ejemplo, nos puede interesar calcular la suma total de los elementos de una serie numérica de valores en coma flotante, almacenada mediante esta estructura de datos.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;s = pd.Series([100.00, 120.00, 101.00, 3.00])
+s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    100.0
+1    120.0
+2    101.0
+3      3.0
+dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Un posible enfoque consiste en iterar sobre los elementos de &lt;code&gt;s&lt;/code&gt; a través de un bucle de tipo &lt;code&gt;for&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;total = 0
+for item in s:
+    total += item
+print(total)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;324.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, la librería &lt;code&gt;numpy&lt;/code&gt; dispone de un método que realiza la misma tarea de una manera más eficiente (en consumo de memoria y tiempo):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;total = np.sum(s)
+print(total)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;324.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;¿Cómo podemos comprobar que, efectivamente, conviene utilizar las funciones que estas librerías proporcionan, en lugar de utilizar nuestros propios bucles? Llevemos a cabo un pequeño experimento declarando una serie de 10000 números aleatorios (cada uno de ellos comprendido entre 0 y 999) y procediendo a su suma. El &lt;em&gt;magic command&lt;/em&gt; &lt;code&gt;%%timeit&lt;/code&gt; nos permitirá acceder al tiempo de computación del proceso, que repetiremos 100 veces para conseguir así un tiempo medio representativo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;s = pd.Series(np.random.randint(0, 1000, 10000))
+s.head()  # Imprime los cinco primeros elementos
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    970
+1    887
+2    127
+3     75
+4    170
+dtype: int32
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;len(s)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;10000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%timeit -n 100
+summary = 0
+for item in s:
+    summary += item
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;2.58 ms ± 182 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%timeit -n 100
+summary = np.sum(s)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;277 µs ± 73.4 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La explicación técnica de este resultado reside en que &lt;code&gt;numpy&lt;/code&gt; efectúa operaciones algebraicas de manera &lt;strong&gt;vectorizada&lt;/strong&gt;, enfoque de actuación mucho más eficiente que realizarlas elemento a elemento, como cuando utilizamos un bucle como el declarado arriba.&lt;/p&gt;
+
+&lt;p&gt;No obstante, la diferencia, aún existente, no llega a ser sorprendente. Repliquemos esta manera de proceder analizando ahora otra operación sencilla: sumar dos unidades a cada uno de los elementos de la serie generada.&lt;/p&gt;
+
+&lt;p&gt;Dicha tarea la podemos llevar a cabo directamente mediante el operador incremento correspondiente:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;s += 2  # Suma 2 a s, elemento a elemento
+s.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    972
+1    889
+2    129
+3     77
+4    172
+dtype: int32
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;O, en cualquier caso, a través de un bucle de tipo &lt;code&gt;for&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for label, value in s.iteritems():
+    s.set_value(label, value + 2)  # Produce un deprecated warning 
+s.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
+
+
+
+
+
+
+0    974
+1    891
+2    131
+3     79
+4    174
+dtype: int32
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El anterior bloque de código arroja un mensaje (&lt;em&gt;warning&lt;/em&gt;) avisándonos que la función &lt;code&gt;set_value()&lt;/code&gt; está en desuso y nos recomienda utilizar los atributos &lt;code&gt;.at[]&lt;/code&gt; o &lt;code&gt;iat[]&lt;/code&gt;. Modifiquemos pues el código precedente:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for label, value in s.iteritems():
+    s.at[label] = value + 2
+s.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0    976
+1    893
+2    133
+3     81
+4    176
+dtype: int32
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, procedamos a realizar el mencionado experimento:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%timeit -n 100
+s = pd.Series(np.random.randint(0, 1000, 10000))
+for label, value in s.iteritems():
+    s.at[label] = value + 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;109 ms ± 10.2 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;%%timeit -n 100
+s = pd.Series(np.random.randint(0, 1000, 10000))
+s += 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;725 µs ± 196 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En resumen, si en algún momento nos encontramos iterando sobre un objeto de tipo &lt;code&gt;Series&lt;/code&gt;, hemos de deternos y cuestionarnos si estamos llevando a cabo el procedimiento de la manera más adecuada (en términos de eficiencia).&lt;/p&gt;
+
+&lt;p&gt;Para finalizar esta sección, veamos algunas maneras de añadir información a un objeto declarado de tipo &lt;code&gt;Series&lt;/code&gt;. En primer lugar, y de manera muy parecida a como realizamos el proceso cuando trabajamos con diccionarios, utilizando la estructura &lt;code&gt;s.loc[] = value&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;s = pd.Series([1, 2, 3])
+s.loc[&amp;quot;Animal&amp;quot;] = &amp;quot;Oso&amp;quot;
+s
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;0           1
+1           2
+2           3
+Animal    Oso
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la librería &lt;code&gt;pandas&lt;/code&gt; gestiona adecuadamente los índices y valores cuando, como en este caso, son de tipos diferentes (tenemos enteros y cadenas de texto), escogiendo la representación más general para representarlos.&lt;/p&gt;
+
+&lt;p&gt;En segundo lugar, la función &lt;code&gt;append()&lt;/code&gt; resulta de gran utilidad a la hora de ampliar este tipo de estructura de datos. Además, veamos qué sucede cuando existen diferentes valores cuyo índice, en forma de etiqueta, coincide (situación imposible de conseguir cuando trabajamos, por ejemplo, con bases de datos relacionales):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes = pd.Series({&amp;quot;Fútbol&amp;quot;: &amp;quot;España&amp;quot;,
+                      &amp;quot;Golf&amp;quot;: &amp;quot;Italia&amp;quot;,
+                      &amp;quot;Baloncesto&amp;quot;: &amp;quot;Francia&amp;quot;,
+                      &amp;quot;Kárate&amp;quot;: &amp;quot;Japón&amp;quot;})
+paises_balonmano = pd.Series([&amp;quot;Inglaterra&amp;quot;, &amp;quot;Alemania&amp;quot;, &amp;quot;Rusia&amp;quot;, &amp;quot;Colombia&amp;quot;],
+                            index=[&amp;quot;Balonmano&amp;quot;, &amp;quot;Balonmano&amp;quot;, &amp;quot;Balonmano&amp;quot;, &amp;quot;Balonmano&amp;quot;])
+deportes_ampliado = deportes.append(paises_balonmano)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;paises_balonmano
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Balonmano    Inglaterra
+Balonmano      Alemania
+Balonmano         Rusia
+Balonmano      Colombia
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes_ampliado
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Fútbol            España
+Golf              Italia
+Baloncesto       Francia
+Kárate             Japón
+Balonmano     Inglaterra
+Balonmano       Alemania
+Balonmano          Rusia
+Balonmano       Colombia
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;deportes_ampliado.loc[&amp;quot;Balonmano&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Balonmano    Inglaterra
+Balonmano      Alemania
+Balonmano         Rusia
+Balonmano      Colombia
+dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas técnicas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La función &lt;code&gt;append()&lt;/code&gt;, así como sucede con otras funciones de esta librería, infiere qué tipo es el más adecuado para representar la nueva estructura generada. En el ejemplo anterior, como todo son cadenas de caracteres, no hay problema alguno.&lt;/li&gt;
+&lt;li&gt;Por otro lado, dicha función no modifica la estructura original, sino que devuelve una nueva, comportamiento que puede resultar un tanto extraño en &lt;em&gt;Python&lt;/em&gt;, tal y como estamos acostumbrados a modificar objetos. En el ejemplo anterior, tras ejecutar la celda, observamos la variable &lt;code&gt;deportes&lt;/code&gt; contiene únicamente los datos originales, aunque sobre ella hayamos utilizado el método &lt;code&gt;append()&lt;/code&gt;. Como podemos observar a continuación, cuando trabajamos con listas dicha función produce un resultado diferente.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;lista_original = [1, 2, 3]
+lista_nueva = lista_original.append(4)
+
+lista_original
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;[1, 2, 3, 4]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;4-la-estrutura-de-datos-dataframe&#34;&gt;4. La estrutura de datos DataFrame&lt;/h2&gt;
+
+&lt;p&gt;La estructura de datos &lt;code&gt;DataFrame&lt;/code&gt; es, posiblemente, la gran protagonista de la librería &lt;code&gt;pandas&lt;/code&gt; y con la que trabajaremos habitualmente a la hora de llevar a cabo análisis de datos. Se trata de una tabla compuesta por múltiples filas y columnas (conceptualmente estaríamos hablando de un &lt;em&gt;array&lt;/em&gt; 2-dimensional), donde cada registro posee su propia etiqueta.&lt;/p&gt;
+
+&lt;p&gt;Podemos crear un &lt;code&gt;DataFrame&lt;/code&gt; a partir de un conjunto de &lt;code&gt;Series&lt;/code&gt; o de diccionarios, donde cada elemento represente una fila de la tabla que deseamos generar:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+compra_1 = pd.Series({&#39;Nombre&#39;: &#39;Alexis&#39;,
+                      &#39;Objeto comprado&#39;: &#39;Portátil&#39;,
+                      &#39;Coste&#39;: 622.50})
+compra_2 = pd.Series({&#39;Nombre&#39;: &#39;Ana&#39;,
+                      &#39;Objeto comprado&#39;: &#39;Auriculares&#39;,
+                      &#39;Coste&#39;: 7.50})
+compra_3 = pd.Series({&#39;Nombre&#39;: &#39;Marta&#39;,
+                      &#39;Objeto comprado&#39;: &#39;Comida para gatos&#39;,
+                      &#39;Coste&#39;: 15.25})
+
+df = pd.DataFrame([compra_1, compra_2, compra_3], 
+                  index=[&#39;Tienda 1&#39;, &#39;Tienda 1&#39;, &#39;Tienda 2&#39;])
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;622.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;7.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: recordemos que no es necesario que las etiquetas asociadas a los registros sean únicas.&lt;/p&gt;
+
+&lt;p&gt;De manera similar a como procedíamos en anteriores secciones, podemos extraer información del &lt;code&gt;DataFrame&lt;/code&gt; utilizando los atributos &lt;code&gt;iloc&lt;/code&gt; y &lt;code&gt;loc&lt;/code&gt;. Cabe destacar que, según la cantidad de información extraída, la librería &lt;code&gt;pandas&lt;/code&gt; colapsa de manera adecuada el tipo de datos resultante.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, si extraemos una columna de la tabla, el objeto resultante será de tipo &lt;code&gt;Series&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 2&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Nombre                         Marta
+Objeto comprado    Comida para gatos
+Coste                          15.25
+Name: Tienda 2, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(df.loc[&amp;quot;Tienda 2&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;pandas.core.series.Series
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De manera similar, podemos extraer información de la tabla utilizando múltiples índices (uno para la fila y otro para la columna). Por ejemplo, podríamos estar interesados en consultar los costes asociados a los productos comprados en &lt;code&gt;Tienda 1&lt;/code&gt;. Para ello, tecleamos&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 1&amp;quot;, &amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    622.5
+Tienda 1      7.5
+Name: Coste, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(df.loc[&amp;quot;Tienda 1&amp;quot;, &amp;quot;Coste&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;pandas.core.series.Series
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al tratarse el resultado de un &lt;em&gt;array&lt;/em&gt; unidimensional, observamos que su tipo se colapsa al de un objeto de tipo &lt;code&gt;Series&lt;/code&gt;. En cambio, si extraemos una &amp;ldquo;subtabla&amp;rdquo; de la tabla, el objeto devuelto no varía de tipo y continúa perteneciendo a la clase &lt;code&gt;DataFrame&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 1&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;622.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;7.5&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(df.loc[&amp;quot;Tienda 1&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;pandas.core.frame.DataFrame
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, si extraemos un único valor concreto de la tabla, su tipo también se ve alterado:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 2&amp;quot;, &amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;15.25
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(df.loc[&amp;quot;Tienda 2&amp;quot;, &amp;quot;Coste&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;numpy.float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 2&amp;quot;, &amp;quot;Nombre&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;&#39;Marta&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;type(df.loc[&amp;quot;Tienda 2&amp;quot;, &amp;quot;Nombre&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;str
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, imaginemos que estamos interesados en obtener todos los registros asociados a una columna, &lt;code&gt;&amp;quot;Coste&amp;quot;&lt;/code&gt; por ejemplo. Una posible estrategia consistiría en trasponer el conjunto de datos y emplear, como antes, el atributo &lt;code&gt;loc&lt;/code&gt;, ya que los nombres de las columnas pasan a ser los índices de los registros.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.T
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+      &lt;td&gt;622.5&lt;/td&gt;
+      &lt;td&gt;7.5&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.T.loc[&amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    622.5
+Tienda 1      7.5
+Tienda 2    15.25
+Name: Coste, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sin embargo, es un tanto tedioso proceder de tal forma. La librería &lt;code&gt;pandas&lt;/code&gt; permite, directamente, utilizar también los atributos &lt;code&gt;iloc&lt;/code&gt; y &lt;code&gt;loc&lt;/code&gt; sobre los nombres de las columnas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    622.50
+Tienda 1      7.50
+Tienda 2     15.25
+Name: Coste, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Además, podemos incluso encadenar operadores de extracción de datos como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 1&amp;quot;][&amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    622.5
+Tienda 1      7.5
+Name: Coste, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 2&amp;quot;][&amp;quot;Coste&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;15.25
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, hemos de ser cautos a la hora de proceder de tal manera, pues &lt;code&gt;pandas&lt;/code&gt; devuelve una copia del objeto &lt;code&gt;DataFrame&lt;/code&gt;, en lugar de una simple vista, con todos los costes asociados de memoria y tiempo de cálculo que ello conlleva.&lt;/p&gt;
+
+&lt;p&gt;A la hora de realizar consultas, esta peculiaridad no puede parecer muy importante, pero sí puede ser fuente de errores cuando estamos modificando datos de un conjunto de datos.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: también podemos utilizar el operador &lt;code&gt;:&lt;/code&gt; a la hora de extraer información de un conjunto de datos, tal y como estamos habituados a hacerlo cuando trabajamos con listas.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[:, [&amp;quot;Nombre&amp;quot;, &amp;quot;Coste&amp;quot;]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;622.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;7.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Acto seguido, veamos cómo descartar datos, acción para la cual la función &lt;code&gt;drop()&lt;/code&gt; es ciertamente útil:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.drop(&amp;quot;Tienda 1&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: la función &lt;code&gt;drop()&lt;/code&gt;, como muchas de las implementadas en la librería &lt;code&gt;pandas&lt;/code&gt;, no modifica el objeto original, sino que devuelve una copia del mismo sobre la cual se ha llevado a cabo la acción de interés.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;622.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;7.50&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hagamos una copia del conjunto de datos, utilizando la función &lt;code&gt;copy()&lt;/code&gt;, y apliquemos después la función &lt;code&gt;drop()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;copia_df = df.copy()
+copia_df = copia_df.drop(&amp;quot;Tienda 1&amp;quot;)
+copia_df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Por otro lado, cabe comentar que la función &lt;code&gt;drop()&lt;/code&gt; posee dos interesantes parámetros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;inplace&lt;/code&gt;: permite que la actualización de datos se realice sobre el objeto original, en lugar de devolver una copia.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;axis&lt;/code&gt;: dimensión que se descarta (&lt;code&gt;0&lt;/code&gt; para filas, &lt;code&gt;1&lt;/code&gt; para columnas)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Para acceder a más detalles sobre la función, siempre conviene que consultemos su documentación asociada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;copia_df.drop?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Adicionalmente, mediante la combinación del operador índice y la instrucción &lt;code&gt;del&lt;/code&gt; tenemos la posibilidad de descartar datos de nuestra tabla. Dicha combinación altera el objeto inicial en lugar de devolver una copia, por lo que hemos de proceder con cautela en su uso.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;del copia_df[&amp;quot;Nombre&amp;quot;]
+copia_df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finalmente, para añadir columnas únicamente hemos de seguir un patrón familiar a estas alturas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;Localización&amp;quot;] = None
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+      &lt;th&gt;Localización&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;622.50&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;7.50&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Ejercicio&lt;/strong&gt;: ¿cómo podríamos aplicar un descuento de un 20% a los artículos de la primera tienda?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Tienda 1&amp;quot;, &amp;quot;Coste&amp;quot;] *= 0.8
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+      &lt;th&gt;Localización&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;498.00&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;6.00&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;15.25&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;5-lectura-de-archivos-como-dataframe&#34;&gt;5. Lectura de archivos como DataFrame&lt;/h2&gt;
+
+&lt;p&gt;Habitualmente, a la hora de realizar análisis de datos, importamos el conjunto de datos en un &lt;code&gt;DataFrame&lt;/code&gt; y luego seleccionamos aquellas que nos resulten de interés para trabajar con ellas.&lt;/p&gt;
+
+&lt;p&gt;Como hemos advertido en anteriores secciones, la librería &lt;code&gt;pandas&lt;/code&gt; acostumbra a devolver &amp;ldquo;vistas&amp;rdquo; de los &lt;code&gt;DataFrames&lt;/code&gt; en lugar de copias de los mismos (debido a cuestiones de gestión de memoria y eficiencia en la realización de ciertas operaciones). Por tanto, podemos encontrar que algunas modificaciones que llevemos a cabo pueden tener impacto en el conjunto de datos original y este comportamiento es posible que no nos interese.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, almacenemos en una variable los costes de los productos pertenecientes a la tabla de la sección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;costes = df[&amp;quot;Coste&amp;quot;]
+costes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    498.00
+Tienda 1      6.00
+Tienda 2     15.25
+Name: Coste, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si ahora incrementamos en dos unidades el coste de cada producto, no solo ve alterado su valor la variable &lt;code&gt;costes&lt;/code&gt;, sino también el conjunto de datos original &lt;code&gt;df&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;costes += 2
+costes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Tienda 1    500.00
+Tienda 1      8.00
+Tienda 2     17.25
+Name: Coste, dtype: float64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Objeto comprado&lt;/th&gt;
+      &lt;th&gt;Coste&lt;/th&gt;
+      &lt;th&gt;Localización&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Alexis&lt;/td&gt;
+      &lt;td&gt;Portátil&lt;/td&gt;
+      &lt;td&gt;500.00&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 1&lt;/th&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;Auriculares&lt;/td&gt;
+      &lt;td&gt;8.00&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Tienda 2&lt;/th&gt;
+      &lt;td&gt;Marta&lt;/td&gt;
+      &lt;td&gt;Comida para gatos&lt;/td&gt;
+      &lt;td&gt;17.25&lt;/td&gt;
+      &lt;td&gt;None&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A continuación, veamos cómo importar los contenidos de un archivo, de tipo &lt;em&gt;CSV&lt;/em&gt;, en una estructura de datos de tipo &lt;code&gt;DataFrame&lt;/code&gt;. El fichero &lt;code&gt;olympics.csv&lt;/code&gt; (ubicado en el directorio &lt;code&gt;data&lt;/code&gt;) registra el número de medallas que cada país ha conseguido en los difirentes tipos de olimpiadas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_csv(&amp;quot;data/olympics.csv&amp;quot;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;th&gt;15&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;№ Summer&lt;/td&gt;
+      &lt;td&gt;01 !&lt;/td&gt;
+      &lt;td&gt;02 !&lt;/td&gt;
+      &lt;td&gt;03 !&lt;/td&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;№ Winter&lt;/td&gt;
+      &lt;td&gt;01 !&lt;/td&gt;
+      &lt;td&gt;02 !&lt;/td&gt;
+      &lt;td&gt;03 !&lt;/td&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;№ Games&lt;/td&gt;
+      &lt;td&gt;01 !&lt;/td&gt;
+      &lt;td&gt;02 !&lt;/td&gt;
+      &lt;td&gt;03 !&lt;/td&gt;
+      &lt;td&gt;Combined total&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Afghanistan (AFG)&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Algeria (ALG)&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Argentina (ARG)&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Armenia (ARM)&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A la vista de la tabla anterior, parece que la primera fila únicamente numera las columnas, resiendo en la segunda los nombres de cabecera de dichas columnas. Por tanto, procederemos a saltar la lectura de la línea inicial, utilizando para ello el parámetro &lt;code&gt;skiprows&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, la primera columna contiene los nombres de los distintos países, siendo estos valores perfectos candidatos para conformar los índices de cada uno de los registros. Para conseguir tal característica, simplemente indicamos que la columna de índices es la primera mediante el parámetro &lt;code&gt;index_col=0&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_csv(&amp;quot;data/olympics.csv&amp;quot;, index_col=0, skiprows=1)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;№ Summer&lt;/th&gt;
+      &lt;th&gt;01 !&lt;/th&gt;
+      &lt;th&gt;02 !&lt;/th&gt;
+      &lt;th&gt;03 !&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;№ Winter&lt;/th&gt;
+      &lt;th&gt;01 !.1&lt;/th&gt;
+      &lt;th&gt;02 !.1&lt;/th&gt;
+      &lt;th&gt;03 !.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;№ Games&lt;/th&gt;
+      &lt;th&gt;01 !.2&lt;/th&gt;
+      &lt;th&gt;02 !.2&lt;/th&gt;
+      &lt;th&gt;03 !.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Afghanistan (AFG)&lt;/th&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.columns
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Index([&#39;№ Summer&#39;, &#39;01 !&#39;, &#39;02 !&#39;, &#39;03 !&#39;, &#39;Total&#39;, &#39;№ Winter&#39;, &#39;01 !.1&#39;,
+       &#39;02 !.1&#39;, &#39;03 !.1&#39;, &#39;Total.1&#39;, &#39;№ Games&#39;, &#39;01 !.2&#39;, &#39;02 !.2&#39;, &#39;03 !.2&#39;,
+       &#39;Combined total&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, encontramos dos detalles curiosos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La representación para las medallas de oro, plata y bronce es, cuanto menos, extraña: &lt;code&gt;01 !&lt;/code&gt;, &lt;code&gt;02 !&lt;/code&gt; y &lt;code&gt;03 !&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Existen columnas con las mismas etiquetas (las asociadas a los tipos de medallas y a los totales), práctica en absoluto recomendable por dar lugar a confusiones de manera muy sencilla. La librería &lt;code&gt;pandas&lt;/code&gt; gestiona esta situación incluyendo valores numéricos al final del nombre de las repetidas (&lt;code&gt;.1&lt;/code&gt;, &lt;code&gt;.2&lt;/code&gt;, &lt;code&gt;.3&lt;/code&gt;&amp;hellip;) para así poder diferenciarlas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Podemos bien editar directamente el propio archivo &lt;em&gt;CSV&lt;/em&gt;, bien modificar las etiquetas conflictivas, desde &lt;em&gt;Python&lt;/em&gt; con la librería &lt;code&gt;pandas&lt;/code&gt;, utilizando la función &lt;code&gt;rename()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for col in df.columns:
+    if col[:2]==&#39;01&#39;:
+        df.rename(columns={col:&#39;Gold&#39; + col[4:]}, inplace=True)
+    if col[:2]==&#39;02&#39;:
+        df.rename(columns={col:&#39;Silver&#39; + col[4:]}, inplace=True)
+    if col[:2]==&#39;03&#39;:
+        df.rename(columns={col:&#39;Bronze&#39; + col[4:]}, inplace=True)
+    if col[:1]==&#39;№&#39;:
+        df.rename(columns={col:&#39;#&#39; + col[1:]}, inplace=True) 
+
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Afghanistan (AFG)&lt;/th&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Notemos el uso del parámetro &lt;code&gt;inplace&lt;/code&gt;, que permite modificar el objeto original, puesto que su valor está declarado como &lt;code&gt;True&lt;/code&gt;. Por otro lado, hemos de proceder con cautela a la hora de renombrar las columnas para no perder la unicidad durante el proceso, de ahí la justificación de la concatenación &lt;code&gt;+ col[4:]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-consultas-en-dataframe&#34;&gt;6. Consultas en DataFrame&lt;/h2&gt;
+
+&lt;p&gt;Antes de abordar cómo realizar consultas en &lt;code&gt;DataFrame&lt;/code&gt;, hemos de introducir el concepto de &lt;em&gt;máscara booleana&lt;/em&gt; (&lt;em&gt;boolean masking&lt;/em&gt;), puesto que esta estrategia es la que permite consultar el conjunto de datos de una manera rápida y eficiente.&lt;/p&gt;
+
+&lt;p&gt;La idea es construir un &lt;em&gt;array&lt;/em&gt; (unidimensional o multidimensional) de valores lógicos &lt;code&gt;True&lt;/code&gt; o &lt;code&gt;False&lt;/code&gt;, que luego utilizaremos para extraer la información que nos interese del conjunto de datos.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, utilizando la tabla de datos que figura en la sección anterior y que recoge el número de medallas obtenidas por cada país en las olimpiadas, podemos estar interesados en consultar qué países han conseguido al menos una medalla de oro en las de verano (recordemos que esta información se almacenaba en la columna &lt;code&gt;&amp;quot;Gold&amp;quot;&lt;/code&gt;). Si escribimos&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;Gold&amp;quot;] &amp;gt; 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Afghanistan (AFG)                               False
+Algeria (ALG)                                    True
+Argentina (ARG)                                  True
+Armenia (ARM)                                    True
+Australasia (ANZ) [ANZ]                          True
+Australia (AUS) [AUS] [Z]                        True
+Austria (AUT)                                    True
+Azerbaijan (AZE)                                 True
+Bahamas (BAH)                                    True
+Bahrain (BRN)                                   False
+Barbados (BAR) [BAR]                            False
+Belarus (BLR)                                    True
+Belgium (BEL)                                    True
+Bermuda (BER)                                   False
+Bohemia (BOH) [BOH] [Z]                         False
+Botswana (BOT)                                  False
+Brazil (BRA)                                     True
+British West Indies (BWI) [BWI]                 False
+Bulgaria (BUL) [H]                               True
+Burundi (BDI)                                    True
+Cameroon (CMR)                                   True
+Canada (CAN)                                     True
+Chile (CHI) [I]                                  True
+China (CHN) [CHN]                                True
+Colombia (COL)                                   True
+Costa Rica (CRC)                                 True
+Ivory Coast (CIV) [CIV]                         False
+Croatia (CRO)                                    True
+Cuba (CUB) [Z]                                   True
+Cyprus (CYP)                                    False
+                                                ...  
+Sri Lanka (SRI) [SRI]                           False
+Sudan (SUD)                                     False
+Suriname (SUR) [E]                               True
+Sweden (SWE) [Z]                                 True
+Switzerland (SUI)                                True
+Syria (SYR)                                      True
+Chinese Taipei (TPE) [TPE] [TPE2]                True
+Tajikistan (TJK)                                False
+Tanzania (TAN) [TAN]                            False
+Thailand (THA)                                   True
+Togo (TOG)                                      False
+Tonga (TGA)                                     False
+Trinidad and Tobago (TRI) [TRI]                  True
+Tunisia (TUN)                                    True
+Turkey (TUR)                                     True
+Uganda (UGA)                                     True
+Ukraine (UKR)                                    True
+United Arab Emirates (UAE)                       True
+United States (USA) [P] [Q] [R] [Z]              True
+Uruguay (URU)                                    True
+Uzbekistan (UZB)                                 True
+Venezuela (VEN)                                  True
+Vietnam (VIE)                                   False
+Virgin Islands (ISV)                            False
+Yugoslavia (YUG) [YUG]                           True
+Independent Olympic Participants (IOP) [IOP]    False
+Zambia (ZAM) [ZAM]                              False
+Zimbabwe (ZIM) [ZIM]                             True
+Mixed team (ZZX) [ZZX]                           True
+Totals                                           True
+Name: Gold, Length: 147, dtype: bool
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Una vez hemos construido la máscara de valores lógicos (&lt;em&gt;boolean mask&lt;/em&gt;), ya solo nos resta aplicarla al conjunto de datos original mediante la función &lt;code&gt;where()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;solo_oro = df.where(df[&amp;quot;Gold&amp;quot;] &amp;gt; 0)
+solo_oro.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Afghanistan (AFG)&lt;/th&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;24.0&lt;/td&gt;
+      &lt;td&gt;28.0&lt;/td&gt;
+      &lt;td&gt;70.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;41.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;24.0&lt;/td&gt;
+      &lt;td&gt;28.0&lt;/td&gt;
+      &lt;td&gt;70.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;9.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;6.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;11.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;9.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;4.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;4.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Como podemos observar, se conservan todos los registros, pero únicamente existen datos disponibles para aquellos que verifican la condición impuesta, esto es, que han conseguido al menos una medalla de oro en las olimpiadas de verano. En total son&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;solo_oro[&amp;quot;Gold&amp;quot;].count()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;100
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;es decir, 100 países de un total de&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;Gold&amp;quot;].count()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;147
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;147 países que contiene el conjunto de datos original.&lt;/p&gt;
+
+&lt;p&gt;Habitualmente, los registros sin información asociada los descartaremos, haciendo uso para ello de la función &lt;code&gt;dropna()&lt;/code&gt; que, por defecto, actúa sobre las filas (&lt;code&gt;axis=0&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;solo_oro = solo_oro.dropna()
+solo_oro.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;8.0&lt;/td&gt;
+      &lt;td&gt;15.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;24.0&lt;/td&gt;
+      &lt;td&gt;28.0&lt;/td&gt;
+      &lt;td&gt;70.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;41.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;24.0&lt;/td&gt;
+      &lt;td&gt;28.0&lt;/td&gt;
+      &lt;td&gt;70.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;9.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;6.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;11.0&lt;/td&gt;
+      &lt;td&gt;1.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;9.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;4.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;0.0&lt;/td&gt;
+      &lt;td&gt;2.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;4.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australia (AUS) [AUS] [Z]&lt;/th&gt;
+      &lt;td&gt;25.0&lt;/td&gt;
+      &lt;td&gt;139.0&lt;/td&gt;
+      &lt;td&gt;152.0&lt;/td&gt;
+      &lt;td&gt;177.0&lt;/td&gt;
+      &lt;td&gt;468.0&lt;/td&gt;
+      &lt;td&gt;18.0&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+      &lt;td&gt;4.0&lt;/td&gt;
+      &lt;td&gt;12.0&lt;/td&gt;
+      &lt;td&gt;43.0&lt;/td&gt;
+      &lt;td&gt;144.0&lt;/td&gt;
+      &lt;td&gt;155.0&lt;/td&gt;
+      &lt;td&gt;181.0&lt;/td&gt;
+      &lt;td&gt;480.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Al ser un tipo de acción habitual a la hora de llevar a cabo análisis de datos, los desarrollares de la librería &lt;code&gt;pandas&lt;/code&gt; han incluido un atajo (mediante el operador índice &lt;code&gt;[]&lt;/code&gt; al que le suministramos directamente la máscara booleana) para conseguir el mismo efecto de una manera más sencilla y, sobretodo, que destaca por su legibilidad:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;solo_oro = df[df[&amp;quot;Gold&amp;quot;] &amp;gt; 0]
+solo_oro.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australia (AUS) [AUS] [Z]&lt;/th&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;139&lt;/td&gt;
+      &lt;td&gt;152&lt;/td&gt;
+      &lt;td&gt;177&lt;/td&gt;
+      &lt;td&gt;468&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;43&lt;/td&gt;
+      &lt;td&gt;144&lt;/td&gt;
+      &lt;td&gt;155&lt;/td&gt;
+      &lt;td&gt;181&lt;/td&gt;
+      &lt;td&gt;480&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Adicionalmente, podemos encadenar condiciones lógicas para construir consultas más complejas. Por ejemplo, ¿cuántos países han ganado al menos una medalla de oro en las olimpiadas de verano o en las de invierno?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;len(df[(df[&#39;Gold&#39;] &amp;gt; 0) | (df[&#39;Gold.1&#39;] &amp;gt; 0)])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;101
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esto es, 101 países. Recordemos que 100 países habían conseguido al menos una medalla de oro en las olimpiadas de verano, por lo que existe un país que ha ganado al menos una medalla de oro en las olimpiadas de invierno, pero ninguna en las de verano. ¿De qué país se trata?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[(df[&#39;Gold.1&#39;] &amp;gt; 0) &amp;amp; (df[&#39;Gold&#39;] == 0)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Liechtenstein (LIE)&lt;/th&gt;
+      &lt;td&gt;16&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;34&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: debido al orden en el que se efectúan las operaciones en &lt;em&gt;Python&lt;/em&gt; cada máscara booleana debe encerrarse entre paréntesis.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ejercicio&lt;/strong&gt;: escribe una consulta que devuelva los nombres de las personas que compraron productos cuyo valor es superior a tres dólares.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;purchase_1 = pd.Series({&#39;Name&#39;: &#39;Chris&#39;,
+                        &#39;Item Purchased&#39;: &#39;Dog Food&#39;,
+                        &#39;Cost&#39;: 22.50})
+purchase_2 = pd.Series({&#39;Name&#39;: &#39;Kevyn&#39;,
+                        &#39;Item Purchased&#39;: &#39;Kitty Litter&#39;,
+                        &#39;Cost&#39;: 2.50})
+purchase_3 = pd.Series({&#39;Name&#39;: &#39;Vinod&#39;,
+                        &#39;Item Purchased&#39;: &#39;Bird Seed&#39;,
+                        &#39;Cost&#39;: 5.00})
+
+df2 = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=[&#39;Store 1&#39;, &#39;Store 1&#39;, &#39;Store 2&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;purchase_1 = pd.Series({&#39;Name&#39;: &#39;Chris&#39;,
+                        &#39;Item Purchased&#39;: &#39;Dog Food&#39;,
+                        &#39;Cost&#39;: 22.50})
+purchase_2 = pd.Series({&#39;Name&#39;: &#39;Kevyn&#39;,
+                        &#39;Item Purchased&#39;: &#39;Kitty Litter&#39;,
+                        &#39;Cost&#39;: 2.50})
+purchase_3 = pd.Series({&#39;Name&#39;: &#39;Vinod&#39;,
+                        &#39;Item Purchased&#39;: &#39;Bird Seed&#39;,
+                        &#39;Cost&#39;: 5.00})
+
+df2 = pd.DataFrame([purchase_1, purchase_2, purchase_3], 
+                  index=[&#39;Store 1&#39;, &#39;Store 1&#39;, &#39;Store 2&#39;])
+
+df2[df2[&amp;quot;Cost&amp;quot;] &amp;gt; 3][&amp;quot;Name&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;Store 1    Chris
+Store 2    Vinod
+Name: Name, dtype: object
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;7-índices-en-dataframe&#34;&gt;7. Índices en DataFrame&lt;/h2&gt;
+
+&lt;p&gt;Además de las maneras que hemos visto para generar índices en un objeto de tipo &lt;code&gt;Series&lt;/code&gt; o &lt;code&gt;DataFrame&lt;/code&gt;, podemos utilizar la función &lt;code&gt;set_index()&lt;/code&gt;, que toma una lista de columnas y las convierte en índices para el objeto.&lt;/p&gt;
+
+&lt;p&gt;Hemos de actuar con cautela, porque la función no almacena el índice actual antes de sobreescribirlo por el nuevo. No obstante, siempre podemos crear una columna adicional en el conjunto de datos, que almacene el índice actual, antes de utilizar la mencionada función.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Afghanistan (AFG)&lt;/th&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Algeria (ALG)&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Argentina (ARG)&lt;/th&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Armenia (ARM)&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Australasia (ANZ) [ANZ]&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Imaginemos que deseamos indexar (almacenando previamente en una columna el índice actual por países) la anterior tabla por el número de medallas de oro conseguidas en las olimpiadas de verano:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;country&amp;quot;] = df.index  # guardamos el índice actual en una columna del conjunto de datos
+df = df.set_index(&amp;quot;Gold&amp;quot;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Afghanistan (AFG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;Algeria (ALG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;Argentina (ARG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Armenia (ARM)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Australasia (ANZ) [ANZ]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Por otro lado, podemos deshacernos directamente del índice asignado sin más que emplear la función &lt;code&gt;reset_index()&lt;/code&gt;, que almacena el actual en una columna del conjunto de datos (no en el orden que antes que estaba declarado) y genera un índice numérico nuevo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df.reset_index()
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Gold&lt;/th&gt;
+      &lt;th&gt;# Summer&lt;/th&gt;
+      &lt;th&gt;Silver&lt;/th&gt;
+      &lt;th&gt;Bronze&lt;/th&gt;
+      &lt;th&gt;Total&lt;/th&gt;
+      &lt;th&gt;# Winter&lt;/th&gt;
+      &lt;th&gt;Gold.1&lt;/th&gt;
+      &lt;th&gt;Silver.1&lt;/th&gt;
+      &lt;th&gt;Bronze.1&lt;/th&gt;
+      &lt;th&gt;Total.1&lt;/th&gt;
+      &lt;th&gt;# Games&lt;/th&gt;
+      &lt;th&gt;Gold.2&lt;/th&gt;
+      &lt;th&gt;Silver.2&lt;/th&gt;
+      &lt;th&gt;Bronze.2&lt;/th&gt;
+      &lt;th&gt;Combined total&lt;/th&gt;
+      &lt;th&gt;country&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Afghanistan (AFG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;Algeria (ALG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;41&lt;/td&gt;
+      &lt;td&gt;18&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;Argentina (ARG)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Armenia (ARM)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;Australasia (ANZ) [ANZ]&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A continuación, veamos una característica ciertamente útil de la librería &lt;code&gt;pandas&lt;/code&gt;: permite la existencia de múltiples índices (pasando una lista con varios elementos a la función &lt;code&gt;set_index()&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Para ver en acción esta funcionalidad, analicemos datos de censo, que suelen estar divididos por estado y ciudad, posibilitando así ver en acción múltiples índices:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = pd.read_csv(&amp;quot;data/census.csv&amp;quot;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;SUMLEV&lt;/th&gt;
+      &lt;th&gt;REGION&lt;/th&gt;
+      &lt;th&gt;DIVISION&lt;/th&gt;
+      &lt;th&gt;STATE&lt;/th&gt;
+      &lt;th&gt;COUNTY&lt;/th&gt;
+      &lt;th&gt;STNAME&lt;/th&gt;
+      &lt;th&gt;CTYNAME&lt;/th&gt;
+      &lt;th&gt;CENSUS2010POP&lt;/th&gt;
+      &lt;th&gt;ESTIMATESBASE2010&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2010&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2011&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2012&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2013&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2014&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2015&lt;/th&gt;
+      &lt;th&gt;RNETMIG2011&lt;/th&gt;
+      &lt;th&gt;RNETMIG2012&lt;/th&gt;
+      &lt;th&gt;RNETMIG2013&lt;/th&gt;
+      &lt;th&gt;RNETMIG2014&lt;/th&gt;
+      &lt;th&gt;RNETMIG2015&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;40&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;0&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;4779736&lt;/td&gt;
+      &lt;td&gt;4780127&lt;/td&gt;
+      &lt;td&gt;4785161&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;0.002295&lt;/td&gt;
+      &lt;td&gt;-0.193196&lt;/td&gt;
+      &lt;td&gt;0.381066&lt;/td&gt;
+      &lt;td&gt;0.582002&lt;/td&gt;
+      &lt;td&gt;-0.467369&lt;/td&gt;
+      &lt;td&gt;1.030015&lt;/td&gt;
+      &lt;td&gt;0.826644&lt;/td&gt;
+      &lt;td&gt;1.383282&lt;/td&gt;
+      &lt;td&gt;1.724718&lt;/td&gt;
+      &lt;td&gt;0.712594&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Autauga County&lt;/td&gt;
+      &lt;td&gt;54571&lt;/td&gt;
+      &lt;td&gt;54571&lt;/td&gt;
+      &lt;td&gt;54660&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;7.242091&lt;/td&gt;
+      &lt;td&gt;-2.915927&lt;/td&gt;
+      &lt;td&gt;-3.012349&lt;/td&gt;
+      &lt;td&gt;2.265971&lt;/td&gt;
+      &lt;td&gt;-2.530799&lt;/td&gt;
+      &lt;td&gt;7.606016&lt;/td&gt;
+      &lt;td&gt;-2.626146&lt;/td&gt;
+      &lt;td&gt;-2.722002&lt;/td&gt;
+      &lt;td&gt;2.592270&lt;/td&gt;
+      &lt;td&gt;-2.187333&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Baldwin County&lt;/td&gt;
+      &lt;td&gt;182265&lt;/td&gt;
+      &lt;td&gt;182265&lt;/td&gt;
+      &lt;td&gt;183193&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;14.832960&lt;/td&gt;
+      &lt;td&gt;17.647293&lt;/td&gt;
+      &lt;td&gt;21.845705&lt;/td&gt;
+      &lt;td&gt;19.243287&lt;/td&gt;
+      &lt;td&gt;17.197872&lt;/td&gt;
+      &lt;td&gt;15.844176&lt;/td&gt;
+      &lt;td&gt;18.559627&lt;/td&gt;
+      &lt;td&gt;22.727626&lt;/td&gt;
+      &lt;td&gt;20.317142&lt;/td&gt;
+      &lt;td&gt;18.293499&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Barbour County&lt;/td&gt;
+      &lt;td&gt;27457&lt;/td&gt;
+      &lt;td&gt;27457&lt;/td&gt;
+      &lt;td&gt;27341&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;-4.728132&lt;/td&gt;
+      &lt;td&gt;-2.500690&lt;/td&gt;
+      &lt;td&gt;-7.056824&lt;/td&gt;
+      &lt;td&gt;-3.904217&lt;/td&gt;
+      &lt;td&gt;-10.543299&lt;/td&gt;
+      &lt;td&gt;-4.874741&lt;/td&gt;
+      &lt;td&gt;-2.758113&lt;/td&gt;
+      &lt;td&gt;-7.167664&lt;/td&gt;
+      &lt;td&gt;-3.978583&lt;/td&gt;
+      &lt;td&gt;-10.543299&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Bibb County&lt;/td&gt;
+      &lt;td&gt;22915&lt;/td&gt;
+      &lt;td&gt;22919&lt;/td&gt;
+      &lt;td&gt;22861&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;-5.527043&lt;/td&gt;
+      &lt;td&gt;-5.068871&lt;/td&gt;
+      &lt;td&gt;-6.201001&lt;/td&gt;
+      &lt;td&gt;-0.177537&lt;/td&gt;
+      &lt;td&gt;0.177258&lt;/td&gt;
+      &lt;td&gt;-5.088389&lt;/td&gt;
+      &lt;td&gt;-4.363636&lt;/td&gt;
+      &lt;td&gt;-5.403729&lt;/td&gt;
+      &lt;td&gt;0.754533&lt;/td&gt;
+      &lt;td&gt;1.107861&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 100 columns&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df[&amp;quot;SUMLEV&amp;quot;].unique()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;array([40, 50], dtype=int64)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Mediante la función &lt;code&gt;unique()&lt;/code&gt; tenemos acceso a un listado con los diferentes valores recogidos en una columna concreta del conjunto de datos. Por ejemplo, para &lt;code&gt;SUMLEV&lt;/code&gt; encontramos únicamente dos valores distintos, &lt;code&gt;40&lt;/code&gt; y &lt;code&gt;50&lt;/code&gt;, según las estadísticas de resumen se hayan proporcionado a nivel de estado o de condado.&lt;/p&gt;
+
+&lt;p&gt;Quedemos con estas últimas aplicando una máscara booleana adecuada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df[df[&amp;quot;SUMLEV&amp;quot;] == 50]
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;SUMLEV&lt;/th&gt;
+      &lt;th&gt;REGION&lt;/th&gt;
+      &lt;th&gt;DIVISION&lt;/th&gt;
+      &lt;th&gt;STATE&lt;/th&gt;
+      &lt;th&gt;COUNTY&lt;/th&gt;
+      &lt;th&gt;STNAME&lt;/th&gt;
+      &lt;th&gt;CTYNAME&lt;/th&gt;
+      &lt;th&gt;CENSUS2010POP&lt;/th&gt;
+      &lt;th&gt;ESTIMATESBASE2010&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2010&lt;/th&gt;
+      &lt;th&gt;...&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2011&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2012&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2013&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2014&lt;/th&gt;
+      &lt;th&gt;RDOMESTICMIG2015&lt;/th&gt;
+      &lt;th&gt;RNETMIG2011&lt;/th&gt;
+      &lt;th&gt;RNETMIG2012&lt;/th&gt;
+      &lt;th&gt;RNETMIG2013&lt;/th&gt;
+      &lt;th&gt;RNETMIG2014&lt;/th&gt;
+      &lt;th&gt;RNETMIG2015&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Autauga County&lt;/td&gt;
+      &lt;td&gt;54571&lt;/td&gt;
+      &lt;td&gt;54571&lt;/td&gt;
+      &lt;td&gt;54660&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;7.242091&lt;/td&gt;
+      &lt;td&gt;-2.915927&lt;/td&gt;
+      &lt;td&gt;-3.012349&lt;/td&gt;
+      &lt;td&gt;2.265971&lt;/td&gt;
+      &lt;td&gt;-2.530799&lt;/td&gt;
+      &lt;td&gt;7.606016&lt;/td&gt;
+      &lt;td&gt;-2.626146&lt;/td&gt;
+      &lt;td&gt;-2.722002&lt;/td&gt;
+      &lt;td&gt;2.592270&lt;/td&gt;
+      &lt;td&gt;-2.187333&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Baldwin County&lt;/td&gt;
+      &lt;td&gt;182265&lt;/td&gt;
+      &lt;td&gt;182265&lt;/td&gt;
+      &lt;td&gt;183193&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;14.832960&lt;/td&gt;
+      &lt;td&gt;17.647293&lt;/td&gt;
+      &lt;td&gt;21.845705&lt;/td&gt;
+      &lt;td&gt;19.243287&lt;/td&gt;
+      &lt;td&gt;17.197872&lt;/td&gt;
+      &lt;td&gt;15.844176&lt;/td&gt;
+      &lt;td&gt;18.559627&lt;/td&gt;
+      &lt;td&gt;22.727626&lt;/td&gt;
+      &lt;td&gt;20.317142&lt;/td&gt;
+      &lt;td&gt;18.293499&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Barbour County&lt;/td&gt;
+      &lt;td&gt;27457&lt;/td&gt;
+      &lt;td&gt;27457&lt;/td&gt;
+      &lt;td&gt;27341&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;-4.728132&lt;/td&gt;
+      &lt;td&gt;-2.500690&lt;/td&gt;
+      &lt;td&gt;-7.056824&lt;/td&gt;
+      &lt;td&gt;-3.904217&lt;/td&gt;
+      &lt;td&gt;-10.543299&lt;/td&gt;
+      &lt;td&gt;-4.874741&lt;/td&gt;
+      &lt;td&gt;-2.758113&lt;/td&gt;
+      &lt;td&gt;-7.167664&lt;/td&gt;
+      &lt;td&gt;-3.978583&lt;/td&gt;
+      &lt;td&gt;-10.543299&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Bibb County&lt;/td&gt;
+      &lt;td&gt;22915&lt;/td&gt;
+      &lt;td&gt;22919&lt;/td&gt;
+      &lt;td&gt;22861&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;-5.527043&lt;/td&gt;
+      &lt;td&gt;-5.068871&lt;/td&gt;
+      &lt;td&gt;-6.201001&lt;/td&gt;
+      &lt;td&gt;-0.177537&lt;/td&gt;
+      &lt;td&gt;0.177258&lt;/td&gt;
+      &lt;td&gt;-5.088389&lt;/td&gt;
+      &lt;td&gt;-4.363636&lt;/td&gt;
+      &lt;td&gt;-5.403729&lt;/td&gt;
+      &lt;td&gt;0.754533&lt;/td&gt;
+      &lt;td&gt;1.107861&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;50&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Blount County&lt;/td&gt;
+      &lt;td&gt;57322&lt;/td&gt;
+      &lt;td&gt;57322&lt;/td&gt;
+      &lt;td&gt;57373&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;1.807375&lt;/td&gt;
+      &lt;td&gt;-1.177622&lt;/td&gt;
+      &lt;td&gt;-1.748766&lt;/td&gt;
+      &lt;td&gt;-2.062535&lt;/td&gt;
+      &lt;td&gt;-1.369970&lt;/td&gt;
+      &lt;td&gt;1.859511&lt;/td&gt;
+      &lt;td&gt;-0.848580&lt;/td&gt;
+      &lt;td&gt;-1.402476&lt;/td&gt;
+      &lt;td&gt;-1.577232&lt;/td&gt;
+      &lt;td&gt;-0.884411&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;5 rows × 100 columns&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Acto seguido, para trabajar con una tabla algo más manejable, restrinjamos sus columnas a nacimientos y estimaciones para la población, además de conservar también el nombre del estado y la correspondiente ciudad:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;columns_to_keep = [&#39;STNAME&#39;,
+                   &#39;CTYNAME&#39;,
+                   &#39;BIRTHS2010&#39;,
+                   &#39;BIRTHS2011&#39;,
+                   &#39;BIRTHS2012&#39;,
+                   &#39;BIRTHS2013&#39;,
+                   &#39;BIRTHS2014&#39;,
+                   &#39;BIRTHS2015&#39;,
+                   &#39;POPESTIMATE2010&#39;,
+                   &#39;POPESTIMATE2011&#39;,
+                   &#39;POPESTIMATE2012&#39;,
+                   &#39;POPESTIMATE2013&#39;,
+                   &#39;POPESTIMATE2014&#39;,
+                   &#39;POPESTIMATE2015&#39;]
+df = df[columns_to_keep]
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;STNAME&lt;/th&gt;
+      &lt;th&gt;CTYNAME&lt;/th&gt;
+      &lt;th&gt;BIRTHS2010&lt;/th&gt;
+      &lt;th&gt;BIRTHS2011&lt;/th&gt;
+      &lt;th&gt;BIRTHS2012&lt;/th&gt;
+      &lt;th&gt;BIRTHS2013&lt;/th&gt;
+      &lt;th&gt;BIRTHS2014&lt;/th&gt;
+      &lt;th&gt;BIRTHS2015&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2010&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2011&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2012&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2013&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2014&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2015&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Autauga County&lt;/td&gt;
+      &lt;td&gt;151&lt;/td&gt;
+      &lt;td&gt;636&lt;/td&gt;
+      &lt;td&gt;615&lt;/td&gt;
+      &lt;td&gt;574&lt;/td&gt;
+      &lt;td&gt;623&lt;/td&gt;
+      &lt;td&gt;600&lt;/td&gt;
+      &lt;td&gt;54660&lt;/td&gt;
+      &lt;td&gt;55253&lt;/td&gt;
+      &lt;td&gt;55175&lt;/td&gt;
+      &lt;td&gt;55038&lt;/td&gt;
+      &lt;td&gt;55290&lt;/td&gt;
+      &lt;td&gt;55347&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Baldwin County&lt;/td&gt;
+      &lt;td&gt;517&lt;/td&gt;
+      &lt;td&gt;2187&lt;/td&gt;
+      &lt;td&gt;2092&lt;/td&gt;
+      &lt;td&gt;2160&lt;/td&gt;
+      &lt;td&gt;2186&lt;/td&gt;
+      &lt;td&gt;2240&lt;/td&gt;
+      &lt;td&gt;183193&lt;/td&gt;
+      &lt;td&gt;186659&lt;/td&gt;
+      &lt;td&gt;190396&lt;/td&gt;
+      &lt;td&gt;195126&lt;/td&gt;
+      &lt;td&gt;199713&lt;/td&gt;
+      &lt;td&gt;203709&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Barbour County&lt;/td&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;335&lt;/td&gt;
+      &lt;td&gt;300&lt;/td&gt;
+      &lt;td&gt;283&lt;/td&gt;
+      &lt;td&gt;260&lt;/td&gt;
+      &lt;td&gt;269&lt;/td&gt;
+      &lt;td&gt;27341&lt;/td&gt;
+      &lt;td&gt;27226&lt;/td&gt;
+      &lt;td&gt;27159&lt;/td&gt;
+      &lt;td&gt;26973&lt;/td&gt;
+      &lt;td&gt;26815&lt;/td&gt;
+      &lt;td&gt;26489&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Bibb County&lt;/td&gt;
+      &lt;td&gt;44&lt;/td&gt;
+      &lt;td&gt;266&lt;/td&gt;
+      &lt;td&gt;245&lt;/td&gt;
+      &lt;td&gt;259&lt;/td&gt;
+      &lt;td&gt;247&lt;/td&gt;
+      &lt;td&gt;253&lt;/td&gt;
+      &lt;td&gt;22861&lt;/td&gt;
+      &lt;td&gt;22733&lt;/td&gt;
+      &lt;td&gt;22642&lt;/td&gt;
+      &lt;td&gt;22512&lt;/td&gt;
+      &lt;td&gt;22549&lt;/td&gt;
+      &lt;td&gt;22583&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;Alabama&lt;/td&gt;
+      &lt;td&gt;Blount County&lt;/td&gt;
+      &lt;td&gt;183&lt;/td&gt;
+      &lt;td&gt;744&lt;/td&gt;
+      &lt;td&gt;710&lt;/td&gt;
+      &lt;td&gt;646&lt;/td&gt;
+      &lt;td&gt;618&lt;/td&gt;
+      &lt;td&gt;603&lt;/td&gt;
+      &lt;td&gt;57373&lt;/td&gt;
+      &lt;td&gt;57711&lt;/td&gt;
+      &lt;td&gt;57776&lt;/td&gt;
+      &lt;td&gt;57734&lt;/td&gt;
+      &lt;td&gt;57658&lt;/td&gt;
+      &lt;td&gt;57673&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A continuación, observamos que la estructura del conjunto de datos admite, de manera ideal, dos índices: uno correspondiente al nombre del estado y otro al de la ciudad. Utilicemos adecuadamente la función &lt;code&gt;set_index()&lt;/code&gt; para conseguir tal característica:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df.set_index([&amp;quot;STNAME&amp;quot;, &amp;quot;CTYNAME&amp;quot;])
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;BIRTHS2010&lt;/th&gt;
+      &lt;th&gt;BIRTHS2011&lt;/th&gt;
+      &lt;th&gt;BIRTHS2012&lt;/th&gt;
+      &lt;th&gt;BIRTHS2013&lt;/th&gt;
+      &lt;th&gt;BIRTHS2014&lt;/th&gt;
+      &lt;th&gt;BIRTHS2015&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2010&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2011&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2012&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2013&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2014&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2015&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;STNAME&lt;/th&gt;
+      &lt;th&gt;CTYNAME&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;5&#34; valign=&#34;top&#34;&gt;Alabama&lt;/th&gt;
+      &lt;th&gt;Autauga County&lt;/th&gt;
+      &lt;td&gt;151&lt;/td&gt;
+      &lt;td&gt;636&lt;/td&gt;
+      &lt;td&gt;615&lt;/td&gt;
+      &lt;td&gt;574&lt;/td&gt;
+      &lt;td&gt;623&lt;/td&gt;
+      &lt;td&gt;600&lt;/td&gt;
+      &lt;td&gt;54660&lt;/td&gt;
+      &lt;td&gt;55253&lt;/td&gt;
+      &lt;td&gt;55175&lt;/td&gt;
+      &lt;td&gt;55038&lt;/td&gt;
+      &lt;td&gt;55290&lt;/td&gt;
+      &lt;td&gt;55347&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Baldwin County&lt;/th&gt;
+      &lt;td&gt;517&lt;/td&gt;
+      &lt;td&gt;2187&lt;/td&gt;
+      &lt;td&gt;2092&lt;/td&gt;
+      &lt;td&gt;2160&lt;/td&gt;
+      &lt;td&gt;2186&lt;/td&gt;
+      &lt;td&gt;2240&lt;/td&gt;
+      &lt;td&gt;183193&lt;/td&gt;
+      &lt;td&gt;186659&lt;/td&gt;
+      &lt;td&gt;190396&lt;/td&gt;
+      &lt;td&gt;195126&lt;/td&gt;
+      &lt;td&gt;199713&lt;/td&gt;
+      &lt;td&gt;203709&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Barbour County&lt;/th&gt;
+      &lt;td&gt;70&lt;/td&gt;
+      &lt;td&gt;335&lt;/td&gt;
+      &lt;td&gt;300&lt;/td&gt;
+      &lt;td&gt;283&lt;/td&gt;
+      &lt;td&gt;260&lt;/td&gt;
+      &lt;td&gt;269&lt;/td&gt;
+      &lt;td&gt;27341&lt;/td&gt;
+      &lt;td&gt;27226&lt;/td&gt;
+      &lt;td&gt;27159&lt;/td&gt;
+      &lt;td&gt;26973&lt;/td&gt;
+      &lt;td&gt;26815&lt;/td&gt;
+      &lt;td&gt;26489&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Bibb County&lt;/th&gt;
+      &lt;td&gt;44&lt;/td&gt;
+      &lt;td&gt;266&lt;/td&gt;
+      &lt;td&gt;245&lt;/td&gt;
+      &lt;td&gt;259&lt;/td&gt;
+      &lt;td&gt;247&lt;/td&gt;
+      &lt;td&gt;253&lt;/td&gt;
+      &lt;td&gt;22861&lt;/td&gt;
+      &lt;td&gt;22733&lt;/td&gt;
+      &lt;td&gt;22642&lt;/td&gt;
+      &lt;td&gt;22512&lt;/td&gt;
+      &lt;td&gt;22549&lt;/td&gt;
+      &lt;td&gt;22583&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Blount County&lt;/th&gt;
+      &lt;td&gt;183&lt;/td&gt;
+      &lt;td&gt;744&lt;/td&gt;
+      &lt;td&gt;710&lt;/td&gt;
+      &lt;td&gt;646&lt;/td&gt;
+      &lt;td&gt;618&lt;/td&gt;
+      &lt;td&gt;603&lt;/td&gt;
+      &lt;td&gt;57373&lt;/td&gt;
+      &lt;td&gt;57711&lt;/td&gt;
+      &lt;td&gt;57776&lt;/td&gt;
+      &lt;td&gt;57734&lt;/td&gt;
+      &lt;td&gt;57658&lt;/td&gt;
+      &lt;td&gt;57673&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ahora, para consultar, por ejemplo, los datos de &lt;em&gt;Washtenaw County&lt;/em&gt;, hemos de pasar al atributo &lt;code&gt;loc&lt;/code&gt; también el valor del estado donde se encuentra dicha ciudad, &lt;em&gt;Michigan&lt;/em&gt;, y respetando el orden declarado arriba en el interior de la función &lt;code&gt;set_index()&lt;/code&gt;(estado, ciudad).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[&amp;quot;Michigan&amp;quot;, &amp;quot;Washtenaw County&amp;quot;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;BIRTHS2010            977
+BIRTHS2011           3826
+BIRTHS2012           3780
+BIRTHS2013           3662
+BIRTHS2014           3683
+BIRTHS2015           3709
+POPESTIMATE2010    345563
+POPESTIMATE2011    349048
+POPESTIMATE2012    351213
+POPESTIMATE2013    354289
+POPESTIMATE2014    357029
+POPESTIMATE2015    358880
+Name: (Michigan, Washtenaw County), dtype: int64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De esta manera, generar tablas comparativas entre diferentes ciudades de interés es sumamente sencillo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.loc[[(&amp;quot;Michigan&amp;quot;, &amp;quot;Washtenaw County&amp;quot;),
+        (&amp;quot;Michigan&amp;quot;, &amp;quot;Wayne County&amp;quot;)]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;BIRTHS2010&lt;/th&gt;
+      &lt;th&gt;BIRTHS2011&lt;/th&gt;
+      &lt;th&gt;BIRTHS2012&lt;/th&gt;
+      &lt;th&gt;BIRTHS2013&lt;/th&gt;
+      &lt;th&gt;BIRTHS2014&lt;/th&gt;
+      &lt;th&gt;BIRTHS2015&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2010&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2011&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2012&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2013&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2014&lt;/th&gt;
+      &lt;th&gt;POPESTIMATE2015&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;STNAME&lt;/th&gt;
+      &lt;th&gt;CTYNAME&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;Michigan&lt;/th&gt;
+      &lt;th&gt;Washtenaw County&lt;/th&gt;
+      &lt;td&gt;977&lt;/td&gt;
+      &lt;td&gt;3826&lt;/td&gt;
+      &lt;td&gt;3780&lt;/td&gt;
+      &lt;td&gt;3662&lt;/td&gt;
+      &lt;td&gt;3683&lt;/td&gt;
+      &lt;td&gt;3709&lt;/td&gt;
+      &lt;td&gt;345563&lt;/td&gt;
+      &lt;td&gt;349048&lt;/td&gt;
+      &lt;td&gt;351213&lt;/td&gt;
+      &lt;td&gt;354289&lt;/td&gt;
+      &lt;td&gt;357029&lt;/td&gt;
+      &lt;td&gt;358880&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Wayne County&lt;/th&gt;
+      &lt;td&gt;5918&lt;/td&gt;
+      &lt;td&gt;23819&lt;/td&gt;
+      &lt;td&gt;23270&lt;/td&gt;
+      &lt;td&gt;23377&lt;/td&gt;
+      &lt;td&gt;23607&lt;/td&gt;
+      &lt;td&gt;23586&lt;/td&gt;
+      &lt;td&gt;1815199&lt;/td&gt;
+      &lt;td&gt;1801273&lt;/td&gt;
+      &lt;td&gt;1792514&lt;/td&gt;
+      &lt;td&gt;1775713&lt;/td&gt;
+      &lt;td&gt;1766008&lt;/td&gt;
+      &lt;td&gt;1759335&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Finalmente, el concepto de índices múltiples no se restringe únicamente a las filas, sino que también es posible obtener esta característica para las columnas. Basta trasponer el conjunto de datos (mediante el atributo &lt;code&gt;T&lt;/code&gt;) y utilizar adecuadamente la función &lt;code&gt;set_index()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Ejercicio&lt;/strong&gt;: indexa los registros de compras del siguiente &lt;code&gt;DataFrama&lt;/code&gt; jerárquicamente, primero por tienda y luego por persona. Designa dichos índices como &lt;code&gt;&amp;quot;Location&amp;quot;&lt;/code&gt; y &lt;code&gt;&amp;quot;Nombre&amp;quot;&lt;/code&gt;. Después, añade un nuevo registro a la tabla con el siguiente valor:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Name: &#39;Kevyn&#39;, Item Purchased: &#39;Kitty Food&#39;, Cost: 3.00 Location: &#39;Store 2&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;purchase_1 = pd.Series({&#39;Name&#39;: &#39;Chris&#39;,
+                        &#39;Item Purchased&#39;: &#39;Dog Food&#39;,
+                        &#39;Cost&#39;: 22.50})
+purchase_2 = pd.Series({&#39;Name&#39;: &#39;Kevyn&#39;,
+                        &#39;Item Purchased&#39;: &#39;Kitty Litter&#39;,
+                        &#39;Cost&#39;: 2.50})
+purchase_3 = pd.Series({&#39;Name&#39;: &#39;Vinod&#39;,
+                        &#39;Item Purchased&#39;: &#39;Bird Seed&#39;,
+                        &#39;Cost&#39;: 5.00})
+
+df = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=[&#39;Store 1&#39;, &#39;Store 1&#39;, &#39;Store 2&#39;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;purchase_1 = pd.Series({&#39;Name&#39;: &#39;Chris&#39;,
+                        &#39;Item Purchased&#39;: &#39;Dog Food&#39;,
+                        &#39;Cost&#39;: 22.50})
+purchase_2 = pd.Series({&#39;Name&#39;: &#39;Kevyn&#39;,
+                        &#39;Item Purchased&#39;: &#39;Kitty Litter&#39;,
+                        &#39;Cost&#39;: 2.50})
+purchase_3 = pd.Series({&#39;Name&#39;: &#39;Vinod&#39;,
+                        &#39;Item Purchased&#39;: &#39;Bird Seed&#39;,
+                        &#39;Cost&#39;: 5.00})
+
+df = pd.DataFrame([purchase_1, purchase_2, purchase_3], 
+                  index=[&#39;Store 1&#39;, &#39;Store 1&#39;, &#39;Store 2&#39;])
+
+
+df = df.set_index([df.index, &#39;Name&#39;])
+df.index.names = [&#39;Location&#39;, &#39;Name&#39;]
+df = df.append(pd.Series(data={&#39;Cost&#39;: 3.00, 
+                               &#39;Item Purchased&#39;: &#39;Kitty Food&#39;}, 
+                         name=(&#39;Store 2&#39;, &#39;Kevyn&#39;)))
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;Item Purchased&lt;/th&gt;
+      &lt;th&gt;Cost&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Location&lt;/th&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;Store 1&lt;/th&gt;
+      &lt;th&gt;Chris&lt;/th&gt;
+      &lt;td&gt;Dog Food&lt;/td&gt;
+      &lt;td&gt;22.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Kevyn&lt;/th&gt;
+      &lt;td&gt;Kitty Litter&lt;/td&gt;
+      &lt;td&gt;2.5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;Store 2&lt;/th&gt;
+      &lt;th&gt;Vinod&lt;/th&gt;
+      &lt;td&gt;Bird Seed&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Kevyn&lt;/th&gt;
+      &lt;td&gt;Kitty Food&lt;/td&gt;
+      &lt;td&gt;3.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;8-valores-perdidos&#34;&gt;8. Valores perdidos&lt;/h2&gt;
+
+&lt;p&gt;Dado que es bastante frecuente encontrar valores perdidos en conjuntos de datos, veamos cómo podemos gestionarlos con la librería &lt;code&gt;pandas&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para empezar, importemos un conjunto de datos que registra la actividad de visualización de vídeos de algunos estudiantes en una plataforma de aprendizaje en línea.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&amp;quot;data/log.csv&amp;quot;)
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+      &lt;th&gt;video&lt;/th&gt;
+      &lt;th&gt;playback position&lt;/th&gt;
+      &lt;th&gt;paused&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;0&lt;/th&gt;
+      &lt;td&gt;1469974424&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;td&gt;1469974454&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;td&gt;1469974544&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;td&gt;1469974574&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;td&gt;1469977514&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;td&gt;1469977544&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;td&gt;1469977574&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;td&gt;1469977604&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;td&gt;1469974604&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;td&gt;1469974694&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;10&lt;/th&gt;
+      &lt;td&gt;1469974724&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;11&lt;/th&gt;
+      &lt;td&gt;1469974454&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;12&lt;/th&gt;
+      &lt;td&gt;1469974524&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;13&lt;/th&gt;
+      &lt;td&gt;1469974424&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;14&lt;/th&gt;
+      &lt;td&gt;1469974554&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;15&lt;/th&gt;
+      &lt;td&gt;1469974624&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;16&lt;/th&gt;
+      &lt;td&gt;1469974654&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;17&lt;/th&gt;
+      &lt;td&gt;1469974724&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;18&lt;/th&gt;
+      &lt;td&gt;1469974484&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;19&lt;/th&gt;
+      &lt;td&gt;1469974514&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;20&lt;/th&gt;
+      &lt;td&gt;1469974754&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;21&lt;/th&gt;
+      &lt;td&gt;1469974824&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;22&lt;/th&gt;
+      &lt;td&gt;1469974854&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;23&lt;/th&gt;
+      &lt;td&gt;1469974924&lt;/td&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;24&lt;/th&gt;
+      &lt;td&gt;1469977424&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25&lt;/th&gt;
+      &lt;td&gt;1469977454&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;26&lt;/th&gt;
+      &lt;td&gt;1469977484&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;27&lt;/th&gt;
+      &lt;td&gt;1469977634&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;28&lt;/th&gt;
+      &lt;td&gt;1469977664&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;29&lt;/th&gt;
+      &lt;td&gt;1469974634&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;30&lt;/th&gt;
+      &lt;td&gt;1469974664&lt;/td&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;31&lt;/th&gt;
+      &lt;td&gt;1469977694&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;32&lt;/th&gt;
+      &lt;td&gt;1469977724&lt;/td&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;La columna &lt;code&gt;time&lt;/code&gt; registra, respecto a &lt;em&gt;Epoch&lt;/em&gt;, cuándo se accedió a un determinado vídeo por un usuario concreto (columnas &lt;code&gt;video&lt;/code&gt; y &lt;code&gt;user&lt;/code&gt;). Además, tenemos información sobre qué momento del vídeo está visualizando el estudiante (&lt;code&gt;playback position&lt;/code&gt;), el volumen (&lt;code&gt;volume&lt;/code&gt;) y si está pausado dicho recurso (&lt;code&gt;paused&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Podemos observar que existe gran cantidad de valores perdidos en este conjunto de datos. Ello se explica porque el sistema, si no hay cambio significativo en el estado de la información de cierta columna, simplemente inserta &lt;code&gt;NaN&lt;/code&gt; como registro.&lt;/p&gt;
+
+&lt;p&gt;Una útil función, para trabajar con valores perdidos, que incorpora la librería &lt;code&gt;pandas&lt;/code&gt; es &lt;code&gt;fillna()&lt;/code&gt;, que en su parámetro &lt;code&gt;method&lt;/code&gt; nos permite, por ejemplo, asignar a un valor perdido el valor existente en el registro anterior (&lt;code&gt;method=ffil&lt;/code&gt;) o en el posterior (&lt;code&gt;method=bfill&lt;/code&gt;).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df.fillna?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, para aplicar los anteriores métodos, hemos de ordenar el conjunto de datos previamente. Para ello, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df.set_index(&amp;quot;time&amp;quot;)
+df = df.sort_index()
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+      &lt;th&gt;video&lt;/th&gt;
+      &lt;th&gt;playback position&lt;/th&gt;
+      &lt;th&gt;paused&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974424&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974424&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974454&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974454&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974484&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974514&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974524&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974544&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974554&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974574&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974604&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974624&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974634&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974654&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974664&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974694&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974724&lt;/th&gt;
+      &lt;td&gt;cheryl&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974724&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974754&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974824&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974854&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974924&lt;/th&gt;
+      &lt;td&gt;sue&lt;/td&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977424&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977454&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977484&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977514&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977544&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977574&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977604&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977634&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977664&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977694&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977724&lt;/th&gt;
+      &lt;td&gt;bob&lt;/td&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Ahora bien, examinando el resultado, apreciamos que, en ocasiones, dos usuarios utilizan el sistema al mismo tiempo (situación habitual en grandes plataformas de aprendizaje en línea). Por tanto, en este caso particular, utilizar múltiples índices es una buena idea.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df.reset_index()
+df = df.set_index([&amp;quot;time&amp;quot;, &amp;quot;user&amp;quot;])
+df
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;video&lt;/th&gt;
+      &lt;th&gt;playback position&lt;/th&gt;
+      &lt;th&gt;paused&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;1469974424&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;1469974454&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974484&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974514&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974524&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974544&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974554&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;26&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974574&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974604&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;11&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974624&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;27&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974634&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;12&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974654&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;5.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974664&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;13&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974694&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;14&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;1469974724&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;29&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974754&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974824&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;31&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974854&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974924&lt;/th&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;33&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977424&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977454&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977484&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977514&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977544&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977574&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977604&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977634&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977664&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977694&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469977724&lt;/th&gt;
+      &lt;th&gt;bob&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+      &lt;td&gt;NaN&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Acto seguido, utilizamos la función &lt;code&gt;fillna()&lt;/code&gt;, pasándole como argumento el valor &lt;code&gt;&amp;quot;ffill&amp;quot;&lt;/code&gt; al parámetro &lt;code&gt;method&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df = df.fillna(method=&amp;quot;ffill&amp;quot;)
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div&gt;
+&lt;style scoped&gt;
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+&lt;/style&gt;
+&lt;table border=&#34;1&#34; class=&#34;dataframe&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr style=&#34;text-align: right;&#34;&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;video&lt;/th&gt;
+      &lt;th&gt;playback position&lt;/th&gt;
+      &lt;th&gt;paused&lt;/th&gt;
+      &lt;th&gt;volume&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;time&lt;/th&gt;
+      &lt;th&gt;user&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+      &lt;th&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;1469974424&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;23&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th rowspan=&#34;2&#34; valign=&#34;top&#34;&gt;1469974454&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;sue&lt;/th&gt;
+      &lt;td&gt;advanced.html&lt;/td&gt;
+      &lt;td&gt;24&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;1469974484&lt;/th&gt;
+      &lt;th&gt;cheryl&lt;/th&gt;
+      &lt;td&gt;intro.html&lt;/td&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;False&lt;/td&gt;
+      &lt;td&gt;10.0&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: muchas funciones, por defecto, ignoran los valores perdidos a la hora de realizar cálculos. Hemos de proceder pues con cautela si este comportamiento no es el que nos interesa.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>2. Introducción a Python</title>
       <link>https://imalexissaez.github.io/courses/python-basic/pb02-introduccion/</link>
       <pubDate>Sun, 28 Apr 2019 00:01:01 +0100</pubDate>
@@ -10343,6 +14938,30 @@ mi_conexion.close()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/58/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>59. Práctica guiada I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb59-practica-guiada-i/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb59-practica-guiada-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/E0OqddzjFUY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, y con el objetivo de reforzar los contenidos vistos hasta la fecha, comenzaremos a esbozar una aplicación gráfica de tipo &lt;em&gt;CRUD&lt;/em&gt;. Mediante ella, conectaremos con una base de datos (BBDD) y podremos realizar las operaciones básicas: &lt;em&gt;Create&lt;/em&gt;, &lt;em&gt;Read&lt;/em&gt;, &lt;em&gt;Update&lt;/em&gt; y &lt;em&gt;Delete&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;En el vídeo se explican los diferentes elementos y funcionalidades que caracterizan a la aplicación propuesta, por si queremos lanzarnos a su elaboración de antemano. No obstante, se procederá a su implementación en posteriores lecciones.&lt;/p&gt;
 </description>
     </item>
     

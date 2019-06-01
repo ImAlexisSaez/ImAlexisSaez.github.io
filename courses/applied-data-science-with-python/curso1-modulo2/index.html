@@ -1,0 +1,5192 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="1. Introducción En este módulo, investigaremos cómo Python, dado un conjunto de datos, puede realizar manipulaciones, proceder a su limpieza y llevar a cabo consultas a través de la librería pandas. Para resolver dudas sobre el uso de este módulo, cuatro buenos recursos son:
+ El portal Stack Overflow. Los libros Python for Data Analysis y Learning the Pandas Library. El agregador de blogs Planet Python. El podcast Data Skeptic.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/applied-data-science-with-python/curso1-modulo2/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/applied-data-science-with-python/curso1-modulo2/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/applied-data-science-with-python/curso1-modulo2/">
+  <meta property="og:title" content="Módulo 2 | Infinitos Contrastes">
+  <meta property="og:description" content="1. Introducción En este módulo, investigaremos cómo Python, dado un conjunto de datos, puede realizar manipulaciones, proceder a su limpieza y llevar a cabo consultas a través de la librería pandas. Para resolver dudas sobre el uso de este módulo, cuatro buenos recursos son:
+ El portal Stack Overflow. Los libros Python for Data Analysis y Learning the Pandas Library. El agregador de blogs Planet Python. El podcast Data Skeptic."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-06-01T00:00:01&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-06-01T00:00:01&#43;01:00">
+  
+
+  
+
+  
+
+  <title>Módulo 2 | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      
+
+
+
+
+<form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" id="search-query" placeholder="Buscar..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/applied-data-science-with-python/">Presentación</a>
+
+  </div>
+  
+  <div class="docs-toc-item">
+    <a class="docs-toc-link" href="/courses/applied-data-science-with-python/curso1-modulo1/">Curso 1</a>
+    <ul class="nav docs-sidenav">
+      
+      <li >
+        <a href="/courses/applied-data-science-with-python/curso1-modulo1/">Módulo 1</a>
+      </li>
+      
+      <li class="active">
+        <a href="/courses/applied-data-science-with-python/curso1-modulo2/">Módulo 2</a>
+      </li>
+      
+    </ul>
+    
+
+  </div>
+  
+  
+</nav>
+
+    </div>
+
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+      <p class="docs-toc-title">En esta página</p>
+      
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-introducción">1. Introducción</a></li>
+<li><a href="#2-la-estructura-de-datos-series">2. La estructura de datos Series</a></li>
+<li><a href="#3-extracción-de-elementos-en-series">3. Extracción de elementos en Series</a></li>
+<li><a href="#4-la-estrutura-de-datos-dataframe">4. La estrutura de datos DataFrame</a></li>
+<li><a href="#5-lectura-de-archivos-como-dataframe">5. Lectura de archivos como DataFrame</a></li>
+<li><a href="#6-consultas-en-dataframe">6. Consultas en DataFrame</a></li>
+<li><a href="#7-índices-en-dataframe">7. Índices en DataFrame</a></li>
+<li><a href="#8-valores-perdidos">8. Valores perdidos</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      <ul class="nav toc-top">
+        <li><a href="#">Regreso al inicio</a></li>
+      </ul>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article" itemscope itemtype="http://schema.org/Article">
+
+        <div class="docs-article-container">
+          <h1 itemprop="name">Módulo 2</h1>
+
+          <div class="article-style" itemprop="articleBody">
+            
+
+<h2 id="1-introducción">1. Introducción</h2>
+
+<p>En este módulo, investigaremos cómo <em>Python</em>, dado un conjunto de datos, puede realizar manipulaciones, proceder a su limpieza y llevar a cabo consultas a través de la librería <code>pandas</code>. Para resolver dudas sobre el uso de este módulo, cuatro buenos recursos son:</p>
+
+<ul>
+<li>El portal <a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a>.</li>
+<li>Los libros <a href="https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1491957662/" target="_blank">Python for Data Analysis</a> y <a href="https://www.amazon.com/Learning-Pandas-Library-Munging-Analysis/dp/153359824X/" target="_blank">Learning the Pandas Library</a>.</li>
+<li>El agregador de blogs <a href="https://planetpython.org/" target="_blank">Planet Python</a>.</li>
+<li>El podcast <a href="https://dataskeptic.com/" target="_blank">Data Skeptic</a>.</li>
+</ul>
+
+<h2 id="2-la-estructura-de-datos-series">2. La estructura de datos Series</h2>
+
+<p>La estructura de datos <code>Series</code>, de la librería <code>pandas</code>, es una especie de mezcla entre las listas y los diccionarios de <em>Python</em> que estudiamos en el módulo anterior. Los elementos se almacenan en orden y tenemos a nuestra disposición una serie de etiquetas (<em>labels</em>), que nos permiten un acceso a ellos por nombre.</p>
+
+<p>Empecemos importando la propia librería <code>pandas</code> que, por convención, habitualmente utiliza el <em>alias</em> <code>pd</code>. Desde el <em>notebook</em> de <em>Jupyter</em> podemos acceder a la documentación para la estructura de datos <code>Series</code> si tecleamos <code>pd.Series?</code>.</p>
+
+<pre><code class="language-python">import pandas as pd
+pd.Series?
+</code></pre>
+
+<p>En primer lugar, generemos una lista de animales y convirtámosla a un objeto de la clase <code>Series</code>:</p>
+
+<pre><code class="language-python">animales = [&quot;Tigre&quot;, &quot;Oso&quot;, &quot;Alce&quot;]
+pd.Series(animales)
+</code></pre>
+
+<pre><code>0    Tigre
+1      Oso
+2     Alce
+dtype: object
+</code></pre>
+
+<p>Análogamente, repitamos el proceso para una lista de números enteros:</p>
+
+<pre><code class="language-python">numeros = [1, 2, 3]
+pd.Series(numeros)
+</code></pre>
+
+<pre><code>0    1
+1    2
+2    3
+dtype: int64
+</code></pre>
+
+<p>En ambos casos, observamos una primera columna de índices numéricos, que podríamos utilizar para acceder a los elementos de esta estructura de la manera que estamos habituados en <em>Python</em>. Cabe destacar también el atributo <code>dtype</code>, diferente para ambos objetos y que se adapta automáticamente (aunque lo podemos declarar manualmente) al tipo de los elementos de la lista. Con ello, <em>Python</em> trabaja de manera más eficiente, tanto en memoria, como a la hora de llevar a cabo operaciones.</p>
+
+<p>Por otro lado, la instrucción <code>None</code> nos permite indicar la ausencia de ciertos registros en nuestros conjuntos datos (los conocidos <em>valores perdidos</em>). No obstante, hemos de ser cautos, pues según el tipo del resto de elementos, <code>None</code> se almacena de manera diferente.</p>
+
+<pre><code class="language-python">animales = [&quot;Tigre&quot;, &quot;Oso&quot;, None]
+pd.Series(animales)
+</code></pre>
+
+<pre><code>0    Tigre
+1      Oso
+2     None
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">numeros = [1, 2, None]
+pd.Series(numeros)
+</code></pre>
+
+<pre><code>0    1.0
+1    2.0
+2    NaN
+dtype: float64
+</code></pre>
+
+<p>En el primer caso, vemos que se registra como un objeto, mientras que en el segundo lo hace como un número especial en coma flotante: <code>NaN</code>. En cualquier caso, es diferente a <code>None</code>, como podemos comprobar a continuación:</p>
+
+<pre><code class="language-python">import numpy as np
+np.nan == None
+</code></pre>
+
+<pre><code>False
+</code></pre>
+
+<p>Curiosamente, también falla el test de comparación con respecto a sí mismo. La lógica tras esta decisión es que dos valores perdidos cualesquiera no tienen porqué coincidir.</p>
+
+<pre><code class="language-python">np.nan == np.nan
+</code></pre>
+
+<pre><code>False
+</code></pre>
+
+<p>Por tanto, para comprobar la existencia de valores perdidos, hemos de recurrir a la función <code>isnan()</code> de la librería <em>NumPy</em>:</p>
+
+<pre><code class="language-python">np.isnan(np.nan)
+</code></pre>
+
+<pre><code>True
+</code></pre>
+
+<p>A continuación, veamos cómo crear un objeto de tipo <code>Series</code> a partir de un diccionario. De proceder de tal modo, la columna de índices estará compuesta por las claves del propio diccionario (y no por números enteros):</p>
+
+<pre><code class="language-python">deportes = {&quot;Fútbol&quot;: &quot;España&quot;,
+            &quot;Golf&quot;: &quot;Italia&quot;,
+            &quot;Baloncesto&quot;: &quot;Francia&quot;,
+            &quot;Kárate&quot;: &quot;Japón&quot;}
+d = pd.Series(deportes)
+d
+</code></pre>
+
+<pre><code>Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+</code></pre>
+
+<p>Para acceder a los índices de la estructura creada, hemos de utilizar el atributo <code>index</code>:</p>
+
+<pre><code class="language-python">d.index
+</code></pre>
+
+<pre><code>Index(['Fútbol', 'Golf', 'Baloncesto', 'Kárate'], dtype='object')
+</code></pre>
+
+<p>De hecho, no tenemos que recurrir necesariamente al uso de un diccionario para acceder a etiquetas con nombres. En los ejemplos que vimos al principio de este apartado, basta que configuremos adecuadamente el valor del parámetro <code>index</code> para conseguir la misma funcionalidad que arriba:</p>
+
+<pre><code class="language-python">a = pd.Series([&quot;Tigre&quot;, &quot;Oso&quot;, &quot;Alce&quot;], index=[&quot;India&quot;, &quot;Estados Unidos&quot;, &quot;Canadá&quot;])
+a
+</code></pre>
+
+<pre><code>India             Tigre
+Estados Unidos      Oso
+Canadá             Alce
+dtype: object
+</code></pre>
+
+<p>Es más, mediante dicho parámetro, podemos restringir la creación del objeto <code>Series</code> a los valores que nos interesen de un determinado diccionario (y automáticamente proveerá de valores <code>NaN</code> si alguna de las claves no figura en el mencionado diccionario):</p>
+
+<pre><code class="language-python">deportes = {&quot;Fútbol&quot;: &quot;España&quot;,
+            &quot;Golf&quot;: &quot;Italia&quot;,
+            &quot;Baloncesto&quot;: &quot;Francia&quot;,
+            &quot;Kárate&quot;: &quot;Japón&quot;}
+d = pd.Series(deportes, index=[&quot;Fútbol&quot;, &quot;Golf&quot;, &quot;Baloncesto&quot;])
+d
+</code></pre>
+
+<pre><code>Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">d = pd.Series(deportes, index=[&quot;Fútbol&quot;, &quot;Balonmano&quot;, &quot;Golf&quot;])
+d
+</code></pre>
+
+<pre><code>Fútbol       España
+Balonmano       NaN
+Golf         Italia
+dtype: object
+</code></pre>
+
+<h2 id="3-extracción-de-elementos-en-series">3. Extracción de elementos en Series</h2>
+
+<p>Para empezar, retomemos uno de los últimos ejemplos de la sección anterior:</p>
+
+<pre><code class="language-python">deportes = {&quot;Fútbol&quot;: &quot;España&quot;,
+            &quot;Golf&quot;: &quot;Italia&quot;,
+            &quot;Baloncesto&quot;: &quot;Francia&quot;,
+            &quot;Kárate&quot;: &quot;Japón&quot;}
+d = pd.Series(deportes)
+d
+</code></pre>
+
+<pre><code>Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+</code></pre>
+
+<p>Existen cuatro maneras diferentes de acceder a los valores almacenados en <code>deportes</code>. Si nos preguntamos a qué país está asociada la etiqueta <code>&quot;Golf&quot;</code> y sabemos que almacenamos este registro en segundo lugar, podemos emplear el atributo <code>iloc</code>:</p>
+
+<pre><code class="language-python">d.iloc[1]
+</code></pre>
+
+<pre><code>'Italia'
+</code></pre>
+
+<p>No obstante, es difícil recordar el orden en el que introdujimos los datos, y más cuando cierto tiempo ha transcurrido desde entonces. Por ello, es interesante que conozcamos la existencia del atributo <code>loc</code>, que nos permite acceder al valor mediante su etiqueta explícita:</p>
+
+<pre><code class="language-python">d.loc[&quot;Golf&quot;]
+</code></pre>
+
+<pre><code>'Italia'
+</code></pre>
+
+<p><em>Nota técnica</em>: notemos que <code>iloc</code> y <code>loc</code> son atributos, por lo que no hemos de utilizar paréntesis <code>()</code> cuando los empleamos.</p>
+
+<p>La manera en que están programados los accesos en <code>pandas</code> busca conseguir la máxima legibilidad posible. Por ejemplo, si directamente utilizamos el operador de índice <code>[]</code> con un valor numérico, <code>pandas</code> empleará el atributo <code>iloc</code>; mientras que si es otro tipo de valor, recurrirá al atributo <code>loc</code>.</p>
+
+<pre><code class="language-python">d[1]
+</code></pre>
+
+<pre><code>'Italia'
+</code></pre>
+
+<pre><code class="language-python">d[&quot;Golf&quot;]
+</code></pre>
+
+<pre><code>'Italia'
+</code></pre>
+
+<p>Esta manera de proceder puede ser fuente de complicaciones cuando los índices son, asimismo, valores numéricos. En esta situación, <code>pandas</code> no puede determinar directamente si estamos accediendo a un valor vía referencia numérica o mediante etiquetas.</p>
+
+<pre><code class="language-python">numeros = {90: &quot;Noventa&quot;,
+           91: &quot;Noventa y uno&quot;,
+           92: &quot;Noventa y dos&quot;,
+           93: &quot;Noventa y tres&quot;}
+n = pd.Series(numeros)
+n
+</code></pre>
+
+<pre><code>90           Noventa
+91     Noventa y uno
+92     Noventa y dos
+93    Noventa y tres
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">n[0]  # No accede al primer elemento, como en las listas. No hay índice etiquetado 0 aquí.
+</code></pre>
+
+<pre><code>---------------------------------------------------------------------------
+
+KeyError                                  Traceback (most recent call last)
+
+&lt;ipython-input-20-56e5e6858fee&gt; in &lt;module&gt;
+----&gt; 1 n[0]  # No accede al primer elemento, como en las listas. No hay índice etiquetado 0 aquí.
+
+
+~\Anaconda3\lib\site-packages\pandas\core\series.py in __getitem__(self, key)
+    866         key = com.apply_if_callable(key, self)
+    867         try:
+--&gt; 868             result = self.index.get_value(self, key)
+    869 
+    870             if not is_scalar(result):
+
+
+~\Anaconda3\lib\site-packages\pandas\core\indexes\base.py in get_value(self, series, key)
+   4373         try:
+   4374             return self._engine.get_value(s, k,
+-&gt; 4375                                           tz=getattr(series.dtype, 'tz', None))
+   4376         except KeyError as e1:
+   4377             if len(self) &gt; 0 and (self.holds_integer() or self.is_boolean()):
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_value()
+
+
+pandas/_libs/index.pyx in pandas._libs.index.IndexEngine.get_loc()
+
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.Int64HashTable.get_item()
+
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.Int64HashTable.get_item()
+
+
+KeyError: 0
+</code></pre>
+
+<pre><code class="language-python">n.iloc[0]
+</code></pre>
+
+<p>En estos casos, como acabamos de ver arriba, conviene utilizar explícitamente los atributos <code>iloc</code> y <code>loc</code>.</p>
+
+<p>A continuación, veamos cómo trabajar con los valores de un objeto de tipo <code>Series</code>. Por ejemplo, nos puede interesar calcular la suma total de los elementos de una serie numérica de valores en coma flotante, almacenada mediante esta estructura de datos.</p>
+
+<pre><code class="language-python">s = pd.Series([100.00, 120.00, 101.00, 3.00])
+s
+</code></pre>
+
+<pre><code>0    100.0
+1    120.0
+2    101.0
+3      3.0
+dtype: float64
+</code></pre>
+
+<p>Un posible enfoque consiste en iterar sobre los elementos de <code>s</code> a través de un bucle de tipo <code>for</code>:</p>
+
+<pre><code class="language-python">total = 0
+for item in s:
+    total += item
+print(total)
+</code></pre>
+
+<pre><code>324.0
+</code></pre>
+
+<p>No obstante, la librería <code>numpy</code> dispone de un método que realiza la misma tarea de una manera más eficiente (en consumo de memoria y tiempo):</p>
+
+<pre><code class="language-python">total = np.sum(s)
+print(total)
+</code></pre>
+
+<pre><code>324.0
+</code></pre>
+
+<p>¿Cómo podemos comprobar que, efectivamente, conviene utilizar las funciones que estas librerías proporcionan, en lugar de utilizar nuestros propios bucles? Llevemos a cabo un pequeño experimento declarando una serie de 10000 números aleatorios (cada uno de ellos comprendido entre 0 y 999) y procediendo a su suma. El <em>magic command</em> <code>%%timeit</code> nos permitirá acceder al tiempo de computación del proceso, que repetiremos 100 veces para conseguir así un tiempo medio representativo.</p>
+
+<pre><code class="language-python">s = pd.Series(np.random.randint(0, 1000, 10000))
+s.head()  # Imprime los cinco primeros elementos
+</code></pre>
+
+<pre><code>0    970
+1    887
+2    127
+3     75
+4    170
+dtype: int32
+</code></pre>
+
+<pre><code class="language-python">len(s)
+</code></pre>
+
+<pre><code>10000
+</code></pre>
+
+<pre><code class="language-python">%%timeit -n 100
+summary = 0
+for item in s:
+    summary += item
+</code></pre>
+
+<pre><code>2.58 ms ± 182 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+
+<pre><code class="language-python">%%timeit -n 100
+summary = np.sum(s)
+</code></pre>
+
+<pre><code>277 µs ± 73.4 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+
+<p>La explicación técnica de este resultado reside en que <code>numpy</code> efectúa operaciones algebraicas de manera <strong>vectorizada</strong>, enfoque de actuación mucho más eficiente que realizarlas elemento a elemento, como cuando utilizamos un bucle como el declarado arriba.</p>
+
+<p>No obstante, la diferencia, aún existente, no llega a ser sorprendente. Repliquemos esta manera de proceder analizando ahora otra operación sencilla: sumar dos unidades a cada uno de los elementos de la serie generada.</p>
+
+<p>Dicha tarea la podemos llevar a cabo directamente mediante el operador incremento correspondiente:</p>
+
+<pre><code class="language-python">s += 2  # Suma 2 a s, elemento a elemento
+s.head()
+</code></pre>
+
+<pre><code>0    972
+1    889
+2    129
+3     77
+4    172
+dtype: int32
+</code></pre>
+
+<p>O, en cualquier caso, a través de un bucle de tipo <code>for</code>:</p>
+
+<pre><code class="language-python">for label, value in s.iteritems():
+    s.set_value(label, value + 2)  # Produce un deprecated warning 
+s.head()
+</code></pre>
+
+<pre><code>FutureWarning: set_value is deprecated and will be removed in a future release. Please use .at[] or .iat[] accessors instead
+
+
+
+
+
+
+0    974
+1    891
+2    131
+3     79
+4    174
+dtype: int32
+</code></pre>
+
+<p>El anterior bloque de código arroja un mensaje (<em>warning</em>) avisándonos que la función <code>set_value()</code> está en desuso y nos recomienda utilizar los atributos <code>.at[]</code> o <code>iat[]</code>. Modifiquemos pues el código precedente:</p>
+
+<pre><code class="language-python">for label, value in s.iteritems():
+    s.at[label] = value + 2
+s.head()
+</code></pre>
+
+<pre><code>0    976
+1    893
+2    133
+3     81
+4    176
+dtype: int32
+</code></pre>
+
+<p>Acto seguido, procedamos a realizar el mencionado experimento:</p>
+
+<pre><code class="language-python">%%timeit -n 100
+s = pd.Series(np.random.randint(0, 1000, 10000))
+for label, value in s.iteritems():
+    s.at[label] = value + 2
+</code></pre>
+
+<pre><code>109 ms ± 10.2 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+
+<pre><code class="language-python">%%timeit -n 100
+s = pd.Series(np.random.randint(0, 1000, 10000))
+s += 2
+</code></pre>
+
+<pre><code>725 µs ± 196 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+
+<p>En resumen, si en algún momento nos encontramos iterando sobre un objeto de tipo <code>Series</code>, hemos de deternos y cuestionarnos si estamos llevando a cabo el procedimiento de la manera más adecuada (en términos de eficiencia).</p>
+
+<p>Para finalizar esta sección, veamos algunas maneras de añadir información a un objeto declarado de tipo <code>Series</code>. En primer lugar, y de manera muy parecida a como realizamos el proceso cuando trabajamos con diccionarios, utilizando la estructura <code>s.loc[] = value</code>:</p>
+
+<pre><code class="language-python">s = pd.Series([1, 2, 3])
+s.loc[&quot;Animal&quot;] = &quot;Oso&quot;
+s
+</code></pre>
+
+<pre><code>0           1
+1           2
+2           3
+Animal    Oso
+dtype: object
+</code></pre>
+
+<p><em>Nota</em>: la librería <code>pandas</code> gestiona adecuadamente los índices y valores cuando, como en este caso, son de tipos diferentes (tenemos enteros y cadenas de texto), escogiendo la representación más general para representarlos.</p>
+
+<p>En segundo lugar, la función <code>append()</code> resulta de gran utilidad a la hora de ampliar este tipo de estructura de datos. Además, veamos qué sucede cuando existen diferentes valores cuyo índice, en forma de etiqueta, coincide (situación imposible de conseguir cuando trabajamos, por ejemplo, con bases de datos relacionales):</p>
+
+<pre><code class="language-python">deportes = pd.Series({&quot;Fútbol&quot;: &quot;España&quot;,
+                      &quot;Golf&quot;: &quot;Italia&quot;,
+                      &quot;Baloncesto&quot;: &quot;Francia&quot;,
+                      &quot;Kárate&quot;: &quot;Japón&quot;})
+paises_balonmano = pd.Series([&quot;Inglaterra&quot;, &quot;Alemania&quot;, &quot;Rusia&quot;, &quot;Colombia&quot;],
+                            index=[&quot;Balonmano&quot;, &quot;Balonmano&quot;, &quot;Balonmano&quot;, &quot;Balonmano&quot;])
+deportes_ampliado = deportes.append(paises_balonmano)
+</code></pre>
+
+<pre><code class="language-python">deportes
+</code></pre>
+
+<pre><code>Fútbol         España
+Golf           Italia
+Baloncesto    Francia
+Kárate          Japón
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">paises_balonmano
+</code></pre>
+
+<pre><code>Balonmano    Inglaterra
+Balonmano      Alemania
+Balonmano         Rusia
+Balonmano      Colombia
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">deportes_ampliado
+</code></pre>
+
+<pre><code>Fútbol            España
+Golf              Italia
+Baloncesto       Francia
+Kárate             Japón
+Balonmano     Inglaterra
+Balonmano       Alemania
+Balonmano          Rusia
+Balonmano       Colombia
+dtype: object
+</code></pre>
+
+<pre><code class="language-python">deportes_ampliado.loc[&quot;Balonmano&quot;]
+</code></pre>
+
+<pre><code>Balonmano    Inglaterra
+Balonmano      Alemania
+Balonmano         Rusia
+Balonmano      Colombia
+dtype: object
+</code></pre>
+
+<p><em>Notas técnicas</em>:</p>
+
+<ul>
+<li>La función <code>append()</code>, así como sucede con otras funciones de esta librería, infiere qué tipo es el más adecuado para representar la nueva estructura generada. En el ejemplo anterior, como todo son cadenas de caracteres, no hay problema alguno.</li>
+<li>Por otro lado, dicha función no modifica la estructura original, sino que devuelve una nueva, comportamiento que puede resultar un tanto extraño en <em>Python</em>, tal y como estamos acostumbrados a modificar objetos. En el ejemplo anterior, tras ejecutar la celda, observamos la variable <code>deportes</code> contiene únicamente los datos originales, aunque sobre ella hayamos utilizado el método <code>append()</code>. Como podemos observar a continuación, cuando trabajamos con listas dicha función produce un resultado diferente.</li>
+</ul>
+
+<pre><code class="language-python">lista_original = [1, 2, 3]
+lista_nueva = lista_original.append(4)
+
+lista_original
+</code></pre>
+
+<pre><code>[1, 2, 3, 4]
+</code></pre>
+
+<h2 id="4-la-estrutura-de-datos-dataframe">4. La estrutura de datos DataFrame</h2>
+
+<p>La estructura de datos <code>DataFrame</code> es, posiblemente, la gran protagonista de la librería <code>pandas</code> y con la que trabajaremos habitualmente a la hora de llevar a cabo análisis de datos. Se trata de una tabla compuesta por múltiples filas y columnas (conceptualmente estaríamos hablando de un <em>array</em> 2-dimensional), donde cada registro posee su propia etiqueta.</p>
+
+<p>Podemos crear un <code>DataFrame</code> a partir de un conjunto de <code>Series</code> o de diccionarios, donde cada elemento represente una fila de la tabla que deseamos generar:</p>
+
+<pre><code class="language-python">import pandas as pd
+
+compra_1 = pd.Series({'Nombre': 'Alexis',
+                      'Objeto comprado': 'Portátil',
+                      'Coste': 622.50})
+compra_2 = pd.Series({'Nombre': 'Ana',
+                      'Objeto comprado': 'Auriculares',
+                      'Coste': 7.50})
+compra_3 = pd.Series({'Nombre': 'Marta',
+                      'Objeto comprado': 'Comida para gatos',
+                      'Coste': 15.25})
+
+df = pd.DataFrame([compra_1, compra_2, compra_3], 
+                  index=['Tienda 1', 'Tienda 1', 'Tienda 2'])
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>622.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>7.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><em>Nota</em>: recordemos que no es necesario que las etiquetas asociadas a los registros sean únicas.</p>
+
+<p>De manera similar a como procedíamos en anteriores secciones, podemos extraer información del <code>DataFrame</code> utilizando los atributos <code>iloc</code> y <code>loc</code>. Cabe destacar que, según la cantidad de información extraída, la librería <code>pandas</code> colapsa de manera adecuada el tipo de datos resultante.</p>
+
+<p>Por ejemplo, si extraemos una columna de la tabla, el objeto resultante será de tipo <code>Series</code>:</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 2&quot;]
+</code></pre>
+
+<pre><code>Nombre                         Marta
+Objeto comprado    Comida para gatos
+Coste                          15.25
+Name: Tienda 2, dtype: object
+</code></pre>
+
+<pre><code class="language-python">type(df.loc[&quot;Tienda 2&quot;])
+</code></pre>
+
+<pre><code>pandas.core.series.Series
+</code></pre>
+
+<p>De manera similar, podemos extraer información de la tabla utilizando múltiples índices (uno para la fila y otro para la columna). Por ejemplo, podríamos estar interesados en consultar los costes asociados a los productos comprados en <code>Tienda 1</code>. Para ello, tecleamos</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 1&quot;, &quot;Coste&quot;]
+</code></pre>
+
+<pre><code>Tienda 1    622.5
+Tienda 1      7.5
+Name: Coste, dtype: float64
+</code></pre>
+
+<pre><code class="language-python">type(df.loc[&quot;Tienda 1&quot;, &quot;Coste&quot;])
+</code></pre>
+
+<pre><code>pandas.core.series.Series
+</code></pre>
+
+<p>Al tratarse el resultado de un <em>array</em> unidimensional, observamos que su tipo se colapsa al de un objeto de tipo <code>Series</code>. En cambio, si extraemos una &ldquo;subtabla&rdquo; de la tabla, el objeto devuelto no varía de tipo y continúa perteneciendo a la clase <code>DataFrame</code>:</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 1&quot;]
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>622.5</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>7.5</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">type(df.loc[&quot;Tienda 1&quot;])
+</code></pre>
+
+<pre><code>pandas.core.frame.DataFrame
+</code></pre>
+
+<p>Finalmente, si extraemos un único valor concreto de la tabla, su tipo también se ve alterado:</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 2&quot;, &quot;Coste&quot;]
+</code></pre>
+
+<pre><code>15.25
+</code></pre>
+
+<pre><code class="language-python">type(df.loc[&quot;Tienda 2&quot;, &quot;Coste&quot;])
+</code></pre>
+
+<pre><code>numpy.float64
+</code></pre>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 2&quot;, &quot;Nombre&quot;]
+</code></pre>
+
+<pre><code>'Marta'
+</code></pre>
+
+<pre><code class="language-python">type(df.loc[&quot;Tienda 2&quot;, &quot;Nombre&quot;])
+</code></pre>
+
+<pre><code>str
+</code></pre>
+
+<p>A continuación, imaginemos que estamos interesados en obtener todos los registros asociados a una columna, <code>&quot;Coste&quot;</code> por ejemplo. Una posible estrategia consistiría en trasponer el conjunto de datos y emplear, como antes, el atributo <code>loc</code>, ya que los nombres de las columnas pasan a ser los índices de los registros.</p>
+
+<pre><code class="language-python">df.T
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Tienda 1</th>
+      <th>Tienda 1</th>
+      <th>Tienda 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Nombre</th>
+      <td>Alexis</td>
+      <td>Ana</td>
+      <td>Marta</td>
+    </tr>
+    <tr>
+      <th>Objeto comprado</th>
+      <td>Portátil</td>
+      <td>Auriculares</td>
+      <td>Comida para gatos</td>
+    </tr>
+    <tr>
+      <th>Coste</th>
+      <td>622.5</td>
+      <td>7.5</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.T.loc[&quot;Coste&quot;]
+</code></pre>
+
+<pre><code>Tienda 1    622.5
+Tienda 1      7.5
+Tienda 2    15.25
+Name: Coste, dtype: object
+</code></pre>
+
+<p>Sin embargo, es un tanto tedioso proceder de tal forma. La librería <code>pandas</code> permite, directamente, utilizar también los atributos <code>iloc</code> y <code>loc</code> sobre los nombres de las columnas:</p>
+
+<pre><code class="language-python">df[&quot;Coste&quot;]
+</code></pre>
+
+<pre><code>Tienda 1    622.50
+Tienda 1      7.50
+Tienda 2     15.25
+Name: Coste, dtype: float64
+</code></pre>
+
+<p>Además, podemos incluso encadenar operadores de extracción de datos como sigue:</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 1&quot;][&quot;Coste&quot;]
+</code></pre>
+
+<pre><code>Tienda 1    622.5
+Tienda 1      7.5
+Name: Coste, dtype: float64
+</code></pre>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 2&quot;][&quot;Coste&quot;]
+</code></pre>
+
+<pre><code>15.25
+</code></pre>
+
+<p>No obstante, hemos de ser cautos a la hora de proceder de tal manera, pues <code>pandas</code> devuelve una copia del objeto <code>DataFrame</code>, en lugar de una simple vista, con todos los costes asociados de memoria y tiempo de cálculo que ello conlleva.</p>
+
+<p>A la hora de realizar consultas, esta peculiaridad no puede parecer muy importante, pero sí puede ser fuente de errores cuando estamos modificando datos de un conjunto de datos.</p>
+
+<p><em>Nota</em>: también podemos utilizar el operador <code>:</code> a la hora de extraer información de un conjunto de datos, tal y como estamos habituados a hacerlo cuando trabajamos con listas.</p>
+
+<pre><code class="language-python">df.loc[:, [&quot;Nombre&quot;, &quot;Coste&quot;]]
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>622.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>7.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Acto seguido, veamos cómo descartar datos, acción para la cual la función <code>drop()</code> es ciertamente útil:</p>
+
+<pre><code class="language-python">df.drop(&quot;Tienda 1&quot;)
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><em>Nota técnica</em>: la función <code>drop()</code>, como muchas de las implementadas en la librería <code>pandas</code>, no modifica el objeto original, sino que devuelve una copia del mismo sobre la cual se ha llevado a cabo la acción de interés.</p>
+
+<pre><code class="language-python">df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>622.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>7.50</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Hagamos una copia del conjunto de datos, utilizando la función <code>copy()</code>, y apliquemos después la función <code>drop()</code>:</p>
+
+<pre><code class="language-python">copia_df = df.copy()
+copia_df = copia_df.drop(&quot;Tienda 1&quot;)
+copia_df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Por otro lado, cabe comentar que la función <code>drop()</code> posee dos interesantes parámetros:</p>
+
+<ul>
+<li><code>inplace</code>: permite que la actualización de datos se realice sobre el objeto original, en lugar de devolver una copia.</li>
+<li><code>axis</code>: dimensión que se descarta (<code>0</code> para filas, <code>1</code> para columnas)</li>
+</ul>
+
+<p>Para acceder a más detalles sobre la función, siempre conviene que consultemos su documentación asociada:</p>
+
+<pre><code class="language-python">copia_df.drop?
+</code></pre>
+
+<p>Adicionalmente, mediante la combinación del operador índice y la instrucción <code>del</code> tenemos la posibilidad de descartar datos de nuestra tabla. Dicha combinación altera el objeto inicial en lugar de devolver una copia, por lo que hemos de proceder con cautela en su uso.</p>
+
+<pre><code class="language-python">del copia_df[&quot;Nombre&quot;]
+copia_df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Finalmente, para añadir columnas únicamente hemos de seguir un patrón familiar a estas alturas:</p>
+
+<pre><code class="language-python">df[&quot;Localización&quot;] = None
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+      <th>Localización</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>622.50</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>7.50</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Ejercicio</strong>: ¿cómo podríamos aplicar un descuento de un 20% a los artículos de la primera tienda?</p>
+
+<pre><code class="language-python">df.loc[&quot;Tienda 1&quot;, &quot;Coste&quot;] *= 0.8
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+      <th>Localización</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>498.00</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>6.00</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>15.25</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="5-lectura-de-archivos-como-dataframe">5. Lectura de archivos como DataFrame</h2>
+
+<p>Habitualmente, a la hora de realizar análisis de datos, importamos el conjunto de datos en un <code>DataFrame</code> y luego seleccionamos aquellas que nos resulten de interés para trabajar con ellas.</p>
+
+<p>Como hemos advertido en anteriores secciones, la librería <code>pandas</code> acostumbra a devolver &ldquo;vistas&rdquo; de los <code>DataFrames</code> en lugar de copias de los mismos (debido a cuestiones de gestión de memoria y eficiencia en la realización de ciertas operaciones). Por tanto, podemos encontrar que algunas modificaciones que llevemos a cabo pueden tener impacto en el conjunto de datos original y este comportamiento es posible que no nos interese.</p>
+
+<p>Por ejemplo, almacenemos en una variable los costes de los productos pertenecientes a la tabla de la sección anterior:</p>
+
+<pre><code class="language-python">costes = df[&quot;Coste&quot;]
+costes
+</code></pre>
+
+<pre><code>Tienda 1    498.00
+Tienda 1      6.00
+Tienda 2     15.25
+Name: Coste, dtype: float64
+</code></pre>
+
+<p>Si ahora incrementamos en dos unidades el coste de cada producto, no solo ve alterado su valor la variable <code>costes</code>, sino también el conjunto de datos original <code>df</code>:</p>
+
+<pre><code class="language-python">costes += 2
+costes
+</code></pre>
+
+<pre><code>Tienda 1    500.00
+Tienda 1      8.00
+Tienda 2     17.25
+Name: Coste, dtype: float64
+</code></pre>
+
+<pre><code class="language-python">df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Nombre</th>
+      <th>Objeto comprado</th>
+      <th>Coste</th>
+      <th>Localización</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Alexis</td>
+      <td>Portátil</td>
+      <td>500.00</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 1</th>
+      <td>Ana</td>
+      <td>Auriculares</td>
+      <td>8.00</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>Tienda 2</th>
+      <td>Marta</td>
+      <td>Comida para gatos</td>
+      <td>17.25</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>A continuación, veamos cómo importar los contenidos de un archivo, de tipo <em>CSV</em>, en una estructura de datos de tipo <code>DataFrame</code>. El fichero <code>olympics.csv</code> (ubicado en el directorio <code>data</code>) registra el número de medallas que cada país ha conseguido en los difirentes tipos de olimpiadas:</p>
+
+<pre><code class="language-python">df = pd.read_csv(&quot;data/olympics.csv&quot;)
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>11</th>
+      <th>12</th>
+      <th>13</th>
+      <th>14</th>
+      <th>15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>NaN</td>
+      <td>№ Summer</td>
+      <td>01 !</td>
+      <td>02 !</td>
+      <td>03 !</td>
+      <td>Total</td>
+      <td>№ Winter</td>
+      <td>01 !</td>
+      <td>02 !</td>
+      <td>03 !</td>
+      <td>Total</td>
+      <td>№ Games</td>
+      <td>01 !</td>
+      <td>02 !</td>
+      <td>03 !</td>
+      <td>Combined total</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan (AFG)</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria (ALG)</td>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Argentina (ARG)</td>
+      <td>23</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Armenia (ARM)</td>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>A la vista de la tabla anterior, parece que la primera fila únicamente numera las columnas, resiendo en la segunda los nombres de cabecera de dichas columnas. Por tanto, procederemos a saltar la lectura de la línea inicial, utilizando para ello el parámetro <code>skiprows</code>.</p>
+
+<p>Por otro lado, la primera columna contiene los nombres de los distintos países, siendo estos valores perfectos candidatos para conformar los índices de cada uno de los registros. Para conseguir tal característica, simplemente indicamos que la columna de índices es la primera mediante el parámetro <code>index_col=0</code>.</p>
+
+<pre><code class="language-python">df = pd.read_csv(&quot;data/olympics.csv&quot;, index_col=0, skiprows=1)
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>№ Summer</th>
+      <th>01 !</th>
+      <th>02 !</th>
+      <th>03 !</th>
+      <th>Total</th>
+      <th>№ Winter</th>
+      <th>01 !.1</th>
+      <th>02 !.1</th>
+      <th>03 !.1</th>
+      <th>Total.1</th>
+      <th>№ Games</th>
+      <th>01 !.2</th>
+      <th>02 !.2</th>
+      <th>03 !.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan (AFG)</th>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<pre><code class="language-python">df.columns
+</code></pre>
+
+<pre><code>Index(['№ Summer', '01 !', '02 !', '03 !', 'Total', '№ Winter', '01 !.1',
+       '02 !.1', '03 !.1', 'Total.1', '№ Games', '01 !.2', '02 !.2', '03 !.2',
+       'Combined total'],
+      dtype='object')
+</code></pre>
+
+<p>Acto seguido, encontramos dos detalles curiosos:</p>
+
+<ul>
+<li>La representación para las medallas de oro, plata y bronce es, cuanto menos, extraña: <code>01 !</code>, <code>02 !</code> y <code>03 !</code>.</li>
+<li>Existen columnas con las mismas etiquetas (las asociadas a los tipos de medallas y a los totales), práctica en absoluto recomendable por dar lugar a confusiones de manera muy sencilla. La librería <code>pandas</code> gestiona esta situación incluyendo valores numéricos al final del nombre de las repetidas (<code>.1</code>, <code>.2</code>, <code>.3</code>&hellip;) para así poder diferenciarlas.</li>
+</ul>
+
+<p>Podemos bien editar directamente el propio archivo <em>CSV</em>, bien modificar las etiquetas conflictivas, desde <em>Python</em> con la librería <code>pandas</code>, utilizando la función <code>rename()</code>:</p>
+
+<pre><code class="language-python">for col in df.columns:
+    if col[:2]=='01':
+        df.rename(columns={col:'Gold' + col[4:]}, inplace=True)
+    if col[:2]=='02':
+        df.rename(columns={col:'Silver' + col[4:]}, inplace=True)
+    if col[:2]=='03':
+        df.rename(columns={col:'Bronze' + col[4:]}, inplace=True)
+    if col[:1]=='№':
+        df.rename(columns={col:'#' + col[1:]}, inplace=True) 
+
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan (AFG)</th>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Notemos el uso del parámetro <code>inplace</code>, que permite modificar el objeto original, puesto que su valor está declarado como <code>True</code>. Por otro lado, hemos de proceder con cautela a la hora de renombrar las columnas para no perder la unicidad durante el proceso, de ahí la justificación de la concatenación <code>+ col[4:]</code>.</p>
+
+<h2 id="6-consultas-en-dataframe">6. Consultas en DataFrame</h2>
+
+<p>Antes de abordar cómo realizar consultas en <code>DataFrame</code>, hemos de introducir el concepto de <em>máscara booleana</em> (<em>boolean masking</em>), puesto que esta estrategia es la que permite consultar el conjunto de datos de una manera rápida y eficiente.</p>
+
+<p>La idea es construir un <em>array</em> (unidimensional o multidimensional) de valores lógicos <code>True</code> o <code>False</code>, que luego utilizaremos para extraer la información que nos interese del conjunto de datos.</p>
+
+<p>Por ejemplo, utilizando la tabla de datos que figura en la sección anterior y que recoge el número de medallas obtenidas por cada país en las olimpiadas, podemos estar interesados en consultar qué países han conseguido al menos una medalla de oro en las de verano (recordemos que esta información se almacenaba en la columna <code>&quot;Gold&quot;</code>). Si escribimos</p>
+
+<pre><code class="language-python">df[&quot;Gold&quot;] &gt; 0
+</code></pre>
+
+<pre><code>Afghanistan (AFG)                               False
+Algeria (ALG)                                    True
+Argentina (ARG)                                  True
+Armenia (ARM)                                    True
+Australasia (ANZ) [ANZ]                          True
+Australia (AUS) [AUS] [Z]                        True
+Austria (AUT)                                    True
+Azerbaijan (AZE)                                 True
+Bahamas (BAH)                                    True
+Bahrain (BRN)                                   False
+Barbados (BAR) [BAR]                            False
+Belarus (BLR)                                    True
+Belgium (BEL)                                    True
+Bermuda (BER)                                   False
+Bohemia (BOH) [BOH] [Z]                         False
+Botswana (BOT)                                  False
+Brazil (BRA)                                     True
+British West Indies (BWI) [BWI]                 False
+Bulgaria (BUL) [H]                               True
+Burundi (BDI)                                    True
+Cameroon (CMR)                                   True
+Canada (CAN)                                     True
+Chile (CHI) [I]                                  True
+China (CHN) [CHN]                                True
+Colombia (COL)                                   True
+Costa Rica (CRC)                                 True
+Ivory Coast (CIV) [CIV]                         False
+Croatia (CRO)                                    True
+Cuba (CUB) [Z]                                   True
+Cyprus (CYP)                                    False
+                                                ...  
+Sri Lanka (SRI) [SRI]                           False
+Sudan (SUD)                                     False
+Suriname (SUR) [E]                               True
+Sweden (SWE) [Z]                                 True
+Switzerland (SUI)                                True
+Syria (SYR)                                      True
+Chinese Taipei (TPE) [TPE] [TPE2]                True
+Tajikistan (TJK)                                False
+Tanzania (TAN) [TAN]                            False
+Thailand (THA)                                   True
+Togo (TOG)                                      False
+Tonga (TGA)                                     False
+Trinidad and Tobago (TRI) [TRI]                  True
+Tunisia (TUN)                                    True
+Turkey (TUR)                                     True
+Uganda (UGA)                                     True
+Ukraine (UKR)                                    True
+United Arab Emirates (UAE)                       True
+United States (USA) [P] [Q] [R] [Z]              True
+Uruguay (URU)                                    True
+Uzbekistan (UZB)                                 True
+Venezuela (VEN)                                  True
+Vietnam (VIE)                                   False
+Virgin Islands (ISV)                            False
+Yugoslavia (YUG) [YUG]                           True
+Independent Olympic Participants (IOP) [IOP]    False
+Zambia (ZAM) [ZAM]                              False
+Zimbabwe (ZIM) [ZIM]                             True
+Mixed team (ZZX) [ZZX]                           True
+Totals                                           True
+Name: Gold, Length: 147, dtype: bool
+</code></pre>
+
+<p>Una vez hemos construido la máscara de valores lógicos (<em>boolean mask</em>), ya solo nos resta aplicarla al conjunto de datos original mediante la función <code>where()</code>:</p>
+
+<pre><code class="language-python">solo_oro = df.where(df[&quot;Gold&quot;] &gt; 0)
+solo_oro.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan (AFG)</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23.0</td>
+      <td>18.0</td>
+      <td>24.0</td>
+      <td>28.0</td>
+      <td>70.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>41.0</td>
+      <td>18.0</td>
+      <td>24.0</td>
+      <td>28.0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>12.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>12.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Como podemos observar, se conservan todos los registros, pero únicamente existen datos disponibles para aquellos que verifican la condición impuesta, esto es, que han conseguido al menos una medalla de oro en las olimpiadas de verano. En total son</p>
+
+<pre><code class="language-python">solo_oro[&quot;Gold&quot;].count()
+</code></pre>
+
+<pre><code>100
+</code></pre>
+
+<p>es decir, 100 países de un total de</p>
+
+<pre><code class="language-python">df[&quot;Gold&quot;].count()
+</code></pre>
+
+<pre><code>147
+</code></pre>
+
+<p>147 países que contiene el conjunto de datos original.</p>
+
+<p>Habitualmente, los registros sin información asociada los descartaremos, haciendo uso para ello de la función <code>dropna()</code> que, por defecto, actúa sobre las filas (<code>axis=0</code>):</p>
+
+<pre><code class="language-python">solo_oro = solo_oro.dropna()
+solo_oro.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+      <td>3.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>15.0</td>
+      <td>5.0</td>
+      <td>2.0</td>
+      <td>8.0</td>
+      <td>15.0</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23.0</td>
+      <td>18.0</td>
+      <td>24.0</td>
+      <td>28.0</td>
+      <td>70.0</td>
+      <td>18.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>41.0</td>
+      <td>18.0</td>
+      <td>24.0</td>
+      <td>28.0</td>
+      <td>70.0</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>11.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>9.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>12.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>12.0</td>
+    </tr>
+    <tr>
+      <th>Australia (AUS) [AUS] [Z]</th>
+      <td>25.0</td>
+      <td>139.0</td>
+      <td>152.0</td>
+      <td>177.0</td>
+      <td>468.0</td>
+      <td>18.0</td>
+      <td>5.0</td>
+      <td>3.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>43.0</td>
+      <td>144.0</td>
+      <td>155.0</td>
+      <td>181.0</td>
+      <td>480.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Al ser un tipo de acción habitual a la hora de llevar a cabo análisis de datos, los desarrollares de la librería <code>pandas</code> han incluido un atajo (mediante el operador índice <code>[]</code> al que le suministramos directamente la máscara booleana) para conseguir el mismo efecto de una manera más sencilla y, sobretodo, que destaca por su legibilidad:</p>
+
+<pre><code class="language-python">solo_oro = df[df[&quot;Gold&quot;] &gt; 0]
+solo_oro.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Australia (AUS) [AUS] [Z]</th>
+      <td>25</td>
+      <td>139</td>
+      <td>152</td>
+      <td>177</td>
+      <td>468</td>
+      <td>18</td>
+      <td>5</td>
+      <td>3</td>
+      <td>4</td>
+      <td>12</td>
+      <td>43</td>
+      <td>144</td>
+      <td>155</td>
+      <td>181</td>
+      <td>480</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Adicionalmente, podemos encadenar condiciones lógicas para construir consultas más complejas. Por ejemplo, ¿cuántos países han ganado al menos una medalla de oro en las olimpiadas de verano o en las de invierno?</p>
+
+<pre><code class="language-python">len(df[(df['Gold'] &gt; 0) | (df['Gold.1'] &gt; 0)])
+</code></pre>
+
+<pre><code>101
+</code></pre>
+
+<p>Esto es, 101 países. Recordemos que 100 países habían conseguido al menos una medalla de oro en las olimpiadas de verano, por lo que existe un país que ha ganado al menos una medalla de oro en las olimpiadas de invierno, pero ninguna en las de verano. ¿De qué país se trata?</p>
+
+<pre><code class="language-python">df[(df['Gold.1'] &gt; 0) &amp; (df['Gold'] == 0)]
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Liechtenstein (LIE)</th>
+      <td>16</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>18</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>9</td>
+      <td>34</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><em>Nota técnica</em>: debido al orden en el que se efectúan las operaciones en <em>Python</em> cada máscara booleana debe encerrarse entre paréntesis.</p>
+
+<p><strong>Ejercicio</strong>: escribe una consulta que devuelva los nombres de las personas que compraron productos cuyo valor es superior a tres dólares.</p>
+
+<pre><code class="language-python">purchase_1 = pd.Series({'Name': 'Chris',
+                        'Item Purchased': 'Dog Food',
+                        'Cost': 22.50})
+purchase_2 = pd.Series({'Name': 'Kevyn',
+                        'Item Purchased': 'Kitty Litter',
+                        'Cost': 2.50})
+purchase_3 = pd.Series({'Name': 'Vinod',
+                        'Item Purchased': 'Bird Seed',
+                        'Cost': 5.00})
+
+df2 = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=['Store 1', 'Store 1', 'Store 2'])
+</code></pre>
+
+<pre><code class="language-python">purchase_1 = pd.Series({'Name': 'Chris',
+                        'Item Purchased': 'Dog Food',
+                        'Cost': 22.50})
+purchase_2 = pd.Series({'Name': 'Kevyn',
+                        'Item Purchased': 'Kitty Litter',
+                        'Cost': 2.50})
+purchase_3 = pd.Series({'Name': 'Vinod',
+                        'Item Purchased': 'Bird Seed',
+                        'Cost': 5.00})
+
+df2 = pd.DataFrame([purchase_1, purchase_2, purchase_3], 
+                  index=['Store 1', 'Store 1', 'Store 2'])
+
+df2[df2[&quot;Cost&quot;] &gt; 3][&quot;Name&quot;]
+</code></pre>
+
+<pre><code>Store 1    Chris
+Store 2    Vinod
+Name: Name, dtype: object
+</code></pre>
+
+<h2 id="7-índices-en-dataframe">7. Índices en DataFrame</h2>
+
+<p>Además de las maneras que hemos visto para generar índices en un objeto de tipo <code>Series</code> o <code>DataFrame</code>, podemos utilizar la función <code>set_index()</code>, que toma una lista de columnas y las convierte en índices para el objeto.</p>
+
+<p>Hemos de actuar con cautela, porque la función no almacena el índice actual antes de sobreescribirlo por el nuevo. No obstante, siempre podemos crear una columna adicional en el conjunto de datos, que almacene el índice actual, antes de utilizar la mencionada función.</p>
+
+<pre><code class="language-python">df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Gold</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Afghanistan (AFG)</th>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>Algeria (ALG)</th>
+      <td>12</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>Argentina (ARG)</th>
+      <td>23</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>Armenia (ARM)</th>
+      <td>5</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>Australasia (ANZ) [ANZ]</th>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Imaginemos que deseamos indexar (almacenando previamente en una columna el índice actual por países) la anterior tabla por el número de medallas de oro conseguidas en las olimpiadas de verano:</p>
+
+<pre><code class="language-python">df[&quot;country&quot;] = df.index  # guardamos el índice actual en una columna del conjunto de datos
+df = df.set_index(&quot;Gold&quot;)
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th># Summer</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+      <th>country</th>
+    </tr>
+    <tr>
+      <th>Gold</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>13</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Afghanistan (AFG)</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>12</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>Algeria (ALG)</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>23</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>Argentina (ARG)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>Armenia (ARM)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>Australasia (ANZ) [ANZ]</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Por otro lado, podemos deshacernos directamente del índice asignado sin más que emplear la función <code>reset_index()</code>, que almacena el actual en una columna del conjunto de datos (no en el orden que antes que estaba declarado) y genera un índice numérico nuevo:</p>
+
+<pre><code class="language-python">df = df.reset_index()
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Gold</th>
+      <th># Summer</th>
+      <th>Silver</th>
+      <th>Bronze</th>
+      <th>Total</th>
+      <th># Winter</th>
+      <th>Gold.1</th>
+      <th>Silver.1</th>
+      <th>Bronze.1</th>
+      <th>Total.1</th>
+      <th># Games</th>
+      <th>Gold.2</th>
+      <th>Silver.2</th>
+      <th>Bronze.2</th>
+      <th>Combined total</th>
+      <th>country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>Afghanistan (AFG)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>12</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>15</td>
+      <td>5</td>
+      <td>2</td>
+      <td>8</td>
+      <td>15</td>
+      <td>Algeria (ALG)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18</td>
+      <td>23</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>18</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>41</td>
+      <td>18</td>
+      <td>24</td>
+      <td>28</td>
+      <td>70</td>
+      <td>Argentina (ARG)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>5</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>11</td>
+      <td>1</td>
+      <td>2</td>
+      <td>9</td>
+      <td>12</td>
+      <td>Armenia (ARM)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3</td>
+      <td>2</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>12</td>
+      <td>Australasia (ANZ) [ANZ]</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>A continuación, veamos una característica ciertamente útil de la librería <code>pandas</code>: permite la existencia de múltiples índices (pasando una lista con varios elementos a la función <code>set_index()</code>).</p>
+
+<p>Para ver en acción esta funcionalidad, analicemos datos de censo, que suelen estar divididos por estado y ciudad, posibilitando así ver en acción múltiples índices:</p>
+
+<pre><code class="language-python">df = pd.read_csv(&quot;data/census.csv&quot;)
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SUMLEV</th>
+      <th>REGION</th>
+      <th>DIVISION</th>
+      <th>STATE</th>
+      <th>COUNTY</th>
+      <th>STNAME</th>
+      <th>CTYNAME</th>
+      <th>CENSUS2010POP</th>
+      <th>ESTIMATESBASE2010</th>
+      <th>POPESTIMATE2010</th>
+      <th>...</th>
+      <th>RDOMESTICMIG2011</th>
+      <th>RDOMESTICMIG2012</th>
+      <th>RDOMESTICMIG2013</th>
+      <th>RDOMESTICMIG2014</th>
+      <th>RDOMESTICMIG2015</th>
+      <th>RNETMIG2011</th>
+      <th>RNETMIG2012</th>
+      <th>RNETMIG2013</th>
+      <th>RNETMIG2014</th>
+      <th>RNETMIG2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>40</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Alabama</td>
+      <td>Alabama</td>
+      <td>4779736</td>
+      <td>4780127</td>
+      <td>4785161</td>
+      <td>...</td>
+      <td>0.002295</td>
+      <td>-0.193196</td>
+      <td>0.381066</td>
+      <td>0.582002</td>
+      <td>-0.467369</td>
+      <td>1.030015</td>
+      <td>0.826644</td>
+      <td>1.383282</td>
+      <td>1.724718</td>
+      <td>0.712594</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Alabama</td>
+      <td>Autauga County</td>
+      <td>54571</td>
+      <td>54571</td>
+      <td>54660</td>
+      <td>...</td>
+      <td>7.242091</td>
+      <td>-2.915927</td>
+      <td>-3.012349</td>
+      <td>2.265971</td>
+      <td>-2.530799</td>
+      <td>7.606016</td>
+      <td>-2.626146</td>
+      <td>-2.722002</td>
+      <td>2.592270</td>
+      <td>-2.187333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Alabama</td>
+      <td>Baldwin County</td>
+      <td>182265</td>
+      <td>182265</td>
+      <td>183193</td>
+      <td>...</td>
+      <td>14.832960</td>
+      <td>17.647293</td>
+      <td>21.845705</td>
+      <td>19.243287</td>
+      <td>17.197872</td>
+      <td>15.844176</td>
+      <td>18.559627</td>
+      <td>22.727626</td>
+      <td>20.317142</td>
+      <td>18.293499</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>5</td>
+      <td>Alabama</td>
+      <td>Barbour County</td>
+      <td>27457</td>
+      <td>27457</td>
+      <td>27341</td>
+      <td>...</td>
+      <td>-4.728132</td>
+      <td>-2.500690</td>
+      <td>-7.056824</td>
+      <td>-3.904217</td>
+      <td>-10.543299</td>
+      <td>-4.874741</td>
+      <td>-2.758113</td>
+      <td>-7.167664</td>
+      <td>-3.978583</td>
+      <td>-10.543299</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>7</td>
+      <td>Alabama</td>
+      <td>Bibb County</td>
+      <td>22915</td>
+      <td>22919</td>
+      <td>22861</td>
+      <td>...</td>
+      <td>-5.527043</td>
+      <td>-5.068871</td>
+      <td>-6.201001</td>
+      <td>-0.177537</td>
+      <td>0.177258</td>
+      <td>-5.088389</td>
+      <td>-4.363636</td>
+      <td>-5.403729</td>
+      <td>0.754533</td>
+      <td>1.107861</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 100 columns</p>
+</div>
+
+<pre><code class="language-python">df[&quot;SUMLEV&quot;].unique()
+</code></pre>
+
+<pre><code>array([40, 50], dtype=int64)
+</code></pre>
+
+<p>Mediante la función <code>unique()</code> tenemos acceso a un listado con los diferentes valores recogidos en una columna concreta del conjunto de datos. Por ejemplo, para <code>SUMLEV</code> encontramos únicamente dos valores distintos, <code>40</code> y <code>50</code>, según las estadísticas de resumen se hayan proporcionado a nivel de estado o de condado.</p>
+
+<p>Quedemos con estas últimas aplicando una máscara booleana adecuada:</p>
+
+<pre><code class="language-python">df = df[df[&quot;SUMLEV&quot;] == 50]
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>SUMLEV</th>
+      <th>REGION</th>
+      <th>DIVISION</th>
+      <th>STATE</th>
+      <th>COUNTY</th>
+      <th>STNAME</th>
+      <th>CTYNAME</th>
+      <th>CENSUS2010POP</th>
+      <th>ESTIMATESBASE2010</th>
+      <th>POPESTIMATE2010</th>
+      <th>...</th>
+      <th>RDOMESTICMIG2011</th>
+      <th>RDOMESTICMIG2012</th>
+      <th>RDOMESTICMIG2013</th>
+      <th>RDOMESTICMIG2014</th>
+      <th>RDOMESTICMIG2015</th>
+      <th>RNETMIG2011</th>
+      <th>RNETMIG2012</th>
+      <th>RNETMIG2013</th>
+      <th>RNETMIG2014</th>
+      <th>RNETMIG2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Alabama</td>
+      <td>Autauga County</td>
+      <td>54571</td>
+      <td>54571</td>
+      <td>54660</td>
+      <td>...</td>
+      <td>7.242091</td>
+      <td>-2.915927</td>
+      <td>-3.012349</td>
+      <td>2.265971</td>
+      <td>-2.530799</td>
+      <td>7.606016</td>
+      <td>-2.626146</td>
+      <td>-2.722002</td>
+      <td>2.592270</td>
+      <td>-2.187333</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Alabama</td>
+      <td>Baldwin County</td>
+      <td>182265</td>
+      <td>182265</td>
+      <td>183193</td>
+      <td>...</td>
+      <td>14.832960</td>
+      <td>17.647293</td>
+      <td>21.845705</td>
+      <td>19.243287</td>
+      <td>17.197872</td>
+      <td>15.844176</td>
+      <td>18.559627</td>
+      <td>22.727626</td>
+      <td>20.317142</td>
+      <td>18.293499</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>5</td>
+      <td>Alabama</td>
+      <td>Barbour County</td>
+      <td>27457</td>
+      <td>27457</td>
+      <td>27341</td>
+      <td>...</td>
+      <td>-4.728132</td>
+      <td>-2.500690</td>
+      <td>-7.056824</td>
+      <td>-3.904217</td>
+      <td>-10.543299</td>
+      <td>-4.874741</td>
+      <td>-2.758113</td>
+      <td>-7.167664</td>
+      <td>-3.978583</td>
+      <td>-10.543299</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>7</td>
+      <td>Alabama</td>
+      <td>Bibb County</td>
+      <td>22915</td>
+      <td>22919</td>
+      <td>22861</td>
+      <td>...</td>
+      <td>-5.527043</td>
+      <td>-5.068871</td>
+      <td>-6.201001</td>
+      <td>-0.177537</td>
+      <td>0.177258</td>
+      <td>-5.088389</td>
+      <td>-4.363636</td>
+      <td>-5.403729</td>
+      <td>0.754533</td>
+      <td>1.107861</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>50</td>
+      <td>3</td>
+      <td>6</td>
+      <td>1</td>
+      <td>9</td>
+      <td>Alabama</td>
+      <td>Blount County</td>
+      <td>57322</td>
+      <td>57322</td>
+      <td>57373</td>
+      <td>...</td>
+      <td>1.807375</td>
+      <td>-1.177622</td>
+      <td>-1.748766</td>
+      <td>-2.062535</td>
+      <td>-1.369970</td>
+      <td>1.859511</td>
+      <td>-0.848580</td>
+      <td>-1.402476</td>
+      <td>-1.577232</td>
+      <td>-0.884411</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 100 columns</p>
+</div>
+
+<p>Acto seguido, para trabajar con una tabla algo más manejable, restrinjamos sus columnas a nacimientos y estimaciones para la población, además de conservar también el nombre del estado y la correspondiente ciudad:</p>
+
+<pre><code class="language-python">columns_to_keep = ['STNAME',
+                   'CTYNAME',
+                   'BIRTHS2010',
+                   'BIRTHS2011',
+                   'BIRTHS2012',
+                   'BIRTHS2013',
+                   'BIRTHS2014',
+                   'BIRTHS2015',
+                   'POPESTIMATE2010',
+                   'POPESTIMATE2011',
+                   'POPESTIMATE2012',
+                   'POPESTIMATE2013',
+                   'POPESTIMATE2014',
+                   'POPESTIMATE2015']
+df = df[columns_to_keep]
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>STNAME</th>
+      <th>CTYNAME</th>
+      <th>BIRTHS2010</th>
+      <th>BIRTHS2011</th>
+      <th>BIRTHS2012</th>
+      <th>BIRTHS2013</th>
+      <th>BIRTHS2014</th>
+      <th>BIRTHS2015</th>
+      <th>POPESTIMATE2010</th>
+      <th>POPESTIMATE2011</th>
+      <th>POPESTIMATE2012</th>
+      <th>POPESTIMATE2013</th>
+      <th>POPESTIMATE2014</th>
+      <th>POPESTIMATE2015</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Alabama</td>
+      <td>Autauga County</td>
+      <td>151</td>
+      <td>636</td>
+      <td>615</td>
+      <td>574</td>
+      <td>623</td>
+      <td>600</td>
+      <td>54660</td>
+      <td>55253</td>
+      <td>55175</td>
+      <td>55038</td>
+      <td>55290</td>
+      <td>55347</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alabama</td>
+      <td>Baldwin County</td>
+      <td>517</td>
+      <td>2187</td>
+      <td>2092</td>
+      <td>2160</td>
+      <td>2186</td>
+      <td>2240</td>
+      <td>183193</td>
+      <td>186659</td>
+      <td>190396</td>
+      <td>195126</td>
+      <td>199713</td>
+      <td>203709</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Alabama</td>
+      <td>Barbour County</td>
+      <td>70</td>
+      <td>335</td>
+      <td>300</td>
+      <td>283</td>
+      <td>260</td>
+      <td>269</td>
+      <td>27341</td>
+      <td>27226</td>
+      <td>27159</td>
+      <td>26973</td>
+      <td>26815</td>
+      <td>26489</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Alabama</td>
+      <td>Bibb County</td>
+      <td>44</td>
+      <td>266</td>
+      <td>245</td>
+      <td>259</td>
+      <td>247</td>
+      <td>253</td>
+      <td>22861</td>
+      <td>22733</td>
+      <td>22642</td>
+      <td>22512</td>
+      <td>22549</td>
+      <td>22583</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Alabama</td>
+      <td>Blount County</td>
+      <td>183</td>
+      <td>744</td>
+      <td>710</td>
+      <td>646</td>
+      <td>618</td>
+      <td>603</td>
+      <td>57373</td>
+      <td>57711</td>
+      <td>57776</td>
+      <td>57734</td>
+      <td>57658</td>
+      <td>57673</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>A continuación, observamos que la estructura del conjunto de datos admite, de manera ideal, dos índices: uno correspondiente al nombre del estado y otro al de la ciudad. Utilicemos adecuadamente la función <code>set_index()</code> para conseguir tal característica:</p>
+
+<pre><code class="language-python">df = df.set_index([&quot;STNAME&quot;, &quot;CTYNAME&quot;])
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>BIRTHS2010</th>
+      <th>BIRTHS2011</th>
+      <th>BIRTHS2012</th>
+      <th>BIRTHS2013</th>
+      <th>BIRTHS2014</th>
+      <th>BIRTHS2015</th>
+      <th>POPESTIMATE2010</th>
+      <th>POPESTIMATE2011</th>
+      <th>POPESTIMATE2012</th>
+      <th>POPESTIMATE2013</th>
+      <th>POPESTIMATE2014</th>
+      <th>POPESTIMATE2015</th>
+    </tr>
+    <tr>
+      <th>STNAME</th>
+      <th>CTYNAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="5" valign="top">Alabama</th>
+      <th>Autauga County</th>
+      <td>151</td>
+      <td>636</td>
+      <td>615</td>
+      <td>574</td>
+      <td>623</td>
+      <td>600</td>
+      <td>54660</td>
+      <td>55253</td>
+      <td>55175</td>
+      <td>55038</td>
+      <td>55290</td>
+      <td>55347</td>
+    </tr>
+    <tr>
+      <th>Baldwin County</th>
+      <td>517</td>
+      <td>2187</td>
+      <td>2092</td>
+      <td>2160</td>
+      <td>2186</td>
+      <td>2240</td>
+      <td>183193</td>
+      <td>186659</td>
+      <td>190396</td>
+      <td>195126</td>
+      <td>199713</td>
+      <td>203709</td>
+    </tr>
+    <tr>
+      <th>Barbour County</th>
+      <td>70</td>
+      <td>335</td>
+      <td>300</td>
+      <td>283</td>
+      <td>260</td>
+      <td>269</td>
+      <td>27341</td>
+      <td>27226</td>
+      <td>27159</td>
+      <td>26973</td>
+      <td>26815</td>
+      <td>26489</td>
+    </tr>
+    <tr>
+      <th>Bibb County</th>
+      <td>44</td>
+      <td>266</td>
+      <td>245</td>
+      <td>259</td>
+      <td>247</td>
+      <td>253</td>
+      <td>22861</td>
+      <td>22733</td>
+      <td>22642</td>
+      <td>22512</td>
+      <td>22549</td>
+      <td>22583</td>
+    </tr>
+    <tr>
+      <th>Blount County</th>
+      <td>183</td>
+      <td>744</td>
+      <td>710</td>
+      <td>646</td>
+      <td>618</td>
+      <td>603</td>
+      <td>57373</td>
+      <td>57711</td>
+      <td>57776</td>
+      <td>57734</td>
+      <td>57658</td>
+      <td>57673</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Ahora, para consultar, por ejemplo, los datos de <em>Washtenaw County</em>, hemos de pasar al atributo <code>loc</code> también el valor del estado donde se encuentra dicha ciudad, <em>Michigan</em>, y respetando el orden declarado arriba en el interior de la función <code>set_index()</code>(estado, ciudad).</p>
+
+<pre><code class="language-python">df.loc[&quot;Michigan&quot;, &quot;Washtenaw County&quot;]
+</code></pre>
+
+<pre><code>BIRTHS2010            977
+BIRTHS2011           3826
+BIRTHS2012           3780
+BIRTHS2013           3662
+BIRTHS2014           3683
+BIRTHS2015           3709
+POPESTIMATE2010    345563
+POPESTIMATE2011    349048
+POPESTIMATE2012    351213
+POPESTIMATE2013    354289
+POPESTIMATE2014    357029
+POPESTIMATE2015    358880
+Name: (Michigan, Washtenaw County), dtype: int64
+</code></pre>
+
+<p>De esta manera, generar tablas comparativas entre diferentes ciudades de interés es sumamente sencillo:</p>
+
+<pre><code class="language-python">df.loc[[(&quot;Michigan&quot;, &quot;Washtenaw County&quot;),
+        (&quot;Michigan&quot;, &quot;Wayne County&quot;)]]
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>BIRTHS2010</th>
+      <th>BIRTHS2011</th>
+      <th>BIRTHS2012</th>
+      <th>BIRTHS2013</th>
+      <th>BIRTHS2014</th>
+      <th>BIRTHS2015</th>
+      <th>POPESTIMATE2010</th>
+      <th>POPESTIMATE2011</th>
+      <th>POPESTIMATE2012</th>
+      <th>POPESTIMATE2013</th>
+      <th>POPESTIMATE2014</th>
+      <th>POPESTIMATE2015</th>
+    </tr>
+    <tr>
+      <th>STNAME</th>
+      <th>CTYNAME</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Michigan</th>
+      <th>Washtenaw County</th>
+      <td>977</td>
+      <td>3826</td>
+      <td>3780</td>
+      <td>3662</td>
+      <td>3683</td>
+      <td>3709</td>
+      <td>345563</td>
+      <td>349048</td>
+      <td>351213</td>
+      <td>354289</td>
+      <td>357029</td>
+      <td>358880</td>
+    </tr>
+    <tr>
+      <th>Wayne County</th>
+      <td>5918</td>
+      <td>23819</td>
+      <td>23270</td>
+      <td>23377</td>
+      <td>23607</td>
+      <td>23586</td>
+      <td>1815199</td>
+      <td>1801273</td>
+      <td>1792514</td>
+      <td>1775713</td>
+      <td>1766008</td>
+      <td>1759335</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Finalmente, el concepto de índices múltiples no se restringe únicamente a las filas, sino que también es posible obtener esta característica para las columnas. Basta trasponer el conjunto de datos (mediante el atributo <code>T</code>) y utilizar adecuadamente la función <code>set_index()</code>.</p>
+
+<p><strong>Ejercicio</strong>: indexa los registros de compras del siguiente <code>DataFrama</code> jerárquicamente, primero por tienda y luego por persona. Designa dichos índices como <code>&quot;Location&quot;</code> y <code>&quot;Nombre&quot;</code>. Después, añade un nuevo registro a la tabla con el siguiente valor:</p>
+
+<p><code>Name: 'Kevyn', Item Purchased: 'Kitty Food', Cost: 3.00 Location: 'Store 2'</code></p>
+
+<pre><code class="language-python">purchase_1 = pd.Series({'Name': 'Chris',
+                        'Item Purchased': 'Dog Food',
+                        'Cost': 22.50})
+purchase_2 = pd.Series({'Name': 'Kevyn',
+                        'Item Purchased': 'Kitty Litter',
+                        'Cost': 2.50})
+purchase_3 = pd.Series({'Name': 'Vinod',
+                        'Item Purchased': 'Bird Seed',
+                        'Cost': 5.00})
+
+df = pd.DataFrame([purchase_1, purchase_2, purchase_3], index=['Store 1', 'Store 1', 'Store 2'])
+</code></pre>
+
+<pre><code class="language-python">purchase_1 = pd.Series({'Name': 'Chris',
+                        'Item Purchased': 'Dog Food',
+                        'Cost': 22.50})
+purchase_2 = pd.Series({'Name': 'Kevyn',
+                        'Item Purchased': 'Kitty Litter',
+                        'Cost': 2.50})
+purchase_3 = pd.Series({'Name': 'Vinod',
+                        'Item Purchased': 'Bird Seed',
+                        'Cost': 5.00})
+
+df = pd.DataFrame([purchase_1, purchase_2, purchase_3], 
+                  index=['Store 1', 'Store 1', 'Store 2'])
+
+
+df = df.set_index([df.index, 'Name'])
+df.index.names = ['Location', 'Name']
+df = df.append(pd.Series(data={'Cost': 3.00, 
+                               'Item Purchased': 'Kitty Food'}, 
+                         name=('Store 2', 'Kevyn')))
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Item Purchased</th>
+      <th>Cost</th>
+    </tr>
+    <tr>
+      <th>Location</th>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">Store 1</th>
+      <th>Chris</th>
+      <td>Dog Food</td>
+      <td>22.5</td>
+    </tr>
+    <tr>
+      <th>Kevyn</th>
+      <td>Kitty Litter</td>
+      <td>2.5</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Store 2</th>
+      <th>Vinod</th>
+      <td>Bird Seed</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>Kevyn</th>
+      <td>Kitty Food</td>
+      <td>3.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2 id="8-valores-perdidos">8. Valores perdidos</h2>
+
+<p>Dado que es bastante frecuente encontrar valores perdidos en conjuntos de datos, veamos cómo podemos gestionarlos con la librería <code>pandas</code>.</p>
+
+<p>Para empezar, importemos un conjunto de datos que registra la actividad de visualización de vídeos de algunos estudiantes en una plataforma de aprendizaje en línea.</p>
+
+<pre><code class="language-python">import pandas as pd
+
+df = pd.read_csv(&quot;data/log.csv&quot;)
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time</th>
+      <th>user</th>
+      <th>video</th>
+      <th>playback position</th>
+      <th>paused</th>
+      <th>volume</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1469974424</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>5</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1469974454</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1469974544</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1469974574</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1469977514</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1469977544</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1469977574</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1469977604</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1469974604</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1469974694</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1469974724</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1469974454</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>1469974524</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>1469974424</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>23</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>1469974554</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1469974624</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>1469974654</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>28</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1469974724</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1469974484</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1469974514</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>1469974754</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>30</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1469974824</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1469974854</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>32</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1469974924</td>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>33</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1469977424</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>True</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1469977454</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1469977484</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1469977634</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1469977664</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1469974634</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>1469974664</td>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>1469977694</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>1469977724</td>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>La columna <code>time</code> registra, respecto a <em>Epoch</em>, cuándo se accedió a un determinado vídeo por un usuario concreto (columnas <code>video</code> y <code>user</code>). Además, tenemos información sobre qué momento del vídeo está visualizando el estudiante (<code>playback position</code>), el volumen (<code>volume</code>) y si está pausado dicho recurso (<code>paused</code>).</p>
+
+<p>Podemos observar que existe gran cantidad de valores perdidos en este conjunto de datos. Ello se explica porque el sistema, si no hay cambio significativo en el estado de la información de cierta columna, simplemente inserta <code>NaN</code> como registro.</p>
+
+<p>Una útil función, para trabajar con valores perdidos, que incorpora la librería <code>pandas</code> es <code>fillna()</code>, que en su parámetro <code>method</code> nos permite, por ejemplo, asignar a un valor perdido el valor existente en el registro anterior (<code>method=ffil</code>) o en el posterior (<code>method=bfill</code>).</p>
+
+<pre><code class="language-python">df.fillna?
+</code></pre>
+
+<p>No obstante, para aplicar los anteriores métodos, hemos de ordenar el conjunto de datos previamente. Para ello, tecleamos:</p>
+
+<pre><code class="language-python">df = df.set_index(&quot;time&quot;)
+df = df.sort_index()
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>user</th>
+      <th>video</th>
+      <th>playback position</th>
+      <th>paused</th>
+      <th>volume</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1469974424</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>5</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1469974424</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>23</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1469974454</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974454</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974484</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974514</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974524</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974544</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974554</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974574</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974604</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974624</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974634</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974654</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>28</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1469974664</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974694</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974724</th>
+      <td>cheryl</td>
+      <td>intro.html</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974724</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974754</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>30</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974824</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974854</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>32</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974924</th>
+      <td>sue</td>
+      <td>advanced.html</td>
+      <td>33</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977424</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>True</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1469977454</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977484</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977514</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977544</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977574</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977604</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977634</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977664</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977694</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977724</th>
+      <td>bob</td>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Ahora bien, examinando el resultado, apreciamos que, en ocasiones, dos usuarios utilizan el sistema al mismo tiempo (situación habitual en grandes plataformas de aprendizaje en línea). Por tanto, en este caso particular, utilizar múltiples índices es una buena idea.</p>
+
+<pre><code class="language-python">df = df.reset_index()
+df = df.set_index([&quot;time&quot;, &quot;user&quot;])
+df
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>video</th>
+      <th>playback position</th>
+      <th>paused</th>
+      <th>volume</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>user</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1469974424</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>5</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>23</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1469974454</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>6</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>24</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974484</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974514</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>8</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974524</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>25</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974544</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>9</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974554</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>26</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974574</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>10</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974604</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>11</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974624</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>27</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974634</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>12</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974654</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>28</td>
+      <td>NaN</td>
+      <td>5.0</td>
+    </tr>
+    <tr>
+      <th>1469974664</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>13</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974694</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>14</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1469974724</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>15</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>29</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974754</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>30</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974824</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>31</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974854</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>32</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469974924</th>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>33</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977424</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>True</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1469977454</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977484</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977514</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977544</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977574</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977604</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977634</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977664</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977694</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1469977724</th>
+      <th>bob</th>
+      <td>intro.html</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p>Acto seguido, utilizamos la función <code>fillna()</code>, pasándole como argumento el valor <code>&quot;ffill&quot;</code> al parámetro <code>method</code>.</p>
+
+<pre><code class="language-python">df = df.fillna(method=&quot;ffill&quot;)
+df.head()
+</code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>video</th>
+      <th>playback position</th>
+      <th>paused</th>
+      <th>volume</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th>user</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">1469974424</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>5</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>23</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">1469974454</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>6</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>sue</th>
+      <td>advanced.html</td>
+      <td>24</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+    <tr>
+      <th>1469974484</th>
+      <th>cheryl</th>
+      <td>intro.html</td>
+      <td>7</td>
+      <td>False</td>
+      <td>10.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p><em>Nota</em>: muchas funciones, por defecto, ignoran los valores perdidos a la hora de realizar cálculos. Hemos de proceder pues con cautela si este comportamiento no es el que nos interesa.</p>
+
+          </div>
+
+          
+
+
+
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Anterior</div>
+    <a href="/courses/applied-data-science-with-python/curso1-modulo1/" rel="next">Módulo 1</a>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          Última actualización el 2019-06-01
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Utilizando el tema
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a> para
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, el icono de
+    <a href="http://www.freepik.com/" target="_blank" rel="noopener">Freepik</a> de
+    <a href="http://www.flaticon.com/" target="_blank" rel="noopener">www.flaticon.com</a> e imágenes de
+    <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>.
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Artículos",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
+
+  </body>
+</html>
+
+
