@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Lección 11: implementando la localización al español de ciertos elementos de la web.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.829aa389a1e6cd2bb9c0046150743c95.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">
+  <meta property="og:title" content="Unos cambios rápidos a las plantillas | Infinitos Contrastes">
+  <meta property="og:description" content="Lección 11: implementando la localización al español de ciertos elementos de la web."><meta property="og:image" content="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/featured.jpg">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-06-01T05:59:39&#43;02:00">
+  
+  <meta property="article:modified_time" content="2019-06-01T05:59:39&#43;02:00">
+  
+
+  
+
+  
+
+  <title>Unos cambios rápidos a las plantillas | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects">
+            
+            <span>Proyectos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts">
+            
+            <span>Artículos</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about">
+            
+            <span>Acerca de</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact">
+            
+            <span>Contacto</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="article-header d-xl-none">
+  <div class="featured-image" style="background-image: url('/2019/06/01/unos-cambios-rapidos-a-las-plantillas/featured_huf18e6d0e39e7f25c18df37edaf3629ee_308756_800x0_resize_q90_lanczos.jpg');"></div>
+  <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@mar28mar" target="_blank">Mar Bustos</a>, disponible en <a href="https://unsplash.com/photos/HsEz1XZ1TO8" target="_blank">Unsplash</a>.</span>
+</div>
+
+
+<div class="container-fluid split-header d-none d-xl-block">
+  <div class="row">
+    <div class="col-6">
+      <div class="split-header-content">
+        <h1 itemprop="name">Unos cambios rápidos a las plantillas</h1>
+
+        
+        <p class="page-subtitle">¡Nos metemos a fondo en la hoja de estilos CSS!</p>
+        
+
+        
+
+
+
+<meta content="2019-06-01 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2019-06-01 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-06-01</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutoriales/">Tutoriales</a></span>
+  
+
+  
+
+</div>
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/metablog/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2019%2f06%2f01%2funos-cambios-rapidos-a-las-plantillas%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fimalexissaez.github.io%2f2019%2f06%2f01%2funos-cambios-rapidos-a-las-plantillas%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fimalexissaez.github.io%2f2019%2f06%2f01%2funos-cambios-rapidos-a-las-plantillas%2f&amp;title=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fimalexissaez.github.io%2f2019%2f06%2f01%2funos-cambios-rapidos-a-las-plantillas%2f&amp;title=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas&amp;body=https%3a%2f%2fimalexissaez.github.io%2f2019%2f06%2f01%2funos-cambios-rapidos-a-las-plantillas%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="split-header-image">
+        <img src="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/featured_huf18e6d0e39e7f25c18df37edaf3629ee_308756_680x500_fill_q90_lanczos_smart1.jpg" itemprop="image" alt="">
+        <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@mar28mar" target="_blank">Mar Bustos</a>, disponible en <a href="https://unsplash.com/photos/HsEz1XZ1TO8" target="_blank">Unsplash</a>.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="article-container d-xl-none">
+  <h1 itemprop="name">Unos cambios rápidos a las plantillas</h1>
+
+  
+  <p class="page-subtitle">¡Nos metemos a fondo en la hoja de estilos CSS!</p>
+  
+
+  
+
+
+
+<meta content="2019-06-01 05:59:39 &#43;0200 CEST" itemprop="datePublished">
+<meta content="2019-06-01 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-06-01</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/tutoriales/">Tutoriales</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=&amp;url="
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u="
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=&amp;title="
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=&amp;body=">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/proyecto/metablog/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>En esta entrada recojo el código necesario para localizar a español ciertas secciones de la página web, incluyendo un experimento que al final no terminó de convencerme, pero que comparto por si sirviera de inspiración a la creatividad ajena.</p>
+
+<p>Al final de cada una de las entradas del blog aparece un apartado de <em>etiquetas</em>, que permite agrupar fácilmente contenidos relacionados. Cambiemos la cabecera de esta sección de <code>Tags:</code> a <code>Etiquetas:</code>. Para ello, editamos con <em>Sublime Text 3</em> el archivo <code>main.css</code> (ubicado en la ruta <code>\static\css\</code>) y buscamos el siguiente bloque de código:</p>
+
+<pre><code class="language-css">.blog-tags:before {
+  content: &quot;Tags: &quot;;
+}
+</code></pre>
+
+<p>Acto seguido, modificamos el valor del atributo <code>content</code>:</p>
+
+<pre><code class="language-css">.blog-tags:before {
+  content: &quot;Etiquetas: &quot;;
+}
+</code></pre>
+
+<p>y guardamos los cambios realizados.</p>
+
+<p>Siguiendo con esta misma filosofía, traduzcamos ese <code>View all</code> que aparece en las páginas de índice que agrupan contenidos por taxonomías. Para ello, editamos el archivo <code>terms.html</code> (ubicado en la ruta <code>\layouts\_default\</code>) y, utilizando el buscador de <em>Sublime Text 3</em>, nos situamos donde aparece la mencionada cadena de caracteres y la sustituimos, por ejemplo, por <code>Ver todos</code>.</p>
+
+<p>Todavía podemos mejorar un tanto la localización a español del tema a través de las taxonomías. Con tal objetivo en mente, modifiquemos el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) como sigue, de</p>
+
+<pre><code class="language-toml">#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &quot;categories&quot;
+  tag      = &quot;tags&quot;
+  project  = &quot;projects&quot;
+</code></pre>
+
+<p>a</p>
+
+<pre><code class="language-toml">#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &quot;categories&quot;
+  tag      = &quot;tags&quot;
+  apartado = &quot;apartados&quot;
+  proyecto = &quot;proyectos&quot;
+  etiqueta = &quot;etiquetas&quot;
+</code></pre>
+
+<p>Ahora, editamos la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default\</code>) y sustituimos el bloque de código:</p>
+
+<pre><code class="language-html">{{ if .Params.tags }}
+  &lt;div class=&quot;blog-tags&quot;&gt;
+    {{ range .Params.tags }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>por</p>
+
+<pre><code class="language-html">{{ if .Params.etiquetas }}
+  &lt;div class=&quot;blog-tags&quot;&gt;
+    {{ range .Params.etiquetas }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>Si queremos que aparezca en las entradas del blog información sobre el apartado o proyecto al que pertenecen, no tendríamos más que incorporar dos nuevos bloques a continuación, utilizando el anterior como guía y llevando a cabo las adaptaciones pertinentes. Por otro lado, sería más que recomendable crear en el archivo de estilos <em>css</em> las clases <code>blog-etiquetas</code>, <code>blog-apartados</code> y <code>blog-proyectos</code>, para mejorar el mantenimiento de la localización del tema en un futuro.</p>
+
+<p>A continuación, hemos de editar las plantillas <code>list.html</code> e <code>index.html</code> (ubicadas ambas en la ruta <code>\layouts\_default</code>), substituyendo los bloques de código</p>
+
+<pre><code class="language-html">{{ if .Params.tags }}
+  &lt;div class=&quot;blog-tags&quot;&gt;
+    {{ range .Params.tags }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>por</p>
+
+<pre><code class="language-html">{{ if .Params.etiquetas }}
+  &lt;div class=&quot;blog-tags&quot;&gt;
+    {{ range .Params.etiquetas }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>Añadiendo, acto seguido, bloques análogos para <code>apartados</code> y <code>proyectos</code> si lo hemos considerado oportuno.</p>
+
+<p>Este cambio nos obliga a actualizar la ruta de acceso a la página de etiquetas, por lo que debemos editar el archivo <code>config.toml</code> (ubicado en el directorio raíz de la página web) de manera que el bloque de código</p>
+
+<pre><code class="language-toml">[[menu.main]]
+    name = &quot;Etiquetas&quot;
+    url = &quot;tags&quot;
+    weight = 3
+</code></pre>
+
+<p>pase a ser</p>
+
+<pre><code class="language-toml">[[menu.main]]
+    name = &quot;Etiquetas&quot;
+    url = &quot;etiquetas&quot;
+    weight = 3
+</code></pre>
+
+<p>Finalmente, nos queda modificar el estilo de la cabecera de la página de etiquetas. Para ello editamos el archivo <code>main.css</code> (ubicado en la ruta <code>\static\css\</code>) buscando el término <code>header</code> y añadiendo la cadena correspondiente a etiquetas. Por ejemplo, para el bloque de código</p>
+
+<pre><code class="language-css">.intro-header .page-heading,
+.intro-header .tags-heading {
+  text-align: center;
+}
+</code></pre>
+
+<p>la modificación quedaría como sigue</p>
+
+<pre><code class="language-css">.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .etiquetas-heading {
+  text-align: center;
+}
+</code></pre>
+
+<p>En total, hemos de proceder de esta manera en tres ocasiones.</p>
+
+<p>Y ya que estamos con las manos en la masa, creemos las clases de estilos para <code>etiquetas</code>, <code>apartados</code> y <code>proyectos</code> trabajando sobre los bloques de código originales que aparecen tras el comentario <code>/* --- Tags --- */</code> (recordemos que cualquier modificación puede implicar después que hayamos de editar la cabeceras de las páginas tal y como hicimos hace un instante). Así pues, nos van a quedar bloques como el que aparece a continuación:</p>
+
+<pre><code class="language-css">.blog-tags,
+.blog-apartados,
+.blog-etiquetas,
+.blog-proyectos {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+</code></pre>
+
+<p>Aquellos en los que aparece el atributo <code>before</code> no los podemos agrupar tan fácilmente. No obstante, no deja de ser trabajo de <em>copy&amp;paste</em>.</p>
+
+<p>Como he comentado arriba, no debemos olvidar añadir a las clases de las cabeceras las líneas correspondientes, de forma que nos aparezcan bloques como el que figura acto seguido:</p>
+
+<pre><code class="language-css">.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .apartados-heading,
+.intro-header .etiquetas-heading,
+.intro-header .proyectos-heading {
+  text-align: center;
+}
+</code></pre>
+
+<p>A continuación, hacemos una nueva modificación sobre el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) y cambiamos el nombre del menú principal <em>Blog</em> por <em>Inicio</em>. Así, el bloque de código</p>
+
+<pre><code class="language-toml">[[menu.main]]
+    name = &quot;Blog&quot;
+    url = &quot;&quot;
+    weight = 1
+</code></pre>
+
+<p>pasa a ser</p>
+
+<pre><code class="language-toml">[[menu.main]]
+    name = &quot;Inicio&quot;
+    url = &quot;&quot;
+    weight = 1
+</code></pre>
+
+<p>Acto seguido, en la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default</code>) añado, en la ubicación donde aparecen las etiquetas, información sobre el apartado y el proyecto al que pertenece una entrada en particular. Por tanto, el bloque de código</p>
+
+<pre><code class="language-html">{{ if .Params.etiquetas }}
+  &lt;div class=&quot;blog-etiquetas&quot;&gt;
+    {{ range .Params.etiquetas }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>a</p>
+
+<pre><code class="language-html">{{ if .Params.apartados }}
+  &lt;div class=&quot;blog-apartados&quot;&gt;
+    {{ range .Params.apartados }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/apartados/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+
+{{ if .Params.etiquetas }}
+  &lt;div class=&quot;blog-etiquetas&quot;&gt;
+    {{ range .Params.etiquetas }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+
+{{ if .Params.proyectos }}
+  &lt;div class=&quot;blog-proyectos&quot;&gt;
+    {{ range .Params.proyectos }}
+      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/proyectos/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
+    {{ end }}
+  &lt;/div&gt;
+{{ end }}
+</code></pre>
+
+<p>Sin embargo, aunque es una opción razonable, no me convence cómo queda, por lo que, en mi caso, voy a dejarlo como estaba. No obstante, comparto el código fuente por si alguien tiene interés en realizar esta modificación.</p>
+
+<p>Por último, quizá quede todo un poco mejor si damos acceso a las diferentes secciones desde el menú superior derecho, con un desplegable. Para ello, modificamos el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) y dejamos la sección dedicada al menú como figura a continuación:</p>
+
+<pre><code class="language-toml">#
+# Configuración del menú superior derecho
+#
+[[menu.main]]
+    identifier = &quot;menu&quot;
+    name       = &quot;Menú&quot;
+    weight     = 1
+
+[[menu.main]]
+    parent = &quot;menu&quot;
+    name   = &quot;Apartados&quot;
+    url    = &quot;apartados/&quot;
+    weight = 1
+
+[[menu.main]]
+    parent = &quot;menu&quot;
+    name   = &quot;Etiquetas&quot;
+    url    = &quot;etiquetas/&quot;
+    weight = 2
+
+[[menu.main]]
+    parent = &quot;menu&quot;
+    name   = &quot;Proyectos&quot;
+    url    = &quot;proyectos/&quot;
+    weight = 3
+
+[[menu.main]]
+    name   = &quot;Acerca de&quot;
+    url    = &quot;page/about/&quot;
+    weight = 2
+</code></pre>
+
+<p>Concluyo aquí esta extensa entrada, dejando el <a href="/proyectos/metablog/">Proyecto MetaBlog</a> en espera, pues en estos momentos estoy más centrado en la generación de contenido para la página web, que en la edición de la misma.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/css/">css</a>
+  
+  <a class="badge badge-light" href="/tags/beautiful-hugo/">Beautiful Hugo</a>
+  
+  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="/authors/admin/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Matemático</h6>
+      <p class="card-text" itemprop="description">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Relacionado</h3>
+        <ul>
+          
+          <li><a href="/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/">Mejorando la estética de los bloques de código</a></li>
+          
+          <li><a href="/2018/09/18/configurando-el-comportamiento-de-katex/">Configurando el comportamiento de KaTeX</a></li>
+          
+          <li><a href="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/">Publicando la primera entrada en nuestro sitio web</a></li>
+          
+          <li><a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">Configurando el tema Beautiful Hugo (II)</a></li>
+          
+          <li><a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">Configurando el tema Beautiful Hugo (I)</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "infinitos-contrastes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+<div class="container">
+  <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Utilizando el tema
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic</a> para
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, el icono de
+    <a href="http://www.freepik.com/" target="_blank" rel="noopener">Freepik</a> de
+    <a href="http://www.flaticon.com/" target="_blank" rel="noopener">www.flaticon.com</a> e imágenes de
+    <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Artículos",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Conferencias"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.15494b02d66be9b96bab2e305f69c460.js"></script>
+
+  </body>
+</html>
+
