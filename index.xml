@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sun, 02 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15061,6 +15061,72 @@ comment_text.config(yscrollcommand=comment_text_scrollvert)
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/60/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>61. Práctica guiada III</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb61-practica-guiada-iii/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb61-practica-guiada-iii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/OJzFGgOSpvI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, una vez declarados los campos de introducción de datos en la anterior, nos centraremos en ubicar las etiquetas en la aplicación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;id_label = Label(campos_frame, text=&amp;quot;ID:&amp;quot;)
+id_label.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+name_label = Label(campos_frame, text=&amp;quot;Nombre:&amp;quot;)
+name_label.grid(row=1, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+lastname_label = Label(campos_frame, text=&amp;quot;Apellido:&amp;quot;)
+lastname_label.grid(row=2, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+address_label = Label(campos_frame, text=&amp;quot;Dirección:&amp;quot;)
+address_label.grid(row=3, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+password_label = Label(campos_frame, text=&amp;quot;Contraseña:&amp;quot;)
+password_label.grid(row=4, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+comment_label = Label(campos_frame, text=&amp;quot;Comentarios:&amp;quot;)
+comment_label.grid(row=5, column=0, sticky=&amp;quot;ne&amp;quot;, padx=2, pady=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, ocupémonos de construir un &lt;em&gt;frame&lt;/em&gt; en la parte inferior del ya disponible y disponer cuatro botones:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Frame inferior
+botones_frame = Frame(root)
+botones_frame.pack(expand=True)
+
+crear_button = Button(botones_frame, text=&amp;quot;Create&amp;quot;)
+crear_button.grid(row=0, column=0, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+read_button = Button(botones_frame, text=&amp;quot;Read&amp;quot;)
+read_button.grid(row=0, column=1, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+update_button = Button(botones_frame, text=&amp;quot;Update&amp;quot;)
+update_button.grid(row=0, column=2, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+
+delete_button = Button(botones_frame, text=&amp;quot;Delete&amp;quot;)
+delete_button.grid(row=0, column=3, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, ya únicamente nos resta programar la funcionalidad de la aplicación, tanto para el menú, como para los botones recién creados.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/61/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
