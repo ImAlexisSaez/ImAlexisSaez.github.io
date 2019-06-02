@@ -28,11 +28,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, nuestro objetivo será conseguir que la calculadora que estamos generando sea capaz de sumar valores numéricos enteros.
-Empecemos declarando una variable global, que será accesible desde todos las funciones del programa, denominada operacion y que almacenará la operación aritmética que desea el usuario llevar a cabo. Además, la utilizaremos para conseguir que la pantalla vuelva a su estado inicial a través del uso de bloques condicionales.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación CRUD. Para ello, empezamos tecleando:
+from tkinter import Tk # Raíz de la aplicación root = Tk() root.title(&quot;Aplicación CRUD&quot;) root.iconbitmap(&quot;icon.ico&quot;) # Ejecución de la aplicación root.mainloop()  A continuación, generamos la barra de menú superior:
+# Menú superior de la aplicación barra_menu = Menu(root) root.config(menu=barra_menu) bbdd_menu = Menu(barra_menu, tearoff=0) bbdd_menu.add_command(label=&quot;Conectar&quot;) bbdd_menu.add_separator() bbdd_menu.add_command(label=&quot;Salir&quot;) borrar_menu = Menu(barra_menu, tearoff=0) borrar_menu.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb49-interfaces-graficas-viii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb60-practica-guiada-ii/">
 
   
 
@@ -111,7 +112,7 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb49-interfaces-graficas-viii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb60-practica-guiada-ii/">
 
   
   
@@ -125,27 +126,28 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb49-interfaces-graficas-viii/">
-  <meta property="og:title" content="49. Interfaces gráficas VIII | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, nuestro objetivo será conseguir que la calculadora que estamos generando sea capaz de sumar valores numéricos enteros.
-Empecemos declarando una variable global, que será accesible desde todos las funciones del programa, denominada operacion y que almacenará la operación aritmética que desea el usuario llevar a cabo. Además, la utilizaremos para conseguir que la pantalla vuelva a su estado inicial a través del uso de bloques condicionales."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb60-practica-guiada-ii/">
+  <meta property="og:title" content="60. Práctica guiada II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación CRUD. Para ello, empezamos tecleando:
+from tkinter import Tk # Raíz de la aplicación root = Tk() root.title(&quot;Aplicación CRUD&quot;) root.iconbitmap(&quot;icon.ico&quot;) # Ejecución de la aplicación root.mainloop()  A continuación, generamos la barra de menú superior:
+# Menú superior de la aplicación barra_menu = Menu(root) root.config(menu=barra_menu) bbdd_menu = Menu(barra_menu, tearoff=0) bbdd_menu.add_command(label=&quot;Conectar&quot;) bbdd_menu.add_separator() bbdd_menu.add_command(label=&quot;Salir&quot;) borrar_menu = Menu(barra_menu, tearoff=0) borrar_menu."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-25T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-02T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-25T00:00:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-02T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>49. Interfaces gráficas VIII | Infinitos Contrastes</title>
+
+
+  <title>60. Práctica guiada II | Infinitos Contrastes</title>
 
 </head>
 
@@ -590,7 +592,7 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
         <a href="/courses/python-basic/pb48-interfaces-graficas-vii/">48. Interfaces VII</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb49-interfaces-graficas-viii/">49. Interfaces VIII</a>
       </li>
       
@@ -634,7 +636,7 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
         <a href="/courses/python-basic/pb59-practica-guiada-i/">59. Práctica I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb60-practica-guiada-ii/">60. Práctica II</a>
       </li>
       
@@ -674,7 +676,7 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">49. Interfaces gráficas VIII</h1>
+          <h1 itemprop="name">60. Práctica guiada II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -683,187 +685,90 @@ Empecemos declarando una variable global, que será accesible desde todos las fu
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/LnO35TiFuQY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/o8E869dmK3U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>En esta lección, nuestro objetivo será conseguir que la calculadora que estamos generando sea capaz de sumar valores numéricos enteros.</p>
+<p>En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación <em>CRUD</em>. Para ello, empezamos tecleando:</p>
 
-<p>Empecemos declarando una variable global, que será accesible desde todos las funciones del programa, denominada <code>operacion</code> y que almacenará la operación aritmética que desea el usuario llevar a cabo. Además, la utilizaremos para conseguir que la pantalla vuelva a su estado inicial a través del uso de bloques condicionales.</p>
+<pre><code class="language-python">from tkinter import Tk
 
-<pre><code class="language-python">operación = &quot;&quot;
+# Raíz de la aplicación
+root = Tk()
+root.title(&quot;Aplicación CRUD&quot;)
+root.iconbitmap(&quot;icon.ico&quot;)
+
+# Ejecución de la aplicación
+root.mainloop()
 </code></pre>
 
-<p>Esta variable cambiará de valor a medida que pulsemos los botones de operaciones aritméticas. Por ejemplo, para la suma, definimos la función:</p>
+<p>A continuación, generamos la barra de menú superior:</p>
 
-<pre><code class="language-python"># Función suma
-def suma():
-    global operacion
-    operacion = &quot;suma&quot;
+<pre><code class="language-python"># Menú superior de la aplicación
+barra_menu = Menu(root)
+root.config(menu=barra_menu)
+
+bbdd_menu = Menu(barra_menu, tearoff=0)
+bbdd_menu.add_command(label=&quot;Conectar&quot;)
+bbdd_menu.add_separator()
+bbdd_menu.add_command(label=&quot;Salir&quot;)
+
+borrar_menu = Menu(barra_menu, tearoff=0)
+borrar_menu.add_command(label=&quot;Borrar campos&quot;)
+
+crud_menu = Menu(barra_menu, tearoff=0)
+crud_menu.add_command(label=&quot;Crear&quot;)
+crud_menu.add_command(label=&quot;Leer&quot;)
+crud_menu.add_command(label=&quot;Actualizar&quot;)
+crud_menu.add_command(label=&quot;Borrar&quot;)
+
+help_menu = Menu(barra_menu, tearoff=0)
+help_menu.add_command(label=&quot;Licencia&quot;)
+help_menu.add_separator()
+help_menu.add_command(label=&quot;Acerca de...&quot;)
+
+barra_menu.add_cascade(label=&quot;BBDD&quot;, menu=bbdd_menu)
+barra_menu.add_cascade(label=&quot;Borrar&quot;, menu=borrar_menu)
+barra_menu.add_cascade(label=&quot;CRUD&quot;, menu=crud_menu)
+barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=help_menu)
 </code></pre>
 
-<p>A continuación, modificamos el código de <code>boton_suma</code> como sigue:</p>
+<p>Por lo que respecta al cuerpo de la aplicación, lo dividiremos en dos <em>frames</em>: uno superior para organizar los campos de introducción de datos y otro inferior para distribuir los cuatro botones que nos permitirán llevar a cabo acciones de tipo <em>CRUD</em>.</p>
 
-<pre><code class="language-python">boton_suma = Button(frame, text=&quot;+&quot;, width=3, command=lambda: suma())
-</code></pre>
+<p>Así pues, si, por ejemplo, optamos por construir los diferentes campos de entrada que poseerá la aplicación, el bloque de código a escribir será:</p>
 
-<p>Acto seguido, hemos de conseguir que, cuando se pulse dicho botón, la pantalla se borre y permita el almacenamiento de un nuevo número. Modifiquemos la función <code>numero_pulsado()</code>:</p>
+<pre><code class="language-python"># Frame superior
+campos_frame = Frame(root)
+campos_frame.pack()
 
-<pre><code class="language-python">def numero_pulsado(num):
-    global operacion
-    if operacion != &quot;&quot;:
-        numero_pantalla.set(num)
-        operacion = &quot;&quot;
-    else:
-        numero_pantalla.set(numero_pantalla.get() + num)
-</code></pre>
+id_entry = Entry(campos_frame)
+id_entry.grid(row=0, column=1, padx=2, pady=2)
 
-<p>Si pulsamos sobre el botón de sumar, la condición <code>operacion != &quot;&quot;</code> sería cierta, por lo que entraríamos en esa parte de la estructura condicional. En su interior, apreciamos que no concatenamos el número con nada más y volvemos a declarar el valor de la variable <code>operacion</code> como una cadena vacía, para permitir así la correcta introducción de un nuevo número.</p>
+name_entry = Entry(campos_frame)
+name_entry.grid(row=1, column=1, padx=2, pady=2)
 
-<p>Ahora necesitamos una variable global, que denominaremos <code>resultado</code>, que vaya almacenando los valores introducidos:</p>
+lastname_entry = Entry(campos_frame)
+lastname_entry.grid(row=2, column=1, padx=2, pady=2)
 
-<pre><code class="language-python">resultado = 0
-</code></pre>
+address_entry = Entry(campos_frame)
+address_entry.grid(row=3, column=1, padx=2, pady=2)
 
-<p>La siguiente tarea consiste en actualizar la función <code>suma()</code>:</p>
+password_entry = Entry(campos_frame)
+password_entry.grid(row=4, column=1, padx=2, pady=2)
+password_entry.config(show=&quot;*&quot;)
 
-<pre><code class="language-python"># Función suma
-def suma(num):
-    global operacion, resultado
-    operacion = &quot;suma&quot;
-    resultado += int(num)
-    numero_pantalla.set(resultado)
-</code></pre>
-
-<p>donde <code>num</code> representa el número que aparece en la pantalla de la calculadora al pulsar el botón de sumar. Como estamos trabajando con cuadros de texto, <em>Python</em> almacena los textos, lógicamente como su nombre indica, como cadenas de caracteres, de ahí la necesidad de utilizar la función <code>int()</code>. Una vez realizada la operación aritmética, mostramos su resultado en la pantalla con <code>numero_pantalla.set(resultado)</code>.</p>
-
-<p>El nuevo parámetro de la función <code>suma()</code> nos obliga a modificar el código de <code>boton_suma</code>:</p>
-
-<pre><code class="language-python">boton_suma = Button(frame,
-                    text=&quot;+&quot;,
-                    width=3,
-                    command=lambda: suma(numero_pantalla.get()))
-</code></pre>
-
-<p>A continuación, programemos el comportamiento del botón del símbolo igual.</p>
-
-<pre><code class="language-python"># Función el_resultado (para el botón igual)
-def el_resultado():
-    global resultado
-    numero_pantalla.set(resultado + int(numero_pantalla.get()))
-    resultado = 0
-</code></pre>
-
-<p>Es decir, al resultado acumulado hemos de sumarle el número que figure en pantalla antes de pulsar el botón del símbolo igual. Tras ello, reseteamos la variable <code>resultado</code>.</p>
-
-<p>Procedamos ahora a modificar el código el mencionado botón:</p>
-
-<pre><code class="language-python">boton_igual = Button(frame, text=&quot;=&quot;, width=3, command=lambda: el_resultado())
-</code></pre>
-
-<p>Finalmente, como viene siendo habitual, comparto el código completo de la aplicación para que podamos tener una visión global de la calculadora:</p>
-
-<pre><code class="language-python">from tkinter import Button, Entry, Frame, StringVar, Tk
-
-# Raíz
-raiz = Tk()
-raiz.title(&quot;Calculadora&quot;)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-
-# Frame
-frame = Frame(raiz)
-frame.pack()
-
-# Variables
-numero_pantalla = StringVar()
-operacion = &quot;&quot;
-resultado = 0
-
-# Pantalla
-pantalla = Entry(frame, textvariable=numero_pantalla)
-pantalla.grid(row=1, column=1, padx=10, pady=10, columnspan=4)
-pantalla.config(background=&quot;black&quot;, fg=&quot;#03f943&quot;, justify=&quot;right&quot;)
-
-
-# Pulsaciones teclado
-def numero_pulsado(num):
-    global operacion
-    if operacion != &quot;&quot;:
-        numero_pantalla.set(num)
-        operacion = &quot;&quot;
-    else:
-        numero_pantalla.set(numero_pantalla.get() + num)
-
-
-# Función suma
-def suma(num):
-    global operacion, resultado
-    operacion = &quot;suma&quot;
-    resultado += int(num)
-    numero_pantalla.set(resultado)
-
-
-# Función el_resultado (para el botón igual)
-def el_resultado():
-    global resultado
-    numero_pantalla.set(resultado + int(numero_pantalla.get()))
-    resultado = 0
-
-
-# Fila 1 de botones
-boton7 = Button(frame, text=&quot;7&quot;, width=3, command=lambda: numero_pulsado(&quot;7&quot;))
-boton7.grid(row=2, column=1)
-boton8 = Button(frame, text=&quot;8&quot;, width=3, command=lambda: numero_pulsado(&quot;8&quot;))
-boton8.grid(row=2, column=2)
-boton9 = Button(frame, text=&quot;9&quot;, width=3, command=lambda: numero_pulsado(&quot;9&quot;))
-boton9.grid(row=2, column=3)
-boton_div = Button(frame, text=&quot;/&quot;, width=3)
-boton_div.grid(row=2, column=4)
-
-# Fila 2 de botones
-boton4 = Button(frame, text=&quot;4&quot;, width=3, command=lambda: numero_pulsado(&quot;4&quot;))
-boton4.grid(row=3, column=1)
-boton5 = Button(frame, text=&quot;5&quot;, width=3, command=lambda: numero_pulsado(&quot;5&quot;))
-boton5.grid(row=3, column=2)
-boton6 = Button(frame, text=&quot;6&quot;, width=3, command=lambda: numero_pulsado(&quot;6&quot;))
-boton6.grid(row=3, column=3)
-boton_mult = Button(frame, text=&quot;*&quot;, width=3)
-boton_mult.grid(row=3, column=4)
-
-# Fila 3 de botones
-boton1 = Button(frame, text=&quot;1&quot;, width=3, command=lambda: numero_pulsado(&quot;1&quot;))
-boton1.grid(row=4, column=1)
-boton2 = Button(frame, text=&quot;2&quot;, width=3, command=lambda: numero_pulsado(&quot;2&quot;))
-boton2.grid(row=4, column=2)
-boton3 = Button(frame, text=&quot;3&quot;, width=3, command=lambda: numero_pulsado(&quot;3&quot;))
-boton3.grid(row=4, column=3)
-boton_rest = Button(frame, text=&quot;-&quot;, width=3)
-boton_rest.grid(row=4, column=4)
-
-# Fila 4 de botones
-boton0 = Button(frame, text=&quot;0&quot;, width=3, command=lambda: numero_pulsado(&quot;0&quot;))
-boton0.grid(row=5, column=1)
-boton_coma = Button(frame,
-                    text=&quot;.&quot;,
-                    width=3,
-                    command=lambda: numero_pulsado(&quot;.&quot;))
-boton_coma.grid(row=5, column=2)
-boton_igual = Button(frame, text=&quot;=&quot;, width=3, command=lambda: el_resultado())
-boton_igual.grid(row=5, column=3)
-boton_suma = Button(frame,
-                    text=&quot;+&quot;,
-                    width=3,
-                    command=lambda: suma(numero_pantalla.get()))
-boton_suma.grid(row=5, column=4)
-
-raiz.mainloop()
+comment_text = Text(campos_frame, width=15, height=5)
+comment_text.grid(row=5, column=1, padx=2, pady=2)
+comment_text_scrollvert = Scrollbar(campos_frame, command=comment_text.yview)
+comment_text_scrollvert.grid(row=5, column=2, sticky=&quot;nsew&quot;)
+comment_text.config(yscrollcommand=comment_text_scrollvert)
 </code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/49/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/60/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -880,15 +785,9 @@ raiz.mainloop()
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb48-interfaces-graficas-vii/" rel="next">48. Interfaces gráficas VII</a>
+    <a href="/courses/python-basic/pb59-practica-guiada-i/" rel="next">59. Práctica guiada I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb50-interfaces-graficas-ix/" rel="prev">50. Interfaces gráficas IX</a>
-  </div>
   
 </div>
 
@@ -897,7 +796,7 @@ raiz.mainloop()
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-25
+          Última actualización el 2019-06-02
         </div>
 
       </article>

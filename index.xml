@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sat, 01 Jun 2019 05:59:39 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14962,6 +14962,105 @@ mi_conexion.close()
 &lt;p&gt;En esta lección, y con el objetivo de reforzar los contenidos vistos hasta la fecha, comenzaremos a esbozar una aplicación gráfica de tipo &lt;em&gt;CRUD&lt;/em&gt;. Mediante ella, conectaremos con una base de datos (BBDD) y podremos realizar las operaciones básicas: &lt;em&gt;Create&lt;/em&gt;, &lt;em&gt;Read&lt;/em&gt;, &lt;em&gt;Update&lt;/em&gt; y &lt;em&gt;Delete&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;En el vídeo se explican los diferentes elementos y funcionalidades que caracterizan a la aplicación propuesta, por si queremos lanzarnos a su elaboración de antemano. No obstante, se procederá a su implementación en posteriores lecciones.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>60. Práctica guiada II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb60-practica-guiada-ii/</link>
+      <pubDate>Sun, 02 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb60-practica-guiada-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/o8E869dmK3U&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación &lt;em&gt;CRUD&lt;/em&gt;. Para ello, empezamos tecleando:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Tk
+
+# Raíz de la aplicación
+root = Tk()
+root.title(&amp;quot;Aplicación CRUD&amp;quot;)
+root.iconbitmap(&amp;quot;icon.ico&amp;quot;)
+
+# Ejecución de la aplicación
+root.mainloop()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, generamos la barra de menú superior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Menú superior de la aplicación
+barra_menu = Menu(root)
+root.config(menu=barra_menu)
+
+bbdd_menu = Menu(barra_menu, tearoff=0)
+bbdd_menu.add_command(label=&amp;quot;Conectar&amp;quot;)
+bbdd_menu.add_separator()
+bbdd_menu.add_command(label=&amp;quot;Salir&amp;quot;)
+
+borrar_menu = Menu(barra_menu, tearoff=0)
+borrar_menu.add_command(label=&amp;quot;Borrar campos&amp;quot;)
+
+crud_menu = Menu(barra_menu, tearoff=0)
+crud_menu.add_command(label=&amp;quot;Crear&amp;quot;)
+crud_menu.add_command(label=&amp;quot;Leer&amp;quot;)
+crud_menu.add_command(label=&amp;quot;Actualizar&amp;quot;)
+crud_menu.add_command(label=&amp;quot;Borrar&amp;quot;)
+
+help_menu = Menu(barra_menu, tearoff=0)
+help_menu.add_command(label=&amp;quot;Licencia&amp;quot;)
+help_menu.add_separator()
+help_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;)
+
+barra_menu.add_cascade(label=&amp;quot;BBDD&amp;quot;, menu=bbdd_menu)
+barra_menu.add_cascade(label=&amp;quot;Borrar&amp;quot;, menu=borrar_menu)
+barra_menu.add_cascade(label=&amp;quot;CRUD&amp;quot;, menu=crud_menu)
+barra_menu.add_cascade(label=&amp;quot;Ayuda&amp;quot;, menu=help_menu)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por lo que respecta al cuerpo de la aplicación, lo dividiremos en dos &lt;em&gt;frames&lt;/em&gt;: uno superior para organizar los campos de introducción de datos y otro inferior para distribuir los cuatro botones que nos permitirán llevar a cabo acciones de tipo &lt;em&gt;CRUD&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Así pues, si, por ejemplo, optamos por construir los diferentes campos de entrada que poseerá la aplicación, el bloque de código a escribir será:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Frame superior
+campos_frame = Frame(root)
+campos_frame.pack()
+
+id_entry = Entry(campos_frame)
+id_entry.grid(row=0, column=1, padx=2, pady=2)
+
+name_entry = Entry(campos_frame)
+name_entry.grid(row=1, column=1, padx=2, pady=2)
+
+lastname_entry = Entry(campos_frame)
+lastname_entry.grid(row=2, column=1, padx=2, pady=2)
+
+address_entry = Entry(campos_frame)
+address_entry.grid(row=3, column=1, padx=2, pady=2)
+
+password_entry = Entry(campos_frame)
+password_entry.grid(row=4, column=1, padx=2, pady=2)
+password_entry.config(show=&amp;quot;*&amp;quot;)
+
+comment_text = Text(campos_frame, width=15, height=5)
+comment_text.grid(row=5, column=1, padx=2, pady=2)
+comment_text_scrollvert = Scrollbar(campos_frame, command=comment_text.yview)
+comment_text_scrollvert.grid(row=5, column=2, sticky=&amp;quot;nsew&amp;quot;)
+comment_text.config(yscrollcommand=comment_text_scrollvert)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/60/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
