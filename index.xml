@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sun, 02 Jun 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 03 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15127,6 +15127,78 @@ delete_button.grid(row=0, column=3, sticky=&amp;quot;e&amp;quot;, padx=2, pady=2
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/61/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>62. Práctica guiada IV</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb62-practica-guiada-iv/</link>
+      <pubDate>Mon, 03 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb62-practica-guiada-iv/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/5XPLCDp7nDk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú &lt;em&gt;BBDD&lt;/em&gt;. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función para conectar a la BBDD
+def conecta_bbdd():
+    conexion = sqlite3.connect(&amp;quot;usuarios&amp;quot;)
+    cursor = conexion.cursor()
+    try:
+        cursor.execute(&#39;&#39;&#39;
+            CREATE TABLE DATOS_USUARIOS (
+            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            NOMBRE_USUARIO VARCHAR(50),
+            APELLIDO VARCHAR(50),
+            DIRECCION VARCHAR(50),
+            PASSWORD VARCHAR(50),
+            COMENTARIOS VARCHAR(250))
+            &#39;&#39;&#39;)
+    except sqlite3.OperationalError:
+        pass
+    finally:
+        messagebox.showinfo(
+            title=&amp;quot;Conexión a la base de datos&amp;quot;,
+            message=&amp;quot;La conexión a la base de datos se ha realizado con éxito.&amp;quot;
+        )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, acudimos a la instrucción que gestiona el elemento del menú &lt;em&gt;BBDD&lt;/em&gt; correspondiente y la modificamos como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bbdd_menu.add_command(label=&amp;quot;Conectar&amp;quot;, command=conecta_bbdd)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, implementemos la función que gestiona la salida de la aplicación. El código es idéntico al visto en lecciones anteriores:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función para salir de la aplicación
+def sale_aplicacion():
+    valor = messagebox.askquestion(
+        title=&amp;quot;Salir&amp;quot;,
+        message=&amp;quot;¿Deseas realmente salir de la aplicación?&amp;quot;)
+    if valor == &amp;quot;yes&amp;quot;:
+        root.destroy()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Y añadimos la funcionalidad al correspondiente elemento del menú &lt;em&gt;BBDD&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;bbdd_menu.add_command(label=&amp;quot;Salir&amp;quot;, command=sale_aplicacion)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/62/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

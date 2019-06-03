@@ -28,12 +28,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
-Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú BBDD. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.
+Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb62-practica-guiada-iv/">
 
   
 
@@ -112,7 +111,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb62-practica-guiada-iv/">
 
   
   
@@ -126,28 +125,27 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb35-paquetes-i/">
-  <meta property="og:title" content="35. Paquetes I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Los paquetes son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.
-Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado __init__.py.
-Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado calculos, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del repositorio."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb62-practica-guiada-iv/">
+  <meta property="og:title" content="62. Práctica guiada IV | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú BBDD. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.
+Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-12T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-06-03T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-12T00:00:02&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-03T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>35. Paquetes I | Infinitos Contrastes</title>
+
+
+  <title>62. Práctica guiada IV | Infinitos Contrastes</title>
 
 </head>
 
@@ -536,7 +534,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
         <a href="/courses/python-basic/pb34-modulos/">34. Módulos</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb35-paquetes-i/">35. Paquetes I</a>
       </li>
       
@@ -644,7 +642,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
         <a href="/courses/python-basic/pb61-practica-guiada-iii/">61. Práctica III</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb62-practica-guiada-iv/">62. Práctica IV</a>
       </li>
       
@@ -684,7 +682,7 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">35. Paquetes I</h1>
+          <h1 itemprop="name">62. Práctica guiada IV</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -693,120 +691,63 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/5XPLCDp7nDk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
+<p>En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú <em>BBDD</em>. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.</p>
 
-<p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
+<p>Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada.</p>
 
-<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
-
-<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
-
-<p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
-
-<pre><code class="language-python">def sumar(op1, op2):
-    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
-
-
-def restar(op1, op2):
-    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
-
-
-def multiplicar(op1, op2):
-    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
-
-
-def dividir(dividendo, divisor):
-    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
-
-
-def potenciar(base, exponente):
-    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
-
-
-def redondear(numero):
-    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+<pre><code class="language-python"># Función para conectar a la BBDD
+def conecta_bbdd():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    try:
+        cursor.execute('''
+            CREATE TABLE DATOS_USUARIOS (
+            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            NOMBRE_USUARIO VARCHAR(50),
+            APELLIDO VARCHAR(50),
+            DIRECCION VARCHAR(50),
+            PASSWORD VARCHAR(50),
+            COMENTARIOS VARCHAR(250))
+            ''')
+    except sqlite3.OperationalError:
+        pass
+    finally:
+        messagebox.showinfo(
+            title=&quot;Conexión a la base de datos&quot;,
+            message=&quot;La conexión a la base de datos se ha realizado con éxito.&quot;
+        )
 </code></pre>
 
-<p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
+<p>Acto seguido, acudimos a la instrucción que gestiona el elemento del menú <em>BBDD</em> correspondiente y la modificamos como sigue:</p>
 
-<pre><code class="language-python">from calculos.calculos_generales import dividir
-
-dividir(10, 3)
+<pre><code class="language-python">bbdd_menu.add_command(label=&quot;Conectar&quot;, command=conecta_bbdd)
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+<p>Finalmente, implementemos la función que gestiona la salida de la aplicación. El código es idéntico al visto en lecciones anteriores:</p>
+
+<pre><code class="language-python"># Función para salir de la aplicación
+def sale_aplicacion():
+    valor = messagebox.askquestion(
+        title=&quot;Salir&quot;,
+        message=&quot;¿Deseas realmente salir de la aplicación?&quot;)
+    if valor == &quot;yes&quot;:
+        root.destroy()
 </code></pre>
 
-<p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<p>Y añadimos la funcionalidad al correspondiente elemento del menú <em>BBDD</em>:</p>
 
-<pre><code class="language-python">from calculos.calculos_generales import *
-
-dividir(10, 3)
-
-redondear(4.6)
-
-potenciar(2, 10)
-</code></pre>
-
-<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
-El resultado del redondeo es: 5
-El resultado de la potenciación es: 1024
-</code></pre>
-
-<p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
-
-<p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
-
-<p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
-
-<pre><code class="language-python">def sumar(op1, op2):
-    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
-
-
-def restar(op1, op2):
-    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
-
-
-def multiplicar(op1, op2):
-    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
-
-
-def dividir(dividendo, divisor):
-    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
-</code></pre>
-
-<p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
-
-<pre><code class="language-python">def potenciar(base, exponente):
-    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
-
-
-def redondear(numero):
-    print(&quot;El resultado del redondeo es:&quot;, round(numero))
-</code></pre>
-
-<p>Para utilizar estos últimos módulos creados, tecleamos:</p>
-
-<pre><code class="language-python">from calculos.basicos.operaciones_basicas import sumar
-from calculos.redondeo_potencia.redondea_y_potencia import potenciar
-
-sumar(5, 7)
-potenciar(2, 10)
-</code></pre>
-
-<pre><code class="language-bash">El resultado de la suma es: 12
-El resultado de la potenciación es: 1024
+<pre><code class="language-python">bbdd_menu.add_command(label=&quot;Salir&quot;, command=sale_aplicacion)
 </code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/62/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -823,15 +764,9 @@ El resultado de la potenciación es: 1024
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb34-modulos/" rel="next">34. Módulos</a>
+    <a href="/courses/python-basic/pb61-practica-guiada-iii/" rel="next">61. Práctica guiada III</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb36-paquetes-ii/" rel="prev">36. Paquetes distribuibles</a>
-  </div>
   
 </div>
 
@@ -840,7 +775,7 @@ El resultado de la potenciación es: 1024
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-12
+          Última actualización el 2019-06-03
         </div>
 
       </article>
