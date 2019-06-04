@@ -410,14 +410,14 @@
 <ul>
 <li>
 <ul>
-<li><a href="#1-introducción">1. Introducción</a></li>
-<li><a href="#2-la-estructura-de-datos-series">2. La estructura de datos Series</a></li>
-<li><a href="#3-extracción-de-elementos-en-series">3. Extracción de elementos en Series</a></li>
-<li><a href="#4-la-estrutura-de-datos-dataframe">4. La estrutura de datos DataFrame</a></li>
-<li><a href="#5-lectura-de-archivos-como-dataframe">5. Lectura de archivos como DataFrame</a></li>
-<li><a href="#6-consultas-en-dataframe">6. Consultas en DataFrame</a></li>
-<li><a href="#7-índices-en-dataframe">7. Índices en DataFrame</a></li>
-<li><a href="#8-valores-perdidos">8. Valores perdidos</a></li>
+<li><a href="#section-1">1. Introducción</a></li>
+<li><a href="#section-2">2. La estructura de datos Series</a></li>
+<li><a href="#section-3">3. Extracción de elementos en Series</a></li>
+<li><a href="#section-4">4. La estrutura de datos DataFrame</a></li>
+<li><a href="#section-5">5. Lectura de archivos como DataFrame</a></li>
+<li><a href="#section-6">6. Consultas en DataFrame</a></li>
+<li><a href="#section-7">7. Índices en DataFrame</a></li>
+<li><a href="#section-8">8. Valores perdidos</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -436,7 +436,7 @@
           <div class="article-style" itemprop="articleBody">
             
 
-<h2 id="1-introducción">1. Introducción</h2>
+<h2 id="section-1">1. Introducción</h2>
 
 <p>En este módulo, investigaremos cómo <em>Python</em>, dado un conjunto de datos, puede realizar manipulaciones, proceder a su limpieza y llevar a cabo consultas a través de la librería <code>pandas</code>. Para resolver dudas sobre el uso de este módulo, cuatro buenos recursos son:</p>
 
@@ -447,7 +447,7 @@
 <li>El podcast <a href="https://dataskeptic.com/" target="_blank">Data Skeptic</a>.</li>
 </ul>
 
-<h2 id="2-la-estructura-de-datos-series">2. La estructura de datos Series</h2>
+<h2 id="section-2">2. La estructura de datos Series</h2>
 
 <p>La estructura de datos <code>Series</code>, de la librería <code>pandas</code>, es una especie de mezcla entre las listas y los diccionarios de <em>Python</em> que estudiamos en el módulo anterior. Los elementos se almacenan en orden y tenemos a nuestra disposición una serie de etiquetas (<em>labels</em>), que nos permiten un acceso a ellos por nombre.</p>
 
@@ -593,7 +593,7 @@ Golf         Italia
 dtype: object
 </code></pre>
 
-<h2 id="3-extracción-de-elementos-en-series">3. Extracción de elementos en Series</h2>
+<h2 id="section-3">3. Extracción de elementos en Series</h2>
 
 <p>Para empezar, retomemos uno de los últimos ejemplos de la sección anterior:</p>
 
@@ -943,7 +943,7 @@ lista_original
 <pre><code>[1, 2, 3, 4]
 </code></pre>
 
-<h2 id="4-la-estrutura-de-datos-dataframe">4. La estrutura de datos DataFrame</h2>
+<h2 id="section-4">4. La estrutura de datos DataFrame</h2>
 
 <p>La estructura de datos <code>DataFrame</code> es, posiblemente, la gran protagonista de la librería <code>pandas</code> y con la que trabajaremos habitualmente a la hora de llevar a cabo análisis de datos. Se trata de una tabla compuesta por múltiples filas y columnas (conceptualmente estaríamos hablando de un <em>array</em> 2-dimensional), donde cada registro posee su propia etiqueta.</p>
 
@@ -1557,7 +1557,7 @@ df
 </table>
 </div>
 
-<h2 id="5-lectura-de-archivos-como-dataframe">5. Lectura de archivos como DataFrame</h2>
+<h2 id="section-5">5. Lectura de archivos como DataFrame</h2>
 
 <p>Habitualmente, a la hora de realizar análisis de datos, importamos el conjunto de datos en un <code>DataFrame</code> y luego seleccionamos aquellas que nos resulten de interés para trabajar con ellas.</p>
 
@@ -2083,7 +2083,7 @@ df.head()
 
 <p>Notemos el uso del parámetro <code>inplace</code>, que permite modificar el objeto original, puesto que su valor está declarado como <code>True</code>. Por otro lado, hemos de proceder con cautela a la hora de renombrar las columnas para no perder la unicidad durante el proceso, de ahí la justificación de la concatenación <code>+ col[4:]</code>.</p>
 
-<h2 id="6-consultas-en-dataframe">6. Consultas en DataFrame</h2>
+<h2 id="section-6">6. Consultas en DataFrame</h2>
 
 <p>Antes de abordar cómo realizar consultas en <code>DataFrame</code>, hemos de introducir el concepto de <em>máscara booleana</em> (<em>boolean masking</em>), puesto que esta estrategia es la que permite consultar el conjunto de datos de una manera rápida y eficiente.</p>
 
@@ -2693,7 +2693,7 @@ Store 2    Vinod
 Name: Name, dtype: object
 </code></pre>
 
-<h2 id="7-índices-en-dataframe">7. Índices en DataFrame</h2>
+<h2 id="section-7">7. Índices en DataFrame</h2>
 
 <p>Además de las maneras que hemos visto para generar índices en un objeto de tipo <code>Series</code> o <code>DataFrame</code>, podemos utilizar la función <code>set_index()</code>, que toma una lista de columnas y las convierte en índices para el objeto.</p>
 
@@ -3973,7 +3973,7 @@ df
 </table>
 </div>
 
-<h2 id="8-valores-perdidos">8. Valores perdidos</h2>
+<h2 id="section-8">8. Valores perdidos</h2>
 
 <p>Dado que es bastante frecuente encontrar valores perdidos en conjuntos de datos, veamos cómo podemos gestionarlos con la librería <code>pandas</code>.</p>
 
