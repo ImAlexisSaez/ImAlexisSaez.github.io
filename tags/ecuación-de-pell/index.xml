@@ -4,12 +4,12 @@
     <title>Ecuación de Pell on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/ecuaci%C3%B3n-de-pell/</link>
     <description>Recent content in Ecuación de Pell on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Wed, 27 Feb 2019 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/ecuaci%C3%B3n-de-pell/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/ecuaci%C3%B3n-de-pell/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,63 @@
       <pubDate>Wed, 27 Feb 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/02/27/mezclando-cuadrados-y-ecuaciones-diofanticas/</guid>
-      <description>Problema 55: aparece de nuevo la ecuación de Pell.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 55:&lt;/strong&gt; Halla un cuadrado de cinco cifras que sea igual a cinco veces otro cuadrado, más uno.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;El enunciado del ejercicio nos lleva a plantear la ecuación $x^2 = 5y^2+1$, equivalente a $x^2-5y^2=1$, &lt;em&gt;ecuación de Pell&lt;/em&gt; que sabemos posee infinitas soluciones en los enteros al no ser $5$ un cuadrado perfecto. Por tanteo, hallamos la solución particular $x=9$ e $y=4$, ya que $9^2 - 5\cdot4^2=1$. Expresamos ahora la diferencia de cuadrados como producto de una suma y una diferencia, de forma que&lt;/p&gt;
+
+&lt;p&gt;$$
+9^2 - 5\cdot4^2=1 \Leftrightarrow (9+4\sqrt{5})(9-4\sqrt{5}) = 1.
+$$&lt;/p&gt;
+
+&lt;p&gt;Análogamente, la sucesión de soluciones enteras, que denotaremos por $(x_n,y_n)$, debe cumplir que $(x_n+y_n\sqrt{5})(x_n-y_n\sqrt{5})=1$. Expresamos la solución general utilizando recurrencias, de manera que,&lt;/p&gt;
+
+&lt;p&gt;$$
+x_{n+1} + y_{n+1}\sqrt{5} = (x_n + y_n\sqrt{5})(9+4\sqrt{5}) = 9x_n + 4\sqrt{5}x_n + 9\sqrt{5}y_n + 20y_n,
+$$&lt;/p&gt;
+
+&lt;p&gt;luego&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x_{n+1} &amp;amp;= 9x_n + 20y_n,\\ y_{n+1} &amp;amp;= 4x_n + 9y_n.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Utilizando notación matricial,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+x_{n+1}\\ y_{n+1}
+\end{bmatrix}
+= \begin{bmatrix}
+9 &amp;amp; 20\\ 4 &amp;amp; 9
+\end{bmatrix}
+\begin{bmatrix}
+x_n\\ y_n
+\end{bmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;con $(x_1,y_1) = (9,4)$. La solución particular hallada no cumple los requisitos impuestos en el enunciado del ejercicio, por lo que procederemos a obtener la siguiente.&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+x_2\\ y_2
+\end{bmatrix}
+= \begin{bmatrix}
+9 &amp;amp; 20\\ 4 &amp;amp; 9
+\end{bmatrix}
+\begin{bmatrix}
+9\\ 4
+\end{bmatrix}
+= \begin{bmatrix}
+161\\ 72
+\end{bmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;que es la solución que estamos persiguiendo, pues $161^2 = 25921 = 5\cdot72^2+1$.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +83,132 @@
       <pubDate>Wed, 06 Feb 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/02/06/buscando-numeros-triangulares-que-son-cuadrados-perfectos/</guid>
-      <description>Problema 49: un primer encuentro con la ecuación de Pell.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 49:&lt;/strong&gt; Halla los números naturales $n$ de manera que se cumpla que&lt;/p&gt;
+
+&lt;p&gt;$$
+1+2+\cdots+n = k^2,
+$$&lt;/p&gt;
+
+&lt;p&gt;con $k$ número natural.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Observamos rápidamente que para $n = 1$ se verifica la propiedad, sin más que tomar asimismo $k = 1$. El enunciado propuesto en el ejercicio es equivalente a hallar los números triangulares que son cuadrados perfectos. La ecuación diofántica $1+2+\cdots+n = k^2$ podemos escribirla de manera más compacta utilizando la conocida expresión para la suma de los primeros $n$ números naturales. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+\dfrac{n(n+1)}{2} = k^2,
+$$&lt;/p&gt;
+
+&lt;p&gt;o, equivalentemente, $n^2+n=2k^2$, dando lugar pues a la siguiente ecuación de segundo grado en $n$, $n^2+n-2k^2=0$. Por tanto,&lt;/p&gt;
+
+&lt;p&gt;$$
+n = \dfrac{(-1)\pm\sqrt{1+8k^2}}{2}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Como buscamos valores naturales para $n$, podemos prescindir del signo $-$ que aparece en el numerador. Además, $1+8k^2$ ha de ser un cuadrado perfecto, que también necesitaremos sea impar, para que el numerador sea par y así $n$, efectivamente, pertenezca al conjunto de los números naturales. De esta manera, como ha de ser $1+8k^2$ un cuadrado perfecto, planteamos la ecuación $1+8k^2 = p^2$, que nos lleva a la &lt;em&gt;ecuación de Pell&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+p^2-8k^2=1,
+$$&lt;/p&gt;
+
+&lt;p&gt;de la cual sabemos posee infinitas soluciones en los enteros, pues $8$ no es un cuadrado perfecto. Por tanteo, una solución particular es $p=3$ y $k=1$, ya que $3^2 - 8\cdot1^2=1$. Expresamos ahora la diferencia de cuadrados como producto de una suma y una diferencia, de forma que&lt;/p&gt;
+
+&lt;p&gt;$$
+3^2 - 8\cdot1^2=1\Leftrightarrow (3+\sqrt{8})(3-\sqrt{8})=1.
+$$&lt;/p&gt;
+
+&lt;p&gt;Análogamente, la sucesión de soluciones enteras, que denotaremos por $(p_n,k_n)$, debe cumplir que $(p_n + k_n\sqrt{8})(p_n - k_n\sqrt{8})=1$. Obtengamos la solución general utilizando recurrencias, de manera que,&lt;/p&gt;
+
+&lt;p&gt;$$
+p_{n+1} + k_{n+1}\sqrt{8} = (p_n+k_n\sqrt{8})(3+\sqrt{8}) = 3p_n + \sqrt{8}p_n + 3\sqrt{8}k_n + 8k_n,
+$$&lt;/p&gt;
+
+&lt;p&gt;luego&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+p_{n+1} &amp;amp;= 3p_n + 8k_n,\\ k_{n+1} &amp;amp;=  p_n + 3k_n.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Utilizando notación matricial,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+p_{n+1}\\ k_{n+1}
+\end{bmatrix}
+= \begin{bmatrix}
+3 &amp;amp; 8\\ 1 &amp;amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+p_n\\ k_n
+\end{bmatrix}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora, $$n = \dfrac{(-1) + p}{2},$$ por lo que la solución general del ejercicio queda como&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+p_{n+1}\\ k_{n+1}
+\end{bmatrix}
+= \begin{bmatrix}
+3 &amp;amp; 8\\ 1 &amp;amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+p_n\\ k_n
+\end{bmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;con $(p_1,k_1) = (3,1)$ y $$n = \dfrac{(-1) + p_n}{2}.$$&lt;/p&gt;
+
+&lt;p&gt;Así, para $p_1 = 3$, tenemos que $n = ((-1)+3)/2 = 1$. Obtengamos algunas soluciones adicionales,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+p_{2}\\ k_{2}
+\end{bmatrix}
+= \begin{bmatrix}
+3 &amp;amp; 8\\ 1 &amp;amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+3\\ 1
+\end{bmatrix}
+= \begin{bmatrix}
+17 \\ 6
+\end{bmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;y entonces, para $p_2=17$ queda $n = ((-1) + 17)/2 = 8$, esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+1+2+\cdots+7+8 = 6^2.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{bmatrix}
+p_3\\ k_3
+\end{bmatrix}
+= \begin{bmatrix}
+3 &amp;amp; 8\\ 1 &amp;amp; 3
+\end{bmatrix}
+\begin{bmatrix}
+17\\ 6
+\end{bmatrix}
+= \begin{bmatrix}
+99\\ 35
+\end{bmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;y, por tanto, para $p=99$ queda $n = ((-1) + 99)/2 = 49$, es decir,&lt;/p&gt;
+
+&lt;p&gt;$$
+1+2+\cdots+48+49 = 35^2,
+$$&lt;/p&gt;
+
+&lt;p&gt;bastando aplicar el procedimiento tantas veces como soluciones deseemos encontrar.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

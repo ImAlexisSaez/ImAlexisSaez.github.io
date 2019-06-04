@@ -4,12 +4,12 @@
     <title>R on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/r/</link>
     <description>Recent content in R on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Sat, 25 Aug 2018 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,207 @@
       <pubDate>Sat, 25 Aug 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</guid>
-      <description>En mi reciente vuelta a Twitter, he empezado a seguir al profesor responsable del excelente MOOC &amp;lsquo;Improving your statistical inferences&amp;rsquo;, Daniël Lakens, que comparte más que interesantes perlas relacionadas con el campo de la estadística.</description>
+      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;), &lt;em&gt;Daniël Lakens&lt;/em&gt; (&lt;a href=&#34;https://twitter.com/lakens&#34; target=&#34;_blank&#34;&gt;@lakens&lt;/a&gt;), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
+
+&lt;p&gt;Hace unos días anunciaba que había actualizado un &lt;em&gt;script&lt;/em&gt; para &lt;em&gt;R&lt;/em&gt; cuyo nombre no tiene desperdicio: &amp;ldquo;&lt;em&gt;Perfect t-test&lt;/em&gt;&amp;rdquo;. Las principales referencias que tenemos que consultar son:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34; target=&#34;_blank&#34;&gt;The perfect t-test&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34; target=&#34;_blank&#34;&gt;Repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como no podía ser de otra manera, un recurso así despierta enormemente tanto mi curiosidad, como las ganas de echar un rato explorando las posibilidades que ofrece.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, ¿de qué trata todo el asunto? Estamos ante un documento escrito con &lt;em&gt;R Markdown&lt;/em&gt; cuyo objetivo es automatizar el proceso de comparación de medias para dos muestras, tanto independientes como dependientes (cada caso tiene su archivo asociado). No obstante, cuando la mayoría de programas informáticos orientados al análisis de datos ya incorporan este tipo de herramienta, ¿qué justifica la existencia de este recurso?&lt;/p&gt;
+
+&lt;p&gt;Según el autor, no todos los investigadores siguen las recomendaciones que los estadísticos indican (o bien no están al día de las mismas), e incluso, hecho que personalmente considero más grave, los propios programas informáticos ignoran dichas recomendaciones en ocasiones.&lt;/p&gt;
+
+&lt;p&gt;Dentro del &amp;ldquo;peligro&amp;rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?&lt;/p&gt;
+
+&lt;p&gt;Veamos qué nos ofrece el código de &lt;em&gt;Daniël Lakens&lt;/em&gt;. Una vez digerido el &lt;em&gt;README&lt;/em&gt; del repositorio, e instalado los paquetes necesarios (así como actualizado &lt;em&gt;JAGS&lt;/em&gt;, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;He escogido el conjunto de datos &lt;code&gt;hsb2&lt;/code&gt; (incluido en el paquete &lt;code&gt;openintro&lt;/code&gt;), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Carga la librería que contiene el conjunto de datos hsb2
+library(openintro)
+
+# Carga el conjunto de datos hsb2
+data(hsb2)
+
+# Documentación del conjunto de datos
+?hsb2
+
+# Exploración básica del conjunto de datos
+str(hsb2)
+
+# Crea el archivo que se usará con &amp;quot;perfect_independent_t-test.Rmd&amp;quot;
+write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;math&amp;quot;)],
+            file = &amp;quot;datos_hsb2_math.txt&amp;quot;,
+            row.names = FALSE,
+            sep = &amp;quot;,&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora, con &lt;code&gt;datos_hsb2_math.txt&lt;/code&gt; ubicado en el mismo directorio que &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable &lt;code&gt;alldata&lt;/code&gt; (y, en mi caso, añadir &lt;code&gt;sep = &amp;quot;,&amp;quot;&lt;/code&gt;), así como correctamente asignar las variables &lt;code&gt;xlabel&lt;/code&gt;, &lt;code&gt;ylabel&lt;/code&gt;, &lt;code&gt;factorlabel&lt;/code&gt;, &lt;code&gt;measurelabel&lt;/code&gt;, &lt;code&gt;xlabelstring&lt;/code&gt; e &lt;code&gt;ylabelstring&lt;/code&gt; siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.&lt;/p&gt;
+
+&lt;p&gt;En mi caso, he cambiado el formato del documento de salida de &lt;em&gt;Word&lt;/em&gt; a &lt;em&gt;PDF&lt;/em&gt;, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba &lt;em&gt;t&lt;/em&gt;! A la próxima persona que escuche quejarse de que &lt;em&gt;SPSS&lt;/em&gt; devuelve una miríada de resultados voy a invitarle amablemente a que utilice este &lt;em&gt;script&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente &lt;em&gt;boxplot&lt;/em&gt; (creo que en español se llama &lt;em&gt;diagrama de caja y bigotes&lt;/em&gt;, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Boxplot.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;A continuación, se realizan cuatro contrastes de hipótesis para comprobar si se verifica el supuesto de normalidad para las puntuaciones de ambos grupos (su violación tiene efectos, por ejemplo, sobre el &lt;em&gt;error de tipo I&lt;/em&gt;):&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Resultados de los contrastes de hipótesis.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;En uno de los cuatros contrastes, los datos con los que estamos trabajando aportan evidencia suficiente para sospechar de la veracidad de la hipótesis nula (&amp;ldquo;las puntuaciones siguen una distribución normal&amp;rdquo;), por lo que tendríamos que preferiblemente recurrir a métodos no paramétricos o estadísticos robustos. No obstante, en el propio documento nos avisan de que con muestras grandes (y podemos considerar que la dada lo es) este tipo de situaciones pueden presentarse.&lt;/p&gt;
+
+&lt;p&gt;Podemos examinar la distribución de puntuaciones, para cada uno de los grupos, de manera gráfica, a partir de las siguientes figuras, y juzgar así cómo se desvían nuestros datos (línea negra) de la distribución normal asociada (línea discontinua roja):&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Distribución de las puntuaciones de los chicos.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Distribución de las puntuaciones de las chicas.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Por si las anteriores figuras todavía no resolvieran el interrogante, tenemos a nuestra disposición los siguientes &lt;em&gt;gráficos Q-Q&lt;/em&gt;:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Gráfico Q-Q.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;No resulta por tanto descabellado aceptar que se verifica el supuesto de normalidad para los datos dados. Pasemos ahora a estudiar la hipótesis de igualdad de varianzas entre los grupos considerados. Para ello, utilizaremos la &lt;em&gt;prueba de Levene&lt;/em&gt;, que en nuestro caso particular concluye:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Levene’s test for equality of variances (p = 0.46) indicates that the assumption that variances are equal is not rejected.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A continuación encontramos la sección de resultados donde, siguiendo el estilo de publicación de las revistas científicas, se recogen las conclusiones para la prueba &lt;em&gt;t&lt;/em&gt; que hemos llevado a cabo. Aquí, en función de la filosofía con la que solamos trabajar y de si se verifican las condiciones asociadas a esta prueba, tendremos que escoger entre la sección dedicada a estadísticos frecuentistas, bayesianos o robustos. Por ejemplo, para la primera opción encontraríamos:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The mean math of participants in the male condition (M = 52.95, SD = 9.66, n = 91) was greater than the mean of participants in the female condition (M = 52.39, SD = 9.15, n = 109). The difference between the two measurements (M = 0.55, 95% CI = [-2.09;3.19]) was analyzed with Welch’s t-test, t(187.58) = 0.41, p = 0.682, Hedges’ g = 0.06, 95% CI [-0.22;0.34]. This can be considered a tiny effect. The observed data is not surprising under the assumption that the null-hypothesis is true. The Common Language effect size (McGraw &amp;amp; Wong, 1992) indicates that the likelihood that the math of a random person in the male condition is greater than the math of a random person in the female condition is 52%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Tenemos a nuestra disposición la media, la desviación estándar y el tamaño muestral para cada uno de los grupos considerados. A continuación encontramos el valor del estadístico asociado a la prueba &lt;em&gt;t&lt;/em&gt; de &lt;em&gt;Welch&lt;/em&gt;, así como su correspondiente &lt;em&gt;p&lt;/em&gt;-valor. Como indicador del tamaño del efecto encontramos la &lt;em&gt;g&lt;/em&gt; de &lt;em&gt;Hedges&lt;/em&gt;. Sin embargo, al margen del aluvión de valores con el que ya seríamos capaces de dar respuesta al interrogante que ha motivado este artículo (¿seríamos de verdad capaces?), me ha encantado la parte final de este párrafo, donde nos transmiten con palabras llanas qué conclusiones deberíamos extraer.&lt;/p&gt;
+
+&lt;p&gt;El documento añade los gráficos que mostraré a continuación, así como las referencias para las justificaciones vertidas a lo largo de él, el propio conjunto de datos y cierta información técnica de la sesión de trabajo en &lt;em&gt;R&lt;/em&gt;. Es un estupendo recurso para tener siempre disponible a mano, ¿verdad?&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img06.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Violin plot.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img07.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Gráfico de dispersión.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img08.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Intervalos de confianza.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +227,971 @@
       <pubDate>Tue, 14 Aug 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/</guid>
-      <description>En este artículo exploraremos las posibilidades que nos ofrece una librería de R, readr, integrante del famoso &amp;lsquo;tidyverso&amp;rsquo;, de cara a la importación y exportación de nuestros conjuntos de datos.</description>
+      <description>
+
+&lt;p&gt;En este artículo exploraremos las posibilidades que nos ofrece una librería de &lt;em&gt;R&lt;/em&gt;, &lt;em&gt;readr&lt;/em&gt;, integrante del famoso &lt;em&gt;tidyverso&lt;/em&gt;, de cara a la importación y exportación de nuestros conjuntos de datos.&lt;/p&gt;
+
+&lt;p&gt;No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma &lt;a href=&#34;https://www.datacamp.com/home&#34; target=&#34;_blank&#34;&gt;DataCamp&lt;/a&gt;. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería &lt;a href=&#34;https://cran.r-project.org/web/packages/readr/index.html&#34; target=&#34;_blank&#34;&gt;readr&lt;/a&gt;: &amp;ldquo;&lt;em&gt;Reading Data into R with readr&lt;/em&gt;&amp;rdquo;, al que podemos acceder a través del &lt;a href=&#34;https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ&#34; target=&#34;_blank&#34;&gt;siguiente enlace&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El material está desglosado en dos capítulos. En el primero de ellos, aprenderemos diversas funciones, contenidas en este paquete, que facilitarán enormemente la labor de importar datos utilizando el lenguaje de programación &lt;em&gt;R&lt;/em&gt;. En el segundo, el objetivo será utilizar las herramientas que la librería pone a nuestra disposición para analizar y convertir las clases que poseen las columnas del conjunto de datos recién importado.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;readr&lt;/em&gt; es una componente del denominado &lt;em&gt;tidyverso&lt;/em&gt; (&lt;em&gt;tidyverse&lt;/em&gt; en inglés, que parece que siempre suena mejor), un conjunto de librerías que todo usuario de &lt;em&gt;R&lt;/em&gt; debería si no dominar, al menos conocer, para así resolver ciertas situaciones de la manera más sencilla posible (basta imaginar tener que hacer a mano algunas de las tareas que paquetes como &lt;em&gt;dplyr&lt;/em&gt; o &lt;em&gt;tidyr&lt;/em&gt; llevan a cabo para darse cuenta de este hecho).&lt;/p&gt;
+
+&lt;h2 id=&#34;1-importando-datos-con-readr&#34;&gt;1. Importando datos con &lt;em&gt;readr&lt;/em&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-1-archivos-csv&#34;&gt;1.1. Archivos &lt;code&gt;.csv&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;A la hora de importar conjuntos de datos en &lt;em&gt;R&lt;/em&gt;, uno de los formatos más habituales en los que hallamos información es en archivos separados por comas (&lt;em&gt;comma separated values&lt;/em&gt;), cuya extensión suele ser &lt;code&gt;.csv&lt;/code&gt;. En ellos encontramos múltiples líneas que recogen la tabla de interés, y en las cuales los valores aparecen, de manera consecutiva, separados por el carácter &lt;code&gt;,&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para importar este tipo de ficheros en nuestra sesión de &lt;em&gt;R&lt;/em&gt;, utilizaremos la función &lt;code&gt;read_csv()&lt;/code&gt;. Para acceder a su documentación, en primer lugar, cargaremos la librería &lt;em&gt;readr&lt;/em&gt; (o la instalaremos si todavía no lo hemos hecho).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;if(!require(readr)) {install.packages(&amp;quot;readr&amp;quot;)}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Loading required package: readr
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(readr)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_csv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El único argumento que hemos de pasar a esta función, de manera obligatoria, es &lt;code&gt;file&lt;/code&gt;, el nombre del archivo que pretendemos importar (o bien la ruta completa donde éste se encuentra). El resto son opcionales, y deberían resultarnos familiares la mayoría de ellos si hemos trabajado alguna vez con funciones del tipo &lt;code&gt;read.table()&lt;/code&gt; o &lt;code&gt;read.csv()&lt;/code&gt;. Algunas de las ventajas que utilizar &lt;code&gt;read_csv()&lt;/code&gt; ofrece son:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No convierte, automáticamente, las columnas con cadenas de caracteres a factores, como sí hacen por defecto las otras funciones referidas en el párrafo anterior.&lt;/li&gt;
+&lt;li&gt;Reconoce ocho clases diferentes de datos (&lt;code&gt;integer&lt;/code&gt;, &lt;code&gt;logical&lt;/code&gt;, etc.), dejando el resto como cadenas de caracteres.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pongamos a prueba su uso importando un conjunto de datos que contiene tanto los pesos, como el tipo de alimentación, de 71 pollos. El archivo de interés es &lt;code&gt;chickwts.csv&lt;/code&gt;, por lo que empezaremos especificando la ruta para acceder a él en el argumento &lt;code&gt;file&lt;/code&gt;. Como en el segundo capítulo llevaremos a cabo algunas acciones sobre los conjuntos de datos que aparecerán en esta sección, todos los ficheros que importemos los almacenaremos en objetos dentro de &lt;em&gt;R&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cwts &amp;lt;- read_csv(file = &amp;quot;datasets/chickwts.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   weight = col_integer(),
+##   feed = col_character()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es interesante el mensaje que aparece en la consola al ejecutar la anterior instrucción, ya que nos informa el resultado del análisis, que la función realiza, para inferir las clases de cada una de las columnas que componen la tabla. Echemos un vistazo al contenido del archivo que acabamos de importar.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(cwts)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 2
+##   weight      feed
+##    &amp;lt;int&amp;gt;     &amp;lt;chr&amp;gt;
+## 1    179 horsebean
+## 2    160 horsebean
+## 3    136 horsebean
+## 4    227 horsebean
+## 5    217 horsebean
+## 6    168 horsebean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(cwts)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    71 obs. of  2 variables:
+##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
+##  $ feed  : chr  &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 2
+##   .. ..$ weight: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ feed  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A primera vista, la columna &lt;code&gt;feed&lt;/code&gt; posiblemente estaría mejor codificada bajo la clase &lt;code&gt;factor&lt;/code&gt; (aunque esto siempre va a depender de nuestros intereses y el uso que tengamos en mente para esta variable). No obstante, recordemos que éste no es el comportamiento que por defecto incorpora la función &lt;code&gt;read_csv()&lt;/code&gt; (aunque después veremos cómo declarar con antelación las clases para las columnas de un archivo y posibilitar su lectura como factores).&lt;/p&gt;
+
+&lt;p&gt;Utilicemos de nuevo esta función con otro conjunto de datos, &lt;code&gt;chickwts2.csv&lt;/code&gt; (más información relativa al peso y tipo de alimentación de 18 pollos distintos), que usaremos más adelante en este capítulo, cuando lleguemos al apartado de exportar tablas a ficheros.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cwts2 &amp;lt;- read_csv(&amp;quot;datasets/chickwts2.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   weight = col_integer(),
+##   feed = col_character()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(cwts2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 2
+##   weight  feed
+##    &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;
+## 1    309  corn
+## 2    229  corn
+## 3    213  corn
+## 4    257  corn
+## 5    244  corn
+## 6    271  corn
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(cwts2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    18 obs. of  2 variables:
+##  $ weight: int  309 229 213 257 244 271 243 248 257 303 ...
+##  $ feed  : chr  &amp;quot;corn&amp;quot; &amp;quot;corn&amp;quot; &amp;quot;corn&amp;quot; &amp;quot;corn&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 2
+##   .. ..$ weight: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ feed  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-2-archivos-tsv&#34;&gt;1.2. Archivos &lt;code&gt;.tsv&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;La librería &lt;em&gt;readr&lt;/em&gt; posee también una función específica para la lectura de los archivos separados por tabulaciones, cuya extensión suele ser &lt;code&gt;.tsv&lt;/code&gt; (aunque personalmente también he visto alguno que utiliza &lt;code&gt;.tab&lt;/code&gt;). Se trata de &lt;code&gt;read_tsv()&lt;/code&gt; y si accedemos a su documentación comprobaremos que su uso es exactamente idéntico al de la función que exploramos en la sección anterior.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_tsv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Investiguemos alguno de los argumentos que podemos declarar, de manera opcional, en esta función (y, por tanto, lo que aprendamos será de utilidad también de cara al uso de &lt;code&gt;read_csv()&lt;/code&gt;). Por ejemplo, para controlar el nombre de las columnas de la tabla que deseamos importar, el argumento &lt;code&gt;col_names&lt;/code&gt; es el indicado, y puede tomar los siguientes valores:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;TRUE&lt;/code&gt;: utiliza la información disponible en la primera línea del archivo para declarar los nombres de las columnas, no incluyéndolos por tanto en el interior de la propia tabla.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;FALSE&lt;/code&gt;: genera, de manera automática, los clásicos nombres &lt;code&gt;X1&lt;/code&gt;, &lt;code&gt;X2&lt;/code&gt;, &lt;code&gt;X3&lt;/code&gt;, etc., para las columnas, y empieza a incluir la información en la tabla desde la primera fila.&lt;/li&gt;
+&lt;li&gt;La última opción disponible es utilizar un vector que contenga los nombres de las columnas, y, como antes, desde la primera fila se insertarán los datos en el interior de la tabla.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Por ejemplo, importemos a continuación el fichero &lt;code&gt;salaries.tsv&lt;/code&gt;. Si abrimos el archivo con un editor de texto plano cualquiera, comprobaremos que la primera línea no contiene los respectivos nombres para cada una de las columnas, y dado que no conocemos de antemano qué declara cada una, usar el argumento &lt;code&gt;col_names = FALSE&lt;/code&gt; parece la opción más adecuada.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;salaries &amp;lt;- read_tsv(&amp;quot;datasets/Salaries.tsv&amp;quot;, col_names = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   X1 = col_character(),
+##   X2 = col_character(),
+##   X3 = col_integer(),
+##   X4 = col_integer(),
+##   X5 = col_character(),
+##   X6 = col_integer()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 6
+##          X1    X2    X3    X4    X5     X6
+##       &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;int&amp;gt; &amp;lt;chr&amp;gt;  &amp;lt;int&amp;gt;
+## 1      Prof     B    19    18  Male 139750
+## 2      Prof     B    20    16  Male 173200
+## 3  AsstProf     B     4     3  Male  79750
+## 4      Prof     B    45    39  Male 115000
+## 5      Prof     B    40    41  Male 141500
+## 6 AssocProf     B     6     6  Male  97000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    397 obs. of  6 variables:
+##  $ X1: chr  &amp;quot;Prof&amp;quot; &amp;quot;Prof&amp;quot; &amp;quot;AsstProf&amp;quot; &amp;quot;Prof&amp;quot; ...
+##  $ X2: chr  &amp;quot;B&amp;quot; &amp;quot;B&amp;quot; &amp;quot;B&amp;quot; &amp;quot;B&amp;quot; ...
+##  $ X3: int  19 20 4 45 40 6 30 45 21 18 ...
+##  $ X4: int  18 16 3 39 41 6 23 45 20 18 ...
+##  $ X5: chr  &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; ...
+##  $ X6: int  139750 173200 79750 115000 141500 97000 175000 147765 119250 129000 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 6
+##   .. ..$ X1: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X2: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X3: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X4: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X5: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X6: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En la llamada a la función &lt;code&gt;read_tsv()&lt;/code&gt;, hemos recibido por consola el siguiente mensaje:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Parsed with column specification:
+cols(
+  X1 = col_character(),
+  X2 = col_character(),
+  X3 = col_integer(),
+  X4 = col_integer(),
+  X5 = col_character(),
+  X6 = col_integer()
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Como ya comentábamos en la sección anterior, esta información nos indica la clase que la función &lt;code&gt;read_tsv()&lt;/code&gt; ha inferido para todas y cada una de las columnas contenidas en el archivo. De hecho, este comportamiento no se restringe únicamente a las funciones &lt;code&gt;read_csv()&lt;/code&gt; y &lt;code&gt;read_tsv()&lt;/code&gt;, sino a todas las implementadas en la librería &lt;em&gt;readr&lt;/em&gt; cuya empresa es, precisamente, la lectura de ficheros de datos.&lt;/p&gt;
+
+&lt;p&gt;A través del argumento &lt;code&gt;col_types&lt;/code&gt; tenemos cierto control sobre la declaración de la clase de las columnas, utilizando funciones predefinidas del estilo &lt;code&gt;col_*()&lt;/code&gt; (como &lt;code&gt;col_integer()&lt;/code&gt;, &lt;code&gt;col_character()&lt;/code&gt;, etc.). La forma de usar este argumento es muy sencilla: simplemente tenemos que escribir &lt;code&gt;col_types = cols()&lt;/code&gt; e incluir en el interior de &lt;code&gt;cols()&lt;/code&gt; los nombres de las columnas y la clase que deseamos posean (siguiendo el estilo de, por ejemplo, el mensaje por consola que mostrábamos arriba).&lt;/p&gt;
+
+&lt;p&gt;Una función que nos puede interesar, en este momento, es &lt;code&gt;col_skip()&lt;/code&gt;, que le indica a &lt;em&gt;R&lt;/em&gt; que omita una determinada columna a la hora de importar la información de un archivo de datos. Veamos su uso con más detalle a través de un ejemplo. Supongamos que sólo estamos interesados en las columnas primera, quinta y sexta del anterior fichero de datos. Así pues, no tendríamos más que escribir:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;salaries &amp;lt;- read_tsv(&amp;quot;datasets/Salaries.tsv&amp;quot;, col_names = FALSE,
+                     col_types = cols(
+                         X2 = col_skip(),
+                         X3 = col_skip(), 
+                         X4 = col_skip()
+                     ))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 3
+##          X1    X5     X6
+##       &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt;  &amp;lt;int&amp;gt;
+## 1      Prof  Male 139750
+## 2      Prof  Male 173200
+## 3  AsstProf  Male  79750
+## 4      Prof  Male 115000
+## 5      Prof  Male 141500
+## 6 AssocProf  Male  97000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    397 obs. of  3 variables:
+##  $ X1: chr  &amp;quot;Prof&amp;quot; &amp;quot;Prof&amp;quot; &amp;quot;AsstProf&amp;quot; &amp;quot;Prof&amp;quot; ...
+##  $ X5: chr  &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; &amp;quot;Male&amp;quot; ...
+##  $ X6: int  139750 173200 79750 115000 141500 97000 175000 147765 119250 129000 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 6
+##   .. ..$ X1: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X2: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X3: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X4: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X5: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X6: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-3-archivos-csv-formato-europeo&#34;&gt;1.3. Archivos &lt;code&gt;.csv&lt;/code&gt; (formato europeo)&lt;/h3&gt;
+
+&lt;p&gt;En muchos países de este continente, usamos la coma como separador decimal, de manera que los archivos separados por comas, en realidad, terminan siendo separados por el símbolo &lt;code&gt;;&lt;/code&gt; (punto y coma). Por curiosidad, puedes probar a crear una tabla sencilla en, por ejemplo, &lt;em&gt;Excel&lt;/em&gt; y exportarla como archivo separado por comas, para luego abrir el archivo con un editor de texto plano y verificar que, efectivamente, los valores están separados por &lt;code&gt;;&lt;/code&gt; (en realidad este comportamiento se puede modificar desde las opciones de formato del sistema operativo, pero no entraremos en ese tipo de detalles).&lt;/p&gt;
+
+&lt;p&gt;En previsión de esta particularidad, la librería &lt;em&gt;readr&lt;/em&gt; pone a nuestra disposición la función &lt;code&gt;read_csv2()&lt;/code&gt;, que identifica el símbolo &lt;code&gt;;&lt;/code&gt; como separador de valores, mientras que &lt;code&gt;,&lt;/code&gt; queda como separador decimal. Obviando esta salvedad, su uso es idéntico al de las funciones presentadas en los anteriores apartados.&lt;/p&gt;
+
+&lt;p&gt;Tomemos ahora el archivo &lt;code&gt;trees.csv&lt;/code&gt; (que contiene información sobre la circunferencia, la altura y el volumen de cerezos negros), el cual viene dado en el formato al que nos estamos refiriendo aquí, e importémoslo directamente con la función &lt;code&gt;read_csv()&lt;/code&gt;, en lugar de con &lt;code&gt;read_csv2()&lt;/code&gt;, para ver qué sucede.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;trees_wrong &amp;lt;- read_csv(&amp;quot;datasets/trees.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   `Girth&amp;quot;;&amp;quot;Height&amp;quot;;&amp;quot;Volume` = col_character()
+## )
+
+## Warning: 30 parsing failures.
+## row col  expected    actual
+##   1  -- 1 columns 3 columns
+##   2  -- 1 columns 3 columns
+##   3  -- 1 columns 3 columns
+##   4  -- 1 columns 3 columns
+##   5  -- 1 columns 3 columns
+## ... ... ......... .........
+## See problems(...) for more details.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En favor de la función &lt;code&gt;read_csv()&lt;/code&gt; hay que decir que, al menos, nos indica la existencia de ciertos problemas, o situaciones inesperadas, durante la importación del archivo. De todas formas, podemos observar cómo ha procedido a generar una tabla con una única columna, en lugar de las correspondientes tres que hubiese sido lo adecuado en esta ocasión. Comprobemos qué contiene el objeto &lt;code&gt;trees_wrong&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(trees_wrong)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] 31  1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(trees_wrong)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 1
+##   `Girth&amp;quot;;&amp;quot;Height&amp;quot;;&amp;quot;Volume`
+##                       &amp;lt;chr&amp;gt;
+## 1                         8
+## 2                         8
+## 3                         8
+## 4                        10
+## 5                        10
+## 6                        10
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(trees_wrong)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    31 obs. of  1 variable:
+##  $ Girth&amp;quot;;&amp;quot;Height&amp;quot;;&amp;quot;Volume: chr  &amp;quot;8&amp;quot; &amp;quot;8&amp;quot; &amp;quot;8&amp;quot; &amp;quot;10&amp;quot; ...
+##  - attr(*, &amp;quot;problems&amp;quot;)=Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;: 30 obs. of  4 variables:
+##   ..$ row     : int  1 2 3 4 5 6 7 8 9 10 ...
+##   ..$ col     : chr  NA NA NA NA ...
+##   ..$ expected: chr  &amp;quot;1 columns&amp;quot; &amp;quot;1 columns&amp;quot; &amp;quot;1 columns&amp;quot; &amp;quot;1 columns&amp;quot; ...
+##   ..$ actual  : chr  &amp;quot;3 columns&amp;quot; &amp;quot;3 columns&amp;quot; &amp;quot;3 columns&amp;quot; &amp;quot;3 columns&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 1
+##   .. ..$ Girth&amp;quot;;&amp;quot;Height&amp;quot;;&amp;quot;Volume: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Veamos ahora el resultado que obtenemos al utilizar la función &lt;code&gt;read_csv2()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;trees &amp;lt;- read_csv2(&amp;quot;datasets/trees.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   Girth = col_double(),
+##   Height = col_integer(),
+##   Volume = col_double()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dim(trees)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] 31  3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(trees)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 3
+##   Girth Height Volume
+##   &amp;lt;dbl&amp;gt;  &amp;lt;int&amp;gt;  &amp;lt;dbl&amp;gt;
+## 1   8.3     70   10.3
+## 2   8.6     65   10.3
+## 3   8.8     63   10.2
+## 4  10.5     72   16.4
+## 5  10.7     81   18.8
+## 6  10.8     83   19.7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(trees)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    31 obs. of  3 variables:
+##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
+##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
+##  $ Volume: num  10.3 10.3 10.2 16.4 18.8 19.7 15.6 18.2 22.6 19.9 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 3
+##   .. ..$ Girth : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ Height: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ Volume: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-4-archivos-con-ancho-de-columna-fijo&#34;&gt;1.4. Archivos con ancho de columna fijo&lt;/h3&gt;
+
+&lt;p&gt;En ocasiones, el formato en el que encontramos los archivos de datos es similar al mostrado en &lt;em&gt;R&lt;/em&gt; a la hora de imprimir en consola un &lt;code&gt;data.frame&lt;/code&gt;. Es decir, cada columna posee un total de caracteres fijos y éstas se separan usando espacios en blanco (que también se utilizan para rellenar aquellos valores cuya longitud es menor que la correspondiente a su columna).&lt;/p&gt;
+
+&lt;p&gt;El archivo &lt;code&gt;names.txt&lt;/code&gt; constituye un ejemplo de lo comentado en el párrafo anterior. En su interior encontramos los nombres de ciertos personajes famosos, el estado donde supuestamente residen y, como no podía ser de otra manera, sus falsos números de teléfono.&lt;/p&gt;
+
+&lt;p&gt;La función adecuada para lidiar con estos casos es &lt;code&gt;read_table()&lt;/code&gt;, cuya documentación ofrece un listado de argumentos bastante familiares a estas alturas.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_table
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Importemos pues el fichero &lt;code&gt;names.txt&lt;/code&gt;, declarando adecuadamente los nombres para las columnas utilizando el parámetro &lt;code&gt;col_names&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names &amp;lt;- read_table(&amp;quot;datasets/names.txt&amp;quot;,
+                    col_names = c(&amp;quot;name&amp;quot;, &amp;quot;state&amp;quot;, &amp;quot;phone&amp;quot;))
+
+names                   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 3
+##                  name        state        phone
+##                 &amp;lt;chr&amp;gt;        &amp;lt;chr&amp;gt;        &amp;lt;chr&amp;gt;
+## 1       Oprah Winfrey         null 800-555-4111
+## 2         Walt Disney      Florida 407-555-4341
+## 3       Michael Scott Pennsylvania 570-555-2301
+## 4        Cosmo Kramer     New York 212-555-9337
+## 5 Rutherford B. Hayes         Ohio 220-555-1388
+## 6   Chester A. Arthur      Vermont 802-555-8383
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(names)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    6 obs. of  3 variables:
+##  $ name : chr  &amp;quot;Oprah Winfrey&amp;quot; &amp;quot;Walt Disney&amp;quot; &amp;quot;Michael Scott&amp;quot; &amp;quot;Cosmo Kramer&amp;quot; ...
+##  $ state: chr  &amp;quot;null&amp;quot; &amp;quot;Florida&amp;quot; &amp;quot;Pennsylvania&amp;quot; &amp;quot;New York&amp;quot; ...
+##  $ phone: chr  &amp;quot;800-555-4111&amp;quot; &amp;quot;407-555-4341&amp;quot; &amp;quot;570-555-2301&amp;quot; &amp;quot;212-555-9337&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 3
+##   .. ..$ name : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ state: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ phone: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aprovechemos este particular ejemplo para ilustrar el tratamiento de los valores perdidos con las funciones de la librería &lt;em&gt;readr&lt;/em&gt; dedicadas a importar archivos de datos. Por defecto, sólo se reconoce &lt;code&gt;NA&lt;/code&gt; como valor perdido, pero, en esta ocasión, si nos fijamos en la primera fila de la tabla, han optado por usar &lt;code&gt;null&lt;/code&gt; para registrar la ausencia de información para ciertos atributos concretos.&lt;/p&gt;
+
+&lt;p&gt;No supone esto demasiado inconveniente, puesto que utilizando el parámetro &lt;code&gt;na&lt;/code&gt; podemos declarar, mediante un vector, qué cadenas de texto deben ser consideradas como valores perdidos (y automáticamente pasarán a ser &lt;code&gt;NA&lt;/code&gt; en el objeto que creemos en &lt;em&gt;R&lt;/em&gt;). Por defecto, &lt;code&gt;na = &amp;quot;NA&amp;quot;&lt;/code&gt;, de manera que simplemente tenemos que declarar &lt;code&gt;na = c(&amp;quot;NA&amp;quot;, &amp;quot;null&amp;quot;)&lt;/code&gt; en nuestro caso.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;names2 &amp;lt;- read_table(&amp;quot;datasets/names.txt&amp;quot;, 
+                     col_names = c(&amp;quot;name&amp;quot;, &amp;quot;state&amp;quot;, &amp;quot;phone&amp;quot;),
+                     na = c(&amp;quot;NA&amp;quot;, &amp;quot;null&amp;quot;))
+head(names2)                     
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 3
+##                  name        state        phone
+##                 &amp;lt;chr&amp;gt;        &amp;lt;chr&amp;gt;        &amp;lt;chr&amp;gt;
+## 1       Oprah Winfrey         &amp;lt;NA&amp;gt; 800-555-4111
+## 2         Walt Disney      Florida 407-555-4341
+## 3       Michael Scott Pennsylvania 570-555-2301
+## 4        Cosmo Kramer     New York 212-555-9337
+## 5 Rutherford B. Hayes         Ohio 220-555-1388
+## 6   Chester A. Arthur      Vermont 802-555-8383
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-5-archivos-de-texto&#34;&gt;1.5. Archivos de texto&lt;/h3&gt;
+
+&lt;p&gt;Es posible que nuestro interés no se centre tanto en examinar tablas de datos, como texto propiamente dicho, sobretodo ahora que tan de moda está el análisis de sentimiento (para estudiar opiniones, discursos, etc.). La librería &lt;em&gt;readr&lt;/em&gt; pone a nuestra disposición un par de funciones que nos serán útiles en estos casos:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;read_lines()&lt;/code&gt;: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_lines
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;read_file()&lt;/code&gt;: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando &lt;code&gt;\n&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En el fichero &lt;code&gt;tweets.txt&lt;/code&gt; encontramos algunos &lt;em&gt;tuits&lt;/em&gt; correspondientes a la cuenta &lt;code&gt;@RealCarrotFacts&lt;/code&gt; (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tweets &amp;lt;- read_lines(&amp;quot;datasets/tweets.txt&amp;quot;)
+tweets
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;carrots  can be eat by most people&amp;quot;                                                                                          
+## [2] &amp;quot;On predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america&#39;s carrot&amp;quot;
+## [3] &amp;quot;knock knoc who is there? yup: carosot   ( joke )&amp;quot;                                                                            
+## [4] &amp;quot;it is 2016 time for a carot emoji   please!&amp;quot;                                                                                 
+## [5] &amp;quot;when life give you lemnos ,  have a carrot&amp;quot;                                                                                  
+## [6] &amp;quot;If you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(tweets)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##  chr [1:6] &amp;quot;carrots  can be eat by most people&amp;quot; ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tweets_all &amp;lt;- read_file(&amp;quot;datasets/tweets.txt&amp;quot;)
+tweets_all
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] &amp;quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america&#39;s carrot\nknock knoc who is there? yup: carosot   ( joke )\nit is 2016 time for a carot emoji   please!\nwhen life give you lemnos ,  have a carrot\nIf you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(tweets_all)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;##  chr &amp;quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and&amp;quot;| __truncated__
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-6-escribiendo-archivos-csv-y-tsv&#34;&gt;1.6. Escribiendo archivos &lt;code&gt;.csv&lt;/code&gt; y &lt;code&gt;.tsv&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Una vez hemos importado nuestro conjunto de datos de interés, y realizamos sobre él ciertas manipulaciones, es bastante probable que deseemos almacenar el resultado en un archivo para su posterior uso y disfrute. La librería &lt;em&gt;readr&lt;/em&gt; contiene varias funciones del estilo &lt;code&gt;write_*()&lt;/code&gt; (por ejemplo, &lt;code&gt;write_csv()&lt;/code&gt; o &lt;code&gt;write_tsv()&lt;/code&gt;) orientadas a satisfacer esta necesidad, y que se caracterizan por un par de detalles realmente interesantes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A diferencia de funciones como &lt;code&gt;write.csv()&lt;/code&gt;, no añaden por defecto los números (o nombres) de las filas al archivo exportado, lo cual suele ser el comportamiento deseado en la mayoría de ocasiones.&lt;/li&gt;
+&lt;li&gt;El parámetro &lt;code&gt;col_names&lt;/code&gt; adopta como valor el contrario al que posee &lt;code&gt;append&lt;/code&gt;, manera de actuar que tiene todo el sentido del mundo. Si decidimos continuar añadiendo datos a un archivo que previamente hemos exportado, declararemos &lt;code&gt;append = TRUE&lt;/code&gt; y, por tanto, no aparecerán de nuevo, y en mitad del fichero, los nombres de las columnas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Veamos este último punto con mayor detalle a través de un ejemplo. En primer lugar, exportaremos a un archivo separado por comas el objeto &lt;code&gt;cwts&lt;/code&gt; que generamos en una sección anterior. A Continuación, añadiremos al mencionado archivo el contenido del objeto &lt;code&gt;cwts2&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;write_csv(cwts, &amp;quot;chickwts.csv&amp;quot;)
+
+write_csv(cwts2, &amp;quot;chickwts.csv&amp;quot;, append=TRUE)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Procedamos ahora a importar el fichero recién generado y examinémoslo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cwts3 &amp;lt;- read_csv(&amp;quot;chickwts.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   weight = col_integer(),
+##   feed = col_character()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(cwts3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 2
+##   weight      feed
+##    &amp;lt;int&amp;gt;     &amp;lt;chr&amp;gt;
+## 1    179 horsebean
+## 2    160 horsebean
+## 3    136 horsebean
+## 4    227 horsebean
+## 5    217 horsebean
+## 6    168 horsebean
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(cwts3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    89 obs. of  2 variables:
+##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
+##  $ feed  : chr  &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; &amp;quot;horsebean&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 2
+##   .. ..$ weight: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ feed  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1-7-escribiendo-archivos-rds&#34;&gt;1.7. Escribiendo archivos &lt;code&gt;.rds&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Es posible que estemos interesados en exportar no solamente los valores de una tabla, sino ciertos &lt;em&gt;metadatos&lt;/em&gt; asociados a ella, como pueden ser, por ejemplo, las clases de las diferentes columnas que la compongan. No es fácil incorporar este tipo de información a un archivo separado por comas o tabulaciones, por lo que la librería &lt;em&gt;readr&lt;/em&gt; nos ofrece la posibilidad de exportar un objeto completo de &lt;em&gt;R&lt;/em&gt; a través de la función &lt;code&gt;write_rds()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?write_rds
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La mencionada función no es más que un &lt;em&gt;wrapper&lt;/em&gt; (desconozco la traducción a español de este término) de la función &lt;code&gt;saveRDS()&lt;/code&gt;, con la única particularidad de que, por defecto, no comprime el archivo resultante (aunque este comportamiento se puede definir a través del parámetro &lt;code&gt;compress&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Ilustremos su aplicación mediante un ejemplo. Exportaremos el objeto &lt;code&gt;trees&lt;/code&gt; que generamos en una sección anterior utilizando la función &lt;code&gt;write_rds()&lt;/code&gt;, para a continuación importarlo inmediatamente con &lt;code&gt;read_rds()&lt;/code&gt; y asignarlo a &lt;code&gt;trees2&lt;/code&gt;. Finalmente, compararemos si ambos objetos son idénticos, empleando para ello la función &lt;code&gt;identical()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;write_rds(trees, &amp;quot;trees.rds&amp;quot;)
+
+trees2 &amp;lt;- read_rds(&amp;quot;trees.rds&amp;quot;)
+
+identical(trees, trees2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## [1] TRUE
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;2-analizando-datos-con-readr&#34;&gt;2. Analizando datos con readr&lt;/h2&gt;
+
+&lt;h3 id=&#34;2-1-modificando-la-clase-de-las-columnas&#34;&gt;2.1. Modificando la clase de las columnas&lt;/h3&gt;
+
+&lt;p&gt;Aunque las funciones para importar archivos de datos que pone a nuestra disposición la librería &lt;em&gt;readr&lt;/em&gt;, realizan una labor estupenda a la hora de inferir la clase de cada una de las columnas que componen una tabla, su comportamiento dista de ser perfecto. Esto se traducirá, seguramente, en la necesidad de llevar a cabo ciertas modificaciones, sobre las mencionadas clases, para algunos casos concretos.&lt;/p&gt;
+
+&lt;p&gt;Para ello, la función adecuada a utilizar es &lt;code&gt;type_convert()&lt;/code&gt;, que incorpora el conocido argumento &lt;code&gt;col_types&lt;/code&gt; en su llamada. Ilustremos su uso y aprovechemos, además, para emplear la notación abreviada para los tipos de datos que &lt;strong&gt;readr&lt;/strong&gt; ofrece. Tomaremos el objeto &lt;code&gt;trees&lt;/code&gt; y declararemos todas sus columnas de tipo &lt;code&gt;numeric&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?type_convert
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;trees3 &amp;lt;- type_convert(trees, 
+                       col_types = cols(
+                           Girth  = &amp;quot;d&amp;quot;, 
+                           Height = &amp;quot;d&amp;quot;, 
+                           Volume = &amp;quot;d&amp;quot;)
+                       )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Warning: The following named parsers don&#39;t match the column names: Girth,
+## Height, Volume
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(trees3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    31 obs. of  3 variables:
+##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
+##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
+##  $ Volume: num  10.3 10.3 10.2 16.4 18.8 19.7 15.6 18.2 22.6 19.9 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 3
+##   .. ..$ Girth : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ Height: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ Volume: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: aunque la función se utiliza tal y como está descrito (e incluso en el propio curso de &lt;em&gt;DataCamp&lt;/em&gt; ésta sería la respuesta adecuada), he encontrado algún tipo de problema al emplear &lt;code&gt;type_convert()&lt;/code&gt;, de forma que no reconoce los nombres de las columnas.&lt;/p&gt;
+
+&lt;h3 id=&#34;2-2-transformando-columnas-de-texto-en-factores&#34;&gt;2.2. Transformando columnas de texto en factores&lt;/h3&gt;
+
+&lt;p&gt;Una de las características de las funciones de importación de datos de la librería &lt;em&gt;readr&lt;/em&gt; es que no interpretan, de manera automática, las columnas que poseen cadenas de texto como factores. No obstante, en ocasiones nos puede interesar que la clase de algunas columnas sea &lt;code&gt;factor&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;En estas situaciones, podemos utilizar la función &lt;code&gt;parse_factor()&lt;/code&gt; sobre las columnas del objeto recién importado que buscamos sean factores, especificando, si queremos, los niveles que adoptan.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?parse_factor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ilustremos su uso mediante un ejemplo. En el objeto &lt;code&gt;salaries&lt;/code&gt;, que generamos en el capítulo anterior, la primera columna, &lt;code&gt;X1&lt;/code&gt;, contiene el tipo de profesor universitario; mientras que la segunda, &lt;code&gt;X5&lt;/code&gt;, hace referencia al sexo de la persona. Transformemos ambas en factores.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;salaries$X1 &amp;lt;- parse_factor(salaries$X1,
+                            levels = c(&amp;quot;Prof&amp;quot;, &amp;quot;AsstProf&amp;quot;, &amp;quot;AssocProf&amp;quot;))
+
+salaries$X5 &amp;lt;- parse_factor(salaries$X5, 
+                            levels = c(&amp;quot;Male&amp;quot;, &amp;quot;Female&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 3
+##          X1     X5     X6
+##      &amp;lt;fctr&amp;gt; &amp;lt;fctr&amp;gt;  &amp;lt;int&amp;gt;
+## 1      Prof   Male 139750
+## 2      Prof   Male 173200
+## 3  AsstProf   Male  79750
+## 4      Prof   Male 115000
+## 5      Prof   Male 141500
+## 6 AssocProf   Male  97000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(salaries)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    397 obs. of  3 variables:
+##  $ X1: Factor w/ 3 levels &amp;quot;Prof&amp;quot;,&amp;quot;AsstProf&amp;quot;,..: 1 1 2 1 1 3 1 1 1 1 ...
+##  $ X5: Factor w/ 2 levels &amp;quot;Male&amp;quot;,&amp;quot;Female&amp;quot;: 1 1 1 1 1 1 1 1 1 2 ...
+##  $ X6: int  139750 173200 79750 115000 141500 97000 175000 147765 119250 129000 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 6
+##   .. ..$ X1: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X2: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X3: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X4: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_skip&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X5: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ X6: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-3-trabajando-con-fechas&#34;&gt;2.3. Trabajando con fechas&lt;/h3&gt;
+
+&lt;p&gt;Si una de las columnas del archivo de datos viene dada en la forma &lt;code&gt;YYYY-MM-DD&lt;/code&gt;, las funciones de importación de la librería &lt;em&gt;readr&lt;/em&gt; la interpretarán automáticamente como de tipo &lt;code&gt;Date&lt;/code&gt; (fecha).&lt;/p&gt;
+
+&lt;p&gt;No obstante, si en la tabla están presentes algunos valores que son fechas y no se ajustan a la estructura comentada arriba, a través de la función &lt;code&gt;parse_date()&lt;/code&gt; (y su argumento &lt;code&gt;format&lt;/code&gt;) podemos lidiar con esta situación.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?parse_date
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Consideremos el siguiente ejemplo: en el archivo &lt;code&gt;weather.csv&lt;/code&gt;, donde se recogen distintos indicadores relacionados con el clima, la columna &lt;code&gt;date&lt;/code&gt; contiene la fecha en el formato &amp;ldquo;mes/día/año&amp;rdquo;. Con esta información, procedamos a transformar la clase de la columna de manera oportuna.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;weather &amp;lt;- read_csv(&amp;quot;datasets/weather.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   origin = col_character(),
+##   date = col_character(),
+##   hour = col_integer(),
+##   temp = col_double(),
+##   dewp = col_double(),
+##   humid = col_double(),
+##   wind_dir = col_integer(),
+##   wind_speed = col_double(),
+##   wind_gust = col_double(),
+##   precip = col_double(),
+##   pressure = col_double(),
+##   visib = col_double()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(weather)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 12
+##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
+##    &amp;lt;chr&amp;gt;      &amp;lt;chr&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1    EWR 12/22/2013     9 64.94 60.98 87.00      190   13.80936 15.891535
+## 2    EWR  7/23/2013     6 77.00 75.20 94.19      140    4.60312  5.297178
+## 3    EWR 10/30/2013    11 44.96 35.96 70.52        0    0.00000  0.000000
+## 4    EWR 12/25/2013    21 28.04  6.08 38.69      250    3.45234  3.972884
+## 5    EWR  6/18/2013     9 66.02 62.06 87.05       10    5.75390  6.621473
+## 6    EWR   5/5/2013    15 57.92 37.04 45.58       NA    4.60312  5.297178
+## # ... with 3 more variables: precip &amp;lt;dbl&amp;gt;, pressure &amp;lt;dbl&amp;gt;, visib &amp;lt;dbl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(weather)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    500 obs. of  12 variables:
+##  $ origin    : chr  &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; ...
+##  $ date      : chr  &amp;quot;12/22/2013&amp;quot; &amp;quot;7/23/2013&amp;quot; &amp;quot;10/30/2013&amp;quot; &amp;quot;12/25/2013&amp;quot; ...
+##  $ hour      : int  9 6 11 21 9 15 11 11 15 20 ...
+##  $ temp      : num  64.9 77 45 28 66 ...
+##  $ dewp      : num  60.98 75.2 35.96 6.08 62.06 ...
+##  $ humid     : num  87 94.2 70.5 38.7 87 ...
+##  $ wind_dir  : int  190 140 0 250 10 NA 310 0 350 290 ...
+##  $ wind_speed: num  13.81 4.6 0 3.45 5.75 ...
+##  $ wind_gust : num  15.89 5.3 0 3.97 6.62 ...
+##  $ precip    : num  0.01 0.01 0 0 0 0 0 0 0 0 ...
+##  $ pressure  : num  1010 NA 1026 1033 1012 ...
+##  $ visib     : num  10 4 10 10 10 10 10 0.25 10 10 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 12
+##   .. ..$ origin    : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ date      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ hour      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ temp      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ dewp      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ humid     : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_dir  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_speed: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_gust : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ precip    : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ pressure  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ visib     : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;weather$date &amp;lt;- parse_date(weather$date, 
+                           format = &amp;quot;%m/%d/%Y&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(weather)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 12
+##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
+##    &amp;lt;chr&amp;gt;     &amp;lt;date&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;dbl&amp;gt;     &amp;lt;dbl&amp;gt;
+## 1    EWR 2013-12-22     9 64.94 60.98 87.00      190   13.80936 15.891535
+## 2    EWR 2013-07-23     6 77.00 75.20 94.19      140    4.60312  5.297178
+## 3    EWR 2013-10-30    11 44.96 35.96 70.52        0    0.00000  0.000000
+## 4    EWR 2013-12-25    21 28.04  6.08 38.69      250    3.45234  3.972884
+## 5    EWR 2013-06-18     9 66.02 62.06 87.05       10    5.75390  6.621473
+## 6    EWR 2013-05-05    15 57.92 37.04 45.58       NA    4.60312  5.297178
+## # ... with 3 more variables: precip &amp;lt;dbl&amp;gt;, pressure &amp;lt;dbl&amp;gt;, visib &amp;lt;dbl&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(weather)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    500 obs. of  12 variables:
+##  $ origin    : chr  &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; &amp;quot;EWR&amp;quot; ...
+##  $ date      : Date, format: &amp;quot;2013-12-22&amp;quot; &amp;quot;2013-07-23&amp;quot; ...
+##  $ hour      : int  9 6 11 21 9 15 11 11 15 20 ...
+##  $ temp      : num  64.9 77 45 28 66 ...
+##  $ dewp      : num  60.98 75.2 35.96 6.08 62.06 ...
+##  $ humid     : num  87 94.2 70.5 38.7 87 ...
+##  $ wind_dir  : int  190 140 0 250 10 NA 310 0 350 290 ...
+##  $ wind_speed: num  13.81 4.6 0 3.45 5.75 ...
+##  $ wind_gust : num  15.89 5.3 0 3.97 6.62 ...
+##  $ precip    : num  0.01 0.01 0 0 0 0 0 0 0 0 ...
+##  $ pressure  : num  1010 NA 1026 1033 1012 ...
+##  $ visib     : num  10 4 10 10 10 10 10 0.25 10 10 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 12
+##   .. ..$ origin    : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ date      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ hour      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ temp      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ dewp      : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ humid     : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_dir  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_integer&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_speed: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ wind_gust : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ precip    : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ pressure  : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ visib     : list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_double&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-4-trabajando-con-números&#34;&gt;2.4. Trabajando con números&lt;/h3&gt;
+
+&lt;p&gt;Es posible que la tabla que deseamos importar contenga, entre sus valores, expresiones numéricas asociadas cantidades monetarias, de manera que incluyan caracteres no numéricos (como el símbolo de la moneda o diversos separadores de millares, por ejemplo).&lt;/p&gt;
+
+&lt;p&gt;En estos casos, la función a utilizar, de la librería &lt;em&gt;readr&lt;/em&gt;, es &lt;code&gt;parse_number()&lt;/code&gt;, que omite los mencionados caracteres no numéricos presentes en los valores de una columna.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?parse_number
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En el archivo &lt;code&gt;debt.csv&lt;/code&gt; tenemos datos relacionados con la deuda nacional de &lt;em&gt;Estados Unidos&lt;/em&gt; para ciertos años. Importemos el archivo y examinemos su contenido.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;debt &amp;lt;- read_csv(&amp;quot;datasets/national_debt.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   V1 = col_character(),
+##   V2 = col_character()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;head(debt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 2
+##        V1                     V2
+##     &amp;lt;chr&amp;gt;                  &amp;lt;chr&amp;gt;
+## 1 9/30/15 $18,150,617,666,484.30
+## 2 9/30/14 $17,824,071,380,733.80
+## 3 9/30/13 $16,738,183,526,697.30
+## 4 9/30/12 $16,066,241,407,385.80
+## 5 9/30/11 $14,790,340,328,557.10
+## 6 9/30/10 $13,561,623,030,891.70
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(debt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    16 obs. of  2 variables:
+##  $ V1: chr  &amp;quot;9/30/15&amp;quot; &amp;quot;9/30/14&amp;quot; &amp;quot;9/30/13&amp;quot; &amp;quot;9/30/12&amp;quot; ...
+##  $ V2: chr  &amp;quot;$18,150,617,666,484.30&amp;quot; &amp;quot;$17,824,071,380,733.80&amp;quot; &amp;quot;$16,738,183,526,697.30&amp;quot; &amp;quot;$16,066,241,407,385.80&amp;quot; ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 2
+##   .. ..$ V1: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ V2: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Apliquemos ahora la función &lt;code&gt;parse_number()&lt;/code&gt; a la segunda columna de la tabla.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;debt$V2 &amp;lt;- parse_number(debt$V2)
+head(debt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## # A tibble: 6 × 2
+##        V1           V2
+##     &amp;lt;chr&amp;gt;        &amp;lt;dbl&amp;gt;
+## 1 9/30/15 1.815062e+13
+## 2 9/30/14 1.782407e+13
+## 3 9/30/13 1.673818e+13
+## 4 9/30/12 1.606624e+13
+## 5 9/30/11 1.479034e+13
+## 6 9/30/10 1.356162e+13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;str(debt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    16 obs. of  2 variables:
+##  $ V1: chr  &amp;quot;9/30/15&amp;quot; &amp;quot;9/30/14&amp;quot; &amp;quot;9/30/13&amp;quot; &amp;quot;9/30/12&amp;quot; ...
+##  $ V2: num  1.82e+13 1.78e+13 1.67e+13 1.61e+13 1.48e+13 ...
+##  - attr(*, &amp;quot;spec&amp;quot;)=List of 2
+##   ..$ cols   :List of 2
+##   .. ..$ V1: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   .. ..$ V2: list()
+##   .. .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_character&amp;quot; &amp;quot;collector&amp;quot;
+##   ..$ default: list()
+##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
+##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;2-5-accediendo-a-los-metadatos-de-un-archivo&#34;&gt;2.5. Accediendo a los metadatos de un archivo&lt;/h3&gt;
+
+&lt;p&gt;En ocasiones, puede resultar de utilidad tener una idea previa de cómo las funciones de la librería &lt;em&gt;readr&lt;/em&gt; van a interpretar las columnas de un conjunto de datos antes de importarlo. De esta forma, en el caso de que las clases inferidas no sean las adecuadas, podemos optar por declarar el tipo de alguna de ellas con antelación.&lt;/p&gt;
+
+&lt;p&gt;Con tal fin existen las funciones &lt;code&gt;spec_csv()&lt;/code&gt; y &lt;code&gt;spec_tsv()&lt;/code&gt;, para los archivos separados por comas y por tabulaciones, respectivamente. En el caso de tener que trabajar con otro tipo de ficheros (por ejemplo, &lt;code&gt;.csv&lt;/code&gt; en formato europeo), usaremos &lt;code&gt;spec_delim()&lt;/code&gt;, especificando el símbolo que hace las veces de separador de columnas en el archivo de datos.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?spec_csv
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por ejemplo, retomemos el primer ejemplo de este documento, aquel que trabajaba con el archivo &lt;code&gt;chickwts.csv&lt;/code&gt;, que contenía información relativa al peso y tipo de alimentación de ciertos pollos. Veamos cuáles serían las clases que la función &lt;code&gt;read_csv()&lt;/code&gt; inferiría para sus columnas a la hora de importarlo.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;spec_csv(&amp;quot;datasets/chickwts.csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;## Parsed with column specification:
+## cols(
+##   weight = col_integer(),
+##   feed = col_character()
+## )
+
+## cols(
+##   weight = col_integer(),
+##   feed = col_character()
+## )
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -36,7 +1200,38 @@
       <pubDate>Sat, 04 Aug 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/08/04/como-actualizar-facilmente-r-en-windows/</guid>
-      <description>El proceso de actualización de la versión del lenguaje de programación &lt;em&gt;R&lt;/em&gt; puede resultar un tanto tedioso si lo llevamos a cabo de forma manual. Veamos cómo hacer más liviana esta pesada carga.</description>
+      <description>&lt;p&gt;El proceso de actualización de la versión del lenguaje de programación &lt;em&gt;R&lt;/em&gt; puede resultar un tanto tedioso si lo llevamos a cabo de forma manual. Veamos cómo hacer más liviana esta pesada carga.&lt;/p&gt;
+
+&lt;p&gt;Por fortuna, tenemos a nuestra disposición el paquete &lt;a href=&#34;https://cran.r-project.org/web/packages/installr/index.html&#34; target=&#34;_blank&#34;&gt;installr&lt;/a&gt;, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función &lt;code&gt;updateR()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;De esta forma, basta con que tengamos a mano un &lt;em&gt;script&lt;/em&gt; similar al que se muestra a continuación, y procedamos a ejecutarlo cuando se anuncie una nueva versión de &lt;em&gt;R&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instala el paquete
+install.packages(&amp;quot;installr&amp;quot;)
+ 
+# Actualiza R
+library(installr)
+updateR()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al utilizar la función &lt;code&gt;updateR()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Se comprueba cuál es la última versión de &lt;em&gt;R&lt;/em&gt;. Si estamos al día, nos mostrará una ventana de confirmación de tal hecho. En caso contrario, nos dará la posibilidad de consultar las novedades de dicha versión y nos permitirá proceder a su descarga e instalación.&lt;/li&gt;
+&lt;li&gt;Una vez completado el proceso, nos preguntará si deseamos mover (y borrar) las librerías desde nuestra antigua versión a la nueva. Además, nos dará la opción de ponerlas al día. Dependiendo del número de librerías que tengamos instaladas, completar estas acciones puede llevarnos un buen rato.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si usamos &lt;em&gt;RStudio&lt;/em&gt;, al principio se nos mostrará un aviso sugiriéndonos que llevemos a cabo todo el proceso desde la propia interfaz de &lt;em&gt;R&lt;/em&gt;, en lugar de a través de este &lt;em&gt;IDE&lt;/em&gt;. No obstante, en mi experiencia, podemos tranquilamente ignorar la advertencia y realizar el procedimiento utilizando &lt;em&gt;RStudio&lt;/em&gt;. Al terminar, bastará con que reiniciemos el programa para que todo funcione con normalidad.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, podemos ahorrarnos la sucesión de ventanas emergentes si sabemos de antemano que queremos actualizar &lt;em&gt;R&lt;/em&gt;, mover (no copiar) las librerías y actualizarlas. Para ello, reescribimos el anterior script como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instala / carga el paquete
+if(!require(installr)) {install.packages(&amp;quot;installr&amp;quot;); require(installr)} 
+ 
+# Instala R, mueve y actualiza paquetes
+updateR(F, T, T, F, T, F, T)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>

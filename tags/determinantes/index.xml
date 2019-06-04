@@ -4,12 +4,12 @@
     <title>Determinantes on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/determinantes/</link>
     <description>Recent content in Determinantes on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Mon, 16 Jul 2018 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/determinantes/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/determinantes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,209 @@
       <pubDate>Mon, 16 Jul 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/07/16/mezclando-determinantes-y-numeros-combinatorios/</guid>
-      <description>Problema 2: una combinación peligrosa.</description>
+      <description>&lt;p&gt;En esta entrada abordaremos un precioso problema de determinantes, propuesto durante la convocatoria de oposiciones de Aragón de este mismo año 2018, para la especialidad de matemáticas.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Problema 2:&lt;/strong&gt; Sea $k$ un número natural no nulo y sea $f$ la función real de variable real dada por:&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; x\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; x^2\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; x^3\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; x^k\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; x^{k+1}
+\end{vmatrix}.
+$$&lt;/p&gt;
+
+&lt;p&gt;a) Calcular $f(x+1) - f(x)$.&lt;/p&gt;
+
+&lt;p&gt;b) Expresar la suma $1^k+2^k+\cdots+n^k$ mediante esta función.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;En lugar de abordar directamente la resolución del primer apartado, detengámonos por un instante a analizar la expresión del determinante dado por la función $f(x)$. Los números combinatorios que aparecen y, sobre todo, la forma en que lo hacen, seguramente hayan captado nuestra atención. Resulta, cuanto menos, familiar ese patrón, ¿verdad? Parte de él es el que aparece en el famoso &lt;em&gt;triángulo de Pascal&lt;/em&gt;, si expresamos sus componentes utilizando números combinatorios.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, de manera automática, y supongo que por deformación matemática, cuando viene a nuestra cabeza el &lt;em&gt;triángulo de Pascal&lt;/em&gt;, enseguida pensamos en el &lt;em&gt;teorema del binomio&lt;/em&gt;, que recordemos afirma que&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(x+y)^n &amp;amp;= \sum_{k=0}^{n}{\binom{n}{k}x^{n-k}y^k}\\ &amp;amp;= \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y+\cdots+\binom{n}{n-1}xy^{n-1}+\binom{n}{n}y^n.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Merece la pena explorar la idea de una posible relación entre el &lt;em&gt;teorema del binomio&lt;/em&gt; y la expresión de $f(x)$. Para empezar, en la última columna del determinante encontramos las potencias de $x$, pero no observamos la existencia de más potencias en el resto de los elementos de dicho determinante. Este hecho nos invita a pensar que quizá sea conveniente que particularmente estudiemos el desarrollo del binomio $(1+x)^n$, dado el valor de las potencias de uno. Además, si ahora echamos un vistazo rápido al enunciado del primer apartado, aparece un $(1+x)$, ¡puede que estemos sobre la pista de la senda correcta!&lt;/p&gt;
+
+&lt;p&gt;Desarrollemos $(1+x)^n$, para algunos valores concretos de $n$, utilizando para ello el &lt;em&gt;teorema del binomio&lt;/em&gt;:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(1+x)^1 &amp;amp;= \dbinom{1}{0} + \dbinom{1}{1}x,\\ (1+x)^2 &amp;amp;= \dbinom{2}{0} + \dbinom{2}{1}x + \dbinom{2}{2}x^2,\\ (1+x)^3 &amp;amp;= \dbinom{3}{0} + \dbinom{3}{1}x + \dbinom{3}{2}x^2 + \dbinom{3}{3}x^3,\\ (1+x)^4 &amp;amp;= \dbinom{4}{0} + \dbinom{4}{1}x + \dbinom{4}{2}x^2 + \dbinom{4}{3}x^3 + \dbinom{4}{4}x^4.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Para empezar, enseguida apreciamos que las potencias de $x$ vienen siempre acompañadas por un número combinatorio. No obstante, como dado $n\in\mathbb{N}$, tenemos que&lt;/p&gt;
+
+&lt;p&gt;$$
+\binom{n}{n}=1,
+$$&lt;/p&gt;
+
+&lt;p&gt;podemos reescribir la última columna del determinante dado por $f(x)$ de la siguiente manera:&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; \binom{1}{1}x^{\phantom{1}}\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; \binom{2}{2}x^2\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; \binom{3}{3}x^3\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; \binom{k}{k}x^k\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; \binom{k+1}{k+1}x^{k+1}
+\end{vmatrix}
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora, centremos nuestra atención en la primera fila del determinante. Si sumamos el elemento que figura en la primera columna al que reside en la última, tendríamos&lt;/p&gt;
+
+&lt;p&gt;$$
+\binom{1}{0} + \binom{1}{1}x = (1+x)^1 = 1+x.
+$$&lt;/p&gt;
+
+&lt;p&gt;Este hecho nos sugiere que llevemos a cabo la transformación sobre el determinante que consiste en sustituir la última columna por una combinación lineal de esta con la primera columna, que sabemos, por las propiedades de los determinantes, que no altera el valor de $f(x)$. Utilizando la notación habitual de operaciones sobre determinantes, estaríamos proponiendo llevar a cabo la transformación&lt;/p&gt;
+
+&lt;p&gt;$$
+C^{\prime}_{k+1}\rightarrow C_1 + C_{k+1}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Pasemos, a continuación, a estudiar la segunda fila determinante. Con la idea del párrafo anterior en mente, ¿podemos llegar a conseguir el desarrollo del binomio $(1+x)^2$? En realidad, tenemos casi todos los elementos de dicho desarrollo, a falta de una $x$ que tendría que estar multiplicando al elemento que aparece en la segunda columna. No obstante, recordemos aquí que $x$ no es más que un número real, por lo que podríamos multiplicar toda la segunda columna por $x$ y sumarla, junto con la primera columna, a la última. Es decir, la idea es llevar a cabo la transformación&lt;/p&gt;
+
+&lt;p&gt;$$
+C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + C_{k+1},
+$$&lt;/p&gt;
+
+&lt;p&gt;que permitiría que el elemento de la última columna fuese precisamente $(1+x)^2$.&lt;/p&gt;
+
+&lt;p&gt;Empezamos a atisbar un patrón aquí, ¿verdad? Analizando la tercera fila, llegaríamos a proponer la transformación&lt;/p&gt;
+
+&lt;p&gt;$$
+C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + C_{k+1},
+$$&lt;/p&gt;
+
+&lt;p&gt;y, siguiendo con el razonamiento, la transformación que al final llevaremos a cabo sobre el determinante será la siguiente:&lt;/p&gt;
+
+&lt;p&gt;$$
+C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + \cdots + x^{k-1}C_k + C_{k+1},
+$$&lt;/p&gt;
+
+&lt;p&gt;que hace que los elementos de la última columna sean binomios de la forma $(1+x)^n$, con $0\leq n\leq k+1$.&lt;/p&gt;
+
+&lt;p&gt;¡Cuidado! No es cierta la conclusión escrita arriba o, al menos, no lo es para todos los valores indicados de $n$. Si nos fijamos con atención, se cumple para $n=1$, para $n=2$, y así sucesivamente hasta llegar a $n=k$, ¡pero nos faltaría, para $n=k+1$, un término del desarrollo del binomio! Si nos damos cuenta, no aparece en el determinante&lt;/p&gt;
+
+&lt;p&gt;$$
+\binom{k+1}{k}x^k,
+$$&lt;/p&gt;
+
+&lt;p&gt;pero como esa expresión no deja de ser un número, podemos sumarlo y restarlo en esa posición para conseguir así el desarrollo del binomio $(1+x)^{k+1}$, quedando entonces la expresión de $f(x)$ como sigue:&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 1+x\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; (1+x)^2\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; (1+x)^3\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; (1+x)^k\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; (1+x)^{k+1} - \binom{k+1}{k}x^k
+\end{vmatrix}
+$$&lt;/p&gt;
+
+&lt;p&gt;Esa resta que aparece en el último elemento de la diagonal principal nos invita a seguir aplicando propiedades de los determinantes y separar en dos el dado en $f(x)$. Así, podemos escribir&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x) = g(x) + h(x),
+$$&lt;/p&gt;
+
+&lt;p&gt;donde&lt;/p&gt;
+
+&lt;p&gt;$$
+g(x) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 1+x\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; (1+x)^2\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; (1+x)^3\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; (1+x)^k\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; (1+x)^{k+1}
+\end{vmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;y&lt;/p&gt;
+
+&lt;p&gt;$$
+h(x) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 0\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 0\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; 0\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; 0\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; - \binom{k+1}{k}x^k
+\end{vmatrix}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, enseguida nos damos cuenta de que la única diferencia entre $f(x)$ y $g(x)$ radica en que allí donde aparece $x$ en $f(x)$, figura ahora $1+x$ en $g(x)$, lo cual nos permite concluir que $g(x) = f(1+x)$.&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, en $h(x)$ tenemos una matriz triangular inferior, cuyo determinante sabemos es igual al producto de los elementos que componen su diagonal principal, es decir,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+h(x) &amp;amp;= -\binom{1}{0}\binom{2}{1}\binom{3}{2}\binom{4}{3}\cdots\binom{k+1}{k}x^k\\ &amp;amp;=-2!\dfrac{3!}{2!}\dfrac{4!}{3!}\cdots\dfrac{(k+1)!}{k!}x^k\\ &amp;amp;=-(k+1)!x^k.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Así, como&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x) = g(x) + h(x) = f(1+x) - (k+1)!x^k,
+$$&lt;/p&gt;
+
+&lt;p&gt;la respuesta para el primer apartado de este problema sería:&lt;/p&gt;
+
+&lt;p&gt;$$
+f(x+1) - f(x) = (k+1)!x^k.
+$$&lt;/p&gt;
+
+&lt;p&gt;En el segundo apartado nos piden calcular el valor de la suma&lt;/p&gt;
+
+&lt;p&gt;$$
+1^k+2^k+\cdots+n^k
+$$&lt;/p&gt;
+
+&lt;p&gt;utilizado $f(x)$. Enseguida nos damos cuenta de que aparece $x^k$ en la expresión final del apartado anterior, hecho que nos invita a asignarle el valor $n$ a la variable $x$, quedando entonces la ecuación&lt;/p&gt;
+
+&lt;p&gt;$$
+f(n+1) - f(n) = (k+1)!n^k.
+$$&lt;/p&gt;
+
+&lt;p&gt;Siguiendo esta idea, para conseguir que aparezca $(n-1)^k$, asignaríamos el valor $n-1$ a la variable $x$, obteniendo así la ecuación&lt;/p&gt;
+
+&lt;p&gt;$$
+f(n) - f(n-1) = (k+1)!(n-1)^k.
+$$&lt;/p&gt;
+
+&lt;p&gt;Iteramos sucesivamente esta manera de proceder, de forma que al final tenemos el siguiente conjunto de ecuaciones:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+f(n+1) - f(n) &amp;amp;= (k+1)!n^k,\\ f(n) - f(n-1) &amp;amp;= (k+1)!(n-1)^k,\\ f(n-1) - f(n-2) &amp;amp;= (k+1)!(n-2)^k,\\ \vdots &amp;amp; \\ f(2) - f(1) &amp;amp;= (k+1)!1^k,
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y sumando todas ellas, llegamos a que&lt;/p&gt;
+
+&lt;p&gt;$$
+f(n+1) - f(1) = (k+1)!(1^k+2^k+\cdots+n^k).
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien,
+$$
+f(1) =
+\begin{vmatrix}
+\binom{1}{0} &amp;amp; 0 &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 1\\ \binom{2}{0} &amp;amp; \binom{2}{1} &amp;amp; 0 &amp;amp;\ldots &amp;amp; 0 &amp;amp; 1\\ \binom{3}{0} &amp;amp; \binom{3}{1} &amp;amp; \binom{3}{2} &amp;amp; \ldots &amp;amp; 0 &amp;amp; 1\\ \vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots &amp;amp; \vdots\\ \binom{k}{0} &amp;amp; \binom{k}{1} &amp;amp; \binom{k}{2} &amp;amp; \ldots &amp;amp; \binom{k}{k-1} &amp;amp; 1\\ \binom{k+1}{0} &amp;amp; \binom{k+1}{1} &amp;amp; \binom{k+1}{2} &amp;amp;\ldots &amp;amp; \binom{k+1}{k-1} &amp;amp; 1
+\end{vmatrix},
+$$&lt;/p&gt;
+
+&lt;p&gt;y si recordamos que, dado $n\in\mathbb{N}$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\binom{n}{0} = 1,
+$$&lt;/p&gt;
+
+&lt;p&gt;resulta que la primera columna es igual a la última, provocando ello que $f(1)=0$ y, finalmente, que&lt;/p&gt;
+
+&lt;p&gt;$$
+1^k + 2^k + \cdots + n^k = \dfrac{f(n+1)}{(k+1)!},
+$$&lt;/p&gt;
+
+&lt;p&gt;expresión que da respuesta a la cuestión planteada en el segundo apartado del problema.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

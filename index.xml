@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 03 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 04 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15199,6 +15199,107 @@ def sale_aplicacion():
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/62/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>63. Práctica guiada V</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb63-practica-guiada-v/</link>
+      <pubDate>Tue, 04 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb63-practica-guiada-v/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/mNzHPglBuUk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, analizaremos cómo limpiar los campos de registros (por si el usuario comete algún error al transcribir los datos) e insertar datos en la base de datos (BBDD), es decir, ejecutar la operación de tipo &lt;em&gt;Create&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para empezar, de cara a poder realizar manipulaciones sobre el texto que un usuario escriba en los campos de registros, hemos de emplear variables de tipo &lt;code&gt;StringVar&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;id_data = StringVar()
+name_data = StringVar()
+lastname_data = StringVar()
+address_data = StringVar()
+password_data = StringVar()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, las asignamos a sus correspondientes &lt;code&gt;Entry&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;id_entry = Entry(campos_frame, width=40, textvariable=id_data)
+name_entry = Entry(campos_frame, width=40, textvariable=name_data)
+lastname_entry = Entry(campos_frame, width=40, textvariable=lastname_data)
+address_entry = Entry(campos_frame, width=40, textvariable=address_data)
+password_entry = Entry(campos_frame, width=40, textvariable=password_data)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Después, construimos la función que limpia los campos de registros:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función que limpia los registros de la aplicación
+def limpia_registros():
+    id_data.set(&amp;quot;&amp;quot;)
+    name_data.set(&amp;quot;&amp;quot;)
+    lastname_data.set(&amp;quot;&amp;quot;)
+    address_data.set(&amp;quot;&amp;quot;)
+    password_data.set(&amp;quot;&amp;quot;)
+    comment_text.delete(1.0, END)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Notemos cómo se limpia un cuadro de comentario, ya que el procedimiento a seguir es un tanto diferente. Hemos de utilizar la función &lt;code&gt;delete()&lt;/code&gt;, indicándole el punto de partida (&lt;code&gt;1.0&lt;/code&gt;) y el de finalización (&lt;code&gt;END&lt;/code&gt;).&lt;/li&gt;
+&lt;li&gt;Al hilo de lo anterior, &lt;code&gt;END&lt;/code&gt; es asimismo una instrucción de la librería &lt;code&gt;tkinter&lt;/code&gt;, de manera que hemos de importarla si estamos siguiendo la estrategia de &lt;code&gt;from tkinter import ...&lt;/code&gt;. De hecho, en mi código dicha instrucción comienza a adquirir una longitud considerable, siendo en la actualidad:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from tkinter import Button, END, Entry, Frame, Label, Menu, messagebox, Scrollbar, StringVar, Text, Tk
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, asignamos esta funcionalidad al elemento correspondiente el menú:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;borrar_menu.add_command(label=&amp;quot;Borrar campos&amp;quot;, command=limpia_registros)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, abordemos la primera operación &lt;em&gt;CRUD&lt;/em&gt;, &lt;em&gt;Create&lt;/em&gt;, que nos permitirá añadir registros a la BBDD.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def crud_create():
+    conexion = sqlite3.connect(&amp;quot;usuarios&amp;quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&amp;quot;INSERT INTO DATOS_USUARIOS VALUES (NULL, &#39;&amp;quot; +
+                   name_data.get() + &amp;quot;&#39;, &#39;&amp;quot; + password_data.get() + &amp;quot;&#39;,&#39;&amp;quot; +
+                   address_data.get() + &amp;quot;&#39;,&#39;&amp;quot; + password_data.get() + &amp;quot;&#39;,&#39;&amp;quot; +
+                   comment_text.get(&amp;quot;1.0&amp;quot;, END) + &amp;quot;&#39;)&amp;quot;)
+    conexion.commit()
+    messagebox.showinfo(
+        title=&amp;quot;Crear registro&amp;quot;,
+        message=&amp;quot;Registro insertado con éxito en la base de datos.&amp;quot;)
+    conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Notas&lt;/em&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;No recogemos aquello que el usuario escribe en el campo &lt;em&gt;ID&lt;/em&gt;, ya que lo hemos declarado en la tabla como clave primaria autoincrementable (de ahí el &lt;code&gt;NULL&lt;/code&gt; en la instrucción &lt;em&gt;SQL&lt;/em&gt; de arriba). Este proceder puede resultar un tanto confuso para el usuario y admite margen de mejora.&lt;/li&gt;
+&lt;li&gt;Es muy sencillo equivocarse a la hora de escribir la anterior instrucción &lt;em&gt;SQL&lt;/em&gt; por el elevado número de concatenaciones. Un enfoque alternativo consiste en escribir primero una serie de datos concretos de ejemplo y, después, poco a poco sustituir dichos datos por las correspondientes variables con sus métodos &lt;code&gt;get()&lt;/code&gt; asociados.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finalmente, añadimos la funcionalidad, tanto al elemento de menú correspondiente, como al botón que figura en la parte inferior de la aplicación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;crud_menu.add_command(label=&amp;quot;Crear&amp;quot;, command=crud_create)
+
+crear_button = Button(botones_frame, text=&amp;quot;Create&amp;quot;, command=crud_create)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/63/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

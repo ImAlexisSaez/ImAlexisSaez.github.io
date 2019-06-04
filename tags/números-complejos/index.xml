@@ -4,12 +4,12 @@
     <title>Números complejos on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/n%C3%BAmeros-complejos/</link>
     <description>Recent content in Números complejos on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Sat, 11 Aug 2018 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/n%C3%BAmeros-complejos/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/n%C3%BAmeros-complejos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,112 @@
       <pubDate>Sat, 11 Aug 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/08/11/jugando-con-las-propiedades-del-conjugado/</guid>
-      <description>Problema 4: cómo una buena simplificación te facilita enormemente la vida.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 4:&lt;/strong&gt; Dada una constante real positiva, $a$, y el conjunto&lt;/p&gt;
+
+&lt;p&gt;$$
+M_a = \left\{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right\},
+$$&lt;/p&gt;
+
+&lt;p&gt;donde $\mathbb{C}^* = \mathbb{C}\backslash{(0,0)}$, encuentre los valores mínimo y máximo de $|z|$ cuando $z\in M_a$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hemos de ser capaces de extraer información sobre el módulo de $z$, $|z|$, a partir de la expresión de la ecuación que define al conjunto $M_a$. Por las propiedades de la conjugación, sabemos que $z\overline{z} = |z|^2$, de manera que una posible estrategia a seguir sería elevar al cuadrado ambos miembros de la ecuación que define a $M_a$ y desarrollar la expresión resultante mediante las propiedades de la conjugación. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+a^2 &amp;amp;= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\\ &amp;amp;= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;pero recordemos que $z\overline{z} = |z|^2$, por lo que la anterior ecuación quedaría&lt;/p&gt;
+
+&lt;p&gt;$$
+a^2 = |z|^2 + \dfrac{z^2+\overline{z}^2}{|z|^2}+\dfrac{1}{|z|^2},
+$$&lt;/p&gt;
+
+&lt;p&gt;y multiplicando ambos miembros por $|z|^2$, número que sabemos es distinto de cero porque $z\in\mathbb{C}^*$, tenemos&lt;/p&gt;
+
+&lt;p&gt;$$
+a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, a primera vista, la anterior expresión parece que quiere conducirnos hacia alguna especie de ecuación bicuadrada en $|z|$. Efectivamente, si reordenamos los términos de manera adecuada, llegamos a&lt;/p&gt;
+
+&lt;p&gt;$$
+|z|^4 - a^2|z|^2 + 1 = - (z^2 + \overline{z}^2)
+$$&lt;/p&gt;
+
+&lt;p&gt;y si completamos el cuadrado del miembro derecho,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+|z|^4 - a^2|z|^2 + 1 &amp;amp;= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\\ &amp;amp;= - (z + \overline{z})^2 + 2z\overline{z}\\ &amp;amp;= - (z + \overline{z})^2 + 2|z|^2,
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;es decir,&lt;/p&gt;
+
+&lt;p&gt;$$
+|z|^4 - (a^2+2)|z|^2 + 1 = - (z+\overline{z})^2 \leq 0.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por lo tanto, tras realizar operaciones algebraicas sobre la ecuación que define al conjunto $M_a$, hemos llegado a que la expresión de cierta ecuación bicuadrada en $|z|$ debe ser menor o igual que cero. Investiguemos si de ella podemos extraer alguna condición sobre el módulo de $z$ que nos permita dar respuesta al problema planteado.&lt;/p&gt;
+
+&lt;p&gt;Resolviendo $|z|^4 - (a^2+2)|z|^2 + 1 = 0$ y teniendo en cuenta que es positivo el coeficiente asociado a $|z|^4$, tenemos que $|z|^4 - (a^2+2)|z|^2 + 1 \leq 0$  si, y solo si,&lt;/p&gt;
+
+&lt;p&gt;$$
+|z|^2\in \left[
+\dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2}, \dfrac{2+a^2 + \sqrt{a^4+4a^2}}{2}
+\right],
+$$&lt;/p&gt;
+
+&lt;p&gt;que es equivalente a decir que&lt;/p&gt;
+
+&lt;p&gt;$$
+|z|\in \left[
+\dfrac{-a + \sqrt{a^2+4}}{2}, \dfrac{a + \sqrt{a^2+4}}{2}
+\right].
+$$&lt;/p&gt;
+
+&lt;p&gt;Veamos esta última equivalencia en detalle, pues puede no resultarnos trivial a primera vista. La idea aquí es representar ambos extremos del intervalo que hemos obtenido para $|z|^2$ como cuadrados de ciertas expresiones. Si somos capaces de llevar a cabo tal tarea, únicamente bastará aplicar la raíz cuadrada (que, recordemos, es una transformación monótona creciente) para, de esta manera, llegar a la conclusión obtenida para $|z|$.&lt;/p&gt;
+
+&lt;p&gt;Centrémonos en la expresión del extremo inferior del intervalo definido para $|z|^2$ (el razonamiento a seguir sería análogo para el superior). Por un lado,&lt;/p&gt;
+
+&lt;p&gt;$$
+2+a^2 - \sqrt{a^4+4a^2} = 2+a^2 - a\sqrt{a^2+4},
+$$&lt;/p&gt;
+
+&lt;p&gt;expresión que nos invita a experimentar con el desarrollo del binomio $(-a + \sqrt{a^2+4})^2$. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(-a + \sqrt{a^2+4})^2 &amp;amp;= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2a^2+4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2(a^2+2-a\sqrt{a^2+4})\\ &amp;amp;= 2(a^2+2-\sqrt{a^4+4a^2}),
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;de forma que&lt;/p&gt;
+
+&lt;p&gt;$$
+\dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2} = \dfrac{(-a + \sqrt{a^2+4})^2}{2\cdot 2} = \left(\dfrac{-a + \sqrt{a^2+4}}{2}\right)^2.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por tanto, hemos llegado a que&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\min{|z|} &amp;amp;= \dfrac{-a+\sqrt{a^2+4}}{2},\\ \max{|z|} &amp;amp;= \dfrac{a+\sqrt{a^2+4}}{2},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y los valores extremos se alcanzarán cuando se dé la igualdad en la inecuación considerada, es decir, cuando $-(z+\overline{z})^2 = 0$, que equivale a la condición $z=-\overline{z}$. Así pues, los valores extremos se alcanzarán para los números complejos $z\in M_a$ tales que $z=-\overline{z}$.&lt;/p&gt;
+
+&lt;p&gt;Referencia:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Andreescu, T., &amp;amp; Andrica, D., (2006), &lt;em&gt;Complex Numbers from A to&amp;hellip; Z&lt;/em&gt;, Boston: Birkhäuser.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
     </item>
     
   </channel>

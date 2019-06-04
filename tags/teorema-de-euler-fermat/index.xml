@@ -4,12 +4,12 @@
     <title>Teorema de Euler-Fermat on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/teorema-de-euler-fermat/</link>
     <description>Recent content in Teorema de Euler-Fermat on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Sat, 19 Jan 2019 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/teorema-de-euler-fermat/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/teorema-de-euler-fermat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,204 @@
       <pubDate>Sat, 19 Jan 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/01/19/2019-anno-de-las-torres-de-potencias/</guid>
-      <description>Problema 44: uno de esos ejercicios que te tiene entretenido un rato.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 44:&lt;/strong&gt; Encuentra los dos últimos dígitos de&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para encontrar las dos últimas cifras de la operación indicada en el enunciado del ejercicio, un posible enfoque pasa por trabajar con el valor de las congruencias módulo $100$. Estudiemos el valor de dichas congruencias para cada uno de los tres sumandos por separado.&lt;/p&gt;
+
+&lt;p&gt;En primer lugar, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora, como $mcd(17,100) = 1$, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, sabemos que&lt;/p&gt;
+
+&lt;p&gt;$$
+17^{\varphi(100)}\equiv 1\pmod{100},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $100 = 2^2\cdot5^2$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\varphi(100) = 100\cdot\left(1-\dfrac{1}{2}\right)\cdot\left(1-\dfrac{1}{5}\right) = 40,
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es, $17^{40}\equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019}\pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2018^{2019}\pmod{5},\\ x&amp;amp;\equiv 2018^{2019}\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019}\equiv 3^{2019}\pmod{5},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $5$ es un número primo y $mcd(3,5) = 1$, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $3^4\equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+3^{2019} = 3^3\cdot (3^4)^{504}\equiv (3^3\cdot 1^{504})\pmod{5} \equiv 2\pmod{5}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, $2018 = 2\cdot1009$, por lo que,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \\ &amp;amp;= 2^{2019}\cdot1009^{2019} \\ &amp;amp;= 2^3\cdot2^{2016}\cdot1009^{2019} \\ &amp;amp;= 8\cdot2^{2016}\cdot1009^{2019},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y así, podemos concluir que $2018^{2019}\equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el &lt;em&gt;Teorema chino del resto&lt;/em&gt; o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}\equiv 17^{32}\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, $17^{32} = (17^2)^{16} = 189^{16}\equiv 89^{16}\pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+17^{32}&amp;amp;\equiv 89^{16}\pmod{100} \\ &amp;amp;\equiv (-11)^{16}\pmod{100} \\ &amp;amp;\equiv 11^{16}\pmod{100} \\ &amp;amp;\equiv 21^8\pmod{100}\\ &amp;amp;\equiv 41^4\pmod{100} \\ &amp;amp;\equiv 81^2\pmod{100} \\ &amp;amp;\equiv 61\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 61\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Para el segundo sumando, utilizaremos el &lt;em&gt;Teorema chino del resto&lt;/em&gt; desde el principio. Así, la ecuación de congruencia lineal&lt;/p&gt;
+
+&lt;p&gt;$$
+x\equiv 2018^{2019^{2020}}\pmod{100}
+$$&lt;/p&gt;
+
+&lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{4},\\ x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{25},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 0\pmod{4},
+$$&lt;/p&gt;
+
+&lt;p&gt;pues $2018 = 2\cdot1009$ y, gracias a ese dos que figura en la descomposición en factores primos de $2018$, operando adecuadamente con las propiedades de los exponentes (de una forma similar a como actuamos en el caso anterior) es fácil ver que la torre de potencias es múltiplo de cuatro. Por otro lado,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $mcd(18,25)=1$ estamos en condiciones de volver a aplicar el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+18^{\varphi(25)}\equiv 1\pmod{25},
+$$&lt;/p&gt;
+
+&lt;p&gt;y, dado que $25=5^2$, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+\varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2019^{2020} &amp;amp;\equiv (-1)^{2020}\pmod{20} \\ &amp;amp;\equiv 1^{2020}\pmod{20} \\ &amp;amp;\equiv 1\pmod{20},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y entonces&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25}\equiv 18\pmod{25}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 0\pmod{4},\\ x&amp;amp;\equiv 18\pmod{25}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al &lt;em&gt;Teorema chino del resto&lt;/em&gt; o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, el modo de actuar con el tercer sumando es similar al llevado a cabo para el primero. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $mcd(19,100)=1$ sabemos, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, que $19^{\varphi(100)} = 19^{40}\equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que nos garantiza que la ecuación de congruencia lineal&lt;/p&gt;
+
+&lt;p&gt;$$
+x\equiv 2020^{2021}\pmod{40}
+$$&lt;/p&gt;
+
+&lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2020^{2021}\pmod{5},\\ x&amp;amp;\equiv 2020^{2021}\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2\cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 0\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,&lt;/p&gt;
+
+&lt;p&gt;$$
+2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100}\equiv 1\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Recapitulando,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2017^{2018^{2019}}&amp;amp;\equiv 61\pmod{100},\\ 2018^{2019^{2020}}&amp;amp;\equiv 68\pmod{100},\\ 2019^{2020^{2021}}&amp;amp;\equiv  1\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;luego&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}\right)&amp;amp;\equiv (61+68+1)\pmod{100}\\ &amp;amp;\equiv 30\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +224,44 @@
       <pubDate>Wed, 21 Nov 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/11/21/una-aplicacion-rapida-del-teorema-de-euler-fermat/</guid>
-      <description>Problema 27: presentando este importante resultado.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 27:&lt;/strong&gt; Calcula los dos últimos dígitos de $3^{1492}$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para encontrar los dos últimos dígitos de $3^{1492}$, un posible enfoque es hallar el valor de su congruencia módulo $100$. El número $100$ no es primo, pero sí que es cierto que $mcd(3,100)=1$, situación que nos permite hacer uso del &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Este resultado afirma que&lt;/p&gt;
+
+&lt;p&gt;$$
+3^{\varphi(100)}\equiv 1\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, como $100 = 2^2\cdot5$, entonces&lt;/p&gt;
+
+&lt;p&gt;$$
+\varphi(100) = 100\left(1-\dfrac{1}{2}\right)\left(1-\dfrac{1}{5}\right) = 100\cdot\dfrac{1}{2}\cdot\dfrac{4}{5} = 40,
+$$&lt;/p&gt;
+
+&lt;p&gt;y, por tanto, $3^{40}\equiv 1\pmod{100}$. De esta manera, como $1492 = 40\cdot 37 + 12$, podemos escribir&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+3^{1492} &amp;amp;= 3^{12}\cdot(3^{40})^{37}\\ &amp;amp;\equiv (3^{12}\cdot1^{37})\pmod{100}\\ &amp;amp;\equiv 3^{12}\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;sin más que hacer uso de la calculadora para obtener el valor de $3^{12}$.&lt;/p&gt;
+
+&lt;p&gt;Alternativamente, para hallar el valor de esta última congruencia, podemos manipular la potencia, $12$, como sigue:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+3^{12} &amp;amp;= (3^4)^3\\ &amp;amp;= 81^3\\ &amp;amp;\equiv(-19)^3\pmod{100}\\ &amp;amp;\equiv (-6859)\pmod{100}\\ &amp;amp;\equiv(-59)\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;como antes, pudiéndose optar también por estrategias similares del tipo $3^{12} = 3^5\cdot 3^5\cdot 3^2$ o $3^{12}=3^6\cdot 3^6$, entre otras.&lt;/p&gt;
+
+&lt;p&gt;Así, finalmente, los dos últimos dígitos de $3^{1492}$ son $41$.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

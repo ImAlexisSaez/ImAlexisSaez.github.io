@@ -4,12 +4,12 @@
     <title>Permutaciones circulares on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/permutaciones-circulares/</link>
     <description>Recent content in Permutaciones circulares on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Wed, 10 Apr 2019 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/permutaciones-circulares/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/permutaciones-circulares/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,37 @@
       <pubDate>Wed, 10 Apr 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/04/10/uno-mas-alrededor-de-la-mesa/</guid>
-      <description>Problema 67: ¡otra ronda de permutaciones circulares!</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 67:&lt;/strong&gt; Encuentra el número de maneras en que pueden sentarse $n$ matrimonios alrededor de una mesa si&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;(a) hombres y mujeres se alternan.&lt;/li&gt;
+&lt;li&gt;(b) cada mujer está sentada al lado de su marido.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para el apartado (a) empecemos sentando, por ejemplo, a los hombres (podríamos haber iniciado la resolución colocando a las mujeres asimismo, pues el número de personas coincide). Sabemos, por ejercicios anteriores, que el total de formas de sentar a $n$ personas alrededor de una mesa asciende al total de permutaciones circulares de $n$ elementos, esto es, hay&lt;/p&gt;
+
+&lt;p&gt;$$
+PC_n = (n-1)!
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras. A continuación, comencemos a sentar mujeres. La primera de ellas puede hacerlo en cualesquiera de los $n$ huecos que la configuración de los hombres produce. Para la segunda, una vez sentada la primera, son $n-1$ las opciones que tiene a su disposición para ubicarse. En cuanto a la tercera, una vez sentadas las dos anteriores, tiene a su disposición $n-2$ asientos para escoger su sitio, y así sucesivamente. Aplicando la &lt;em&gt;regla del producto&lt;/em&gt;, hay&lt;/p&gt;
+
+&lt;p&gt;$$
+(n-1)!\cdot n\cdot(n-1)\cdot(n-2)\cdot\ldots\cdot2\cdot1 = (n-1)!n!
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras en que pueden sentarse $n$ matrimonios alrededor de una mesa si hombres y mujeres han de alternar sus sitios.&lt;/p&gt;
+
+&lt;p&gt;Para el apartado (b), consideremos cada matrimonio como una unidad indivisible. Sabemos, por ejercicios anteriores, que el número de formas de disponer $n$ elementos alrededor de una mesa equivale al total de permutaciones circulares de $n$ elementos, es decir, $PC_n = (n-1)!$. Ahora bien, el primer matrimonio puede sentarse de dos maneras posibles (hombre - mujer o mujer - hombre), hecho que hemos de tener en cuenta. Lo mismo sucede para el segundo matrimonio, para el tercero, y así sucesivamente. Por consiguiente, aplicando la &lt;em&gt;regla del producto&lt;/em&gt;, existen&lt;/p&gt;
+
+&lt;p&gt;$$
+(n-1)!\cdot2\cdot2\cdot\ldots\cdot2 = (n-1)!\cdot2^n
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras en que pueden sentarse $n$ matrimonios alrededor de una mesa si cada mujer ha de estar sentada al lado de su marido. Alternativamente, podemos abordar este apartado sentando primero a los hombres, acción que sabemos podemos llevar a cabo de $PC_n=(n-1)!$ formas posibles y luego considerar que cada mujer tiene sus opciones bastante limitadas a la hora de sentarse, pues únicamente puede hacerlo de dos manera posibles (a la izquierda o a la derecha de su marido). Como hemos de colocar $n$ mujeres asumiendo la restricción anterior, son $2^n$ las formas posibles y aplicando la &lt;em&gt;regla del producto&lt;/em&gt; se llega al resultado alcanzado arriba.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +57,58 @@
       <pubDate>Sat, 06 Apr 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/04/06/a-la-mesa-todos-a-la-mesa/</guid>
-      <description>Problema 66: introduciendo las permutaciones circulares.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 66:&lt;/strong&gt; ¿De cuántas maneras pueden cinco chicos y tres chicas sentarse alrededor de una mesa si&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a) no hay restricción alguna?&lt;/li&gt;
+&lt;li&gt;b) el chico $H_1$ y la chica $M_1$ no pueden estar juntos?&lt;/li&gt;
+&lt;li&gt;c) ninguna chica ha de tener a otra a su lado?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para el apartado a), al no imponer restricción alguna sobre la disposición de los ocho integrantes del grupo, el número de formas en las que pueden sentarse alrededor de una mesa equivale al total de permutaciones circulares de ocho elementos. Así, tienen&lt;/p&gt;
+
+&lt;p&gt;$$
+PC_8 = (8-1)! = 7! = 5040
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras de sentarse alrededor de la mesa.&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta al apartado b), ya que acabamos de calcular en el párrafo anterior el total de maneras en que pueden sentarse, resulta más sencillo utilizar ahora el &lt;em&gt;Principio de complementación&lt;/em&gt;, que recordemos dice &lt;em&gt;si $A$ es un subconjunto de un conjunto finito universal $U$, entonces&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;$$
+card(U - A) = card(U) - card(A).
+$$&lt;/p&gt;
+
+&lt;p&gt;De esta forma, en lugar de contar el número de formas en que $H_1$ y $M_1$ pueden sentarse estando separados (es decir, con al menos un integrante del grupo entre ellos), averigüemos de cuántas maneras pueden sentarse todos alrededor de la mesa estando $H_1$ y $M_1$ juntos. Así, si consideramos la pareja como una unidad, el nuevo problema se reduce a encontrar el número de formas en que pueden disponerse siete elementos alrededor de una mesa, que sabemos equivale al total de permutaciones circulares de siete elementos, esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+PC_7 = (7-1)! = 6! = 720.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, como la pareja puede sentarse de maneras posibles, ($H_1M_1$ y $M_1H_1$), hemos de incorporar las permutaciones de dos elementos ($2! = 2$) al anterior resultado, aplicando la &lt;em&gt;regla del producto&lt;/em&gt;. Por consiguiente, existen $720\cdot2 = 1440$ formas de sentarse los ocho integrantes del grupo asumiendo que $H_1$ y $M_1$ se colocaron uno al lado del otro. Luego, por el &lt;em&gt;Principio de complementación&lt;/em&gt; hay&lt;/p&gt;
+
+&lt;p&gt;$$
+7! - 1440 = 3600
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras de disponer a los miembros del grupo donde $H_1$ y $M_1$ no están juntos.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, en el apartado c), comencemos sentando a los chicos en la tabla, ya que su número es más elevado que el de chicas. Por apartados anteriores, sabemos que el número de formas de sentar cinco personas alrededor de una tabla asciende al total de permutaciones circulares de cinco elementos, esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+PC_5 = (5-1)! = 4! = 24
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras posibles. A continuación, en los huecos que quedan entre ellos, empecemos a sentar chicas. Para la primera de ella encontramos cinco opciones disponibles, pues tal es el número de huecos que quedan entre los chicos. Para la segunda chica, una vez sentada la primera, dichas opciones se reducen a cuatro. Por último, la tercera chica, una vez sentadas las otras dos, puede escoger entre las tres posiciones disponibles que restan. Luego, aplicando la &lt;em&gt;regla del producto&lt;/em&gt; hay&lt;/p&gt;
+
+&lt;p&gt;$$
+4! \cdot 5\cdot 4\cdot3 = 1440
+$$&lt;/p&gt;
+
+&lt;p&gt;maneras de disponer a los ocho integrantes del grupo de forma que ninguna chica tenga a otra a su lado.&lt;/p&gt;
+</description>
     </item>
     
   </channel>

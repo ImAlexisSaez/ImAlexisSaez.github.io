@@ -4,12 +4,12 @@
     <title>Prueba T on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/prueba-t/</link>
     <description>Recent content in Prueba T on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Sat, 25 Aug 2018 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/prueba-t/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/prueba-t/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,207 @@
       <pubDate>Sat, 25 Aug 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</guid>
-      <description>En mi reciente vuelta a Twitter, he empezado a seguir al profesor responsable del excelente MOOC &amp;lsquo;Improving your statistical inferences&amp;rsquo;, Daniël Lakens, que comparte más que interesantes perlas relacionadas con el campo de la estadística.</description>
+      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;), &lt;em&gt;Daniël Lakens&lt;/em&gt; (&lt;a href=&#34;https://twitter.com/lakens&#34; target=&#34;_blank&#34;&gt;@lakens&lt;/a&gt;), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
+
+&lt;p&gt;Hace unos días anunciaba que había actualizado un &lt;em&gt;script&lt;/em&gt; para &lt;em&gt;R&lt;/em&gt; cuyo nombre no tiene desperdicio: &amp;ldquo;&lt;em&gt;Perfect t-test&lt;/em&gt;&amp;rdquo;. Las principales referencias que tenemos que consultar son:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34; target=&#34;_blank&#34;&gt;The perfect t-test&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34; target=&#34;_blank&#34;&gt;Repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Como no podía ser de otra manera, un recurso así despierta enormemente tanto mi curiosidad, como las ganas de echar un rato explorando las posibilidades que ofrece.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, ¿de qué trata todo el asunto? Estamos ante un documento escrito con &lt;em&gt;R Markdown&lt;/em&gt; cuyo objetivo es automatizar el proceso de comparación de medias para dos muestras, tanto independientes como dependientes (cada caso tiene su archivo asociado). No obstante, cuando la mayoría de programas informáticos orientados al análisis de datos ya incorporan este tipo de herramienta, ¿qué justifica la existencia de este recurso?&lt;/p&gt;
+
+&lt;p&gt;Según el autor, no todos los investigadores siguen las recomendaciones que los estadísticos indican (o bien no están al día de las mismas), e incluso, hecho que personalmente considero más grave, los propios programas informáticos ignoran dichas recomendaciones en ocasiones.&lt;/p&gt;
+
+&lt;p&gt;Dentro del &amp;ldquo;peligro&amp;rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?&lt;/p&gt;
+
+&lt;p&gt;Veamos qué nos ofrece el código de &lt;em&gt;Daniël Lakens&lt;/em&gt;. Una vez digerido el &lt;em&gt;README&lt;/em&gt; del repositorio, e instalado los paquetes necesarios (así como actualizado &lt;em&gt;JAGS&lt;/em&gt;, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;He escogido el conjunto de datos &lt;code&gt;hsb2&lt;/code&gt; (incluido en el paquete &lt;code&gt;openintro&lt;/code&gt;), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Carga la librería que contiene el conjunto de datos hsb2
+library(openintro)
+
+# Carga el conjunto de datos hsb2
+data(hsb2)
+
+# Documentación del conjunto de datos
+?hsb2
+
+# Exploración básica del conjunto de datos
+str(hsb2)
+
+# Crea el archivo que se usará con &amp;quot;perfect_independent_t-test.Rmd&amp;quot;
+write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;math&amp;quot;)],
+            file = &amp;quot;datos_hsb2_math.txt&amp;quot;,
+            row.names = FALSE,
+            sep = &amp;quot;,&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora, con &lt;code&gt;datos_hsb2_math.txt&lt;/code&gt; ubicado en el mismo directorio que &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable &lt;code&gt;alldata&lt;/code&gt; (y, en mi caso, añadir &lt;code&gt;sep = &amp;quot;,&amp;quot;&lt;/code&gt;), así como correctamente asignar las variables &lt;code&gt;xlabel&lt;/code&gt;, &lt;code&gt;ylabel&lt;/code&gt;, &lt;code&gt;factorlabel&lt;/code&gt;, &lt;code&gt;measurelabel&lt;/code&gt;, &lt;code&gt;xlabelstring&lt;/code&gt; e &lt;code&gt;ylabelstring&lt;/code&gt; siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.&lt;/p&gt;
+
+&lt;p&gt;En mi caso, he cambiado el formato del documento de salida de &lt;em&gt;Word&lt;/em&gt; a &lt;em&gt;PDF&lt;/em&gt;, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba &lt;em&gt;t&lt;/em&gt;! A la próxima persona que escuche quejarse de que &lt;em&gt;SPSS&lt;/em&gt; devuelve una miríada de resultados voy a invitarle amablemente a que utilice este &lt;em&gt;script&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente &lt;em&gt;boxplot&lt;/em&gt; (creo que en español se llama &lt;em&gt;diagrama de caja y bigotes&lt;/em&gt;, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Boxplot.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;A continuación, se realizan cuatro contrastes de hipótesis para comprobar si se verifica el supuesto de normalidad para las puntuaciones de ambos grupos (su violación tiene efectos, por ejemplo, sobre el &lt;em&gt;error de tipo I&lt;/em&gt;):&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img02.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Resultados de los contrastes de hipótesis.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;En uno de los cuatros contrastes, los datos con los que estamos trabajando aportan evidencia suficiente para sospechar de la veracidad de la hipótesis nula (&amp;ldquo;las puntuaciones siguen una distribución normal&amp;rdquo;), por lo que tendríamos que preferiblemente recurrir a métodos no paramétricos o estadísticos robustos. No obstante, en el propio documento nos avisan de que con muestras grandes (y podemos considerar que la dada lo es) este tipo de situaciones pueden presentarse.&lt;/p&gt;
+
+&lt;p&gt;Podemos examinar la distribución de puntuaciones, para cada uno de los grupos, de manera gráfica, a partir de las siguientes figuras, y juzgar así cómo se desvían nuestros datos (línea negra) de la distribución normal asociada (línea discontinua roja):&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img03.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Distribución de las puntuaciones de los chicos.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img04.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Distribución de las puntuaciones de las chicas.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;Por si las anteriores figuras todavía no resolvieran el interrogante, tenemos a nuestra disposición los siguientes &lt;em&gt;gráficos Q-Q&lt;/em&gt;:&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img01.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Gráfico Q-Q.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;p&gt;No resulta por tanto descabellado aceptar que se verifica el supuesto de normalidad para los datos dados. Pasemos ahora a estudiar la hipótesis de igualdad de varianzas entre los grupos considerados. Para ello, utilizaremos la &lt;em&gt;prueba de Levene&lt;/em&gt;, que en nuestro caso particular concluye:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Levene’s test for equality of variances (p = 0.46) indicates that the assumption that variances are equal is not rejected.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A continuación encontramos la sección de resultados donde, siguiendo el estilo de publicación de las revistas científicas, se recogen las conclusiones para la prueba &lt;em&gt;t&lt;/em&gt; que hemos llevado a cabo. Aquí, en función de la filosofía con la que solamos trabajar y de si se verifican las condiciones asociadas a esta prueba, tendremos que escoger entre la sección dedicada a estadísticos frecuentistas, bayesianos o robustos. Por ejemplo, para la primera opción encontraríamos:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The mean math of participants in the male condition (M = 52.95, SD = 9.66, n = 91) was greater than the mean of participants in the female condition (M = 52.39, SD = 9.15, n = 109). The difference between the two measurements (M = 0.55, 95% CI = [-2.09;3.19]) was analyzed with Welch’s t-test, t(187.58) = 0.41, p = 0.682, Hedges’ g = 0.06, 95% CI [-0.22;0.34]. This can be considered a tiny effect. The observed data is not surprising under the assumption that the null-hypothesis is true. The Common Language effect size (McGraw &amp;amp; Wong, 1992) indicates that the likelihood that the math of a random person in the male condition is greater than the math of a random person in the female condition is 52%.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Tenemos a nuestra disposición la media, la desviación estándar y el tamaño muestral para cada uno de los grupos considerados. A continuación encontramos el valor del estadístico asociado a la prueba &lt;em&gt;t&lt;/em&gt; de &lt;em&gt;Welch&lt;/em&gt;, así como su correspondiente &lt;em&gt;p&lt;/em&gt;-valor. Como indicador del tamaño del efecto encontramos la &lt;em&gt;g&lt;/em&gt; de &lt;em&gt;Hedges&lt;/em&gt;. Sin embargo, al margen del aluvión de valores con el que ya seríamos capaces de dar respuesta al interrogante que ha motivado este artículo (¿seríamos de verdad capaces?), me ha encantado la parte final de este párrafo, donde nos transmiten con palabras llanas qué conclusiones deberíamos extraer.&lt;/p&gt;
+
+&lt;p&gt;El documento añade los gráficos que mostraré a continuación, así como las referencias para las justificaciones vertidas a lo largo de él, el propio conjunto de datos y cierta información técnica de la sesión de trabajo en &lt;em&gt;R&lt;/em&gt;. Es un estupendo recurso para tener siempre disponible a mano, ¿verdad?&lt;/p&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img06.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Violin plot.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img07.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Gráfico de dispersión.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+
+
+
+&lt;figure&gt;
+
+&lt;img src=&#34;20180825-img08.png&#34; /&gt;
+
+
+
+&lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+  &lt;h4&gt;Intervalos de confianza.&lt;/h4&gt;
+  
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+</description>
     </item>
     
   </channel>

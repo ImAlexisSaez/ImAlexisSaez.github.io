@@ -4,12 +4,12 @@
     <title>css on Infinitos Contrastes</title>
     <link>https://imalexissaez.github.io/tags/css/</link>
     <description>Recent content in css on Infinitos Contrastes</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
     <lastBuildDate>Sat, 01 Jun 2019 05:59:39 +0200</lastBuildDate>
     
-	<atom:link href="https://imalexissaez.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
+	    <atom:link href="https://imalexissaez.github.io/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,7 +18,251 @@
       <pubDate>Sat, 01 Jun 2019 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/</guid>
-      <description>Lección 11: implementando la localización al español de ciertos elementos de la web.</description>
+      <description>&lt;p&gt;En esta entrada recojo el código necesario para localizar a español ciertas secciones de la página web, incluyendo un experimento que al final no terminó de convencerme, pero que comparto por si sirviera de inspiración a la creatividad ajena.&lt;/p&gt;
+
+&lt;p&gt;Al final de cada una de las entradas del blog aparece un apartado de &lt;em&gt;etiquetas&lt;/em&gt;, que permite agrupar fácilmente contenidos relacionados. Cambiemos la cabecera de esta sección de &lt;code&gt;Tags:&lt;/code&gt; a &lt;code&gt;Etiquetas:&lt;/code&gt;. Para ello, editamos con &lt;em&gt;Sublime Text 3&lt;/em&gt; el archivo &lt;code&gt;main.css&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;) y buscamos el siguiente bloque de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags:before {
+  content: &amp;quot;Tags: &amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, modificamos el valor del atributo &lt;code&gt;content&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags:before {
+  content: &amp;quot;Etiquetas: &amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;y guardamos los cambios realizados.&lt;/p&gt;
+
+&lt;p&gt;Siguiendo con esta misma filosofía, traduzcamos ese &lt;code&gt;View all&lt;/code&gt; que aparece en las páginas de índice que agrupan contenidos por taxonomías. Para ello, editamos el archivo &lt;code&gt;terms.html&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\layouts\_default\&lt;/code&gt;) y, utilizando el buscador de &lt;em&gt;Sublime Text 3&lt;/em&gt;, nos situamos donde aparece la mencionada cadena de caracteres y la sustituimos, por ejemplo, por &lt;code&gt;Ver todos&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Todavía podemos mejorar un tanto la localización a español del tema a través de las taxonomías. Con tal objetivo en mente, modifiquemos el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) como sigue, de&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &amp;quot;categories&amp;quot;
+  tag      = &amp;quot;tags&amp;quot;
+  project  = &amp;quot;projects&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &amp;quot;categories&amp;quot;
+  tag      = &amp;quot;tags&amp;quot;
+  apartado = &amp;quot;apartados&amp;quot;
+  proyecto = &amp;quot;proyectos&amp;quot;
+  etiqueta = &amp;quot;etiquetas&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, editamos la plantilla &lt;code&gt;single.html&lt;/code&gt; (ubicada en la ruta &lt;code&gt;\layouts\_default\&lt;/code&gt;) y sustituimos el bloque de código:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.tags }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.tags }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;por&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si queremos que aparezca en las entradas del blog información sobre el apartado o proyecto al que pertenecen, no tendríamos más que incorporar dos nuevos bloques a continuación, utilizando el anterior como guía y llevando a cabo las adaptaciones pertinentes. Por otro lado, sería más que recomendable crear en el archivo de estilos &lt;em&gt;css&lt;/em&gt; las clases &lt;code&gt;blog-etiquetas&lt;/code&gt;, &lt;code&gt;blog-apartados&lt;/code&gt; y &lt;code&gt;blog-proyectos&lt;/code&gt;, para mejorar el mantenimiento de la localización del tema en un futuro.&lt;/p&gt;
+
+&lt;p&gt;A continuación, hemos de editar las plantillas &lt;code&gt;list.html&lt;/code&gt; e &lt;code&gt;index.html&lt;/code&gt; (ubicadas ambas en la ruta &lt;code&gt;\layouts\_default&lt;/code&gt;), substituyendo los bloques de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.tags }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.tags }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;por&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Añadiendo, acto seguido, bloques análogos para &lt;code&gt;apartados&lt;/code&gt; y &lt;code&gt;proyectos&lt;/code&gt; si lo hemos considerado oportuno.&lt;/p&gt;
+
+&lt;p&gt;Este cambio nos obliga a actualizar la ruta de acceso a la página de etiquetas, por lo que debemos editar el archivo &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) de manera que el bloque de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Etiquetas&amp;quot;
+    url = &amp;quot;tags&amp;quot;
+    weight = 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pase a ser&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Etiquetas&amp;quot;
+    url = &amp;quot;etiquetas&amp;quot;
+    weight = 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, nos queda modificar el estilo de la cabecera de la página de etiquetas. Para ello editamos el archivo &lt;code&gt;main.css&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;) buscando el término &lt;code&gt;header&lt;/code&gt; y añadiendo la cadena correspondiente a etiquetas. Por ejemplo, para el bloque de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;la modificación quedaría como sigue&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .etiquetas-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;En total, hemos de proceder de esta manera en tres ocasiones.&lt;/p&gt;
+
+&lt;p&gt;Y ya que estamos con las manos en la masa, creemos las clases de estilos para &lt;code&gt;etiquetas&lt;/code&gt;, &lt;code&gt;apartados&lt;/code&gt; y &lt;code&gt;proyectos&lt;/code&gt; trabajando sobre los bloques de código originales que aparecen tras el comentario &lt;code&gt;/* --- Tags --- */&lt;/code&gt; (recordemos que cualquier modificación puede implicar después que hayamos de editar la cabeceras de las páginas tal y como hicimos hace un instante). Así pues, nos van a quedar bloques como el que aparece a continuación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags,
+.blog-apartados,
+.blog-etiquetas,
+.blog-proyectos {
+  font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aquellos en los que aparece el atributo &lt;code&gt;before&lt;/code&gt; no los podemos agrupar tan fácilmente. No obstante, no deja de ser trabajo de &lt;em&gt;copy&amp;amp;paste&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Como he comentado arriba, no debemos olvidar añadir a las clases de las cabeceras las líneas correspondientes, de forma que nos aparezcan bloques como el que figura acto seguido:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .apartados-heading,
+.intro-header .etiquetas-heading,
+.intro-header .proyectos-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, hacemos una nueva modificación sobre el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) y cambiamos el nombre del menú principal &lt;em&gt;Blog&lt;/em&gt; por &lt;em&gt;Inicio&lt;/em&gt;. Así, el bloque de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Blog&amp;quot;
+    url = &amp;quot;&amp;quot;
+    weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;pasa a ser&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Inicio&amp;quot;
+    url = &amp;quot;&amp;quot;
+    weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, en la plantilla &lt;code&gt;single.html&lt;/code&gt; (ubicada en la ruta &lt;code&gt;\layouts\_default&lt;/code&gt;) añado, en la ubicación donde aparecen las etiquetas, información sobre el apartado y el proyecto al que pertenece una entrada en particular. Por tanto, el bloque de código&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-etiquetas&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;a&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.apartados }}
+  &amp;lt;div class=&amp;quot;blog-apartados&amp;quot;&amp;gt;
+    {{ range .Params.apartados }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/apartados/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+
+{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-etiquetas&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+
+{{ if .Params.proyectos }}
+  &amp;lt;div class=&amp;quot;blog-proyectos&amp;quot;&amp;gt;
+    {{ range .Params.proyectos }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/proyectos/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sin embargo, aunque es una opción razonable, no me convence cómo queda, por lo que, en mi caso, voy a dejarlo como estaba. No obstante, comparto el código fuente por si alguien tiene interés en realizar esta modificación.&lt;/p&gt;
+
+&lt;p&gt;Por último, quizá quede todo un poco mejor si damos acceso a las diferentes secciones desde el menú superior derecho, con un desplegable. Para ello, modificamos el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) y dejamos la sección dedicada al menú como figura a continuación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración del menú superior derecho
+#
+[[menu.main]]
+    identifier = &amp;quot;menu&amp;quot;
+    name       = &amp;quot;Menú&amp;quot;
+    weight     = 1
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Apartados&amp;quot;
+    url    = &amp;quot;apartados/&amp;quot;
+    weight = 1
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Etiquetas&amp;quot;
+    url    = &amp;quot;etiquetas/&amp;quot;
+    weight = 2
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Proyectos&amp;quot;
+    url    = &amp;quot;proyectos/&amp;quot;
+    weight = 3
+
+[[menu.main]]
+    name   = &amp;quot;Acerca de&amp;quot;
+    url    = &amp;quot;page/about/&amp;quot;
+    weight = 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Concluyo aquí esta extensa entrada, dejando el &lt;a href=&#34;https://imalexissaez.github.io/proyectos/metablog/&#34;&gt;Proyecto MetaBlog&lt;/a&gt; en espera, pues en estos momentos estoy más centrado en la generación de contenido para la página web, que en la edición de la misma.&lt;/p&gt;
+</description>
     </item>
     
     <item>
@@ -27,7 +271,51 @@
       <pubDate>Thu, 20 Sep 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/</guid>
-      <description>Lección 10: mejorando la legibilidad de los bloques de código fuente.</description>
+      <description>&lt;p&gt;Por uno de esos casuales de la vida, me ha dado por revisar el sitio web con el móvil y ha sido entonces cuando he presenciado un horror sin parangón: ¿por qué se ven así mis bloques de código?&lt;/p&gt;
+
+&lt;p&gt;Al parecer, me caracterizo por ser un animal de costumbres y cualquier desviación que me lleve mucho más allá de mi zona de confort me produce hasta angustia. Habitualmente, con los temas para páginas web con los que he trabajado, los bloques de código tienen habilitada la aparición de una barra de desplazamiento horizontal cuando figuran instrucciones de longitud considerable.&lt;/p&gt;
+
+&lt;p&gt;Este es un comportamiento que me parece adecuado, ya que incrementa, en mi opinión, la legibilidad de los mencionados bloques de código. Por desgracia, en el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; no viene configurado así por defecto, de manera que una instrucción de longitud considerable se llega a dividir en varias líneas, dificultando en exceso la lectura.&lt;/p&gt;
+
+&lt;p&gt;Las opciones de estilo para los bloques de código, curiosamente, no están declaradas en el archivo &lt;code&gt;main.css&lt;/code&gt;, como sería de esperar, sino en un fichero denominado &lt;code&gt;codeblock.css&lt;/code&gt;, que se encuentra en la ruta &lt;code&gt;\static\css\&lt;/code&gt; del directorio donde hayamos decidido almacenar localmente nuestro sitio web. Su contenido original es&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* --- Code blocks --- */
+
+.chroma .ln { 
+  margin-right: 0.8em; 
+  padding: 0 0.4em 0 0.4em; 
+}
+pre code.hljs {
+  padding: 9.5px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Tras investigar un rato, he conseguido que aparezca la deseada barra de desplazamiento horizontal añadiendo unas cuantas líneas al anterior archivo, de forma que ahora presenta el siguiente aspecto:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* --- Code blocks --- */
+
+.chroma .ln { 
+  margin-right: 0.8em; 
+  padding: 0 0.4em 0 0.4em; 
+}
+pre code.hljs {
+  padding: 9.5px;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+pre code {
+    word-wrap: normal;
+    white-space: pre;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El único inconveniente de este enfoque es que solo afecta a los bloques de código escritos usando &lt;em&gt;fences&lt;/em&gt; y no a los que generamos mediante el &lt;em&gt;shortcode&lt;/em&gt; &lt;code&gt;highlight&lt;/code&gt; de &lt;em&gt;Hugo&lt;/em&gt;. No obstante, como habitualmente no recurro a este último, no he decido indagar más al respecto.&lt;/p&gt;
+
+&lt;p&gt;En los próximos artículos del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
+</description>
     </item>
     
   </channel>
