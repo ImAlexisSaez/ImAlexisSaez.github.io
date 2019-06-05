@@ -634,6 +634,10 @@ Para empezar, de cara a poder realizar manipulaciones sobre el texto que un usua
         <a href="/courses/python-basic/pb63-practica-guiada-v/">63. Práctica V</a>
       </li>
       
+      <li >
+        <a href="/courses/python-basic/pb64-practica-guiada-vi/">64. Práctica VI</a>
+      </li>
+      
     </ul>
     
 
@@ -734,11 +738,12 @@ def limpia_registros():
 
 <p>Acto seguido, abordemos la primera operación <em>CRUD</em>, <em>Create</em>, que nos permitirá añadir registros a la BBDD.</p>
 
-<pre><code class="language-python">def crud_create():
+<pre><code class="language-python"># Función que inserta registros en la BBDD
+def crud_create():
     conexion = sqlite3.connect(&quot;usuarios&quot;)
     cursor = conexion.cursor()
     cursor.execute(&quot;INSERT INTO DATOS_USUARIOS VALUES (NULL, '&quot; +
-                   name_data.get() + &quot;', '&quot; + password_data.get() + &quot;','&quot; +
+                   name_data.get() + &quot;', '&quot; + lastname_data.get() + &quot;','&quot; +
                    address_data.get() + &quot;','&quot; + password_data.get() + &quot;','&quot; +
                    comment_text.get(&quot;1.0&quot;, END) + &quot;')&quot;)
     conexion.commit()
@@ -784,6 +789,12 @@ crear_button = Button(botones_frame, text=&quot;Create&quot;, command=crud_creat
     <a href="/courses/python-basic/pb62-practica-guiada-iv/" rel="next">62. Práctica guiada IV</a>
   </div>
   
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Siguiente</div>
+    <a href="/courses/python-basic/pb64-practica-guiada-vi/" rel="prev">64. Práctica guiada VI</a>
+  </div>
   
 </div>
 
