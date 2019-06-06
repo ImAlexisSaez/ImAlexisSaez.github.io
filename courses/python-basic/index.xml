@@ -8789,5 +8789,101 @@ update_button = Button(botones_frame, text=&amp;quot;Update&amp;quot;, command=c
 </description>
     </item>
     
+    <item>
+      <title>65. Práctica guiada VII</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb65-practica-guiada-vii/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb65-practica-guiada-vii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/nj-alxd7YvM&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, abordaremos cómo borrar registros (operación de tipo &lt;em&gt;Delete&lt;/em&gt;) y la creación de consultas parametrizadas.&lt;/p&gt;
+
+&lt;p&gt;En cuanto a la primera tarea, empecemos construyendo la correspondiente función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función que borra registros de la BBDD
+def crud_delete():
+    conexion = sqlite3.connect(&amp;quot;usuarios&amp;quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&amp;quot;DELETE FROM DATOS_USUARIOS WHERE ID=&amp;quot; + id_data.get())
+    conexion.commit()
+    conexion.close()
+    messagebox.showinfo(
+        title=&amp;quot;Borrar registro&amp;quot;,
+        message=&amp;quot;Registro borrado con éxito en la base de datos.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, añadimos la funcionalidad, tanto al elemento del menú asociado, como al botón correspondiente:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;crud_menu.add_command(label=&amp;quot;Borrar&amp;quot;, command=crud_delete)
+
+delete_button = Button(botones_frame, text=&amp;quot;Delete&amp;quot;, command=crud_delete)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, analicemos cómo modificar algunas de las consultas &lt;em&gt;SQL&lt;/em&gt; para hacerlas parametrizadas y que su escritura sea mucho más sencilla:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función que inserta registros en la BBDD
+def crud_create():
+    conexion = sqlite3.connect(&amp;quot;usuarios&amp;quot;)
+    cursor = conexion.cursor()
+    datos = name_data.get(), lastname_data.get(), address_data.get(), password_data.get(), comment_text.get(&amp;quot;1.0&amp;quot;, END)
+    cursor.execute(&amp;quot;INSERT INTO DATOS_USUARIOS VALUES (NULL, ?, ?, ?, ?, ?)&amp;quot;, (datos))
+    conexion.commit()
+    messagebox.showinfo(
+        title=&amp;quot;Crear registro&amp;quot;,
+        message=&amp;quot;Registro insertado con éxito en la base de datos.&amp;quot;)
+    conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función que actualiza registros de la BBDD
+def crud_update():
+    conexion = sqlite3.connect(&amp;quot;usuarios&amp;quot;)
+    cursor = conexion.cursor()
+    datos = name_data.get(), lastname_data.get(), address_data.get(), password_data.get(), comment_text.get(&amp;quot;1.0&amp;quot;, END)
+    cursor.execute(&amp;quot;UPDATE DATOS_USUARIOS SET NOMBRE_USUARIO=?, APELLIDO=?, DIRECCION=?, PASSWORD=?, COMENTARIOS=? WHERE ID=&amp;quot; + id_data.get(), (datos))
+    conexion.commit()
+    messagebox.showinfo(
+        title=&amp;quot;Actualizar registro&amp;quot;,
+        message=&amp;quot;Registro actualizado con éxito en la base de datos.&amp;quot;)
+    conexion.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, como extra, incluyamos funcionalidad para los dos elementos del menú &lt;em&gt;Ayuda&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Función licencia
+def licencia():
+    messagebox.showwarning(title=&amp;quot;Licencia&amp;quot;,
+                           message=&amp;quot;Producto bajo licencia GNU.&amp;quot;)
+
+
+# Función acerca de...
+def acerca_de():
+    messagebox.showinfo(title=&amp;quot;Acerca de...&amp;quot;,
+                        message=&amp;quot;Aplicación creada por Alexis Sáez.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, incorporemos dicha funcionalidad en los elementos del menú:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help_menu.add_command(label=&amp;quot;Licencia&amp;quot;, command=licencia)
+
+help_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;, command=acerca_de)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/65/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
