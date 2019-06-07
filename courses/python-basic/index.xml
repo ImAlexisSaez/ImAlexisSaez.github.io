@@ -8885,5 +8885,79 @@ help_menu.add_command(label=&amp;quot;Acerca de...&amp;quot;, command=acerca_de)
 </description>
     </item>
     
+    <item>
+      <title>66. Funciones lambda</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb66-funciones-lambda/</link>
+      <pubDate>Fri, 07 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb66-funciones-lambda/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/tfYLcHbjc_A&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos las funciones &lt;em&gt;lambda&lt;/em&gt;. Una función &lt;strong&gt;lambda&lt;/strong&gt; es una función anónima, y se utilizan en &lt;em&gt;Python&lt;/em&gt; a la hora de programar para abreviar, ya que aligera la sintaxis del código. Además, no ocupan lugar en el espacio de nombres asociado a las funciones de una aplicación.&lt;/p&gt;
+
+&lt;p&gt;Cualquier tarea que llevemos a cabo con una función &lt;em&gt;lambda&lt;/em&gt; se puede desarrollar mediante una función normal, pero no así a la inversa (sobre todo cuando su lógica es compleja).&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, para calcular el área de un triángulo, podemos construir la función:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def area_triangulo(b, h):
+    return b * h / 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for b in range(1, 10, 5):
+    for h in range(1, 10, 5):
+        print(
+            f&amp;quot;El área del triángulo de base {b} y altura {h} es {area_triangulo(b, h)}.&amp;quot;
+        )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El área del triángulo de base 1 y altura 1 es 0.5.
+El área del triángulo de base 1 y altura 6 es 3.0.
+El área del triángulo de base 6 y altura 1 es 3.0.
+El área del triángulo de base 6 y altura 6 es 18.0.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, una función tan sencilla puede ser abreviada como una función &lt;em&gt;lambda&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;area_triangulo = lambda b, h: b * h / 2
+
+for b in range(1, 10, 5):
+    for h in range(1, 10, 5):
+        print(
+            f&amp;quot;El área del triángulo de base {b} y altura {h} es {area_triangulo(b, h)}.&amp;quot;
+        )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El área del triángulo de base 1 y altura 1 es 0.5.
+El área del triángulo de base 1 y altura 6 es 3.0.
+El área del triángulo de base 6 y altura 1 es 3.0.
+El área del triángulo de base 6 y altura 6 es 18.0.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: las funciones &lt;em&gt;lambda&lt;/em&gt;, generalmente, no se asignan a variables. En tales casos, conviene hacer uso de la instrucción &lt;code&gt;def&lt;/code&gt; y definir una función tal y como estamos habituados.&lt;/p&gt;
+
+&lt;p&gt;Usadas &amp;ldquo;al vuelo&amp;rdquo;, su sintaxis queda como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(&amp;quot;El cubo de 3 es &amp;quot; + str((lambda x:x**3) (3)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El cubo de 3 es 27
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/66/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
