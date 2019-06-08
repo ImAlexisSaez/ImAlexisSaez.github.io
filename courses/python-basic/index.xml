@@ -8959,5 +8959,121 @@ El área del triángulo de base 6 y altura 6 es 18.0.
 </description>
     </item>
     
+    <item>
+      <title>67. La función filter</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb67-filter/</link>
+      <pubDate>Sat, 08 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb67-filter/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/mTJKU7IxL0U&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos la función &lt;code&gt;filter()&lt;/code&gt;, que forma parte de un conjunto de funciones conocidas como &amp;ldquo;de orden superior&amp;rdquo; y nos permiten utilizar en &lt;em&gt;Python&lt;/em&gt; en paradigma de &lt;strong&gt;programación funcional&lt;/strong&gt;. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def numero_par(num):
+    if num % 2 == 0:
+        return True
+
+
+numeros = [17, 24, 7, 39, 8, 51, 92]
+
+print(filter(numero_par, numeros))  # objeto iterable
+
+print(list(filter(numero_par, numeros)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;lt;filter object at 0x0000029E5BA262B0&amp;gt;
+[24, 8, 92]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;La función &lt;code&gt;numero_par()&lt;/code&gt; la podemos abreviar un tanto como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def numero_par(num):
+    return num % 2 == 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Es más, como es tan sencilla, incluso podemos prescindir de ella utilizando una función &lt;em&gt;lambda&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;numeros = [17, 24, 7, 39, 8, 51, 92]
+
+print(list(filter(lambda x: x % 2 == 0, numeros)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[24, 8, 92]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Habitualmente, utilizaremos la función &lt;code&gt;filter()&lt;/code&gt; para filtrar objetos. Por ejemplo, supongamos que tenemos varias instancias de la clase &lt;code&gt;Empleado&lt;/code&gt; y deseamos filtrarlas por el valor de uno de sus atributos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Empleado:
+    def __init__(self, nombre, cargo, salario):
+        self.nombre = nombre
+        self.cargo = cargo
+        self.salario = salario
+
+    def __str__(self):
+        return f&amp;quot;{self.nombre} trabaja como {self.cargo} y cobra {self.salario} €.&amp;quot;
+
+
+lista_empleados = [
+    Empleado(&amp;quot;Juan&amp;quot;, &amp;quot;Director&amp;quot;, 75000),
+    Empleado(&amp;quot;Ana&amp;quot;, &amp;quot;Presidenta&amp;quot;, 85000),
+    Empleado(&amp;quot;Antonio&amp;quot;, &amp;quot;Administrativo&amp;quot;, 25000),
+    Empleado(&amp;quot;Sara&amp;quot;, &amp;quot;Secretaria&amp;quot;, 27000),
+    Empleado(&amp;quot;Mario&amp;quot;, &amp;quot;Botones&amp;quot;, 21000)
+]
+
+salarios_altos = filter(lambda e: e.salario &amp;gt; 50000, lista_empleados)
+
+[print(s.__str__()) for s in salarios_altos]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Juan trabaja como Director y cobra 75000 €.
+Ana trabaja como Presidenta y cobra 85000 €.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A modo de curiosidad, ya que me he avanzado y he utilizado comprensiones de listas (ver la última línea del bloque de código anterior), resulta que mediante ellas, en este ejemplo concreto, no es necesario recurrir al uso de la función &lt;code&gt;filter()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Empleado:
+    def __init__(self, nombre, cargo, salario):
+        self.nombre = nombre
+        self.cargo = cargo
+        self.salario = salario
+
+    def __str__(self):
+        return f&amp;quot;{self.nombre} trabaja como {self.cargo} y cobra {self.salario} €.&amp;quot;
+
+
+lista_empleados = [
+    Empleado(&amp;quot;Juan&amp;quot;, &amp;quot;Director&amp;quot;, 75000),
+    Empleado(&amp;quot;Ana&amp;quot;, &amp;quot;Presidenta&amp;quot;, 85000),
+    Empleado(&amp;quot;Antonio&amp;quot;, &amp;quot;Administrativo&amp;quot;, 25000),
+    Empleado(&amp;quot;Sara&amp;quot;, &amp;quot;Secretaria&amp;quot;, 27000),
+    Empleado(&amp;quot;Mario&amp;quot;, &amp;quot;Botones&amp;quot;, 21000)
+]
+
+[print(e.__str__()) for e in lista_empleados if e.salario &amp;gt; 50000]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Juan trabaja como Director y cobra 75000 €.
+Ana trabaja como Presidenta y cobra 85000 €.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/67/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

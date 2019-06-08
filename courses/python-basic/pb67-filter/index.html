@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos la cláusula UNIQUE y operaciones CRUD (Create, Read, Update, Delete). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:
-import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_cursor = mi_conexion.cursor() mi_cursor.execute(&#39;&#39;&#39; CREATE TABLE PRODUCTOS ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE_ARTICULO VARCHAR(50) UNIQUE, PRECIO INTEGER, SECCION VARCHAR(20)) &#39;&#39;&#39;) productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;), (&quot;Pantalón&quot;, 15, &quot;Confección&quot;), (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;), (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)] mi_cursor.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, estudiaremos la función filter(), que forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en Python en paradigma de programación funcional. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.
+Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb67-filter/">
 
   
 
@@ -111,7 +111,7 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb67-filter/">
 
   
   
@@ -125,27 +125,27 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb58-bases-de-datos-iv/">
-  <meta property="og:title" content="58. Bases de datos IV | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos la cláusula UNIQUE y operaciones CRUD (Create, Read, Update, Delete). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:
-import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_cursor = mi_conexion.cursor() mi_cursor.execute(&#39;&#39;&#39; CREATE TABLE PRODUCTOS ( ID INTEGER PRIMARY KEY AUTOINCREMENT, NOMBRE_ARTICULO VARCHAR(50) UNIQUE, PRECIO INTEGER, SECCION VARCHAR(20)) &#39;&#39;&#39;) productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;), (&quot;Pantalón&quot;, 15, &quot;Confección&quot;), (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;), (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)] mi_cursor."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb67-filter/">
+  <meta property="og:title" content="67. La función filter | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, estudiaremos la función filter(), que forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en Python en paradigma de programación funcional. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.
+Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-31T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-08T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-31T00:00:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-08T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>58. Bases de datos IV | Infinitos Contrastes</title>
+
+
+  <title>67. La función filter | Infinitos Contrastes</title>
 
 </head>
 
@@ -610,7 +610,7 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
         <a href="/courses/python-basic/pb57-bases-de-datos-iii/">57. BBDD III</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb58-bases-de-datos-iv/">58. BBDD IV</a>
       </li>
       
@@ -646,7 +646,7 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
         <a href="/courses/python-basic/pb66-funciones-lambda/">66. Lambdas</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb67-filter/">67. Filter</a>
       </li>
       
@@ -686,7 +686,7 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">58. Bases de datos IV</h1>
+          <h1 itemprop="name">67. La función filter</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -695,131 +695,107 @@ import sqlite3 mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;) mi_c
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/m_FzVf9JTV8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/mTJKU7IxL0U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>En esta lección, abordaremos la cláusula <code>UNIQUE</code> y operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:</p>
+<p>En esta lección, estudiaremos la función <code>filter()</code>, que forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en <em>Python</em> en paradigma de <strong>programación funcional</strong>. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.</p>
 
-<pre><code class="language-python">import sqlite3
+<p>Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:</p>
 
-mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+<pre><code class="language-python">def numero_par(num):
+    if num % 2 == 0:
+        return True
 
-mi_cursor = mi_conexion.cursor()
 
-mi_cursor.execute('''
-    CREATE TABLE PRODUCTOS (
-    ID INTEGER PRIMARY KEY AUTOINCREMENT,
-    NOMBRE_ARTICULO VARCHAR(50) UNIQUE,
-    PRECIO INTEGER,
-    SECCION VARCHAR(20))
-    ''')
+numeros = [17, 24, 7, 39, 8, 51, 92]
 
-productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;),
-             (&quot;Pantalón&quot;, 15, &quot;Confección&quot;),
-             (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;),
-             (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)]
+print(filter(numero_par, numeros))  # objeto iterable
 
-mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&quot;,
-                      productos)
-
-mi_conexion.commit()
-
-mi_conexion.close()
+print(list(filter(numero_par, numeros)))
 </code></pre>
 
-<p><em>Notas</em>:</p>
-
-<ul>
-<li>Recordemos que al incorporar <code>PRIMARY KEY</code> en el campo <code>ID</code> (nuestro anterior campo <code>CODIGO_ARTICULO</code>) lo convertimos en clave y, de manera implícita, estamos forzando que la infomación registrada en él no pueda repetirse.</li>
-<li>Añadiendo <code>UNIQUE</code> al campo <code>NOMBRE_ARTICULO</code> impedimos la posibilidad de que dos artículos posean el mismo nombre. Esta cláusula la podemos ubicar en tantos campos como deseemos.</li>
-</ul>
-
-<p>¿Qué sucede ahora si intentamos insertar un registro cuyo para <code>NOMBRE_ARTICULO</code> ya figura en la base de datos (BBDD)?</p>
-
-<pre><code class="language-python">import sqlite3
-
-mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
-
-mi_cursor = mi_conexion.cursor()
-
-mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
-
-mi_conexion.commit()
-
-mi_conexion.close()
+<pre><code class="language-bash">&lt;filter object at 0x0000029E5BA262B0&gt;
+[24, 8, 92]
 </code></pre>
 
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;bbdd_2.py&quot;, line 7, in &lt;module&gt;
-    mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
-sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.NOMBRE_ARTICULO
+<p>La función <code>numero_par()</code> la podemos abreviar un tanto como sigue:</p>
+
+<pre><code class="language-python">def numero_par(num):
+    return num % 2 == 0
 </code></pre>
 
-<p>Esto es, <em>Python</em> arroja un error de integridad por violarse la restricción de unicidad para el campo <code>NOMBRE_ARTICULO</code>.</p>
+<p>Es más, como es tan sencilla, incluso podemos prescindir de ella utilizando una función <em>lambda</em>:</p>
 
-<p>A continuación, abordemos las operaciones de tipo operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Aunque las dos primeras ya las hemos analizado en lecciones anteriores, recordemos brevemente cómo realizar una de tipo <em>Read</em>:</p>
+<pre><code class="language-python">numeros = [17, 24, 7, 39, 8, 51, 92]
 
-<pre><code class="language-python">import sqlite3
-
-mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
-
-mi_cursor = mi_conexion.cursor()
-
-mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS WHERE SECCION='Confección'&quot;)
-
-productos = mi_cursor.fetchall()
-
-for producto in productos:
-    print(producto)
-
-mi_conexion.commit()
-
-mi_conexion.close()
+print(list(filter(lambda x: x % 2 == 0, numeros)))
 </code></pre>
 
-<pre><code class="language-bash">(2, 'Pantalón', 15, 'Confección')
+<pre><code class="language-bash">[24, 8, 92]
 </code></pre>
 
-<p><em>Nota</em>: las instrucciones suministradas a la BBDD son <em>case sensitive</em>, es decir, hemos de proceder con cautela a la hora de introducir los datos y utilizar adecuadamente las mayúsculas y las minúsculas (además de los acentos y otros posibles caracteres conflictivos).</p>
+<p>Habitualmente, utilizaremos la función <code>filter()</code> para filtrar objetos. Por ejemplo, supongamos que tenemos varias instancias de la clase <code>Empleado</code> y deseamos filtrarlas por el valor de uno de sus atributos:</p>
 
-<p>Para realizar una actualización de registro (operación de tipo <em>Update</em>), simplemente hemos de modificar la instrucción <em>SQL</em> de manera acertada:</p>
+<pre><code class="language-python">class Empleado:
+    def __init__(self, nombre, cargo, salario):
+        self.nombre = nombre
+        self.cargo = cargo
+        self.salario = salario
 
-<pre><code class="language-python">import sqlite3
+    def __str__(self):
+        return f&quot;{self.nombre} trabaja como {self.cargo} y cobra {self.salario} €.&quot;
 
-mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
 
-mi_cursor = mi_conexion.cursor()
+lista_empleados = [
+    Empleado(&quot;Juan&quot;, &quot;Director&quot;, 75000),
+    Empleado(&quot;Ana&quot;, &quot;Presidenta&quot;, 85000),
+    Empleado(&quot;Antonio&quot;, &quot;Administrativo&quot;, 25000),
+    Empleado(&quot;Sara&quot;, &quot;Secretaria&quot;, 27000),
+    Empleado(&quot;Mario&quot;, &quot;Botones&quot;, 21000)
+]
 
-mi_cursor.execute(&quot;UPDATE PRODUCTOS SET PRECIO=35 WHERE NOMBRE_ARTICULO='Pelota'&quot;)
+salarios_altos = filter(lambda e: e.salario &gt; 50000, lista_empleados)
 
-mi_conexion.commit()
-
-mi_conexion.close()
+[print(s.__str__()) for s in salarios_altos]
 </code></pre>
 
-<p>Finalmente, para borrar registros (operación de tipo <em>Delete</em>), la manera de proceder es similar a la vista antes, ya que únicamente hemos de emplear la instrucción <em>SQL</em> adecuada (y borrar por un criterio que no ocasione conflictos con otros registros almacenados en la BBDD):</p>
-
-<pre><code class="language-python">import sqlite3
-
-mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
-
-mi_cursor = mi_conexion.cursor()
-
-mi_cursor.execute(&quot;DELETE FROM PRODUCTOS WHERE ID=1&quot;)
-
-mi_conexion.commit()
-
-mi_conexion.close()
+<pre><code class="language-bash">Juan trabaja como Director y cobra 75000 €.
+Ana trabaja como Presidenta y cobra 85000 €.
 </code></pre>
 
-<p><em>Nota</em>: cuando utilicemos una cláusula <code>DELETE</code>, no hemos de olvidar jamás añadir otra de tipo <code>WHERE</code> o terminaremos suprimiendo la tabla completa en lugar de uno o varios registros.</p>
+<p>A modo de curiosidad, ya que me he avanzado y he utilizado comprensiones de listas (ver la última línea del bloque de código anterior), resulta que mediante ellas, en este ejemplo concreto, no es necesario recurrir al uso de la función <code>filter()</code>:</p>
+
+<pre><code class="language-python">class Empleado:
+    def __init__(self, nombre, cargo, salario):
+        self.nombre = nombre
+        self.cargo = cargo
+        self.salario = salario
+
+    def __str__(self):
+        return f&quot;{self.nombre} trabaja como {self.cargo} y cobra {self.salario} €.&quot;
+
+
+lista_empleados = [
+    Empleado(&quot;Juan&quot;, &quot;Director&quot;, 75000),
+    Empleado(&quot;Ana&quot;, &quot;Presidenta&quot;, 85000),
+    Empleado(&quot;Antonio&quot;, &quot;Administrativo&quot;, 25000),
+    Empleado(&quot;Sara&quot;, &quot;Secretaria&quot;, 27000),
+    Empleado(&quot;Mario&quot;, &quot;Botones&quot;, 21000)
+]
+
+[print(e.__str__()) for e in lista_empleados if e.salario &gt; 50000]
+</code></pre>
+
+<pre><code class="language-bash">Juan trabaja como Director y cobra 75000 €.
+Ana trabaja como Presidenta y cobra 85000 €.
+</code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/58/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/67/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -836,15 +812,9 @@ mi_conexion.close()
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb57-bases-de-datos-iii/" rel="next">57. Bases de datos III</a>
+    <a href="/courses/python-basic/pb66-funciones-lambda/" rel="next">66. Funciones lambda</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb59-practica-guiada-i/" rel="prev">59. Práctica guiada I</a>
-  </div>
   
 </div>
 
@@ -853,7 +823,7 @@ mi_conexion.close()
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-31
+          Última actualización el 2019-06-08
         </div>
 
       </article>
