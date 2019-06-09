@@ -8977,7 +8977,7 @@ El área del triángulo de base 6 y altura 6 es 18.0.
 
 &lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
 
-&lt;p&gt;En esta lección, estudiaremos la función &lt;code&gt;filter()&lt;/code&gt;, que forma parte de un conjunto de funciones conocidas como &amp;ldquo;de orden superior&amp;rdquo; y nos permiten utilizar en &lt;em&gt;Python&lt;/em&gt; en paradigma de &lt;strong&gt;programación funcional&lt;/strong&gt;. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.&lt;/p&gt;
+&lt;p&gt;En esta lección, estudiaremos la función &lt;code&gt;filter()&lt;/code&gt;, que forma parte de un conjunto de funciones conocidas como &amp;ldquo;de orden superior&amp;rdquo; y nos permiten utilizar en &lt;em&gt;Python&lt;/em&gt; el paradigma de &lt;strong&gt;programación funcional&lt;/strong&gt;. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.&lt;/p&gt;
 
 &lt;p&gt;Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:&lt;/p&gt;
 
@@ -9072,6 +9072,96 @@ Ana trabaja como Presidenta y cobra 85000 €.
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/67/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>68. La función map</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb68-map/</link>
+      <pubDate>Sun, 09 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb68-map/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/4dkjpHI6vpA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos la función &lt;code&gt;map()&lt;/code&gt;, que, como &lt;code&gt;filter()&lt;/code&gt;, también forma parte de un conjunto de funciones conocidas como &amp;ldquo;de orden superior&amp;rdquo; y nos permiten utilizar en &lt;em&gt;Python&lt;/em&gt; el paradigma de &lt;strong&gt;programación funcional&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, &lt;code&gt;map()&lt;/code&gt; aplica una función a cada elemento de un objeto de tipo iterable (listas, tuplas&amp;hellip;) devolviendo a su vez un objeto de tipo iterable que contiene los resultados de dicha aplicación.&lt;/p&gt;
+
+&lt;p&gt;Retomemos la clase definida en la lección anterior, junto con la lista de empleados generada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Empleado:
+    def __init__(self, nombre, cargo, salario):
+        self.nombre = nombre
+        self.cargo = cargo
+        self.salario = salario
+
+    def __str__(self):
+        return f&amp;quot;{self.nombre} trabaja como {self.cargo} y cobra {self.salario} €.&amp;quot;
+
+
+lista_empleados = [
+    Empleado(&amp;quot;Juan&amp;quot;, &amp;quot;Director&amp;quot;, 6700),
+    Empleado(&amp;quot;Ana&amp;quot;, &amp;quot;Presidenta&amp;quot;, 7500),
+    Empleado(&amp;quot;Antonio&amp;quot;, &amp;quot;Administrativo&amp;quot;, 1200),
+    Empleado(&amp;quot;Sara&amp;quot;, &amp;quot;Secretaria&amp;quot;, 1250),
+    Empleado(&amp;quot;Mario&amp;quot;, &amp;quot;Botones&amp;quot;, 1000)
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: hemos modificado los salarios para que sus cantidades sean mensuales, en lugar de las anuales declaradas en la lección anterior.&lt;/p&gt;
+
+&lt;p&gt;Imaginemos ahora que todos los empleados recibien un extra monetario en forma de comisión, que hemos de agregar a su salario mensual.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def calcula_comision(empleado):
+    empleado.salario *= 1.03
+    return empleado
+
+
+lista_empleados_comision = map(calcula_comision, lista_empleados)
+
+[print(e) for e in lista_empleados_comision]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Juan trabaja como Director y cobra 6901.0 €.
+Ana trabaja como Presidenta y cobra 7725.0 €.
+Antonio trabaja como Administrativo y cobra 1236.0 €.
+Sara trabaja como Secretaria y cobra 1287.5 €.
+Mario trabaja como Botones y cobra 1030.0 €.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;¿Y si queremos aplicar la comisión solamente a aquellos trabajadores que tengan un salario inferior a 3000 euros?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def calcula_comision(empleado):
+    if empleado.salario &amp;lt;= 3000:
+        empleado.salario *= 1.03
+    return empleado
+
+
+lista_empleados_comision = map(calcula_comision, lista_empleados)
+
+[print(e) for e in lista_empleados_comision]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Juan trabaja como Director y cobra 6700 €.
+Ana trabaja como Presidenta y cobra 7500 €.
+Antonio trabaja como Administrativo y cobra 1236.0 €.
+Sara trabaja como Secretaria y cobra 1287.5 €.
+Mario trabaja como Botones y cobra 1030.0 €.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/68/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
