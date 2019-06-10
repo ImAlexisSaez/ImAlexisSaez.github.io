@@ -9165,5 +9165,146 @@ Mario trabaja como Botones y cobra 1030.0 €.
 </description>
     </item>
     
+    <item>
+      <title>69. Expresiones regulares I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb69-expresiones-regulares-i/</link>
+      <pubDate>Mon, 10 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb69-expresiones-regulares-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/qpwn3gRtxCo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, comenzaremos el estudio de las &lt;strong&gt;expresiones regulares&lt;/strong&gt; en &lt;em&gt;Python&lt;/em&gt;, que son una secuencia de caracteres que forman un patrón de búsqueda y sirven para el trabajo y procesamiento de texto. Por ejemplo, podemos estar interesados, entre otras tareas, en:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Buscar un texto que se ajuste a un formato determinado (correo electrónico).&lt;/li&gt;
+&lt;li&gt;Buscar si existe o no una cadena de caracteres dentro de un texto.&lt;/li&gt;
+&lt;li&gt;Contar el número de coincidencias dentro de un texto.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Conviene que consultemos la &lt;a href=&#34;https://docs.python.org/3/library/re.html&#34; target=&#34;_blank&#34;&gt;documentación oficial&lt;/a&gt; del módulo asociado a las expresiones regulares, &lt;code&gt;re&lt;/code&gt;, en &lt;em&gt;Python&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;A continuación, veamos algunos ejemplos sencillos. Empecemos ilustrando el uso del método &lt;code&gt;search()&lt;/code&gt;, que nos permite buscar una cadena de texto concreta y nos ofrece su localización:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &amp;quot;Vamos a aprender expresiones regulares.&amp;quot;
+
+print(re.search(&amp;quot;aprender&amp;quot;, cadena))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;lt;re.Match object; span=(8, 16), match=&#39;aprender&#39;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Apreciamos que la ejecución nos devuelve un objeto, de tipo &lt;code&gt;Match&lt;/code&gt;, que en el intervalo de caracteres &lt;code&gt;(8, 16)&lt;/code&gt; ha encontrado la cadena de texto de interés, &lt;code&gt;aprender&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, si insertamos una cadena de texto que no figure en la variable &lt;code&gt;cadena&lt;/code&gt;, el resultado que arroja la ejecución del programa es &lt;code&gt;None&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &amp;quot;Vamos a aprender expresiones regulares.&amp;quot;
+
+print(re.search(&amp;quot;Python&amp;quot;, cadena))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;None
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Obviamente, podemos pasar variables a la función &lt;code&gt;search()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &amp;quot;Vamos a aprender expresiones regulares.&amp;quot;
+
+texto_buscar = &amp;quot;aprender&amp;quot;
+
+if re.search(texto_buscar, cadena) is not None:
+    print(&amp;quot;Texto encontrado.&amp;quot;)
+else:
+    print(&amp;quot;Texto no encontrado.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Texto encontrado.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hemos encontrado el texto, efectivamente, pero, ¿en qué carácter comienza? Utilizando el método &lt;code&gt;start()&lt;/code&gt; hallamos la respuesta:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &amp;quot;Vamos a aprender expresiones regulares.&amp;quot;
+
+texto_buscar = &amp;quot;aprender&amp;quot;
+
+texto_encontrado = re.search(texto_buscar, cadena)
+
+print(texto_encontrado.start())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Análogamente,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(texto_encontrado.end())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;16
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al hilo de las acciones anteriores, el método &lt;code&gt;span()&lt;/code&gt; nos devuelve una tupla con los valores mostrados arriba:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(texto_encontrado.span())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;(8, 16)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, examinemos la utilidad del método &lt;code&gt;findall()&lt;/code&gt;, para lo cual hemos de ampliar un poco la cadena de texto original suministrada:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &#39;&#39;&#39;
+    Vamos a aprender expresiones regulares en Python.
+    Python es un lenguaje de sintaxis sencilla.&#39;&#39;&#39;
+
+texto_buscar = &amp;quot;Python&amp;quot;
+
+print(re.findall(texto_buscar, cadena))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[&#39;Python&#39;, &#39;Python&#39;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Accedemos a una lista que contiene el texto de interés, tantas veces como repeticiones figuren en él. Empleando ahora la función &lt;code&gt;len()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+cadena = &#39;&#39;&#39;
+    Vamos a aprender expresiones regulares en Python.
+    Python es un lenguaje de sintaxis sencilla.&#39;&#39;&#39;
+
+texto_buscar = &amp;quot;Python&amp;quot;
+
+print(len(re.findall(texto_buscar, cadena)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/69/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
