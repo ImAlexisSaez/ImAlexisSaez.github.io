@@ -28,12 +28,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Una excepción es un error que acontece durante la ejecución de un programa. La sintaxis del código es correcta, pero, en el momento de ejecutarse el algoritmo, sucede &ldquo;algo inesperado&rdquo;.
-Para ilustrar la aparición de excepciones, trabajemos con el siguiente código:
-def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 - num2 def multiplica(num1, num2): return num1 * num2 def divide(num1, num2): return num1 / num2 op1 = (int(input(&quot;Introduce el primer número: &quot;))) op2 = (int(input(&quot;Introduce el segundo número: &quot;))) print(&quot;Operaciones disponibles: &quot;) print(&quot;- Suma&quot;) print(&quot;- Resta&quot;) print(&quot;- Multiplica&quot;) print(&quot;- Divide&quot;) operacion = input(&quot;Introduce la operación a realizar: &quot;) if operacion == &quot;Suma&quot;: print(suma(op1, op2)) elif operacion == &quot;Resta&quot;: print(resta(op1, op2)) elif operacion == &quot;Multiplica&quot;: print(multiplica(op1, op2)) elif operacion == &quot;Divide&quot;: print(divide(op1, op2)) else: print(&quot;Operación no contemplada.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados metacaracteres (o caracteres comodín).
+Empecemos con las anclas, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla ^, las buscamos al inicio de la cadena de texto:
+import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &quot;Sandra López&quot;, &quot;Santiago Martín&quot;] for nombre in lista_nombres: if re.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb21-excepciones-i/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/">
 
   
 
@@ -112,7 +112,7 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb21-excepciones-i/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/">
 
   
   
@@ -126,28 +126,28 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb21-excepciones-i/">
-  <meta property="og:title" content="21. Excepciones I | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Una excepción es un error que acontece durante la ejecución de un programa. La sintaxis del código es correcta, pero, en el momento de ejecutarse el algoritmo, sucede &ldquo;algo inesperado&rdquo;.
-Para ilustrar la aparición de excepciones, trabajemos con el siguiente código:
-def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 - num2 def multiplica(num1, num2): return num1 * num2 def divide(num1, num2): return num1 / num2 op1 = (int(input(&quot;Introduce el primer número: &quot;))) op2 = (int(input(&quot;Introduce el segundo número: &quot;))) print(&quot;Operaciones disponibles: &quot;) print(&quot;- Suma&quot;) print(&quot;- Resta&quot;) print(&quot;- Multiplica&quot;) print(&quot;- Divide&quot;) operacion = input(&quot;Introduce la operación a realizar: &quot;) if operacion == &quot;Suma&quot;: print(suma(op1, op2)) elif operacion == &quot;Resta&quot;: print(resta(op1, op2)) elif operacion == &quot;Multiplica&quot;: print(multiplica(op1, op2)) elif operacion == &quot;Divide&quot;: print(divide(op1, op2)) else: print(&quot;Operación no contemplada."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/">
+  <meta property="og:title" content="70. Expresiones regulares II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados metacaracteres (o caracteres comodín).
+Empecemos con las anclas, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla ^, las buscamos al inicio de la cadena de texto:
+import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &quot;Sandra López&quot;, &quot;Santiago Martín&quot;] for nombre in lista_nombres: if re."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-06T00:01:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-11T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-06T00:01:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-11T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>21. Excepciones I | Infinitos Contrastes</title>
+
+
+  <title>70. Expresiones regulares II | Infinitos Contrastes</title>
 
 </head>
 
@@ -464,7 +464,7 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
         <a href="/courses/python-basic/pb20-generadores-ii/">20. Generadores II</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb21-excepciones-i/">21. Excepciones I</a>
       </li>
       
@@ -660,7 +660,7 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
         <a href="/courses/python-basic/pb69-expresiones-regulares-i/">69. RegExp I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb70-expresiones-regulares-ii/">70. RegExp II</a>
       </li>
       
@@ -700,7 +700,7 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">21. Excepciones I</h1>
+          <h1 itemprop="name">70. Expresiones regulares II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -709,153 +709,147 @@ def suma(num1, num2): return num1 &#43; num2 def resta(num1, num2): return num1 
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/2MaAs7XU2T0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/V8316ao08tQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Una <strong>excepción</strong> es un error que acontece durante la ejecución de un programa. La sintaxis del código es correcta, pero, en el momento de ejecutarse el algoritmo, sucede &ldquo;algo inesperado&rdquo;.</p>
+<p>En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados <strong>metacaracteres</strong> (o <em>caracteres comodín</em>).</p>
 
-<p>Para ilustrar la aparición de excepciones, trabajemos con el siguiente código:</p>
+<p>Empecemos con las <em>anclas</em>, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla <code>^</code>, las buscamos al inicio de la cadena de texto:</p>
 
-<pre><code class="language-python">def suma(num1, num2):
-    return num1 + num2
+<pre><code class="language-python">import re
 
+lista_nombres = [&quot;Ana Gómez&quot;,
+                 &quot;María Martín&quot;,
+                 &quot;Sandra López&quot;,
+                 &quot;Santiago Martín&quot;]
 
-def resta(num1, num2):
-    return num1 - num2
-
-
-def multiplica(num1, num2):
-    return num1 * num2
-
-
-def divide(num1, num2):
-    return num1 / num2
-
-
-op1 = (int(input(&quot;Introduce el primer número: &quot;)))
-op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-
-print(&quot;Operaciones disponibles: &quot;)
-print(&quot;- Suma&quot;)
-print(&quot;- Resta&quot;)
-print(&quot;- Multiplica&quot;)
-print(&quot;- Divide&quot;)
-
-operacion = input(&quot;Introduce la operación a realizar: &quot;)
-
-if operacion == &quot;Suma&quot;:
-    print(suma(op1, op2))
-elif operacion == &quot;Resta&quot;:
-    print(resta(op1, op2))
-elif operacion == &quot;Multiplica&quot;:
-    print(multiplica(op1, op2))
-elif operacion == &quot;Divide&quot;:
-    print(divide(op1, op2))
-else:
-    print(&quot;Operación no contemplada.&quot;)
-
-print(&quot;Operación ejecutada. Continuación de ejecución del programa &quot;)
+for nombre in lista_nombres:
+    if re.findall(&quot;^Sandra&quot;, nombre):
+        print(nombre)
 </code></pre>
 
-<p>Un posible ejemplo de ejecución sería:</p>
-
-<pre><code class="language-bash">Introduce el primer número: 16
-Introduce el segundo número: 4
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Multiplica
-64
-Operación ejecutada. Continuación de ejecución del programa
+<pre><code class="language-bash">Sandra López
 </code></pre>
 
-<p>Sin embargo, si por accidente intentamos realizar una división entre 0:</p>
+<p>El último bucle lo podemos compactar utilizando comprensiones de listas de la siguiente forma:</p>
 
-<pre><code class="language-bash">Introduce el primer número: 2
-Introduce el segundo número: 0
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Divide
-Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 35, in &lt;module&gt;
-    print(divide(op1, op2))
-  File &quot;prac21_excepciones1_1.py&quot;, line 14, in divide
-    return num1 / num2
-ZeroDivisionError: division by zero
+<pre><code class="language-python">[print(nombre) for nombre in lista_nombres if re.findall(&quot;^Sandra&quot;, nombre)]
 </code></pre>
 
-<p>De forma que el código se detiene en el preciso instante de la llamada a la función <code>divide()</code> y deja de ejecutar las restantes líneas (la instrucción <code>print()</code> final en esta ocasión), cuya importancia puede ser vital para nosotros.</p>
+<p>Así, podemos extraer de <code>lista_nombres</code>, si nos interesa, todos los nombres que comiencen por <code>S</code>:</p>
 
-<p>Este tipo de situaciones se aborda mediante una <strong>captura</strong> o <strong>control de excepción</strong>. La idea es intentar realizar un bloque de código y, en el caso de no poderse llevar a cabo dicha acción, que al menos el resto de programa siga adelante.</p>
+<pre><code class="language-python">import re
 
-<p>Si nos fijamos en la <strong>pila de llamadas</strong> que nos muestran antes de arrojar el error:</p>
+lista_nombres = [&quot;Ana Gómez&quot;,
+                 &quot;María Martín&quot;,
+                 &quot;Sandra López&quot;,
+                 &quot;Santiago Martín&quot;]
 
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 35, in &lt;module&gt;
-    print(divide(op1, op2))
-  File &quot;prac21_excepciones1_1.py&quot;, line 14, in divide
-    return num1 / num2
-ZeroDivisionError: division by zero
+[print(nombre) for nombre in lista_nombres if re.findall(&quot;^S&quot;, nombre)]
 </code></pre>
 
-<p>Leyendo de abajo hacia arriba, la instrucción <code>return num1 / num2</code>, ubicada en la línea 14 del código, arroja un error de división por cero (<code>ZeroDivisionError</code>). Para controlar esta circunstancia, usaremos un bloque de tipo:</p>
-
-<pre><code class="language-python">try:
-    instrucciones
-except error:
-    instrucciones
+<pre><code class="language-bash">Sandra López
+Santiago Martín
 </code></pre>
 
-<p>Así, nuestra función <code>divide()</code> la podríamos reescribir como sigue:</p>
+<p>¿Y si queremos todos los nombres cuyo apellido sea <code>Martín</code>? El ancla <code>$</code> es el metacarácter que hemos de emplear:</p>
 
-<pre><code class="language-python">def divide(num1, num2):
-    try:
-        return num1 / num2
-    except ZeroDivisionError:
-        print(&quot;No se puede dividir entre 0.&quot;)
-        return &quot;Operación errónea.&quot;
+<pre><code class="language-python">import re
+
+lista_nombres = [&quot;Ana Gómez&quot;,
+                 &quot;María Martín&quot;,
+                 &quot;Sandra López&quot;,
+                 &quot;Santiago Martín&quot;]
+
+[print(nombre) for nombre in lista_nombres if re.findall(&quot;Martín$&quot;, nombre)]
 </code></pre>
 
-<p>De manera que, replicando el anterior conflictivo ejemplo:</p>
-
-<pre><code class="language-bash">Introduce el primer número: 2
-Introduce el segundo número: 0
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Divide
-No se puede dividir entre 0.
-Operación errónea.
-Operación ejecutada. Continuación de ejecución del programa 
+<pre><code class="language-bash">María Martín
+Santiago Martín
 </code></pre>
 
-<p>Apreciamos que la última línea de código, aquel <code>print()</code> final, ahora efectivamente sí llega a ejecutarse.</p>
+<p>Veamos otro ejemplo de su uso, trabajando ahora con una lista de dominios, estamos interesados en encontrar aquellos que acaben en <code>.es</code>:</p>
 
-<p>Por desgracia, no es el único punto conflictivo que presenta el código mostrado. Por ejemplo, ¿qué sucede si introducimos una cadena de texto en lugar de un número?</p>
+<pre><code class="language-python">import re
 
-<pre><code class="language-bash">Introduce el primer número: 3
-Introduce el segundo número: a
-Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 22, in &lt;module&gt;
-    op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-ValueError: invalid literal for int() with base 10: 'a'
+urls = [&quot;https://pildorasinformaticas.es&quot;,
+        &quot;ftp://pildorasinformaticas.es&quot;,
+        &quot;https://pildorasinformaticas.com&quot;,
+        &quot;ftp://pildorasinformaticas.com&quot;]
+
+[print(url) for url in urls if re.findall(&quot;.es$&quot;, url)]
 </code></pre>
 
-<p><em>Python</em> arroja un error de tipo <code>ValueError</code> que también habríamos de controlar a través de un bloque <code>try</code> - <code>except</code>.</p>
+<pre><code class="language-bash">https://pildorasinformaticas.es
+ftp://pildorasinformaticas.es
+</code></pre>
+
+<p>Quizá nos interese hallar qué dominios son de tipo <code>ftp</code>:</p>
+
+<pre><code class="language-python">import re
+
+urls = [&quot;https://pildorasinformaticas.es&quot;,
+        &quot;ftp://pildorasinformaticas.es&quot;,
+        &quot;https://pildorasinformaticas.com&quot;,
+        &quot;ftp://pildorasinformaticas.com&quot;]
+
+[print(url) for url in urls if re.findall(&quot;^ftp&quot;, url)]
+</code></pre>
+
+<pre><code class="language-bash">ftp://pildorasinformaticas.es
+ftp://pildorasinformaticas.com
+</code></pre>
+
+<p>Por otro lado, tenemos las <strong>clases de caracteres</strong>, que nos permiten introducir patrones de búsqueda utilizando el operador <code>[]</code>. Cambiemos ligeramente los dominios para ver su utilidad (buscando aquellos dominios que contengan el carácter <code>ñ</code>):</p>
+
+<pre><code class="language-python">import re
+
+urls = [&quot;https://pildorasinformaticas.es&quot;,
+        &quot;ftp://pildorasinformaticas.es&quot;,
+        &quot;https://pildorasinformaticas.com&quot;,
+        &quot;ftp://pildorasinformaticas.com&quot;,
+        &quot;https://informaticaenespaña.es&quot;]
+
+[print(url) for url in urls if re.findall(&quot;[ñ]&quot;, url)]
+</code></pre>
+
+<pre><code class="language-bash">https://informaticaenespaña.es
+</code></pre>
+
+<p>Un ejemplo un tanto más complejo: en una lista de palabras, queremos encontrar si se hallan las palabras <code>niños</code> y <code>niñas</code>. Como solo se diferencias ambas cadenas en un carácter, podemos escribir:</p>
+
+<pre><code class="language-python">import re
+
+urls = [&quot;hombres&quot;, &quot;mujeres&quot;, &quot;mascotas&quot;, &quot;niños&quot;, &quot;niñas&quot;]
+
+[print(url) for url in urls if re.findall(&quot;niñ[oa]s&quot;, url)]
+</code></pre>
+
+<pre><code class="language-bash">niños
+niñas
+</code></pre>
+
+<p><em>Nota</em>: al escribir <code>[oa]</code> no exigimos que deban estar presentes los dos caracteres y en ese preciso orden. La función <code>findall()</code> nos arrojará una coincidencia cuando alguno de los dos esté presente (o ambos, siendo indiferente el orden en el que se encuentren en este último caso).</p>
+
+<p>Esta estrategia es también útil cuando lidiamos con tildes:</p>
+
+<pre><code class="language-python">import re
+
+urls = [&quot;hombres&quot;, &quot;mujeres&quot;, &quot;mascotas&quot;, &quot;camión&quot;, &quot;camion&quot;]
+
+[print(url) for url in urls if re.findall(&quot;cami[oó]n&quot;, url)]
+</code></pre>
+
+<pre><code class="language-bash">camión
+camion
+</code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/21/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/70/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -872,15 +866,9 @@ ValueError: invalid literal for int() with base 10: 'a'
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb20-generadores-ii/" rel="next">20. Generadores II</a>
+    <a href="/courses/python-basic/pb69-expresiones-regulares-i/" rel="next">69. Expresiones regulares I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb22-excepciones-ii/" rel="prev">22. Excepciones II</a>
-  </div>
   
 </div>
 
@@ -889,7 +877,7 @@ ValueError: invalid literal for int() with base 10: 'a'
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-06
+          Última actualización el 2019-06-11
         </div>
 
       </article>

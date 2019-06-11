@@ -9306,5 +9306,161 @@ print(len(re.findall(texto_buscar, cadena)))
 </description>
     </item>
     
+    <item>
+      <title>70. Expresiones regulares II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/V8316ao08tQ&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados &lt;strong&gt;metacaracteres&lt;/strong&gt; (o &lt;em&gt;caracteres comodín&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Empecemos con las &lt;em&gt;anclas&lt;/em&gt;, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla &lt;code&gt;^&lt;/code&gt;, las buscamos al inicio de la cadena de texto:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+lista_nombres = [&amp;quot;Ana Gómez&amp;quot;,
+                 &amp;quot;María Martín&amp;quot;,
+                 &amp;quot;Sandra López&amp;quot;,
+                 &amp;quot;Santiago Martín&amp;quot;]
+
+for nombre in lista_nombres:
+    if re.findall(&amp;quot;^Sandra&amp;quot;, nombre):
+        print(nombre)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Sandra López
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;El último bucle lo podemos compactar utilizando comprensiones de listas de la siguiente forma:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;[print(nombre) for nombre in lista_nombres if re.findall(&amp;quot;^Sandra&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Así, podemos extraer de &lt;code&gt;lista_nombres&lt;/code&gt;, si nos interesa, todos los nombres que comiencen por &lt;code&gt;S&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+lista_nombres = [&amp;quot;Ana Gómez&amp;quot;,
+                 &amp;quot;María Martín&amp;quot;,
+                 &amp;quot;Sandra López&amp;quot;,
+                 &amp;quot;Santiago Martín&amp;quot;]
+
+[print(nombre) for nombre in lista_nombres if re.findall(&amp;quot;^S&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Sandra López
+Santiago Martín
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;¿Y si queremos todos los nombres cuyo apellido sea &lt;code&gt;Martín&lt;/code&gt;? El ancla &lt;code&gt;$&lt;/code&gt; es el metacarácter que hemos de emplear:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+lista_nombres = [&amp;quot;Ana Gómez&amp;quot;,
+                 &amp;quot;María Martín&amp;quot;,
+                 &amp;quot;Sandra López&amp;quot;,
+                 &amp;quot;Santiago Martín&amp;quot;]
+
+[print(nombre) for nombre in lista_nombres if re.findall(&amp;quot;Martín$&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;María Martín
+Santiago Martín
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Veamos otro ejemplo de su uso, trabajando ahora con una lista de dominios, estamos interesados en encontrar aquellos que acaben en &lt;code&gt;.es&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+urls = [&amp;quot;https://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;https://pildorasinformaticas.com&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.com&amp;quot;]
+
+[print(url) for url in urls if re.findall(&amp;quot;.es$&amp;quot;, url)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;https://pildorasinformaticas.es
+ftp://pildorasinformaticas.es
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Quizá nos interese hallar qué dominios son de tipo &lt;code&gt;ftp&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+urls = [&amp;quot;https://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;https://pildorasinformaticas.com&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.com&amp;quot;]
+
+[print(url) for url in urls if re.findall(&amp;quot;^ftp&amp;quot;, url)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ftp://pildorasinformaticas.es
+ftp://pildorasinformaticas.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, tenemos las &lt;strong&gt;clases de caracteres&lt;/strong&gt;, que nos permiten introducir patrones de búsqueda utilizando el operador &lt;code&gt;[]&lt;/code&gt;. Cambiemos ligeramente los dominios para ver su utilidad (buscando aquellos dominios que contengan el carácter &lt;code&gt;ñ&lt;/code&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+urls = [&amp;quot;https://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.es&amp;quot;,
+        &amp;quot;https://pildorasinformaticas.com&amp;quot;,
+        &amp;quot;ftp://pildorasinformaticas.com&amp;quot;,
+        &amp;quot;https://informaticaenespaña.es&amp;quot;]
+
+[print(url) for url in urls if re.findall(&amp;quot;[ñ]&amp;quot;, url)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;https://informaticaenespaña.es
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Un ejemplo un tanto más complejo: en una lista de palabras, queremos encontrar si se hallan las palabras &lt;code&gt;niños&lt;/code&gt; y &lt;code&gt;niñas&lt;/code&gt;. Como solo se diferencias ambas cadenas en un carácter, podemos escribir:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+urls = [&amp;quot;hombres&amp;quot;, &amp;quot;mujeres&amp;quot;, &amp;quot;mascotas&amp;quot;, &amp;quot;niños&amp;quot;, &amp;quot;niñas&amp;quot;]
+
+[print(url) for url in urls if re.findall(&amp;quot;niñ[oa]s&amp;quot;, url)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;niños
+niñas
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: al escribir &lt;code&gt;[oa]&lt;/code&gt; no exigimos que deban estar presentes los dos caracteres y en ese preciso orden. La función &lt;code&gt;findall()&lt;/code&gt; nos arrojará una coincidencia cuando alguno de los dos esté presente (o ambos, siendo indiferente el orden en el que se encuentren en este último caso).&lt;/p&gt;
+
+&lt;p&gt;Esta estrategia es también útil cuando lidiamos con tildes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+urls = [&amp;quot;hombres&amp;quot;, &amp;quot;mujeres&amp;quot;, &amp;quot;mascotas&amp;quot;, &amp;quot;camión&amp;quot;, &amp;quot;camion&amp;quot;]
+
+[print(url) for url in urls if re.findall(&amp;quot;cami[oó]n&amp;quot;, url)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;camión
+camion
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/70/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
