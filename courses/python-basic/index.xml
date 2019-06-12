@@ -9462,5 +9462,128 @@ camion
 </description>
     </item>
     
+    <item>
+      <title>71. Expresiones regulares III</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb71-expresiones-regulares-iii/</link>
+      <pubDate>Wed, 12 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb71-expresiones-regulares-iii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Q4vXCQd1zwc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuaremos el estudio de las expresiones regulares analizando cómo trabajar con &lt;strong&gt;rangos&lt;/strong&gt;. Estos nos permiten buscar patrones indicando un rango de números, de caracteres, etc.&lt;/p&gt;
+
+&lt;p&gt;Por ejemplo, a partir de una lista de nombres, supongamos que estamos interesados en hallar todos aquellos que tengan letras comprendidas entre la &lt;code&gt;o&lt;/code&gt; y la &lt;code&gt;t&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombres = [&amp;quot;Ana&amp;quot;, &amp;quot;Pedro&amp;quot;, &amp;quot;María&amp;quot;, &amp;quot;Rosa&amp;quot;, &amp;quot;Sandra&amp;quot;, &amp;quot;Celia&amp;quot;]
+
+[print(nombre) for nombre in nombres if re.findall(&amp;quot;[o-t]&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Pedro
+María
+Rosa
+Sandra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: los rangos son &lt;em&gt;case sensitive&lt;/em&gt;, esto es, distinguen entre minúsculas y mayúsculas. Por ejemplo, si combinamos el rango anterior con el ancla &lt;code&gt;^&lt;/code&gt;, la ejecución no arrojará resultado alguno, porque todos los nombres están declarados con su inicial en mayúscula.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombres = [&amp;quot;Ana&amp;quot;, &amp;quot;Pedro&amp;quot;, &amp;quot;María&amp;quot;, &amp;quot;Rosa&amp;quot;, &amp;quot;Sandra&amp;quot;, &amp;quot;Celia&amp;quot;]
+
+[print(nombre) for nombre in nombres if re.findall(&amp;quot;^[o-t]&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, completando el rango solucionamos esta situación:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombres = [&amp;quot;Ana&amp;quot;, &amp;quot;Pedro&amp;quot;, &amp;quot;María&amp;quot;, &amp;quot;Rosa&amp;quot;, &amp;quot;Sandra&amp;quot;, &amp;quot;Celia&amp;quot;]
+
+[print(nombre) for nombre in nombres if re.findall(&amp;quot;^[o-tO-T]&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Pedro
+Rosa
+Sandra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, estudiemos el uso de rangos cuando se nos presenta una lista de códigos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+codigos = [&amp;quot;Ma1&amp;quot;, &amp;quot;Se1&amp;quot;, &amp;quot;Ma2&amp;quot;, &amp;quot;Ba1&amp;quot;, &amp;quot;Ma3&amp;quot;, &amp;quot;Va1&amp;quot;, &amp;quot;Va2&amp;quot;, &amp;quot;Ma4&amp;quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&amp;quot;Ma[0-3]&amp;quot;, codigo)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Ma1
+Ma2
+Ma3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, &lt;em&gt;Python&lt;/em&gt; nos permite la posibilidad de negar rangos, es decir, de obtener aquellos resultados que no se ajustan al patrón de búsqueda especificado. Para ello, antecediendo el rango, utilizamos el carácter &lt;code&gt;^&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+codigos = [&amp;quot;Ma1&amp;quot;, &amp;quot;Se1&amp;quot;, &amp;quot;Ma2&amp;quot;, &amp;quot;Ba1&amp;quot;, &amp;quot;Ma3&amp;quot;, &amp;quot;Va1&amp;quot;, &amp;quot;Va2&amp;quot;, &amp;quot;Ma4&amp;quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&amp;quot;Ma[^0-3]&amp;quot;, codigo)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Ma4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, agreguemos algunos códigos nuevos y sigamos experimentando el uso de rangos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+codigos = [&amp;quot;Ma1&amp;quot;, &amp;quot;Se1&amp;quot;, &amp;quot;Ma2&amp;quot;, &amp;quot;Ba1&amp;quot;, &amp;quot;Ma3&amp;quot;, &amp;quot;Va1&amp;quot;, &amp;quot;Va2&amp;quot;, &amp;quot;Ma4&amp;quot;,
+           &amp;quot;MaA&amp;quot;, &amp;quot;Ma5&amp;quot;, &amp;quot;MaB&amp;quot;, &amp;quot;MaC&amp;quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&amp;quot;Ma[0-3A-B]&amp;quot;, codigo)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Ma1
+Ma2
+Ma3
+MaA
+MaB
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, insertemos algunos caracteres especiales en mitad de ciertos códigos y veamos entonces cómo lidiar con ellos. Imaginemos que buscamos todos aquellos cuyo tercer carácter sea bien un punto, bien dos puntos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+codigos = [&amp;quot;Ma.1&amp;quot;, &amp;quot;Se1&amp;quot;, &amp;quot;Ma2&amp;quot;, &amp;quot;Ba1&amp;quot;, &amp;quot;Ma:3&amp;quot;, &amp;quot;Va1&amp;quot;, &amp;quot;Va2&amp;quot;, &amp;quot;Ma4&amp;quot;,
+           &amp;quot;MaA&amp;quot;, &amp;quot;Ma.5&amp;quot;, &amp;quot;MaB&amp;quot;, &amp;quot;Ma:C&amp;quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&amp;quot;Ma[.:]&amp;quot;, codigo)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Ma.1
+Ma:3
+Ma.5
+Ma:C
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/71/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>

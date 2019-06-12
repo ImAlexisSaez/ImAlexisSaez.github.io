@@ -28,12 +28,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección estudiaremos el uso de las funciones
- super() e isinstance().  Partimos del último ejemplo de la lección anterior:
-class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares analizando cómo trabajar con rangos. Estos nos permiten buscar patrones indicando un rango de números, de caracteres, etc.
+Por ejemplo, a partir de una lista de nombres, supongamos que estamos interesados en hallar todos aquellos que tengan letras comprendidas entre la o y la t:
+import re nombres = [&quot;Ana&quot;, &quot;Pedro&quot;, &quot;María&quot;, &quot;Rosa&quot;, &quot;Sandra&quot;, &quot;Celia&quot;] [print(nombre) for nombre in nombres if re.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb71-expresiones-regulares-iii/">
 
   
 
@@ -112,7 +112,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb71-expresiones-regulares-iii/">
 
   
   
@@ -126,28 +126,28 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb31-poo-viii/">
-  <meta property="og:title" content="31. Programación orientada a objetos VIII | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección estudiaremos el uso de las funciones
- super() e isinstance().  Partimos del último ejemplo de la lección anterior:
-class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb71-expresiones-regulares-iii/">
+  <meta property="og:title" content="71. Expresiones regulares III | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares analizando cómo trabajar con rangos. Estos nos permiten buscar patrones indicando un rango de números, de caracteres, etc.
+Por ejemplo, a partir de una lista de nombres, supongamos que estamos interesados en hallar todos aquellos que tengan letras comprendidas entre la o y la t:
+import re nombres = [&quot;Ana&quot;, &quot;Pedro&quot;, &quot;María&quot;, &quot;Rosa&quot;, &quot;Sandra&quot;, &quot;Celia&quot;] [print(nombre) for nombre in nombres if re."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-10T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-12T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-10T00:00:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-12T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>31. Programación orientada a objetos VIII | Infinitos Contrastes</title>
+
+
+  <title>71. Expresiones regulares III | Infinitos Contrastes</title>
 
 </head>
 
@@ -504,7 +504,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
         <a href="/courses/python-basic/pb30-poo-vii/">30. POO VII</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb31-poo-viii/">31. POO VIII</a>
       </li>
       
@@ -664,7 +664,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
         <a href="/courses/python-basic/pb70-expresiones-regulares-ii/">70. RegExp II</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb71-expresiones-regulares-iii/">71. RegExp III</a>
       </li>
       
@@ -704,7 +704,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">31. Programación orientada a objetos VIII</h1>
+          <h1 itemprop="name">71. Expresiones regulares III</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -713,277 +713,114 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/oe04X1B14YY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/Q4vXCQd1zwc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>En esta lección estudiaremos el uso de las funciones</p>
+<p>En esta lección, continuaremos el estudio de las expresiones regulares analizando cómo trabajar con <strong>rangos</strong>. Estos nos permiten buscar patrones indicando un rango de números, de caracteres, etc.</p>
 
-<ul>
-<li><code>super()</code> e</li>
-<li><code>isinstance()</code>.</li>
-</ul>
+<p>Por ejemplo, a partir de una lista de nombres, supongamos que estamos interesados en hallar todos aquellos que tengan letras comprendidas entre la <code>o</code> y la <code>t</code>:</p>
 
-<p>Partimos del último ejemplo de la lección anterior:</p>
+<pre><code class="language-python">import re
 
-<pre><code class="language-python">class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
+nombres = [&quot;Ana&quot;, &quot;Pedro&quot;, &quot;María&quot;, &quot;Rosa&quot;, &quot;Sandra&quot;, &quot;Celia&quot;]
 
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-
-
-class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-
-
-class VehiculoElec():
-    def __init__(self):
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
-
-
-class BicicletaElec(VehiculoElec, Vehiculo):
-    pass
+[print(nombre) for nombre in nombres if re.findall(&quot;[o-t]&quot;, nombre)]
 </code></pre>
 
-<p>Si queremos crear un objeto de la clase <code>BicicletaElec</code> que posea una marca y un modelo, tenemos dos opciones disponibles:</p>
-
-<ul>
-<li>Acudir al método <code>__init__()</code> de la clase <code>VehiculoElec</code> y copiar las líneas que nos interesen del método homónimo de la clase <code>Vehiculo</code>. No obstante, este enfoque es, cuanto menos, poco elegante.</li>
-<li>Utilizar la función <code>super()</code>, cuya utilidad reside en que procede a llamar al método de la clase padre.</li>
-</ul>
-
-<p>Veamos esta segunda aproximación con un ejemplo un tanto más sencillo:</p>
-
-<pre><code class="language-python">class Persona():
-    def __init__(self, nombre, edad, residencia):
-        self.nombre = nombre
-        self.edad = edad
-        self.residencia = residencia
-
-    def describir(self):
-        print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
-              self.residencia)
-
-
-class Empleado(Persona):
-    def __init__(self, salario, antiguedad):
-        self.salario = salario
-        self.antiguedad = antiguedad
+<pre><code class="language-bash">Pedro
+María
+Rosa
+Sandra
 </code></pre>
 
-<p>Ahora podríamos comenzar a construir objetos de ambas clases:</p>
+<p><em>Nota</em>: los rangos son <em>case sensitive</em>, esto es, distinguen entre minúsculas y mayúsculas. Por ejemplo, si combinamos el rango anterior con el ancla <code>^</code>, la ejecución no arrojará resultado alguno, porque todos los nombres están declarados con su inicial en mayúscula.</p>
 
-<pre><code class="language-python">antonio = Persona(&quot;Antonio&quot;, 55, &quot;España&quot;)
+<pre><code class="language-python">import re
 
-antonio.describir()
+nombres = [&quot;Ana&quot;, &quot;Pedro&quot;, &quot;María&quot;, &quot;Rosa&quot;, &quot;Sandra&quot;, &quot;Celia&quot;]
+
+[print(nombre) for nombre in nombres if re.findall(&quot;^[o-t]&quot;, nombre)]
 </code></pre>
 
-<pre><code class="language-bash">Nombre: Antonio 
-Edad: 55 
-Residencia: España
+<p>No obstante, completando el rango solucionamos esta situación:</p>
+
+<pre><code class="language-python">import re
+
+nombres = [&quot;Ana&quot;, &quot;Pedro&quot;, &quot;María&quot;, &quot;Rosa&quot;, &quot;Sandra&quot;, &quot;Celia&quot;]
+
+[print(nombre) for nombre in nombres if re.findall(&quot;^[o-tO-T]&quot;, nombre)]
 </code></pre>
 
-<p>Para constuir un objeto de la clase <code>Empleado</code>, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de <code>Persona</code>. No obstante, a la hora de emplear el método <code>describir()</code> encontraremos problemas tal y como están programadas ambas clases:</p>
-
-<pre><code class="language-python">juan = Empleado(1500, 15)
-
-juan.describir()
+<pre><code class="language-bash">Pedro
+Rosa
+Sandra
 </code></pre>
 
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;prac31_poo8_2.py&quot;, line 24, in &lt;module&gt;
-    juan.describir()
-  File &quot;prac31_poo8_2.py&quot;, line 8, in describir
-    print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
-AttributeError: 'Empleado' object has no attribute 'nombre'
+<p>A continuación, estudiemos el uso de rangos cuando se nos presenta una lista de códigos:</p>
+
+<pre><code class="language-python">import re
+
+codigos = [&quot;Ma1&quot;, &quot;Se1&quot;, &quot;Ma2&quot;, &quot;Ba1&quot;, &quot;Ma3&quot;, &quot;Va1&quot;, &quot;Va2&quot;, &quot;Ma4&quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&quot;Ma[0-3]&quot;, codigo)]
 </code></pre>
 
-<p>Podemos reescribir el constructor de la clase <code>Empleado</code>, haciendo uso de la función <code>super()</code>, como sigue:</p>
-
-<pre><code class="language-python">class Empleado(Persona):
-    def __init__(self, salario, antiguedad):
-        super().__init__(&quot;Juan&quot;, 33, &quot;Italia&quot;)
-        self.salario = salario
-        self.antiguedad = antiguedad
+<pre><code class="language-bash">Ma1
+Ma2
+Ma3
 </code></pre>
 
-<p>De manera que ahora el código no arrojará error alguno:</p>
+<p>Por otro lado, <em>Python</em> nos permite la posibilidad de negar rangos, es decir, de obtener aquellos resultados que no se ajustan al patrón de búsqueda especificado. Para ello, antecediendo el rango, utilizamos el carácter <code>^</code>:</p>
 
-<pre><code class="language-python">juan = Empleado(1500, 15)
+<pre><code class="language-python">import re
 
-juan.describir()
+codigos = [&quot;Ma1&quot;, &quot;Se1&quot;, &quot;Ma2&quot;, &quot;Ba1&quot;, &quot;Ma3&quot;, &quot;Va1&quot;, &quot;Va2&quot;, &quot;Ma4&quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&quot;Ma[^0-3]&quot;, codigo)]
 </code></pre>
 
-<pre><code class="language-bash">Nombre: Juan 
-Edad: 33 
-Residencia: Italia
+<pre><code class="language-bash">Ma4
 </code></pre>
 
-<p>No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:</p>
+<p>Acto seguido, agreguemos algunos códigos nuevos y sigamos experimentando el uso de rangos:</p>
 
-<pre><code class="language-python">class Empleado(Persona):
-    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado,
-                 residencia_empleado):
-        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
-        self.salario = salario
-        self.antiguedad = antiguedad
+<pre><code class="language-python">import re
 
-    def describir(self):
-        super().describir()
-        print(&quot;Salario:&quot;, self.salario, &quot;\nAntigüedad:&quot;, self.antiguedad)
+codigos = [&quot;Ma1&quot;, &quot;Se1&quot;, &quot;Ma2&quot;, &quot;Ba1&quot;, &quot;Ma3&quot;, &quot;Va1&quot;, &quot;Va2&quot;, &quot;Ma4&quot;,
+           &quot;MaA&quot;, &quot;Ma5&quot;, &quot;MaB&quot;, &quot;MaC&quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&quot;Ma[0-3A-B]&quot;, codigo)]
 </code></pre>
 
-<p>De paso, hemos mejorado también el método <code>describir()</code>, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,</p>
-
-<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
-
-juan.describir()
+<pre><code class="language-bash">Ma1
+Ma2
+Ma3
+MaA
+MaB
 </code></pre>
 
-<pre><code class="language-bash">Nombre: Juan 
-Edad: 33 
-Residencia: Italia
-Salario: 1500 
-Antigüedad: 15
+<p>Ahora, insertemos algunos caracteres especiales en mitad de ciertos códigos y veamos entonces cómo lidiar con ellos. Imaginemos que buscamos todos aquellos cuyo tercer carácter sea bien un punto, bien dos puntos:</p>
+
+<pre><code class="language-python">import re
+
+codigos = [&quot;Ma.1&quot;, &quot;Se1&quot;, &quot;Ma2&quot;, &quot;Ba1&quot;, &quot;Ma:3&quot;, &quot;Va1&quot;, &quot;Va2&quot;, &quot;Ma4&quot;,
+           &quot;MaA&quot;, &quot;Ma.5&quot;, &quot;MaB&quot;, &quot;Ma:C&quot;]
+
+[print(codigo) for codigo in codigos if re.findall(&quot;Ma[.:]&quot;, codigo)]
 </code></pre>
 
-<p>La función <code>isinstance()</code> nos informa si un objeto es instancia de una clase determinada:</p>
-
-<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
-
-juan.describir()
-
-print(isinstance(juan, Persona))  # True
-print(isinstance(juan, Empleado))  # True
-
-marco = Persona(&quot;Marco&quot;, 51, &quot;Francia&quot;)
-
-print(isinstance(marco, Persona))  # True
-print(isinstance(marco, Empleado))  # False
-</code></pre>
-
-<p>Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.</p>
-
-<pre><code class="language-python">class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-
-
-class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-
-
-class VehiculoElec(Vehiculo):
-    def __init__(self, marca, modelo):
-        super().__init__(marca, modelo)
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
-
-
-class BicicletaElec(VehiculoElec, Vehiculo):
-    pass
-</code></pre>
-
-<p>Notemos que:</p>
-
-<ul>
-<li>Hemos utilizado la función <code>super()</code> en el método <code>__init__()</code> de <code>VehiculoElec</code>.</li>
-<li>Hemos declarado que la clase <code>VehiculoElec</code> hereda de <code>Vehiculo</code>.</li>
-</ul>
-
-<p>Así,</p>
-
-<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
-
-mi_bici.estado()
-</code></pre>
-
-<pre><code class="language-bash">Marca: Orbea 
-Modelo: HCI30 
-En marcha: False 
-Acelerando: False 
-Frenando: False
+<pre><code class="language-bash">Ma.1
+Ma:3
+Ma.5
+Ma:C
 </code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/31/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/71/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -1000,15 +837,9 @@ Frenando: False
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb30-poo-vii/" rel="next">30. Programación orientada a objetos VII</a>
+    <a href="/courses/python-basic/pb70-expresiones-regulares-ii/" rel="next">70. Expresiones regulares II</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb32-poo-ix/" rel="prev">32. Programación orientada a objetos IX</a>
-  </div>
   
 </div>
 
@@ -1017,7 +848,7 @@ Frenando: False
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-10
+          Última actualización el 2019-06-12
         </div>
 
       </article>
