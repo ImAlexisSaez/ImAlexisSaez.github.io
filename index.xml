@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 13 Jun 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16333,6 +16333,102 @@ codigos = [
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/72/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>73. Decoradoras I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb73-decoradoras-i/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb73-decoradoras-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/DQXm6bIZgvk&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, introduciremos el uso de las &lt;strong&gt;decoradoras&lt;/strong&gt; (o &lt;em&gt;funciones decoradoras&lt;/em&gt;), que son funciones que añaden ciertos comportamientos a otras (de ahí el nombre, puesto que las &amp;ldquo;decoran&amp;rdquo; incorporando funcionalidades adicionales).&lt;/p&gt;
+
+&lt;p&gt;La estructura de una decoradora, de forma abstracta, es la siguiente:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Son tres funciones (&lt;code&gt;A&lt;/code&gt;, &lt;code&gt;B&lt;/code&gt; y &lt;code&gt;C&lt;/code&gt;), donde &lt;code&gt;A&lt;/code&gt; recibe como parámetro a &lt;code&gt;B&lt;/code&gt; para devolver &lt;code&gt;C&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Esto es, una decoradora devuelve siempre una función.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Su sintaxis queda como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def funcion_decoradora(funcion):  # funcion_A(funcion_B)
+    def funcion_interna():        # funcion_C
+        # codigo funcion interna
+    return funcion_interna
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Veamos su aplicación práctica mediante un ejemplo muy sencillo, en el que la utilidad de la decoradora será casi nula y nos servirá únicamente para comprender su funcionamiento, sin añadir excesiva complejidad al código fuente.&lt;/p&gt;
+
+&lt;p&gt;En primer lugar, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def suma():
+    print(15 + 20)
+
+
+def resta():
+    print(30 - 10)
+
+
+suma()
+resta()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;35
+20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, supongamos que deseamos añadir a todas las funciones cierto comportamiento adicional. Para ello, podemos acudir a su código y modificarlas una por una (en este ejemplo son dos, pero imaginemos un caso donde hubiera cientos de funciones) o utilizar una decoradora:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def funcion_decoradora(funcion_parametro):
+    def funcion_interior():
+        # Acciones adicionales que decoran
+        print(&amp;quot;Vamos a realizar un cálculo: &amp;quot;)
+        funcion_parametro()
+        # Acciones adicionales que decoran
+        print(&amp;quot;Hemos terminado el cálculo.&amp;quot;)
+    return funcion_interior
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, para añadir el decorador a cualquiera de las funciones ya previamente existentes, escribimos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@funcion_decoradora
+def suma():
+    print(15 + 20)
+
+
+def resta():
+    print(30 - 10)
+
+
+suma()
+resta()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Vamos a realizar un cálculo: 
+35
+Hemos terminado el cálculo.
+20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notemos cómo el decorador solo afecta a la función &lt;code&gt;suma()&lt;/code&gt;, pues así lo hemos declarado arriba. Bastaría replicar la estrategia para decorar asimismo la función &lt;code&gt;resta()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/73/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

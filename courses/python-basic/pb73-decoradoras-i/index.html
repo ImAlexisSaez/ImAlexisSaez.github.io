@@ -28,13 +28,12 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, analizaremos cómo trabajar con el widget Label, perteneciente a la librería tkinter, que nos permite mostrar texto o imágenes en nuestras interfaces gráficas. No es un elemento con el que podamos interactuar, es decir, no podremos borrarlo, arrastrarlo, etc.
-Su sintaxis es:
-variable = Label(contenedor, opciones)  En esta página podemos consultar qué opciones disponibles ofrece el widget Label.
-Para ver en acción este widget, reutilicemos como base parte del código generado en lecciones anteriores:">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, introduciremos el uso de las decoradoras (o funciones decoradoras), que son funciones que añaden ciertos comportamientos a otras (de ahí el nombre, puesto que las &ldquo;decoran&rdquo; incorporando funcionalidades adicionales).
+La estructura de una decoradora, de forma abstracta, es la siguiente:
+ Son tres funciones (A, B y C), donde A recibe como parámetro a B para devolver C. Esto es, una decoradora devuelve siempre una función.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb44-interfaces-graficas-iii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb73-decoradoras-i/">
 
   
 
@@ -113,7 +112,7 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb44-interfaces-graficas-iii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb73-decoradoras-i/">
 
   
   
@@ -127,29 +126,28 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb44-interfaces-graficas-iii/">
-  <meta property="og:title" content="44. Interfaces gráficas III | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, analizaremos cómo trabajar con el widget Label, perteneciente a la librería tkinter, que nos permite mostrar texto o imágenes en nuestras interfaces gráficas. No es un elemento con el que podamos interactuar, es decir, no podremos borrarlo, arrastrarlo, etc.
-Su sintaxis es:
-variable = Label(contenedor, opciones)  En esta página podemos consultar qué opciones disponibles ofrece el widget Label.
-Para ver en acción este widget, reutilicemos como base parte del código generado en lecciones anteriores:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb73-decoradoras-i/">
+  <meta property="og:title" content="73. Decoradoras I | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, introduciremos el uso de las decoradoras (o funciones decoradoras), que son funciones que añaden ciertos comportamientos a otras (de ahí el nombre, puesto que las &ldquo;decoran&rdquo; incorporando funcionalidades adicionales).
+La estructura de una decoradora, de forma abstracta, es la siguiente:
+ Son tres funciones (A, B y C), donde A recibe como parámetro a B para devolver C. Esto es, una decoradora devuelve siempre una función."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-21T00:00:02&#43;01:00">
+  <meta property="article:published_time" content="2019-06-13T00:00:02&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-21T00:00:02&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-13T00:00:02&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>44. Interfaces gráficas III | Infinitos Contrastes</title>
+
+
+  <title>73. Decoradoras I | Infinitos Contrastes</title>
 
 </head>
 
@@ -558,7 +556,7 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
         <a href="/courses/python-basic/pb43-interfaces-graficas-ii/">43. Interfaces II</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb44-interfaces-graficas-iii/">44. Interfaces III</a>
       </li>
       
@@ -674,7 +672,7 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
         <a href="/courses/python-basic/pb72-expresiones-regulares-iv/">72. RegExp IV</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb73-decoradoras-i/">73. Decoradoras I</a>
       </li>
       
@@ -714,7 +712,7 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">44. Interfaces gráficas III</h1>
+          <h1 itemprop="name">73. Decoradoras I</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -723,200 +721,87 @@ Para ver en acción este widget, reutilicemos como base parte del código genera
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/Nf4-gvf-tNg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/DQXm6bIZgvk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>En esta lección, analizaremos cómo trabajar con el <em>widget</em> <code>Label</code>, perteneciente a la librería <code>tkinter</code>, que nos permite mostrar texto o imágenes en nuestras interfaces gráficas. No es un elemento con el que podamos interactuar, es decir, no podremos borrarlo, arrastrarlo, etc.</p>
+<p>En esta lección, introduciremos el uso de las <strong>decoradoras</strong> (o <em>funciones decoradoras</em>), que son funciones que añaden ciertos comportamientos a otras (de ahí el nombre, puesto que las &ldquo;decoran&rdquo; incorporando funcionalidades adicionales).</p>
 
-<p>Su sintaxis es:</p>
+<p>La estructura de una decoradora, de forma abstracta, es la siguiente:</p>
 
-<pre><code class="language-python">variable = Label(contenedor, opciones)
+<ul>
+<li>Son tres funciones (<code>A</code>, <code>B</code> y <code>C</code>), donde <code>A</code> recibe como parámetro a <code>B</code> para devolver <code>C</code>.</li>
+<li>Esto es, una decoradora devuelve siempre una función.</li>
+</ul>
+
+<p>Su sintaxis queda como sigue:</p>
+
+<pre><code class="language-python">def funcion_decoradora(funcion):  # funcion_A(funcion_B)
+    def funcion_interna():        # funcion_C
+        # codigo funcion interna
+    return funcion_interna
 </code></pre>
 
-<p>En <a href="http://effbot.org/tkinterbook/label.htm" target="_blank">esta página</a> podemos consultar qué opciones disponibles ofrece el <em>widget</em> <code>Label</code>.</p>
+<p>Veamos su aplicación práctica mediante un ejemplo muy sencillo, en el que la utilidad de la decoradora será casi nula y nos servirá únicamente para comprender su funcionamiento, sin añadir excesiva complejidad al código fuente.</p>
 
-<p>Para ver en acción este <em>widget</em>, reutilicemos como base parte del código generado en lecciones anteriores:</p>
+<p>En primer lugar, tecleamos:</p>
 
-<pre><code class="language-python">from tkinter import Tk, Frame
+<pre><code class="language-python">def suma():
+    print(15 + 20)
 
-root = Tk()
 
-root.title(&quot;Probando el widget Label&quot;)
-root.resizable(width=True, height=True)
-root.iconbitmap(&quot;icon.ico&quot;)
-root.config(bg=&quot;lightblue&quot;)
+def resta():
+    print(30 - 10)
 
-frame = Frame(root, width=500, height=400)
 
-frame.pack()
-
-root.mainloop()
+suma()
+resta()
 </code></pre>
 
-<p>Añadimos ahora, antes de la instrucción <code>root.mainloop()</code>, las líneas de código:</p>
-
-<pre><code class="language-python">label = Label(frame, text=&quot;Mi primera etiqueta.&quot;)
-label.pack()
+<pre><code class="language-bash">35
+20
 </code></pre>
 
+<p>Acto seguido, supongamos que deseamos añadir a todas las funciones cierto comportamiento adicional. Para ello, podemos acudir a su código y modificarlas una por una (en este ejemplo son dos, pero imaginemos un caso donde hubiera cientos de funciones) o utilizar una decoradora:</p>
 
-
-
-<figure>
-
-<img src="/courses/python-basic/img/pb44-img01.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Primer contacto con la clase <code>Label</code>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p>Quedando el resultado de la ejecución como una ventana bastante reducida porque, recordemos, la raíz se adapta al tamaño de sus elementos integrados (aunque le hayamos indicado ciertas dimensiones previamente). Ello se debe al uso del método <code>pack()</code>. Veamos el efecto que produce utilizar la función <code>place()</code> en su lugar, pasándole las coordenadas donde deseamos situar el <em>widget</em>:</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame, Label
-
-root = Tk()
-
-root.title(&quot;Probando el widget Label&quot;)
-root.resizable(width=True, height=True)
-root.iconbitmap(&quot;icon.ico&quot;)
-root.config(bg=&quot;lightblue&quot;)
-
-frame = Frame(root, width=500, height=400)
-
-frame.pack()
-
-label = Label(frame, text=&quot;Mi primera etiqueta.&quot;)
-label.place(x=100, y=200)
-
-root.mainloop()
+<pre><code class="language-python">def funcion_decoradora(funcion_parametro):
+    def funcion_interior():
+        # Acciones adicionales que decoran
+        print(&quot;Vamos a realizar un cálculo: &quot;)
+        funcion_parametro()
+        # Acciones adicionales que decoran
+        print(&quot;Hemos terminado el cálculo.&quot;)
+    return funcion_interior
 </code></pre>
 
+<p>A continuación, para añadir el decorador a cualquiera de las funciones ya previamente existentes, escribimos:</p>
+
+<pre><code class="language-python">@funcion_decoradora
+def suma():
+    print(15 + 20)
 
 
-
-<figure>
-
-<img src="/courses/python-basic/img/pb44-img02.png" />
+def resta():
+    print(30 - 10)
 
 
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Utilizando la función <code>place()</code>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p><em>Nota</em>: <em>Python</em> utiliza un curioso sistema de coordenadas. La coordenada <code>x</code> indica la distancia horizontal al comienzo del <em>widget</em> tal como estamos acostumbrados en matemáticas. Sin embargo, la coordenada <code>y</code> indica la distancia vertical al comienzo del <em>widget</em> tomando como referencia la parte superior de la ventana y siendo los valores positivos desplazamientos hacia abajo.</p>
-
-<p>Si no vamos a utilizar en ningún momento la variable <code>label</code>, podemos aligerar un tanto el código escribiendo:</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame, Label
-
-root = Tk()
-
-root.title(&quot;Probando el widget Label&quot;)
-root.resizable(width=True, height=True)
-root.iconbitmap(&quot;icon.ico&quot;)
-root.config(bg=&quot;lightblue&quot;)
-
-frame = Frame(root, width=500, height=400)
-
-frame.pack()
-
-Label(frame, text=&quot;Mi primera etiqueta.&quot;).place(x=100, y=200)
-
-root.mainloop()
+suma()
+resta()
 </code></pre>
 
-<p>A partir de aquí, ya únicamente nos queda experimentar con las diferentes opciones asociadas al <em>widget</em> <code>Label</code>:</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame, Label
-
-root = Tk()
-
-root.title(&quot;Probando el widget Label&quot;)
-root.resizable(width=True, height=True)
-root.iconbitmap(&quot;icon.ico&quot;)
-root.config(bg=&quot;lightblue&quot;)
-
-frame = Frame(root, width=500, height=400)
-
-frame.pack()
-
-Label(frame, text=&quot;Mi primera etiqueta.&quot;, fg=&quot;tomato&quot;,
-      font=(&quot;Arial&quot;, 18)).place(x=100, y=200)
-
-root.mainloop()
+<pre><code class="language-bash">Vamos a realizar un cálculo: 
+35
+Hemos terminado el cálculo.
+20
 </code></pre>
 
-
-
-
-<figure>
-
-<img src="/courses/python-basic/img/pb44-img03.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Probando opciones adicionales para <code>Label</code>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p>Adicionalmente, el <em>widget</em> <code>Label</code> nos permite incluir (de forma nativa en la librería <code>tkinter</code>) imágenes de tipo <em>gif</em> o <em>png</em>. Por ejemplo, insertemos en nuestra aplicación <a href="https://www.freepng.es/png-lwhgke/" target="_blank">esta imagen</a>, que, en un alarde de originalidad, llamaremos <code>avengers.png</code>:</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame, Label, PhotoImage
-
-root = Tk()
-
-root.title(&quot;Probando el widget Label&quot;)
-root.resizable(width=True, height=True)
-root.iconbitmap(&quot;icon.ico&quot;)
-root.config(bg=&quot;lightblue&quot;)
-
-frame = Frame(root, width=500, height=400)
-
-frame.pack()
-
-imagen = PhotoImage(file=&quot;avengers.png&quot;)
-
-Label(frame, image=imagen).pack()  # .place() es otra posibilidad
-
-root.mainloop()
-</code></pre>
-
-
-
-
-<figure>
-
-<img src="/courses/python-basic/img/pb44-img04.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Una imagen como <code>Label</code>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p><em>Nota</em>: para que la ventana se adaptase automáticamente al tamaño de la imagen descargada, he utilizado el método <code>pack()</code> en lugar de la función <code>place()</code>. No obstante, con ambas opciones se puede conseguir el mismo resultado si ajustamos de manera fina sus correspondientes opciones.</p>
+<p>Notemos cómo el decorador solo afecta a la función <code>suma()</code>, pues así lo hemos declarado arriba. Bastaría replicar la estrategia para decorar asimismo la función <code>resta()</code>.</p>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/44/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/73/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -933,15 +818,9 @@ root.mainloop()
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb43-interfaces-graficas-ii/" rel="next">43. Interfaces gráficas II</a>
+    <a href="/courses/python-basic/pb72-expresiones-regulares-iv/" rel="next">72. Expresiones regulares IV</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb45-interfaces-graficas-iv/" rel="prev">45. Interfaces gráficas IV</a>
-  </div>
   
 </div>
 
@@ -950,7 +829,7 @@ root.mainloop()
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-21
+          Última actualización el 2019-06-13
         </div>
 
       </article>
