@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Un módulo es un archivo con extensión .py, .pyc (Python compilado) o fichero escrito en C para CPython, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.
-Sirve para organizar y reutilizar el código (modularización y reutilización). Se genera uno creando un archivo con extensión .py (o .pyc o archivo en C) y guardándolo donde nos interese.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones match() y search() del módulo re. La función match() busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.
+import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quot; nombre3 = &quot;María López&quot; if re.match(&quot;Sandra&quot;, nombre1): print(&quot;Hemos encontrado el nombre.&quot;) else: print(&quot;No hemos encontrado el nombre.">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb34-modulos/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/">
 
   
 
@@ -111,7 +111,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb34-modulos/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/">
 
   
   
@@ -125,27 +125,27 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb34-modulos/">
-  <meta property="og:title" content="34. Módulos | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Un módulo es un archivo con extensión .py, .pyc (Python compilado) o fichero escrito en C para CPython, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.
-Sirve para organizar y reutilizar el código (modularización y reutilización). Se genera uno creando un archivo con extensión .py (o .pyc o archivo en C) y guardándolo donde nos interese."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/">
+  <meta property="og:title" content="72. Expresiones regulares IV | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones match() y search() del módulo re. La función match() busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.
+import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quot; nombre3 = &quot;María López&quot; if re.match(&quot;Sandra&quot;, nombre1): print(&quot;Hemos encontrado el nombre.&quot;) else: print(&quot;No hemos encontrado el nombre."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-12T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-13T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-12T00:00:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-13T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>34. Módulos | Infinitos Contrastes</title>
+
+
+  <title>72. Expresiones regulares IV | Infinitos Contrastes</title>
 
 </head>
 
@@ -514,7 +514,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
         <a href="/courses/python-basic/pb33-cadenas/">33. Cadenas</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb34-modulos/">34. Módulos</a>
       </li>
       
@@ -666,7 +666,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
         <a href="/courses/python-basic/pb71-expresiones-regulares-iii/">71. RegExp III</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb72-expresiones-regulares-iv/">72. RegExp IV</a>
       </li>
       
@@ -706,7 +706,7 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">34. Módulos</h1>
+          <h1 itemprop="name">72. Expresiones regulares IV</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -715,164 +715,148 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/t93x-vnFvP4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/u3WBRgpxQcc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Un <strong>módulo</strong> es un archivo con extensión <code>.py</code>, <code>.pyc</code> (Python compilado) o fichero escrito en <em>C</em> para <em>CPython</em>, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.</p>
+<p>En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones <code>match()</code> y <code>search()</code> del módulo <code>re</code>. La función <code>match()</code> busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.</p>
 
-<p>Sirve para organizar y reutilizar el código (<strong>modularización</strong> y <strong>reutilización</strong>). Se genera uno creando un archivo con extensión <code>.py</code> (o <code>.pyc</code> o archivo en C) y guardándolo donde nos interese.</p>
+<pre><code class="language-python">import re
 
-<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
+nombre1 = &quot;Sandra López&quot;
+nombre2 = &quot;Antonio Gómez&quot;
+nombre3 = &quot;María López&quot;
 
-<pre><code class="language-python">def sumar(op1, op2):
-    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
-
-
-def restar(op1, op2):
-    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
-
-
-def multiplicar(op1, op2):
-    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+if re.match(&quot;Sandra&quot;, nombre1):
+    print(&quot;Hemos encontrado el nombre.&quot;)
+else:
+    print(&quot;No hemos encontrado el nombre.&quot;)
 </code></pre>
 
-<p>Ahora, generamos otro archivo, <code>script_1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
-
-<pre><code class="language-python">import modulo_matematicas as modulo
-
-modulo.sumar(5, 7)
-
-modulo.restar(9, 5)
-
-modulo.multiplicar(4, 9)
+<pre><code class="language-bash">Hemos encontrado el nombre.
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la suma es: 12
-El resultado de la resta es: 4
-El resultado de la multiplicación es: 36
+<p>Por otro lado, podemos evitar el comportamiento <em>case sensitive</em> de esta función mediante el parámetro <code>re.IGNORECASE</code>. Cambiemos <code>Sandra</code> por <code>sandra</code> y comprobémoslo:</p>
+
+<pre><code class="language-python">import re
+
+nombre1 = &quot;Sandra López&quot;
+nombre2 = &quot;Antonio Gómez&quot;
+nombre3 = &quot;María López&quot;
+
+if re.match(&quot;sandra&quot;, nombre1, re.IGNORECASE):
+    print(&quot;Hemos encontrado el nombre.&quot;)
+else:
+    print(&quot;No hemos encontrado el nombre.&quot;)
 </code></pre>
 
-<p>Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción <code>as</code>, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.</p>
-
-<p>Una alternativa a esta estrategia la encontramos en el fichero <code>script_2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
-
-<pre><code class="language-python">from modulo_matematicas import sumar
-
-sumar(5, 7)
+<pre><code class="language-bash">Hemos encontrado el nombre.
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la suma es: 12
+<p>Además, tenemos a nuestra disposición el uso de comodines en los patrones de búsqueda. Así, si añadimos dos nuevos nombres &ldquo;parecidos&rdquo;, <code>Lara</code> y <code>Jara</code>, mediante el carácter <code>.</code> (que representa un carácter qualquiera sin determinar) podemos comprobar si ambos pertenecen o no a un listado de nombres:</p>
+
+<pre><code class="language-python">import re
+
+nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María López&quot;,
+           &quot;Jara Martín&quot;, &quot;Lara Pérez&quot;]
+
+[print(nombre, end=&quot;\n&quot;) for nombre in nombres if re.match(&quot;.ara&quot;, nombre)]
 </code></pre>
 
-<p>En el bloque de código anterior, únicamente hemos importado la función <code>sumar()</code> de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
-
-<pre><code class="language-python">from modulo_matematicas import sumar, restar
-
-sumar(5, 7)
-
-restar(12, 6)
+<pre><code class="language-bash">Jara Martín
+Lara Pérez
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la suma es: 12
-El resultado de la resta es: 6
+<p>A continuación, veamos cómo emplear el patrón <code>\d</code> para averiguar si una cadena comienza o no por un número:</p>
+
+<pre><code class="language-python">import re
+
+datos = [&quot;Alexis Sáez&quot;, &quot;123456789&quot;, &quot;Number1&quot;]
+
+[print(d) for d in datos if re.match(&quot;\d&quot;, d)]
 </code></pre>
 
-<pre><code class="language-python">from modulo_matematicas import *
-
-sumar(5, 7)
-
-restar(12, 6)
-
-multiplicar(12, 12)
+<pre><code class="language-bash">123456789
 </code></pre>
 
-<pre><code class="language-bash">El resultado de la suma es: 12
-El resultado de la resta es: 6
-El resultado de la multiplicación es: 144
+<p>Ahora, cambiemos de tercio y estudiemos la función <code>search()</code> que, a diferencia de <code>match()</code> (que se limita a buscar al comienzo de un texto), examina la cadena de texto completa. Retomemos el ejemplo de los nombres y busquemos la aparición de ciertos apellidos concretos:</p>
+
+<pre><code class="language-python">import re
+
+nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María López&quot;,
+           &quot;Jara Martín&quot;, &quot;Lara Pérez&quot;]
+
+[print(nombre, end=&quot;\n&quot;) for nombre in nombres if re.search(&quot;López&quot;, nombre)]
 </code></pre>
 
-<p>No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter <code>*</code> provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.</p>
-
-<p>Creemos un módulo, <code>modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
-
-<pre><code class="language-python">class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-
-
-class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-
-
-class VehiculoElec(Vehiculo):
-    def __init__(self, marca, modelo):
-        super().__init__(marca, modelo)
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
+<pre><code class="language-bash">Sandra López
+María López
 </code></pre>
 
-<p>Y ahora, en el fichero <code>script_5.py</code> tecleamos:</p>
+<p>No obstante, la principal utilidad de <code>search()</code> reside en la búsqueda de determinados patrones dentro de una cadena de caracteres de extensión considerable:</p>
 
-<pre><code class="language-python">from modulo_vehiculos import *
+<pre><code class="language-python">import re
 
-mi_coche = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
-mi_coche.estado()
+codigos = [
+    '''
+    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+    purus massa, placerat id pretium ac, ornare eleifend ante.
+    ''',
+    '''
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+    placerat id pretium ac, ornare eleifend ante.
+    ''',
+    '''
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+    leo erat, varius non laoreet sed, cursus ut tortor. Morbi maximus
+    pulvinar ante, ut pulvinar ex malesuada blandit. Maecenas venenatis,
+    sapien vitae sodales viverra, ante urna tincidunt tellus, a faucibus
+    elit dui congue dui. Quisque congue sed ex in sollicitudin.
+    Pellentesque luctus justo quis felis feugiat, et semper erat laoreet.
+    Curabitur id dui arcu. Curabitur purus massa, placerat id pretium ac,
+    ornare eleifend ante.
+    ''']
+
+[print(c, end=&quot;\n&quot;) for c in codigos if re.search(&quot;42&quot;, c)]
 </code></pre>
 
-<pre><code class="language-bash">Marca: Mazda 
-Modelo: MX5 
-En marcha: False 
-Acelerando: False 
-Frenando: False
+<pre><code class="language-bash">    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+    purus massa, placerat id pretium ac, ornare eleifend ante.
+    
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+    placerat id pretium ac, ornare eleifend ante.
 </code></pre>
-
-<p><em>Python</em> busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el <code>syspath</code> (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de <em>Python</em>).</p>
-
-<p>Si no tenemos los módulos en ninguna de ambas ubicaciones, <em>Python</em> arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de <strong>paquetes</strong> en la próxima lección.</p>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/72/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -889,15 +873,9 @@ Frenando: False
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb33-cadenas/" rel="next">33. Métodos de cadenas</a>
+    <a href="/courses/python-basic/pb71-expresiones-regulares-iii/" rel="next">71. Expresiones regulares III</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb35-paquetes-i/" rel="prev">35. Paquetes I</a>
-  </div>
   
 </div>
 
@@ -906,7 +884,7 @@ Frenando: False
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-12
+          Última actualización el 2019-06-13
         </div>
 
       </article>

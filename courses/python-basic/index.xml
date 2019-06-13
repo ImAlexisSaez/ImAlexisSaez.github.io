@@ -9585,5 +9585,162 @@ Ma:C
 </description>
     </item>
     
+    <item>
+      <title>72. Expresiones regulares IV</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/</link>
+      <pubDate>Thu, 13 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/u3WBRgpxQcc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones &lt;code&gt;match()&lt;/code&gt; y &lt;code&gt;search()&lt;/code&gt; del módulo &lt;code&gt;re&lt;/code&gt;. La función &lt;code&gt;match()&lt;/code&gt; busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombre1 = &amp;quot;Sandra López&amp;quot;
+nombre2 = &amp;quot;Antonio Gómez&amp;quot;
+nombre3 = &amp;quot;María López&amp;quot;
+
+if re.match(&amp;quot;Sandra&amp;quot;, nombre1):
+    print(&amp;quot;Hemos encontrado el nombre.&amp;quot;)
+else:
+    print(&amp;quot;No hemos encontrado el nombre.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Hemos encontrado el nombre.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, podemos evitar el comportamiento &lt;em&gt;case sensitive&lt;/em&gt; de esta función mediante el parámetro &lt;code&gt;re.IGNORECASE&lt;/code&gt;. Cambiemos &lt;code&gt;Sandra&lt;/code&gt; por &lt;code&gt;sandra&lt;/code&gt; y comprobémoslo:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombre1 = &amp;quot;Sandra López&amp;quot;
+nombre2 = &amp;quot;Antonio Gómez&amp;quot;
+nombre3 = &amp;quot;María López&amp;quot;
+
+if re.match(&amp;quot;sandra&amp;quot;, nombre1, re.IGNORECASE):
+    print(&amp;quot;Hemos encontrado el nombre.&amp;quot;)
+else:
+    print(&amp;quot;No hemos encontrado el nombre.&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Hemos encontrado el nombre.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Además, tenemos a nuestra disposición el uso de comodines en los patrones de búsqueda. Así, si añadimos dos nuevos nombres &amp;ldquo;parecidos&amp;rdquo;, &lt;code&gt;Lara&lt;/code&gt; y &lt;code&gt;Jara&lt;/code&gt;, mediante el carácter &lt;code&gt;.&lt;/code&gt; (que representa un carácter qualquiera sin determinar) podemos comprobar si ambos pertenecen o no a un listado de nombres:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombres = [&amp;quot;Sandra López&amp;quot;, &amp;quot;Antonio Gómez&amp;quot;, &amp;quot;María López&amp;quot;,
+           &amp;quot;Jara Martín&amp;quot;, &amp;quot;Lara Pérez&amp;quot;]
+
+[print(nombre, end=&amp;quot;\n&amp;quot;) for nombre in nombres if re.match(&amp;quot;.ara&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Jara Martín
+Lara Pérez
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, veamos cómo emplear el patrón &lt;code&gt;\d&lt;/code&gt; para averiguar si una cadena comienza o no por un número:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+datos = [&amp;quot;Alexis Sáez&amp;quot;, &amp;quot;123456789&amp;quot;, &amp;quot;Number1&amp;quot;]
+
+[print(d) for d in datos if re.match(&amp;quot;\d&amp;quot;, d)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;123456789
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, cambiemos de tercio y estudiemos la función &lt;code&gt;search()&lt;/code&gt; que, a diferencia de &lt;code&gt;match()&lt;/code&gt; (que se limita a buscar al comienzo de un texto), examina la cadena de texto completa. Retomemos el ejemplo de los nombres y busquemos la aparición de ciertos apellidos concretos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+nombres = [&amp;quot;Sandra López&amp;quot;, &amp;quot;Antonio Gómez&amp;quot;, &amp;quot;María López&amp;quot;,
+           &amp;quot;Jara Martín&amp;quot;, &amp;quot;Lara Pérez&amp;quot;]
+
+[print(nombre, end=&amp;quot;\n&amp;quot;) for nombre in nombres if re.search(&amp;quot;López&amp;quot;, nombre)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Sandra López
+María López
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, la principal utilidad de &lt;code&gt;search()&lt;/code&gt; reside en la búsqueda de determinados patrones dentro de una cadena de caracteres de extensión considerable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import re
+
+codigos = [
+    &#39;&#39;&#39;
+    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+    purus massa, placerat id pretium ac, ornare eleifend ante.
+    &#39;&#39;&#39;,
+    &#39;&#39;&#39;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+    placerat id pretium ac, ornare eleifend ante.
+    &#39;&#39;&#39;,
+    &#39;&#39;&#39;
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+    leo erat, varius non laoreet sed, cursus ut tortor. Morbi maximus
+    pulvinar ante, ut pulvinar ex malesuada blandit. Maecenas venenatis,
+    sapien vitae sodales viverra, ante urna tincidunt tellus, a faucibus
+    elit dui congue dui. Quisque congue sed ex in sollicitudin.
+    Pellentesque luctus justo quis felis feugiat, et semper erat laoreet.
+    Curabitur id dui arcu. Curabitur purus massa, placerat id pretium ac,
+    ornare eleifend ante.
+    &#39;&#39;&#39;]
+
+[print(c, end=&amp;quot;\n&amp;quot;) for c in codigos if re.search(&amp;quot;42&amp;quot;, c)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+    purus massa, placerat id pretium ac, ornare eleifend ante.
+    
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+    placerat id pretium ac, ornare eleifend ante.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/72/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
