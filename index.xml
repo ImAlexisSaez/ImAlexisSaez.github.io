@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Thu, 13 Jun 2019 00:00:02 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 14 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16429,6 +16429,127 @@ Hemos terminado el cálculo.
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/73/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>74. Decoradoras II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb74-decoradoras-ii/</link>
+      <pubDate>Fri, 14 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb74-decoradoras-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/_IwlE3Z7U04&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/KOw0tpcspH4&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuamos el estudio de las funciones generadoras, analizando cómo utilizar parámetros con ellas. Para ello, retomemos el código del ejemplo de la lección anterior:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def funcion_decoradora(funcion_parametro):
+    def funcion_interior():
+        # Acciones adicionales que decoran
+        print(&amp;quot;Vamos a realizar un cálculo: &amp;quot;)
+        funcion_parametro()
+        # Acciones adicionales que decoran
+        print(&amp;quot;Hemos terminado el cálculo.&amp;quot;)
+    return funcion_interior
+
+
+@funcion_decoradora
+def suma():
+    print(15 + 20)
+
+
+@funcion_decoradora
+def resta():
+    print(30 - 10)
+
+
+suma()
+resta()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Modifiquemos las funciones &lt;code&gt;suma()&lt;/code&gt; y &lt;code&gt;resta()&lt;/code&gt; para que admitan la posibilidad de recibir parámetros:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@funcion_decoradora
+def suma(n1, n2):
+    print(n1 + n2)
+
+
+@funcion_decoradora
+def resta(n1, n2):
+    print(n1 - n2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, en la &lt;code&gt;funcion_interior()&lt;/code&gt; y en &lt;code&gt;funcion_parametros()&lt;/code&gt;, que figuran dentro de la &lt;code&gt;funcion_decoradora()&lt;/code&gt;, gestionamos esos parámetros utilizando &lt;code&gt;*args&lt;/code&gt;, que posibilita que una función reciba un número indeterminado de parámetros. Así,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def funcion_decoradora(funcion_parametro):
+    def funcion_interior(*args):
+        # Acciones adicionales que decoran
+        print(&amp;quot;Vamos a realizar un cálculo: &amp;quot;)
+        funcion_parametro(*args)
+        # Acciones adicionales que decoran
+        print(&amp;quot;Hemos terminado el cálculo.&amp;quot;)
+    return funcion_interior
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;De esta manera, si ejecutamos ahora el código para las siguientes llamadas de las funciones &lt;code&gt;suma()&lt;/code&gt; y &lt;code&gt;resta()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;suma(10, 5)
+resta(25, 20)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Vamos a realizar un cálculo: 
+15
+Hemos terminado el cálculo.
+Vamos a realizar un cálculo: 
+5
+Hemos terminado el cálculo.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, incluso podemos ampliar la funcionalidad de nuestra decoradora, permitiendo la posibilidad de admitir parámetros que sigan el patrón &lt;em&gt;key = value&lt;/em&gt;. Para ello, utilizamos en la definición de &lt;code&gt;funcion_interior()&lt;/code&gt; y &lt;code&gt;funcion_parametro()&lt;/code&gt; la convención &lt;code&gt;**kwargs&lt;/code&gt; como sigue:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def funcion_decoradora(funcion_parametro):
+    def funcion_interior(*args, **kwargs):
+        # Acciones adicionales que decoran
+        print(&amp;quot;Vamos a realizar un cálculo: &amp;quot;)
+        funcion_parametro(*args, **kwargs)
+        # Acciones adicionales que decoran
+        print(&amp;quot;Hemos terminado el cálculo.&amp;quot;)
+    return funcion_interior
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, construimos una función que realice la potenciación de un número y procedemos a su llamada, utilizando ahora el esquema &lt;em&gt;key = value&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;@funcion_decoradora
+def potencia(base, exponente):
+    print(pow(base, exponente))
+
+
+potencia(base=5, exponente=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Vamos a realizar un cálculo: 
+25
+Hemos terminado el cálculo.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/74/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

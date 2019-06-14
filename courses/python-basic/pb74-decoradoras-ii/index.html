@@ -28,11 +28,11 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack().">
+  <meta name="description" content="Vídeo     Notas personales En esta lección, continuamos el estudio de las funciones generadoras, analizando cómo utilizar parámetros con ellas. Para ello, retomemos el código del ejemplo de la lección anterior:
+def funcion_decoradora(funcion_parametro): def funcion_interior(): # Acciones adicionales que decoran print(&quot;Vamos a realizar un cálculo: &quot;) funcion_parametro() # Acciones adicionales que decoran print(&quot;Hemos terminado el cálculo.&quot;) return funcion_interior @funcion_decoradora def suma(): print(15 &#43; 20) @funcion_decoradora def resta(): print(30 - 10) suma() resta()  Modifiquemos las funciones suma() y resta() para que admitan la posibilidad de recibir parámetros:">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb74-decoradoras-ii/">
 
   
 
@@ -111,7 +111,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb74-decoradoras-ii/">
 
   
   
@@ -125,27 +125,27 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
-  <meta property="og:title" content="43. Interfaces gráficas II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack()."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb74-decoradoras-ii/">
+  <meta property="og:title" content="74. Decoradoras II | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo     Notas personales En esta lección, continuamos el estudio de las funciones generadoras, analizando cómo utilizar parámetros con ellas. Para ello, retomemos el código del ejemplo de la lección anterior:
+def funcion_decoradora(funcion_parametro): def funcion_interior(): # Acciones adicionales que decoran print(&quot;Vamos a realizar un cálculo: &quot;) funcion_parametro() # Acciones adicionales que decoran print(&quot;Hemos terminado el cálculo.&quot;) return funcion_interior @funcion_decoradora def suma(): print(15 &#43; 20) @funcion_decoradora def resta(): print(30 - 10) suma() resta()  Modifiquemos las funciones suma() y resta() para que admitan la posibilidad de recibir parámetros:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="article:published_time" content="2019-05-21T00:00:01&#43;01:00">
+  <meta property="article:published_time" content="2019-06-14T00:00:01&#43;01:00">
   
-  <meta property="article:modified_time" content="2019-05-21T00:00:01&#43;01:00">
+  <meta property="article:modified_time" content="2019-06-14T00:00:01&#43;01:00">
   
-
-  
-
 
   
 
 
+  
 
 
 
-  <title>43. Interfaces gráficas II | Infinitos Contrastes</title>
+
+
+  <title>74. Decoradoras II | Infinitos Contrastes</title>
 
 </head>
 
@@ -550,7 +550,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
         <a href="/courses/python-basic/pb42-interfaces-graficas-i/">42. Interfaces I</a>
       </li>
       
-      <li class="active">
+      <li >
         <a href="/courses/python-basic/pb43-interfaces-graficas-ii/">43. Interfaces II</a>
       </li>
       
@@ -674,7 +674,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
         <a href="/courses/python-basic/pb73-decoradoras-i/">73. Decoradoras I</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb74-decoradoras-ii/">74. Decoradoras II</a>
       </li>
       
@@ -714,7 +714,7 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">43. Interfaces gráficas II</h1>
+          <h1 itemprop="name">74. Decoradoras II</h1>
 
           <div class="article-style" itemprop="articleBody">
             
@@ -723,142 +723,112 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
 
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/M80CzDC1Crc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/_IwlE3Z7U04" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/KOw0tpcspH4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
 
 <h2 id="notas-personales">Notas personales</h2>
 
-<p>Después de introducir, en la lección anterior, la <em>raíz</em> de una interfaz gráfica, en esta abordaremos la construcción y uso de <em>frames</em>. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:</p>
+<p>En esta lección, continuamos el estudio de las funciones generadoras, analizando cómo utilizar parámetros con ellas. Para ello, retomemos el código del ejemplo de la lección anterior:</p>
 
-<pre><code class="language-python">from tkinter import Tk
+<pre><code class="language-python">def funcion_decoradora(funcion_parametro):
+    def funcion_interior():
+        # Acciones adicionales que decoran
+        print(&quot;Vamos a realizar un cálculo: &quot;)
+        funcion_parametro()
+        # Acciones adicionales que decoran
+        print(&quot;Hemos terminado el cálculo.&quot;)
+    return funcion_interior
 
-raiz = Tk()
 
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=False, height=False)  # raiz.resizable(0, 0)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.geometry(&quot;450x300&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-raiz.mainloop()
+@funcion_decoradora
+def suma():
+    print(15 + 20)
+
+
+@funcion_decoradora
+def resta():
+    print(30 - 10)
+
+
+suma()
+resta()
 </code></pre>
 
-<p>A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método <code>pack()</code>. Además, prescindiremos de la instrucción <code>raiz.geometry()</code>, para así estar en condiciones de configurar el tamaño del <em>frame</em> (la raíz se adaptará automáticamente al tamaño de sus elementos internos):</p>
+<p>Modifiquemos las funciones <code>suma()</code> y <code>resta()</code> para que admitan la posibilidad de recibir parámetros:</p>
 
-<pre><code class="language-python">from tkinter import Tk, Frame
+<pre><code class="language-python">@funcion_decoradora
+def suma(n1, n2):
+    print(n1 + n2)
 
-raiz = Tk()
 
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-
-frame = Frame()
-frame.pack()
-frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
-
-raiz.mainloop()
+@funcion_decoradora
+def resta(n1, n2):
+    print(n1 - n2)
 </code></pre>
 
-<p>A primera vista, al ejecutar el aterior bloque de código, da la sensación de que hemos perdido el color de fondo declarado para la aplicación (<code>lightblue</code>). No obstante, como ahora permitimos manipular el tamaño de la ventana (mediante la instrucción <code>raiz.resizable(width=True, height=True)</code>), al agrandarla comprobamos que todo funciona correctamente.</p>
+<p>A continuación, en la <code>funcion_interior()</code> y en <code>funcion_parametros()</code>, que figuran dentro de la <code>funcion_decoradora()</code>, gestionamos esos parámetros utilizando <code>*args</code>, que posibilita que una función reciba un número indeterminado de parámetros. Así,</p>
 
-
-
-
-<figure>
-
-<img src="/courses/python-basic/img/pb43-img01.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Los dos colores de fondo siguen disponibles.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p><em>Nota</em>: en <a href="http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter" target="_blank">esta página</a> podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería <code>tkinter</code>.</p>
-
-<p>Por otro lado, observamos que el <em>frame</em> tiene un tamaño fijo, por mucho que manipulemos el tamaño de la ventana, las dimensiones del <em>frame</em> no se alteran, así como su posición, que permanece centrada en la parte superior de la ventana de la aplicación. Este comportamiento es el dado por defecto, que podemos configurar de manera diferente, si así lo deseamos, a través del método <code>pack()</code>.</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame
-
-raiz = Tk()
-
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-
-frame = Frame()
-frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;, fill=&quot;x&quot;, expand=&quot;True&quot;)
-frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot;)
-
-raiz.mainloop()
+<pre><code class="language-python">def funcion_decoradora(funcion_parametro):
+    def funcion_interior(*args):
+        # Acciones adicionales que decoran
+        print(&quot;Vamos a realizar un cálculo: &quot;)
+        funcion_parametro(*args)
+        # Acciones adicionales que decoran
+        print(&quot;Hemos terminado el cálculo.&quot;)
+    return funcion_interior
 </code></pre>
 
+<p>De esta manera, si ejecutamos ahora el código para las siguientes llamadas de las funciones <code>suma()</code> y <code>resta()</code>:</p>
 
-
-
-<figure>
-
-<img src="/courses/python-basic/img/pb43-img02.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Modificando propiedades del <em>frame</em>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p>Las opciones de configuración de los <em>frames</em> son ciertamente numerosas. Por ejemplo, podemos añadirle un borde (parámetros <code>bd</code> y <code>relief</code>) o cambiar el icono del ratón cuando se adentra en el interior del <em>frame</em> (parámetro <code>cursor</code>):</p>
-
-<pre><code class="language-python">from tkinter import Tk, Frame
-
-raiz = Tk()
-
-raiz.title(&quot;Ventana de pruebas&quot;)
-raiz.resizable(width=True, height=True)
-raiz.iconbitmap(&quot;icon.ico&quot;)
-raiz.config(bg=&quot;lightblue&quot;)
-
-frame = Frame()
-frame.pack(side=&quot;left&quot;, anchor=&quot;s&quot;)
-frame.config(bg=&quot;tomato&quot;,
-             width=&quot;450&quot;,
-             height=&quot;300&quot;,
-             bd=35,
-             relief=&quot;groove&quot;,
-             cursor=&quot;pirate&quot;)
-
-raiz.mainloop()
+<pre><code class="language-python">suma(10, 5)
+resta(25, 20)
 </code></pre>
 
+<pre><code class="language-bash">Vamos a realizar un cálculo: 
+15
+Hemos terminado el cálculo.
+Vamos a realizar un cálculo: 
+5
+Hemos terminado el cálculo.
+</code></pre>
+
+<p>Por otro lado, incluso podemos ampliar la funcionalidad de nuestra decoradora, permitiendo la posibilidad de admitir parámetros que sigan el patrón <em>key = value</em>. Para ello, utilizamos en la definición de <code>funcion_interior()</code> y <code>funcion_parametro()</code> la convención <code>**kwargs</code> como sigue:</p>
+
+<pre><code class="language-python">def funcion_decoradora(funcion_parametro):
+    def funcion_interior(*args, **kwargs):
+        # Acciones adicionales que decoran
+        print(&quot;Vamos a realizar un cálculo: &quot;)
+        funcion_parametro(*args, **kwargs)
+        # Acciones adicionales que decoran
+        print(&quot;Hemos terminado el cálculo.&quot;)
+    return funcion_interior
+</code></pre>
+
+<p>A continuación, construimos una función que realice la potenciación de un número y procedemos a su llamada, utilizando ahora el esquema <em>key = value</em>:</p>
+
+<pre><code class="language-python">@funcion_decoradora
+def potencia(base, exponente):
+    print(pow(base, exponente))
 
 
+potencia(base=5, exponente=2)
+</code></pre>
 
-<figure>
-
-<img src="/courses/python-basic/img/pb43-img03.png" />
-
-
-
-<figcaption data-pre="Figura " data-post=":" class="numbered">
-  <h4>Añadiendo un marco al <em>frame</em>.</h4>
-  
-</figcaption>
-
-</figure>
-
-<p>Obviamente, todo aquello que hemos visto de cara a configurar un <em>frame</em> es aplicable a la propia <em>raíz</em> y dependerá de cómo deseemos diseñar nuestra aplicación.</p>
+<pre><code class="language-bash">Vamos a realizar un cálculo: 
+25
+Hemos terminado el cálculo.
+</code></pre>
 
 <h2 id="código-fuente">Código fuente</h2>
 
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/43/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/74/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -875,15 +845,9 @@ raiz.mainloop()
   
   <div class="post-nav-item">
     <div class="meta-nav">Anterior</div>
-    <a href="/courses/python-basic/pb42-interfaces-graficas-i/" rel="next">42. Interfaces gráficas I</a>
+    <a href="/courses/python-basic/pb73-decoradoras-i/" rel="next">73. Decoradoras I</a>
   </div>
   
-  
-  
-  <div class="post-nav-item">
-    <div class="meta-nav">Siguiente</div>
-    <a href="/courses/python-basic/pb44-interfaces-graficas-iii/" rel="prev">44. Interfaces gráficas III</a>
-  </div>
   
 </div>
 
@@ -892,7 +856,7 @@ raiz.mainloop()
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-05-21
+          Última actualización el 2019-06-14
         </div>
 
       </article>
