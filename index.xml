@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Fri, 14 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16550,6 +16550,200 @@ Hemos terminado el cálculo.
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/74/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>75. Documentación</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb75-documentacion/</link>
+      <pubDate>Sat, 15 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb75-documentacion/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/SJqANWdRG4I&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos cómo documentar nuestros programas, esto es, incluir comentarios en clases, métodos, módulos, etc., con el objetivo de facilitar el trabajo en equipo sobre todo; resultando especialmente útil cuando las aplicaciones son complejas.&lt;/p&gt;
+
+&lt;p&gt;Para empezar, tomemos como referencia este sencillo código, que contiene la definición de dos funciones y llamadas a estas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def area_cuadrado(lado):
+    return &amp;quot;El área del cuadrado es: &amp;quot; + str(lado * lado)
+
+
+def area_triangulo(base, altura):
+    return &amp;quot;El área del triángulo es: &amp;quot; + str(base * altura / 2.)
+
+
+print(area_cuadrado(5))
+print(area_triangulo(3, 6))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;El área del cuadrado es: 25
+El área del triángulo es: 9.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, para documentarlas, tras su definición insertamos el comentario oportuno encerrado por una triple comilla. De esta manera, mediante el atributo &lt;code&gt;__doc__&lt;/code&gt;, incluso podemos acceder a la documentación de una función en tiempo de ejecución:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def area_cuadrado(lado):
+    &amp;quot;&amp;quot;&amp;quot;Calcula el área de un cuadrado dado su lado.&amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del cuadrado es: &amp;quot; + str(lado * lado)
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;Calcula el área de un triángulo dada su base y su altura.&amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del triángulo es: &amp;quot; + str(base * altura / 2.)
+
+
+# print(area_cuadrado(5))
+# print(area_triangulo(3, 6))
+
+print(area_cuadrado.__doc__)
+print(area_triangulo.__doc__)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Calcula el área de un cuadrado dado su lado.
+Calcula el área de un triángulo dada su base y su altura.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Por otro lado, obtenemos el mismo resultado empleando la función &lt;code&gt;help()&lt;/code&gt; que, además, nos ofrece acceso a la cabecera de la definición de la función y al módulo donde se encuentra:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def area_cuadrado(lado):
+    &amp;quot;&amp;quot;&amp;quot;Calcula el área de un cuadrado dado su lado.&amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del cuadrado es: &amp;quot; + str(lado * lado)
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;Calcula el área de un triángulo dada su base y su altura.&amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del triángulo es: &amp;quot; + str(base * altura / 2.)
+
+
+# print(area_cuadrado(5))
+# print(area_triangulo(3, 6))
+
+# print(area_cuadrado.__doc__)
+# print(area_triangulo.__doc__)
+
+help(area_cuadrado)
+help(area_triangulo)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Help on function area_cuadrado in module __main__:
+
+area_cuadrado(lado)
+    Calcula el área de un cuadrado dado su lado.
+
+Help on function area_triangulo in module __main__:
+
+area_triangulo(base, altura)
+    Calcula el área de un triángulo dada su base y su altura.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, modifiquemos ligeramente el código para generar una clase &lt;code&gt;Areas&lt;/code&gt;, en cuyo interior se encuentren las dos anteriores funciones, y veamos cómo acceder a la documentación generada antes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Areas:
+    def area_cuadrado(lado):
+        &amp;quot;&amp;quot;&amp;quot;Calcula el área de un cuadrado dado su lado.&amp;quot;&amp;quot;&amp;quot;
+        return &amp;quot;El área del cuadrado es: &amp;quot; + str(lado * lado)
+
+    def area_triangulo(base, altura):
+        &amp;quot;&amp;quot;&amp;quot;Calcula el área de un triángulo dada su base y su altura.&amp;quot;&amp;quot;&amp;quot;
+        return &amp;quot;El área del triángulo es: &amp;quot; + str(base * altura / 2.)
+
+
+help(Areas.area_cuadrado)
+help(Areas.area_triangulo)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Help on function area_cuadrado in module __main__:
+
+area_cuadrado(lado)
+    Calcula el área de un cuadrado dado su lado.
+
+Help on function area_triangulo in module __main__:
+
+area_triangulo(base, altura)
+    Calcula el área de un triángulo dada su base y su altura.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Además, para obtener una documentación general de la clase basta teclear:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;help(Areas)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Help on class Areas in module __main__:
+
+class Areas(builtins.object)
+ |  Methods defined here:
+ |  
+ |  area_cuadrado(lado)
+ |      Calcula el área de un cuadrado dado su lado.
+ |  
+ |  area_triangulo(base, altura)
+ |      Calcula el área de un triángulo dada su base y su altura.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finalmente, también podemos documentar la propia clase:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Areas:
+    &amp;quot;&amp;quot;&amp;quot;Esta clase calcula las áreas de diferentes figuras geométricas.&amp;quot;&amp;quot;&amp;quot;
+    def area_cuadrado(lado):
+        &amp;quot;&amp;quot;&amp;quot;Calcula el área de un cuadrado dado su lado.&amp;quot;&amp;quot;&amp;quot;
+        return &amp;quot;El área del cuadrado es: &amp;quot; + str(lado * lado)
+
+    def area_triangulo(base, altura):
+        &amp;quot;&amp;quot;&amp;quot;Calcula el área de un triángulo dada su base y su altura.&amp;quot;&amp;quot;&amp;quot;
+        return &amp;quot;El área del triángulo es: &amp;quot; + str(base * altura / 2.)
+
+
+help(Areas)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Help on class Areas in module __main__:
+
+class Areas(builtins.object)
+ |  Esta clase calcula las áreas de diferentes figuras geométricas.
+ |  
+ |  Methods defined here:
+ |  
+ |  area_cuadrado(lado)
+ |      Calcula el área de un cuadrado dado su lado.
+ |  
+ |  area_triangulo(base, altura)
+ |      Calcula el área de un triángulo dada su base y su altura.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |  
+ |  __dict__
+ |      dictionary for instance variables (if defined)
+ |  
+ |  __weakref__
+ |      list of weak references to the object (if defined)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: utilizando esta misma estrategia, podemos documentar asimismo módulos.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/75/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
