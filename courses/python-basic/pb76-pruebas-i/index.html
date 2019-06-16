@@ -28,10 +28,12 @@
   
     
   
-  <meta name="description" content="Notas personales para el curso &#39;Python desde 0&#39; ofrecido por &#39;Píldoras Informáticas&#39;.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, analizaremos cómo realizar pruebas, utilizando la documentación para ello. Esta forma de proceder la podemos llevar a cabo con el módulo doctest de Python.
+Para empezar, partamos de este sencillo código, que contiene una función que calcula el área del triángulo dada su base y su altura:
+def area_triangulo(base, altura): return base * altura / 2. print(area_triangulo(2, 4))  4.0  A continuación, documentemos la función area_triangulo() siguiendo el procedimiento visto en la lección anterior e incluyamos ahí nuestra primera prueba (antecediéndola mediante &gt;&gt;&gt;).">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/">
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb76-pruebas-i/">
 
   
 
@@ -105,15 +107,12 @@
   
 
   
-  <link rel="alternate" href="/courses/python-basic/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
-  <link rel="feed" href="/courses/python-basic/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
-  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
 
-  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/">
+  <link rel="canonical" href="https://imalexissaez.github.io/courses/python-basic/pb76-pruebas-i/">
 
   
   
@@ -127,12 +126,16 @@
   <meta property="twitter:creator" content="@imalexissaez">
   
   <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/">
-  <meta property="og:title" content="Presentación | Infinitos Contrastes">
-  <meta property="og:description" content="Notas personales para el curso &#39;Python desde 0&#39; ofrecido por &#39;Píldoras Informáticas&#39;."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb76-pruebas-i/">
+  <meta property="og:title" content="76. Pruebas I | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, analizaremos cómo realizar pruebas, utilizando la documentación para ello. Esta forma de proceder la podemos llevar a cabo con el módulo doctest de Python.
+Para empezar, partamos de este sencillo código, que contiene una función que calcula el área del triángulo dada su base y su altura:
+def area_triangulo(base, altura): return base * altura / 2. print(area_triangulo(2, 4))  4.0  A continuación, documentemos la función area_triangulo() siguiendo el procedimiento visto en la lección anterior e incluyamos ahí nuestra primera prueba (antecediéndola mediante &gt;&gt;&gt;)."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2019-04-28T00:01:00&#43;00:00">
+  <meta property="article:published_time" content="2019-06-16T00:00:01&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-06-16T00:00:01&#43;01:00">
   
 
   
@@ -144,7 +147,7 @@
 
 
 
-  <title>Presentación | Infinitos Contrastes</title>
+  <title>76. Pruebas I | Infinitos Contrastes</title>
 
 </head>
 
@@ -372,7 +375,7 @@
 <nav class="collapse docs-links" id="docs-nav">
   
   
-  <div class="docs-toc-item active">
+  <div class="docs-toc-item">
     <a class="docs-toc-link" href="/courses/python-basic/">Presentación</a>
 
   </div>
@@ -681,7 +684,7 @@
         <a href="/courses/python-basic/pb75-documentacion/">75. Documentación</a>
       </li>
       
-      <li >
+      <li class="active">
         <a href="/courses/python-basic/pb76-pruebas-i/">76. Pruebas I</a>
       </li>
       
@@ -696,18 +699,195 @@
     </div>
 
     
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#vídeo">Vídeo</a></li>
+<li><a href="#notas-personales">Notas personales</a></li>
+<li><a href="#código-fuente">Código fuente</a></li>
+</ul></li>
+</ul>
+</nav>
+
+      
+    </div>
+    
 
     <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
 
       <article class="article" itemscope itemtype="http://schema.org/Article">
 
         <div class="docs-article-container">
-          <h1 itemprop="name">Presentación</h1>
+          <h1 itemprop="name">76. Pruebas I</h1>
 
           <div class="article-style" itemprop="articleBody">
-            <p>El objetivo de este proyecto no es otro que recopilar mis notas personales elaboradas a partir de la lista de reproducción <a href="https://www.youtube.com/playlist?list=PLU8oAlHdN5BlvPxziopYZRd55pdqFwkeS" target="_blank">Curso Python desde 0</a>, ofrecida por <a href="https://www.pildorasinformaticas.es/" target="_blank">Píldoras Informáticas</a>.</p>
+            
 
-<p>Tras visualizar unas cuantas lecciones, he comprobado que el curso es más que recomendable, por lo que me he animado a seguirlo de una manera activa, es decir, replicando el código fuente que aparezca, así como anotando las ideas principales de cada vídeo. Todo ello quedará disponible a través del menú lateral que figura en la parte izquiera de esta página (o del menú superior desplegable para la versión móvil), por si alguna persona pudiera encontrarlo de utilidad.</p>
+<h2 id="vídeo">Vídeo</h2>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="notas-personales">Notas personales</h2>
+
+<p>En esta lección, analizaremos cómo realizar pruebas, utilizando la documentación para ello. Esta forma de proceder la podemos llevar a cabo con el módulo <code>doctest</code> de <em>Python</em>.</p>
+
+<p>Para empezar, partamos de este sencillo código, que contiene una función que calcula el área del triángulo dada su base y su altura:</p>
+
+<pre><code class="language-python">def area_triangulo(base, altura):
+    return base * altura / 2.
+
+
+print(area_triangulo(2, 4))
+</code></pre>
+
+<pre><code class="language-bash">4.0
+</code></pre>
+
+<p>A continuación, documentemos la función <code>area_triangulo()</code> siguiendo el procedimiento visto en la lección anterior e incluyamos ahí nuestra primera prueba (antecediéndola mediante <code>&gt;&gt;&gt;</code>). Luego, una vez importado el módulo <code>doctest</code>, incluimos la instrucción <code>doctest.testmod()</code>:</p>
+
+<pre><code class="language-python">import doctest
+
+
+def area_triangulo(base, altura):
+    &quot;&quot;&quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &gt;&gt;&gt; area_triangulo(3, 6)
+    9.0
+
+    &quot;&quot;&quot;
+    return base * altura / 2.
+
+
+doctest.testmod()
+</code></pre>
+
+<p>Al ejecutar el anterior bloque de código, no observamos respuesta alguna en la consola de <em>Python</em>, lo cual es una buena señal, pues significa que se han superado los tests planteados sin encontrar ningún problema.</p>
+
+<p>Ahora, imaginemos que nos hemos equivocado escribiendo el test (también valdría modificando la expresión que devuelve la instrucción <code>return</code>) y decimos que ha de resultar <code>8.0</code> el área de un triángulo de base <code>3</code> y altura <code>6</code>:</p>
+
+<pre><code class="language-python">import doctest
+
+
+def area_triangulo(base, altura):
+    &quot;&quot;&quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &gt;&gt;&gt; area_triangulo(3, 6)
+    8.0
+
+    &quot;&quot;&quot;
+    return base * altura / 2.
+
+
+doctest.testmod()
+</code></pre>
+
+<pre><code class="language-bash">**********************************************************************
+File &quot;pruebas_2.py&quot;, line 8, in __main__.area_triangulo
+Failed example:
+    area_triangulo(3, 6)
+Expected:
+    8.0
+Got:
+    9.0
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.area_triangulo
+***Test Failed*** 1 failures.
+</code></pre>
+
+<p>Acto seguido, compliquemos ligeramente el ejemplo y hagamos que la función <code>area_triangulo()</code> devuelva una cadena de caracteres en lugar de un valor numérico. Ello implica redactar con cuidado la prueba:</p>
+
+<pre><code class="language-python">import doctest
+
+
+def area_triangulo(base, altura):
+    &quot;&quot;&quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &gt;&gt;&gt; area_triangulo(3, 6)
+    'El área del triángulo es 9.0'
+
+    &quot;&quot;&quot;
+    return &quot;El área del triángulo es &quot; + str(base * altura / 2.)
+
+
+doctest.testmod()
+</code></pre>
+
+<p><em>Nota</em>: hemos de proceder con cautela porque, en esta ocasión, las comillas <code>'</code> y <code>&quot;</code> no son intercambiables.</p>
+
+<p>Obviamente, tenemos la posibilidad de realizar varias pruebas:</p>
+
+<pre><code class="language-python">import doctest
+
+
+def area_triangulo(base, altura):
+    &quot;&quot;&quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &gt;&gt;&gt; area_triangulo(3, 6)
+    'El área del triángulo es 9.0'
+
+    &gt;&gt;&gt; area_triangulo(2, 4)
+    'El área del triángulo es 4.0'
+
+    &gt;&gt;&gt; area_triangulo(4, 5)
+    'El área del triángulo es 10.0'
+
+    &quot;&quot;&quot;
+    return &quot;El área del triángulo es &quot; + str(base * altura / 2.)
+
+
+doctest.testmod()
+</code></pre>
+
+<p>No obstante, llevar a cabo múltiples pruebas tiene sentido cuando la complejidad del código se incrementa. Recordemos el código que generamos para comprobar si una dirección de correo electrónico era correcta en función de si presentaba o no el carácter <code>@</code>:</p>
+
+<pre><code class="language-python">import doctest
+
+
+def check_mail(mail_user):
+    &quot;&quot;&quot;
+    Evalúa un mail recibido en busca de @.
+    Si tiene una @ es correcto.
+    Si tiene más de una @ es incorrecto.
+    Si la @ está al final es incorrecto.
+
+    &gt;&gt;&gt; check_mail(&quot;alexis@cursos.es&quot;)
+    True
+
+    &gt;&gt;&gt; check_mail(&quot;alexiscursos.es@&quot;)
+    False
+
+    &gt;&gt;&gt; check_mail(&quot;alexis.cursos.es&quot;)
+    False
+
+    &gt;&gt;&gt; check_mail(&quot;alexis@cursos@es&quot;)
+    False
+    &quot;&quot;&quot;
+
+    arroba = mail_user.count(&quot;@&quot;)
+    return not (arroba != 1 or mail_user.rfind('@') == len(mail_user) - 1)
+
+
+doctest.testmod()
+</code></pre>
+
+<h2 id="código-fuente">Código fuente</h2>
+
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/76/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
 
           </div>
 
@@ -721,6 +901,13 @@
 <div class="post-nav">
   
   
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Anterior</div>
+    <a href="/courses/python-basic/pb75-documentacion/" rel="next">75. Documentación</a>
+  </div>
+  
+  
 </div>
 
           </div>
@@ -728,7 +915,7 @@
         </div>
 
         <div class="body-footer">
-          Última actualización el 2019-04-28
+          Última actualización el 2019-06-16
         </div>
 
       </article>

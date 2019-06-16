@@ -10153,5 +10153,175 @@ class Areas(builtins.object)
 </description>
     </item>
     
+    <item>
+      <title>76. Pruebas I</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb76-pruebas-i/</link>
+      <pubDate>Sun, 16 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb76-pruebas-i/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, analizaremos cómo realizar pruebas, utilizando la documentación para ello. Esta forma de proceder la podemos llevar a cabo con el módulo &lt;code&gt;doctest&lt;/code&gt; de &lt;em&gt;Python&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para empezar, partamos de este sencillo código, que contiene una función que calcula el área del triángulo dada su base y su altura:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def area_triangulo(base, altura):
+    return base * altura / 2.
+
+
+print(area_triangulo(2, 4))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;4.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, documentemos la función &lt;code&gt;area_triangulo()&lt;/code&gt; siguiendo el procedimiento visto en la lección anterior e incluyamos ahí nuestra primera prueba (antecediéndola mediante &lt;code&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/code&gt;). Luego, una vez importado el módulo &lt;code&gt;doctest&lt;/code&gt;, incluimos la instrucción &lt;code&gt;doctest.testmod()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(3, 6)
+    9.0
+
+    &amp;quot;&amp;quot;&amp;quot;
+    return base * altura / 2.
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Al ejecutar el anterior bloque de código, no observamos respuesta alguna en la consola de &lt;em&gt;Python&lt;/em&gt;, lo cual es una buena señal, pues significa que se han superado los tests planteados sin encontrar ningún problema.&lt;/p&gt;
+
+&lt;p&gt;Ahora, imaginemos que nos hemos equivocado escribiendo el test (también valdría modificando la expresión que devuelve la instrucción &lt;code&gt;return&lt;/code&gt;) y decimos que ha de resultar &lt;code&gt;8.0&lt;/code&gt; el área de un triángulo de base &lt;code&gt;3&lt;/code&gt; y altura &lt;code&gt;6&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(3, 6)
+    8.0
+
+    &amp;quot;&amp;quot;&amp;quot;
+    return base * altura / 2.
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;**********************************************************************
+File &amp;quot;pruebas_2.py&amp;quot;, line 8, in __main__.area_triangulo
+Failed example:
+    area_triangulo(3, 6)
+Expected:
+    8.0
+Got:
+    9.0
+**********************************************************************
+1 items had failures:
+   1 of   1 in __main__.area_triangulo
+***Test Failed*** 1 failures.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, compliquemos ligeramente el ejemplo y hagamos que la función &lt;code&gt;area_triangulo()&lt;/code&gt; devuelva una cadena de caracteres en lugar de un valor numérico. Ello implica redactar con cuidado la prueba:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(3, 6)
+    &#39;El área del triángulo es 9.0&#39;
+
+    &amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del triángulo es &amp;quot; + str(base * altura / 2.)
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: hemos de proceder con cautela porque, en esta ocasión, las comillas &lt;code&gt;&#39;&lt;/code&gt; y &lt;code&gt;&amp;quot;&lt;/code&gt; no son intercambiables.&lt;/p&gt;
+
+&lt;p&gt;Obviamente, tenemos la posibilidad de realizar varias pruebas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+
+
+def area_triangulo(base, altura):
+    &amp;quot;&amp;quot;&amp;quot;
+    Calcula el área de un triángulo dada su base y altura.
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(3, 6)
+    &#39;El área del triángulo es 9.0&#39;
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(2, 4)
+    &#39;El área del triángulo es 4.0&#39;
+
+    &amp;gt;&amp;gt;&amp;gt; area_triangulo(4, 5)
+    &#39;El área del triángulo es 10.0&#39;
+
+    &amp;quot;&amp;quot;&amp;quot;
+    return &amp;quot;El área del triángulo es &amp;quot; + str(base * altura / 2.)
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, llevar a cabo múltiples pruebas tiene sentido cuando la complejidad del código se incrementa. Recordemos el código que generamos para comprobar si una dirección de correo electrónico era correcta en función de si presentaba o no el carácter &lt;code&gt;@&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+
+
+def check_mail(mail_user):
+    &amp;quot;&amp;quot;&amp;quot;
+    Evalúa un mail recibido en busca de @.
+    Si tiene una @ es correcto.
+    Si tiene más de una @ es incorrecto.
+    Si la @ está al final es incorrecto.
+
+    &amp;gt;&amp;gt;&amp;gt; check_mail(&amp;quot;alexis@cursos.es&amp;quot;)
+    True
+
+    &amp;gt;&amp;gt;&amp;gt; check_mail(&amp;quot;alexiscursos.es@&amp;quot;)
+    False
+
+    &amp;gt;&amp;gt;&amp;gt; check_mail(&amp;quot;alexis.cursos.es&amp;quot;)
+    False
+
+    &amp;gt;&amp;gt;&amp;gt; check_mail(&amp;quot;alexis@cursos@es&amp;quot;)
+    False
+    &amp;quot;&amp;quot;&amp;quot;
+
+    arroba = mail_user.count(&amp;quot;@&amp;quot;)
+    return not (arroba != 1 or mail_user.rfind(&#39;@&#39;) == len(mail_user) - 1)
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/76/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
