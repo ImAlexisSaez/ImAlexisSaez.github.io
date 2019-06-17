@@ -17070,8 +17070,6 @@ doctest.testmod()
 
 &lt;p&gt;El proceso da a luz a una cantidad considerable de ficheros y carpetas, siendo de nuestro interés la denominada &lt;code&gt;/dist/&lt;/code&gt;, en cuyo interior encontraremos otra designada como &lt;code&gt;/calculadora/&lt;/code&gt;, que contiene la aplicación lista para ser distribuida. Si hacemos doble clic sobre &lt;code&gt;calculadora.exe&lt;/code&gt;, podemos corroborar que la aplicación funciona a la perfección.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: la calculadora que diseñé poseía icono y, curiosamente, &lt;code&gt;pyinstaller&lt;/code&gt; no genera una copia de él en la carpeta &lt;code&gt;/dist/&lt;/code&gt;, por lo que hemos de moverlo manualmente al directorio &lt;code&gt;/calculadora/&lt;/code&gt; para que la aplicación se ejecute con éxito.&lt;/p&gt;
-
 &lt;p&gt;Ahora bien, tras ella aparece la propia terminal de &lt;em&gt;Python&lt;/em&gt;, característica que quizá no nos interese y posiblemente solo deseemos trabajar con la interfaz gráfica de la calculadora. Para conseguirlo, hemos de incluir el modificador &lt;code&gt;--windowed&lt;/code&gt;, en la llamada a &lt;code&gt;pyinstaller&lt;/code&gt;, a la hora de crear el ejecutable:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller --windowed calculadora.py
@@ -17084,14 +17082,10 @@ doctest.testmod()
 
 &lt;p&gt;Ahora, en la carpeta &lt;code&gt;/dist/&lt;/code&gt; hallamos únicamente el archivo.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Nota ténica&lt;/em&gt;: incluso utilizando esta última estrategia, es necesario que movamos manualmente el archivo del icono a la carpeta donde se ha generado el ejecutable.&lt;/p&gt;
-
-&lt;p&gt;Finalmente, para solventar el problema del icono que nos viene acompañando desde el inicio de esta lección, añadimos un nuevo modificador a la instrucción &lt;code&gt;pyinstaller&lt;/code&gt;, &lt;code&gt;--icon=./icon.ico&lt;/code&gt;, ya que así es como se denomina el archivo que contiene el icono. Así pues, tecleamos:&lt;/p&gt;
+&lt;p&gt;Finalmente, de cara a modificar el icono de la aplicación, simplemente hemos de añadir un nuevo modificador a la instrucción &lt;code&gt;pyinstaller&lt;/code&gt;: &lt;code&gt;--icon=./icon.ico&lt;/code&gt;, siendo &lt;code&gt;icon.ico&lt;/code&gt; el nombre del archivo que contiene el icono y que se ubica en el mismo directorio donde se halla el fichero &lt;code&gt;calculadora.py&lt;/code&gt;. Así pues, tecleamos:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller --windowed --onefile --icon=./icon.ico calculadora.py
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: ni tan siquiera así evitamos el problema, pero ahora la aplicación posee como icono el asignado.&lt;/p&gt;
 
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
