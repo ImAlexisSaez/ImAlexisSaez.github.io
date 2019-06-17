@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Sun, 16 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 00:00:01 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16759,7 +16759,7 @@ class Areas(builtins.object)
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/BUNEkSFlmys&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 
@@ -16914,6 +16914,123 @@ doctest.testmod()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/76/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>77. Pruebas II</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb77-pruebas-ii/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:01 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb77-pruebas-ii/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/64v9X7K-iuc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, continuaremos el estudio de las pruebas que realizamos utilizando la documentación, pero incrementando un tanto su complejidad (con expresiones anidadas), para así ver las opciones que nos plantea el módulo &lt;code&gt;doctest&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Para empezar, partamos del siguiente código fuente, que no es todo lo eficiente que debería, pero que cumple su propósito a efectos metodológicos para ilustrar pruebas con expresiones anidadas:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import math
+
+
+def raiz_cuadrada(lista_numeros):
+    &amp;quot;&amp;quot;&amp;quot;
+    La función devuelve una lista con la raíz cuadrada de
+    los elementos numéricos pasados por parámetros en otra
+    lista.
+    &amp;quot;&amp;quot;&amp;quot;
+    return [math.sqrt(n) for n in lista_numeros]
+
+
+print(raiz_cuadrada([1, 4, 9, 16]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;[1.0, 2.0, 3.0, 4.0]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, para diseñar una prueba que contenta estructuras complejas como condicionales o bucles, simplemente hemos de utilizar &lt;code&gt;...&lt;/code&gt; apropiadamente para anidar instrucciones:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+import math
+
+
+def raiz_cuadrada(lista_numeros):
+    &amp;quot;&amp;quot;&amp;quot;
+    La función devuelve una lista con la raíz cuadrada de
+    los elementos numéricos pasados por parámetros en otra
+    lista.
+
+    &amp;gt;&amp;gt;&amp;gt; lista = []
+    &amp;gt;&amp;gt;&amp;gt; for i in [4, 9, 16]:
+    ...     lista.append(i)
+    &amp;gt;&amp;gt;&amp;gt; raiz_cuadrada(lista)
+    [2.0, 3.0, 4.0]
+    &amp;quot;&amp;quot;&amp;quot;
+    return [math.sqrt(n) for n in lista_numeros]
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Acto seguido, analicemos cómo implementar pruebas que arrojen excepciones. Por ejemplo, incluyamos un elemento negativo en la lista que pasamos como argumento a la función &lt;code&gt;raiz_cuadrada()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(raiz_cuadrada([4, -9, 16]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;Traceback (most recent call last):
+  File &amp;quot;pruebas_2.py&amp;quot;, line 27, in &amp;lt;module&amp;gt;
+    print(raiz_cuadrada([4, -9, 16]))
+  File &amp;quot;pruebas_2.py&amp;quot;, line 22, in raiz_cuadrada
+    return [math.sqrt(n) for n in lista_numeros]
+  File &amp;quot;pruebas_2.py&amp;quot;, line 22, in &amp;lt;listcomp&amp;gt;
+    return [math.sqrt(n) for n in lista_numeros]
+ValueError: math domain error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, para diseñar una prueba que contemple el uso de número negativos en general (y no el de esta lista en concreto), utilizaremos &lt;code&gt;...&lt;/code&gt; y nos quedaremos únicamente con la primera y última línea de la excepción arrojada arriba:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import doctest
+import math
+
+
+def raiz_cuadrada(lista_numeros):
+    &amp;quot;&amp;quot;&amp;quot;
+    La función devuelve una lista con la raíz cuadrada de
+    los elementos numéricos pasados por parámetros en otra
+    lista.
+
+    &amp;gt;&amp;gt;&amp;gt; lista = []
+    &amp;gt;&amp;gt;&amp;gt; for i in [4, 9, 16]:
+    ...     lista.append(i)
+    &amp;gt;&amp;gt;&amp;gt; raiz_cuadrada(lista)
+    [2.0, 3.0, 4.0]
+
+    &amp;gt;&amp;gt;&amp;gt; lista = []
+    &amp;gt;&amp;gt;&amp;gt; for i in [4, -9, 16]:
+    ...     lista.append(i)
+    &amp;gt;&amp;gt;&amp;gt; raiz_cuadrada(lista)
+    Traceback (most recent call last):
+    ...
+    ValueError: math domain error
+    &amp;quot;&amp;quot;&amp;quot;
+    return [math.sqrt(n) for n in lista_numeros]
+
+
+doctest.testmod()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/77/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
