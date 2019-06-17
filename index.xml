@@ -7,7 +7,7 @@
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
     <language>en-us</language>
     <copyright>Alexis Sáez &amp;copy;{year}</copyright>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:01 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 00:00:02 +0100</lastBuildDate>
     
 	    <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17031,6 +17031,71 @@ doctest.testmod()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/77/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>78. Ejecutables</title>
+      <link>https://imalexissaez.github.io/courses/python-basic/pb78-ejecutables/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:02 +0100</pubDate>
+      
+      <guid>https://imalexissaez.github.io/courses/python-basic/pb78-ejecutables/</guid>
+      <description>
+
+&lt;h2 id=&#34;vídeo&#34;&gt;Vídeo&lt;/h2&gt;
+
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;//www.youtube.com/embed/Vr9vl0qlggE&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+&lt;h2 id=&#34;notas-personales&#34;&gt;Notas personales&lt;/h2&gt;
+
+&lt;p&gt;En esta lección, estudiaremos cómo generar un ejecutable de una aplicación escrita en &lt;em&gt;Python&lt;/em&gt; y que tomará el formato nativo del sistema operativo en el que estemos trabajando (&lt;code&gt;.exe&lt;/code&gt; en &lt;em&gt;Windows&lt;/em&gt;, por ejemplo).&lt;/p&gt;
+
+&lt;p&gt;Para empezar, desde la terminal del sistema, instalamos &lt;code&gt;pyinstaller&lt;/code&gt;, utilizando para ello la instrucción:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pip3 install pyinstaller
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A continuación, rescatemos los archivos de la aplicación que simulaba una calculadora, correspondiente a la lección 50. Generemos una copia de ellos, por coherencia con la estructura del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;, en el directorio &lt;code&gt;/lecciones/78/&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ahora, desde la terminal, nos desplazamos a dicho directorio y tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller calculadora.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Esto es, la instrucción &lt;code&gt;pyinstaller&lt;/code&gt; seguida del nombre del archivo del cual deseamos generar un ejecutable.&lt;/p&gt;
+
+&lt;p&gt;El proceso da a luz a una cantidad considerable de ficheros y carpetas, siendo de nuestro interés la denominada &lt;code&gt;/dist/&lt;/code&gt;, en cuyo interior encontraremos otra designada como &lt;code&gt;/calculadora/&lt;/code&gt;, que contiene la aplicación lista para ser distribuida. Si hacemos doble clic sobre &lt;code&gt;calculadora.exe&lt;/code&gt;, podemos corroborar que la aplicación funciona a la perfección.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: la calculadora que diseñé poseía icono y, curiosamente, &lt;code&gt;pyinstaller&lt;/code&gt; no genera una copia de él en la carpeta &lt;code&gt;/dist/&lt;/code&gt;, por lo que hemos de moverlo manualmente al directorio &lt;code&gt;/calculadora/&lt;/code&gt; para que la aplicación se ejecute con éxito.&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, tras ella aparece la propia terminal de &lt;em&gt;Python&lt;/em&gt;, característica que quizá no nos interese y posiblemente solo deseemos trabajar con la interfaz gráfica de la calculadora. Para conseguirlo, hemos de incluir el modificador &lt;code&gt;--windowed&lt;/code&gt;, en la llamada a &lt;code&gt;pyinstaller&lt;/code&gt;, a la hora de crear el ejecutable:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller --windowed calculadora.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No obstante, la aplicación requiere de la presencia de todos los ficheros contenidos en el directorio &lt;code&gt;/calculadora/&lt;/code&gt; para su correcto funcionamiento. Sería deseable que todo ello se &amp;ldquo;compilase&amp;rdquo; en un único archivo y que se pudiera ejecutar en cualquier ordenador, independientemente de si tiene o no instalado &lt;em&gt;Python&lt;/em&gt;. El mencionado comportamiento se obtiene agregando el modificador &lt;code&gt;--onefile&lt;/code&gt; a la anterior instrucción, esto es,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller --windowed --onefile calculadora.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ahora, en la carpeta &lt;code&gt;/dist/&lt;/code&gt; hallamos únicamente el archivo.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Nota ténica&lt;/em&gt;: incluso utilizando esta última estrategia, es necesario que movamos manualmente el archivo del icono a la carpeta donde se ha generado el ejecutable.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, para solventar el problema del icono que nos viene acompañando desde el inicio de esta lección, añadimos un nuevo modificador a la instrucción &lt;code&gt;pyinstaller&lt;/code&gt;, &lt;code&gt;--icon=./icon.ico&lt;/code&gt;, ya que así es como se denomina el archivo que contiene el icono. Así pues, tecleamos:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;pyinstaller --windowed --onefile --icon=./icon.ico calculadora.py
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Nota técnica&lt;/em&gt;: ni tan siquiera así evitamos el problema, pero ahora la aplicación posee como icono el asignado.&lt;/p&gt;
+
+&lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
+
+&lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/78/&lt;/code&gt; del &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
