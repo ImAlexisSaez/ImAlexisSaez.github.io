@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.3.1">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="En este artículo, comento las razones que me han llevado a abandonar el tema Beautiful Hugo en favor de Academic.">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono&display=swap">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.min.3834c081887e44130d565828d71a7178.css">
+
+  
+
+  
+  
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', 'UA-88993800-1', 'auto');
+      
+      ga('require', 'eventTracker');
+      ga('require', 'outboundLinkTracker');
+      ga('require', 'urlChangeTracker');
+      ga('send', 'pageview');
+    </script>
+    <script async src="//www.google-analytics.com/analytics.js"></script>
+    
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
+    
+  
+  
+
+  
+
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/icon-192.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/">
+
+  
+  
+  
+  
+    
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/">
+  <meta property="og:title" content="Migrando al tema Academic | Infinitos Contrastes">
+  <meta property="og:description" content="En este artículo, comento las razones que me han llevado a abandonar el tema Beautiful Hugo en favor de Academic."><meta property="og:image" content="https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/featured.jpg">
+  <meta property="twitter:image" content="https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/featured.jpg"><meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2019-07-02T00:00:01&#43;01:00">
+  
+  <meta property="article:modified_time" content="2019-07-02T00:00:01&#43;01:00">
+  
+
+  
+
+
+  
+
+
+
+
+
+  <title>Migrando al tema Academic | Infinitos Contrastes</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav mr-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Artículos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
+        </li>
+
+        
+        
+
+      
+      </ul>
+      <ul class="navbar-nav ml-auto">
+      
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+
+        
+        <li class="nav-item">
+          <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+        </li>
+        
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+  <article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1 itemprop="name">Migrando al tema Academic</h1>
+
+  
+  <p class="page-subtitle">Un tema para nuestros sitios web tan interesante como potente</p>
+  
+
+  
+
+
+
+<meta content="2019-07-02 00:00:01 &#43;0100 &#43;0100" itemprop="datePublished">
+<meta content="2019-07-02 00:00:01 &#43;0100 &#43;0100" itemprop="dateModified">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  <span itemprop="author name" itemtype="http://schema.org/Person"><a href="/authors/admin/">Alexis Sáez</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    <time>2019-07-02</time>
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    3 min de lectura
+  </span>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2019/07/02/migrando-al-tema-academic/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder"></i>
+    <a href="/categories/reflexiones/">Reflexiones</a></span>
+  
+
+  
+    
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/&amp;text=Migrando%20al%20tema%20Academic" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/&amp;t=Migrando%20al%20tema%20Academic" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Migrando%20al%20tema%20Academic%20https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Migrando%20al%20tema%20Academic&amp;body=https://imalexissaez.github.io/2019/07/02/migrando-al-tema-academic/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/07/02/migrando-al-tema-academic/featured_hue4fe1823f7a562102c19ebef6ec1c499_80095_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@stp_com" target="_blank">Tim Peterson</a>, disponible en <a href="https://unsplash.com/photos/daevrPHoYRg" target="_blank">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style" itemprop="articleBody">
+      <p>Aunque hace unos días publiqué un <a href="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">artículo</a> que trataba sobre la configuración de ciertos aspectos de las hojas de estilos CSS del tema <em>Beautiful Hugo</em>, sí que es cierto que <em>Infinitos Contrastes</em> lleva ya unas cuantas semanas bajo los auspicios del tema <a href="https://sourcethemes.com/academic/" target="_blank"><em>Academic</em></a>.</p>
+
+<p>De vez en cuando, me gusta echar un vistazo a la <a href="https://themes.gohugo.io/" target="_blank">lista oficial</a> de temas de la web oficial de <em>Hugo</em>, sobre todo cuando siento que la organización de los contenidos no me termina de convencer. En uno de esos paseos, descubrí el tema <em>Academic</em> y tres de sus aspectos enseguida captaron poderosamente mi atención:</p>
+
+<ul>
+<li>En primer lugar, la construcción de la página inicial del sitio a través de diferentes <em>widgets</em>. En <em>Infinitos Contrastes</em> apenas uso unos pocos de ellos, pero en la página web de <a href="https://academic-demo.netlify.com/" target="_blank">ejemplo</a> del tema aparecen casi todos y nos permiten hacernos una idea de su enorme potencial.</li>
+<li>En segundo lugar, la sección dedicada a los proyectos personales, con la posibilidad incorporada de filtrar por etiquetas, es una funcionalidad maravillosa en mi opinión. Ahora mismo, estoy experimentando con ella para organizar los <a href="/proyecto/problemas/">Problemas</a> e información sobre la <a href="/proyecto/capacitacion/">Capacitación en Valenciano</a>, por ejemplo.</li>
+<li>Finalmente, aunque no por ello menos impactante, la plantilla <code>docs</code>, diseñada para elaborar documentación, pero cuya flexibilidad permite organizar fácilmente los apuntes de un curso o un proyecto de extensión considerable. Precisamente ha sido mi elección para recopilar una serie de notas personales de un <a href="/courses/python-basic/">curso de Python</a> que recientemente he finalizado.</li>
+</ul>
+
+<p>Además, una vez metido de lleno en los entresijos de este tema, no puedo más que destacar la excelente <a href="https://sourcethemes.com/academic/docs/" target="_blank">documentación</a> del mismo. Con <em>Beautiful Hugo</em> me animé a escribir una serie de artículos donde explicaba cómo tratar ciertos aspectos (aquel primer proyecto, <a href="/proyecto/metablog/">Metablog</a>), pero con <em>Academic</em> es a todas luces innecesario, ya que han puesto a nuestra disposición toda una serie de detalladas explicaciones.</p>
+
+<p>Por otro lado, el nivel de actualizaciones sigue un elevado ritmo y la resolución de <em>bugs</em> (una vez notificados en <em>GitHub</em> abriendo <em>issues</em>) es casi instantánea. Cada pocos días aparece un nuevo <em>commit</em> que puede interesarnos y el proceso de actualización, localmente vía <em>script</em> o automáticamente mediante <em>Netlify</em>, es muy sencillo.</p>
+
+<p>Sin embargo, evidentemente, no todo han sido luces durante la migración. Las peculiaridades de este tema han provocado que haya tenido que revisar, una por una, todas las páginas generadas hasta el momento. Si bien es cierto que principalmente el trabajo se ha reducido a la edición de las cabeceras de los documentos, todavía quedan ciertos detalles a ajustar que, poco a poco, iré abordando en los próximos meses. En esta línea, también me gustaría comentar que no es un tema que recomendaría a alguien que se iniciase en el desarrollo web con <em>Hugo</em>, puesto que la cantidad de opciones disponibles y decisiones a tomar puede resultar abrumadora.</p>
+
+<p>En resumen, <em>Academic</em> es un tema excelente para aquellas personas que deseen ir &ldquo;un paso más allá&rdquo; en sus blogs y estén dispuestas a invertir unas cuantas horas entre la experimentación y la lectura de la extensa documentación.</p>
+
+    </div>
+
+    
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tags/academic/">Academic</a>
+  
+  <a class="badge badge-light" href="/tags/hugo/">Hugo</a>
+  
+</div>
+
+
+
+    
+      
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <div class="media author-card" itemscope itemtype="http://schema.org/Person">
+    
+      
+      <img class="portrait mr-3" src="/authors/admin/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_250x250_fill_q90_lanczos_center.jpg" itemprop="image" alt="Avatar">
+    
+
+    <div class="media-body">
+      <h5 class="card-title" itemprop="name"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Matemático</h6>
+      <p class="card-text" itemprop="description">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="/#contact" >
+              <i class="fas fa-envelope"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://twitter.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </li>
+        
+          
+          
+          
+            
+          
+          
+          
+          
+          
+            
+          
+          <li>
+            <a itemprop="sameAs" href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+
+
+      
+      
+      <div class="article-widget">
+        <div class="hr-light"></div>
+        <h3>Relacionado</h3>
+        <ul>
+          
+          <li><a href="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">Unos cambios rápidos a las plantillas</a></li>
+          
+          <li><a href="/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/">Mejorando la estética de los bloques de código</a></li>
+          
+          <li><a href="/2018/09/18/configurando-el-comportamiento-de-katex/">Configurando el comportamiento de KaTeX</a></li>
+          
+          <li><a href="/2018/09/01/alojando-nuestro-sitio-web-en-github/">Alojando nuestro sitio web en GitHub</a></li>
+          
+          <li><a href="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/">Publicando la primera entrada en nuestro sitio web</a></li>
+          
+        </ul>
+      </div>
+      
+    
+
+    
+
+    
+<section id="comments">
+  <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "infinitos-contrastes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    
+    
+
+    
+    
+    
+    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Buscar...",
+        'results': "resultados encontrados",
+        'no_results': "No se encontraron resultados"
+      };
+      const content_type = {
+        'post': "Artículos",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Charlas"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.8cd55d839906ab9f8f6514a7081b20c1.js"></script>
+
+    
+
+
+
+
+
+
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez &copy;2019 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

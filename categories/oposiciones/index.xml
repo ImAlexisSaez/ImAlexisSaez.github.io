@@ -113,9 +113,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190525-img01.png&#34; /&gt;
+&lt;img src=&#34;20190525-img01.png&#34; &gt;
 
 
 
@@ -125,6 +128,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;En el apartado (a) nos piden obtener el número de trayectorias (que en el ejercicio anterior designábamos por rutas) desde el origen de coordenadas hasta el punto $P(m,n)$. Sabemos que dicha cifra se corresponde con la elección de $m$ posibilidades tomadas de un total de $m+n$, esto es,&lt;/p&gt;
 
@@ -153,9 +157,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190525-img02.png&#34; /&gt;
+&lt;img src=&#34;20190525-img02.png&#34; &gt;
 
 
 
@@ -165,6 +172,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;Buscamos todas las rutas existentes entre el origen de coordenadas y el punto $P(m,n)$ que se sitúen por debajo de la mencionada diagonal, esto es, que no posean intersección con ella. Obligatoriamente, todas ellas empezarán desde el punto $(1,0)$, ya que de hacerlo desde $(0,1)$, parte de la ruta se situaría por encima de la diagonal $y=x$.&lt;/p&gt;
 
@@ -211,9 +219,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190525-img03.png&#34; /&gt;
+&lt;img src=&#34;20190525-img03.png&#34; &gt;
 
 
 
@@ -223,6 +234,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;El número de rutas existente entre los puntos $(1,0)$ y $(n,n-1)$ equivale, por traslación, al total de rutas entre el origen de coordenadas y el punto $(n,n-1) - (1,0) = (n-1,n-1)$, esto es,&lt;/p&gt;
 
@@ -281,9 +293,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190522-img01.png&#34; /&gt;
+&lt;img src=&#34;20190522-img01.png&#34; &gt;
 
 
 
@@ -293,6 +308,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;Si denotamos por $D$ a los pasos de longitud unitaria que se recorren hacia la derecha y por $A$ a los correspondientes que se efectúan hacia arriba, rápidamente apreciamos que, en cada una de las rutas que podamos imaginar, habrá cinco $D$ y otras cinco $A$. Es decir, toda ruta es una reordenación de la cadena $DDDDDAAAAA$. El número de tales cadenas que podemos escribir asciende al total de permutaciones con repetición de diez elementos, donde uno de ellos se repite cinco veces, mientras que el otro lo hace en el mismo número de ocasiones. Así, hay&lt;/p&gt;
 
@@ -341,9 +357,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190522-img02.png&#34; /&gt;
+&lt;img src=&#34;20190522-img02.png&#34; &gt;
 
 
 
@@ -353,6 +372,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;Así, de $(0,0)$ a $(0,6)$ hay un total de $C_{6,0}$ rutas; de $(0,0)$ a $(1,5)$ encontramos $C_{6,1}$ rutas; de $(0,0)$ a $(2,4)$ hallamos $C_{6,2}$ rutas; y así sucesivamente. En total son&lt;/p&gt;
 
@@ -522,9 +542,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190508-img01.png&#34; /&gt;
+&lt;img src=&#34;20190508-img01.png&#34; &gt;
 
 
 
@@ -534,6 +557,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;Una cuarta recta, que fuese secante dos a dos con las tres anteriores, daría lugar a tres nuevos puntos de intersección, situación que provocaría que cuatro de las anteriores regiones quedasen, cada una de ellas, subdividas en dos nuevas regiones. En total, contaríamos pues con once regiones ($7 + 4 = 11$).&lt;/p&gt;
 
@@ -934,9 +958,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20190417-img01.png&#34; /&gt;
+&lt;img src=&#34;20190417-img01.png&#34; &gt;
 
 
 
@@ -946,6 +973,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;En general, para poder dibujar una diagonal necesitamos unir dos de los vértices del correspondiente polígono, por lo que hemos de ser capaces de averiguar el número de formas en que podemos seleccionar los mencionados dos vértices. Como no importa el orden en el que los escojamos, el total equivale a la cantidad de combinaciones de $n$ elementos tomados de dos en dos, esto es, a $C_{n,2}$. No obstante, hemos de actuar con cautela, puesto que, de la manera indicada, estaríamos considerando como diagonal también la unión de dos vértices contiguos, es decir, cada uno de los lados. Así pues, sustrayendo estos, la cantidad de diagonales de un polígono de $n$ lados asciende a&lt;/p&gt;
 
@@ -5900,9 +5928,12 @@ $$&lt;/p&gt;
 
 
 
+
+
+
 &lt;figure&gt;
 
-&lt;img src=&#34;20180828-img01.png&#34; /&gt;
+&lt;img src=&#34;20180828-img01.png&#34; &gt;
 
 
 
@@ -5912,6 +5943,7 @@ $$&lt;/p&gt;
 &lt;/figcaption&gt;
 
 &lt;/figure&gt;
+
 
 &lt;p&gt;Como podemos comprobar rápidamente, no aparece sección alguna dedicada al Cuerpo de Profesores de Enseñanza Secundaria, que sería aquella de nuestro interés. No obstante, el portal sí conserva una copia de los criterios de evaluación que se adoptaron para las últimas oposiciones en la especialidad de matemáticas, aunque he sido incapaz de acceder a ellos a través de los diferentes menús que ofrece el sitio web.&lt;/p&gt;
 
