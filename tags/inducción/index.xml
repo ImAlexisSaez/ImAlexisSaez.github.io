@@ -502,65 +502,65 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/07/12/probando-katex-con-un-problema-de-induccion-clasico/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 1:&lt;/strong&gt; Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1+2+\cdots+n = \dfrac{n(n+1)}{2}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Generalmente, cuando abordamos problemas en los que tenemos que demostrar que cierta fórmula o afirmación se satisface, para un conjunto de índices de cardinal infinito (en esta ocasión hablaríamos del conjunto $n\geq1$, con $n\in\mathbb{N}$), es recomendable que llevemos a cabo una primera aproximación a su resolución empleando el &lt;em&gt;principio de inducción matemática&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Así pues, vamos a considerar la propiedad, que denotaremos por $P(n)$, dada en el enunciado del problema,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1+2+\cdots+n = \dfrac{n(n+1)}{2}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por lo que respecta al &lt;em&gt;caso base&lt;/em&gt;, $P(1)$, rápidamente comprobamos que se verifica de manera trivial, ya que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1 = \dfrac{1\cdot2}{2} = 1.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Abordemos ahora el &lt;em&gt;paso inductivo&lt;/em&gt;, para lo cual hemos de mostrar que si $P(n)$ se cumple, para un $n\geq1$, entonces asimismo se satisface $P(n+1)$, cuya expresión es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;La clave en este tipo de situaciones consiste en encontrar una manera acertada de manipular la conocida como &lt;em&gt;hipótesis de inducción&lt;/em&gt;, $P(n)$, que nos ayude a verificar el resultado que estamos buscando comprobar.&lt;/p&gt;
 
 &lt;p&gt;Por fortuna para nosotros, si nos fijamos en el miembro izquierdo de la ecuación de $P(n+1)$, apreciamos que directamente aparece la suma de los $n$ primeros números naturales, cuyo valor, por la &lt;em&gt;hipótesis de inducción&lt;/em&gt;, es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{n(n+1)}{2}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Este hecho nos permite afirmar que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1+2+\cdots+n+(n+1) = \dfrac{n(n+1)}{2} + (n+1).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora, sumando algebraicamente ambos términos,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{n(n+1)}{2} + (n+1)= \dfrac{n(n+1) + 2(n+1)}{2}= \dfrac{(n+1)(n+2)}{2},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, hemos llegado a mostrar que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;completando así el &lt;em&gt;paso inductivo&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Así pues, por el &lt;em&gt;principio de inducción matemática&lt;/em&gt;, podemos concluir que $P(n)$ se verifica para cada $n\in\mathbb{N}$, con $n\geq 1$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Podría decir que la experiencia de usar &lt;em&gt;KaTeX&lt;/em&gt; ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en &lt;em&gt;TeX&lt;/em&gt; y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por &lt;em&gt;KaTeX&lt;/em&gt;, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la &lt;a href=&#34;https://khan.github.io/KaTeX/function-support.html&#34; target=&#34;_blank&#34;&gt;web oficial&lt;/a&gt;, están disponibles, como por ejemplo &lt;code&gt;aligned&lt;/code&gt; o &lt;code&gt;pmatrix&lt;/code&gt;. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.&lt;/p&gt;
+&lt;p&gt;Podría decir que la experiencia de usar &lt;em&gt;KaTeX&lt;/em&gt; ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en &lt;em&gt;TeX&lt;/em&gt; y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por &lt;em&gt;KaTeX&lt;/em&gt;, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la &lt;a href=&#34;https://khan.github.io/KaTeX/function-support.html&#34;&gt;web oficial&lt;/a&gt;, están disponibles, como por ejemplo &lt;code&gt;aligned&lt;/code&gt; o &lt;code&gt;pmatrix&lt;/code&gt;. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.&lt;/p&gt;
 
 &lt;p&gt;Seguiré investigando, ya que me gustaría ir publicando habitualmente problemas matemáticos sin tener que recurrir a la clásica solución de compartirlos en formato &lt;code&gt;PDF&lt;/code&gt; vía algún servicio de alojamiento de ficheros.&lt;/p&gt;
 
@@ -577,7 +577,7 @@ $$
 
 &lt;p&gt;el resultado no se visualiza correctamente, y así sucede para cualquier entorno que requiera cambios de línea, como &lt;code&gt;aligned&lt;/code&gt;, &lt;code&gt;pmatrix&lt;/code&gt;, etc. La clave reside en el tratamiento que recibe en &lt;em&gt;Markdown&lt;/em&gt; el carácter &lt;code&gt;\&lt;/code&gt;, que interfiere con el funcionamiento adecuado de &lt;em&gt;KaTeX&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;La solución pasa por &amp;ldquo;escapar&amp;rdquo; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.&lt;/p&gt;
+&lt;p&gt;La solución pasa por &amp;quot;escapar&amp;quot; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.&lt;/p&gt;
 
 &lt;p&gt;Es decir, el siguiente bloque de código&lt;/p&gt;
 
@@ -591,12 +591,13 @@ $$
 
 &lt;p&gt;funciona a la perfección, como podemos comprobar a continuación&lt;/p&gt;
 
-&lt;p&gt;$$
-x =
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+x = 
 \begin{cases}
-  a &amp;amp;\text{if } b\\ c &amp;amp;\text{if } d
+  a &amp;\text{if } b\\
+  c &amp;\text{if } d
 \end{cases}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Esto va a requerir cierto tiempo adicional para que edite algunas de las expresiones escritas con &lt;em&gt;TeX&lt;/em&gt;, pero me alegro de poder tener a mi disposición la posibilidad de utilizar algunos entornos matemáticos básicos.&lt;/p&gt;
 </description>

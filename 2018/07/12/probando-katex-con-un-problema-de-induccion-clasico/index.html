@@ -82,7 +82,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.min.3834c081887e44130d565828d71a7178.css">
+  <link rel="stylesheet" href="/css/academic.min.613f87c15c270d2a84ec6002d71738a7.css">
 
   
 
@@ -97,7 +97,7 @@
       ga('require', 'urlChangeTracker');
       ga('send', 'pageview');
     </script>
-    <script async src="//www.google-analytics.com/analytics.js"></script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
     
     <script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha512-HUmooslVKj4m6OBu0OgzjXXr+QuFYy/k7eLI5jdeEy/F4RSgMn6XRWRGkFi5IFaFgy7uFTkegp3Z0XnJf3Jq+g==" crossorigin="anonymous"></script>
     
@@ -147,8 +147,7 @@
 
 </head>
 
-
-<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -166,7 +165,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
         
       </div>
 
@@ -183,7 +182,7 @@
 
 
   
-<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0 compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
@@ -576,65 +575,65 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 1:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
 
-<p>$$
+<p><span  class="math">\[
 1+2+\cdots+n = \dfrac{n(n+1)}{2}.
-$$</p>
+\]</span></p>
 
-<hr />
+<hr>
 
 <p>Generalmente, cuando abordamos problemas en los que tenemos que demostrar que cierta fórmula o afirmación se satisface, para un conjunto de índices de cardinal infinito (en esta ocasión hablaríamos del conjunto $n\geq1$, con $n\in\mathbb{N}$), es recomendable que llevemos a cabo una primera aproximación a su resolución empleando el <em>principio de inducción matemática</em>.</p>
 
 <p>Así pues, vamos a considerar la propiedad, que denotaremos por $P(n)$, dada en el enunciado del problema,</p>
 
-<p>$$
+<p><span  class="math">\[
 1+2+\cdots+n = \dfrac{n(n+1)}{2}.
-$$</p>
+\]</span></p>
 
 <p>Por lo que respecta al <em>caso base</em>, $P(1)$, rápidamente comprobamos que se verifica de manera trivial, ya que</p>
 
-<p>$$
+<p><span  class="math">\[
 1 = \dfrac{1\cdot2}{2} = 1.
-$$</p>
+\]</span></p>
 
 <p>Abordemos ahora el <em>paso inductivo</em>, para lo cual hemos de mostrar que si $P(n)$ se cumple, para un $n\geq1$, entonces asimismo se satisface $P(n+1)$, cuya expresión es</p>
 
-<p>$$
+<p><span  class="math">\[
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2}.
-$$</p>
+\]</span></p>
 
 <p>La clave en este tipo de situaciones consiste en encontrar una manera acertada de manipular la conocida como <em>hipótesis de inducción</em>, $P(n)$, que nos ayude a verificar el resultado que estamos buscando comprobar.</p>
 
 <p>Por fortuna para nosotros, si nos fijamos en el miembro izquierdo de la ecuación de $P(n+1)$, apreciamos que directamente aparece la suma de los $n$ primeros números naturales, cuyo valor, por la <em>hipótesis de inducción</em>, es</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{n(n+1)}{2}.
-$$</p>
+\]</span></p>
 
 <p>Este hecho nos permite afirmar que</p>
 
-<p>$$
+<p><span  class="math">\[
 1+2+\cdots+n+(n+1) = \dfrac{n(n+1)}{2} + (n+1).
-$$</p>
+\]</span></p>
 
 <p>Ahora, sumando algebraicamente ambos términos,</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{n(n+1)}{2} + (n+1)= \dfrac{n(n+1) + 2(n+1)}{2}= \dfrac{(n+1)(n+2)}{2},
-$$</p>
+\]</span></p>
 
 <p>es decir, hemos llegado a mostrar que</p>
 
-<p>$$
+<p><span  class="math">\[
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2},
-$$</p>
+\]</span></p>
 
 <p>completando así el <em>paso inductivo</em>.</p>
 
 <p>Así pues, por el <em>principio de inducción matemática</em>, podemos concluir que $P(n)$ se verifica para cada $n\in\mathbb{N}$, con $n\geq 1$.</p>
 
-<hr />
+<hr>
 
-<p>Podría decir que la experiencia de usar <em>KaTeX</em> ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en <em>TeX</em> y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por <em>KaTeX</em>, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la <a href="https://khan.github.io/KaTeX/function-support.html" target="_blank">web oficial</a>, están disponibles, como por ejemplo <code>aligned</code> o <code>pmatrix</code>. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.</p>
+<p>Podría decir que la experiencia de usar <em>KaTeX</em> ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en <em>TeX</em> y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por <em>KaTeX</em>, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la <a href="https://khan.github.io/KaTeX/function-support.html">web oficial</a>, están disponibles, como por ejemplo <code>aligned</code> o <code>pmatrix</code>. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.</p>
 
 <p>Seguiré investigando, ya que me gustaría ir publicando habitualmente problemas matemáticos sin tener que recurrir a la clásica solución de compartirlos en formato <code>PDF</code> vía algún servicio de alojamiento de ficheros.</p>
 
@@ -651,7 +650,7 @@ $$
 
 <p>el resultado no se visualiza correctamente, y así sucede para cualquier entorno que requiera cambios de línea, como <code>aligned</code>, <code>pmatrix</code>, etc. La clave reside en el tratamiento que recibe en <em>Markdown</em> el carácter <code>\</code>, que interfiere con el funcionamiento adecuado de <em>KaTeX</em>.</p>
 
-<p>La solución pasa por &ldquo;escapar&rdquo; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.</p>
+<p>La solución pasa por &quot;escapar&quot; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.</p>
 
 <p>Es decir, el siguiente bloque de código</p>
 
@@ -665,12 +664,13 @@ $$
 
 <p>funciona a la perfección, como podemos comprobar a continuación</p>
 
-<p>$$
-x =
+<p><span  class="math">\[
+x = 
 \begin{cases}
-  a &amp;\text{if } b\\ c &amp;\text{if } d
+  a &\text{if } b\\
+  c &\text{if } d
 \end{cases}
-$$</p>
+\]</span></p>
 
 <p>Esto va a requerir cierto tiempo adicional para que edite algunas de las expresiones escritas con <em>TeX</em>, pero me alegro de poder tener a mi disposición la posibilidad de utilizar algunos entornos matemáticos básicos.</p>
 
@@ -856,7 +856,7 @@ $$</p>
     
     
     
-    <script id="dsq-count-scr" src="//infinitos-contrastes.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
     
 
     
@@ -923,7 +923,7 @@ $$</p>
     
     
     
-    <script src="/js/academic.min.8cd55d839906ab9f8f6514a7081b20c1.js"></script>
+    <script src="/js/academic.min.ac3764a0b2acc1c82ace08e756adafc1.js"></script>
 
     
 
