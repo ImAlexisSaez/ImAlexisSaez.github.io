@@ -2025,105 +2025,112 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/07/29/uno-de-multiplos-de-600/</guid>
       <description>&lt;p&gt;En el presente artículo abordaremos en detalle un interesante problema propuesto en la convocatoria de oposiciones de Andalucía, de este mismo año 2018, para la especialidad de matemáticas.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;&lt;strong&gt;Problema 3:&lt;/strong&gt; Demuestra que todos los términos de la sucesión $\{a_n\}_{n&amp;gt;2}$ son múltiplos de 600, siendo&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Problema 3:&lt;/strong&gt; Demuestra que todos los términos de la sucesión $\{a_n\}_{n&amp;gt;2}$ son múltiplos de $600$, siendo&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_n = (n^2-1)(n^2+1)(n^4-16)n^2.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Es más que razonable que, en una primera aproximación a la resolución de este problema, estemos tentados a probar la afirmación dada en el enunciado utilizando el &lt;em&gt;principio de inducción matemática&lt;/em&gt;. Esta senda nos llevaría a definir, seguramente, $P(n)$ de forma similar a la siguiente: existe $k\in\mathbb{Z}$ tal que si $n&amp;gt;2$, entonces&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_n = (n^2-1)(n^2+1)(n^4-16)n^2 = 600k.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;El &lt;em&gt;caso base&lt;/em&gt;, $P(3)$ en esta ocasión, comprobamos rápidamente que se satisface, ya que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a_3 &amp;amp;= (3^2-1)(3^2+1)(3^4-16)3^2\\ &amp;amp;= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\\ &amp;amp;= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\\ &amp;amp;= 600\cdot(2\cdot 3\cdot 13),
+a_3 &amp;= (3^2-1)(3^2+1)(3^4-16)3^2\\
+&amp;= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\\
+&amp;= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\\
+&amp;= 600\cdot(2\cdot 3\cdot 13),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y bastaría tomar $k = 2\cdot 3\cdot 13 = 78$ para concluir que $a_3$ es un múltiplo de 600.&lt;/p&gt;
+&lt;p&gt;y bastaría tomar $k = 2\cdot 3\cdot 13 = 78$ para concluir que $a_3$ es un múltiplo de $600$.&lt;/p&gt;
 
 &lt;p&gt;Sin embargo, es posible que nuestro barco escore a la hora de abordar el &lt;em&gt;paso inductivo&lt;/em&gt;. Recordemos que ahora hemos de mostrar que si $P(n)$ se cumple, para un $n&amp;gt;2$, entonces asimismo se satisface $P(n+1)$, cuya expresión es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_{n+1} = ((n+1)^2-1)((n+1)^2+1)((n+1)^4-16)(n+1)^2.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A primera vista, es ciertamente complejo utilizar la información disponible en la &lt;em&gt;hipótesis de inducción&lt;/em&gt;, $P(n)$, para verificar $P(n+1)$.&lt;/p&gt;
 
 &lt;p&gt;En este momento, deberíamos descartar por completo la opción de desarrollar ambas expresiones para compararlas, puesto que entre manos tenemos un producto de cuatro polinomios, donde uno de los cuales es de grado considerable. Es más, no quiero siquiera empezar a imaginar la posible cantidad de errores de cálculo en los que podemos caer desarrollando la expresión de $P(n+1)$. Estos problemas están diseñados para resolverse en un período de tiempo razonable, hecho que nos debe invitar a considerar estrategias de resolución alternativas a la propuesta en primer lugar.&lt;/p&gt;
 
-&lt;p&gt;Así pues, a continuación, optaremos por llevar a cabo un enfoque diferente. Si estudiamos con detalle la expresión de $a_n$, enseguida apreciaremos que en ella aparecen un par de términos de la forma $a^2-b^2$, concretamente $n^2-1$ y $n^4-16$. Esta situación puede hacernos sospechar que la clave pase por factorizar la expresión de $a_n$, utilizando para ello la identidad notable $a^2-b^2 = (a+b)(a-b)$. Aplicándola, podemos escribir&lt;/p&gt;
+&lt;p&gt;Así pues, a continuación, optaremos por llevar a cabo un enfoque diferente. Si estudiamos con detalle la expresión de $a_n$, enseguida apreciaremos que en ella aparecen un par de términos de la forma $a^2 - b^2$, concretamente $n^2 - 1$ y $n^4 - 16$. Esta situación puede hacernos sospechar que la clave pase por factorizar la expresión de $a_n$, utilizando para ello la identidad notable $a^2 - b^2 = (a+b)(a-b)$. Aplicándola, podemos escribir&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-n^2-1&amp;amp;=(n+1)(n-1),\\ n^4-16&amp;amp;=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
+n^2-1&amp;=(n+1)(n-1),\\
+n^4-16&amp;=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;quedando entonces&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_n = (n+1)(n-1)(n^2+1)(n^2+4)(n+2)(n-2)n^2.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;No parece que estemos avanzando en la buena dirección, ¿verdad? Sin embargo, hay cuatro términos que habrán captado nuestra atención seguramente: $(n+1)$, $(n-1)$, $(n+2)$ y $(n-2)$. ¿No? Quizá ayude reescribir $a_n$ de la siguiente manera:&lt;/p&gt;
+&lt;p&gt;No parece que estemos avanzando en la buena dirección. Sin embargo, hay cuatro términos que habrán captado nuestra atención seguramente: $(n+1)$, $(n-1)$, $(n+2)$ y $(n-2)$. Quizá ayude reescribir $a_n$ de la siguiente manera:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_n = (n-2)(n-1)(n+1)(n+2)(n^2+1)(n^2+4)n^2.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Nos faltaría una $n$ entre los términos $(n-1)$ y $(n+1)$ para tener en la primera parte de la expresión de $a_n$ cinco números naturales consecutivos, ya que, por hipótesis, $n&amp;gt;2$. No obstante, en realidad sí que tenemos a nuestro alcance dicha $n$, pues podemos escribir el término $n^2=n\cdot n$, y nos quedaría entonces que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_n = (n-2)(n-1)n(n+1)(n+2)n(n^2+1)(n^2+4).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Esta situación nos invita a escribir $a_n = u\cdot v$, con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-u&amp;amp;=(n-2)(n-1)n(n+1)(n+2),\\ v&amp;amp;=n(n^2+1)(n^2+4),
+u&amp;=(n-2)(n-1)n(n+1)(n+2),\\
+v&amp;=n(n^2+1)(n^2+4),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y estudiar cada una de sus partes por separado&lt;/p&gt;
 
-&lt;p&gt;Tal y como hemos indicado arriba, como $n&amp;gt;2$, en $u$ observamos el producto de cinco números naturales consecutivos, por lo que siempre seremos capaces de encontrar entre ellos un múltiplo de 2, uno de 3, uno de 4 y uno de 5. Es decir, sabemos que existe $k\in\mathbb{N}$ de manera que podemos escribir la factorización en números primos de $u$ como&lt;/p&gt;
+&lt;p&gt;Tal y como hemos indicado arriba, como $n&amp;gt;2$, en $u$ observamos el producto de cinco números naturales consecutivos, por lo que siempre seremos capaces de encontrar entre ellos un múltiplo de $2$, uno de $3$, uno de $4$ y uno de $5$. Es decir, sabemos que existe $k\in\mathbb{N}$ de manera que podemos escribir la factorización en números primos de $u$ como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-u &amp;amp;= 2\cdot3\cdot4\cdot5\cdot k \\ &amp;amp;= 2^3\cdot 3\cdot 5\cdot k\\ &amp;amp;= 120\cdot k,
+u &amp;= 2\cdot3\cdot4\cdot5\cdot k \\
+&amp;= 2^3\cdot 3\cdot 5\cdot k\\
+&amp;= 120\cdot k,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y, por tanto, $u$ es un múltiplo de 120.&lt;/p&gt;
+&lt;p&gt;y, por tanto, $u$ es un múltiplo de $120$.&lt;/p&gt;
 
 &lt;p&gt;Bastaría ahora que comprobásemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 v=n(n^2+1)(n^2+4)
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;es múltiplo de 5 para que el enunciado del ejercicio propuesto se satisfaga. Llevaremos a cabo tal tarea utilizando restos potenciales módulo 5, de manera que analizaremos, acto seguido, todos y cada uno de los casos posibles que puede presentar $n$:&lt;/p&gt;
+&lt;p&gt;es múltiplo de $5$ para que el enunciado del ejercicio propuesto se satisfaga. Llevaremos a cabo tal tarea utilizando restos potenciales módulo 5, de manera que analizaremos, acto seguido, todos y cada uno de los casos posibles que puede presentar $n$:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Si $n\equiv 0\pmod{5}$, trivialmente $v$ es múltiplo de 5, al ser $n$ uno de sus factores.&lt;/li&gt;
+&lt;li&gt;Si $n\equiv 0\pmod{5}$, trivialmente $v$ es múltiplo de $5$, al ser $n$ uno de sus factores.&lt;/li&gt;
 &lt;li&gt;Si $n\equiv 1\pmod{5}$, $(n^2+4)\equiv (1+4)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+4)$ uno de sus factores.&lt;/li&gt;
 &lt;li&gt;Si $n\equiv 2\pmod{5}$, $(n^2+1)\equiv (4+1)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+1)$ uno de sus factores.&lt;/li&gt;
 &lt;li&gt;Si $n\equiv 3\pmod{5}$, $(n^2+1)\equiv (9+1)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+1)$ uno de sus factores.&lt;/li&gt;
 &lt;li&gt;Si $n\equiv 4\pmod{4}$, $(n^2+4)\equiv (16+4)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+4)$ uno de sus factores.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Así pues, como $u$ es múltiplo de 120, $v$ es múltiplo de 5 y $120\cdot 5=600$, podemos concluir que $a_n$, cuando $n&amp;gt;2$, es múltiplo de 600.&lt;/p&gt;
+&lt;p&gt;Así pues, como $u$ es múltiplo de $120$, $v$ es múltiplo de $5$ y $120\cdot 5=600$, podemos concluir que $a_n$, cuando $n&amp;gt;2$, es múltiplo de $600$.&lt;/p&gt;
 </description>
     </item>
     
