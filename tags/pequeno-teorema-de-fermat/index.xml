@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pequeño Teorema de Fermat on Infinitos Contrastes</title>
+    <link>https://imalexissaez.github.io/tags/pequeno-teorema-de-fermat/</link>
+    <description>Recent content in Pequeño Teorema de Fermat on Infinitos Contrastes</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator>
+    <language>en-us</language>
+    <copyright>Alexis Sáez &amp;copy;{year}</copyright>
+    <lastBuildDate>Sat, 19 Jan 2019 05:59:39 +0200</lastBuildDate>
+    
+	    <atom:link href="https://imalexissaez.github.io/tags/pequeno-teorema-de-fermat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2019, año de las torres de potencias</title>
+      <link>https://imalexissaez.github.io/2019/01/19/2019-anno-de-las-torres-de-potencias/</link>
+      <pubDate>Sat, 19 Jan 2019 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2019/01/19/2019-anno-de-las-torres-de-potencias/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 44:&lt;/strong&gt; Encuentra los dos últimos dígitos de&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para encontrar las dos últimas cifras de la operación indicada en el enunciado del ejercicio, un posible enfoque pasa por trabajar con el valor de las congruencias módulo $100$. Estudiemos el valor de dichas congruencias para cada uno de los tres sumandos por separado.&lt;/p&gt;
+
+&lt;p&gt;En primer lugar, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora, como $mcd(17,100) = 1$, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, sabemos que&lt;/p&gt;
+
+&lt;p&gt;$$
+17^{\varphi(100)}\equiv 1\pmod{100},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $100 = 2^2\cdot5^2$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\varphi(100) = 100\cdot\left(1-\dfrac{1}{2}\right)\cdot\left(1-\dfrac{1}{5}\right) = 40,
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es, $17^{40}\equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019}\pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2018^{2019}\pmod{5},\\ x&amp;amp;\equiv 2018^{2019}\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019}\equiv 3^{2019}\pmod{5},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $5$ es un número primo y $mcd(3,5) = 1$, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $3^4\equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+3^{2019} = 3^3\cdot (3^4)^{504}\equiv (3^3\cdot 1^{504})\pmod{5} \equiv 2\pmod{5}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por otro lado, $2018 = 2\cdot1009$, por lo que,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \\ &amp;amp;= 2^{2019}\cdot1009^{2019} \\ &amp;amp;= 2^3\cdot2^{2016}\cdot1009^{2019} \\ &amp;amp;= 8\cdot2^{2016}\cdot1009^{2019},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y así, podemos concluir que $2018^{2019}\equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el &lt;em&gt;Teorema chino del resto&lt;/em&gt; o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}\equiv 17^{32}\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Ahora bien, $17^{32} = (17^2)^{16} = 189^{16}\equiv 89^{16}\pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+17^{32}&amp;amp;\equiv 89^{16}\pmod{100} \\ &amp;amp;\equiv (-11)^{16}\pmod{100} \\ &amp;amp;\equiv 11^{16}\pmod{100} \\ &amp;amp;\equiv 21^8\pmod{100}\\ &amp;amp;\equiv 41^4\pmod{100} \\ &amp;amp;\equiv 81^2\pmod{100} \\ &amp;amp;\equiv 61\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es,&lt;/p&gt;
+
+&lt;p&gt;$$
+2017^{2018^{2019}}\equiv 61\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Para el segundo sumando, utilizaremos el &lt;em&gt;Teorema chino del resto&lt;/em&gt; desde el principio. Así, la ecuación de congruencia lineal&lt;/p&gt;
+
+&lt;p&gt;$$
+x\equiv 2018^{2019^{2020}}\pmod{100}
+$$&lt;/p&gt;
+
+&lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{4},\\ x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{25},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 0\pmod{4},
+$$&lt;/p&gt;
+
+&lt;p&gt;pues $2018 = 2\cdot1009$ y, gracias a ese dos que figura en la descomposición en factores primos de $2018$, operando adecuadamente con las propiedades de los exponentes (de una forma similar a como actuamos en el caso anterior) es fácil ver que la torre de potencias es múltiplo de cuatro. Por otro lado,&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $mcd(18,25)=1$ estamos en condiciones de volver a aplicar el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+18^{\varphi(25)}\equiv 1\pmod{25},
+$$&lt;/p&gt;
+
+&lt;p&gt;y, dado que $25=5^2$, es cierto que&lt;/p&gt;
+
+&lt;p&gt;$$
+\varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2019^{2020} &amp;amp;\equiv (-1)^{2020}\pmod{20} \\ &amp;amp;\equiv 1^{2020}\pmod{20} \\ &amp;amp;\equiv 1\pmod{20},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y entonces&lt;/p&gt;
+
+&lt;p&gt;$$
+2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25}\equiv 18\pmod{25}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 0\pmod{4},\\ x&amp;amp;\equiv 18\pmod{25}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al &lt;em&gt;Teorema chino del resto&lt;/em&gt; o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, el modo de actuar con el tercer sumando es similar al llevado a cabo para el primero. Así,&lt;/p&gt;
+
+&lt;p&gt;$$
+2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100},
+$$&lt;/p&gt;
+
+&lt;p&gt;y como $mcd(19,100)=1$ sabemos, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, que $19^{\varphi(100)} = 19^{40}\equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que nos garantiza que la ecuación de congruencia lineal&lt;/p&gt;
+
+&lt;p&gt;$$
+x\equiv 2020^{2021}\pmod{40}
+$$&lt;/p&gt;
+
+&lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 2020^{2021}\pmod{5},\\ x&amp;amp;\equiv 2020^{2021}\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2\cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+x&amp;amp;\equiv 0\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,&lt;/p&gt;
+
+&lt;p&gt;$$
+2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100}\equiv 1\pmod{100}.
+$$&lt;/p&gt;
+
+&lt;p&gt;Recapitulando,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2017^{2018^{2019}}&amp;amp;\equiv 61\pmod{100},\\ 2018^{2019^{2020}}&amp;amp;\equiv 68\pmod{100},\\ 2019^{2020^{2021}}&amp;amp;\equiv  1\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;luego&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}\right)&amp;amp;\equiv (61+68+1)\pmod{100}\\ &amp;amp;\equiv 30\pmod{100},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>¿Será múltiplo de treinta o no?</title>
+      <link>https://imalexissaez.github.io/2018/12/05/sera-multiplo-de-treinta-o-no/</link>
+      <pubDate>Wed, 05 Dec 2018 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2018/12/05/sera-multiplo-de-treinta-o-no/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 31:&lt;/strong&gt; Demuestra que $a^{25}-a$ es divisible entre $30$ para cualquier entero $a$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Hemos de ser capaces de probar que $(a^{25}-a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.&lt;/p&gt;
+
+&lt;p&gt;Vamos a apoyarnos en el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que afirma que si $p$ es un número primo y $a\in\mathbb{Z}$, entonces $a^p\equiv a\pmod{p}$. Así, para $p=5$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+a^{25} &amp;amp;= (a^5)^5\\ &amp;amp;\equiv a^5\pmod{5}\\ &amp;amp;\equiv a\pmod{5},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;de manera que $(a^{25}-a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+a^{25} &amp;amp;= a\cdot (a^8)^3\\ &amp;amp;\equiv (a\cdot a^8)\pmod{3}\\ &amp;amp;\equiv (a^3)^3\pmod{3}\\ &amp;amp;\equiv a^3\pmod{3}\\ &amp;amp;\equiv a\pmod{3},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y, por tanto, $(a^{25}-a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+a^{25} &amp;amp;= a\cdot(a^{12})^2\\ &amp;amp;\equiv (a\cdot a^{12})\pmod{2}\\ &amp;amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^6)\pmod{2}\\ &amp;amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^3)\pmod{2}\\ &amp;amp;\equiv a^4\pmod{2}\\ &amp;amp;\equiv (a^2)^2\pmod{2}\\ &amp;amp;\equiv a^2\pmod{2}\\ &amp;amp;\equiv a\pmod{2},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;y, por consiguiente, $(a^{25}-a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25}-a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
+
+&lt;p&gt;A modo de nota final, aunque nos hubiese dado la impresión de que escoger la descomposición $30=5\cdot 6$ habría acelerado la resolución de este ejercicio, hemos de ser cautos, pues $6$ no es un número primo, requisito indispensable para aplicar el resultado que nos ha permitido llevar a buen puerto este problema. En este último caso, habría sido necesario recurrir a otras herramientas para verificar la propiedad propuesta en el enunciado del ejercicio.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Un polinomio que solo toma valores enteros</title>
+      <link>https://imalexissaez.github.io/2018/11/14/un-polinomio-que-solo-toma-valores-enteros/</link>
+      <pubDate>Wed, 14 Nov 2018 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2018/11/14/un-polinomio-que-solo-toma-valores-enteros/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 25:&lt;/strong&gt; Para cada entero no negativo $n$, se considera el valor $P(n)$,&lt;/p&gt;
+
+&lt;p&gt;$$
+P(n) = \dfrac{n^7}{7} + \dfrac{n^3}{3} + \dfrac{11n}{21}.
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;(a) Demuestra que en $\mathbb{Z}_3$ y en $\mathbb{Z}_7$ se verifica que $3n^7 + 7n^3 + 11n = 0$.&lt;/li&gt;
+&lt;li&gt;(b) Demuestra que $P(n)$ es un entero.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Para el apartado (a), recordemos que el conjunto finito $\mathbb{Z}_3 = \{\overline{0}, \overline{1}, \overline{2}\}$, que es un cuerpo al ser $3$ un número primo, viene definido como el conjunto cociente de $\mathbb{Z}$ por la relación de equivalencia dada por la congruencia módulo $3$. Así, como $3\equiv 0\pmod{3}$, es cierto que, para cada entero no negativo $n$, $3n^7\equiv 0\pmod{3}$. Por otro lado, al ser $3$ un número primo, sabemos, por el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que $n^3\equiv n\pmod{3}$, para cada entero no negativo $n$, por lo que $7n^3\equiv 7n\pmod{3}\equiv n\pmod{3}$. Por tanto,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(3n^7+7n^3+11n)&amp;amp;\equiv (0+n+11n)\pmod{3}\\ &amp;amp;\equiv 12n\pmod{3}\\ &amp;amp;\equiv 0\pmod{3},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;para cada entero no negativo $n$. Alternativamente, en el caso de no recordar el anterior corolario, llegaríamos a que&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(3n^7+7n^3+11n)&amp;amp;\equiv (0+7n^3+11n)\pmod{3}\\ &amp;amp;\equiv (n^3-n)\pmod{3},
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;pero&lt;/p&gt;
+
+&lt;p&gt;$$
+n^3-n = n(n^2-1) = (n-1)n(n+1),
+$$&lt;/p&gt;
+
+&lt;p&gt;esto es, $n^3-n$ es el resultado de multiplicar tres números consecutivos, entre los cuales siempre seremos capaces de encontrar un múltiplo de $3$, haciendo pues que se verifique que $(n^3-n)\equiv 0\pmod{3}$.&lt;/p&gt;
+
+&lt;p&gt;Por lo que respecta al conjunto finito $\mathbb{Z}_7$, cuerpo también al ser $7$ un número primo, que se define siguiendo un procedimiento similar al mostrado para $\mathbb{Z}_3$, la manera de proceder es idéntica. Como $7\equiv 0\pmod{7}$, entonces, para cada entero no negativo $n$, es cierto que $7n^3\equiv 0\pmod{7}$. Además, aplicando el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, como $7$ es un número primo, $n^7\equiv n\pmod{7}$, por lo que $3n^7\equiv 3n\pmod{7}$ para cada entero no negativo $n$. Luego,&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+(3n^7+7n^3+11n)&amp;amp;\equiv (3n+0+11n)\pmod{7}\\ &amp;amp;\equiv 14n\pmod{7}\\ &amp;amp;\equiv 0\pmod{7}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;En cuanto al apartado (b), operando en la expresión de $P(n)$ llegamos a que&lt;/p&gt;
+
+&lt;p&gt;$$
+P(n) = \dfrac{n^7}{7} + \dfrac{n^3}{3} + \dfrac{11n}{21} = \dfrac{3n^7 + 7n^3 + 11n}{21},
+$$&lt;/p&gt;
+
+&lt;p&gt;y para que $P(n)\in\mathbb{Z}$, para cada entero no negativo $n$, el numerador de la anterior expresión ha de ser múltiplo de $21$. Sin embargo, en el apartado (a) acabamos de probar que $(3n^7+7n^3+11n)\equiv 0\pmod{3}$ y $(3n^7+7n^3+11n)\equiv 0\pmod{7}$, de manera que, aplicando las propiedades de las congruencias, arribamos a que se verifica que $(3n^7+7n^3+11n)\equiv 0\pmod{21}$, es decir, el numerador es múltiplo de $21$ y, por tanto, $P(n)\in\mathbb{Z}$ para cada entero no negativo $n$.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Empezando con teoría de números (I)</title>
+      <link>https://imalexissaez.github.io/2018/10/09/empezando-con-teoria-de-numeros-i/</link>
+      <pubDate>Tue, 09 Oct 2018 05:59:39 +0200</pubDate>
+      
+      <guid>https://imalexissaez.github.io/2018/10/09/empezando-con-teoria-de-numeros-i/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 17:&lt;/strong&gt; Calcula el resto de la división de&lt;/p&gt;
+
+&lt;p&gt;$$
+2^{1538}
+$$&lt;/p&gt;
+
+&lt;p&gt;entre $5$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Estudiemos, utilizando la teoría de congruencias, el comportamiento del valor de las primeras potencias de $2$.&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{aligned}
+2^1&amp;amp;\equiv 2 \pmod{5},\\ 2^2&amp;amp;\equiv 4 \pmod{5}\equiv(-1) \pmod{5},\\ 2^3&amp;amp;\equiv 3 \pmod{5},\\ 2^4&amp;amp;\equiv 1 \pmod{5}.
+\end{aligned}
+$$&lt;/p&gt;
+
+&lt;p&gt;Este resulta un buen punto en el que detener nuestro análisis, ya que ahora sabemos que las potencias de $2$ que son múltiplo de $4$ son congruentes con $1$ módulo $5$. Es decir, $2^8\equiv 1 \pmod{5}$, $2^{12}\equiv 1 \pmod{5}$, etc. Antes de continuar, cabe señalar que:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Podíamos habernos ahorrado algunos cálculos, ya que como $p=5$ es un número primo y $mcd(2,5)=1$, entonces, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt; (ver abajo), $2^{5-1} = 2^4\equiv 1 \pmod{5}$.&lt;/li&gt;
+&lt;li&gt;Además, en el momento en el que hemos obtenido la potencia para la cual $(-1)\pmod{5}$ ya podíamos intuir cuándo llegaríamos al resultado deseado, ya que $(-1)^2=1$, lo que indica que al elevar al cuadrado la potencia asociada ($2^2$ en este caso) tendríamos que sería congruente $1$ módulo $5$. Es decir $(2^2)^2 = 2^4 \equiv 1\pmod{5}$.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ahora, dividiendo, sabemos que $1538 = 384\cdot 4 + 2$ y, por tanto,&lt;/p&gt;
+
+&lt;p&gt;$$
+2^{1538} = 2^{384\cdot 4 + 2} = (2^4)^{384}\cdot 2^2\equiv (1\cdot 4)\pmod{5}\equiv 4\pmod{5},
+$$&lt;/p&gt;
+
+&lt;p&gt;y así, el resto de la división de $2^{1538}$ entre $5$ asciende a $4$.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Teorema (Pequeño Teorema de Fermat)&lt;/strong&gt;: sea $p$ un número primo y supongamos que $p$ no divide a $a$. Entonces&lt;/p&gt;
+
+&lt;p&gt;$$
+a^{p-1}\equiv 1\pmod{p}.
+$$&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
