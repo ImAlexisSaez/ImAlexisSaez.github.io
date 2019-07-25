@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2018-09-08T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2018-09-08T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-25T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2018-09-08 05:59:39 &#43;0200 CEST" itemprop="datePublished">
-<meta content="2018-09-08 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+<meta content="2019-07-25 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2018-09-08</time>
+    <time>2019-07-25</time>
   </span>
   
 
@@ -577,23 +579,29 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 7:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
 
-<p>$$
+<p><span  class="math">\[
 1^4+2^4+\cdots+n^4=\dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}.
-$$</p>
+\]</span></p>
 
-<hr />
+<hr>
 
 <p>Vaya por delante que estamos ante uno de esos problemas que rápidamente se ganan el apelativo de tediosos, no tanto por su dificultad, sino por el elevado número de operaciones algebraicas que debemos llevar a cabo durante el proceso de su resolución.</p>
 
 <p>Cuando en una propiedad a verificar aparecen involucrados polinomios de grado considerable, la segunda parte del <em>principio de inducción matemática</em> conlleva el desarrollo de múltiples binomios de la forma $(n+1)^m$, con $m\in\mathbb{N}$. Para reducir un tanto el tedio, siempre es aconsejable que, en primer lugar, factoricemos los mencionados polinomios.</p>
 
-<p>Como nota curiosa, consultados diferentes recursos didácticos, la fórmula para la suma de las potencias cuartas de los $n$ primeros números naturales suele venir dada por $$1^4+2^4+\cdots+n^4=\dfrac{6n^5+15n^4+10n^3-n}{30},$$ hecho que nos puede llevar a sospechar que la proporcionada en el enunciado del presente problema ya está completamente factorizada.</p>
+<p>Como nota curiosa, consultados diferentes recursos didácticos, la fórmula para la suma de las potencias cuartas de los $n$ primeros números naturales suele venir dada por</p>
 
-<p>No obstante, como por naturaleza hemos de ser recelosos, utilicemos el <em>Teorema de la raíz racional</em> para investigar si podemos escribir el polinomio $6n^3+9n^2+n-1$ de una manera que nos resulte más cómoda de cara a futuras operaciones con él. Recordemos que, dada una ecuación polinómica con coeficientes enteros</p>
+<p><span  class="math">\[
+1^4 + 2^4 + \cdots + n^4=\dfrac{6n^5+15n^4+10n^3-n}{30},
+\]</span></p>
 
-<p>$$
+<p>hecho que nos puede llevar a sospechar que la proporcionada en el enunciado del presente problema ya está completamente factorizada.</p>
+
+<p>No obstante, como por naturaleza hemos de ser recelosos, utilicemos el <em>Teorema de la raíz racional</em> para investigar si podemos escribir el polinomio $6n^3 + 9n^2 + n - 1$ de una manera que nos resulte más cómoda de cara a futuras operaciones con él. Recordemos que, dada una ecuación polinómica con coeficientes enteros</p>
+
+<p><span  class="math">\[
 a_mn^m + a_{m-1}n^{m-1} + \cdots + a_0=0,
-$$</p>
+\]</span></p>
 
 <p>si $a_0$ y $a_m$ son enteros distintos de cero, entonces las posibles soluciones que son del tipo $n = p/q$ satisfacen:</p>
 
@@ -605,71 +613,73 @@ $$</p>
 
 <p>En nuestro problema, el conjunto de candidatos para $p$ es $\{\pm1\}$, mientras que para $q$ es $\{\pm1,\pm2,\pm3,\pm6\}$ y rápidamente podemos comprobar que $n = -1 / 2$ es solución del polinomio dado. Así,</p>
 
-<p>$$
-6n^3+9n^2+n-1 = (2n+1)(3n^2+3n-1),
-$$</p>
+<p><span  class="math">\[
+6n^3 + 9n^2 + n - 1 = (2n + 1)(3n^2 + 3n - 1),
+\]</span></p>
 
 <p>de manera que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-\sum_{k=1}^{n}{k^4} &amp;= 1^4+2^4+\cdots+n^4\\ &amp;= \dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}\\ &amp;=\dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}.
+\sum_{k=1}^{n}{k^4} &= 1^4+2^4+\cdots+n^4\\
+&= \dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}\\
+&=\dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Una vez hemos alcanzado una expresión irreducible para el polinomio que figura en el numerador de la identidad anterior, utilizamos el <em>principio de inducción matemática</em>, dado en el teorema 1.1 (ver abajo), para comprobar dicha igualdad. Enseguida observamos que se satisface de manera trivial para $n=1$, puesto que</p>
 
-<p>$$
+<p><span  class="math">\[
 1 = 1^4 = \dfrac{1\cdot2\cdot3\cdot5}{30}=1.
-$$</p>
+\]</span></p>
 
 <p>A continuación, suponemos verdadera la identidad para un cierto $n\in\mathbb{N}$, con $n\geq 1$, es decir, que efectivamente se verifica que</p>
 
-<p>$$
+<p><span  class="math">\[
 \sum_{k=1}^{n}{k^4} = \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}
-$$</p>
+\]</span></p>
 
 <p>y estudiamos si se satisface para $n+1$. Así pues, el objetivo que tenemos ahora entre manos es comprobar si</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-\sum_{k=1}^{n+1}{k^4} &amp;= \dfrac{(n+1)(n+2)(2(n+1)+1)(3(n+1)^2+3(n+1)-1)}{30}\\ &amp;= \dfrac{(n+1)(n+2)(2n+3)(3n^2+9n+5)}{30}.
+\sum_{k=1}^{n+1}{k^4} &= \dfrac{(n+1)(n+2)(2(n+1)+1)(3(n+1)^2+3(n+1)-1)}{30}\\
+&= \dfrac{(n+1)(n+2)(2n+3)(3n^2+9n+5)}{30}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Apliquemos la <em>hipótesis de inducción</em> y llevemos a cabo algunas operaciones algebraicas elementales, de forma que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-\sum_{k=1}^{n+1}{k^4} &amp;= (n+1)^4 + \sum_{k=1}^{n}{k^4}\\ &amp;= (n+1)^4 + \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}\\ &amp;= \dfrac{30(n+1)^4 + n(n+1)(2n+1)(3n^2+3n-1)}{30}\\ &amp;= \dfrac{(n+1)(30(n+1)^3+n(2n+1)(3n^2+3n-1))}{30}.
+\sum_{k=1}^{n+1}{k^4} &= (n+1)^4 + \sum_{k=1}^{n}{k^4}\\
+&= (n+1)^4 + \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}\\
+&= \dfrac{30(n+1)^4 + n(n+1)(2n+1)(3n^2+3n-1)}{30}\\
+&= \dfrac{(n+1)(30(n+1)^3+n(2n+1)(3n^2+3n-1))}{30}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>Por tanto, el resultado quedaría probado siempre y cuando fuesen equivalentes las expresiones de los polinomios $(n+2)(2n+3)(3n^2+9n+5)$ y $30(n+1)^3+n(2n+1)(3n^2+3n-1)$. Efectivamente, si desarrollamos</p>
+<p>Por tanto, el resultado quedaría probado siempre y cuando fuesen equivalentes las expresiones de los polinomios $(n+2)(2n+3)(3n^2+9n+5)$ y $30(n+1)^3 + n(2n+1)(3n^2+3n-1)$. Efectivamente, si desarrollamos</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-(n+2)(2n+3) &amp;= 2n^2+3n+4n+6 = 2n^2+7n+6,\\ (2n^2+7n+6)(3n^2+9n+5) &amp;= 6n^4+18n^3+10n^2+21n^3+63n^n+35n+18n^2+54n+30\\ &amp;= 6n^4+39n^3+91n^2+89n+30,
+(n+2)(2n+3) &= 2n^2+3n+4n+6 = 2n^2+7n+6,\\
+(2n^2+7n+6)(3n^2+9n+5) &= 6n^4+39n^3+91n^2+89n+30,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>y, por otro lado,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-30(n+1)^3 &amp;= 30n^3 + 90n^2 + 90n + 30,\\ n(2n+1)(3n^2+3n-1) &amp;= 6n^4+6n^3-2n^2+3n^3+3n^2-n\\ &amp;= 6n^4+9n^3+n^2-n,
+30(n+1)^3 &= 30n^3 + 90n^2 + 90n + 30,\\
+n(2n+1)(3n^2+3n-1) &= 6n^4+9n^3+n^2-n,
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>de manera que</p>
+<p>de manera que la suma de estas dos últimas ecuaciones asciende a $6n^4 + 39n^3 + 91n^2 + 89n + 30,$ y, por tanto, la identidad se verifica para $n+1$. El <em>principio de inducción matemática</em> nos permite concluir que es cierta para cada $n\in\mathbb{N}$.</p>
 
-<p>$$
-30(n+1)^3 + n(2n+1)(3n^2+3n-1) = 6n^4+39n^3+91n^2+89n+30,
-$$</p>
-
-<p>y, por tanto, la identidad se verifica para $n+1$. El <em>principio de inducción matemática</em> nos permite concluir que es cierta para cada $n\in\mathbb{N}$.</p>
-
-<hr />
+<hr>
 
 <p><strong>Teorema 1.1 (Principio de inducción matemática)</strong>: Sea $S$ un conjunto de enteros positivos que tienen las dos propiedades siguientes:</p>
 
@@ -680,7 +690,7 @@ $$</p>
 
 <p>Entonces todo entero positivo pertenece al conjunto $S$.</p>
 
-<hr />
+<hr>
 
     </div>
 
@@ -873,6 +883,8 @@ $$</p>
       
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js" integrity="sha256-aYTdUrn6Ow1DDgh5JTc3aDGnnju48y/1c8s1dgkYPQ8=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/r.min.js"></script>
         
       
 
