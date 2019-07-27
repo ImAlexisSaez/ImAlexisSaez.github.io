@@ -423,37 +423,50 @@ $$&lt;/p&gt;
 &lt;li&gt;(b) $a_{n+4} + 2a_{n+2} + a_n = 0$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;En el apartado (a), $a_{n+3} - 3a_{n+2} + 4a_{n+1} - 12a_n = 0$ es una ecuación en diferencias lineal homogénea de orden 3, que tiene por ecuación característica&lt;/p&gt;
 
-&lt;p&gt;$$
-\lambda^3-3\lambda^2+4\lambda-12=0.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\lambda^3 - 3\lambda^2 + 4\lambda - 12 = 0.
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, como $\lambda^3-3\lambda^2+4\lambda-12 = (\lambda-3)(\lambda-2i)(\lambda+2i)$, tenemos una raíz real simple y dos raíces complejas conjugadas simples, para las que $\varrho = 2$ y $\theta = \pi/2$, de manera que la solución queda&lt;/p&gt;
+&lt;p&gt;Ahora bien, como $\lambda^3 - 3\lambda^2 + 4\lambda - 12 = (\lambda - 3)(\lambda - 2i)(\lambda + 2i)$, tenemos una raíz real simple y dos raíces complejas conjugadas simples, para las que $\varrho = 2$ y $\theta = \pi/2$, de manera que la solución queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_h(n) = c_13^n + 2^n\left(A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}\right),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $c_1, A, B\in\mathbb{R}$.&lt;/p&gt;
 
-&lt;p&gt;A continuación, en el apartado (b), la ecuación en diferencias lineal $a_{n+4} + 2a_{n+2} + a_n = 0$ es homogénea de orden 4, con ecuación característica&lt;/p&gt;
+&lt;p&gt;A continuación, en el apartado (b), $a_{n+4} + 2a_{n+2} + a_n = 0$ es homogénea de orden 4, con ecuación característica&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \lambda^4 + 2\lambda^2 + 1 = 0.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Esta ecuación bicuadrada en $\lambda$ la podemos resolver, por ejemplo, mediante el cambio de variable $t = \lambda^2$, de forma que la ecuación queda como $t^2+2t+1=0$ y posee $t=-1$ como raíz real de multiplicidad $m=2$, es decir, $t^2+2t+1 = (t+1)^2$. Así, si deshacemos ahora el cambio de variable, resulta que $\lambda^4 + 2\lambda^2 + 1 = (\lambda - i)^2(\lambda + i)^2$, con lo cual tenemos dos raíces complejas conjugadas de multiplicidad $m=2$, para las que $\varrho=1$ y $\theta = \pi/2$, por lo que la solución queda&lt;/p&gt;
+&lt;p&gt;Esta ecuación bicuadrada en $\lambda$ la podemos resolver mediante el cambio de variable $t = \lambda^2$, de forma que la ecuación queda como $t^2+2t+1=0$ y posee $t=-1$ como raíz real de multiplicidad $m=2$, es decir,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+t^2+2t+1 = (t+1)^2.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Así, si deshacemos ahora el cambio de variable, resulta que&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\lambda^4 + 2\lambda^2 + 1 = (\lambda - i)^2(\lambda + i)^2,
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;con lo cual tenemos dos raíces complejas conjugadas de multiplicidad $m=2$, para las que $\varrho=1$ y $\theta = \pi/2$, por lo que la solución queda&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a_h(n) &amp;amp;= 1^n\left(
+a_h(n) &amp;= 1^n\left(
 (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)}
-\right)\\ &amp;amp;= (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)},
+\right)\\
+&amp;= (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $A,B,C,D\in\mathbb{R}$.&lt;/p&gt;
 </description>
@@ -472,33 +485,33 @@ $$&lt;/p&gt;
 &lt;li&gt;(b) $a_{n+3} - 4a_{n+2} + 5a_{n+1} - 2a_n = 0$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;En el apartado (a), encontramos la ecuación en diferencias lineal homogénea de orden 3 dada por $a_{n+3} - 3a_{n+2} - 4a_{n+1} + 12a_n = 0$, cuya ecuación característica asociada es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \lambda^3-3\lambda^2-4\lambda+12=0.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, como $\lambda^3-3\lambda^2-4\lambda+12 = (\lambda-3)(\lambda-2)(\lambda+2)$, estamos ante el caso de raíces reales simples, de manera que la solución queda&lt;/p&gt;
+&lt;p&gt;Ahora bien, como $\lambda^3 - 3\lambda^2 - 4\lambda + 12 = (\lambda - 3)(\lambda - 2)(\lambda + 2)$, estamos ante el caso de raíces reales simples, de manera que la solución queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_h(n) = c_1(-2)^n + c_22^n + c_33^n,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $c_1,c_2,c_3\in\mathbb{R}$.&lt;/p&gt;
 
-&lt;p&gt;Para el apartado (b), la ecuación en diferencias lineal $a_{n+3} - 4a_{n+2} + 5a_{n+1} - 2a_n = 0$ es homogénea de orden 3, con ecuación característica&lt;/p&gt;
+&lt;p&gt;Para el apartado (b), $a_{n+3} - 4a_{n+2} + 5a_{n+1} - 2a_n = 0$ es homogénea de orden 3, con ecuación característica&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \lambda^3 - 4\lambda^2 + 5\lambda - 2 = 0.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Como $\lambda^3 - 4\lambda^2 + 5\lambda - 2 = (\lambda-2)(\lambda-1)^2$, $\lambda=1$ es una raíz real de multiplicidad $m=2$, mientras que $\lambda=2$ es una raíz real simple, por lo que la solución queda&lt;/p&gt;
+&lt;p&gt;Como $\lambda^3 - 4\lambda^2 + 5\lambda - 2 = (\lambda - 2)(\lambda - 1)^2$, $\lambda=1$ es una raíz real de multiplicidad $m=2$, mientras que $\lambda=2$ es una raíz real simple, por lo que la solución queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_h(n) = c_11^n + c_2n1^n + c_32^n = c_1+c_2n+c_32^n,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $c_1,c_2,c_3\in\mathbb{R}$.&lt;/p&gt;
 </description>

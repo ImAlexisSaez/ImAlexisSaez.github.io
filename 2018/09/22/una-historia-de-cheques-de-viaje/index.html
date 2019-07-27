@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2018-09-22T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2018-09-22T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-27T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2018-09-22 05:59:39 &#43;0200 CEST" itemprop="datePublished">
-<meta content="2018-09-22 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+<meta content="2019-07-27 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2018-09-22</time>
+    <time>2019-07-27</time>
   </span>
   
 
@@ -577,13 +579,13 @@
     <div class="article-style" itemprop="articleBody">
       <p>En el presente artículo abordaremos con sumo detalle un problema propuesto en la convocatoria de oposiciones de Extremadura, de este mismo año 2018, para la especialidad de matemáticas.</p>
 
-<hr />
+<hr>
 
 <p><strong>Problema 11:</strong> En su último viaje a Estados Unidos, el señor Martínez cambió un cheque de viaje. El cajero, al pagarle, confundió el número de dólares con los centavos y viceversa. El señor Martínez gastó 68 centavos en sellos y comprobó que el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado. ¿Qué valor mínimo tenía el cheque de viaje?</p>
 
-<hr />
+<hr>
 
-<p>Al leer el enunciado, enseguida apreciamos dos partes que nos sirven de pista hacia el tipo de problema que tenemos entre manos. Para empezar, cuando aparece &ldquo;el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado&rdquo;, debemos sospechar que, en algún momento de la resolución del ejercicio, plantearemos una ecuación algebraica, posiblemente lineal. Esta poseerá múltiples soluciones, quizá incluso infinitas, ya que en la cuestión se interesan por el &ldquo;valor mínimo&rdquo;. Al estar trabajando con dólares y centavos, cantidades monetarias que usualmente se representan utilizando números enteros, todo ello nos va a hacer pensar rápidamente en ecuaciones diofánticas.</p>
+<p>Al leer el enunciado, enseguida apreciamos dos partes que nos sirven de pista hacia el tipo de problema que tenemos entre manos. Para empezar, cuando aparece ''el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado'', debemos sospechar que, en algún momento de la resolución del ejercicio, plantearemos una ecuación algebraica, posiblemente lineal. Esta poseerá múltiples soluciones, quizá incluso infinitas, ya que en la cuestión se interesan por el ''valor mínimo''. Al estar trabajando con dólares y centavos, cantidades monetarias que usualmente se representan utilizando números enteros, todo ello nos va a hacer pensar rápidamente en ecuaciones diofánticas.</p>
 
 <p>Así pues, una de las claves de este ejercicio reside en trabajar en centavos, para evitar así operar con decimales. De esta manera, si el señor Martínez viajó a Estados con un cheque de viaje cuyo valor ascendía a $a$ dólares y $b$ centavos, con $a$ y $b$ números enteros mayores o iguales de cero, en total el valor de dicho cheque era de $100a + b$ centavos.</p>
 
@@ -591,79 +593,85 @@
 
 <p>La anterior cantidad nos dicen que equivalía al doble del importe del cheque de viaje que había cambiado ($2(100a + b)$), es decir, tenemos la ecuación diofántica</p>
 
-<p>$$
+<p><span  class="math">\[
 100b + a - 68 = 200a + 2b,
-$$</p>
+\]</span></p>
 
 <p>que queda, operando,</p>
 
-<p>$$
+<p><span  class="math">\[
 199a-98b=-68.
-$$</p>
+\]</span></p>
 
 <p>Obtengamos el $mcd(199,98)$ utilizando el <em>Algoritmo de Euclides</em>:</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-199 &amp;= 98\cdot 2 + 3,\\ 98 &amp;= 3\cdot 32 + 2,\\ 3 &amp;= 2\cdot 1 + 1,\\ 2 &amp;= 1\cdot 2,
+199 &= 98\cdot 2 + 3,\\ 
+98 &= 3\cdot 32 + 2,\\
+3 &= 2\cdot 1 + 1,\\
+2 &= 1\cdot 2,
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>luego $mcd(199,98)=1$ y como $1|68$ sabemos que la ecuación diofántica admite solución entera.</p>
+<p>luego $mcd(199, 98) = 1$ y como $1|68$ sabemos que la ecuación diofántica admite solución entera.</p>
 
 <p>Despejamos entonces $b$, por ser la variable cuyo coeficiente asociado es más pequeño, quedando así</p>
 
-<p>$$
+<p><span  class="math">\[
 b = \dfrac{199a + 68}{98}.
-$$</p>
+\]</span></p>
 
 <p>Ahora, como el valor que figura en el denominador de la igualdad anterior es $98$, a continuación, tendríamos que darle a $a$, de manera ordenada, valores del <em>menor sistema completo de restos módulo</em> $98$ hasta hallar una solución particular.</p>
 
 <p>No obstante, en lugar de llevar a cabo tan titánica labor, aprovecharemos las operaciones realizadas durante el <em>Algoritmo de Euclides</em> para descomponer la anterior fracción como sigue:</p>
 
-<p>$$
+<p><span  class="math">\[
 b = 2a + \dfrac{3a+68}{98} = 2a + b^{\prime},
-$$</p>
+\]</span></p>
 
 <p>con</p>
 
-<p>$$
+<p><span  class="math">\[
 b^{\prime} = \dfrac{3a+68}{98},
-$$</p>
+\]</span></p>
 
 <p>que equivale a $98b^{\prime} = 3a + 68$, ecuación en la que ahora despejaremos $a$, teniendo que</p>
 
-<p>$$
+<p><span  class="math">\[
 a = \dfrac{98b^{\prime} - 68}{3}.
-$$</p>
+\]</span></p>
 
 <p>Podemos así dar valores a $b^{\prime}$, ya que únicamente tendríamos que probar $b^{\prime}=0$, $b^{\prime}=1$ y $b^{\prime}=2$ (que conforma el <em>menor sistema completo de restos módulo</em> $3$). Para $b^{\prime}=0$, $a\notin\mathbb{Z}$, pero si $b^{\prime}=1$, entonces $a=10$ y, por tanto, $b = 2a+b^{\prime} = 21$, quedando así la solución particular como sigue:</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-a_0 &amp;= 10,\\ b_0 &amp;= 21,
+a_0 &= 10,\\
+b_0 &= 21,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>mientras que la solución general es</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-a &amp;= 10 - 98t,\\ b &amp;= 21 - 199t,
+a &= 10 - 98t,\\
+b &= 21 - 199t,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t\in\mathbb{Z}$.</p>
 
-<p>Una vez resuelta la ecuación diofántica, centrémonos de nuevo en aquello que nos pedían en el enunciado: &ldquo;¿Qué valor mínimo tenía el cheque de viaje?&rdquo;. Como hablamos de cantidades monetarias, tanto $a$, como $b$, han de ser mayores o iguales que cero, es decir,</p>
+<p>Una vez resuelta la ecuación diofántica, centrémonos de nuevo en aquello que nos pedían en el enunciado: ''¿Qué valor mínimo tenía el cheque de viaje?''. Como hablamos de cantidades monetarias, tanto $a$, como $b$, han de ser mayores o iguales que cero, es decir,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-a &amp;= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\\ b &amp;= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
+a &= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\\
+b &= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>y $t\in\mathbb{Z}$, luego el valor mínimo se alcanza cuando $t=0$, donde $a=10$ y $b=21$. Así, el señor Martínez viajó a Estados Unidos con un cheque de viaje cuyo valor ascendía a 10 dólares y 21 centavos.</p>
+<p>y $t\in\mathbb{Z}$. Por consiguiente, el valor mínimo se alcanza cuando $t=0$, donde $a=10$ y $b=21$. Así, el señor Martínez viajó a Estados Unidos con un cheque de viaje cuyo valor ascendía a 10 dólares y 21 centavos.</p>
 
     </div>
 
