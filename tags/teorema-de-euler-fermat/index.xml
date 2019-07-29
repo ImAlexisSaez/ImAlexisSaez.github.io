@@ -226,39 +226,47 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/11/21/una-aplicacion-rapida-del-teorema-de-euler-fermat/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 27:&lt;/strong&gt; Calcula los dos últimos dígitos de $3^{1492}$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Para encontrar los dos últimos dígitos de $3^{1492}$, un posible enfoque es hallar el valor de su congruencia módulo $100$. El número $100$ no es primo, pero sí que es cierto que $mcd(3,100)=1$, situación que nos permite hacer uso del &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Este resultado afirma que&lt;/p&gt;
+&lt;p&gt;Para encontrar los dos últimos dígitos de $3^{1492}$, un posible enfoque es hallar el valor de su congruencia módulo $100$. El número $100$ no es primo, pero sí que es cierto que $mcd(3, 100)=1$, situación que nos permite hacer uso del &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Este resultado afirma que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 3^{\varphi(100)}\equiv 1\pmod{100}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, como $100 = 2^2\cdot5$, entonces&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \varphi(100) = 100\left(1-\dfrac{1}{2}\right)\left(1-\dfrac{1}{5}\right) = 100\cdot\dfrac{1}{2}\cdot\dfrac{4}{5} = 40,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y, por tanto, $3^{40}\equiv 1\pmod{100}$. De esta manera, como $1492 = 40\cdot 37 + 12$, podemos escribir&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-3^{1492} &amp;amp;= 3^{12}\cdot(3^{40})^{37}\\ &amp;amp;\equiv (3^{12}\cdot1^{37})\pmod{100}\\ &amp;amp;\equiv 3^{12}\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
+3^{1492} &amp;= 3^{12}\cdot(3^{40})^{37}\\
+&amp;\equiv (3^{12}\cdot1^{37})\pmod{100}\\
+&amp;\equiv 3^{12}\pmod{100}\\
+&amp;\equiv 41\pmod{100},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;sin más que hacer uso de la calculadora para obtener el valor de $3^{12}$.&lt;/p&gt;
 
 &lt;p&gt;Alternativamente, para hallar el valor de esta última congruencia, podemos manipular la potencia, $12$, como sigue:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-3^{12} &amp;amp;= (3^4)^3\\ &amp;amp;= 81^3\\ &amp;amp;\equiv(-19)^3\pmod{100}\\ &amp;amp;\equiv (-6859)\pmod{100}\\ &amp;amp;\equiv(-59)\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
+3^{12} &amp;= (3^4)^3\\
+&amp;= 81^3\\
+&amp;\equiv(-19)^3\pmod{100}\\
+&amp;\equiv (-6859)\pmod{100}\\
+&amp;\equiv(-59)\pmod{100}\\
+&amp;\equiv 41\pmod{100},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;como antes, pudiéndose optar también por estrategias similares del tipo $3^{12} = 3^5\cdot 3^5\cdot 3^2$ o $3^{12}=3^6\cdot 3^6$, entre otras.&lt;/p&gt;
+&lt;p&gt;como antes, pudiéndose optar también por estrategias similares del tipo $3^{12} = 3^5\cdot 3^5\cdot 3^2$ o $3^{12} = 3^6\cdot 3^6$, entre otras.&lt;/p&gt;
 
 &lt;p&gt;Así, finalmente, los dos últimos dígitos de $3^{1492}$ son $41$.&lt;/p&gt;
 </description>

@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2018-11-28T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2018-11-28T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-29T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2018-11-28 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2018-11-28 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-07-29 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2018-11-28</time>
+    <time>2019-07-29</time>
   </span>
   
 
@@ -578,53 +580,75 @@
       <p><strong>Problema 29:</strong> Prueba que $437$ es divisor de</p>
 
 <ul>
-<li>(a) $16^{99}-1$.</li>
-<li>(b) $18!+1$.</li>
+<li>(a) $16^{99} - 1$.</li>
+<li>(b) $18! + 1$.</li>
 </ul>
 
-<hr />
+<hr>
 
 <p>Para ambos apartados, vamos a aprovechar que $437 = 19\cdot 23$ y, de cara a demostrar que es divisor de los números dados en los apartados (a) y (b), estudiaremos si $19$ y $23$ lo son y, en caso afirmativo, por las propiedades de las congruencias, concluiremos que $437$ los divide.</p>
 
-<p>Para el apartado (a), como $19$ es un número primo y $mcd(16,19)=1$, entonces, por el <em>Pequeño Teorema de Fermat</em>, $16^{18}\equiv 1\pmod{19}$. Ahora, como $99 = 18\cdot5+9$, entonces</p>
+<p>Para el apartado (a), como $19$ es un número primo y $mcd(16,19)=1$, entonces, por el <em>Pequeño Teorema de Fermat</em>, $16^{18}\equiv 1\pmod{19}$. Ahora, como $99 = 18\cdot5 + 9$, entonces</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-16^{99} &amp;= 16^9\cdot(16^{18})^5\\ &amp;\equiv (16^9\cdot 1^{18})\pmod{19}\\ &amp;\equiv 16^9\pmod{19}\\ &amp;\equiv 4^{18}\pmod{19},
+16^{99} &= 16^9\cdot(16^{18})^5\\
+&\equiv (16^9\cdot 1^{18})\pmod{19}\\
+&\equiv 16^9\pmod{19}\\
+&\equiv 4^{18}\pmod{19},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>pero como $mcd(4,19)=1$, aplicando de nuevo el resultado anterior, $4^{18}\equiv 1\pmod{19}$, luego</p>
 
-<p>$$
-(16^{99}-1)\equiv (1-1)\pmod{19}\equiv 0\pmod{19},
-$$</p>
+<p><span  class="math">\[
+( 16^{99} - 1 )\equiv (1 - 1)\pmod{19}\equiv 0\pmod{19},
+\]</span></p>
 
 <p>esto es, $16^{99}-1$ es múltiplo de $19$. De manera similar, como $23$ es un número primo y $mcd(16,23)=1$, por el mismo teorema que antes sabemos que $16^{22}\equiv 1\pmod{23}$, y como $99=22\cdot4+11$, tenemos que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-16^{99} &amp;= 16^{11}\cdot(16^{22})^4\\ &amp;\equiv (16^{11}\cdot 1^4)\pmod{23}\\ &amp;\equiv 16^{11}\pmod{23}\\ &amp;\equiv 4^{22}\pmod{23},
+16^{99} &= 16^{11}\cdot(16^{22})^4\\
+&\equiv (16^{11}\cdot 1^4)\pmod{23}\\
+&\equiv 16^{11}\pmod{23}\\
+&\equiv 4^{22}\pmod{23},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>y utilizando la estrategia previa, como $mcd(4,23)=1$, sabemos que $4^{22}\equiv 1\pmod{23}$. Así,</p>
 
-<p>$$
-(16^{99}-1)\equiv (1-1)\pmod{23}\equiv 0\pmod{23},
-$$</p>
+<p><span  class="math">\[
+( 16^{99} - 1 )\equiv (1 - 1)\pmod{23}\equiv 0\pmod{23},
+\]</span></p>
 
-<p>es decir, $16^{99}-1$ es múltiplo de $23$ y, por las propiedades de las congruencias, será asimismo múltiplo de $19\cdot23=437$.</p>
+<p>es decir, $16^{99} - 1$ es múltiplo de $23$ y, por las propiedades de las congruencias, será asimismo múltiplo de $19\cdot23=437$.</p>
 
-<p>Para el apartado (b), como $19$ es un número primo, aplicando el <em>Teorema de Wilson</em>, $18!\equiv (-1)\pmod{19}$, luego $(18!+1)\equiv (-1+1)\pmod{19}\equiv 0\pmod{19}$, esto es, $18!+1$ es múltiplo de $19$. Por otro lado, $23$ es asimismo un número primo, de manera que utilizando de nuevo el resultado anterior, $22!\equiv (-1)\pmod{23}$. Ahora bien, $22! = 22\cdot21\cdot20\cdot19\cdot18!$ y como $22\equiv (-1)\pmod{23}$, $21\equiv (-2)\pmod{23}$, $20\equiv (-3)\pmod{23}$ y $19\equiv (-4)\pmod{23}$, llegamos a que</p>
+<p>Para el apartado (b), como $19$ es un número primo, aplicando el <em>Teorema de Wilson</em>, $18!\equiv (-1)\pmod{19}$, luego</p>
 
-<p>$$
+<p><span  class="math">\[
+( 18! + 1 )\equiv (-1+1)\pmod{19}\equiv 0\pmod{19},
+\]</span></p>
+
+<p>esto es, $18!+1$ es múltiplo de $19$. Por otro lado, $23$ es asimismo un número primo, de manera que utilizando de nuevo el resultado anterior, $22!\equiv (-1)\pmod{23}$. Ahora bien, $22! = 22\cdot21\cdot20\cdot19\cdot18!$ y como $22\equiv (-1)\pmod{23}$, $21\equiv (-2)\pmod{23}$, $20\equiv (-3)\pmod{23}$ y $19\equiv (-4)\pmod{23}$, llegamos a que</p>
+
+<p><span  class="math">\[
 \begin{aligned}
-22! &amp;= (22\cdot21\cdot20\cdot19\cdot18!)\\ &amp;\equiv ((-1)\cdot(-2)\cdot(-3)\cdot(-4)\cdot18!)\pmod{23}\\ &amp;\equiv (24\cdot18!)\pmod{23}\\ &amp;\equiv (1\cdot18!)\pmod{23}\\ &amp;\equiv 18!\pmod{23},
+22! &= (22\cdot21\cdot20\cdot19\cdot18!)\\
+&\equiv ((-1)\cdot(-2)\cdot(-3)\cdot(-4)\cdot18!)\pmod{23}\\
+&\equiv (24\cdot18!)\pmod{23}\\
+&\equiv (1\cdot18!)\pmod{23}\\
+&\equiv 18!\pmod{23},
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>y juntando ambos resultados alcanzados, concluimos que $18!\equiv (-1)\pmod{23}$, luego $(18!+1)\equiv (-1+1)\pmod{23}\equiv 0\pmod{23}$, es decir, $18!+1$ es múltiplo de $23$, y como también lo era de $19$, concluimos que asimismo lo será de $19\cdot23=437$.</p>
+<p>y juntando ambos resultados, concluimos que $18!\equiv (-1)\pmod{23}$, luego</p>
+
+<p><span  class="math">\[
+( 18! + 1 )\equiv ( -1 + 1 )\pmod{23}\equiv 0\pmod{23},
+\]</span></p>
+
+<p>es decir, $18!+1$ es múltiplo de $23$, y como también lo era de $19$, concluimos que asimismo lo será de $19\cdot23=437$.</p>
 
     </div>
 

@@ -20,38 +20,40 @@
       <guid>https://imalexissaez.github.io/2018/11/10/un-curioso-criterio-de-divisibilidad/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 24:&lt;/strong&gt; Escribe los divisores de $1001$. Considera ahora&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 N = a_0 + a_1t + \cdots + a_nt^n
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y&lt;/p&gt;
 
-&lt;p&gt;$$
-S = a_0-a_1+a_2-\cdots+(-1)^na_n,$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+S = a_0-a_1+a_2-\cdots+(-1)^na_n,
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde $t=1000$ y $a_n\in\mathbb{Z}$ y demuestra que $N\equiv S\pmod{1001}$. Deduce de ello un criterio de divisibilidad por $7$, $11$ o $13$ y aplícalo al número $312879645$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Como $1001 = 7\cdot11\cdot13$, el conjunto de divisores del número $1001$ es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \{1,7,11,13,77,91,143,1001\}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A continuación, si consideramos $t=1000$, como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 t\equiv (-1)\pmod{1001},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;entonces se cumple que $t^2\equiv (-1)^2\pmod{1001}\equiv 1\pmod{1001}$ y, en general, $t^n\equiv (-1)^n\pmod{1001}$, para cada $n\in\mathbb{N}$. Este hecho nos permite concluir que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-N &amp;amp;= a_0 + a_1t + \cdots + a_nt^n \\ &amp;amp;\equiv (a_0-a_1+a_2-\cdots+(-1)^na_n)\pmod{1001},
+N &amp;= a_0 + a_1t + \cdots + a_nt^n \\
+&amp;\equiv (a_0-a_1+a_2-\cdots+(-1)^na_n)\pmod{1001},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $N\equiv S\pmod{1001}$, tal y como se nos pedía demostrar.&lt;/p&gt;
 
@@ -59,15 +61,15 @@ $$&lt;/p&gt;
 
 &lt;p&gt;Finalmente, si tomamos $N=312879645$, es cierto que lo podemos expresar como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 N = 645 + 879\cdot1000 + 312\cdot1000^2,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que $a_0 = 645$, $a_1=879$ y $a_2=312$. Esto provoca que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 S = 645 - 879 + 312 = 78 = 13\cdot 6,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y como $S$ es divisible por $13$ concluimos, por lo anterior, que $N$ es asimismo divisible por $13$. Alternativamente, podríamos decir que como $7\nmid S$, entonces $7\nmid N$ y, análogamente, como $11\nmid S$, entonces $11\nmid N$, quedando así únicamente concluir como arriba que como $13|S$, entonces $13|N$.&lt;/p&gt;
 
@@ -81,7 +83,7 @@ $$&lt;/p&gt;
       <pubDate>Sat, 03 Nov 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/11/03/empezando-con-teoria-de-numeros-vii/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 23:&lt;/strong&gt; Sea $n$ un número natural. Sea $A_n = 2^n+2^{2n} + 2^{3n}$.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Problema 23:&lt;/strong&gt; Sea $n$ un número natural. Sea $A_n = 2^n + 2^{2n} + 2^{3n}$.&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;a) Demuestra que para todo $n$, $A_{n+3}\equiv A_n\pmod{7}$.&lt;/li&gt;
@@ -89,41 +91,45 @@ $$&lt;/p&gt;
 &lt;li&gt;c) Los números en base $2$, $1110$, $1010100$ y $1001001000$, ¿son divisibles por $7$?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado a),&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 A_{n+3} = 2^{n+3} + 2^{2(n+3)} + 2^{3(n+3)} = 2^{n+3} + 2^{2n+6} + 2^{3n+9}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, aprovechando que $2^3=8\equiv 1\pmod{7}$, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 A_{n+3} = 2^3\cdot2^n + (2^3)^2\cdot2^{2n} + (2^3)^3\cdot 2^{3n} \equiv (2^n + 2^{2n} + 2^{3n})\pmod{7},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $A_{n+3}\equiv A_n\pmod{7}$, como queríamos demostrar.&lt;/p&gt;
 
 &lt;p&gt;En cuanto al apartado b), teniendo presente el resultado alcanzado en el apartado anterior, estudiemos qué sucede para tres números consecutivos. Por comodidad de cara a los cálculos, tomaremos $1$, $2$ y $3$ como valores para $n$, y así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-A_1 &amp;amp;= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\\ A_2 &amp;amp;= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\\ A_3 &amp;amp;= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
+A_1 &amp;= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\\
+A_2 &amp;= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\\
+A_3 &amp;= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;es decir, como $A_1$ es múltiplo de $7$ y se satisface la propiedad dada en a), que podemos escribir como $(A_{n+3}-A_n)\equiv 0\pmod{7}$, concluimos que $A_4$ será múltiplo de $7$ también, así como $A_7, A_{10}, A_{13}$ y, en general, los números de la forma $n=3k+1$, con $k\in\mathbb{Z}$, sin más que aplicar reiteradamente la citada propiedad. Un argumento similar se podría esgrimir para los números de la forma $n=3k+2$, con $k\in\mathbb{Z}$, a la vista del resultado alcanzado para $A_2$. De igual manera, este cauce de pensamiento nos llevaría a descartar que cualquier número de la forma $n=3k$, con $k\in\mathbb{Z}$, vaya a ser múltiplo de $7$, ya que $A_3$ no lo es. En conclusión, $A_n$ será múltiplo de $7$ para todos aquellos valores de $n$ que no sean múltiplo de $3$.&lt;/p&gt;
+&lt;p&gt;es decir, como $A_{1}$ es múltiplo de $7$ y se satisface la propiedad dada en a), que podemos escribir como $( A_{n + 3} - A_{n} ) \equiv 0 \pmod{7}$, concluimos que $A_{4}$ será múltiplo de $7$ también, así como $A_{7}, A_{10}, A_{13}$ y, en general, los números de la forma $n=3k+1$, con $k\in\mathbb{Z}$, sin más que aplicar reiteradamente la citada propiedad. Un argumento similar se podría esgrimir para los números de la forma $n=3k+2$, con $k\in\mathbb{Z}$, a la vista del resultado alcanzado para $A_2$. De igual manera, este cauce de pensamiento nos llevaría a descartar que cualquier número de la forma $n=3k$, con $k\in\mathbb{Z}$, vaya a ser múltiplo de $7$, ya que $A_3$ no lo es. En conclusión, $A_n$ será múltiplo de $7$ para todos aquellos valores de $n$ que no sean múltiplo de $3$.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, en el apartado c), por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, sabemos que podemos escribir&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-1110_{(2} &amp;amp;= 2^1+2^2+2^3 = A_1,\\ 1010100_{(2} &amp;amp;= 2^2+2^4+2^6 = A_2,\\ 1001001000_{(2} &amp;amp;= 2^3+2^6+2^9 = A_3,
+1110_{(2} &amp;= 2^1+2^2+2^3 = A_1,\\
+1010100_{(2} &amp;= 2^2+2^4+2^6 = A_2,\\ 
+1001001000_{(2} &amp;= 2^3+2^6+2^9 = A_3,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y por lo establecido para el apartado anterior, $A_1$ y $A_2$ son divisibles por $7$, mientras que $A_3$ no lo es. De esta manera, los números $1110_{(2}$ y $1010100_{(2}$ son divisibles por $7$, mientras que $1001001000_{(2}$ no lo es.&lt;/p&gt;
+&lt;p&gt;y por lo establecido para el apartado anterior, $A_{1}$ y $A_{2}$ son divisibles por $7$, mientras que $A_{3}$ no lo es. De esta manera, los números $1110_{(2}$ y $1010100_{(2}$ son divisibles por $7$, mientras que $1001001000_{(2}$ no lo es.&lt;/p&gt;
 </description>
     </item>
     
@@ -136,59 +142,61 @@ $$&lt;/p&gt;
       <description>&lt;p&gt;&lt;strong&gt;Problema 22 (Comunidad Valenciana, 2006):&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;a) Halla la base del sistema de numeración en la que $$3753_{(x} - 3586_{(x} = 189_{(x}.$$&lt;/li&gt;
+&lt;li&gt;a) Halla la base en que &lt;span  class=&#34;math&#34;&gt;\(3753_{(x} - 3586_{(x} = 189_{(x}.\)&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;b) Una vez hallado el valor de $x$, deduce el criterio de divisibilidad entre $x-1$ de dicha base.&lt;/li&gt;
 &lt;li&gt;c) Después, justifica si alguno de los números dados es divisible por $x-1$ en dicha base.&lt;/li&gt;
 &lt;li&gt;d) Por último, pasa el primero de los números dados a base $9$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado a), por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, sabemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-3753_{(x} &amp;amp;= 3x^0 + 5x^1 + 7x^2 + 3x^3 = 3+5x+7x^2+3x^3,\\ 3586_{(x} &amp;amp;= 6x^0 + 8x^1 + 5x^2 + 3x^3 = 6+8x+5x^2+3x^3,\\ 189_{(x} &amp;amp;= 9x^0 + 8x^1 + 1x^2 = 9+8x+x^2,
+3753_{(x} &amp;= 3x^0 + 5x^1 + 7x^2 + 3x^3 = 3+5x+7x^2+3x^3,\\
+3586_{(x} &amp;= 6x^0 + 8x^1 + 5x^2 + 3x^3 = 6+8x+5x^2+3x^3,\\
+189_{(x} &amp;= 9x^0 + 8x^1 + 1x^2 = 9+8x+x^2,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que la igualdad planteada en el enunciado es equivalente a:&lt;/p&gt;
 
-&lt;p&gt;$$
-3+5x+7x^2+3x^3 - (6+8x+5x^2+3x^3) = 9+8x+x^2.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+3+5x+7x^2 + 3x^3 - (6+8x+5x^2 + 3x^3) = 9+8x+x^2.
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Operando, esta se convierte en $x^2-11x-12=0$, y como&lt;/p&gt;
+&lt;p&gt;Operando, esta se convierte en $x^2 - 11x-12=0$, y como&lt;/p&gt;
 
-&lt;p&gt;$$
-x^2-11x-12 = (x-12)(x+1),
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+x^2 - 11x-12 = (x-12)(x+1),
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;concluimos que la base del sistema de numeración en la que se satisface la anterior igualdad es $x=12$ ($x=-1$ queda descartada automáticamente pues toda base ha de ser un número natural estrictamente mayor que $1$. Es más, a modo anecdótico, si las soluciones hubiesen sido $x=7$ y $x=12$, también habríamos descartado de forma automática la primera, pues en la expresión de los números implicados en la igualdad hay dígitos mayores o iguales que $7$).&lt;/p&gt;
 
 &lt;p&gt;Para el apartado b), consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $12$. Utilizando el mismo resultado anterior, sabemos que podemos expresarlo como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_112+\cdots+a_{n-2}12^{n-1}+a_{n-1}12^{n-1}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;De cara a encontrar el criterio de divisibilidad del $11$ emplearemos las propiedades de las congruencias sobre las potencias de $12$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_112+a_212^2+\cdots+a_{n-1}12^{n-1}\equiv 0\pmod{11}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora, como $12\equiv 1\pmod{11}$, fácilmente apreciamos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 12^2\equiv 1^2\pmod{11}\equiv 1\pmod{11}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y, en general, $12^i\equiv 1\pmod{11}$, para cada $i\in\mathbb{N}$, por lo que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$, en base $12$, es divisible por $11$ siempre y cuando la suma de sus dígitos sea múltiplo de $11$.&lt;/p&gt;
 
@@ -204,19 +212,23 @@ $$&lt;/p&gt;
 
 &lt;p&gt;Finalmente, en el apartado d) tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-3753_{(12} &amp;amp;= 3\cdot12^0 + 5\cdot12^1 + 7\cdot12^2 + 3\cdot12^3 \\ &amp;amp;= 5184+1008+60+3 \\ &amp;amp;= 6255_{(10},
+3753_{(12} &amp;= 3\cdot12^0 + 5\cdot12^1 + 7\cdot12^2 + 3\cdot12^3 \\
+&amp;= 5184+1008+60+3 \\
+&amp;= 6255_{(10},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y dividiendo ahora sucesivamente por $9$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-6255 &amp;amp;= 9\cdot 695 + 0,\\ 695 &amp;amp;= 9\cdot 77 + 2,\\ 77 &amp;amp;= 9\cdot 8 + 5,
+6255 &amp;= 9\cdot 695 + 0,\\
+695 &amp;= 9\cdot 77 + 2,\\
+77 &amp;= 9\cdot 8 + 5,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;arribamos a que $6255_{(10} = 8520_{(9}$, de manera que $3753_{(12} = 8520_{(9}$ por la unicidad que nos concede el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;.&lt;/p&gt;
 </description>
@@ -230,49 +242,54 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/10/24/empezando-con-teoria-de-numeros-v/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 21:&lt;/strong&gt; Calcula la regla de divisibilidad por $7$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Veamos que, en esta ocasión, proceder como en ejercicios anteriores no dará lugar a establecer una sencilla regla para el criterio de divisibilidad del $7$. En efecto, consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, que podemos expresarlo como&lt;/p&gt;
+&lt;p&gt;Veamos que, en esta ocasión, proceder como en ejercicios anteriores no dará lugar a establecer una sencilla regla para el criterio de divisibilidad del $7$. En efecto, consideremos el número de $n$ cifras $a_{n - 1} a_{n - 2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, que podemos expresarlo como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_110+ \cdots + a_{n-2}10^{n-2}+a_{n-1}10^{n-1}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Para encontrar el criterio de divisibilidad del $7$ utilizaremos las propiedades de las congruencias sobre las potencias de $10$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+a_210^2 + \cdots + a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{7},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, dicho número sea múltiplo de $7$.&lt;/p&gt;
 
 &lt;p&gt;Ahora bien,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-10&amp;amp;\equiv 3\pmod{7},\\ 10^2&amp;amp;\equiv 3^2\pmod{7}\equiv 9\pmod{7}\equiv 2\pmod{7},\\ 10^3&amp;amp;\equiv 3^3\pmod{7}\equiv 27\pmod{7}\equiv 6\pmod{7},\\ 10^4&amp;amp;\equiv 3^4\pmod{7}\equiv 81\pmod{7}\equiv 4\pmod{7},\\ &amp;amp;\vdots
+10&amp;\equiv 3\pmod{7},\\
+10^2&amp;\equiv 3^2\pmod{7}\equiv 9\pmod{7}\equiv 2\pmod{7},\\
+10^3&amp;\equiv 3^3\pmod{7}\equiv 27\pmod{7}\equiv 6\pmod{7},\\
+10^4&amp;\equiv 3^4\pmod{7}\equiv 81\pmod{7}\equiv 4\pmod{7},\\
+&amp;\vdots
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y comenzamos a atisbar que el criterio que podríamos extraer es ciertamente extraño y muy complicado de recordar, puesto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+\cdots + a_{n-1}10^{n-1}\equiv (a_0 + 3a_1 + 2a_2 + \cdots)\pmod{7}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Por lo que respecta a la divisibilidad de un número por $7$, conviene que tengamos a mano el siguiente resultado: &amp;ldquo;&lt;em&gt;un número de la forma $n=10d+u$, con $d&amp;gt;0$ y $0\leq u\leq 9$ es múltiplo de $7$ si, y solo si, $d-2u$ es múltiplo de $7$&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Por lo que respecta a la divisibilidad de un número por $7$, conviene que tengamos a mano el siguiente resultado: &#39;&#39;&lt;em&gt;un número de la forma $n=10d+u$, con $d&amp;gt;0$ y $0\leq u\leq 9$ es múltiplo de $7$ si, y solo si, $d-2u$ es múltiplo de $7$&lt;/em&gt;&#39;&#39;.&lt;/p&gt;
 
 &lt;p&gt;Efectivamente, si suponemos cierto que $(10d+u)\equiv 0\pmod{7}$, es decir, que $n=10d+u$ es múltiplo de $7$, y aplicamos ahora propiedades de las congruencias sobre la forma del número $n$, llegamos a que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-(10d+u)\equiv 0\pmod{7} &amp;amp;\Leftrightarrow (3d-6u)\equiv 0\pmod{7} \\ &amp;amp;\Leftrightarrow (3(d-2u))\equiv 0\pmod{7},
+(10d+u)\equiv 0\pmod{7} &amp;\Leftrightarrow (3d-6u)\equiv 0\pmod{7} \\
+&amp;\Leftrightarrow (3(d-2u))\equiv 0\pmod{7},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, hemos arribado a que el producto de dos números es múltiplo de $7$, y como sabemos que el número $3$ no lo es, concluimos que $d-2u$ es múltiplo de $7$.&lt;/p&gt;
 
-&lt;p&gt;Recíprocamente, si $d-2u$ es múltiplo de $7$, entonces $(d-2u)\equiv 0\pmod{7}$ y multiplicando por $10$ la ecuación de congruencia tenemos que $(10d-20u)\equiv 0\pmod{7}$. Ahora, como $(-20)\equiv 1\pmod{7}$, llegamos a que $(10d+u)\equiv 0\pmod{7}$, es decir, el número $n=10d+u$ es un múltiplo de $7$, quedando así la doble implicación probada.&lt;/p&gt;
+&lt;p&gt;Recíprocamente, si $d-2u$ es múltiplo de $7$, $(d-2u)\equiv 0\pmod{7}$ y multiplicando por $10$ la ecuación de congruencia, $(10d-20u)\equiv 0\pmod{7}$. Ahora, como $(-20)\equiv 1\pmod{7}$, llegamos a que $(10d+u)\equiv 0\pmod{7}$, es decir, el número $n=10d+u$ es un múltiplo de $7$, quedando así la doble implicación probada.&lt;/p&gt;
 
 &lt;p&gt;Veamos en acción esta proposición con un par de ejemplos sencillos. Si $n=63 = 60+3$, entonces $d = 6$, $u=3$ y $d-2u = 6-2\cdot3=0$ que, efectivamente, es un múltiplo de $7$, luego $63$ asimismo lo es. Si $n = 9009$, tenemos que $d = 900$, $u=9$ y $d-2u = 900-2\cdot9=882 = 7\cdot126$, luego $d-2u$ es un múltiplo de $7$, por lo que podemos concluir que el número $9009$ también lo es.&lt;/p&gt;
 </description>
@@ -286,45 +303,51 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/10/17/empezando-con-teoria-de-numeros-iv/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 20:&lt;/strong&gt; Calcula las reglas de divisibilidad para $3$ y para $9$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, que podemos expresarlo como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_110+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Para encontrar el criterio de divisibilidad del $3$ utilizaremos las propiedades de las congruencias sobre las potencias de $10$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+a_210^2+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{3},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, dicho número sea múltiplo de $3$.&lt;/p&gt;
 
-&lt;p&gt;Así, como $10\equiv 1\pmod{3}$, fácilmente apreciamos que $10^2\equiv 1^2\pmod{3}\equiv 1\pmod{3}$ y, en general, $10^i\equiv 1\pmod{3}$, para cada $i\in\mathbb{N}$, por lo que&lt;/p&gt;
+&lt;p&gt;Así, como $10\equiv 1\pmod{3}$, fácilmente apreciamos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+10^2\equiv 1^2\pmod{3}\equiv 1\pmod{3}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;y, en general, $10^i\equiv 1\pmod{3}$, para cada $i\in\mathbb{N}$, por lo que&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{3},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ es divisible por $3$ siempre y cuando la suma de sus dígitos sea múltiplo de $3$.&lt;/p&gt;
 
 &lt;p&gt;Por lo que respecta al criterio de divisibilidad del $9$, el modo de proceder es muy similar al mostrado arriba. Volvemos a buscar una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+a_210^2+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{9},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, dicho número sea múltiplo de $9$. Al igual que antes, como $10\equiv 1\pmod{9}$, se sigue que $10^2\equiv 1^2\pmod{9}\equiv 1\pmod{9}$ y, en general, $10^i\equiv 1\pmod{9}$, para cada $i\in\mathbb{N}$, por lo que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{9},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ es divisible por $9$ siempre y cuando la suma de sus dígitos sea múltiplo de $9$. Expresado de otra manera, todo número es congruente con la suma de sus cifras módulo $9$. Por ejemplo, $162\equiv 0\pmod{9}$, ya que $1+6+2=9$ y $9\equiv 0\pmod{9}$; mientras que $172\equiv 1\pmod{9}$, puesto que $1+7+2=10$ y $10\equiv 1\pmod{9}$.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: es más, el último criterio de divisibilidad hallado se puede generalizar como sigue: &amp;ldquo;&lt;em&gt;dado un sistema de numeración cuya base $b$ es mayor que $2$, un número es divisible por $b-1$ siempre que la suma de sus dígitos sea congruente con $0$ módulo $b-1$&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: es más, el último criterio de divisibilidad hallado se puede generalizar como sigue: &#39;&#39;&lt;em&gt;dado un sistema de numeración cuya base $b$ es mayor que $2$, un número es divisible por $b-1$ siempre que la suma de sus dígitos sea congruente con $0$ módulo $b-1$&lt;/em&gt;&#39;&#39;.&lt;/p&gt;
 </description>
     </item>
     
