@@ -224,37 +224,52 @@ $$&lt;/p&gt;
       <pubDate>Wed, 05 Dec 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/12/05/sera-multiplo-de-treinta-o-no/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 31:&lt;/strong&gt; Demuestra que $a^{25}-a$ es divisible entre $30$ para cualquier entero $a$.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Problema 31:&lt;/strong&gt; Demuestra que $a^{25} - a$ es divisible entre $30$ para cualquier entero $a$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Hemos de ser capaces de probar que $(a^{25}-a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.&lt;/p&gt;
+&lt;p&gt;Hemos de ser capaces de probar que $(a^{25} - a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.&lt;/p&gt;
 
 &lt;p&gt;Vamos a apoyarnos en el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que afirma que si $p$ es un número primo y $a\in\mathbb{Z}$, entonces $a^p\equiv a\pmod{p}$. Así, para $p=5$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= (a^5)^5\\ &amp;amp;\equiv a^5\pmod{5}\\ &amp;amp;\equiv a\pmod{5},
+a^{25} &amp;= (a^5)^5\\
+&amp;\equiv a^5\pmod{5}\\
+&amp;\equiv a\pmod{5},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;de manera que $(a^{25}-a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
+&lt;p&gt;de manera que $(a^{25} - a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot (a^8)^3\\ &amp;amp;\equiv (a\cdot a^8)\pmod{3}\\ &amp;amp;\equiv (a^3)^3\pmod{3}\\ &amp;amp;\equiv a^3\pmod{3}\\ &amp;amp;\equiv a\pmod{3},
+a^{25} &amp;= a\cdot (a^8)^3\\
+&amp;\equiv (a\cdot a^8)\pmod{3}\\
+&amp;\equiv (a^3)^3\pmod{3}\\
+&amp;\equiv a^3\pmod{3}\\
+&amp;\equiv a\pmod{3},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y, por tanto, $(a^{25}-a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
+&lt;p&gt;y, por tanto, $(a^{25} - a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot(a^{12})^2\\ &amp;amp;\equiv (a\cdot a^{12})\pmod{2}\\ &amp;amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^6)\pmod{2}\\ &amp;amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^3)\pmod{2}\\ &amp;amp;\equiv a^4\pmod{2}\\ &amp;amp;\equiv (a^2)^2\pmod{2}\\ &amp;amp;\equiv a^2\pmod{2}\\ &amp;amp;\equiv a\pmod{2},
+a^{25} &amp;= a\cdot(a^{12})^2\\
+&amp;\equiv (a\cdot a^{12})\pmod{2}\\
+&amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\
+&amp;\equiv (a\cdot a^6)\pmod{2}\\
+&amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\
+&amp;\equiv (a\cdot a^3)\pmod{2}\\
+&amp;\equiv a^4\pmod{2}\\
+&amp;\equiv (a^2)^2\pmod{2}\\
+&amp;\equiv a^2\pmod{2}\\
+&amp;\equiv a\pmod{2},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y, por consiguiente, $(a^{25}-a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25}-a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
+&lt;p&gt;y, por consiguiente, $(a^{25} - a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25} - a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
 
 &lt;p&gt;A modo de nota final, aunque nos hubiese dado la impresión de que escoger la descomposición $30=5\cdot 6$ habría acelerado la resolución de este ejercicio, hemos de ser cautos, pues $6$ no es un número primo, requisito indispensable para aplicar el resultado que nos ha permitido llevar a buen puerto este problema. En este último caso, habría sido necesario recurrir a otras herramientas para verificar la propiedad propuesta en el enunciado del ejercicio.&lt;/p&gt;
 </description>

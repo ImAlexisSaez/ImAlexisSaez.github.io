@@ -15229,25 +15229,25 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/15/y-si-el-numero-de-divisores-es-impar/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 34:&lt;/strong&gt; Caracteriza aquellos números naturales cuyo número de divisores es impar.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;De partida, sabemos que los números naturales buscados no serán primos, puestos estos últimos siempre poseen una cantidad par de divisores, dos para ser más concretos: $1$ y el propio número primo. Así pues, consideremos un número natural $m$ expresado mediante su factorización en factores primos,&lt;/p&gt;
 
-&lt;p&gt;$$
-m=a^xb^yc^z\cdots,
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+m=a^x b^y c^z\cdots,
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $a,b,c,\ldots$ números primos y $x,y,z,\ldots$ números naturales. Sabemos que el número de divisores de $m$ es, en total,&lt;/p&gt;
 
-&lt;p&gt;$$
-(x+1)(y+1)(z+1)\cdots.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(x + 1)(y + 1)(z + 1)\cdots.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, nos indican que dicho producto ha de ser un número impar, hecho que traduce en que todos y cada uno de sus términos han de ser números impares (ya que bastaría con que únicamente uno fuese par para que todo el producto resultase un número par). Como $x+1, y+1, z+1,\ldots$ son números impares, inmediatamente deducimos que $x,y,z,\ldots$ serán números pares, que podrán escribirse como $x=2p, y=2q, z=2r,\ldots$ para ciertos enteros $p,q,r,\ldots$. De esta manera,&lt;/p&gt;
 
-&lt;p&gt;$$
-m = a^xb^yc^z\cdots = a^{2p}b^{2q}c^{2r}\cdots = (a^pb^qc^r\cdots)^2,
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+m = a^x b^y c^z\cdots = a^{2p} b^{2q} c^{2r}\cdots = (a^p b^q c^r\cdots)^2,
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, los números naturales que se caracterizan por poseer una cifra impar de divisores son cuadrados perfectos. Con ello, en función de la cantidad de divisores de un número, contamos así con un criterio para decidir rápidamente si dicho número es o no un cuadrado perfecto, según su total de divisores sea o no una cifra impar.&lt;/p&gt;
 </description>
@@ -15266,27 +15266,30 @@ $$&lt;/p&gt;
 &lt;li&gt;(b) Demuestra que $1000!$ no es divisible por $2^{995}$,&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado (a), nuestra labor consistiría en contar el número de dieces que podemos encontrar en la expresión de $1000! = 1\cdot2\cdot3\cdots999\cdot1000$. No estamos en condiciones de emplear directamente la &lt;em&gt;Fórmula de Legendre&lt;/em&gt;, puesto que $10$ no es un número primo, pero $10=2\cdot5$, de manera que nuestra tarea se reduce a buscar el número de veces que figura $5$ en la factorización en números primos de $1000!$ (porque $2$ aparecerá con mayor frecuencia, al ser menor que $5$, por ello nos interesa solamente hallar el número de cincos).&lt;/p&gt;
 
 &lt;p&gt;Así, aplicando la mencionada fórmula,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-v_5(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\\ &amp;amp;= 200 + 40 + 8 + 1 = 249,
+v_5(1000!) &amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\\
+&amp;= 200 + 40 + 8 + 1 = 249,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $1000!$ acaba en $249$ ceros.&lt;/p&gt;
 
 &lt;p&gt;Para el apartado (b), quizá de forma un tanto rebuscada, simplemente nos preguntan por el número de veces que aparece $2$ en la factorización en números primos de $1000!$, puesto que tal valor nos permitirá verificar la propiedad enunciada. Aplicando, de nuevo, la &lt;em&gt;Fórmula de Legendre&lt;/em&gt;, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-v_2(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\\ &amp;amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \\ &amp;amp;= 994,
+v_2(1000!) &amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\\
+&amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \\
+&amp;= 994,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;luego $2^{994}|1000!$, pero $2^{995}\nmid 1000!$, como queríamos demostrar.&lt;/p&gt;
 </description>
@@ -15300,65 +15303,83 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/08/moviendo-cifras-de-posicion-en-un-numero/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 32:&lt;/strong&gt; Encuentra el número natural más pequeño con $6$ como cifra de las unidades de manera que si el $6$ se mueve al principio, el número queda multiplicado por cuatro.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Antes de abordar la resolución del ejercicio propiamente en sí, analicemos el movimiento del $6$ con un par de números en concreto para intentar detectar posibles patrones.&lt;/p&gt;
 
-&lt;p&gt;Por ejemplo, un número como el $326$ es cierto que podemos escribirlo como $326 = 320 + 6 = 32\cdot10 + 6$. Al mover la cifra de las unidades al principio queda entonces el número $632$, que podemos escribir como $632 = 600+32=6\cdot 10^2+32$. La idea, como vemos, es intentar aislar la cifra $6$ de alguna forma posible, que luego nos permita construir una ecuación que satisfaga las condiciones impuestas en el enunciado del ejercicio.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, un número como el $326$ es cierto que podemos escribirlo como&lt;/p&gt;
 
-&lt;p&gt;Consideremos ahora el número $8886$, actuando como antes, lo podemos escribir como $8886 = 8880+6 = 888\cdot10+6 = 10n+6$, donde $n=888$. Al mover la cifra de las unidades al principio del número queda $6888$, que podemos escribir como $6888 = 6000 + 888 = 6\cdot 10^3 + n = 6\cdot 10^m+n$, con $m+1$ como número de dígitos del número inicial.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+326 = 320 + 6 = 32\cdot10 + 6.
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Así pues, el número inicial vamos a denotarlo como $10n+6$, mientras que el resultado de llevar a cabo el movimiento de la cifra de las unidades al principio del número será $6\cdot10^m+n$. Como el enunciado marca que este último es cuatro veces más grande que el considerado en principio, planteamos así la ecuación&lt;/p&gt;
+&lt;p&gt;Al mover la cifra de las unidades al principio queda entonces el número $632$, que podemos escribir como&lt;/p&gt;
 
-&lt;p&gt;$$
-4(10n+6) = 6\cdot10^m+n,
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+632 = 600 + 32 = 6\cdot 10^2 + 32.\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;o, equivalentemente, $39n = 6\cdot10^m-24$, ecuación diofántica que podemos simplificar por $3$, quedando pues&lt;/p&gt;
+&lt;p&gt;La idea, como vemos, es intentar aislar la cifra $6$ de alguna forma posible, que luego nos permita construir una ecuación que satisfaga las condiciones impuestas en el enunciado del ejercicio.&lt;/p&gt;
 
-&lt;p&gt;$$
-13n = 2\cdot10^m-8.
-$$&lt;/p&gt;
+&lt;p&gt;Consideremos ahora el número $8886$, actuando como antes, lo podemos escribir como $8886 = 8880 + 6 = 888\cdot10 + 6 = 10n + 6$, donde $n = 888$. Al mover la cifra de las unidades al principio del número queda $6888$, que podemos escribir como $6888 = 6000 + 888 = 6\cdot 10^3 + n = 6\cdot 10^m + n$, con $m + 1$ como número de dígitos del número inicial.&lt;/p&gt;
+
+&lt;p&gt;Así pues, el número inicial vamos a denotarlo como $10n + 6$, mientras que el resultado de llevar a cabo el movimiento de la cifra de las unidades al principio del número será $6\cdot10^m + n$. Como el enunciado marca que este último es cuatro veces más grande que el considerado en principio, planteamos así la ecuación&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+4(10n + 6) = 6\cdot10^m + n,
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;o, equivalentemente, $39n = 6\cdot10^m - 24$, ecuación diofántica que podemos simplificar por $3$, quedando pues&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+13n = 2\cdot10^m - 8.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, como el miembro derecho de esta última ecuación es un número par y $13$ es un número impar, necesariamente $n$ ha de ser un número par, es decir, de la forma $n=2x$, para algún $x\in\mathbb{Z}$. Sustituyendo arriba y despejando la variable queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-13(2x) &amp;amp;= 2\cdot10^m-8,\\ 13x &amp;amp;= 10^m-4,\\ x &amp;amp;= \dfrac{10^m-4}{13}.
+13(2x) &amp;= 2\cdot10^m - 8,\\
+13x &amp;= 10^m - 4,\\
+x &amp;= \dfrac{10^m - 4}{13}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Podemos ahora introducir la expresión en una calculadora científica y generar una tabla de valores para ella en función de $m$, quedándonos con el primero para el cual $x$ sea un número natural. Alternativamente, podemos actuar por tanteo, dividiendo las potencias de $10$ entre $13$ hasta dar con la primera en la que el resto de esta operación matemática sea $4$. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-10 &amp;amp;= 13\cdot 0 + 10,\\ 100 &amp;amp;= 13\cdot 7 + 9,\\ 1000 &amp;amp;= 13\cdot 76 + 12,\\ 10000 &amp;amp;= 13\cdot 769 + 3,\\ 100000 &amp;amp;= 13\cdot 7692 + 4,
+10 &amp;= 13\cdot 0 + 10,\\
+100 &amp;= 13\cdot 7 + 9,\\
+1000 &amp;= 13\cdot 76 + 12,\\
+10000 &amp;= 13\cdot 769 + 3,\\
+100000 &amp;= 13\cdot 7692 + 4,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;por tanto $x = 7692$, de manera que $n = 2x = 15384$, es decir, el número que buscamos es, recordando la expresión que generamos al principio de la resolución del ejercicio, $10n+6 = 153846$ (y es el menor por ser el primero que satisface la ecuación diofántica). Como nota anecdótica, si estuviéramos interesados en hallar el siguiente valor que cumple con los dictados del enunciado, seguiríamos dividiendo potencias de $10$, encontrando que el siguiente que verifica la condición de interés es $x = 76927692$.&lt;/p&gt;
+&lt;p&gt;por tanto $x = 7692$, de manera que $n = 2x = 15384$, es decir, el número que buscamos es, recordando la expresión que generamos al principio de la resolución del ejercicio, $10n + 6 = 153846$ (y es el menor por ser el primero que satisface la ecuación diofántica). Como nota anecdótica, si estuviéramos interesados en hallar el siguiente valor que cumple con los dictados del enunciado, seguiríamos dividiendo potencias de $10$, encontrando que el siguiente que verifica la condición de interés es $x = 76927692$.&lt;/p&gt;
 
-&lt;p&gt;Alternativamente, veamos cómo resolver la ecuación $13x = 10^m-4$ de forma técnica. Tal y como viene planteada dicha ecuación, es cierto que $10^m-4$ es múltiplo de $13$, por lo que hemos de resolver la ecuación de congruencia $10^m-4\equiv 0\pmod{13}$, o, equivalentemente, $10^m\equiv 4\pmod{13}$.&lt;/p&gt;
+&lt;p&gt;Alternativamente, veamos cómo resolver la ecuación $13x = 10^m - 4$ de forma técnica. Tal y como viene planteada dicha ecuación, es cierto que $10^m - 4$ es múltiplo de $13$, por lo que hemos de resolver la ecuación de congruencia $10^m - 4\equiv 0\pmod{13}$, o, equivalentemente, $10^m\equiv 4\pmod{13}$.&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, como $10\equiv(-3)\pmod{13}$, entonces&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 10^2\equiv (-3)^2\pmod{13}\equiv 9\pmod{13}\equiv (-4)\pmod{13},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y así podemos escribir&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-10^m\equiv 4\pmod{13}&amp;amp;\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\\ &amp;amp;\Leftrightarrow 10^{m-2}\equiv (-1)\pmod{13}.
+10^m\equiv 4\pmod{13}&amp;\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\\
+&amp;\Leftrightarrow 10^{m - 2}\equiv (-1)\pmod{13}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Como $13$ es un número primo y $mcd(10,13)=1$, el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt; afirma que $10^{12}\equiv 1\pmod{13}$. La expresión que figura en la ecuación previa no se ajusta exactamente a la anterior estructura, pero si la elevamos al cuadrado queda&lt;/p&gt;
+&lt;p&gt;Como $13$ es un número primo y $mcd(10, 13) = 1$, el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt; afirma que $10^{12}\equiv 1\pmod{13}$. La expresión que figura en la ecuación previa no se ajusta exactamente a la anterior estructura, pero si la elevamos al cuadrado queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (10^{m-2})^2\equiv (-1)^2\pmod{13}\Leftrightarrow 10^{2m-4}\equiv 1\pmod{13},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;e, igualando exponentes, $2m-4 = 12$, de donde $m = 8$. Este valor, lo introduciríamos en la expresión que nos permite calcular el número $x$, hallando entonces $76927692$, cifra que sabemos no es la menor. Hemos de ser cautos aquí, puesto que el resultado asociado a &lt;em&gt;Fermat&lt;/em&gt; en ningún momento afirma que el exponente dado es el menor para el que se cumple que sea congruente con uno módulo $13$. No obstante, de haber uno más pequeño, sí que será cierto que dividirá a $12$.&lt;/p&gt;
 
@@ -15372,37 +15393,52 @@ $$&lt;/p&gt;
       <pubDate>Wed, 05 Dec 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/12/05/sera-multiplo-de-treinta-o-no/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 31:&lt;/strong&gt; Demuestra que $a^{25}-a$ es divisible entre $30$ para cualquier entero $a$.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Problema 31:&lt;/strong&gt; Demuestra que $a^{25} - a$ es divisible entre $30$ para cualquier entero $a$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Hemos de ser capaces de probar que $(a^{25}-a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.&lt;/p&gt;
+&lt;p&gt;Hemos de ser capaces de probar que $(a^{25} - a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.&lt;/p&gt;
 
 &lt;p&gt;Vamos a apoyarnos en el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que afirma que si $p$ es un número primo y $a\in\mathbb{Z}$, entonces $a^p\equiv a\pmod{p}$. Así, para $p=5$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= (a^5)^5\\ &amp;amp;\equiv a^5\pmod{5}\\ &amp;amp;\equiv a\pmod{5},
+a^{25} &amp;= (a^5)^5\\
+&amp;\equiv a^5\pmod{5}\\
+&amp;\equiv a\pmod{5},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;de manera que $(a^{25}-a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
+&lt;p&gt;de manera que $(a^{25} - a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot (a^8)^3\\ &amp;amp;\equiv (a\cdot a^8)\pmod{3}\\ &amp;amp;\equiv (a^3)^3\pmod{3}\\ &amp;amp;\equiv a^3\pmod{3}\\ &amp;amp;\equiv a\pmod{3},
+a^{25} &amp;= a\cdot (a^8)^3\\
+&amp;\equiv (a\cdot a^8)\pmod{3}\\
+&amp;\equiv (a^3)^3\pmod{3}\\
+&amp;\equiv a^3\pmod{3}\\
+&amp;\equiv a\pmod{3},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y, por tanto, $(a^{25}-a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
+&lt;p&gt;y, por tanto, $(a^{25} - a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot(a^{12})^2\\ &amp;amp;\equiv (a\cdot a^{12})\pmod{2}\\ &amp;amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^6)\pmod{2}\\ &amp;amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^3)\pmod{2}\\ &amp;amp;\equiv a^4\pmod{2}\\ &amp;amp;\equiv (a^2)^2\pmod{2}\\ &amp;amp;\equiv a^2\pmod{2}\\ &amp;amp;\equiv a\pmod{2},
+a^{25} &amp;= a\cdot(a^{12})^2\\
+&amp;\equiv (a\cdot a^{12})\pmod{2}\\
+&amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\
+&amp;\equiv (a\cdot a^6)\pmod{2}\\
+&amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\
+&amp;\equiv (a\cdot a^3)\pmod{2}\\
+&amp;\equiv a^4\pmod{2}\\
+&amp;\equiv (a^2)^2\pmod{2}\\
+&amp;\equiv a^2\pmod{2}\\
+&amp;\equiv a\pmod{2},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y, por consiguiente, $(a^{25}-a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25}-a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
+&lt;p&gt;y, por consiguiente, $(a^{25} - a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25} - a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
 
 &lt;p&gt;A modo de nota final, aunque nos hubiese dado la impresión de que escoger la descomposición $30=5\cdot 6$ habría acelerado la resolución de este ejercicio, hemos de ser cautos, pues $6$ no es un número primo, requisito indispensable para aplicar el resultado que nos ha permitido llevar a buen puerto este problema. En este último caso, habría sido necesario recurrir a otras herramientas para verificar la propiedad propuesta en el enunciado del ejercicio.&lt;/p&gt;
 </description>
@@ -15414,63 +15450,61 @@ $$&lt;/p&gt;
       <pubDate>Sat, 01 Dec 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/12/01/de-fracciones-irreducibles-y-su-suma/</guid>
-      <description>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 30:&lt;/strong&gt; Sea $n$ un número natural no nulo. Dado el conjunto de fracciones&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Problema 30:&lt;/strong&gt; Sea $n$ un número natural no nulo. Dado el conjunto de fracciones&lt;/p&gt;
-
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 A_n = \left\{\dfrac{1}{n},\dfrac{2}{n},\dfrac{3}{n},\ldots,\dfrac{n}{n}\right\}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Calcula el número de fracciones irreducibles y la suma de dichas fracciones.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Acompañemos la resolución de este ejercicio con un caso particular para $n$, con el objetivo de que esta sea así más ilustrativa. Por ejemplo, si $n=8$, el conjunto de fracciones a estudiar es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 A_8 = \left\{\dfrac{1}{8},\dfrac{2}{8},\dfrac{3}{8},\dfrac{4}{8},\dfrac{5}{8},\dfrac{6}{8},\dfrac{7}{8},\dfrac{8}{8}\right\},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que contiene $4$ fracciones irreducibles,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \left\{\dfrac{1}{8},\dfrac{3}{8},\dfrac{5}{8},\dfrac{7}{8}\right\}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Estas se caracterizan por ser aquellas en las que numerador y denominador son coprimos. Así pues, el problema se reduce a encontrar, dado un número natural $n$ no nulo, la cantidad de enteros positivos menores o iguales a $n$ y coprimos con $n$, esto es, $\varphi(n)$.&lt;/p&gt;
 
 &lt;p&gt;En nuestro caso concreto, para $n=8=2^3$, efectivamente,&lt;/p&gt;
 
-&lt;p&gt;$$
-\varphi(8) = 8\left(1-\dfrac{1}{2}\right) = 8\cdot\dfrac{1}{2}=4.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\varphi(8) = 8\left(1 - \dfrac{1}{2}\right) = 8\cdot\dfrac{1}{2} = 4.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por tanto, recapitulando, dado $n$ un número natural no nulo, la cantidad de fracciones irreducibles que figuran en el conjunto $A_n$ es igual a $\varphi(n)$.&lt;/p&gt;
 
 &lt;p&gt;Para calcular su suma, si volvemos a centrar nuestra atención en el caso particular de $n=8$, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1}{8} + \dfrac{7}{8} = 1,\qquad \dfrac{3}{8} + \dfrac{5}{8} = 1,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, podemos agrupar las fracciones irreducibles de dos en dos, de manera que su suma es $1$. Efectivamente, haciendo uso del Teorema 1.9 de [1], sabemos que, dados dos números enteros $a$ y $b$, para cualquier número entero $x$ se cumple que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 mcd(a,b) = mcd(b,a) = mcd(a,-b) = mcd(a,b+ax).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Considerando ahora un número natural $k&amp;lt;n$ coprimo con $n$, se tiene que $mcd(k,n)=1$, y basta tomar en el resultado anterior $a=n$, $b=(-k)$ y $x=1$ para deducir que $1 = mcd(n,k) = mcd(n,(-k))= mcd(n,n-k)$ y, así, concluimos que si la fracción $k/n$ es irreducible, asimismo lo es $(n-k)/n$. Además, trivialmente&lt;/p&gt;
+&lt;p&gt;Considerando ahora un número natural $k&amp;lt;n$ coprimo con $n$, se tiene que $mcd(k,n)=1$, y basta tomar en el resultado anterior $a=n$, $b=(-k)$ y $x=1$ para deducir que $1 = mcd(n,k) = mcd(n,(-k))= mcd(n,n-k)$ y, así, concluimos que si la fracción $k / n$ es irreducible, asimismo lo es $(n - k) / n$. Además, trivialmente&lt;/p&gt;
 
-&lt;p&gt;$$
-\dfrac{k}{n} + \dfrac{n-k}{n}=1.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\dfrac{k}{n} + \dfrac{n-k}{n} = 1.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por tanto, aplicando el resultado alcanzado, la suma de las fracciones irreducibles del conjunto $A_n$ será&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 S = \dfrac{\varphi(n)}{2},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;quedando resuelto así el ejercicio.&lt;/p&gt;
 

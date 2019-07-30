@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2018-12-08T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2018-12-08T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-30T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2018-12-08 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2018-12-08 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-07-30 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2018-12-08</time>
+    <time>2019-07-30</time>
   </span>
   
 
@@ -577,65 +579,83 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 32:</strong> Encuentra el número natural más pequeño con $6$ como cifra de las unidades de manera que si el $6$ se mueve al principio, el número queda multiplicado por cuatro.</p>
 
-<hr />
+<hr>
 
 <p>Antes de abordar la resolución del ejercicio propiamente en sí, analicemos el movimiento del $6$ con un par de números en concreto para intentar detectar posibles patrones.</p>
 
-<p>Por ejemplo, un número como el $326$ es cierto que podemos escribirlo como $326 = 320 + 6 = 32\cdot10 + 6$. Al mover la cifra de las unidades al principio queda entonces el número $632$, que podemos escribir como $632 = 600+32=6\cdot 10^2+32$. La idea, como vemos, es intentar aislar la cifra $6$ de alguna forma posible, que luego nos permita construir una ecuación que satisfaga las condiciones impuestas en el enunciado del ejercicio.</p>
+<p>Por ejemplo, un número como el $326$ es cierto que podemos escribirlo como</p>
 
-<p>Consideremos ahora el número $8886$, actuando como antes, lo podemos escribir como $8886 = 8880+6 = 888\cdot10+6 = 10n+6$, donde $n=888$. Al mover la cifra de las unidades al principio del número queda $6888$, que podemos escribir como $6888 = 6000 + 888 = 6\cdot 10^3 + n = 6\cdot 10^m+n$, con $m+1$ como número de dígitos del número inicial.</p>
+<p><span  class="math">\[
+326 = 320 + 6 = 32\cdot10 + 6.
+\]</span></p>
 
-<p>Así pues, el número inicial vamos a denotarlo como $10n+6$, mientras que el resultado de llevar a cabo el movimiento de la cifra de las unidades al principio del número será $6\cdot10^m+n$. Como el enunciado marca que este último es cuatro veces más grande que el considerado en principio, planteamos así la ecuación</p>
+<p>Al mover la cifra de las unidades al principio queda entonces el número $632$, que podemos escribir como</p>
 
-<p>$$
-4(10n+6) = 6\cdot10^m+n,
-$$</p>
+<p><span  class="math">\[
+632 = 600 + 32 = 6\cdot 10^2 + 32.\]</span></p>
 
-<p>o, equivalentemente, $39n = 6\cdot10^m-24$, ecuación diofántica que podemos simplificar por $3$, quedando pues</p>
+<p>La idea, como vemos, es intentar aislar la cifra $6$ de alguna forma posible, que luego nos permita construir una ecuación que satisfaga las condiciones impuestas en el enunciado del ejercicio.</p>
 
-<p>$$
-13n = 2\cdot10^m-8.
-$$</p>
+<p>Consideremos ahora el número $8886$, actuando como antes, lo podemos escribir como $8886 = 8880 + 6 = 888\cdot10 + 6 = 10n + 6$, donde $n = 888$. Al mover la cifra de las unidades al principio del número queda $6888$, que podemos escribir como $6888 = 6000 + 888 = 6\cdot 10^3 + n = 6\cdot 10^m + n$, con $m + 1$ como número de dígitos del número inicial.</p>
+
+<p>Así pues, el número inicial vamos a denotarlo como $10n + 6$, mientras que el resultado de llevar a cabo el movimiento de la cifra de las unidades al principio del número será $6\cdot10^m + n$. Como el enunciado marca que este último es cuatro veces más grande que el considerado en principio, planteamos así la ecuación</p>
+
+<p><span  class="math">\[
+4(10n + 6) = 6\cdot10^m + n,
+\]</span></p>
+
+<p>o, equivalentemente, $39n = 6\cdot10^m - 24$, ecuación diofántica que podemos simplificar por $3$, quedando pues</p>
+
+<p><span  class="math">\[
+13n = 2\cdot10^m - 8.
+\]</span></p>
 
 <p>Ahora bien, como el miembro derecho de esta última ecuación es un número par y $13$ es un número impar, necesariamente $n$ ha de ser un número par, es decir, de la forma $n=2x$, para algún $x\in\mathbb{Z}$. Sustituyendo arriba y despejando la variable queda</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-13(2x) &amp;= 2\cdot10^m-8,\\ 13x &amp;= 10^m-4,\\ x &amp;= \dfrac{10^m-4}{13}.
+13(2x) &= 2\cdot10^m - 8,\\
+13x &= 10^m - 4,\\
+x &= \dfrac{10^m - 4}{13}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Podemos ahora introducir la expresión en una calculadora científica y generar una tabla de valores para ella en función de $m$, quedándonos con el primero para el cual $x$ sea un número natural. Alternativamente, podemos actuar por tanteo, dividiendo las potencias de $10$ entre $13$ hasta dar con la primera en la que el resto de esta operación matemática sea $4$. Así,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-10 &amp;= 13\cdot 0 + 10,\\ 100 &amp;= 13\cdot 7 + 9,\\ 1000 &amp;= 13\cdot 76 + 12,\\ 10000 &amp;= 13\cdot 769 + 3,\\ 100000 &amp;= 13\cdot 7692 + 4,
+10 &= 13\cdot 0 + 10,\\
+100 &= 13\cdot 7 + 9,\\
+1000 &= 13\cdot 76 + 12,\\
+10000 &= 13\cdot 769 + 3,\\
+100000 &= 13\cdot 7692 + 4,
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>por tanto $x = 7692$, de manera que $n = 2x = 15384$, es decir, el número que buscamos es, recordando la expresión que generamos al principio de la resolución del ejercicio, $10n+6 = 153846$ (y es el menor por ser el primero que satisface la ecuación diofántica). Como nota anecdótica, si estuviéramos interesados en hallar el siguiente valor que cumple con los dictados del enunciado, seguiríamos dividiendo potencias de $10$, encontrando que el siguiente que verifica la condición de interés es $x = 76927692$.</p>
+<p>por tanto $x = 7692$, de manera que $n = 2x = 15384$, es decir, el número que buscamos es, recordando la expresión que generamos al principio de la resolución del ejercicio, $10n + 6 = 153846$ (y es el menor por ser el primero que satisface la ecuación diofántica). Como nota anecdótica, si estuviéramos interesados en hallar el siguiente valor que cumple con los dictados del enunciado, seguiríamos dividiendo potencias de $10$, encontrando que el siguiente que verifica la condición de interés es $x = 76927692$.</p>
 
-<p>Alternativamente, veamos cómo resolver la ecuación $13x = 10^m-4$ de forma técnica. Tal y como viene planteada dicha ecuación, es cierto que $10^m-4$ es múltiplo de $13$, por lo que hemos de resolver la ecuación de congruencia $10^m-4\equiv 0\pmod{13}$, o, equivalentemente, $10^m\equiv 4\pmod{13}$.</p>
+<p>Alternativamente, veamos cómo resolver la ecuación $13x = 10^m - 4$ de forma técnica. Tal y como viene planteada dicha ecuación, es cierto que $10^m - 4$ es múltiplo de $13$, por lo que hemos de resolver la ecuación de congruencia $10^m - 4\equiv 0\pmod{13}$, o, equivalentemente, $10^m\equiv 4\pmod{13}$.</p>
 
 <p>Ahora bien, como $10\equiv(-3)\pmod{13}$, entonces</p>
 
-<p>$$
+<p><span  class="math">\[
 10^2\equiv (-3)^2\pmod{13}\equiv 9\pmod{13}\equiv (-4)\pmod{13},
-$$</p>
+\]</span></p>
 
 <p>y así podemos escribir</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-10^m\equiv 4\pmod{13}&amp;\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\\ &amp;\Leftrightarrow 10^{m-2}\equiv (-1)\pmod{13}.
+10^m\equiv 4\pmod{13}&\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\\
+&\Leftrightarrow 10^{m - 2}\equiv (-1)\pmod{13}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>Como $13$ es un número primo y $mcd(10,13)=1$, el <em>Pequeño Teorema de Fermat</em> afirma que $10^{12}\equiv 1\pmod{13}$. La expresión que figura en la ecuación previa no se ajusta exactamente a la anterior estructura, pero si la elevamos al cuadrado queda</p>
+<p>Como $13$ es un número primo y $mcd(10, 13) = 1$, el <em>Pequeño Teorema de Fermat</em> afirma que $10^{12}\equiv 1\pmod{13}$. La expresión que figura en la ecuación previa no se ajusta exactamente a la anterior estructura, pero si la elevamos al cuadrado queda</p>
 
-<p>$$
+<p><span  class="math">\[
 (10^{m-2})^2\equiv (-1)^2\pmod{13}\Leftrightarrow 10^{2m-4}\equiv 1\pmod{13},
-$$</p>
+\]</span></p>
 
 <p>e, igualando exponentes, $2m-4 = 12$, de donde $m = 8$. Este valor, lo introduciríamos en la expresión que nos permite calcular el número $x$, hallando entonces $76927692$, cifra que sabemos no es la menor. Hemos de ser cautos aquí, puesto que el resultado asociado a <em>Fermat</em> en ningún momento afirma que el exponente dado es el menor para el que se cumple que sea congruente con uno módulo $13$. No obstante, de haber uno más pequeño, sí que será cierto que dividirá a $12$.</p>
 
