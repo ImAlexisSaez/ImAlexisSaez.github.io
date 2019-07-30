@@ -14995,49 +14995,62 @@ a l’aprenentatge, l’ensenyament i l’avaluació de llengües (MECR) dels en
       <guid>https://imalexissaez.github.io/2018/12/29/contando-soldados-de-una-manera-curiosa/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 38:&lt;/strong&gt; Un general cuenta el número de soldados supervivientes de una batalla alineándolos, sucesivamente, en filas de diferentes tamaños. En cada ocasión, anota el total que quedaron sin poder completar una fila. Disponía de $1200$ combatientes antes de la refriega. Tras el encuentro si los alineaba en filas de $5$, quedaban $3$ sin poder completar una fila; si lo hacía en filas de $6$, volvían a quedar $3$ sin poder completar una fila; si los repartía en filas de $7$, únicamente uno quedaba fuera de las filas y si los alineaba en filas de $11$, no quedaba soldado alguno que no estuviese en una fila ¿Cuántos soldados sobrevivieron la batalla?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Consideremos $x$ el número de soldados supervivientes de la batalla, cantidad que sabemos es menor o igual que $1200$ por ser este el número de los que disponía el general inicialmente, es decir, $0\leq x\leq 1200$.&lt;/p&gt;
 
 &lt;p&gt;Las sucesivas alineaciones de los soldados, las traducimos en el siguiente sistema de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11}.
+x&amp;\equiv 3\pmod{5},\\
+x&amp;\equiv 3\pmod{6},\\
+x&amp;\equiv 1\pmod{7},\\
+x&amp;\equiv 0\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5, m_2=6, m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
+&lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5$, $m_2=6$, $m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\ M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\
+M_3 &amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\
+M_4 &amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\\ 385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\\ 330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\\ 210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
+462x\equiv 1\pmod{5}&amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\\
+385x\equiv 1\pmod{6}&amp;\Leftrightarrow x\equiv 1\pmod{6},\\
+330x\equiv 1\pmod{7}&amp;\Leftrightarrow x\equiv 1\pmod{7},\\
+210x\equiv 1\pmod{11}&amp;\Leftrightarrow x\equiv 1\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
+x&amp;\equiv 3\pmod{5},&amp; 462x&amp;\equiv 1\pmod{5},&amp; x&amp;\equiv 3\pmod{5},\\
+x&amp;\equiv 3\pmod{6},&amp; 385x&amp;\equiv 1\pmod{6},&amp; x&amp;\equiv 1\pmod{6},\\
+x&amp;\equiv 1\pmod{7},&amp; 330x&amp;\equiv 1\pmod{7},&amp; x&amp;\equiv 1\pmod{7},\\
+x&amp;\equiv 0\pmod{11},&amp; 210x&amp;\equiv 1\pmod{11},&amp; x&amp;\equiv 1\pmod{11},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\ &amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
+x &amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\
+&amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, asciende a $1023$ el número de soldados que sobrevivieron a la batalla.&lt;/p&gt;
 </description>
@@ -15051,49 +15064,56 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/26/repartiendo-el-aguinaldo-de-la-empresa/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 37:&lt;/strong&gt; Un cierto número de billetes se reparten entre siete subalternos y dos jefes, teniendo en cuenta que un jefe cobra el doble que un subalterno. Tras el reparto, sobran seis billetes; pero si hubiese faltado un jefe, el reparto habría salido exacto. Por otro lado, si hubiera faltado un subalterno, serían entonces ocho los billetes que habrían sobrado. Calcular el menor número positivo de billetes que cobraron cada uno.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;La clave para resolver este ejercicio es plantearse la cuestión: &amp;ldquo;¿entre cuántas partes hay que repartir el total de billetes?&amp;rdquo;. Como cada jefe cobra por dos subalternos, en verdad son once las partes entre las que repartir.&lt;/p&gt;
+&lt;p&gt;La clave para resolver este ejercicio es plantearse la cuestión: &#39;&#39;¿entre cuántas partes hay que repartir el total de billetes?&#39;&#39;. Como cada jefe cobra por dos subalternos, en verdad son once las partes entre las que repartir.&lt;/p&gt;
 
 &lt;p&gt;Así, si denotamos por $x$ el número de billetes, la primera ecuación de congruencia lineal es $x\equiv 6\pmod{11}$, pues se reparte entre las once partes y sobran (es decir, el resto asciende a) seis. Cuando falta un jefe, son entonces nueve las partes entre las que repartir, y al ser exacto dicho reparto se traduce entonces en la ecuación de congruencia lineal $x\equiv 0\pmod{9}$. Finalmente, cuando falta un subalterno, son diez las partes entre las que repartir, y como sobran ocho billetes, la correspondiente ecuación de congruencia lineal es $x\equiv 8\pmod{10}$.&lt;/p&gt;
 
 &lt;p&gt;En resumen, hemos de resolver el sistema de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},\\ x&amp;amp;\equiv 8\pmod{10}.
+x&amp;\equiv 6\pmod{11},\\
+x&amp;\equiv 0\pmod{9},\\
+x&amp;\equiv 8\pmod{10}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Como $mcd(9,10,11)=1$, esto es, son primos entre sí los tres números, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt; estamos en condiciones de asegurar que existe solución módulo $9\cdot10\cdot11 = 990$. Ahora bien,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 M_1=90,\qquad M_2=110,\qquad M_3=99,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que el siguiente paso es resolver las ecuaciones de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\ 110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\ 99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
+90x&amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\
+110x&amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\
+99x&amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\\ x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
+x&amp;\equiv 6\pmod{11},&amp; 90x&amp;\equiv 1\pmod{11},&amp; x&amp;\equiv 6\pmod{11},\\
+x&amp;\equiv 0\pmod{9},&amp; 110x&amp;\equiv 1\pmod{9},&amp; x&amp;\equiv 5 \pmod{9},\\
+x&amp;\equiv 8\pmod{10},&amp; 99x&amp;\equiv 1\pmod{10},&amp; x&amp;\equiv (-1)\pmod{10},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;la solución al sistema queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ &amp;amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
+x &amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ 
+&amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Nótese que podíamos habernos ahorrado los cálculos asociados a la segunda ecuación del sistema, por aquel $0$ que figura en la misma. Por tanto, el menor número positivo de billetes a repartir es $468$, y como $468 = 11\cdot42 + 6$, concluimos que los subalternos cobran $42$ billetes, mientras que los jefes $84$ billetes.&lt;/p&gt;
 </description>
@@ -15107,69 +15127,72 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/22/y-volvemos-con-los-problemas-de-mover-digitos/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 36:&lt;/strong&gt; ¿Cuántas cifras tiene el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Antes de abordar la resolución del ejercicio propiamente dicho, veamos con un par de ejemplos la manera de proceder, para así intentar detectar patrones. Por ejemplo, si consideramos el número $354$, podemos aislar la primera cifra escribiéndolo como $300 + 54$, es decir, $3\cdot10^2+54$. Ahora, si colocamos la primera cifra en el último lugar de la derecha, el número pasa a ser $543$, y como deseamos aislar de nuevo el $3$, podemos escribirlo como $540 + 3$ o, equivalentemente, como $54\cdot10 + 3$. Por desgracia, no se cumple para este ejemplo la condición exigida en el enunciado del ejercicio, puesto que&lt;/p&gt;
+&lt;p&gt;Antes de abordar la resolución del ejercicio propiamente dicho, veamos con un par de ejemplos la manera de proceder, para así intentar detectar patrones. Por ejemplo, si consideramos el número $354$, podemos aislar la primera cifra escribiéndolo como $300 + 54$, es decir, $3 \cdot 10^2 + 54$. Ahora, si colocamos la primera cifra en el último lugar de la derecha, el número pasa a ser $543$, y como deseamos aislar de nuevo el $3$, podemos escribirlo como $540 + 3$ o, equivalentemente, como $54\cdot10 + 3$. Por desgracia, no se cumple para este ejemplo la condición exigida en el enunciado del ejercicio, puesto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{3}{2}\cdot 354 = 531\neq 543.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Si ahora consideramos el número $4537 = 4\cdot10^3+537$, después conformaríamos el número $5374=537\cdot10 + 4$ y, desgraciadamente,&lt;/p&gt;
+&lt;p&gt;Si ahora consideramos el número $4537 = 4\cdot10^3 + 537$, después conformaríamos el número $5374=537\cdot10 + 4$ y, desgraciadamente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{3}{2}\cdot4537 = 6805.5\neq 5374.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;No obstante, estos dos intentos fallidos nos permiten atisbar los protagonistas de este ejercicio: la primera cifra del número buscado, que denotaremos como $A$ y el resto del número, que señalaremos como $B$. Así, dado un número de $n$ cifras, buscamos que se satisfaga la ecuación&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{3}{2}(A\cdot10^{n-1} + B) = B\cdot10 + A.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Operando algebraicamente, llegamos a que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-3A\cdot10^{n-1}+3B &amp;amp;= 20B+2A,\\ 17B &amp;amp;= 3A\cdot10^{n-1}-2A,\\ 17B &amp;amp;= A(3\cdot10^{n-1}-2),\\ B &amp;amp;= \dfrac{A(3\cdot10^{n-1}-2)}{17}.
+3A\cdot10^{n-1} + 3B &amp;= 20B+2A,\\
+17B &amp;= 3A\cdot10^{n-1} - 2A,\\
+17B &amp;= A(3\cdot10^{n-1} - 2),\\
+B &amp;= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1}-2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.&lt;/p&gt;
+&lt;p&gt;Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1} - 2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.&lt;/p&gt;
 
-&lt;p&gt;Alternativamente, usando congruencias, que $3\cdot10^{n-1}-2$ sea múltiplo de $17$ es equivalente a escribir&lt;/p&gt;
+&lt;p&gt;Alternativamente, usando congruencias, que $3\cdot10^{n-1} - 2$ sea múltiplo de $17$ es equivalente a escribir&lt;/p&gt;
 
-&lt;p&gt;$$
-(3\cdot10^{n-1}-2)\equiv 0\pmod{17},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(3\cdot10^{n-1} - 2)\equiv 0\pmod{17},
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es,&lt;/p&gt;
 
-&lt;p&gt;$$
-3\cdot10^{n-1}\equiv 2\pmod{17}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+3\cdot10^{n-1} \equiv 2\pmod{17}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Multiplicando toda la ecuación de congruencia lineal por $6$ (ya que $3\cdot6=18$, cifra que queda muy cercana a un múltiplo de $17$) queda&lt;/p&gt;
 
-&lt;p&gt;$$
-18\cdot10^{n-1}\equiv 12\pmod{17},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+18\cdot10^{n-1} \equiv 12\pmod{17},
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir,&lt;/p&gt;
 
-&lt;p&gt;$$
-10^{n-1}\equiv 12\pmod{17}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+10^{n-1} \equiv 12\pmod{17}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Nos aproximamos a la estructura de un resultado muy conocido de &lt;em&gt;Teoría de números&lt;/em&gt;, por lo que podemos investigar qué sucede al multiplicar ahora por $10$ la ecuación de congruencia lineal. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
-10^{n-1}\equiv 12\pmod{17}\Leftrightarrow 10^n\equiv 120\pmod{17}\equiv 1\pmod{17},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+10^{n-1} \equiv 12\pmod{17}\Leftrightarrow 10^n\equiv 120\pmod{17}\equiv 1\pmod{17},
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y como $17$ es un número primo y $mcd(10,17)=1$, entonces, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, sabemos que $10^{16}\equiv 1\pmod{17}$.&lt;/p&gt;
+&lt;p&gt;y como $17$ es un número primo y $mcd(10,17)=1$, entonces, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, sabemos que $10^{16} \equiv 1\pmod{17}$.&lt;/p&gt;
 
-&lt;p&gt;Igualando términos con la anterior ecuación de congruencia lineal, concluimos que $n=16$. No obstante, dicho resultado no garantiza haber encontrado el menor número natural que verifica esa propiedad, por lo que hemos de proceder con cautela y seguir investigando. No obstante, como $10^8\equiv (-1)\pmod{17}$ (a modo anecdótico, si hubiera salido $10^8\equiv 1\pmod{17}$, hubiésemos tenido que probar con $10^4$ y así sucesivamente), en esta ocasión sí podemos concluir que el resultado teórico nos ha llevado al menor valor de $n$ para el que se satisface la propiedad. Así, el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial posee $16$ cifras.&lt;/p&gt;
+&lt;p&gt;Igualando términos con la anterior ecuación de congruencia lineal, concluimos que $n=16$. No obstante, dicho resultado no garantiza haber encontrado el menor número natural que verifica esa propiedad, por lo que hemos de proceder con cautela y seguir investigando. No obstante, como $10^8 \equiv (-1)\pmod{17}$ (a modo anecdótico, si hubiera salido $10^8 \equiv 1\pmod{17}$, hubiésemos tenido que probar con $10^4$ y así sucesivamente), en esta ocasión sí podemos concluir que el resultado teórico nos ha llevado al menor valor de $n$ para el que se satisface la propiedad. Así, el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial posee $16$ cifras.&lt;/p&gt;
 </description>
     </item>
     
@@ -15179,45 +15202,51 @@ $$&lt;/p&gt;
       <pubDate>Wed, 19 Dec 2018 05:59:39 +0200</pubDate>
       
       <guid>https://imalexissaez.github.io/2018/12/19/cuadrado-perfecto-cubo-perfecto-potencia-quinta-perfecta/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 35:&lt;/strong&gt; Encuentra el menor número natural $n$ tal que $n/2$ es cuadrado perfecto, $n/3$ es cubo perfecto y $n/5$ es potencia quinta perfecta.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Problema 35:&lt;/strong&gt; Encuentra el menor número natural $n$ tal que $n / 2$ es cuadrado perfecto, $n / 3$ es cubo perfecto y $n / 5$ es potencia quinta perfecta.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Dado que podemos dividir $n$ por $2$, $3$ y $5$ y el resultado de dichas operaciones continúa siendo un número natural (porque se trata, respectivamente de cuadrado, cubo y potencia quinta perfectos), ello implica que en su descomposición en factores primos aparecerán los términos $2^x$, $3^y$ y $5^z$, con $x,y,z\geq 1$. En ejercicios anteriores también considerábamos la posibilidad de un término entero $k$ que agrupaba potencias de números primos distintos a los tres mencionados anteriormente, pero, en esta ocasión, como nuestro objetivo es hallar el menor natural $n$ que satisface las condiciones del enunciado del ejercicio, asumiremos que $k=1$. Así, $n=2^x3^y5^z$.&lt;/p&gt;
+&lt;p&gt;Dado que podemos dividir $n$ por $2$, $3$ y $5$ y el resultado de dichas operaciones continúa siendo un número natural (porque se trata, respectivamente de cuadrado, cubo y potencia quinta perfectos), ello implica que en su descomposición en factores primos aparecerán los términos $2^x$, $3^y$ y $5^z$, con $x, y, z\geq 1$. En ejercicios anteriores también considerábamos la posibilidad de un término entero $k$ que agrupaba potencias de números primos distintos a los tres mencionados anteriormente, pero, en esta ocasión, como nuestro objetivo es hallar el menor natural $n$ que satisface las condiciones del enunciado del ejercicio, asumiremos que $k=1$. Así, $n=2^x 3^y 5^z$.&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, como $n/2 = 2^{x-1}3^y5^z$ es un cuadrado perfecto, los exponentes de la factorización dada serán múltiplos de dos ($x-1=\dot{2}$, $y=\dot{2}$, $z=\dot{2}$). Al ser $n/3 = 2^x3^{y-1}5^z$ un cubo perfecto, los exponentes anteriores serán múltiplos de $3$ ($x=\dot{3}$, $y-1=\dot{3}$, $z=\dot{3}$). Finalmente, como $n/5 = 2^x3^y5^{z-1}$ es una potencia quinta perfecta, los exponentes previos serán múltiplos de $5$ ($x=\dot{5}$, $y=\dot{5}$, $z-1=\dot{5}$).&lt;/p&gt;
+&lt;p&gt;Ahora bien, como $n / 2 = 2^{x-1} 3^y 5^z$ es un cuadrado perfecto, los exponentes de la factorización dada serán múltiplos de dos ($x-1=\dot{2}$, $y=\dot{2}$, $z=\dot{2}$). Al ser $n / 3 = 2^x 3^{y-1} 5^z$ un cubo perfecto, los exponentes anteriores serán múltiplos de $3$ ($x=\dot{3}$, $y-1=\dot{3}$, $z=\dot{3}$). Finalmente, como $n / 5 = 2^x 3^y 5^{z-1}$ es una potencia quinta perfecta, los exponentes previos serán múltiplos de $5$ ($x=\dot{5}$, $y=\dot{5}$, $z-1=\dot{5}$).&lt;/p&gt;
 
 &lt;p&gt;Así pues, para $x$ surge el siguiente sistema de congruencias lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x-1&amp;amp;\equiv 0\pmod{2},\\ x&amp;amp;\equiv 0\pmod{3},\\ x&amp;amp;\equiv 0\pmod{5},
+x-1&amp;\equiv 0\pmod{2},\\
+x&amp;\equiv 0\pmod{3},\\
+x&amp;\equiv 0\pmod{5},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $3$ y $5$, lo será de $15$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $2$. Son candidatos $15,45,75,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $x=15$.&lt;/p&gt;
 
 &lt;p&gt;Análogamente, para $y$ aparece el siguiente sistema de congruencias lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y&amp;amp;\equiv 0\pmod{2},\\ y-1&amp;amp;\equiv 0\pmod{3},\\ y&amp;amp;\equiv 0\pmod{5},
+y&amp;\equiv 0\pmod{2},\\
+y-1&amp;\equiv 0\pmod{3},\\
+y&amp;\equiv 0\pmod{5},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $2$ y $5$, lo será de $10$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $3$. Son candidatos $10,40,70,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $y=10$.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, para $z$ encontramos el siguiente sistema de congruencias lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-z&amp;amp;\equiv 0\pmod{2},\\ z&amp;amp;\equiv 0\pmod{3},\\ z-1&amp;amp;\equiv 0\pmod{5},
+z&amp;\equiv 0\pmod{2},\\
+z&amp;\equiv 0\pmod{3},\\
+z-1&amp;\equiv 0\pmod{5},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $2$ y $3$, lo será de $6$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $5$. Son candidatos $6,36,66,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $z=6$.&lt;/p&gt;
 
-&lt;p&gt;Por tanto, el menor número natural $n$ tal que $n/2$ es cuadrado perfecto, $n/3$ es cubo perfecto y $n/5$ es potencia quinta perfecta es $n=2^{15}\cdot3^{10}\cdot5^6$.&lt;/p&gt;
+&lt;p&gt;Por tanto, el menor número natural $n$ tal que $n/2$ es cuadrado perfecto, $n/3$ es cubo perfecto y $n/5$ es potencia quinta perfecta es $n=2^{15} \cdot 3^{10} \cdot 5^6$.&lt;/p&gt;
 </description>
     </item>
     

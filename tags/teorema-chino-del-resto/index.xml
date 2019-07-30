@@ -766,49 +766,62 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/29/contando-soldados-de-una-manera-curiosa/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 38:&lt;/strong&gt; Un general cuenta el número de soldados supervivientes de una batalla alineándolos, sucesivamente, en filas de diferentes tamaños. En cada ocasión, anota el total que quedaron sin poder completar una fila. Disponía de $1200$ combatientes antes de la refriega. Tras el encuentro si los alineaba en filas de $5$, quedaban $3$ sin poder completar una fila; si lo hacía en filas de $6$, volvían a quedar $3$ sin poder completar una fila; si los repartía en filas de $7$, únicamente uno quedaba fuera de las filas y si los alineaba en filas de $11$, no quedaba soldado alguno que no estuviese en una fila ¿Cuántos soldados sobrevivieron la batalla?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Consideremos $x$ el número de soldados supervivientes de la batalla, cantidad que sabemos es menor o igual que $1200$ por ser este el número de los que disponía el general inicialmente, es decir, $0\leq x\leq 1200$.&lt;/p&gt;
 
 &lt;p&gt;Las sucesivas alineaciones de los soldados, las traducimos en el siguiente sistema de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11}.
+x&amp;\equiv 3\pmod{5},\\
+x&amp;\equiv 3\pmod{6},\\
+x&amp;\equiv 1\pmod{7},\\
+x&amp;\equiv 0\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5, m_2=6, m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
+&lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5$, $m_2=6$, $m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\ M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\
+M_3 &amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\
+M_4 &amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\\ 385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\\ 330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\\ 210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
+462x\equiv 1\pmod{5}&amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\\
+385x\equiv 1\pmod{6}&amp;\Leftrightarrow x\equiv 1\pmod{6},\\
+330x\equiv 1\pmod{7}&amp;\Leftrightarrow x\equiv 1\pmod{7},\\
+210x\equiv 1\pmod{11}&amp;\Leftrightarrow x\equiv 1\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
+x&amp;\equiv 3\pmod{5},&amp; 462x&amp;\equiv 1\pmod{5},&amp; x&amp;\equiv 3\pmod{5},\\
+x&amp;\equiv 3\pmod{6},&amp; 385x&amp;\equiv 1\pmod{6},&amp; x&amp;\equiv 1\pmod{6},\\
+x&amp;\equiv 1\pmod{7},&amp; 330x&amp;\equiv 1\pmod{7},&amp; x&amp;\equiv 1\pmod{7},\\
+x&amp;\equiv 0\pmod{11},&amp; 210x&amp;\equiv 1\pmod{11},&amp; x&amp;\equiv 1\pmod{11},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\ &amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
+x &amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\
+&amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, asciende a $1023$ el número de soldados que sobrevivieron a la batalla.&lt;/p&gt;
 </description>
@@ -822,49 +835,56 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/26/repartiendo-el-aguinaldo-de-la-empresa/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 37:&lt;/strong&gt; Un cierto número de billetes se reparten entre siete subalternos y dos jefes, teniendo en cuenta que un jefe cobra el doble que un subalterno. Tras el reparto, sobran seis billetes; pero si hubiese faltado un jefe, el reparto habría salido exacto. Por otro lado, si hubiera faltado un subalterno, serían entonces ocho los billetes que habrían sobrado. Calcular el menor número positivo de billetes que cobraron cada uno.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;La clave para resolver este ejercicio es plantearse la cuestión: &amp;ldquo;¿entre cuántas partes hay que repartir el total de billetes?&amp;rdquo;. Como cada jefe cobra por dos subalternos, en verdad son once las partes entre las que repartir.&lt;/p&gt;
+&lt;p&gt;La clave para resolver este ejercicio es plantearse la cuestión: &#39;&#39;¿entre cuántas partes hay que repartir el total de billetes?&#39;&#39;. Como cada jefe cobra por dos subalternos, en verdad son once las partes entre las que repartir.&lt;/p&gt;
 
 &lt;p&gt;Así, si denotamos por $x$ el número de billetes, la primera ecuación de congruencia lineal es $x\equiv 6\pmod{11}$, pues se reparte entre las once partes y sobran (es decir, el resto asciende a) seis. Cuando falta un jefe, son entonces nueve las partes entre las que repartir, y al ser exacto dicho reparto se traduce entonces en la ecuación de congruencia lineal $x\equiv 0\pmod{9}$. Finalmente, cuando falta un subalterno, son diez las partes entre las que repartir, y como sobran ocho billetes, la correspondiente ecuación de congruencia lineal es $x\equiv 8\pmod{10}$.&lt;/p&gt;
 
 &lt;p&gt;En resumen, hemos de resolver el sistema de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},\\ x&amp;amp;\equiv 8\pmod{10}.
+x&amp;\equiv 6\pmod{11},\\
+x&amp;\equiv 0\pmod{9},\\
+x&amp;\equiv 8\pmod{10}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Como $mcd(9,10,11)=1$, esto es, son primos entre sí los tres números, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt; estamos en condiciones de asegurar que existe solución módulo $9\cdot10\cdot11 = 990$. Ahora bien,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 M_1=90,\qquad M_2=110,\qquad M_3=99,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que el siguiente paso es resolver las ecuaciones de congruencias lineales,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\ 110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\ 99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
+90x&amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\
+110x&amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\
+99x&amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\\ x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
+x&amp;\equiv 6\pmod{11},&amp; 90x&amp;\equiv 1\pmod{11},&amp; x&amp;\equiv 6\pmod{11},\\
+x&amp;\equiv 0\pmod{9},&amp; 110x&amp;\equiv 1\pmod{9},&amp; x&amp;\equiv 5 \pmod{9},\\
+x&amp;\equiv 8\pmod{10},&amp; 99x&amp;\equiv 1\pmod{10},&amp; x&amp;\equiv (-1)\pmod{10},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;la solución al sistema queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ &amp;amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
+x &amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ 
+&amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Nótese que podíamos habernos ahorrado los cálculos asociados a la segunda ecuación del sistema, por aquel $0$ que figura en la misma. Por tanto, el menor número positivo de billetes a repartir es $468$, y como $468 = 11\cdot42 + 6$, concluimos que los subalternos cobran $42$ billetes, mientras que los jefes $84$ billetes.&lt;/p&gt;
 </description>

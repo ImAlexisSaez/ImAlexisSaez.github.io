@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2018-12-22T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2018-12-22T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-30T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2018-12-22 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2018-12-22 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-07-30 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2018-12-22</time>
+    <time>2019-07-30</time>
   </span>
   
 
@@ -577,69 +579,72 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 36:</strong> ¿Cuántas cifras tiene el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial?</p>
 
-<hr />
+<hr>
 
-<p>Antes de abordar la resolución del ejercicio propiamente dicho, veamos con un par de ejemplos la manera de proceder, para así intentar detectar patrones. Por ejemplo, si consideramos el número $354$, podemos aislar la primera cifra escribiéndolo como $300 + 54$, es decir, $3\cdot10^2+54$. Ahora, si colocamos la primera cifra en el último lugar de la derecha, el número pasa a ser $543$, y como deseamos aislar de nuevo el $3$, podemos escribirlo como $540 + 3$ o, equivalentemente, como $54\cdot10 + 3$. Por desgracia, no se cumple para este ejemplo la condición exigida en el enunciado del ejercicio, puesto que</p>
+<p>Antes de abordar la resolución del ejercicio propiamente dicho, veamos con un par de ejemplos la manera de proceder, para así intentar detectar patrones. Por ejemplo, si consideramos el número $354$, podemos aislar la primera cifra escribiéndolo como $300 + 54$, es decir, $3 \cdot 10^2 + 54$. Ahora, si colocamos la primera cifra en el último lugar de la derecha, el número pasa a ser $543$, y como deseamos aislar de nuevo el $3$, podemos escribirlo como $540 + 3$ o, equivalentemente, como $54\cdot10 + 3$. Por desgracia, no se cumple para este ejemplo la condición exigida en el enunciado del ejercicio, puesto que</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{3}{2}\cdot 354 = 531\neq 543.
-$$</p>
+\]</span></p>
 
-<p>Si ahora consideramos el número $4537 = 4\cdot10^3+537$, después conformaríamos el número $5374=537\cdot10 + 4$ y, desgraciadamente,</p>
+<p>Si ahora consideramos el número $4537 = 4\cdot10^3 + 537$, después conformaríamos el número $5374=537\cdot10 + 4$ y, desgraciadamente,</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{3}{2}\cdot4537 = 6805.5\neq 5374.
-$$</p>
+\]</span></p>
 
 <p>No obstante, estos dos intentos fallidos nos permiten atisbar los protagonistas de este ejercicio: la primera cifra del número buscado, que denotaremos como $A$ y el resto del número, que señalaremos como $B$. Así, dado un número de $n$ cifras, buscamos que se satisfaga la ecuación</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{3}{2}(A\cdot10^{n-1} + B) = B\cdot10 + A.
-$$</p>
+\]</span></p>
 
 <p>Operando algebraicamente, llegamos a que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-3A\cdot10^{n-1}+3B &amp;= 20B+2A,\\ 17B &amp;= 3A\cdot10^{n-1}-2A,\\ 17B &amp;= A(3\cdot10^{n-1}-2),\\ B &amp;= \dfrac{A(3\cdot10^{n-1}-2)}{17}.
+3A\cdot10^{n-1} + 3B &= 20B+2A,\\
+17B &= 3A\cdot10^{n-1} - 2A,\\
+17B &= A(3\cdot10^{n-1} - 2),\\
+B &= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1}-2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.</p>
+<p>Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1} - 2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.</p>
 
-<p>Alternativamente, usando congruencias, que $3\cdot10^{n-1}-2$ sea múltiplo de $17$ es equivalente a escribir</p>
+<p>Alternativamente, usando congruencias, que $3\cdot10^{n-1} - 2$ sea múltiplo de $17$ es equivalente a escribir</p>
 
-<p>$$
-(3\cdot10^{n-1}-2)\equiv 0\pmod{17},
-$$</p>
+<p><span  class="math">\[
+(3\cdot10^{n-1} - 2)\equiv 0\pmod{17},
+\]</span></p>
 
 <p>esto es,</p>
 
-<p>$$
-3\cdot10^{n-1}\equiv 2\pmod{17}.
-$$</p>
+<p><span  class="math">\[
+3\cdot10^{n-1} \equiv 2\pmod{17}.
+\]</span></p>
 
 <p>Multiplicando toda la ecuación de congruencia lineal por $6$ (ya que $3\cdot6=18$, cifra que queda muy cercana a un múltiplo de $17$) queda</p>
 
-<p>$$
-18\cdot10^{n-1}\equiv 12\pmod{17},
-$$</p>
+<p><span  class="math">\[
+18\cdot10^{n-1} \equiv 12\pmod{17},
+\]</span></p>
 
 <p>es decir,</p>
 
-<p>$$
-10^{n-1}\equiv 12\pmod{17}.
-$$</p>
+<p><span  class="math">\[
+10^{n-1} \equiv 12\pmod{17}.
+\]</span></p>
 
 <p>Nos aproximamos a la estructura de un resultado muy conocido de <em>Teoría de números</em>, por lo que podemos investigar qué sucede al multiplicar ahora por $10$ la ecuación de congruencia lineal. Así,</p>
 
-<p>$$
-10^{n-1}\equiv 12\pmod{17}\Leftrightarrow 10^n\equiv 120\pmod{17}\equiv 1\pmod{17},
-$$</p>
+<p><span  class="math">\[
+10^{n-1} \equiv 12\pmod{17}\Leftrightarrow 10^n\equiv 120\pmod{17}\equiv 1\pmod{17},
+\]</span></p>
 
-<p>y como $17$ es un número primo y $mcd(10,17)=1$, entonces, por el <em>Pequeño Teorema de Fermat</em>, sabemos que $10^{16}\equiv 1\pmod{17}$.</p>
+<p>y como $17$ es un número primo y $mcd(10,17)=1$, entonces, por el <em>Pequeño Teorema de Fermat</em>, sabemos que $10^{16} \equiv 1\pmod{17}$.</p>
 
-<p>Igualando términos con la anterior ecuación de congruencia lineal, concluimos que $n=16$. No obstante, dicho resultado no garantiza haber encontrado el menor número natural que verifica esa propiedad, por lo que hemos de proceder con cautela y seguir investigando. No obstante, como $10^8\equiv (-1)\pmod{17}$ (a modo anecdótico, si hubiera salido $10^8\equiv 1\pmod{17}$, hubiésemos tenido que probar con $10^4$ y así sucesivamente), en esta ocasión sí podemos concluir que el resultado teórico nos ha llevado al menor valor de $n$ para el que se satisface la propiedad. Así, el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial posee $16$ cifras.</p>
+<p>Igualando términos con la anterior ecuación de congruencia lineal, concluimos que $n=16$. No obstante, dicho resultado no garantiza haber encontrado el menor número natural que verifica esa propiedad, por lo que hemos de proceder con cautela y seguir investigando. No obstante, como $10^8 \equiv (-1)\pmod{17}$ (a modo anecdótico, si hubiera salido $10^8 \equiv 1\pmod{17}$, hubiésemos tenido que probar con $10^4$ y así sucesivamente), en esta ocasión sí podemos concluir que el resultado teórico nos ha llevado al menor valor de $n$ para el que se satisface la propiedad. Así, el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial posee $16$ cifras.</p>
 
     </div>
 
