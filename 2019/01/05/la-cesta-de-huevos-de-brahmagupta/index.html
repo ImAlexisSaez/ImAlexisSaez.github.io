@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2019-01-05T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2019-01-05T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-31T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2019-01-05 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-01-05 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-07-31 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-01-05</time>
+    <time>2019-07-31</time>
   </span>
   
 
@@ -577,77 +579,110 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 40:</strong> Brahmagupta tiene una enorme cesta repleta de huevos camperos. Si los saca de $2$ en $2$, resulta que queda un huevo en la cesta. Si opta por extraerlos de $3$ en $3$, ahora $2$ son los huevos que restan en la cesta. Análogamente, si realiza el proceso utilizando grupos de $4$, $5$ y $6$ huevos, quedan en la cesta, respectivamente, $3$, $4$ y $5$ huevos. Sin embargo, si los saca de $7$ en $7$, la cesta se vacía por completo. ¿Cuál es la menor cantidad de huevos que puede haber en la cesta de Brahmagupta?</p>
 
-<hr />
+<hr>
 
 <p>Consideremos $x$ el número de huevos que se encuentran en la cesta de Brahmagupta. Los distintos modos de extracción dan lugar al siguiente sistema de ecuaciones de congruencias lineales,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 1\pmod{2},\\ x&amp;\equiv 2\pmod{3},\\ x&amp;\equiv 3\pmod{4},\\ x&amp;\equiv 4\pmod{5},\\ x&amp;\equiv 5\pmod{6},\\ x&amp;\equiv 0\pmod{7}.
+x&\equiv 1\pmod{2},\\
+x&\equiv 2\pmod{3},\\
+x&\equiv 3\pmod{4},\\
+x&\equiv 4\pmod{5},\\
+x&\equiv 5\pmod{6},\\
+x&\equiv 0\pmod{7}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Por desgracia, no podemos aplicar directamente el <em>Teorema chino del resto</em>, pues algunos módulos no son primos entre sí. No obstante, como estamos en las condiciones de la proposición que generaliza este resultado teórico (las comprobaciones sobre los pares de congruencias se pueden llevar a cabo mentalmente de forma sencilla), sabemos que el sistema de ecuaciones de congruencias lineales posee solución. Para hallarla, desdoblando la ecuación de congruencia lineal $x\equiv 5\pmod{6}$, queda</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 1\pmod{2},\\ x&amp;\equiv 2\pmod{3},\\ x&amp;\equiv 3\pmod{4},\\ x&amp;\equiv 4\pmod{5},\\ x&amp;\equiv 5\pmod{2}\equiv 1\pmod{2},\\ x&amp;\equiv 5\pmod{3}\equiv 2\pmod{3},\\ x&amp;\equiv 0\pmod{7}.
+x&\equiv 1\pmod{2},\\
+x&\equiv 2\pmod{3},\\
+x&\equiv 3\pmod{4},\\
+x&\equiv 4\pmod{5},\\
+x&\equiv 5\pmod{2}\equiv 1\pmod{2},\\
+x&\equiv 5\pmod{3}\equiv 2\pmod{3},\\
+x&\equiv 0\pmod{7}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Encontramos dos ecuaciones de congruencias lineales repetidas, cuya escritura podemos ahorrarnos, de manera que llegamos a que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 1\pmod{2},\\ x&amp;\equiv 2\pmod{3},\\ x&amp;\equiv 3\pmod{4},\\ x&amp;\equiv 4\pmod{5},\\ x&amp;\equiv 0\pmod{7}.
+x&\equiv 1\pmod{2},\\
+x&\equiv 2\pmod{3},\\
+x&\equiv 3\pmod{4},\\
+x&\equiv 4\pmod{5},\\
+x&\equiv 0\pmod{7}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Llegados a este punto, la primera y la tercera ecuación involucran módulos de manera que uno es un factor del otro $4=2^2$. Por tanto, tenemos entre manos una posible contradicción aquí que hemos de investigar para hallar si existe o no dicha contradicción. No obstante, para cierto número entero $t$,</p>
 
-<p>$$
-x\equiv 3\pmod{4}\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\Rightarrow x\equiv 1\pmod{2},
-$$</p>
+<p><span  class="math">\[
+\begin{aligned}
+x\equiv 3\pmod{4}&\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\\
+&\Rightarrow x\equiv 1\pmod{2},
+\end{aligned}
+\]</span></p>
 
 <p>luego la primera ecuación de congruencia lineal es redundante y la podremos suprimir del sistema, quedando pues</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 2\pmod{3},\\ x&amp;\equiv 3\pmod{4},\\ x&amp;\equiv 4\pmod{5},\\ x&amp;\equiv 0\pmod{7}.
+x&\equiv 2\pmod{3},\\ 
+x&\equiv 3\pmod{4},\\
+x&\equiv 4\pmod{5},\\
+x&\equiv 0\pmod{7}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>Por la estructura que presenta el anterior sistema y dado que $m_1=3, m_2=4, m_3=5$ y $m_4=7$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=3\cdot4\cdot5\cdot7 = 420$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
+<p>Por la estructura que presenta el anterior sistema y dado que $m_1=3$, $m_2=4$, $m_3=5$ y $m_4=7$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=3\cdot4\cdot5\cdot7 = 420$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-M_1 &amp;= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\\ M_2 &amp;= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\\ M_3 &amp;= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\\ M_4 &amp;= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
+M_1 &= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\\
+M_2 &= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\\
+M_3 &= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\\
+M_4 &= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-140x\equiv 1\pmod{3}&amp;\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\\ &amp;\Leftrightarrow x\equiv 2\pmod{3},\\ 105x\equiv 1\pmod{4}&amp;\Leftrightarrow x\equiv 1\pmod{4},\\ 84x\equiv 1\pmod{5}&amp;\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\\ 60x\equiv 1\pmod{7}&amp;\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\\ &amp;\Leftrightarrow x\equiv 2\pmod{7}.
+140x\equiv 1\pmod{3}&\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\\
+&\Leftrightarrow x\equiv 2\pmod{3},\\
+105x\equiv 1\pmod{4}&\Leftrightarrow x\equiv 1\pmod{4},\\
+84x\equiv 1\pmod{5}&\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\\
+60x\equiv 1\pmod{7}&\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\\
+&\Leftrightarrow x\equiv 2\pmod{7}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Agrupando ahora toda la información adecuadamente,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 2\pmod{3},&amp; 140x&amp;\equiv 1\pmod{3},&amp; x&amp;\equiv 2\pmod{3},\\ x&amp;\equiv 3\pmod{4},&amp; 105x&amp;\equiv 1\pmod{4},&amp; x&amp;\equiv 1\pmod{4},\\ x&amp;\equiv 4\pmod{5},&amp; 84x&amp;\equiv 1\pmod{5},&amp; x&amp;\equiv 4\pmod{5},\\ x&amp;\equiv 0\pmod{7},&amp; 60x&amp;\equiv 1\pmod{7},&amp; x&amp;\equiv 2\pmod{7},
+x&\equiv 2\pmod{3},& 140x&\equiv 1\pmod{3},& x&\equiv 2\pmod{3},\\
+x&\equiv 3\pmod{4},& 105x&\equiv 1\pmod{4},& x&\equiv 1\pmod{4},\\
+x&\equiv 4\pmod{5},& 84x&\equiv 1\pmod{5},& x&\equiv 4\pmod{5},\\
+x&\equiv 0\pmod{7},& 60x&\equiv 1\pmod{7},& x&\equiv 2\pmod{7},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>entonces la solución es</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\\ &amp;\equiv 2219\pmod{420}\equiv 119\pmod{420},
+x &\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\\
+&\equiv 2219\pmod{420}\equiv 119\pmod{420},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>esto es, la cesta de Brahmagupta contaba con $119$ huevos.</p>
 

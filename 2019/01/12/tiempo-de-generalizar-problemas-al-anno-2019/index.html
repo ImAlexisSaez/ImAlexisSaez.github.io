@@ -131,7 +131,7 @@
   
   <meta property="article:published_time" content="2019-01-12T05:59:39&#43;02:00">
   
-  <meta property="article:modified_time" content="2019-01-12T05:59:39&#43;02:00">
+  <meta property="article:modified_time" content="2019-07-31T00:00:01&#43;02:00">
   
 
   
@@ -387,7 +387,7 @@
 
 
 <meta content="2019-01-12 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-01-12 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-07-31 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -411,8 +411,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-01-12</time>
+    <time>2019-07-31</time>
   </span>
   
 
@@ -577,85 +579,108 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 42:</strong> Encuentra los tres últimos dígitos del número</p>
 
-<p>$$
+<p><span  class="math">\[
 N=3\times7\times11\times15\times\cdots\times2019.
-$$</p>
+\]</span></p>
 
-<hr />
+<hr>
 
-<p>Como estamos interesados en encontrar los tres últimos dígitos del producto de números dado, un posible enfoque de cara a la resolución de este ejercicio es encontrar el valor de la congruencia de dicho producto módulo $1000$, esto es, resolver $x\equiv N\pmod{1000}$. Ahora bien, como $1000 = 2^3\cdot5^3 = 8\cdot125$ y $mcd(8,125)=1$ sabemos, por el <em>Teorema chino del resto</em>, que la anterior ecuación de congruencia lineal es equivalente al siguiente sistema de ecuaciones de congruencias lineales,</p>
+<p>Como estamos interesados en encontrar los tres últimos dígitos del producto de números dado, un posible enfoque de cara a la resolución de este ejercicio es encontrar el valor de la congruencia de dicho producto módulo $1000$, esto es, resolver $x\equiv N\pmod{1000}$. Ahora bien, como $1000 = 2^3 \cdot 5^3 = 8\cdot 125$ y $mcd(8,125)=1$ sabemos, por el <em>Teorema chino del resto</em>, que la anterior ecuación de congruencia lineal es equivalente al siguiente sistema de ecuaciones de congruencias lineales,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv N\pmod{8},\\ x&amp;\equiv N\pmod{125}.
+x&\equiv N\pmod{8},\\
+x&\equiv N\pmod{125}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Sin embargo, dado que en el producto $N$ aparecen, por ejemplo, los números $15 = 3\cdot5$, $35 = 5\cdot7$ y $55 = 5\cdot11$, resulta que encontraríamos $5^3$ en dicho producto, provocando que $N\equiv 0\pmod{125}$, esto es, $N$ es múltiplo de $125$. Por otro lado,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-3&amp;\equiv 3\pmod{8},\\ 7&amp;\equiv (-1)\pmod{8},\\ 11&amp;\equiv 3\pmod{8},\\ 15&amp;\equiv (-1)\pmod{8},
+3&\equiv 3\pmod{8},\\
+7&\equiv (-1)\pmod{8},\\
+11&\equiv 3\pmod{8},\\
+15&\equiv (-1)\pmod{8},
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>por tanto $$(3\cdot7\cdot11\cdot15)\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\equiv 9\pmod{8}\equiv 1\pmod{8}.$$</p>
+<p>por tanto</p>
+
+<p><span  class="math">\[
+\begin{aligned}
+(3\cdot7\cdot11\cdot15)&\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\\
+&\equiv 9\pmod{8}\equiv 1\pmod{8}.
+\end{aligned}
+\]</span></p>
 
 <p>Al ser los términos del producto $N$ de la forma $3+4t$, con $t$ número entero mayor o igual que cero, la anterior situación se reproduce cada cuatro términos del mencionado producto. Así, como $3+4t=2019$ implica que $t=504$ y empezamos la sucesión en $t=0$, $N$ está compuesto por $505$ términos, de forma que podemos conseguir $126$ grupos de $4$ elementos, quedando sin agrupar el último término, $2019$, que sabemos cumple $2019\equiv 3\pmod{8}$, por lo que</p>
 
-<p>$$
-N\equiv (1^{126}\cdot3)\pmod{8}\equiv 3\pmod{8}.
-$$</p>
+<p><span  class="math">\[
+N\equiv (1^{126} \cdot3)\pmod{8}\equiv 3\pmod{8}.
+\]</span></p>
 
 <p>Recapitulando, buscamos un múltiplo de $125$ que sea congruente con $3$ módulo $8$, es decir, hemos de resolver la ecuación, $125x\equiv 3\pmod{8}$. No obstante,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-125x\equiv 3\pmod{8}&amp;\Leftrightarrow 5x\equiv 3\pmod{8}\\ &amp;\Leftrightarrow 15x\equiv 9\pmod{8}\\ &amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\\ &amp;\Leftrightarrow x\equiv 7\pmod{8},
+125x\equiv 3\pmod{8}&\Leftrightarrow 5x\equiv 3\pmod{8}\\
+&\Leftrightarrow 15x\equiv 9\pmod{8}\\
+&\Leftrightarrow (-x)\equiv 1\pmod{8}\\
+&\Leftrightarrow x\equiv 7\pmod{8},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>esto es, $125\cdot7=875$ son las tres últimas cifras de $N$.</p>
 
 <p>De manera más clásica, una vez hallado el valor de las anteriores dos congruencias, el sistema de ecuaciones de congruencias lineales propuesto es equivalente a</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 3\pmod{8},\\ x&amp;\equiv 0\pmod{125}.
+x&\equiv 3\pmod{8},\\
+x&\equiv 0\pmod{125}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Por la estructura que presenta el anterior sistema y dado que $m_1=8$ y $m_2=125$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=8\cdot125 = 1000$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-M_1 &amp;= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\\ M_2 &amp;= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
+M_1 &= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\\
+M_2 &= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-125x\equiv 1\pmod{8}&amp;\Leftrightarrow 5x\equiv 1\pmod{8}\\ &amp;\Leftrightarrow 25x\equiv 5\pmod{8}\\ &amp;\Leftrightarrow x\equiv 5\pmod{8},\\ 4x\equiv 1\pmod{125}&amp;\Leftrightarrow 376x\equiv 94\pmod{125}\\ &amp;\Leftrightarrow x\equiv 94\pmod{125}.
+125x\equiv 1\pmod{8}&\Leftrightarrow 5x\equiv 1\pmod{8}\\
+&\Leftrightarrow 25x\equiv 5\pmod{8}\\
+&\Leftrightarrow x\equiv 5\pmod{8},\\
+4x\equiv 1\pmod{125}&\Leftrightarrow 376x\equiv 94\pmod{125}\\
+&\Leftrightarrow x\equiv 94\pmod{125}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Agrupando ahora toda la información adecuadamente,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x&amp;\equiv 3\pmod{8},&amp; 125x&amp;\equiv 1\pmod{8},&amp; x&amp;\equiv 5\pmod{8},\\ x&amp;\equiv 0\pmod{125},&amp; 4x&amp;\equiv 1\pmod{125},&amp; x&amp;\equiv 94\pmod{125},
+x&\equiv 3\pmod{8},& 125x&\equiv 1\pmod{8},& x&\equiv 5\pmod{8},\\
+x&\equiv 0\pmod{125},& 4x&\equiv 1\pmod{125},& x&\equiv 94\pmod{125},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>entonces la solución es</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\ &amp;\equiv 1875\pmod{1000}\\ &amp;\equiv 875\pmod{1000},
+x &\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\
+&\equiv 1875\pmod{1000}\\
+&\equiv 875\pmod{1000},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>esto es, $875$ son los tres últimos dígitos de $N$.</p>
 
