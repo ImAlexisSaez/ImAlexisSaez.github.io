@@ -2407,121 +2407,139 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/01/30/nos-vamos-al-cine/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 47:&lt;/strong&gt; Una persona ha comprado entradas para el cine para personas adultas por un precio de $640$ unidades monetarias (&lt;em&gt;um&lt;/em&gt;) cada una y para menores de edad a $330$ &lt;em&gt;um&lt;/em&gt;. Sabiendo que invirtió $7140$ &lt;em&gt;um&lt;/em&gt; y que compró menos entradas de adultos que de menores, hallar el número de entradas que adquirió.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Sean $x$ el número de entradas para personas adultas compradas e $y$ el número de entradas para menores de edad compradas, con $x,y\in\mathbb{N}$. Dados los precios del enunciado y la cantidad total invertida, planteamos la siguiente ecuación diofántica:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 640x + 330y = 7140,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que es equivalente, simplificando por $10$, a&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 64x + 33y = 714.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Utilicemos el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt; para hallar el $mcd(64,33)$ y decidir así si la ecuación admite o no solución entera. Tenemos que:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-64 &amp;amp;= 33\cdot 1 + 31,\\ 33 &amp;amp;= 31\cdot 1 + 2,\\ 31 &amp;amp;= 2\cdot 15 + 1,\\ 2 &amp;amp;= 1\cdot 2,
+64 &amp;= 33\cdot 1 + 31,\\
+33 &amp;= 31\cdot 1 + 2,\\
+31 &amp;= 2\cdot 15 + 1,\\
+2 &amp;= 1\cdot 2,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;luego $mcd(64,33) = 1$, y como $1|714$, estamos en condiciones de asegurar que la ecuación diofántica admite solución entera. Como $714$ es un número ciertamente elevado, comencemos llevando a cabo el cambio de variable&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 714x^{\prime},\\ y &amp;amp;= 714y^{\prime},
+x &amp;= 714x^{\prime},\\
+y &amp;= 714y^{\prime},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;de manera que la ecuación diofántica queda $64x^{\prime} + 33y^{\prime} = 1$ y nos invita a despejar $y^{\prime}$, por ser la variable cuyo coeficiente asociado es más reducido, de forma que $$y^{\prime} = \dfrac{1-64x^{\prime}}{33}.$$ Ahora, como el valor que figura en el denominador de la igualdad anterior es $33$, a continuación, tendríamos que darle a $x^{\prime}$, de manera ordenada, valores del &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $33$ hasta hallar una solución particular.&lt;/p&gt;
+&lt;p&gt;de manera que la ecuación diofántica queda $64x^{\prime} + 33y^{\prime} = 1$ y nos invita a despejar $y^{\prime}$, por ser la variable cuyo coeficiente asociado es más reducido, de forma que&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+y^{\prime} = \dfrac{1-64x^{\prime}}{33}.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora, como el valor que figura en el denominador de la igualdad anterior es $33$, a continuación, tendríamos que darle a $x^{\prime}$, de manera ordenada, valores del &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $33$ hasta hallar una solución particular.&lt;/p&gt;
 
 &lt;p&gt;No obstante, en lugar de llevar a cabo tan titánica labor, aprovecharemos las operaciones realizadas durante el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt; para descomponer la anterior fracción como sigue:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime} = -x^{\prime} + \dfrac{1 - 31x^{\prime}}{33} = -x^{\prime} + y^{\prime\prime},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime\prime} = \dfrac{1 - 31x^{\prime}}{33},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que equivale a $33y^{\prime\prime} = 1 - 31x^{\prime}$, de manera que ahora tendríamos que despejar $x^{\prime}$, quedando:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime} = \dfrac{1-33y^{\prime\prime}}{31} = -y^{\prime\prime} + \dfrac{1-2y^{\prime\prime}}{31}=-y^{\prime\prime} + x^{\prime\prime},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime\prime} = \dfrac{1-2y^{\prime\prime}}{31},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;que equivale a $31x^{\prime\prime} = 1-2y^{\prime\prime}$, y despejando $y^{\prime\prime}$ tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime\prime} = \dfrac{1-31x^{\prime\prime}}{2}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Tras aplicar en retiradas ocasiones la misma estrategia de descomposición, hemos alcanzado un valor razonable para el denominador de la anterior ecuación. Podemos así dar valores a $x^{\prime\prime}$, ya que únicamente tendríamos que probar $x^{\prime\prime}=0$, y $x^{\prime\prime}=1$ (que conforma el &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $2$). Para $x^{\prime\prime}=0$, $y^{\prime\prime}\notin\mathbb{Z}$, pero para $x^{\prime\prime}=1$, $y^{\prime\prime} = -15$. Ahora,&lt;/p&gt;
+&lt;p&gt;Tras aplicar en retiradas ocasiones la misma estrategia de descomposición, hemos alcanzado un valor razonable para el denominador de la anterior ecuación. Podemos así dar valores a $x^{\prime\prime}$, ya que únicamente tendríamos que probar $x^{\prime\prime} =0$, y $x^{\prime\prime} =1$ (que conforma el &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $2$). Para $x^{\prime\prime} =0$, $y^{\prime\prime} \notin\mathbb{Z}$, pero para $x^{\prime\prime} =1$, $y^{\prime\prime} = -15$. Ahora,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x^{\prime} &amp;amp;= -y^{\prime\prime} + x^{\prime\prime} = 15+1 = 16,\\ y^{\prime} &amp;amp;= -x^{\prime} + y^{\prime\prime} = -16 -15 = -31,\\ x  &amp;amp;= 714x^{\prime} = 714\cdot 16 = 11424,\\ y  &amp;amp;= 714y^{\prime} = 714\cdot(-31) = -22134,
+x^{\prime} &amp;= -y^{\prime\prime} + x^{\prime\prime} = 15+1 = 16,\\
+y^{\prime} &amp;= -x^{\prime} + y^{\prime\prime} = -16 -15 = -31,\\
+x  &amp;= 714x^{\prime} = 714\cdot 16 = 11424,\\
+y  &amp;= 714y^{\prime} = 714\cdot(-31) = -22134, 
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que la solución particular queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x_0 &amp;amp;= 11424,\\ y_0 &amp;amp;= -22134,
+x_0 &amp;= 11424,\\
+y_0 &amp;= -22134,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;mientras que la solución general es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x  &amp;amp;= 11424 + 33t,\\ y  &amp;amp;= -22134 - 64t,
+x  &amp;= 11424 + 33t,\\
+y  &amp;= -22134 - 64t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t\in\mathbb{Z}$.&lt;/p&gt;
 
 &lt;p&gt;Ahora que hemos resuelto la ecuación diofántica, centrémonos en sacar el número de entradas. Por un lado, en ambos casos debe tratarse de un número mayor o igual que cero, es decir, tanto $x\geq0$, como $y\geq0$. Además, nos dicen que compró menos entradas de adultos que de menores, es decir, que $x&amp;lt;y$. Todo esto da lugar a las siguientes condiciones:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x  = 11424 + 33t&amp;amp;\geq0,\\ y  = -22134 - 64t&amp;amp;\geq0,\\ 11424 + 33t &amp;amp;&amp;lt; -22134 - 64t,
+x  = 11424 + 33t&amp;\geq0,\\
+y  = -22134 - 64t&amp;\geq0,\\
+11424 + 33t &amp;&lt; -22134 - 64t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t\in\mathbb{Z}$. De la primera inecuación, se llega a que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 t\geq -\dfrac{11424}{33},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;luego $t\geq -346$. De la segunda inecuación, se llega a que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 t\leq -\dfrac{22134}{64},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;luego $t\leq -346$, con lo cual $t=346$, cantidad que, efectivamente, también verifica la tercera inecuación. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 11424 + 33\cdot(-346) = 6,\\ y &amp;amp;= -22134 - 64\cdot(-346) = 10,
+x &amp;= 11424 + 33\cdot(-346) = 6,\\
+y &amp;= -22134 - 64\cdot(-346) = 10,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, compró $6$ entradas para adultos y $10$ entradas para menores de edad.&lt;/p&gt;
 </description>
@@ -2542,263 +2560,264 @@ $$&lt;/p&gt;
 &lt;li&gt;(e) $14x+165y=1$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Para el apartado (a), como $25=5^2$ y $36 = 2^2\cdot3^2$, entonces $mcd(25,36)=1$, y, dado que $1|10$, estamos en condiciones de asegurar que la ecuación diofántica propuesta admite solución entera. Empecemos despejando la variable $x$, por ser aquella cuyo coeficiente asociado es más reducido. Así,&lt;/p&gt;
+&lt;p&gt;Para el apartado (a), como $25=5^2$ y $36 = 2^2 \cdot3^2$, entonces $mcd(25,36)=1$, y, dado que $1|10$, estamos en condiciones de asegurar que la ecuación diofántica propuesta admite solución entera. Empecemos despejando la variable $x$, por ser aquella cuyo coeficiente asociado es más reducido. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x = \dfrac{10-36y}{25} = -y + \dfrac{10-11y}{25} = -y+x^{\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime}=\dfrac{10-11y}{25},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $25x^{\prime} + 11y = 10$, luego&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y = \dfrac{10-25x^{\prime}}{11} = -2x^{\prime} + \dfrac{10-3x^{\prime}}{11} = -2x^{\prime}+y^{\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime}=\dfrac{10-3x^{\prime}}{11},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;es decir, $3x^{\prime}+11y^{\prime}=10$. Finalmente,&lt;/p&gt;
+&lt;p&gt;es decir, $3x^{\prime} +11y^{\prime} =10$. Finalmente,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime} = \dfrac{10-11y^{\prime}}{3},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;por lo que basta probar para $y^{\prime}$ valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $3$. Para $y^{\prime}=2$, tenemos que $x^{\prime} = (-4)$, y deshaciendo ahora los cambios de variable llevados a cabo anteriormente,&lt;/p&gt;
+&lt;p&gt;por lo que basta probar para $y^{\prime}$ valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $3$. Para $y^{\prime} =2$, tenemos que $x^{\prime} = (-4)$, y deshaciendo ahora los cambios de variable llevados a cabo anteriormente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y &amp;amp;= -2x^{\prime} + y^{\prime} = 8+2=10,\\ x &amp;amp;= -y + x^{\prime} = (-10) - 4 = -14,
+y &amp;= -2x^{\prime} + y^{\prime} = 8+2=10,\\
+x &amp;= -y + x^{\prime} = (-10) - 4 = -14,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, una solución particular para la ecuación diofántica planteada es $(x_0,y_0) = ((-14), 10)$, mientras que su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= (-14) + 36t,\\ y &amp;amp;= 10 - 25t,
+x &amp;= (-14) + 36t,\\
+y &amp;= 10 - 25t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
 
 &lt;p&gt;De cara al apartado (b), comencemos calculando el máximo común divisor de $200$ y $1768$ por el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;. Tenemos que,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-1768 &amp;amp;= 200\cdot8 + 168,\\  200 &amp;amp;= 168\cdot1 +  32,\\  168 &amp;amp;=  32\cdot5 +   8,\\ 32 &amp;amp;=   8\cdot4,
+1768 &amp;= 200\cdot8 + 168,\\
+200 &amp;= 168\cdot1 +  32,\\
+168 &amp;=  32\cdot5 +   8,\\
+32 &amp;=   8\cdot4,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que $mcd(200,1768) = 8$ y, evidentemente, $8|8$, por lo que estamos en condiciones de asegurar que la ecuación diofántica propuesta en este apartado admite solución entera. Simplificando dicha ecuación por $8$ queda $25x + 221y = 1$. Despejemos la variable $x$, por ser aquella cuyo coeficiente es más reducido,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x = \dfrac{1-221y}{25} = -8y + \dfrac{1-21y}{25} = -8y + x^{\prime},\quad\text{con}\quad x^{\prime} = \dfrac{1-21y}{25},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $25x^{\prime} +21y = 1$, luego&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y = \dfrac{1-25x^{\prime}}{21} = -x^{\prime} + \dfrac{1-4x^{\prime}}{21} = -x^{\prime}+y^{\prime},\quad\text{con}\quad y^{\prime} = \dfrac{1-4x^{\prime}}{21},
+y = \dfrac{1-25x^{\prime}}{21} = -x^{\prime} + \dfrac{1-4x^{\prime}}{21} = -x^{\prime} +y^{\prime},\quad\text{con}\quad y^{\prime} = \dfrac{1-4x^{\prime}}{21},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $4x^{\prime} + 21y^{\prime} = 1$, por lo que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
 x^{\prime} = \dfrac{1-21y^{\prime}}{4},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y ya únicamente basta probar valores para $y^{\prime}$ que pertenezcan al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $4$. Así, para $y^{\prime} = 1$, tenemos que $x^{\prime} = (-5)$, y deshaciendo los cambios de variable llevados a cabo arriba,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y &amp;amp;= -x^{\prime}+y^{\prime} = 5+1=6,\\ x &amp;amp;= -8y+x^{\prime} = (-48)-5 = (-53),
+y &amp;= -x^{\prime}+y^{\prime} = 5+1=6,\\
+x &amp;= -8y+x^{\prime} = (-48)-5 = (-53).
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;esto es, una solución para la ecuación diofántica planteada es $(x_0,y_0) = ((-53), 6)$, y su solución general queda&lt;/p&gt;
+&lt;p&gt;Una solución para la ecuación diofántica planteada es $(x_0,y_0) = ((-53), 6)$, y su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= (-53) + 1768t,\\ y &amp;amp;= 6-200t,
+x &amp;= (-53) + 1768t,\\
+y &amp;= 6-200t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
 
-&lt;p&gt;A continuación, en el apartado (c), como $40 = 2^3\cdot5$ y $50 = 2\cdot5^2$, resulta que $mcd(40,50) = 10$, y dado que $10\nmid 3$, estamos en condiciones de asegurar que la ecuación diofántica propuesta no admite solución entera.&lt;/p&gt;
+&lt;p&gt;A continuación, en el apartado (c), como $40 = 2^3 \cdot5$ y $50 = 2\cdot5^2$, resulta que $mcd(40,50) = 10$, y dado que $10\nmid 3$, estamos en condiciones de asegurar que la ecuación diofántica propuesta no admite solución entera.&lt;/p&gt;
 
 &lt;p&gt;Para el apartado (d), empecemos calculando el máximo común divisor de $213$ y $1123$ utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-1123 &amp;amp;= 213\cdot5 + 58,\\  213 &amp;amp;=  58\cdot3 + 39,\\ 58 &amp;amp;=  39\cdot1 + 19,\\ 39 &amp;amp;=  19\cdot2 +  1,\\ 19 &amp;amp;=   1\cdot19,
+1123 &amp;= 213\cdot5 + 58,\\
+213 &amp;=  58\cdot3 + 39,\\
+58 &amp;=  39\cdot1 + 19,\\
+39 &amp;=  19\cdot2 +  1,\\
+19 &amp;=   1\cdot19,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que $mcd(213, 1123)=1$, esto es, la ecuación diofántica admite solución entera, ya que, obviamente, $1|18$. Por comodidad en los cálculos, empecemos llevando a cabo el cambio de variable&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 18x^{\prime},\\ y &amp;amp;= 18y^{\prime},
+x &amp;= 18x^{\prime},\\
+y &amp;= 18y^{\prime},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y así queda, $213x^{\prime} + 1123y^{\prime}=1$. Despejando la variable $x^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, llegamos a que&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime} = \dfrac{1-1123y^{\prime}}{213} = -5y^{\prime} + \dfrac{1-58y^{\prime}}{213} = -5y^{\prime}+x^{\prime\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime\prime} = \dfrac{1-58y^{\prime}}{213},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $213x^{\prime\prime} + 58y^{\prime} = 1$. Ahora,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime} = \dfrac{1-213x^{\prime\prime}}{58} = -3x^{\prime\prime} + \dfrac{1-39x^{\prime\prime}}{58} = -3x^{\prime\prime} + y^{\prime\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime\prime} = \dfrac{1-39x^{\prime\prime}}{58},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $39x^{\prime\prime} + 58y^{\prime\prime} = 1$. A continuación,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime\prime} = \dfrac{1-58y^{\prime\prime}}{39} = -y^{\prime\prime} + \dfrac{1-19y^{\prime\prime}}{39} = -y^{\prime\prime} + x^{\prime\prime\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime\prime\prime} = \dfrac{1-19y^{\prime\prime}}{39},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $39x^{\prime\prime\prime} + 19y^{\prime\prime}=1$. Acto seguido,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime\prime} = \dfrac{1-39x^{\prime\prime\prime}}{19} = -2x^{\prime\prime\prime} + \dfrac{1-x^{\prime\prime\prime}}{19} = -2x^{\prime\prime\prime} + y^{\prime\prime\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime\prime\prime} = \dfrac{1-x^{\prime\prime\prime}}{19},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;es decir, $x^{\prime\prime\prime}+19y^{\prime\prime\prime} = 1$, luego $x^{\prime\prime\prime} = 1-19y^{\prime\prime\prime}$. Una solución particular para esta última es $(x^{\prime\prime\prime}_0, y^{\prime\prime\prime}_0) = (1,0)$, y así, deshaciendo los cambios de variable realizados, arribamos a&lt;/p&gt;
+&lt;p&gt;es decir, $x^{\prime\prime\prime} +19y^{\prime\prime\prime} = 1$, luego $x^{\prime\prime\prime} = 1-19y^{\prime\prime\prime}$. Una solución particular para esta última es $(x^{\prime\prime\prime}_0, y^{\prime\prime\prime}_0) = (1,0)$, y así, deshaciendo los cambios de variable realizados, arribamos a&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y^{\prime\prime}_0 &amp;amp;= -2x^{\prime\prime\prime}_0 + y^{\prime\prime\prime}_0 = (-2)+0 = (-2),\\ x^{\prime\prime}_0 &amp;amp;= -y^{\prime\prime}_0 + x^{\prime\prime\prime}_0 = 2+1 = 3,\\ y^{\prime}_0  &amp;amp;= -3x^{\prime\prime}_0 + y^{\prime\prime}_0 = (-9) - 2 = (-11),\\ x^{\prime}_0  &amp;amp;= -5y^{\prime}_0 + x^{\prime\prime}_0 = 55 + 3 = 58,\\ y_0   &amp;amp;= 18y^{\prime}_0 = (-198),\\ x_0   &amp;amp;= 18x^{\prime}_0 = 1044,
+y^{\prime\prime}_0 &amp;= -2x^{\prime\prime\prime}_0 + y^{\prime\prime\prime}_0 = (-2)+0 = (-2),\\
+x^{\prime\prime}_0 &amp;= -y^{\prime\prime}_0 + x^{\prime\prime\prime}_0 = 2+1 = 3,\\
+y^{\prime}_0  &amp;= -3x^{\prime\prime}_0 + y^{\prime\prime}_0 = (-9) - 2 = (-11),\\
+x^{\prime}_0  &amp;= -5y^{\prime}_0 + x^{\prime\prime}_0 = 55 + 3 = 58,\\
+y_0   &amp;= 18y^{\prime}_0 = (-198),\\
+x_0   &amp;= 18x^{\prime}_0 = 1044,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que la solución general a la ecuación diofántica planteada es&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 1044 + 1123t,\\ y &amp;amp;= (-198) - 213t,
+x &amp;= 1044 + 1123t,\\
+y &amp;= (-198) - 213t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, en el apartado (e), como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-14 &amp;amp;= 2\cdot7,\\ 165 &amp;amp;= 3\cdot5\cdot11,
+14 &amp;= 2\cdot7,\\
+165 &amp;= 3\cdot5\cdot11,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;entonces $mcd(14,165)=1$, por lo que la ecuación diofántica propuesta admite solución entera. Despejando la variable $x$, por ser aquella cuyo coeficiente asociado es más reducido, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x=\dfrac{1-165y}{14}=-11y+\dfrac{1-11y}{14}=-11y+x^{\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime}=\dfrac{1-11y}{14},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $14x^{\prime}+11y=1$. Ahora,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y=\dfrac{1-14x^{\prime}}{11}=-x^{\prime}+\dfrac{1-3x^{\prime}}{11}=-x^{\prime}+y^{\prime},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime}=\dfrac{1-3x^{\prime}}{11},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;es decir, $3x^{\prime}+11y^{\prime}=1$. A continuación,&lt;/p&gt;
+&lt;p&gt;es decir, $3x^{\prime} +11y^{\prime}=1$. A continuación,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x^{\prime}=\dfrac{1-11y^{\prime}}{3},
+x^{\prime} =\dfrac{1-11y^{\prime}}{3},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;por lo que basta probar, para $y^{\prime}$, valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $3$. Para $y^{\prime}_0=2$, es cierto que $x^{\prime}_0 = (-7)$, y deshaciendo los cambios de variable llevados a cabo,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-y_0 &amp;amp;= -x^{\prime}_0 + y^{\prime}_0 = 7+2=9,\\ x_0 &amp;amp;= -11y_0 + x^{\prime}_0 = (-99)-7 = (-106),
+y_0 &amp;= -x^{\prime}_0 + y^{\prime}_0 = 7+2=9,\\
+x_0 &amp;= -11y_0 + x^{\prime}_0 = (-99)-7 = (-106),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;llegamos a una solución particular para la ecuación diofántica planteada. Así, su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= (-106) + 165t,\\ y &amp;amp;= 9-14t,
+x &amp;= (-106) + 165t,\\
+y &amp;= 9-14t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
 </description>
@@ -2816,78 +2835,83 @@ $$&lt;/p&gt;
 &lt;li&gt;(b) Un hombre compra caballos y vacas, pagando $1770$ euros. Una vaca cuesta $21$ euros y un caballo $31$ euros. ¿Cuántos caballos y vacas ha comprado?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado (a), como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
- 84 &amp;amp;= 2^2\cdot3\cdot7,\\ 990 &amp;amp;= 2\cdot3^2\cdot5\cdot11,
+ 84 &amp;= 2^2 \cdot3\cdot7,\\
+ 990 &amp;= 2\cdot 3^2 \cdot5\cdot11,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;entonces $mcd(84, 990) = 6$. Para que la ecuación diofántica planteada admita soluciones enteras, $6$ ha de dividir a $c$ y, dado que buscamos el valor mínimo de $c$, nuestra tarea se reduce pues a encontrar el primer múltiplo de $6$ que pertenezca al intervalo $[10,100]$. La solución será, por tanto, $c=12$.&lt;/p&gt;
+&lt;p&gt;entonces $mcd(84, 990) = 6$. Para que la ecuación diofántica planteada admita soluciones enteras, $6$ ha de dividir a $c$ y como buscamos el valor mínimo de $c$, nuestra tarea se reduce pues a encontrar el primer múltiplo de $6$ que pertenezca al intervalo $[10,100]$. La solución será, por tanto, $c=12$.&lt;/p&gt;
 
 &lt;p&gt;En cuanto al apartado (b), consideremos $x$ el número de vacas compradas e $y$ el total de caballos adquiridos. Dados sus respectivos precios y el importe total desembolsado, planteamos la ecuación diofántica&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 21x + 31y = 1770.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Como $mcd(21,31) = 1$ y $1|1770$, estamos en condiciones de asegurar que la anterior ecuación diofántica admite solución entera. Para aliviar cálculos, empecemos llevando a cabo el cambio de variable&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 1770x^{\prime},\\ y &amp;amp;= 1770y^{\prime},
+x &amp;= 1770x^{\prime},\\
+y &amp;= 1770y^{\prime},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con lo cual queda $21x^{\prime} + 31y^{\prime} = 1$. Despejando ahora la variable $x^{\prime}$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
 x^{\prime} = \dfrac{1-31y^{\prime}}{21} = -y^{\prime} + \dfrac{1 - 10y^{\prime}}{21} = -y^{\prime} + x^{\prime\prime},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x^{\prime\prime} = \dfrac{1-10y^{\prime}}{21},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $21x^{\prime\prime} = 1-10y^{\prime}$, y despejando ahora la variable $y^{\prime}$,&lt;/p&gt;
 
-&lt;p&gt;$$
-\begin{aligned}
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 y^{\prime} = \dfrac{1-21x^{\prime\prime}}{10},
-\end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;ecuación para la que, por tanteo, rápidamente observamos que si $x^{\prime\prime} = 1$, entonces $y^{\prime} = (-2)$. Deshaciendo ahora los cambios de variable realizados,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x^{\prime} &amp;amp;= -y^{\prime} + x^{\prime\prime} = 2 + 1 = 3,\\ x  &amp;amp;= 1770x^{\prime} = 1770\cdot3 = 5310,\\ y  &amp;amp;= 1770y^{\prime} = 1770\cdot(-2) = -3540,
+x^{\prime} &amp;= -y^{\prime} + x^{\prime\prime} = 2 + 1 = 3,\\
+x  &amp;= 1770x^{\prime} = 1770\cdot3 = 5310,\\
+y  &amp;= 1770y^{\prime} = 1770\cdot(-2) = -3540,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;llegamos a una solución particular de la ecuación diofántica propuesta. Así, su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 5310 + 31t,\\ y &amp;amp;= (-3540) - 21t,
+x &amp;= 5310 + 31t,\\
+y &amp;= (-3540) - 21t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero. El número de animales que ha comprado de cada clase ha de ser, necesariamente, mayor o igual que cero, por lo que planteamos las inecuaciones,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-5310 + 31t &amp;amp;\geq 0\Rightarrow t\geq -\dfrac{5310}{31} = -171.29,\\ -3540-21t  &amp;amp;\geq 0\Rightarrow t\leq -\dfrac{3540}{21} = -168.57.
+5310 + 31t &amp;\geq 0\Rightarrow t\geq -\dfrac{5310}{31} = -171.29,\\
+-3540-21t  &amp;\geq 0\Rightarrow t\leq -\dfrac{3540}{21} = -168.57.
 \end{aligned}
-$$
-Como $t$ ha de ser entero, concluimos que $-171\leq t\leq -169$. Por tanto,&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Como $t$ ha de ser entero, concluimos que $-171\leq t\leq -169$. Por tanto,&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -2930,199 +2954,219 @@ Como $t$ ha de ser entero, concluimos que $-171\leq t\leq -169$. Por tanto,&lt;/
       <guid>https://imalexissaez.github.io/2019/01/19/2019-anno-de-las-torres-de-potencias/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 44:&lt;/strong&gt; Encuentra los dos últimos dígitos de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para encontrar las dos últimas cifras de la operación indicada en el enunciado del ejercicio, un posible enfoque pasa por trabajar con el valor de las congruencias módulo $100$. Estudiemos el valor de dichas congruencias para cada uno de los tres sumandos por separado.&lt;/p&gt;
 
 &lt;p&gt;En primer lugar, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
-2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora, como $mcd(17,100) = 1$, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, sabemos que&lt;/p&gt;
 
-&lt;p&gt;$$
-17^{\varphi(100)}\equiv 1\pmod{100},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+17^{\varphi(100)} \equiv 1\pmod{100},
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y como $100 = 2^2\cdot5^2$,&lt;/p&gt;
+&lt;p&gt;y como $100 = 2^2 \cdot 5^2$,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \varphi(100) = 100\cdot\left(1-\dfrac{1}{2}\right)\cdot\left(1-\dfrac{1}{5}\right) = 40,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;esto es, $17^{40}\equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019}\pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
+&lt;p&gt;esto es, $17^{40} \equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019} \pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 2018^{2019}\pmod{5},\\ x&amp;amp;\equiv 2018^{2019}\pmod{8},
+x&amp;\equiv 2018^{2019} \pmod{5},\\
+x&amp;\equiv 2018^{2019} \pmod{8},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,&lt;/p&gt;
 
-&lt;p&gt;$$
-2018^{2019}\equiv 3^{2019}\pmod{5},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2018^{2019} \equiv 3^{2019}\pmod{5},
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y como $5$ es un número primo y $mcd(3,5) = 1$, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $3^4\equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que&lt;/p&gt;
+&lt;p&gt;y como $5$ es un número primo y $mcd(3,5) = 1$, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $3^4 \equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
-3^{2019} = 3^3\cdot (3^4)^{504}\equiv (3^3\cdot 1^{504})\pmod{5} \equiv 2\pmod{5}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+3^{2019} = 3^3\cdot (3^4)^{504} \equiv (3^3 \cdot 1^{504}) \pmod{5} \equiv 2\pmod{5}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por otro lado, $2018 = 2\cdot1009$, por lo que,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \\ &amp;amp;= 2^{2019}\cdot1009^{2019} \\ &amp;amp;= 2^3\cdot2^{2016}\cdot1009^{2019} \\ &amp;amp;= 8\cdot2^{2016}\cdot1009^{2019},
+2018^{2019} &amp;= (2\cdot1009)^{2019} \\
+&amp;= 2^{2019} \cdot 1009^{2019} \\
+&amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \\
+&amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y así, podemos concluir que $2018^{2019}\equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
+&lt;p&gt;y así, podemos concluir que $2018^{2019} \equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 2\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8}.
+x&amp;\equiv 2\pmod{5},\\
+x&amp;\equiv 0\pmod{8}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el &lt;em&gt;Teorema chino del resto&lt;/em&gt; o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que&lt;/p&gt;
 
-&lt;p&gt;$$
-2017^{2018^{2019}}\equiv 17^{2018^{2019}}\pmod{100}\equiv 17^{32}\pmod{100}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}\equiv 17^{32} \pmod{100}.
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, $17^{32} = (17^2)^{16} = 189^{16}\equiv 89^{16}\pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
+&lt;p&gt;Ahora bien, $17^{32} = ( 17^2 )^{16} = 189^{16} \equiv 89^{16} \pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-17^{32}&amp;amp;\equiv 89^{16}\pmod{100} \\ &amp;amp;\equiv (-11)^{16}\pmod{100} \\ &amp;amp;\equiv 11^{16}\pmod{100} \\ &amp;amp;\equiv 21^8\pmod{100}\\ &amp;amp;\equiv 41^4\pmod{100} \\ &amp;amp;\equiv 81^2\pmod{100} \\ &amp;amp;\equiv 61\pmod{100},
+17^{32} &amp;\equiv 89^{16} \pmod{100} \\
+&amp;\equiv (-11)^{16} \pmod{100} \\
+&amp;\equiv 11^{16} \pmod{100} \\
+&amp;\equiv 21^8 \pmod{100}\\
+&amp;\equiv 41^4 \pmod{100} \\
+&amp;\equiv 81^2 \pmod{100} \\
+&amp;\equiv 61\pmod{100},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es,&lt;/p&gt;
 
-&lt;p&gt;$$
-2017^{2018^{2019}}\equiv 61\pmod{100}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2017^{2018^{2019}} \equiv 61\pmod{100}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Para el segundo sumando, utilizaremos el &lt;em&gt;Teorema chino del resto&lt;/em&gt; desde el principio. Así, la ecuación de congruencia lineal&lt;/p&gt;
 
-&lt;p&gt;$$
-x\equiv 2018^{2019^{2020}}\pmod{100}
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+x\equiv 2018^{2019^{2020}} \pmod{100}
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{4},\\ x&amp;amp;\equiv 2018^{2019^{2020}}\pmod{25},
+x&amp;\equiv 2018^{2019^{2020}} \pmod{4},\\
+x&amp;\equiv 2018^{2019^{2020}} \pmod{25},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,&lt;/p&gt;
 
-&lt;p&gt;$$
-2018^{2019^{2020}}\equiv 0\pmod{4},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2018^{2019^{2020}} \equiv 0\pmod{4},
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;pues $2018 = 2\cdot1009$ y, gracias a ese dos que figura en la descomposición en factores primos de $2018$, operando adecuadamente con las propiedades de los exponentes (de una forma similar a como actuamos en el caso anterior) es fácil ver que la torre de potencias es múltiplo de cuatro. Por otro lado,&lt;/p&gt;
 
-&lt;p&gt;$$
-2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25},
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y como $mcd(18,25)=1$ estamos en condiciones de volver a aplicar el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 18^{\varphi(25)}\equiv 1\pmod{25},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y, dado que $25=5^2$, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-2019^{2020} &amp;amp;\equiv (-1)^{2020}\pmod{20} \\ &amp;amp;\equiv 1^{2020}\pmod{20} \\ &amp;amp;\equiv 1\pmod{20},
+2019^{2020} &amp;\equiv (-1)^{2020} \pmod{20} \\
+&amp;\equiv 1^{2020}\pmod{20} \\
+&amp;\equiv 1\pmod{20},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y entonces&lt;/p&gt;
 
-&lt;p&gt;$$
-2018^{2019^{2020}}\equiv 18^{2019^{2020}}\pmod{25}\equiv 18\pmod{25}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25}\equiv 18\pmod{25}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 0\pmod{4},\\ x&amp;amp;\equiv 18\pmod{25}.
+x&amp;\equiv 0\pmod{4},\\
+x&amp;\equiv 18\pmod{25}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al &lt;em&gt;Teorema chino del resto&lt;/em&gt; o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.&lt;/p&gt;
 
 &lt;p&gt;Finalmente, el modo de actuar con el tercer sumando es similar al llevado a cabo para el primero. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
-2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100},
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100},
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y como $mcd(19,100)=1$ sabemos, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, que $19^{\varphi(100)} = 19^{40}\equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que nos garantiza que la ecuación de congruencia lineal&lt;/p&gt;
+&lt;p&gt;y como $mcd(19,100)=1$ sabemos, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, que $19^{\varphi(100)} = 19^{40} \equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que nos garantiza que la ecuación de congruencia lineal&lt;/p&gt;
 
-&lt;p&gt;$$
-x\equiv 2020^{2021}\pmod{40}
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+x\equiv 2020^{2021} \pmod{40}
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 2020^{2021}\pmod{5},\\ x&amp;amp;\equiv 2020^{2021}\pmod{8},
+x&amp;\equiv 2020^{2021} \pmod{5},\\
+x&amp;\equiv 2020^{2021} \pmod{8},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2\cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
+&lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2 \cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x&amp;amp;\equiv 0\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8},
+x&amp;\equiv 0\pmod{5},\\
+x&amp;\equiv 0\pmod{8},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,&lt;/p&gt;
 
-&lt;p&gt;$$
-2019^{2020^{2021}}\equiv 19^{2020^{2021}}\pmod{100}\equiv 1\pmod{100}.
-$$&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100}\equiv 1\pmod{100}.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Recapitulando,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-2017^{2018^{2019}}&amp;amp;\equiv 61\pmod{100},\\ 2018^{2019^{2020}}&amp;amp;\equiv 68\pmod{100},\\ 2019^{2020^{2021}}&amp;amp;\equiv  1\pmod{100},
+2017^{2018^{2019}} &amp;\equiv 61\pmod{100},\\
+2018^{2019^{2020}} &amp;\equiv 68\pmod{100},\\
+2019^{2020^{2021}} &amp;\equiv  1\pmod{100},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;luego&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}\right)&amp;amp;\equiv (61+68+1)\pmod{100}\\ &amp;amp;\equiv 30\pmod{100},
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;\equiv (61+68+1)\pmod{100}\\
+&amp;\equiv 30\pmod{100},
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.&lt;/p&gt;
 </description>
