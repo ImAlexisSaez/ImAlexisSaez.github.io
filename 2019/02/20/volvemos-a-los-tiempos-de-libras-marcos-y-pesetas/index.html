@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-02-20T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-02-20T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-02T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-02-20 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-02-20 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-08-02 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-02-20</time>
+    <time>2019-08-02</time>
   </span>
   
 
@@ -577,61 +579,65 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 53:</strong> Para abonar una factura de $1840$ pesetas se entregan libras esterlinas y dan la vuelta en marcos. Calcula las libras esterlinas entregadas y los marcos devueltos suponiendo que se ha entregado la cantidad mínima de libras necesarias para pagar y que la devolución es en marcos ($1$ marco $=$ $70$ pesetas, $1$ libra $=$ $180$ pesetas).</p>
 
-<hr />
+<hr>
 
 <p>Sea $x$ la cantidad de libras esterlinas entregadas e $y$ el total de marcos recibidos en la devolución. Como la factura viene dada en pesetas y tenemos indicadas las tasas de conversión de las otras dos monedas en relación a las pesetas, trabajaremos durante el resto del ejercicio con esta unidad monetaria.</p>
 
 <p>Con ello en mente, la cantidad que desembolso en libras para cumplir con la factura más el total de marcos que recibo en concepto de devolución ha de ascender a $1840$ pesetas, esto es,</p>
 
-<p>$$
+<p><span  class="math">\[
 180x + 70y = 1840.
-$$</p>
+\]</span></p>
 
-<p>Ahora bien, como $70 = 2\cdot5\cdot7$ y $180 = 2^2\cdot3^2\cdot5$, entonces $mcd(70, 180) = 10$. Dado que, trivialmente, $10|1840$, la ecuación diofántica propuesta admite solución entera. Simplificando dicha ecuación por $10$, tenemos que $18x + 7y = 184$, expresión que nos invita, para empezar, a llevar a cabo el cambio de variable</p>
+<p>Ahora bien, como $70 = 2\cdot5\cdot7$ y $180 = 2^2 \cdot 3^2 \cdot5$, $mcd(70, 180) = 10$. Dado que, trivialmente, $10|1840$, la ecuación diofántica propuesta admite solución entera. Simplificando dicha ecuación por $10$, tenemos que $18x + 7y = 184$, expresión que nos invita, para empezar, a llevar a cabo el cambio de variable</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;= 184x^{\prime},\\ y &amp;= 184y^{\prime}
+x &= 184x^{\prime},\\
+y &= 184y^{\prime}
 \end{aligned}
-$$</p>
+\]</span></p>
 
-<p>que la transforma en $18x^{\prime}+7y^{\prime}=1$. Ahora, despejando la variable $y^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, hallamos que</p>
+<p>que la transforma en $18x^{\prime} +7y^{\prime} =1$. Ahora, despejando la variable $y^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, hallamos que</p>
 
-<p>$$
+<p><span  class="math">\[
 y^{\prime} = \dfrac{1-18x^{\prime}}{7},
-$$</p>
+\]</span></p>
 
 <p>por lo que basta probar, para $x^{\prime}$, valores pertenecientes al <em>menor sistema completo de restos módulo</em> $7$. Para $x^{\prime}_0 = 2$, resulta que $y^{\prime}_0 = (-5)$, y deshaciendo el anterior cambio de variable,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x_0 &amp;= 184x^{\prime} = 184\cdot2 = 368,\\ y_0 &amp;= 184y^{\prime} = 184\cdot(-5) = (-920),
+x_0 &= 184x^{\prime} = 184\cdot2 = 368,\\
+y_0 &= 184y^{\prime} = 184\cdot(-5) = (-920),
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>es una solución particular para la ecuación diofántica planteada. Su solución genera queda, entonces,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;= 368 + 7t,\\ y &amp;= (-920) - 18t,
+x &= 368 + 7t,\\ 
+y &= (-920) - 18t,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t$ número entero.</p>
 
 <p>De entre las infinitas soluciones que tenemos a nuestra disposición, busquemos aquella que se ajusta a los dictados del enunciado del ejercicio, es decir, aquella para la cual se desembolsa la mínima cantidad de libras esterlinas necesarias para abonar la factura. Esta situación se traduce en averiguar el valor de $x$ tal que, $18x \geq 184$. Sustituyendo,</p>
 
-<p>$$
+<p><span  class="math">\[
 18(368 + 7t)\geq 184,
-$$</p>
+\]</span></p>
 
 <p>es decir, $6624 + 126t \geq 184$. Por tanto, $126t \geq (-6498)$, luego $t\geq (-51.6)$ y como $t$ ha de ser entero, la inecuación entonces queda $t\geq (-51)$. Como buscamos el menor valor para el que satisface la inecuación, este será, evidentemente, $t=(-51)$, resultando entonces</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;= 368 + 7\cdot(-51) = 11,\\ y &amp;= (-920) - 18\cdot(-51) = -2,
+x &= 368 + 7\cdot(-51) = 11,\\
+y &= (-920) - 18\cdot(-51) = -2,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>esto es, abonaremos la factura con $11$ libras esterlinas y nos devolverán $2$ marcos.</p>
 

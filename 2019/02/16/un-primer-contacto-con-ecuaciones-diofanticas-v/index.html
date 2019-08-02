@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-02-16T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-02-16T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-02T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-02-16 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-02-16 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-08-02 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-02-16</time>
+    <time>2019-08-02</time>
   </span>
   
 
@@ -577,19 +579,22 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 52:</strong> Halla las soluciones enteras de la ecuación</p>
 
-<p>$$
+<p><span  class="math">\[
 30x+42y+70z-105u=(-3).
-$$</p>
+\]</span></p>
 
-<hr />
+<hr>
 
 <p>Como</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-30 &amp;= 2\cdot3\cdot5,\\ 42 &amp;= 2\cdot3\cdot7,\\ 70 &amp;= 2\cdot5\cdot7,\\ 105 &amp;= 3\cdot5\cdot7,
+30 &= 2\cdot3\cdot5,\\
+42 &= 2\cdot3\cdot7,\\
+70 &= 2\cdot5\cdot7,\\
+105 &= 3\cdot5\cdot7,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>entonces $mcd(30,42,70,105)=1$, por lo que estamos en condiciones de asegurar que la ecuación diofántica propuesta admite solución entera. A diferencia del <a href="/2019/02/13/un-primer-contacto-con-ecuaciones-diofanticas-iv/">problema anterior</a>, en esta ocasión ningún par de coeficientes está conformado por números primos entre sí. El procedimiento que seguiremos será entonces:</p>
 
@@ -599,61 +604,83 @@ $$</p>
 <li>Dividiremos por el máximo común divisor de los mencionados coeficientes y resolveremos dicha ecuación.</li>
 </ol>
 
-<p>De esta manera, si empezamos considerando los coeficientes asociados a las variables $x$ e $y$, como $mcd(30,42)=6$, la ecuación $30x+42y = (-3) - 70z + 105u$ la podemos simplificar por $6$, llegando así a</p>
+<p>De esta manera, si empezamos considerando los coeficientes asociados a las variables $x$ e $y$, como $mcd(30,42)=6$, la ecuación</p>
 
-<p>$$
-\begin{aligned}
+<p><span  class="math">\[
+30x+42y = (-3) - 70z + 105u
+\]</span></p>
+
+<p>la podemos simplificar por $6$, llegando así a</p>
+
+<p><span  class="math">\[
 5x+7y = \dfrac{(-3)-70z+105u}{6} = v,\quad\text{con}\quad v = \dfrac{(-3)-70z+105u}{6}.
-\end{aligned}
-$$</p>
+\]</span></p>
 
-<p>Llevando a cabo el cambio de variable $x = vx^{\prime}$ e $y = vy^{\prime}$, la ecuación queda $5x^{\prime}+7y^{\prime}=1$, y despejando la variable $x^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
+<p>Llevando a cabo el cambio de variable $x = vx^{\prime}$ e $y = vy^{\prime}$, la ecuación queda $5x^{\prime} +7y^{\prime}=1$, y despejando la variable $x^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
 
-<p>$$
+<p><span  class="math">\[
 x^{\prime} = \dfrac{1-7y^{\prime}}{5},
-$$</p>
+\]</span></p>
 
 <p>hallando que para $y^{\prime}_0 = (-2)$, entonces $x^{\prime}_0 = 3$. Deshaciendo el cambio de variable efectuado, $x_0 = 3v$ e $y_0 = -2v$ es una solución particular para la ecuación diofántica planteada unas líneas arriba, por lo que su solución general queda</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;= 3v + 7t,\\ y &amp;= -2v - 5t,
+x &= 3v + 7t,\\
+y &= -2v - 5t,
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t$ número entero.</p>
 
-<p>No obstante, recordemos que declaramos antes que $$v = \dfrac{(-3) - 70z + 105u}{6},$$ esto es $105u - 70z - 6v = 3$, que resulta ser una ecuación diofántica de tres variables del mismo tipo que aquella con la cual iniciamos este ejercicio (el máximo común divisor de sus coeficientes asciende a $1$, pero no existe algún par de ellos que sean primos entre sí), pero con una incógnita menos. Como $mcd(6,70,105) = 1$, estamos en condiciones de asegurar que esta última ecuación diofántica planteada admite solución entera. Tomando, por ejemplo, los coeficientes asociados a las variables $u$ y $z$, escribimos entonces la ecuación $105u-70z = 3+6v$, que podemos simplificar por $35$, quedando así</p>
+<p>No obstante, recordemos que declaramos antes que</p>
 
-<p>$$
+<p><span  class="math">\[
+v = \dfrac{(-3) - 70z + 105u}{6},
+\]</span></p>
+
+<p>esto es $105u - 70z - 6v = 3$, que resulta ser una ecuación diofántica de tres variables del mismo tipo que aquella con la cual iniciamos este ejercicio (el máximo común divisor de sus coeficientes asciende a $1$, pero no existe algún par de ellos que sean primos entre sí), pero con una incógnita menos. Como $mcd(6,70,105) = 1$, estamos en condiciones de asegurar que esta última ecuación diofántica planteada admite solución entera. Tomando, por ejemplo, los coeficientes asociados a las variables $u$ y $z$, escribimos entonces la ecuación $105u-70z = 3+6v$, que podemos simplificar por $35$, quedando así</p>
+
+<p><span  class="math">\[
 3u-2z = \dfrac{3+6v}{35} = w,\quad\text{con}\quad w = \dfrac{3+6v}{35}.
-$$</p>
+\]</span></p>
 
-<p>Al igual que antes, si consideramos el cambio de variable $u = wu^{\prime}$ y $z = wz^{\prime}$, la anterior ecuación se convierte en $3u^{\prime}-2z^{\prime}=1$. Despejando la variable $z^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, $$z^{\prime} = \dfrac{1-3u^{\prime}}{2}.$$ Luego, para $u^{\prime}_0=(-1)$ hallamos que $z^{\prime}_0=(-2)$, y deshaciendo el cambio de variable efectuado, $u_0 = -w$ y $z_0 = -2w$ es una solución particular de esta ecuación diofántica, por lo que su solución general queda</p>
+<p>Al igual que antes, si consideramos el cambio de variable $u = wu^{\prime}$ y $z = wz^{\prime}$, la anterior ecuación se convierte en $3u^{\prime} -2z^{\prime} =1$. Despejando la variable $z^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
 
-<p>$$
+<p><span  class="math">\[
+z^{\prime} = \dfrac{1-3u^{\prime}}{2}.
+\]</span></p>
+
+<p>Luego, para $u^{\prime}_0 =(-1)$ hallamos que $z^{\prime}_0 =(-2)$, y deshaciendo el cambio de variable efectuado, $u_0 = -w$ y $z_0 = -2w$ es una solución particular de esta ecuación diofántica, por lo que su solución general queda</p>
+
+<p><span  class="math">\[
 \begin{aligned}
-u &amp;= -w+2t^{\prime},\\ z &amp;= -2w+3t^{\prime},
+u &= -w+2t^{\prime},\\ 
+z &= -2w+3t^{\prime},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t^{\prime}$ número entero.</p>
 
-<p>Finalmente, como definimos antes $$w = \dfrac{3+6v}{35},$$ generamos al ecuación diofántica $35w-6v=3$, que sabemos admite solución entera pues $mcd(6,35) = 1$. Así, despejando ahora la variable $w$, $$w=\dfrac{3+6v}{35},$$ y entonces $v_0 = (-18)$ y $w_0=3$ es una solución particular para ella. De esta manera, su solución general es</p>
+<p>Finalmente, como definimos antes <span  class="math">\(w = \dfrac{3+6v}{35},\)</span> generamos al ecuación diofántica $35w-6v=3$, que sabemos admite solución entera pues $mcd(6,35) = 1$. Así, despejando ahora la variable $w$, <span  class="math">\(w=\dfrac{3+6v}{35},\)</span> y entonces $v_0 = (-18)$ y $w_0=3$ es una solución particular para ella. De esta manera, su solución general es</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-v &amp;= (-18)+35t^{\prime\prime},\\ w &amp;= 3+6t^{\prime\prime}
+v &= (-18)+35t^{\prime\prime},\\
+w &= 3+6t^{\prime\prime}
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t^{\prime\prime}$ número entero. Únicamente nos resta reemplazar adecuadamente los resultados alcanzados para que así la solución quede expresada en función de valores enteros. Así,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-x &amp;= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\\ y &amp;= -2v-5t = 36 - 5t - 70t^{\prime\prime},\\ z &amp;= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\\ u &amp;= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
+x &= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\\
+y &= -2v-5t = 36 - 5t - 70t^{\prime\prime},\\
+z &= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\\ 
+u &= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>con $t$, $t^{\prime}$ y $t^{\prime\prime}$ números enteros.</p>
 
