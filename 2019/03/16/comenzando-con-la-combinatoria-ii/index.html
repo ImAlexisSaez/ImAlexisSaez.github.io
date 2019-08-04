@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-03-16T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-03-16T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-04T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-03-16 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-03-16 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-08-04 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-03-16</time>
+    <time>2019-08-04</time>
   </span>
   
 
@@ -585,69 +587,69 @@
 <li>(e) ¿Y cuántas manos contienen una <em>doble pareja</em>?</li>
 </ul>
 
-<hr />
+<hr>
 
 <p>De cara al apartado (a), como no importa el orden en el que recibamos las cartas en una mano cualquiera y no existe la posibilidad de recibir cartas recibidas, estamos interesados en calcular el número de combinaciones de $52$ elementos tomados de cinco en cinco. Así, hay</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{52}{5} = \dfrac{52!}{5!\cdot47!} = \dfrac{52\cdot51\cdot50\cdot49\cdot48}{5!} = 2598960
-$$</p>
+\]</span></p>
 
 <p>manos posibles de cinco cartas que podemos extraer de una baraja de póquer de $52$ cartas.</p>
 
 <p>En cuanto al apartado (b), razonaremos como sigue: de los cuatro ases que posee la baraja, tomamos tres de ellos. Como no importa el orden en el que los extraigamos y no habrá ninguno repetido, esta acción la podemos llevar a cabo de</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-$$</p>
+\]</span></p>
 
 <p>formas posibles. Ahora, del resto de cartas de la baraja que no son ases, $52-4=48$, simplemente hemos de tomar dos cartas adicionales, situación que puede darse de</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{48}{2} = \dfrac{48!}{2!\cdot46!} = \dfrac{48\cdot47}{2} = 1128
-$$</p>
+\]</span></p>
 
 <p>maneras posibles. Aplicando la regla del producto, hay</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{4}{3}\cdot\dbinom{48}{2} = 4\cdot1128 = 4512
-$$</p>
+\]</span></p>
 
 <p>manos que poseen tres ases.</p>
 
 <p>Siguiendo con el apartado (c), para conformar un <em>full</em> a partir de tres ases necesitamos que las otras dos cartas (distintas ambas del as) posean idéntico número. Así, empecemos tomando nuestros tres ases, que sabemos es una acción que podemos llevar a cabo de</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-$$</p>
+\]</span></p>
 
 <p>formas posibles. Ahora, de los doce números distintos de cartas que restan, seleccionamos uno en particular ($C_{12,1}$) y, de las cuatro cartas posibles asociadas a dicho número, tomamos dos ($C_{4,2}$). Aplicando la regla del producto, existen</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{12}{1}\cdot\dbinom{4}{2} = 12\cdot\dfrac{4!}{2!\cdot2!} = 72
-$$</p>
+\]</span></p>
 
 <p>maneras de realizar la anterior elección. Finalmente, utilizando de nuevo la regla del producto, hay</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 4\cdot72 = 288
-$$</p>
+\]</span></p>
 
 <p>manos con $3$ ases que son <em>full</em>.</p>
 
-<p>Para el apartado (d), la manera de razonar es muy similar a la mostrada en el párrafo anterior. De los $13$ números posibles, seleccionamos uno de ellos ($C_{13,1}$) y será de este del que tomaremos tres cartas iguales ($C_{4,3}$). Ahora de los $12$ números restantes, escogemos uno ($C_{12,1}$) y extraemos dos cartas idénticas ($C_{4,2}$). Aplicando la regla del producto, hay</p>
+<p>Para el apartado (d), la manera de razonar es muy similar a la mostrada en el párrafo anterior. De los $13$ números posibles, seleccionamos uno de ellos ($C_{13,1}$) y será de este del que tomaremos tres cartas iguales ($C_{4,3}$). Ahora de los $12$ números restantes, escogemos uno ($C_{12,1}$) y extraemos luego dos cartas idénticas ($C_{4,2}$). Aplicando la regla del producto, hay</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{13}{1}\cdot\dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 13\cdot4\cdot12\cdot6 = 3744
-$$</p>
+\]</span></p>
 
 <p>manos que son <em>full</em>.</p>
 
-<p>Finalmente, en el apartado (e), de los $13$ números disponibles en la baraja seleccionamos dos de ellos ($C_{13,2}$), de los cuales, de entre las cuatro cartas asociadas a cada uno de ellos, escogeremos dos idénticas ($C_{4,2}\cdot C_{4,2}$). Por último, de las restantes cartas, $52-4-4=44$, tomaremos una cualquiera ($C_{44,1}$). Aplicando la regla del producto hay</p>
+<p>Finalmente, en el apartado (e), de los $13$ números disponibles en la baraja seleccionamos dos de ellos ($C_{13,2}$), de los cuales, de entre las cuatro cartas asociadas a cada uno de ellos, escogeremos dos idénticas ($C_{4,2}\cdot C_{4,2}$). Por último, de las restantes cartas, $52-4-4=44$, tomaremos una de ellas cualquiera ($C_{44,1}$). Aplicando la regla del producto hay</p>
 
-<p>$$
+<p><span  class="math">\[
 \dbinom{13}{2}\cdot\dbinom{4}{2}\cdot\dbinom{4}{2}\cdot\dbinom{44}{1} = 78\cdot6\cdot6\cdot44 = 123552
-$$</p>
+\]</span></p>
 
 <p>manos que son <em>doble pareja</em>.</p>
 

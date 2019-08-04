@@ -1508,37 +1508,65 @@ $$&lt;/p&gt;
 &lt;li&gt;(b) Demuestra que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y unos.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado (a), empecemos considerando un ejemplo concreto: sean los números enteros, escogidos al azar, $53$, $75$, $32$, $7$, $83$, $1$ y $10$. Si obtenemos el valor de la congruencia de cada uno de ellos módulo seis, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-53&amp;amp;\equiv 5\pmod{6},\\ 75&amp;amp;\equiv 3\pmod{6},\\ 32&amp;amp;\equiv 2\pmod{6},\\  7&amp;amp;\equiv 1\pmod{6},\\ 83&amp;amp;\equiv 5\pmod{6},\\  1&amp;amp;\equiv 1\pmod{6},\\ 10&amp;amp;\equiv 4\pmod{6}.
+53&amp;\equiv 5\pmod{6},\\
+75&amp;\equiv 3\pmod{6},\\
+32&amp;\equiv 2\pmod{6},\\
+ 7&amp;\equiv 1\pmod{6},\\ 
+83&amp;\equiv 5\pmod{6},\\
+ 1&amp;\equiv 1\pmod{6},\\
+10&amp;\equiv 4\pmod{6}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Basta ahora tomar dos cuyo valor de la congruencia módulo seis coincida para encontrar un múltiplo de seis. Efectivamente, por ejemplo, $83-53=30 = 6\cdot5$.&lt;/p&gt;
+&lt;p&gt;Basta ahora tomar dos cuyo valor de la congruencia módulo seis coincida para encontrar un múltiplo de seis. Efectivamente, por ejemplo,&lt;/p&gt;
 
-&lt;p&gt;En general, como el &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $6$ está conformado por seis valores, $\{0,1,2,3,4,5\}$, dados siete números escogidos al azar sabemos, por el &lt;em&gt;Principio del palomar&lt;/em&gt;, que al menos dos de ellos poseerán el mismo valor de la congruencia módulo seis. Esto es, existen $x, y\in\mathbb{Z}$ tal que $x\equiv a\pmod{6}$ e $y\equiv a\pmod{6}$, con $a\in\{0,1,2,3,4,5\}$. Por consiguiente,&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+83-53=30 = 6\cdot5.
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;En general, como el &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $6$ está conformado por seis valores, $\{0,1,2,3,4,5\}$, dados siete números escogidos al azar sabemos, por el &lt;em&gt;Principio del palomar&lt;/em&gt;, que al menos dos de ellos poseerán el mismo valor de la congruencia módulo seis. Esto es, existen al menos $x, y\in\mathbb{Z}$ tal que $x\equiv a\pmod{6}$ e $y\equiv a\pmod{6}$, con $a\in\{0,1,2,3,4,5\}$. Por consiguiente,&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (x-y)\equiv (a-a)\pmod{6}\equiv 0\pmod{6},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, la diferencia es múltiplo de seis.&lt;/p&gt;
 
-&lt;p&gt;Para el apartado (b) utilizaremos la misma estrategia, pero escogiendo los números con cautela, ya que buscamos que el múltiplo que nos interesa únicamente posea en su expresión decimal ceros y unos. Como antes, empecemos considerando un ejemplo concreto: sea $n=6$. Trabajemos pues con el conjunto de siete números $$\{1,11,111,1111,11111,111111,1111111\},$$ para el que, por el &lt;em&gt;Principio del palomar&lt;/em&gt;, sabemos que al menos dos de ellos poseerán el mismo valor de su congruencia módulo seis. Efectivamente,&lt;/p&gt;
+&lt;p&gt;Para el apartado (b) utilizaremos la misma estrategia, pero escogiendo los números con cautela, ya que buscamos que el múltiplo que nos interesa únicamente posea en su expresión decimal ceros y unos. Como antes, empecemos considerando un ejemplo concreto: sea $n=6$. Trabajemos pues con el conjunto de siete números&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\{1,11,111,1111,11111,111111,1111111\},
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;para el que, por el &lt;em&gt;Principio del palomar&lt;/em&gt;, sabemos que al menos dos de ellos poseerán el mismo valor de su congruencia módulo seis. Efectivamente,&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 1\equiv 1\pmod{6}\qquad\text{y}\qquad 1111\equiv 1\pmod{6}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Así, $(1111 - 1)\equiv 0\pmod{6}$, esto es, $1110 = 6\cdot185$ es múltiplo de $6$ y en su expresión decimal únicamente aparecen ceros y unos.&lt;/p&gt;
 
-&lt;p&gt;En general, dado un número natural $n$, consideramos el conjunto $\{1,11,111,1111,\ldots\}$ de $n+1$ elementos. Por el &lt;em&gt;Principio del palomar&lt;/em&gt;, al menos dos de dichos elementos poseerán el mismo valor de su congruencia módulo $n$. Designemos por $a$ y $b$ a tales elementos que verifican $a\equiv x\pmod{n}$ y $b\equiv x\pmod{n}$, entonces $(a-b)\equiv 0\pmod{n}$, esto es, la diferencia entre ellos es múltiplo de $n$, y, por tal y como hemos construido el anterior conjunto, su expresión únicamente poseerá ceros y unos.&lt;/p&gt;
+&lt;p&gt;En general, dado un número natural $n$, consideramos el conjunto&lt;/p&gt;
 
-&lt;p&gt;A modo anecdótico, si en el problema nos hubiesen solicitado demostrar que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y doses, habría bastado considerar un conjunto del tipo $\{2,22,222,2222,\ldots\}$. Variantes similares del problema únicamente exigen encontrar un conjunto adecuado al que aplicar la estrategia esbozada en párrafos anteriores.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\{1,11,111,1111,\ldots\}
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;de $n+1$ elementos. Por el &lt;em&gt;Principio del palomar&lt;/em&gt;, al menos dos de dichos elementos poseerán el mismo valor de su congruencia módulo $n$. Designemos por $a$ y $b$ a tales elementos que verifican $a\equiv x\pmod{n}$ y $b\equiv x\pmod{n}$, entonces $(a-b)\equiv 0\pmod{n}$, esto es, la diferencia entre ellos es múltiplo de $n$, y, por tal y como hemos construido el anterior conjunto, su expresión únicamente poseerá ceros y unos.&lt;/p&gt;
+
+&lt;p&gt;A modo anecdótico, si en el problema nos hubiesen solicitado demostrar que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y doses, habría bastado considerar un conjunto del tipo&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+\{2,22,222,2222,\ldots\}.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Variantes similares del problema únicamente exigen encontrar un conjunto adecuado al que aplicar la estrategia esbozada en párrafos anteriores.&lt;/p&gt;
 </description>
     </item>
     
@@ -1549,53 +1577,101 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 63:&lt;/strong&gt; ¿Cuántos números entre $1$ y $600$ no son divisibles por $3$, ni por $5$, ni por $7$?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Emplearemos el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt; para resolver el presente problema. Así, definamos los conjuntos&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$3$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $3$&amp;rdquo;,&lt;/li&gt;
-&lt;li&gt;$5$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $5$&amp;rdquo;, y&lt;/li&gt;
-&lt;li&gt;$7$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $7$&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;$3$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $3$&#39;&#39;,&lt;/li&gt;
+&lt;li&gt;$5$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $5$&#39;&#39;, y&lt;/li&gt;
+&lt;li&gt;$7$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $7$&#39;&#39;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Estamos interesados en el cardinal del conjunto de números que, precisamente, no son divisibles por $3$, ni por $5$, ni por $7$, esto es, $card(\overline{3}\cap\overline{5}\cap\overline{7})$ . Ahora bien, por las &lt;em&gt;Leyes de DeMorgan&lt;/em&gt;, trabajaremos con el suceso complementario, ya que es más fácil contar múltiplos que números que no son múltiplos,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = card(\overline{3\cup 5\cup 7}) = card(E) - card(3\cup 5\cup 7),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde por $E$ representamos el conjunto de los números enteros positivos menores o iguales que $600$, es decir, el conjunto &lt;em&gt;total&lt;/em&gt;, cuyo cardinal asciende, en esta ocasión concreta, a $600$. Por tanto,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = 600 - card(3\cup 5\cup 7).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A continuación, por el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt;,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-card(3\cup 5\cup 7) &amp;amp;= card(3) + card(5) + card(7)\\ &amp;amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\\ &amp;amp;\quad +card(3\cap 5\cap 7),
+card(3\cup 5\cup 7) &amp;= card(3) + card(5) + card(7)\\
+&amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\\
+&amp;\quad +card(3\cap 5\cap 7),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$card(3)$ representa el total de múltiplos de $3$ menores o iguales que $600$, esto es, $$card(3) = \left\lfloor\dfrac{600}{3}\right\rfloor=200.$$&lt;/li&gt;
-&lt;li&gt;$card(5)$ representa el total de múltiplos de $5$ menores o iguales que $600$, esto es, $$card(5) = \left\lfloor\dfrac{600}{5}\right\rfloor=120.$$&lt;/li&gt;
-&lt;li&gt;$card(7)$ representa el total de múltiplos de $7$ menores o iguales que $600$, esto es, $$card(7) = \left\lfloor\dfrac{600}{7}\right\rfloor=85.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 5)$ representa el total de múltiplos de $3$ y de $5$ menores o iguales que $600$, esto es, $$card(3\cap 5) = \left\lfloor\dfrac{600}{3\cdot 5}\right\rfloor=40.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 7)$ representa el total de múltiplos de $3$ y de $7$ menores o iguales que $600$, esto es, $$card(3\cap 7) = \left\lfloor\dfrac{600}{3\cdot 7}\right\rfloor=28.$$&lt;/li&gt;
-&lt;li&gt;$card(5\cap 7)$ representa el total de múltiplos de $5$ y de $7$ menores o iguales que $600$, esto es, $$card(5\cap 7) = \left\lfloor\dfrac{600}{5\cdot 7}\right\rfloor=17.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 5\cap 7)$ representa el total de múltiplos de $3$, de $5$ y de $7$ menores o iguales que $600$, esto es, $$card(3\cap 5\cap 7) = \left\lfloor\dfrac{600}{3\cdot 5\cdot 7}\right\rfloor=5.$$&lt;/li&gt;
+&lt;li&gt;$card(3)$ representa el total de múltiplos de $3$ menores o iguales que $600$, esto es,&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3) = \left\lfloor\dfrac{600}{3}\right\rfloor=200.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(5)$ representa el total de múltiplos de $5$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(5) = \left\lfloor\dfrac{600}{5}\right\rfloor=120.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(7)$ representa el total de múltiplos de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(7) = \left\lfloor\dfrac{600}{7}\right\rfloor=85.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 5)$ representa el total de múltiplos de $3$ y de $5$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 5) = \left\lfloor\dfrac{600}{3\cdot 5}\right\rfloor=40.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 7)$ representa el total de múltiplos de $3$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 7) = \left\lfloor\dfrac{600}{3\cdot 7}\right\rfloor=28.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(5\cap 7)$ representa el total de múltiplos de $5$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(5\cap 7) = \left\lfloor\dfrac{600}{5\cdot 7}\right\rfloor=17.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 5\cap 7)$ representa el total de múltiplos de $3$, de $5$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 5\cap 7) = \left\lfloor\dfrac{600}{3\cdot 5\cdot 7}\right\rfloor=5.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por consiguiente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = 600 - (200 + 120 + 85 - 40 - 28 - 17 + 5) = 275,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, hay $275$ números entre $1$ y $600$, ambos inclusive, que no son divisibles por $3$, ni por $5$, ni por $7$.&lt;/p&gt;
 </description>
@@ -1608,35 +1684,35 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 62:&lt;/strong&gt; Calcula el número de soluciones enteras de la ecuación&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x_1+x_2+\cdots+x_8=24,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde $x_i\geq 2$, para $1\leq i\leq 8$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;A diferencia del ejercicio anterior, aquí no buscamos hallar el total de soluciones enteras no negativas de la ecuación, pues nos indican que $x_i\geq 2$, para todo $1\leq i\leq 8$. No obstante, podemos razonar de la siguiente forma: asumamos que disponemos de ocho urnas indistinguibles entre sí y almacenemos dos bolas en cada una de ellas para empezar. De esta manera, quedarán $24 - 2\cdot8 = 8$ bolas idénticas por introducir en las urnas, acción que podemos llevar a cabo de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 PR_{15}^{8,7} = \dfrac{15!}{8!\cdot 7!} = \dfrac{15\cdot14\cdot13\cdot12\cdot11\cdot10\cdot9}{7!} = 6435
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;maneras posibles. A este resultado hemos arribado, recordemos, dado que son necesarias siete &lt;em&gt;barras&lt;/em&gt;, para representar las ocho urnas sobre la recta real, y hemos de almacenar ocho &lt;em&gt;estrellas&lt;/em&gt; en los huecos que dicha configuración produce. Así pues, son $6435$ el número de soluciones enteras para la ecuación planteada, considerando que $x_i\geq 2$, para todo $1\leq i\leq 8$.&lt;/p&gt;
 
 &lt;p&gt;Si nos damos cuenta, simplemente hemos ignorado aquella parte del problema que sabemos está fija. Técnicamente, esta acción es equivalente a llevar a cabo un cambio de variable del tipo&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x_i = x^{\prime}_i + 2,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;para $1\leq i\leq 8$, que transforma la ecuación inicial planteada en&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (x^{\prime}_1 + 2) + (x^{\prime}_2 + 2) + \cdots + (x^{\prime}_8+2) = 24,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;que es equivalente a $x^{\prime}_1+x^{\prime}_2+\cdots+x^{\prime}_8=8$, con la salvedad de que ahora $x^{\prime}_i\geq 0$, para todo $1\leq i\leq 8$ y entonces ahora basta con aplicar los métodos que utilizamos en ejercicios anteriores.&lt;/p&gt;
+&lt;p&gt;que es equivalente a $x^{\prime}_1 +x^{\prime}_2 +\cdots+x^{\prime}_8 =8$, con la salvedad de que ahora $x^{\prime}_i\geq 0$, para todo $1\leq i\leq 8$ y entonces ahora basta con aplicar los métodos que utilizamos en ejercicios anteriores.&lt;/p&gt;
 </description>
     </item>
     
@@ -1650,34 +1726,52 @@ $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;(a) ¿Cuántas fichas tiene el dominó?&lt;/li&gt;
 &lt;li&gt;(b) Tenemos siete urnas indistinguibles entre sí y dos bolas idénticas, ¿de cuántas formas se pueden meter las bolas en las urnas?&lt;/li&gt;
-&lt;li&gt;(c ) Calcula el número de soluciones enteras no negativas de la ecuación $x_1+x_2+\cdots+x_7=2$.&lt;/li&gt;
+&lt;li&gt;(c) Calcula el número de soluciones enteras no negativas de la ecuación $x_1+x_2+\cdots+x_7=2$.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;Para el apartado (a), en las fichas del dominó encontramos representados los números desde el $0$ (blanca) al $6$, que aparecen de dos en dos. Por ejemplo, son fichas de este juego los pares $(1,2)$ o $(6,0)$. Por otro lado, el orden en que escojamos los números para conformar una ficha no importa, pues, por ejemplo, los pares $(1,2)$ y $(2,1)$ representan una única ficha del dominó. Finalmente, el juego incorpora fichas en la que se repiten los elementos, como $(0,0)$ o $(5,5)$, por nombrar algunas. Por tanto, estamos interesados en el total de combinaciones con repetición de siete elementos tomados de dos en eso y, entonces, hay $$CR_{7,2} = \dbinom{7+2-1}{2} = \dbinom{8}{2} = \dfrac{8\cdot7}{2} = 28$$ fichas en el juego del dominó.&lt;/p&gt;
+&lt;p&gt;Para el apartado (a), en las fichas del dominó encontramos representados los números desde el $0$ (blanca) al $6$, que aparecen de dos en dos. Por ejemplo, son fichas de este juego los pares $(1,2)$ o $(6,0)$. Por otro lado, el orden en que escojamos los números para conformar una ficha no importa, pues, por ejemplo, los pares $(1,2)$ y $(2,1)$ representan una única ficha del dominó. Finalmente, el juego incorpora fichas en la que se repiten los elementos, como $(0,0)$ o $(5,5)$, por nombrar algunas. Por tanto, estamos interesados en el total de combinaciones con repetición de siete elementos tomados de dos en eso y, entonces, hay&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+CR_{7,2} = \dbinom{7+2-1}{2} = \dbinom{8}{2} = \dfrac{8\cdot7}{2} = 28
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;fichas en el juego del dominó.&lt;/p&gt;
 
 &lt;p&gt;A continuación, en el apartado (b), si representamos gráficamente nuestras siete urnas indistinguibles como sigue&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (\ \ |\ \ |\ \ |\ \ |\ \ |\ \ |\ \ ),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, como si pusiéramos seis rayas sobre la recta real y representamos las bolas como $*$, una posible configuración sería&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (\ \ |*|\ \ |*|\ \ |\ \ |\ \ ).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;No obstante, si ahora movemos la última raya al principio, la anterior configuración se convierte en&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (\ \ |\ \ |*|\ \ |*|\ \ |\ \ ).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;Así pues, observamos que, de cara a contar posibilidades en este apartado, es como si tuviéramos ocho elementos (las dos bolas, $*$, y las seis rayas, $|$) de dos tipos. Uno de ellos se repite dos veces (las bolas), mientras que el otro se repite en seis ocasiones (las rayas). Por tanto, hay $$PR_{8}^{2,6} = \dfrac{8!}{2!\cdot6!} = \dfrac{8\cdot7}{2}=28$$ formas de introducir dos bolas idénticas en siete urnas indistinguibles entre sí.&lt;/p&gt;
+&lt;p&gt;Así pues, observamos que, de cara a contar posibilidades en este apartado, es como si tuviéramos ocho elementos (las dos bolas, $*$, y las seis rayas, $|$) de dos tipos. Uno de ellos se repite dos veces (las bolas), mientras que el otro se repite en seis ocasiones (las rayas). Por tanto, hay&lt;/p&gt;
 
-&lt;p&gt;Finalmente, para el apartado (c ), de cara a encontrar las soluciones enteras no negativas de la ecuación $x_1+x_2+\cdots+x_7=2$, observamos rápidamente que cada variable puede tomar, como máximo, los valores $0$, $1$ o $2$. Así pues, podemos representar la situación como hicimos en el apartado anterior, donde ahora cada &amp;ldquo;urna&amp;rdquo; sería cierta variable $x_i$, con $i=1,2,\ldots,7$, y el valor de dicha variable vendría dado por el número de &amp;ldquo;bolas&amp;rdquo; que tuviese en su interior (para un $i$ dado, con $0$ bolas, $x_i=0$; con $1$ bola, $x_i=1$; y con $2$ bolas, $x_i=2$). Por tanto, razonando como antes, la ecuación dada posee $$PR_{8}^{2,6} = \dfrac{8!}{2!\cdot6!} = \dfrac{8\cdot7}{2}=28$$ soluciones enteras no negativas.&lt;/p&gt;
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+PR_{8}^{2,6} = \dfrac{8!}{2!\cdot6!} = \dfrac{8\cdot7}{2}=28
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;formas de introducir dos bolas idénticas en siete urnas indistinguibles entre sí.&lt;/p&gt;
+
+&lt;p&gt;Finalmente, para el apartado (c ), de cara a encontrar las soluciones enteras no negativas de la ecuación $x_1+x_2+\cdots+x_7=2$, observamos rápidamente que cada variable puede tomar, como máximo, los valores $0$, $1$ o $2$. Así pues, podemos representar la situación como hicimos en el apartado anterior, donde ahora cada &#39;&#39;urna&#39;&#39; sería cierta variable $x_i$, con $i=1,2,\ldots,7$, y el valor de dicha variable vendría dado por el número de &#39;&#39;bolas&#39;&#39; que tuviese en su interior (para un $i$ dado, con $0$ bolas, $x_i=0$; con $1$ bola, $x_i=1$; y con $2$ bolas, $x_i=2$). Por tanto, razonando como antes, la ecuación dada posee&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+PR_{8}^{2,6} = \dfrac{8!}{2!\cdot6!} = \dfrac{8\cdot7}{2}=28
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;soluciones enteras no negativas.&lt;/p&gt;
 
 &lt;p&gt;Por otro lado, si recordamos de ejercicios anteriores, podemos utilizar las combinaciones con repetición como herramienta para contar el número de bolas idénticas que introducimos en urnas indistinguibles entre sí. Considerando esto, el presente ejercicio se reduce a calcular $CR_{7,2}$. En resumen,&lt;/p&gt;
 
@@ -1706,69 +1800,69 @@ $$&lt;/p&gt;
 &lt;li&gt;(e) ¿Y cuántas manos contienen una &lt;em&gt;doble pareja&lt;/em&gt;?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;De cara al apartado (a), como no importa el orden en el que recibamos las cartas en una mano cualquiera y no existe la posibilidad de recibir cartas recibidas, estamos interesados en calcular el número de combinaciones de $52$ elementos tomados de cinco en cinco. Así, hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{52}{5} = \dfrac{52!}{5!\cdot47!} = \dfrac{52\cdot51\cdot50\cdot49\cdot48}{5!} = 2598960
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;manos posibles de cinco cartas que podemos extraer de una baraja de póquer de $52$ cartas.&lt;/p&gt;
 
 &lt;p&gt;En cuanto al apartado (b), razonaremos como sigue: de los cuatro ases que posee la baraja, tomamos tres de ellos. Como no importa el orden en el que los extraigamos y no habrá ninguno repetido, esta acción la podemos llevar a cabo de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;formas posibles. Ahora, del resto de cartas de la baraja que no son ases, $52-4=48$, simplemente hemos de tomar dos cartas adicionales, situación que puede darse de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{48}{2} = \dfrac{48!}{2!\cdot46!} = \dfrac{48\cdot47}{2} = 1128
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;maneras posibles. Aplicando la regla del producto, hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{4}{3}\cdot\dbinom{48}{2} = 4\cdot1128 = 4512
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;manos que poseen tres ases.&lt;/p&gt;
 
 &lt;p&gt;Siguiendo con el apartado (c), para conformar un &lt;em&gt;full&lt;/em&gt; a partir de tres ases necesitamos que las otras dos cartas (distintas ambas del as) posean idéntico número. Así, empecemos tomando nuestros tres ases, que sabemos es una acción que podemos llevar a cabo de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;formas posibles. Ahora, de los doce números distintos de cartas que restan, seleccionamos uno en particular ($C_{12,1}$) y, de las cuatro cartas posibles asociadas a dicho número, tomamos dos ($C_{4,2}$). Aplicando la regla del producto, existen&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{12}{1}\cdot\dbinom{4}{2} = 12\cdot\dfrac{4!}{2!\cdot2!} = 72
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;maneras de realizar la anterior elección. Finalmente, utilizando de nuevo la regla del producto, hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 4\cdot72 = 288
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;manos con $3$ ases que son &lt;em&gt;full&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Para el apartado (d), la manera de razonar es muy similar a la mostrada en el párrafo anterior. De los $13$ números posibles, seleccionamos uno de ellos ($C_{13,1}$) y será de este del que tomaremos tres cartas iguales ($C_{4,3}$). Ahora de los $12$ números restantes, escogemos uno ($C_{12,1}$) y extraemos dos cartas idénticas ($C_{4,2}$). Aplicando la regla del producto, hay&lt;/p&gt;
+&lt;p&gt;Para el apartado (d), la manera de razonar es muy similar a la mostrada en el párrafo anterior. De los $13$ números posibles, seleccionamos uno de ellos ($C_{13,1}$) y será de este del que tomaremos tres cartas iguales ($C_{4,3}$). Ahora de los $12$ números restantes, escogemos uno ($C_{12,1}$) y extraemos luego dos cartas idénticas ($C_{4,2}$). Aplicando la regla del producto, hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{13}{1}\cdot\dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 13\cdot4\cdot12\cdot6 = 3744
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;manos que son &lt;em&gt;full&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Finalmente, en el apartado (e), de los $13$ números disponibles en la baraja seleccionamos dos de ellos ($C_{13,2}$), de los cuales, de entre las cuatro cartas asociadas a cada uno de ellos, escogeremos dos idénticas ($C_{4,2}\cdot C_{4,2}$). Por último, de las restantes cartas, $52-4-4=44$, tomaremos una cualquiera ($C_{44,1}$). Aplicando la regla del producto hay&lt;/p&gt;
+&lt;p&gt;Finalmente, en el apartado (e), de los $13$ números disponibles en la baraja seleccionamos dos de ellos ($C_{13,2}$), de los cuales, de entre las cuatro cartas asociadas a cada uno de ellos, escogeremos dos idénticas ($C_{4,2}\cdot C_{4,2}$). Por último, de las restantes cartas, $52-4-4=44$, tomaremos una de ellas cualquiera ($C_{44,1}$). Aplicando la regla del producto hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dbinom{13}{2}\cdot\dbinom{4}{2}\cdot\dbinom{4}{2}\cdot\dbinom{44}{1} = 78\cdot6\cdot6\cdot44 = 123552
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;manos que son &lt;em&gt;doble pareja&lt;/em&gt;.&lt;/p&gt;
 </description>
@@ -1791,21 +1885,21 @@ $$&lt;/p&gt;
 &lt;li&gt;(g) ¿Cuántas distribuciones de cumpleaños pueden darse entre diez amigos?&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Para el apartado (a), dado que el orden importa y utilizamos todos los elementos, sin que ninguno de ellos se repita, buscamos la cantidad de permutaciones de ocho elementos. Así, $P_8 = 8! = 40320$ es el número de formas en que se pueden sentar ocho personas en una fila de ocho asientos.&lt;/p&gt;
 
 &lt;p&gt;En el apartado (b), el orden vuelve a importar y, obviamente, hemos de permitir la repetición de las letras para conformar las palabras, por lo que ahora la herramienta adecuada para contar será el total de variaciones de cuatro elementos tomadas de diez en diez. Por tanto, hay $VR_{4,10} = 4^{10} = 1048576$ palabras distintas de diez letras conformadas a partir de las letras $A$, $B$, $C$ y $D$.&lt;/p&gt;
 
-&lt;p&gt;En cuanto al apartado (c), hemos de ser cautos a la hora de escoger quién juega el papel de los &amp;ldquo;elementos&amp;rdquo; para contabilizar el total de maneras en que realizar la acción. En esta ocasión, son las calles. Si consideramos un cruce estándar de cuatro de ellas (y las denotamos por $a$, $b$, $c$ y $d$), una posible forma de escapar de la policía consistiría en que todos los niños optasen por la calle $a$, generando así el valor $(a,a,\ldots,a)$. Si el primer niño escogiese la calle $b$ y el resto la $a$, tendríamos el valor $(b,a,a,\ldots,a)$, y así sucesivamente. Por tanto, como importa el orden y alguna de las calles estará repetida dentro de las opciones de la huida, buscamos el número de variaciones con repetición de cuatro elementos tomados de diez en diez. Como antes, $VR_{4,10} = 4^{10}$ es el número de formas en que pueden huir diez niños de la policía en un cruce de calles.&lt;/p&gt;
+&lt;p&gt;En cuanto al apartado (c), hemos de ser cautos a la hora de escoger quién juega el papel de los &#39;&#39;elementos&#39;&#39; para contabilizar el total de maneras en que realizar la acción. En esta ocasión, son las calles. Si consideramos un cruce estándar de cuatro de ellas (y las denotamos por $a$, $b$, $c$ y $d$), una posible forma de escapar de la policía consistiría en que todos los niños optasen por la calle $a$, generando así el valor $(a,a,\ldots,a)$. Si el primer niño escogiese la calle $b$ y el resto la $a$, tendríamos el valor $(b,a,a,\ldots,a)$, y así sucesivamente. Por tanto, como importa el orden y alguna de las calles estará repetida dentro de las opciones de la huida, buscamos el número de variaciones con repetición de cuatro elementos tomados de diez en diez. Como antes, $VR_{4,10} = 4^{10}$ es el número de formas en que pueden huir diez niños de la policía en un cruce de calles.&lt;/p&gt;
 
 &lt;p&gt;Para el apartado (d), un tanto ambiguo, asumiremos que están interesados en conocer el número de secuencias de caras y cruces que se pueden encontrar lanzando diez monedas. Con esta reformulación, es claro que son dos los elementos protagonistas, cara y cruz, y consideraremos que el orden importa porque, suponemos, las monedas son distinguibles. Por tanto, buscamos el número de variaciones con repetición de dos elementos tomados de diez en diez, esto es, hay $VR_{2,10} = 2^{10} = 1024$ posibles secuencias de caras y cruces cuando se lanzan diez monedas.&lt;/p&gt;
 
 &lt;p&gt;A continuación, en el apartado (e), como el orden continúa siendo importante y cada elemento se repite un número fijo de veces, estamos interesados en la cantidad de permutaciones con repetición de diez elementos, donde tanto un elemento, como el otro, se repite en cinco ocasiones. Es decir, hay&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 P(10;5,5) = PR_{10}^{5,5} = \dfrac{10!}{5!\cdot 5!} = \dfrac{10\cdot9\cdot8\cdot7\cdot6}{5!} = 252
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;formas de obtener cinco caras y cinco cruces al lanzar diez monedas.&lt;/p&gt;
 
@@ -1822,47 +1916,60 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/09/midiendo-cuadrados-en-palmos/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 58:&lt;/strong&gt; Determina las dimensiones de un rectángulo sabiendo que sus lados miden un número entero de centímetros, pero no un número entero de palmos, y que su área expresada en palmos cuadrados es igual a su perímetro expresado en palmos lineales. Considera que un palmo equivale a $20$ centímetros.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Sean $x$ e $y$ las medidas de los lados del rectángulo expresadas en centímetros, mientras que denotemos por $a$ y $b$ las correspondientes medidas obtenidas en palmos. El área del rectángulo, en palmos cuadrados, es $a\cdot b$, cantidad que nos dicen ha de ser igual a su perímetro en palmos lineales, que viene dado por $2a+2b = 2(a+b)$. Por tanto, resulta que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a\cdot b = 2(a + b).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Dado que un palmo equivale a $20$ centímetros, es cierto que $x = 20a$ e $y = 20b$, y despejando $a$ y $b$, hallamos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a &amp;amp;= \dfrac{x}{20},\\ b &amp;amp;= \dfrac{y}{20}.
+a &amp;= \dfrac{x}{20},\\
+b &amp;= \dfrac{y}{20}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Sustituyendo los resultados alcanzados, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{x}{20}\cdot\dfrac{y}{20} = 2\left(\dfrac{x}{20} + \dfrac{y}{20}\right),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $xy = 40x+40y$, ecuación diofántica no lineal que abordaremos despejando una de las variables y forzando a que la restante tome valores enteros. Así, $xy-40x = 40y$, es decir, $x(y-40) = 40y$, de donde&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x = \dfrac{40y}{y-40}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Como $x$ ha de tomar valores enteros, estudiaremos, a continuación, las posibilidades para la fracción que acabamos de obtener. Si llevamos a cabo la división de polinomios, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{40y}{y-40} = 40 + \dfrac{1600}{y-40},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $y\neq 40$ ($y=40$ no es una solución aceptable en este contexto, pues al ser múltiplo de $20$, uno de los lados del rectángulo poseería una longitud igual a un número entero de palmos). Hemos llegado entonces a que $y-40$ debe ser un divisor de $1600$.&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, $1600 = 2^6\cdot 5^2$, situación que produce un total de $(6+1)\cdot(2+1) = 21$ divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era $(1+2+2^2+\cdots+2^6)\cdot(1+5+5^2)$, de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;Ahora bien, $1600 = 2^6 \cdot 5^2$, situación que produce un total de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(6+1)\cdot(2+1) = 21
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(1+2+2^2 +\cdots+2^6 )\cdot(1+5+5^2 ),
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \{1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600\}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A continuación, vemos que algunos casos los podemos descartar rápidamente. ¿Es válida la solución $y-40=20$? No, ya que implicaría $y=60 = 3\cdot20$, es decir, $y$ sería entonces un múltiplo entero de palmos, longitud no permitida por las restricciones que impone el enunciado del ejercicio. El mismo razonamiento es válido para los valores $40$, $80$, $160$, $320$, $100$, $200$, $400$, $800$ y $1600$.&lt;/p&gt;
 
@@ -1957,47 +2064,47 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/06/cuando-un-problema-viene-con-muy-mala-leche/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 57:&lt;/strong&gt; En un verde prado, la hierba crece de forma uniforme y constante. Se sabe que $70$ vacas lo consumirían en $24$ días y que $30$ vacas lo harían en $60$ días. ¿Cuántas vacas se comerían la hierba en $96$ días?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
-&lt;p&gt;El comienzo del enunciado de este ejercicio, aunque en apariencia tan poético como irrelevante, nos ofrece una importante pista para llevar a buen término la resolución del problema. &amp;ldquo;En un verde prado&amp;rdquo; nos indica que, inicialmente, el mencionado prado posee cierta cantidad de hierba (en otro caso, las vacas ni se molestarían en realizarle una visita el primer día). Consideremos pues, por ejemplo, que dicho prado posee $1$ unidad de hierba (equivalentemente, podríamos decir que está conformado por $a$ unidades de hierba, con $a\in\mathbb{N}$; o que simplemente posee un porcentaje de hierba igual a $100\%$).&lt;/p&gt;
+&lt;p&gt;El comienzo del enunciado de este ejercicio, aunque en apariencia tan poético como irrelevante, nos ofrece una importante pista para llevar a buen término la resolución del problema. &#39;&#39;En un verde prado&#39;&#39; nos indica que, inicialmente, el mencionado prado posee cierta cantidad de hierba (en otro caso, las vacas ni se molestarían en realizarle una visita el primer día). Consideremos pues, por ejemplo, que dicho prado posee $1$ unidad de hierba (equivalentemente, podríamos decir que está conformado por $a$ unidades de hierba, con $a\in\mathbb{N}$; o que simplemente posee un porcentaje de hierba igual a $100\%$).&lt;/p&gt;
 
 &lt;p&gt;Dado que la hierba crece de forma uniforme y constante, designemos por $x$ la altura que gana a diario la hierba en nuestro verde prado. Así, ¿qué cantidad de hierba acumulará dicho prado en $24$ días? Efectivamente, $1+24x$, la unidad de hierba con la que contaba inicialmente más el crecimiento uniforme y constante de esta durante el período de tiempo considerado.&lt;/p&gt;
 
 &lt;p&gt;La siguiente cuestión que nos planteamos, acto seguido, es: ¿cuánto come una vaca al día? Dado que las $70$ vacas consumen toda la hierba disponible del verde prado en $24$ días, cada vaca es responsable de la desaparición diaria de la siguiente fracción de hierba:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1 + 24x}{24\cdot 70}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Ahora bien, $30$ vacas consumen la misma cantidad de hierba en $60$ días, situación que da lugar a que cada vaca disfruta, a diario, de la siguiente fracción de hierba:&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1+60x}{60\cdot 30}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Igualando ambas expresiones, seremos capaces de encontrar cuánto crece la hierba en nuestro querido verde prado a diario, es decir, el valor de $x$. Así,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1 + 24x}{24\cdot 70} = \dfrac{1+60x}{60\cdot 30},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $1800 + 43200x = 1680 + 100800x$, es decir,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x = \dfrac{1}{480}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Sustituyendo ahora, el consumo diario de hierba de una vaca asciende a la fracción&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1 + 24\cdot\dfrac{1}{480}}{24\cdot70} = \dfrac{504}{480\cdot1680} = \dfrac{1}{1600}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por consiguiente, si cada vaca devora tal fracción de hierba a diario y designamos por $y$ la cantidad de vacas que consumirían nuestro amado verde prado en $96$ días, tendrá que satisfacerse que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{1 + 96\cdot\dfrac{1}{480}}{96y} = \dfrac{1}{1600} \Leftrightarrow \dfrac{576}{480\cdot96y} = \dfrac{1}{1600} \Leftrightarrow \dfrac{1}{80y} = \dfrac{1}{1600},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $20$ serán las vacas que consuman el verde prado en $96$ días.&lt;/p&gt;
 </description>
@@ -2061,75 +2168,91 @@ de nuevas especialidades en los cuerpos docentes de profesores de Enseñanza Sec
       <guid>https://imalexissaez.github.io/2019/03/02/midiendo-metros-con-duros-y-pesetas/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 56:&lt;/strong&gt; El diámetro de una moneda de $5$ pesetas es de $37$ mm y el de una peseta es de $23$ mm, ¿de cuántas maneras puede obtenerse la longitud de un metro alineando monedas de $5$ pesetas y de pesetas?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Sea $x$ el número de monedas de $5$ pesetas e $y$ la cifra total de monedas de $1$ peseta. Expresando todas las cantidades involucradas en el enunciado del ejercicio en milímetros, para así trabajar con números enteros, hemos de resolver la ecuación diofántica&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 37x+23y=1000,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;para encontrar el número de maneras en las que puede obtenerse un metro alineando monedas de los dos tipos indicados.&lt;/p&gt;
 
 &lt;p&gt;Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 1000x^{\prime},\\ y &amp;amp;= 1000y^{\prime}
+x &amp;= 1000x^{\prime},\\
+y &amp;= 1000y^{\prime}
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;, como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-37 &amp;amp;= 23\cdot1 + 14,\\ 23 &amp;amp;= 14\cdot1 +  9,\\ 14 &amp;amp;=  9\cdot1 +  5,\\  9 &amp;amp;=  5\cdot1 +  4,\\  5 &amp;amp;=  4\cdot1 +  1,\\  4 &amp;amp;=  1\cdot4,
+37 &amp;= 23\cdot1 + 14,\\
+23 &amp;= 14\cdot1 +  9,\\
+14 &amp;=  9\cdot1 +  5,\\
+ 9 &amp;=  5\cdot1 +  4,\\
+ 5 &amp;=  4\cdot1 +  1,\\
+ 4 &amp;=  1\cdot4,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-1 &amp;amp;= 5 - 4\cdot1\\ &amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \\ &amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\ &amp;amp;= 2\cdot14 - 3\cdot9 \\ &amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \\ &amp;amp;= (-3)\cdot23 + 5\cdot14 \\ &amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\ &amp;amp;= 5\cdot37 - 8\cdot23,
+1 &amp;= 5 - 4\cdot1\\
+&amp;= 5 - 1\cdot(9\cdot1 - 5) \\
+&amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\
+&amp;= 2\cdot14 - 3\cdot9 \\
+&amp;= 2\cdot14 - 3(23\cdot1 - 14) \\
+&amp;= (-3)\cdot23 + 5\cdot14 \\
+&amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\
+&amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime}+23y^{\prime}=1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
+&lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\\ y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;= 1000x^{\prime}_0 = 5000,\\
+y_0 &amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 5000 + 23t,\\ y &amp;amp;= (-8000) - 37t,
+x &amp;= 5000 + 23t,\\
+y &amp;= (-8000) - 37t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 5000 + 23t\geq 0\qquad\text{y}\qquad (-8000) - 37t\geq 0,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 -\dfrac{5000}{23}\leq t\leq -\dfrac{8000}{37},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 5000 + 23\cdot(-217) = 9,\\ y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
+x &amp;= 5000 + 23\cdot(-217) = 9,\\ 
+y &amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.&lt;/p&gt;
 </description>

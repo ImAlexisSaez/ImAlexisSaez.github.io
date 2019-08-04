@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-03-09T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-03-09T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-04T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-03-09 05:59:39 &#43;0200 &#43;0200" itemprop="datePublished">
-<meta content="2019-03-09 05:59:39 &#43;0200 &#43;0200" itemprop="dateModified">
+<meta content="2019-08-04 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-03-09</time>
+    <time>2019-08-04</time>
   </span>
   
 
@@ -577,47 +579,60 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 58:</strong> Determina las dimensiones de un rectángulo sabiendo que sus lados miden un número entero de centímetros, pero no un número entero de palmos, y que su área expresada en palmos cuadrados es igual a su perímetro expresado en palmos lineales. Considera que un palmo equivale a $20$ centímetros.</p>
 
-<hr />
+<hr>
 
 <p>Sean $x$ e $y$ las medidas de los lados del rectángulo expresadas en centímetros, mientras que denotemos por $a$ y $b$ las correspondientes medidas obtenidas en palmos. El área del rectángulo, en palmos cuadrados, es $a\cdot b$, cantidad que nos dicen ha de ser igual a su perímetro en palmos lineales, que viene dado por $2a+2b = 2(a+b)$. Por tanto, resulta que</p>
 
-<p>$$
+<p><span  class="math">\[
 a\cdot b = 2(a + b).
-$$</p>
+\]</span></p>
 
 <p>Dado que un palmo equivale a $20$ centímetros, es cierto que $x = 20a$ e $y = 20b$, y despejando $a$ y $b$, hallamos que</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-a &amp;= \dfrac{x}{20},\\ b &amp;= \dfrac{y}{20}.
+a &= \dfrac{x}{20},\\
+b &= \dfrac{y}{20}.
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>Sustituyendo los resultados alcanzados, tenemos que</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{x}{20}\cdot\dfrac{y}{20} = 2\left(\dfrac{x}{20} + \dfrac{y}{20}\right),
-$$</p>
+\]</span></p>
 
 <p>esto es, $xy = 40x+40y$, ecuación diofántica no lineal que abordaremos despejando una de las variables y forzando a que la restante tome valores enteros. Así, $xy-40x = 40y$, es decir, $x(y-40) = 40y$, de donde</p>
 
-<p>$$
+<p><span  class="math">\[
 x = \dfrac{40y}{y-40}.
-$$</p>
+\]</span></p>
 
 <p>Como $x$ ha de tomar valores enteros, estudiaremos, a continuación, las posibilidades para la fracción que acabamos de obtener. Si llevamos a cabo la división de polinomios, es cierto que</p>
 
-<p>$$
+<p><span  class="math">\[
 \dfrac{40y}{y-40} = 40 + \dfrac{1600}{y-40},
-$$</p>
+\]</span></p>
 
 <p>con $y\neq 40$ ($y=40$ no es una solución aceptable en este contexto, pues al ser múltiplo de $20$, uno de los lados del rectángulo poseería una longitud igual a un número entero de palmos). Hemos llegado entonces a que $y-40$ debe ser un divisor de $1600$.</p>
 
-<p>Ahora bien, $1600 = 2^6\cdot 5^2$, situación que produce un total de $(6+1)\cdot(2+1) = 21$ divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era $(1+2+2^2+\cdots+2^6)\cdot(1+5+5^2)$, de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es</p>
+<p>Ahora bien, $1600 = 2^6 \cdot 5^2$, situación que produce un total de</p>
 
-<p>$$
+<p><span  class="math">\[
+(6+1)\cdot(2+1) = 21
+\]</span></p>
+
+<p>divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era</p>
+
+<p><span  class="math">\[
+(1+2+2^2 +\cdots+2^6 )\cdot(1+5+5^2 ),
+\]</span></p>
+
+<p>de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es</p>
+
+<p><span  class="math">\[
 \{1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600\}.
-$$</p>
+\]</span></p>
 
 <p>A continuación, vemos que algunos casos los podemos descartar rápidamente. ¿Es válida la solución $y-40=20$? No, ya que implicaría $y=60 = 3\cdot20$, es decir, $y$ sería entonces un múltiplo entero de palmos, longitud no permitida por las restricciones que impone el enunciado del ejercicio. El mismo razonamiento es válido para los valores $40$, $80$, $160$, $320$, $100$, $200$, $400$, $800$ y $1600$.</p>
 

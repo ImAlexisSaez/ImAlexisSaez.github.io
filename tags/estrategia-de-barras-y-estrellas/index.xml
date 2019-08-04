@@ -358,35 +358,35 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/23/comenzando-con-la-combinatoria-iv/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 62:&lt;/strong&gt; Calcula el número de soluciones enteras de la ecuación&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x_1+x_2+\cdots+x_8=24,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde $x_i\geq 2$, para $1\leq i\leq 8$.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;A diferencia del ejercicio anterior, aquí no buscamos hallar el total de soluciones enteras no negativas de la ecuación, pues nos indican que $x_i\geq 2$, para todo $1\leq i\leq 8$. No obstante, podemos razonar de la siguiente forma: asumamos que disponemos de ocho urnas indistinguibles entre sí y almacenemos dos bolas en cada una de ellas para empezar. De esta manera, quedarán $24 - 2\cdot8 = 8$ bolas idénticas por introducir en las urnas, acción que podemos llevar a cabo de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 PR_{15}^{8,7} = \dfrac{15!}{8!\cdot 7!} = \dfrac{15\cdot14\cdot13\cdot12\cdot11\cdot10\cdot9}{7!} = 6435
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;maneras posibles. A este resultado hemos arribado, recordemos, dado que son necesarias siete &lt;em&gt;barras&lt;/em&gt;, para representar las ocho urnas sobre la recta real, y hemos de almacenar ocho &lt;em&gt;estrellas&lt;/em&gt; en los huecos que dicha configuración produce. Así pues, son $6435$ el número de soluciones enteras para la ecuación planteada, considerando que $x_i\geq 2$, para todo $1\leq i\leq 8$.&lt;/p&gt;
 
 &lt;p&gt;Si nos damos cuenta, simplemente hemos ignorado aquella parte del problema que sabemos está fija. Técnicamente, esta acción es equivalente a llevar a cabo un cambio de variable del tipo&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x_i = x^{\prime}_i + 2,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;para $1\leq i\leq 8$, que transforma la ecuación inicial planteada en&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 (x^{\prime}_1 + 2) + (x^{\prime}_2 + 2) + \cdots + (x^{\prime}_8+2) = 24,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;que es equivalente a $x^{\prime}_1+x^{\prime}_2+\cdots+x^{\prime}_8=8$, con la salvedad de que ahora $x^{\prime}_i\geq 0$, para todo $1\leq i\leq 8$ y entonces ahora basta con aplicar los métodos que utilizamos en ejercicios anteriores.&lt;/p&gt;
+&lt;p&gt;que es equivalente a $x^{\prime}_1 +x^{\prime}_2 +\cdots+x^{\prime}_8 =8$, con la salvedad de que ahora $x^{\prime}_i\geq 0$, para todo $1\leq i\leq 8$ y entonces ahora basta con aplicar los métodos que utilizamos en ejercicios anteriores.&lt;/p&gt;
 </description>
     </item>
     

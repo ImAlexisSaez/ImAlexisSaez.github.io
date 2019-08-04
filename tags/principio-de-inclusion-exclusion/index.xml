@@ -75,53 +75,101 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/27/contando-multiplos-a-traves-del-pie/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 63:&lt;/strong&gt; ¿Cuántos números entre $1$ y $600$ no son divisibles por $3$, ni por $5$, ni por $7$?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Emplearemos el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt; para resolver el presente problema. Así, definamos los conjuntos&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$3$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $3$&amp;rdquo;,&lt;/li&gt;
-&lt;li&gt;$5$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $5$&amp;rdquo;, y&lt;/li&gt;
-&lt;li&gt;$7$ como &amp;ldquo;conjunto de números menores o iguales que $600$ que son divisibles por $7$&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;$3$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $3$&#39;&#39;,&lt;/li&gt;
+&lt;li&gt;$5$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $5$&#39;&#39;, y&lt;/li&gt;
+&lt;li&gt;$7$ como &#39;&#39;conjunto de números menores o iguales que $600$ que son divisibles por $7$&#39;&#39;.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Estamos interesados en el cardinal del conjunto de números que, precisamente, no son divisibles por $3$, ni por $5$, ni por $7$, esto es, $card(\overline{3}\cap\overline{5}\cap\overline{7})$ . Ahora bien, por las &lt;em&gt;Leyes de DeMorgan&lt;/em&gt;, trabajaremos con el suceso complementario, ya que es más fácil contar múltiplos que números que no son múltiplos,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = card(\overline{3\cup 5\cup 7}) = card(E) - card(3\cup 5\cup 7),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde por $E$ representamos el conjunto de los números enteros positivos menores o iguales que $600$, es decir, el conjunto &lt;em&gt;total&lt;/em&gt;, cuyo cardinal asciende, en esta ocasión concreta, a $600$. Por tanto,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = 600 - card(3\cup 5\cup 7).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A continuación, por el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt;,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-card(3\cup 5\cup 7) &amp;amp;= card(3) + card(5) + card(7)\\ &amp;amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\\ &amp;amp;\quad +card(3\cap 5\cap 7),
+card(3\cup 5\cup 7) &amp;= card(3) + card(5) + card(7)\\
+&amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\\
+&amp;\quad +card(3\cap 5\cap 7),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;donde&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$card(3)$ representa el total de múltiplos de $3$ menores o iguales que $600$, esto es, $$card(3) = \left\lfloor\dfrac{600}{3}\right\rfloor=200.$$&lt;/li&gt;
-&lt;li&gt;$card(5)$ representa el total de múltiplos de $5$ menores o iguales que $600$, esto es, $$card(5) = \left\lfloor\dfrac{600}{5}\right\rfloor=120.$$&lt;/li&gt;
-&lt;li&gt;$card(7)$ representa el total de múltiplos de $7$ menores o iguales que $600$, esto es, $$card(7) = \left\lfloor\dfrac{600}{7}\right\rfloor=85.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 5)$ representa el total de múltiplos de $3$ y de $5$ menores o iguales que $600$, esto es, $$card(3\cap 5) = \left\lfloor\dfrac{600}{3\cdot 5}\right\rfloor=40.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 7)$ representa el total de múltiplos de $3$ y de $7$ menores o iguales que $600$, esto es, $$card(3\cap 7) = \left\lfloor\dfrac{600}{3\cdot 7}\right\rfloor=28.$$&lt;/li&gt;
-&lt;li&gt;$card(5\cap 7)$ representa el total de múltiplos de $5$ y de $7$ menores o iguales que $600$, esto es, $$card(5\cap 7) = \left\lfloor\dfrac{600}{5\cdot 7}\right\rfloor=17.$$&lt;/li&gt;
-&lt;li&gt;$card(3\cap 5\cap 7)$ representa el total de múltiplos de $3$, de $5$ y de $7$ menores o iguales que $600$, esto es, $$card(3\cap 5\cap 7) = \left\lfloor\dfrac{600}{3\cdot 5\cdot 7}\right\rfloor=5.$$&lt;/li&gt;
+&lt;li&gt;$card(3)$ representa el total de múltiplos de $3$ menores o iguales que $600$, esto es,&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3) = \left\lfloor\dfrac{600}{3}\right\rfloor=200.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(5)$ representa el total de múltiplos de $5$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(5) = \left\lfloor\dfrac{600}{5}\right\rfloor=120.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(7)$ representa el total de múltiplos de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(7) = \left\lfloor\dfrac{600}{7}\right\rfloor=85.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 5)$ representa el total de múltiplos de $3$ y de $5$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 5) = \left\lfloor\dfrac{600}{3\cdot 5}\right\rfloor=40.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 7)$ representa el total de múltiplos de $3$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 7) = \left\lfloor\dfrac{600}{3\cdot 7}\right\rfloor=28.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(5\cap 7)$ representa el total de múltiplos de $5$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(5\cap 7) = \left\lfloor\dfrac{600}{5\cdot 7}\right\rfloor=17.
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$card(3\cap 5\cap 7)$ representa el total de múltiplos de $3$, de $5$ y de $7$ menores o iguales que $600$, esto es,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+card(3\cap 5\cap 7) = \left\lfloor\dfrac{600}{3\cdot 5\cdot 7}\right\rfloor=5.
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Por consiguiente,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 card(\overline{3}\cap\overline{5}\cap\overline{7}) = 600 - (200 + 120 + 85 - 40 - 28 - 17 + 5) = 275,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, hay $275$ números entre $1$ y $600$, ambos inclusive, que no son divisibles por $3$, ni por $5$, ni por $7$.&lt;/p&gt;
 </description>

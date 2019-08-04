@@ -19,47 +19,60 @@
       <guid>https://imalexissaez.github.io/2019/03/09/midiendo-cuadrados-en-palmos/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 58:&lt;/strong&gt; Determina las dimensiones de un rectángulo sabiendo que sus lados miden un número entero de centímetros, pero no un número entero de palmos, y que su área expresada en palmos cuadrados es igual a su perímetro expresado en palmos lineales. Considera que un palmo equivale a $20$ centímetros.&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Sean $x$ e $y$ las medidas de los lados del rectángulo expresadas en centímetros, mientras que denotemos por $a$ y $b$ las correspondientes medidas obtenidas en palmos. El área del rectángulo, en palmos cuadrados, es $a\cdot b$, cantidad que nos dicen ha de ser igual a su perímetro en palmos lineales, que viene dado por $2a+2b = 2(a+b)$. Por tanto, resulta que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 a\cdot b = 2(a + b).
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Dado que un palmo equivale a $20$ centímetros, es cierto que $x = 20a$ e $y = 20b$, y despejando $a$ y $b$, hallamos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-a &amp;amp;= \dfrac{x}{20},\\ b &amp;amp;= \dfrac{y}{20}.
+a &amp;= \dfrac{x}{20},\\
+b &amp;= \dfrac{y}{20}.
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Sustituyendo los resultados alcanzados, tenemos que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{x}{20}\cdot\dfrac{y}{20} = 2\left(\dfrac{x}{20} + \dfrac{y}{20}\right),
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, $xy = 40x+40y$, ecuación diofántica no lineal que abordaremos despejando una de las variables y forzando a que la restante tome valores enteros. Así, $xy-40x = 40y$, es decir, $x(y-40) = 40y$, de donde&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 x = \dfrac{40y}{y-40}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;Como $x$ ha de tomar valores enteros, estudiaremos, a continuación, las posibilidades para la fracción que acabamos de obtener. Si llevamos a cabo la división de polinomios, es cierto que&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \dfrac{40y}{y-40} = 40 + \dfrac{1600}{y-40},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $y\neq 40$ ($y=40$ no es una solución aceptable en este contexto, pues al ser múltiplo de $20$, uno de los lados del rectángulo poseería una longitud igual a un número entero de palmos). Hemos llegado entonces a que $y-40$ debe ser un divisor de $1600$.&lt;/p&gt;
 
-&lt;p&gt;Ahora bien, $1600 = 2^6\cdot 5^2$, situación que produce un total de $(6+1)\cdot(2+1) = 21$ divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era $(1+2+2^2+\cdots+2^6)\cdot(1+5+5^2)$, de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;Ahora bien, $1600 = 2^6 \cdot 5^2$, situación que produce un total de&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(6+1)\cdot(2+1) = 21
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;divisores, por lo que, acto seguido, analizaremos todos y cada uno de los casos. Para empezar, listemos el conjunto de divisores. Para llevar a cabo tal tarea de forma relativamente sencilla, recordemos que la expresión de la suma de los divisores era&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+(1+2+2^2 +\cdots+2^6 )\cdot(1+5+5^2 ),
+\]&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \{1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600\}.
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;A continuación, vemos que algunos casos los podemos descartar rápidamente. ¿Es válida la solución $y-40=20$? No, ya que implicaría $y=60 = 3\cdot20$, es decir, $y$ sería entonces un múltiplo entero de palmos, longitud no permitida por las restricciones que impone el enunciado del ejercicio. El mismo razonamiento es válido para los valores $40$, $80$, $160$, $320$, $100$, $200$, $400$, $800$ y $1600$.&lt;/p&gt;
 
@@ -154,75 +167,91 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2019/03/02/midiendo-metros-con-duros-y-pesetas/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 56:&lt;/strong&gt; El diámetro de una moneda de $5$ pesetas es de $37$ mm y el de una peseta es de $23$ mm, ¿de cuántas maneras puede obtenerse la longitud de un metro alineando monedas de $5$ pesetas y de pesetas?&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;hr&gt;
 
 &lt;p&gt;Sea $x$ el número de monedas de $5$ pesetas e $y$ la cifra total de monedas de $1$ peseta. Expresando todas las cantidades involucradas en el enunciado del ejercicio en milímetros, para así trabajar con números enteros, hemos de resolver la ecuación diofántica&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 37x+23y=1000,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;para encontrar el número de maneras en las que puede obtenerse un metro alineando monedas de los dos tipos indicados.&lt;/p&gt;
 
 &lt;p&gt;Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 1000x^{\prime},\\ y &amp;amp;= 1000y^{\prime}
+x &amp;= 1000x^{\prime},\\
+y &amp;= 1000y^{\prime}
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;, como&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-37 &amp;amp;= 23\cdot1 + 14,\\ 23 &amp;amp;= 14\cdot1 +  9,\\ 14 &amp;amp;=  9\cdot1 +  5,\\  9 &amp;amp;=  5\cdot1 +  4,\\  5 &amp;amp;=  4\cdot1 +  1,\\  4 &amp;amp;=  1\cdot4,
+37 &amp;= 23\cdot1 + 14,\\
+23 &amp;= 14\cdot1 +  9,\\
+14 &amp;=  9\cdot1 +  5,\\
+ 9 &amp;=  5\cdot1 +  4,\\
+ 5 &amp;=  4\cdot1 +  1,\\
+ 4 &amp;=  1\cdot4,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-1 &amp;amp;= 5 - 4\cdot1\\ &amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \\ &amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\ &amp;amp;= 2\cdot14 - 3\cdot9 \\ &amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \\ &amp;amp;= (-3)\cdot23 + 5\cdot14 \\ &amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\ &amp;amp;= 5\cdot37 - 8\cdot23,
+1 &amp;= 5 - 4\cdot1\\
+&amp;= 5 - 1\cdot(9\cdot1 - 5) \\
+&amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\
+&amp;= 2\cdot14 - 3\cdot9 \\
+&amp;= 2\cdot14 - 3(23\cdot1 - 14) \\
+&amp;= (-3)\cdot23 + 5\cdot14 \\
+&amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\
+&amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
-&lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime}+23y^{\prime}=1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
+&lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\\ y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;= 1000x^{\prime}_0 = 5000,\\
+y_0 &amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 5000 + 23t,\\ y &amp;amp;= (-8000) - 37t,
+x &amp;= 5000 + 23t,\\
+y &amp;= (-8000) - 37t,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 5000 + 23t\geq 0\qquad\text{y}\qquad (-8000) - 37t\geq 0,
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 -\dfrac{5000}{23}\leq t\leq -\dfrac{8000}{37},
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,&lt;/p&gt;
 
-&lt;p&gt;$$
+&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
 \begin{aligned}
-x &amp;amp;= 5000 + 23\cdot(-217) = 9,\\ y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
+x &amp;= 5000 + 23\cdot(-217) = 9,\\ 
+y &amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
-$$&lt;/p&gt;
+\]&lt;/span&gt;&lt;/p&gt;
 
 &lt;p&gt;esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.&lt;/p&gt;
 </description>
