@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-04-13T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-04-13T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-05T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-04-13 05:59:39 &#43;0200 CEST" itemprop="datePublished">
-<meta content="2019-04-13 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+<meta content="2019-08-05 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-04-13</time>
+    <time>2019-08-05</time>
   </span>
   
 
@@ -577,23 +579,51 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 68:</strong> En un puesto de mando, para transmitir señales, hay en línea recta cuatro astas. En cada asta solamente se puede colocar una bandera. Las señales consisten en colocar banderas de distintos colores en dichas astas. Según el número de banderas colocadas, colores de las mismas y lugar que ocupen, la señal será distinta. Halla el número de señales que se pueden transmitir si se posee un juego de siete banderas con los colores del arco iris.</p>
 
-<hr />
+<hr>
 
-<p>Una de las claves de este ejercicio pasa por darse cuenta de que en cada asta se &ldquo;puede&rdquo; colocar (o no) una bandera para transmitir una determinada señal. Así pues, hemos de discutir las opciones posibles, para las señales disponibles, en función del número de astas empleadas:</p>
+<p>Una de las claves de este ejercicio pasa por darse cuenta de que en cada asta se ''puede'' colocar (o no) una bandera para transmitir una determinada señal. Así pues, hemos de discutir las opciones posibles, para las señales disponibles, en función del número de astas empleadas:</p>
 
 <ul>
-<li>Si emplean las cuatro astas, dado que el orden en el que coloquen las banderas importa y no es posible repetir bandera alguna, la cantidad de señales que pueden transmitir en este caso equivale al número de variaciones de siete elementos tomados de cuatro en cuatro, esto es, $$V_{7,4} = 7\cdot6\cdot5\cdot4 = 840.$$</li>
-<li>Si utilizan tres astas, ello implica que de las cuatro disponibles han de escoger tres, acción que pueden llevar a cabo de $C_{4,3}$ maneras posibles. Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de tres en tres, es decir, $V_{7,3}$. Ahora, aplicando la <em>regla del producto</em>, utilizando tres astas pueden transmitir un número de señales que asciende a $$C_{4,3}\cdot V_{7,3} = \dbinom{4}{3}\cdot7\cdot6\cdot5 = 840.$$</li>
-<li>Si utilizan dos astas, ello implica que de las cuatro disponibles han de escoger dos, acción que pueden llevar a cabo de $C_{4,2}$ maneras posibles (aquí, como antes, no importa el orden, pues es igual escoger las astas primera y segunda, que las astas segunda y primera, lo importante ahora es seleccionar dos astas). Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de dos en dos, es decir, $V_{7,2}$. Ahora, aplicando la <em>regla del producto</em>, utilizando dos astas pueden transmitir un número de señales que asciende a $$C_{4,2}\cdot V_{7,2} = \dbinom{4}{2}\cdot7\cdot6 = 252.$$</li>
-<li>Si utilizan una asta, ello implica que de las cuatro disponibles han de escoger una, acción que pueden llevar a cabo de cuatro maneras posibles. Una vez escogida, tienen siete opciones de cara a escoger la bandera que emplearán para transmitir la señal. Ahora, aplicando la <em>regla del producto</em>, utilizando una asta pueden transmitir un número de señales que asciende a $$C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.$$</li>
+<li>Si emplean las cuatro astas, dado que el orden en el que coloquen las banderas importa y no es posible repetir bandera alguna, la cantidad de señales que pueden transmitir en este caso equivale al número de variaciones de siete elementos tomados de cuatro en cuatro, esto es,</li>
+</ul>
+
+<p><span  class="math">\[
+V_{7,4} = 7\cdot6\cdot5\cdot4 = 840.
+\]</span></p>
+
+<ul>
+<li>Si utilizan tres astas, ello implica que de las cuatro disponibles han de escoger tres, acción que pueden llevar a cabo de $C_{4,3}$ maneras posibles. Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de tres en tres, es decir, $V_{7,3}$. Ahora, aplicando la <em>regla del producto</em>, utilizando tres astas pueden transmitir un número de señales que asciende a</li>
+</ul>
+
+<p><span  class="math">\[
+C_{4,3}\cdot V_{7,3} = \dbinom{4}{3}\cdot7\cdot6\cdot5 = 840.
+\]</span></p>
+
+<ul>
+<li>Si utilizan dos astas, ello implica que de las cuatro disponibles han de escoger dos, acción que pueden llevar a cabo de $C_{4,2}$ maneras posibles (aquí, como antes, no importa el orden, pues es igual escoger las astas primera y segunda, que las astas segunda y primera, lo importante ahora es seleccionar dos astas). Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de dos en dos, es decir, $V_{7,2}$. Ahora, aplicando la <em>regla del producto</em>, utilizando dos astas pueden transmitir un número de señales que asciende a</li>
+</ul>
+
+<p><span  class="math">\[
+C_{4,2}\cdot V_{7,2} = \dbinom{4}{2}\cdot7\cdot6 = 252.
+\]</span></p>
+
+<ul>
+<li>Si utilizan una asta, ello implica que de las cuatro disponibles han de escoger una, acción que pueden llevar a cabo de cuatro maneras posibles. Una vez escogida, tienen siete opciones de cara a escoger la bandera que emplearán para transmitir la señal. Ahora, aplicando la <em>regla del producto</em>, utilizando una asta pueden transmitir un número de señales que asciende a</li>
+</ul>
+
+<p><span  class="math">\[
+C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.
+\]</span></p>
+
+<ul>
 <li>Finalmente, existe una posibilidad adicional que hemos de considerar y consiste en que no utilicen bandera alguna para transmitir una determinada señal (esto es, que no hagan uso de ninguna asta).</li>
 </ul>
 
 <p>Recapitulando, si se posee un juego de siete banderas con los colores del arco iris y cuatro astas donde colocarlas, podrán transmitir un total de</p>
 
-<p>$$
+<p><span  class="math">\[
 840+840+252+28+1 = 1961
-$$</p>
+\]</span></p>
 
 <p>señales.</p>
 

@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-04-24T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-04-24T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-05T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-04-24 05:59:39 &#43;0200 CEST" itemprop="datePublished">
-<meta content="2019-04-24 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+<meta content="2019-08-05 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-04-24</time>
+    <time>2019-08-05</time>
   </span>
   
 
@@ -579,48 +581,56 @@
 
 <ul>
 <li>(a) Escribe los desarreglos de $123$.</li>
-<li>(b) Demuestra que, dados $n$ objetos, el total de desarreglos asciende a $$D_n = n!\left(1-\dfrac{1}{1!} + \dfrac{1}{2!} - \dfrac{1}{3!}+\cdots+(-1)^n\dfrac{1}{n!}\right).$$</li>
+<li>(b) Demuestra que, dados $n$ objetos, el total de desarreglos asciende a</li>
 </ul>
 
-<hr />
+<p><span  class="math">\[
+D_n = n!\left(1-\dfrac{1}{1!} + \dfrac{1}{2!} - \dfrac{1}{3!}+\cdots+(-1)^n \dfrac{1}{n!}\right).
+\]</span></p>
+
+<hr>
 
 <p>En cuanto al apartado (a), empecemos escribiendo todas las permutaciones de $123$,</p>
 
-<p>$$
+<p><span  class="math">\[
 123,\quad 132,\quad 213,\quad 231,\quad 312,\quad 321.
-$$</p>
+\]</span></p>
 
 <p>De entre ellas, descartamos $123$ y $132$, por mantener $1$ su posición original; asimismo hacemos lo propio con $321$, porque $2$ permanece invariante; y con $213$, ya que $3$ continúa en el mismo lugar. Por tanto, dos son los desarreglos de $123$, a saber, $231$ y $312$.</p>
 
-<p>Para abordar el apartado (b) haremos uso del <em>Principio de complementación</em>, y, en lugar de buscar la cantidad de desarreglos, hallaremos el número de permutaciones que al menos mantienen una cifra en su posición original (los &ldquo;arreglos&rdquo;), pues, aunque resulte sorprendente a primera vista, es más fácil contar estas últimas. Una vez encontrado dicho número, se lo sustraeremos al total de permutaciones, obteniendo así la cifra de desarreglos.</p>
+<p>Para abordar el apartado (b) haremos uso del <em>Principio de complementación</em>, y, en lugar de buscar la cantidad de desarreglos, hallaremos el número de permutaciones que al menos mantienen una cifra en su posición original (los ''arreglos''), pues, aunque resulte sorprendente a primera vista, es más fácil contar estas últimas. Una vez encontrado dicho número, se lo sustraeremos al total de permutaciones, obteniendo así la cifra de desarreglos.</p>
 
 <p>Por consiguiente, para empezar, dados $n$ objetos, sabemos que el total de permutaciones posibles asciende a $P_n = n!$. Ahora, definamos $A_i$ como el total de conjuntos en el que $i$ objetos mantienen su posición original, con $1\leq i\leq n$. Por tanto, el número de desarreglos vendrá dado por</p>
 
-<p>$$
+<p><span  class="math">\[
 D_n = n! - card(A_1\cup A_2\cup\cdots\cup A_n).
-$$</p>
+\]</span></p>
 
 <p>Ahora bien, ¿cuántos conjuntos encontramos que se caractericen por mantener un objeto su posición original? De entre los $n$ objetos, seleccionamos uno, acción que podemos llevar a cabo de $C_{n,1}$ maneras posibles. Después, el resto de objetos, $n-1$, simplemente los permutamos, situación que podemos realizar de $P_{n-1} = (n-1)!$ formas posibles. Aplicando la <em>regla del producto</em> hay</p>
 
-<p>$$
+<p><span  class="math">\[
 C_{n,1}(n-1)! = \dbinom{n}{1}(n-1)!
-$$</p>
+\]</span></p>
 
 <p>conjuntos que mantienen un objeto en su posición original. Análogamente, ¿cuántos conjuntos encontramos que se caractericen por mantener dos objetos sus posiciones originales? De entre los $n$ objetos, seleccionamos dos, acción que podemos llevar a cabo de $C_{n,2}$ maneras posibles. Luego, el resto de objetos, $n-2$, simplemente los permutamos, situación que podemos realizar de $P_{n-2} = (n-2)!$ formas posibles. Aplicando la <em>regla del producto</em> hay</p>
 
-<p>$$
+<p><span  class="math">\[
 C_{n,2}(n-2)! = \dbinom{n}{2}(n-2)!
-$$</p>
+\]</span></p>
 
 <p>conjuntos que mantienen dos objetos en sus posiciones originales. El mismo razonamiento se puede aplicar para el caso de tres objetos, cuatro objetos, etc.</p>
 
 <p>Por consiguiente, aplicando el <em>Principio de inclusión-exclusión</em>,</p>
 
-<p>$$
+<p><span  class="math">\[
 \begin{aligned}
-D_n &amp;= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\ &amp;= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1}\dbinom{n}{n}\right)\\ &amp;= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1}\cdot 1\right)\\ &amp;= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1}\dfrac{n!}{n!}\right)\\ &amp;= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n\dfrac{1}{n!}\right),
+D_n &= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\
+&= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1} \dbinom{n}{n}\right)\\
+&= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1} \cdot 1\right)\\
+&= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1} \dfrac{n!}{n!}\right)\\
+&= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n \dfrac{1}{n!}\right),
 \end{aligned}
-$$</p>
+\]</span></p>
 
 <p>tal y como queríamos demostrar.</p>
 
