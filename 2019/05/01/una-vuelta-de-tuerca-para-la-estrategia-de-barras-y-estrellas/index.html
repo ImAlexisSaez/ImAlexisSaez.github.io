@@ -133,7 +133,7 @@
     
       <meta property="article:published_time" content="2019-05-01T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-05-01T05:59:39&#43;02:00">
+    <meta property="article:modified_time" content="2019-08-06T00:00:01&#43;02:00">
   
 
   
@@ -389,7 +389,7 @@
 
 
 <meta content="2019-05-01 05:59:39 &#43;0200 CEST" itemprop="datePublished">
-<meta content="2019-05-01 05:59:39 &#43;0200 CEST" itemprop="dateModified">
+<meta content="2019-08-06 00:00:01 &#43;0200 CEST" itemprop="dateModified">
 
 <div class="article-metadata">
 
@@ -413,8 +413,10 @@
     
     
       
+          Última actualización el
+      
     
-    <time>2019-05-01</time>
+    <time>2019-08-06</time>
   </span>
   
 
@@ -577,13 +579,13 @@
     <div class="article-style" itemprop="articleBody">
       <p><strong>Problema 73:</strong> ¿Cuántos números naturales menores que $10000$ cumplen que la suma de sus cifras es $25$?</p>
 
-<hr />
+<hr>
 
 <p>Los números $n$ que nos interesan satisfacen que $0\leq n\leq 9999$, esto es, pueden tener hasta cuatro cifras. Como la suma de estas debe ascender a $25$, planteamos la ecuación</p>
 
-<p>$$
+<p><span  class="math">\[
 x_1+x_2+x_3+x_4=25,
-$$</p>
+\]</span></p>
 
 <p>donde $0\leq x_i\leq 9$, con $1\leq i\leq 4$ y representando cada $x_i$ una de las cifras de los números buscados.</p>
 
@@ -591,63 +593,59 @@ $$</p>
 
 <p>Así pues, empecemos planteando la ecuación</p>
 
-<p>$$
+<p><span  class="math">\[
 x_1+x_2+x_3+x_4=25,
-$$</p>
+\]</span></p>
 
 <p>con $x_i\geq 0$ para todo $1\leq i\leq 4$. Consideremos ahora las cuatro variables como cuatro <em>urnas</em> indistinguibles y el valor que aparece en el miembro derecho de la ecuación, $25$, como las $25$ <em>bolas</em> idénticas que vamos a introducir en las urnas. Utilizando la estrategia de <em>barras y estrellas</em>, necesitamos tres <em>barras</em> para representar sobre la recta real las cuatro urnas y buscamos ubicar luego $25$ <em>estrellas</em> en los huecos que dicha configuración produce. Por consiguiente, el número de formas en que el valor de la suma de cuatro variables puede ascender a $25$, equivale a la cantidad de permutaciones con repetición de $28$ elementos, donde uno de ellos se repite tres veces, mientras que el otro lo hace en $25$ ocasiones. Así, hay</p>
 
-<p>$$
+<p><span  class="math">\[
 PR_{28}^{3,25} = CR_{4,25} = \dbinom{28}{25} = \dfrac{28\cdot27\cdot26}{3!} = 3276
-$$</p>
+\]</span></p>
 
 <p>soluciones enteras no negativas para la ecuación que acabamos de plantear. Entre ellas, será válida, por ejemplo, una solución como $x_1=25$ y $x_2=x_3=x_4=0$, que en el contexto que plantea el enunciado del presente ejercicio es absurda, pues recordemos habíamos dotado a cada una de las variables el significado de ser cifras y, por tanto, sus valores han de estar comprendidos entre cero y nueve. Veamos pues, a continuación, como descontar este tipo de soluciones incorrectas.</p>
 
 <p>Definamos, acto seguido, los conjuntos $A_i=\{x_i\geq 10\}$, por lo que estamos interesados en hallar el valor de $card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4})$. Por el <em>Principio de complementación</em>,</p>
 
-<p>$$
-\begin{aligned}
+<p><span  class="math">\[
 card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}) = card(E) - card(A_1\cup A_2\cup A_3\cup A_4),
-\end{aligned}
-$$</p>
+\]</span></p>
 
 <p>donde por $E$ representamos al <em>conjunto total</em>, que en este contexto se refiere al total de soluciones enteras no negativas de la ecuación planteada y cuyo cardinal hemos obtenido en párrafos anteriores, $PR_{28}^{3,25} = 3276$. Aplicando ahora el <em>Principio de inclusión-exclusión</em>,</p>
 
-<p>$$
-\begin{aligned}
-card\left(\bigcup_{i=1}^{4}{A_i}\right) = \sum_{i=1}^{4}{card(A_i)} - \sum_{1\leq i&lt;j\leq 4}{card(A_i\cap A_j)} + \cdots + (-1)^{n+1}card\left(\bigcap_{i=1}^{4}{A_i}\right).
-\end{aligned}
-$$</p>
+<p><span  class="math">\[
+card\left(\bigcup_{i=1}^{4}{A_i}\right) = \sum_{i=1}^{4}{card(A_i)} - \sum_{1\leq i < j\leq 4}{card( A_i\cap A_j )} + \cdots + (-1)^{n+1} card\left(\bigcap_{i=1}^{4}{A_i}\right).
+\]</span></p>
 
 <p>Estudiemos ahora el conjunto $A_1 = \{x_1\geq 10\}$ y averigüemos $card(A_1)$. La situación requiere calcular el número de soluciones enteras no negativas para la ecuación $x_1+x_2+x_3+x_4=25$, con $x_1\geq 10$, $x_i\geq 0$ para $2\leq i\leq 4$. Pensando en términos de urnas y bolas, hemos de almacenar diez bolas en la primera urna y pasar a encontrar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3+x_4=15$, ahora con $x_i\geq 0$, para $1\leq i\leq 4$. Aplicando, de manera análoga a como lo hicimos arriba, la técnica de <em>barras y estrellas</em>, sabemos que dicho número equivale al total de permutaciones con repetición de $18$ elementos, donde uno de ellos se repite tres veces, mientras que el otro lo hace en $15$ ocasiones, esto es,</p>
 
-<p>$$
+<p><span  class="math">\[
 PR_{18}^{3,15} = CR_{4,15} = \dbinom{18}{15} = \dfrac{18\cdot17\cdot16}{3!} = 816.
-$$</p>
+\]</span></p>
 
 <p>Por simetría, $card(A_1)=card(A_2)=card(A_3)=card(A_4)=816$, de manera que</p>
 
-<p>$$
+<p><span  class="math">\[
 \sum_{i=1}^{4}{card(A_i)} = 4\cdot816 = 3264.
-$$</p>
+\]</span></p>
 
-<p>Acto seguido, hallemos $card(A_1\cap A_2)$, donde $A_1\cap A_2 = \{x_1\geq 10, x_2\geq 10\}$. La situación requiere calcular el número de soluciones enteras no negativas para la ecuación $x_1+x_2+x_3+x_4=25$, con $x_1\geq 10$, $x_2\geq 10$ y $x_i\geq 0$ para $3\leq i\leq 4$. Razonando en términos de urnas y bolas, hemos de almacenar diez bolas en la primera urna, otras tantas en la segunda urna y pasar a buscar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3+x_4=5$, ahora con $x_i\geq 0$, para $1\leq i\leq 4$. Utilizando, como antes, la técnica de <em>barras y estrellas</em>, sabemos que el mencionado número equivale al total de permutaciones con repetición de ocho elementos, donde uno de ellos se repite tres veces, mientras que el otro lo hace en cinco ocasiones, es decir,</p>
+<p>Ahora, hallemos $card(A_1\cap A_2)$, donde $A_1\cap A_2 = \{x_1\geq 10, x_2\geq 10\}$. La situación requiere calcular el número de soluciones enteras no negativas para la ecuación $x_1+x_2+x_3+x_4=25$, con $x_1\geq 10$, $x_2\geq 10$ y $x_i\geq 0$ para $3\leq i\leq 4$. Razonando en términos de urnas y bolas, hemos de almacenar diez bolas en la primera urna, otras tantas en la segunda urna y pasar a buscar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3+x_4=5$, ahora con $x_i\geq 0$, para $1\leq i\leq 4$. Utilizando, como antes, la técnica de <em>barras y estrellas</em>, sabemos que el mencionado número equivale al total de permutaciones con repetición de ocho elementos, donde uno de ellos se repite tres veces, mientras que el otro lo hace en cinco ocasiones, es decir,</p>
 
-<p>$$
+<p><span  class="math">\[
 PR_{8}^{3,5} = CR_{4,5} = \dbinom{8}{5} = \dfrac{8\cdot7\cdot6}{3!} = 56.
-$$</p>
+\]</span></p>
 
-<p>Por simetría, el resto de cardinales de los conjuntos $A_i\cap A_j$, con $1\leq i&lt;j\leq 4$ ascenderán al mismo valor. Como el orden en el que seleccionemos los conjuntos implicados no tiene relevancia y no existe posibilidad de repetir elemento alguno, en total su número será igual a la cantidad de combinaciones de cuatro elementos tomados de dos en dos, $C_{4,2}$, luego</p>
+<p>Por simetría, el resto de cardinales de los conjuntos $A_{i} \cap A_{j}$, con $1\leq i &lt; j \leq 4$ ascenderán al mismo valor. Como el orden en el que seleccionemos los conjuntos implicados no tiene relevancia y no existe posibilidad de repetir elemento alguno, en total su número será igual a la cantidad de combinaciones de cuatro elementos tomados de dos en dos, $C_{4,2}$, luego</p>
 
-<p>$$
-\sum_{1\leq i&lt;j\leq 4}{card(A_i\cap A_j)} = C_{4,2}\cdot PR_{8}^{3,5} = \dbinom{4}{2}\cdot 56 = 336.
-$$</p>
+<p><span  class="math">\[
+\sum_{1 \leq i < j \leq 4}{card(A_{i} \cap A_{j})} = C_{4,2} \cdot PR_{8}^{3,5} = \dbinom{4}{2}\cdot 56 = 336.
+\]</span></p>
 
-<p>A continuación, el cardinal de los conjuntos $A_i\cap A_j\cap A_k$, con $1\leq i&lt;j&lt;k\leq 4$ y el del conjunto $A_1\cap A_2\cap A_3\cap A_4$ será cero, pues si tres o más variables poseen un valor mayor o igual que diez, es imposible satisfacer la ecuación $x_1+x_2+x_3+x_4=25$ en los enteros no negativos. Por tanto, recapitulando,</p>
+<p>Acto seguido, el cardinal de los conjuntos $A_i\cap A_j\cap A_k$, con $1\leq i&lt;j&lt;k\leq 4$ y el del conjunto $A_1\cap A_2\cap A_3\cap A_4$ será cero, pues si tres o más variables poseen un valor mayor o igual que diez, es imposible satisfacer la ecuación $x_1+x_2+x_3+x_4=25$ en los enteros no negativos. Por tanto, recapitulando,</p>
 
-<p>$$
+<p><span  class="math">\[
 card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3} \cap \overline{A_4}) = 3276 - (3264 - 336) = 346
-$$</p>
+\]</span></p>
 
 <p>son los números naturales menores que $10000$ que cumplen que la suma de sus cifras es $25$.</p>
 
