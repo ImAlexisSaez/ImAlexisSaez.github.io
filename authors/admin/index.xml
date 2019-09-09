@@ -8132,8 +8132,8 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;ul&gt;
 &lt;li&gt;importaremos el módulo siguiendo la convención establecida, es decir, escribiendo &lt;code&gt;import numpy as np&lt;/code&gt;,&lt;/li&gt;
 &lt;li&gt;creamos una réplica de la anterior lista (que, en breve, empezaremos a llamar &lt;em&gt;array&lt;/em&gt;) utilizando la función &lt;code&gt;arange()&lt;/code&gt;, y&lt;/li&gt;
-&lt;li&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;li&gt;&lt;p&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 
@@ -8142,9 +8142,9 @@ test_array = np.arange(1001)
 %timeit np.sum(test_array)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
-100000 loops, best of 3: 5.02 µs per loop
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
+100000 loops, best of 3: 5.02 µs per loop&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Hemos reducido a la mitad el tiempo que precisa el sistema para realizar el cálculo numérico requerido. No obstante, quizá no logre impactarnos el hecho de pasar de 11 a 5 microsegundos. Intentemos forzar un tanto el anterior ejemplo incrementando de manera significativa el número de elementos.&lt;/p&gt;
 
@@ -9928,18 +9928,16 @@ head(names2)
 &lt;p&gt;Es posible que nuestro interés no se centre tanto en examinar tablas de datos, como texto propiamente dicho, sobretodo ahora que tan de moda está el análisis de sentimiento (para estudiar opiniones, discursos, etc.). La librería &lt;em&gt;readr&lt;/em&gt; pone a nuestra disposición un par de funciones que nos serán útiles en estos casos:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;read_lines()&lt;/code&gt;: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;read_lines()&lt;/code&gt;: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_lines
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;read_file()&lt;/code&gt;: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando &lt;code&gt;\n&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;read_file()&lt;/code&gt;: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando &lt;code&gt;\n&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_file
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;En el fichero &lt;code&gt;tweets.txt&lt;/code&gt; encontramos algunos &lt;em&gt;tuits&lt;/em&gt; correspondientes a la cuenta &lt;code&gt;@RealCarrotFacts&lt;/code&gt; (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.&lt;/p&gt;
 
@@ -12137,7 +12135,7 @@ f(1) =
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/qtIqKaDlqXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/qtIqKaDlqXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 </description>
@@ -12911,17 +12909,6 @@ inglés&lt;/p&gt;
 &lt;p&gt;Así pues, si la velocidad no ha sido un factor determinante a la hora de explicar el cambio de tecnología, ¿por qué migrar a &lt;em&gt;Hugo&lt;/em&gt;? Históricamente, &lt;em&gt;Ruby&lt;/em&gt; y sus &lt;em&gt;gemas&lt;/em&gt; (entre las que se encuentra &lt;em&gt;Jekyll&lt;/em&gt;) me han dado bastantes más quebraderos de cabeza de los recomendables por utilizar &lt;em&gt;Windows&lt;/em&gt;. El soporte oficial para este sistema operativo es más bien escaso y cualquier problema se convertía en una pequeña odisea en ocasiones ciertamente desquiciante.&lt;/p&gt;
 
 &lt;p&gt;Me apetecía simplemente un cambio, con la esperanza de pasar página y olvidar esas batallas pasadas. &lt;em&gt;Hugo&lt;/em&gt; es la alternativa a &lt;em&gt;Jekyll&lt;/em&gt; más popular y las primeras impresiones que me he llevado son muy buenas. No dudo que en un futuro próximo tenga que librar alguna que otra encarnizada pelea, pero espero que el hecho de estar aprendiendo una nueva tecnología compense con creces las penurias que este proceso tiene aparejadas.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://imalexissaez.github.io/authors/admin/</link>
-      <pubDate>Tue, 02 Jul 2019 00:00:01 +0100</pubDate>
-      <guid>https://imalexissaez.github.io/authors/admin/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Infinitos Contrastes&lt;/strong&gt; es una herramienta de aprendizaje en múltiples dimensiones. Su objetivo es posibilitar que el recorrido a través de las distintas enseñanzas se plantee de una manera activa, a partir de la transmisión de ideas o experiencias.&lt;/p&gt;
-
-&lt;p&gt;Mi educación e intereses condiciona evidentemente el trasfondo de esta página web, que refleja una constante batalla contra la &lt;em&gt;Hidra de Lerna&lt;/em&gt;: cada conocimiento nuevo adquirido orgina, al menos, dos inesperadas carencias que suplir, haciendo de este infinito viaje una experiencia maravillosa.&lt;/p&gt;
 </description>
     </item>
     

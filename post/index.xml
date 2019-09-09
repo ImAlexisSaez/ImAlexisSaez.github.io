@@ -8132,8 +8132,8 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;ul&gt;
 &lt;li&gt;importaremos el módulo siguiendo la convención establecida, es decir, escribiendo &lt;code&gt;import numpy as np&lt;/code&gt;,&lt;/li&gt;
 &lt;li&gt;creamos una réplica de la anterior lista (que, en breve, empezaremos a llamar &lt;em&gt;array&lt;/em&gt;) utilizando la función &lt;code&gt;arange()&lt;/code&gt;, y&lt;/li&gt;
-&lt;li&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;li&gt;&lt;p&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 
@@ -8142,9 +8142,9 @@ test_array = np.arange(1001)
 %timeit np.sum(test_array)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
-100000 loops, best of 3: 5.02 µs per loop
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
+100000 loops, best of 3: 5.02 µs per loop&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Hemos reducido a la mitad el tiempo que precisa el sistema para realizar el cálculo numérico requerido. No obstante, quizá no logre impactarnos el hecho de pasar de 11 a 5 microsegundos. Intentemos forzar un tanto el anterior ejemplo incrementando de manera significativa el número de elementos.&lt;/p&gt;
 
@@ -9928,18 +9928,16 @@ head(names2)
 &lt;p&gt;Es posible que nuestro interés no se centre tanto en examinar tablas de datos, como texto propiamente dicho, sobretodo ahora que tan de moda está el análisis de sentimiento (para estudiar opiniones, discursos, etc.). La librería &lt;em&gt;readr&lt;/em&gt; pone a nuestra disposición un par de funciones que nos serán útiles en estos casos:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;read_lines()&lt;/code&gt;: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;read_lines()&lt;/code&gt;: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_lines
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;read_file()&lt;/code&gt;: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando &lt;code&gt;\n&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;read_file()&lt;/code&gt;: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando &lt;code&gt;\n&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?read_file
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;En el fichero &lt;code&gt;tweets.txt&lt;/code&gt; encontramos algunos &lt;em&gt;tuits&lt;/em&gt; correspondientes a la cuenta &lt;code&gt;@RealCarrotFacts&lt;/code&gt; (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.&lt;/p&gt;
 
@@ -12137,7 +12135,7 @@ f(1) =
 
 
 &lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;//www.youtube.com/embed/qtIqKaDlqXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/qtIqKaDlqXo&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 </description>

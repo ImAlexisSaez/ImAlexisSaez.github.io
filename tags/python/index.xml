@@ -75,8 +75,8 @@
 &lt;ul&gt;
 &lt;li&gt;importaremos el módulo siguiendo la convención establecida, es decir, escribiendo &lt;code&gt;import numpy as np&lt;/code&gt;,&lt;/li&gt;
 &lt;li&gt;creamos una réplica de la anterior lista (que, en breve, empezaremos a llamar &lt;em&gt;array&lt;/em&gt;) utilizando la función &lt;code&gt;arange()&lt;/code&gt;, y&lt;/li&gt;
-&lt;li&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
+
+&lt;li&gt;&lt;p&gt;sumaremos sus elementos mediante la función &lt;code&gt;sum()&lt;/code&gt;.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
 
@@ -85,9 +85,9 @@ test_array = np.arange(1001)
 %timeit np.sum(test_array)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
-100000 loops, best of 3: 5.02 µs per loop
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The slowest run took 14.21 times longer than the fastest. This could mean that an intermediate result is being cached.
+100000 loops, best of 3: 5.02 µs per loop&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Hemos reducido a la mitad el tiempo que precisa el sistema para realizar el cálculo numérico requerido. No obstante, quizá no logre impactarnos el hecho de pasar de 11 a 5 microsegundos. Intentemos forzar un tanto el anterior ejemplo incrementando de manera significativa el número de elementos.&lt;/p&gt;
 
