@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/30/nos-vamos-al-cine/featured_huae3820d9cca7ddc7b74ec1701cbf6bec_222208_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@jeffgolenski" target="_blank">Jeff Golenski</a>, disponible en <a href="https://unsplash.com/photos/GA8KMclGoNw" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@jeffgolenski">Jeff Golenski</a>, disponible en <a href="https://unsplash.com/photos/GA8KMclGoNw">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,141 +574,103 @@
 
     <div class="article-style">
       <p><strong>Problema 47:</strong> Una persona ha comprado entradas para el cine para personas adultas por un precio de $640$ unidades monetarias (<em>um</em>) cada una y para menores de edad a $330$ <em>um</em>. Sabiendo que invirtió $7140$ <em>um</em> y que compró menos entradas de adultos que de menores, hallar el número de entradas que adquirió.</p>
-
 <hr>
-
 <p>Sean $x$ el número de entradas para personas adultas compradas e $y$ el número de entradas para menores de edad compradas, con $x,y\in\mathbb{N}$. Dados los precios del enunciado y la cantidad total invertida, planteamos la siguiente ecuación diofántica:</p>
-
-<p><span  class="math">\[
+<p>$$
 640x + 330y = 7140,
-\]</span></p>
-
+$$</p>
 <p>que es equivalente, simplificando por $10$, a</p>
-
-<p><span  class="math">\[
+<p>$$
 64x + 33y = 714.
-\]</span></p>
-
+$$</p>
 <p>Utilicemos el <em>Algoritmo de Euclides</em> para hallar el $mcd(64,33)$ y decidir así si la ecuación admite o no solución entera. Tenemos que:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-64 &= 33\cdot 1 + 31,\\
-33 &= 31\cdot 1 + 2,\\
-31 &= 2\cdot 15 + 1,\\
-2 &= 1\cdot 2,
+64 &amp;= 33\cdot 1 + 31,\<br>
+33 &amp;= 31\cdot 1 + 2,\<br>
+31 &amp;= 2\cdot 15 + 1,\<br>
+2 &amp;= 1\cdot 2,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego $mcd(64,33) = 1$, y como $1|714$, estamos en condiciones de asegurar que la ecuación diofántica admite solución entera. Como $714$ es un número ciertamente elevado, comencemos llevando a cabo el cambio de variable</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 714x^{\prime},\\
-y &= 714y^{\prime},
+x &amp;= 714x^{\prime},\<br>
+y &amp;= 714y^{\prime},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>de manera que la ecuación diofántica queda $64x^{\prime} + 33y^{\prime} = 1$ y nos invita a despejar $y^{\prime}$, por ser la variable cuyo coeficiente asociado es más reducido, de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime} = \dfrac{1-64x^{\prime}}{33}.
-\]</span></p>
-
+$$</p>
 <p>Ahora, como el valor que figura en el denominador de la igualdad anterior es $33$, a continuación, tendríamos que darle a $x^{\prime}$, de manera ordenada, valores del <em>menor sistema completo de restos módulo</em> $33$ hasta hallar una solución particular.</p>
-
 <p>No obstante, en lugar de llevar a cabo tan titánica labor, aprovecharemos las operaciones realizadas durante el <em>Algoritmo de Euclides</em> para descomponer la anterior fracción como sigue:</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime} = -x^{\prime} + \dfrac{1 - 31x^{\prime}}{33} = -x^{\prime} + y^{\prime\prime},
-\]</span></p>
-
+$$</p>
 <p>con</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime\prime} = \dfrac{1 - 31x^{\prime}}{33},
-\]</span></p>
-
+$$</p>
 <p>que equivale a $33y^{\prime\prime} = 1 - 31x^{\prime}$, de manera que ahora tendríamos que despejar $x^{\prime}$, quedando:</p>
-
-<p><span  class="math">\[
+<p>$$
 x^{\prime} = \dfrac{1-33y^{\prime\prime}}{31} = -y^{\prime\prime} + \dfrac{1-2y^{\prime\prime}}{31}=-y^{\prime\prime} + x^{\prime\prime},
-\]</span></p>
-
+$$</p>
 <p>con</p>
-
-<p><span  class="math">\[
+<p>$$
 x^{\prime\prime} = \dfrac{1-2y^{\prime\prime}}{31},
-\]</span></p>
-
+$$</p>
 <p>que equivale a $31x^{\prime\prime} = 1-2y^{\prime\prime}$, y despejando $y^{\prime\prime}$ tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime\prime} = \dfrac{1-31x^{\prime\prime}}{2}.
-\]</span></p>
-
+$$</p>
 <p>Tras aplicar en retiradas ocasiones la misma estrategia de descomposición, hemos alcanzado un valor razonable para el denominador de la anterior ecuación. Podemos así dar valores a $x^{\prime\prime}$, ya que únicamente tendríamos que probar $x^{\prime\prime} =0$, y $x^{\prime\prime} =1$ (que conforma el <em>menor sistema completo de restos módulo</em> $2$). Para $x^{\prime\prime} =0$, $y^{\prime\prime} \notin\mathbb{Z}$, pero para $x^{\prime\prime} =1$, $y^{\prime\prime} = -15$. Ahora,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x^{\prime} &= -y^{\prime\prime} + x^{\prime\prime} = 15+1 = 16,\\
-y^{\prime} &= -x^{\prime} + y^{\prime\prime} = -16 -15 = -31,\\
-x  &= 714x^{\prime} = 714\cdot 16 = 11424,\\
-y  &= 714y^{\prime} = 714\cdot(-31) = -22134, 
+x^{\prime} &amp;= -y^{\prime\prime} + x^{\prime\prime} = 15+1 = 16,\<br>
+y^{\prime} &amp;= -x^{\prime} + y^{\prime\prime} = -16 -15 = -31,\<br>
+x  &amp;= 714x^{\prime} = 714\cdot 16 = 11424,\<br>
+y  &amp;= 714y^{\prime} = 714\cdot(-31) = -22134, 
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>por lo que la solución particular queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x_0 &= 11424,\\
-y_0 &= -22134,
+x_0 &amp;= 11424,\<br>
+y_0 &amp;= -22134,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>mientras que la solución general es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x  &= 11424 + 33t,\\
-y  &= -22134 - 64t,
+x  &amp;= 11424 + 33t,\<br>
+y  &amp;= -22134 - 64t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t\in\mathbb{Z}$.</p>
-
 <p>Ahora que hemos resuelto la ecuación diofántica, centrémonos en sacar el número de entradas. Por un lado, en ambos casos debe tratarse de un número mayor o igual que cero, es decir, tanto $x\geq0$, como $y\geq0$. Además, nos dicen que compró menos entradas de adultos que de menores, es decir, que $x&lt;y$. Todo esto da lugar a las siguientes condiciones:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x  = 11424 + 33t&\geq0,\\
-y  = -22134 - 64t&\geq0,\\
-11424 + 33t &< -22134 - 64t,
+x  = 11424 + 33t&amp;\geq0,\<br>
+y  = -22134 - 64t&amp;\geq0,\<br>
+11424 + 33t &amp;&lt; -22134 - 64t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t\in\mathbb{Z}$. De la primera inecuación, se llega a que</p>
-
-<p><span  class="math">\[
+<p>$$
 t\geq -\dfrac{11424}{33},
-\]</span></p>
-
+$$</p>
 <p>luego $t\geq -346$. De la segunda inecuación, se llega a que</p>
-
-<p><span  class="math">\[
+<p>$$
 t\leq -\dfrac{22134}{64},
-\]</span></p>
-
+$$</p>
 <p>luego $t\leq -346$, con lo cual $t=346$, cantidad que, efectivamente, también verifica la tercera inecuación. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 11424 + 33\cdot(-346) = 6,\\
-y &= -22134 - 64\cdot(-346) = 10,
+x &amp;= 11424 + 33\cdot(-346) = 6,\<br>
+y &amp;= -22134 - 64\cdot(-346) = 10,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir, compró $6$ entradas para adultos y $10$ entradas para menores de edad.</p>
 
     </div>
@@ -974,7 +943,7 @@ y &= -22134 - 64\cdot(-346) = 10,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1041,7 +1010,7 @@ y &= -22134 - 64\cdot(-346) = 10,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1057,7 +1026,7 @@ y &= -22134 - 64\cdot(-346) = 10,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

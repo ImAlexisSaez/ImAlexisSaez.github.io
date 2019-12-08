@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/02/02/un-primer-contacto-con-ecuaciones-diofanticas-iii/featured_hu3ef98e8ae8c90702018e40d257d7dd30_120463_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@alexanderslash" target="_blank">Alexander Slash</a>, disponible en <a href="https://unsplash.com/photos/reYDl88Nah0" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@alexanderslash">Alexander Slash</a>, disponible en <a href="https://unsplash.com/photos/reYDl88Nah0">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,60 +574,46 @@
 
     <div class="article-style">
       <p><strong>Problema 48:</strong> Halla las soluciones enteras de la ecuación $x^2 - y^2=36$.</p>
-
 <hr>
-
 <p>Al ser $36$ par y múltiplo de $4$, $36 = 2^2 \cdot 3^2$, estamos en condiciones de asegurar que la ecuación diofántica planteada admite solución entera. Escribimos $x^2 - y^2=36$ como $(x+y)(x-y)=36$, y consideramos</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-36 &= 36\cdot1 \\
-&= 18\cdot2 \\
-&= 12\cdot3 \\
-&= 9\cdot4 \\
-&= 6\cdot6 \\
-&= 4\cdot9 \\
-&= 3\cdot12 \\
-&= 2\cdot18 \\
-&= 1\cdot36,
+36 &amp;= 36\cdot1 \<br>
+&amp;= 18\cdot2 \<br>
+&amp;= 12\cdot3 \<br>
+&amp;= 9\cdot4 \<br>
+&amp;= 6\cdot6 \<br>
+&amp;= 4\cdot9 \<br>
+&amp;= 3\cdot12 \<br>
+&amp;= 2\cdot18 \<br>
+&amp;= 1\cdot36,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>descartando automáticamente aquellos casos en los que la paridad de ambos términos no coincide.</p>
-
 <p>Así, para $36 = 18\cdot2$, tenemos el sistema de ecuaciones lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x+y &= 18,\\
-x-y &=  2,
+x+y &amp;= 18,\<br>
+x-y &amp;=  2,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con solución $x = 10$ e $y = 8$. Para la descomposición $36 = (-18)\cdot(-2)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-10)$ e $y = (-8)$.</p>
-
 <p>A continuación, si $36 = 6\cdot6$, tenemos el sistema de ecuaciones lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x+y &= 6,\\
-x-y &= 6,
+x+y &amp;= 6,\<br>
+x-y &amp;= 6,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con solución $x = 6$ e $y = 0$. Para la descomposición $36 = (-6)\cdot(-6)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-6)$ e $y = 0$.</p>
-
 <p>Acto seguido, si $36 = 2\cdot18$, tenemos el sistema de ecuaciones lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x+y &=  2,\\
-x-y &= 18,
+x+y &amp;=  2,\<br>
+x-y &amp;= 18,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con solución $x = 10$ e $y = (-8)$. Para la descomposición $36 = (-2)\cdot(-18)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-10)$ e $y = 8$.</p>
-
 <p>Queda así resuelta la ecuación diofántica planteada en el enunciado del ejercicio.</p>
 
     </div>
@@ -893,7 +886,7 @@ x-y &= 18,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -960,7 +953,7 @@ x-y &= 18,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -976,7 +969,7 @@ x-y &= 18,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

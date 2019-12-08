@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,56 +753,40 @@
           <h1>69. Expresiones regulares I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/qpwn3gRtxCo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, comenzaremos el estudio de las <strong>expresiones regulares</strong> en <em>Python</em>, que son una secuencia de caracteres que forman un patrón de búsqueda y sirven para el trabajo y procesamiento de texto. Por ejemplo, podemos estar interesados, entre otras tareas, en:</p>
-
 <ul>
 <li>Buscar un texto que se ajuste a un formato determinado (correo electrónico).</li>
 <li>Buscar si existe o no una cadena de caracteres dentro de un texto.</li>
 <li>Contar el número de coincidencias dentro de un texto.</li>
 </ul>
-
-<p>Conviene que consultemos la <a href="https://docs.python.org/3/library/re.html" target="_blank">documentación oficial</a> del módulo asociado a las expresiones regulares, <code>re</code>, en <em>Python</em>.</p>
-
+<p>Conviene que consultemos la <a href="https://docs.python.org/3/library/re.html">documentación oficial</a> del módulo asociado a las expresiones regulares, <code>re</code>, en <em>Python</em>.</p>
 <p>A continuación, veamos algunos ejemplos sencillos. Empecemos ilustrando el uso del método <code>search()</code>, que nos permite buscar una cadena de texto concreta y nos ofrece su localización:</p>
-
 <pre><code class="language-python">import re
 
 cadena = &quot;Vamos a aprender expresiones regulares.&quot;
 
 print(re.search(&quot;aprender&quot;, cadena))
 </code></pre>
-
 <pre><code class="language-bash">&lt;re.Match object; span=(8, 16), match='aprender'&gt;
 </code></pre>
-
 <p>Apreciamos que la ejecución nos devuelve un objeto, de tipo <code>Match</code>, que en el intervalo de caracteres <code>(8, 16)</code> ha encontrado la cadena de texto de interés, <code>aprender</code>.</p>
-
 <p>Ahora bien, si insertamos una cadena de texto que no figure en la variable <code>cadena</code>, el resultado que arroja la ejecución del programa es <code>None</code>:</p>
-
 <pre><code class="language-python">import re
 
 cadena = &quot;Vamos a aprender expresiones regulares.&quot;
 
 print(re.search(&quot;Python&quot;, cadena))
 </code></pre>
-
 <pre><code class="language-bash">None
 </code></pre>
-
 <p>Obviamente, podemos pasar variables a la función <code>search()</code>:</p>
-
 <pre><code class="language-python">import re
 
 cadena = &quot;Vamos a aprender expresiones regulares.&quot;
@@ -810,12 +798,9 @@ if re.search(texto_buscar, cadena) is not None:
 else:
     print(&quot;Texto no encontrado.&quot;)
 </code></pre>
-
 <pre><code class="language-bash">Texto encontrado.
 </code></pre>
-
 <p>Hemos encontrado el texto, efectivamente, pero, ¿en qué carácter comienza? Utilizando el método <code>start()</code> hallamos la respuesta:</p>
-
 <pre><code class="language-python">import re
 
 cadena = &quot;Vamos a aprender expresiones regulares.&quot;
@@ -826,28 +811,19 @@ texto_encontrado = re.search(texto_buscar, cadena)
 
 print(texto_encontrado.start())
 </code></pre>
-
 <pre><code class="language-bash">8
 </code></pre>
-
 <p>Análogamente,</p>
-
 <pre><code class="language-python">print(texto_encontrado.end())
 </code></pre>
-
 <pre><code class="language-bash">16
 </code></pre>
-
 <p>Al hilo de las acciones anteriores, el método <code>span()</code> nos devuelve una tupla con los valores mostrados arriba:</p>
-
 <pre><code class="language-python">print(texto_encontrado.span())
 </code></pre>
-
 <pre><code class="language-bash">(8, 16)
 </code></pre>
-
 <p>Finalmente, examinemos la utilidad del método <code>findall()</code>, para lo cual hemos de ampliar un poco la cadena de texto original suministrada:</p>
-
 <pre><code class="language-python">import re
 
 cadena = '''
@@ -858,12 +834,9 @@ texto_buscar = &quot;Python&quot;
 
 print(re.findall(texto_buscar, cadena))
 </code></pre>
-
 <pre><code class="language-bash">['Python', 'Python']
 </code></pre>
-
 <p>Accedemos a una lista que contiene el texto de interés, tantas veces como repeticiones figuren en él. Empleando ahora la función <code>len()</code>:</p>
-
 <pre><code class="language-python">import re
 
 cadena = '''
@@ -874,13 +847,10 @@ texto_buscar = &quot;Python&quot;
 
 print(len(re.findall(texto_buscar, cadena)))
 </code></pre>
-
 <pre><code class="language-bash">2
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/69/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/69/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -931,7 +901,7 @@ print(len(re.findall(texto_buscar, cadena)))
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -979,7 +949,7 @@ print(len(re.findall(texto_buscar, cadena)))
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1051,7 +1021,7 @@ print(len(re.findall(texto_buscar, cadena)))
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

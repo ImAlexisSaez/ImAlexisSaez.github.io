@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/03/23/comenzando-con-la-combinatoria-iv/featured_hufe75b81d0ddf5ffb5fe5c8dd72abf928_57677_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@lanceanderson" target="_blank">Lance Anderson</a>, disponible en <a href="https://unsplash.com/photos/2_xN1-zKyLo" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@lanceanderson">Lance Anderson</a>, disponible en <a href="https://unsplash.com/photos/2_xN1-zKyLo">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,35 +574,24 @@
 
     <div class="article-style">
       <p><strong>Problema 62:</strong> Calcula el número de soluciones enteras de la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 x_1+x_2+\cdots+x_8=24,
-\]</span></p>
-
+$$</p>
 <p>donde $x_i\geq 2$, para $1\leq i\leq 8$.</p>
-
 <hr>
-
 <p>A diferencia del ejercicio anterior, aquí no buscamos hallar el total de soluciones enteras no negativas de la ecuación, pues nos indican que $x_i\geq 2$, para todo $1\leq i\leq 8$. No obstante, podemos razonar de la siguiente forma: asumamos que disponemos de ocho urnas indistinguibles entre sí y almacenemos dos bolas en cada una de ellas para empezar. De esta manera, quedarán $24 - 2\cdot8 = 8$ bolas idénticas por introducir en las urnas, acción que podemos llevar a cabo de</p>
-
-<p><span  class="math">\[
+<p>$$
 PR_{15}^{8,7} = \dfrac{15!}{8!\cdot 7!} = \dfrac{15\cdot14\cdot13\cdot12\cdot11\cdot10\cdot9}{7!} = 6435
-\]</span></p>
-
+$$</p>
 <p>maneras posibles. A este resultado hemos arribado, recordemos, dado que son necesarias siete <em>barras</em>, para representar las ocho urnas sobre la recta real, y hemos de almacenar ocho <em>estrellas</em> en los huecos que dicha configuración produce. Así pues, son $6435$ el número de soluciones enteras para la ecuación planteada, considerando que $x_i\geq 2$, para todo $1\leq i\leq 8$.</p>
-
 <p>Si nos damos cuenta, simplemente hemos ignorado aquella parte del problema que sabemos está fija. Técnicamente, esta acción es equivalente a llevar a cabo un cambio de variable del tipo</p>
-
-<p><span  class="math">\[
+<p>$$
 x_i = x^{\prime}_i + 2,
-\]</span></p>
-
+$$</p>
 <p>para $1\leq i\leq 8$, que transforma la ecuación inicial planteada en</p>
-
-<p><span  class="math">\[
+<p>$$
 (x^{\prime}_1 + 2) + (x^{\prime}_2 + 2) + \cdots + (x^{\prime}_8+2) = 24,
-\]</span></p>
-
+$$</p>
 <p>que es equivalente a $x^{\prime}_1 +x^{\prime}_2 +\cdots+x^{\prime}_8 =8$, con la salvedad de que ahora $x^{\prime}_i\geq 0$, para todo $1\leq i\leq 8$ y entonces ahora basta con aplicar los métodos que utilizamos en ejercicios anteriores.</p>
 
     </div>
@@ -870,7 +866,7 @@ x_i = x^{\prime}_i + 2,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -937,7 +933,7 @@ x_i = x^{\prime}_i + 2,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -953,7 +949,7 @@ x_i = x^{\prime}_i + 2,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

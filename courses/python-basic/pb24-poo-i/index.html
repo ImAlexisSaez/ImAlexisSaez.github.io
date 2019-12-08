@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -193,13 +193,14 @@ Entre sus principales desventajas encontramos:
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -207,6 +208,12 @@ Entre sus principales desventajas encontramos:
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -731,17 +738,15 @@ Entre sus principales desventajas encontramos:
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a>
-<ul>
-<li><a href="#programación-orientada-a-procedimientos">Programación orientada a procedimientos</a></li>
-<li><a href="#programación-orientada-a-objetos">Programación orientada a objetos</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a>
+      <ul>
+        <li><a href="#programacin-orientada-a-procedimientos">Programación orientada a procedimientos</a></li>
+        <li><a href="#programacin-orientada-a-objetos">Programación orientada a objetos</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 
       
@@ -756,31 +761,21 @@ Entre sus principales desventajas encontramos:
           <h1>24. Programación orientada a objetos I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/5Ohme4A2Weg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p><em>Python</em> es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:</p>
-
 <ol>
 <li>Programación orientada a procedimientos.</li>
 <li>Programación orientada a objetos.</li>
 </ol>
-
-<h3 id="programación-orientada-a-procedimientos">Programación orientada a procedimientos</h3>
-
+<h3 id="programacin-orientada-a-procedimientos">Programación orientada a procedimientos</h3>
 <p>Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;</p>
-
 <p>Entre sus principales desventajas encontramos:</p>
-
 <ul>
 <li>Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).</li>
 <li>En aplicaciones complejas, el código resulta difícil de descifrar.</li>
@@ -789,19 +784,14 @@ Entre sus principales desventajas encontramos:
 <li>Aparición frecuente de <strong>código espaguetti</strong> (saltos en el flujo de ejecución del programa).</li>
 <li>Es difícil de depurar el código por otros programadores en caso de necesidad o error.</li>
 </ul>
-
-<h3 id="programación-orientada-a-objetos">Programación orientada a objetos</h3>
-
+<h3 id="programacin-orientada-a-objetos">Programación orientada a objetos</h3>
 <p>La programación orientada a objetos consiste en trasladar el comportamiento que tienen los objetos en la vida real al código de programación. Los objetos tienen un estado, un comportamiento (¿qué puede hacer?) y unas propiedades.</p>
-
-<p>Por ejemplo, pensemos en el objeto &ldquo;coche&rdquo;:</p>
-
+<p>Por ejemplo, pensemos en el objeto &lsquo;&lsquo;coche&rsquo;':</p>
 <ul>
 <li>¿Cuál es el estado de un coche? Puede estar parado, circulando, aparcado&hellip;</li>
 <li>¿Qué propiedades tiene un coche? Tiene un color, un peso, un tamaño&hellip;</li>
 <li>¿Qué comportamiento tiene un coche? Puede arrancar, frenar, acelerar, girar&hellip;</li>
 </ul>
-
 <table>
 <thead>
 <tr>
@@ -809,33 +799,26 @@ Entre sus principales desventajas encontramos:
 <th>Coche</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Propiedades (atributos)</td>
 <td>Color, peso, alto, largo&hellip;</td>
 </tr>
-
 <tr>
 <td>Comportamiento</td>
 <td>Arrancar, frenar, girar, acelerar&hellip;</td>
 </tr>
 </tbody>
 </table>
-
 <p>Algunos ejemplos de lenguajes de programación que emplean este paradigma son: C++, Java, VisualNet&hellip;</p>
-
 <p>Entre las principales ventajas encontramos:</p>
-
 <ul>
-<li>Los programas están divididos en &ldquo;trozos&rdquo;, &ldquo;partes&rdquo;, &ldquo;módulos&rdquo; o &ldquo;clases&rdquo;, es decir, existe <strong>modularización</strong>.</li>
+<li>Los programas están divididos en &lsquo;&lsquo;trozos&rsquo;', &lsquo;&lsquo;partes&rsquo;', &lsquo;&lsquo;módulos&rsquo;&rsquo; o &lsquo;&lsquo;clases&rsquo;', es decir, existe <strong>modularización</strong>.</li>
 <li>El código es muy reutilizable. Aparece en el concepto de <strong>herencia</strong>.</li>
 <li>Si existen fallos en alguna línea del código, el programa es posible que continue con su funcionamiento, debido al <strong>control de excepciones</strong>.</li>
 <li>Surge el concepto de <strong>encapsulamiento</strong>.</li>
 </ul>
-
 <p>El vocabulario más frecuente de este paradigma de programación incluye palabras o expresiones como:</p>
-
 <ul>
 <li>Clase.</li>
 <li>Objeto.</li>
@@ -895,7 +878,7 @@ Entre sus principales desventajas encontramos:
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -943,7 +926,7 @@ Entre sus principales desventajas encontramos:
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1015,7 +998,7 @@ Entre sus principales desventajas encontramos:
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, estudiaremos la función map(), que, como filter(), también forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en Python el paradigma de programación funcional.
+  <meta name="description" content="Vídeo   Notas personales En esta lección, estudiaremos la función map(), que, como filter(), también forma parte de un conjunto de funciones conocidas como &lsquo;&lsquo;de orden superior&rsquo;&rsquo; y nos permiten utilizar en Python el paradigma de programación funcional.
 La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map() aplica una función a cada elemento de un objeto de tipo iterable (listas, tuplas&hellip;) devolviendo a su vez un objeto de tipo iterable que contiene los resultados de dicha aplicación.">
 
   
@@ -124,7 +124,7 @@ La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map
   <meta property="og:site_name" content="Infinitos Contrastes">
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb68-map/">
   <meta property="og:title" content="68. La función map | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, estudiaremos la función map(), que, como filter(), también forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en Python el paradigma de programación funcional.
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, estudiaremos la función map(), que, como filter(), también forma parte de un conjunto de funciones conocidas como &lsquo;&lsquo;de orden superior&rsquo;&rsquo; y nos permiten utilizar en Python el paradigma de programación funcional.
 La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map() aplica una función a cada elemento de un objeto de tipo iterable (listas, tuplas&hellip;) devolviendo a su vez un objeto de tipo iterable que contiene los resultados de dicha aplicación."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
@@ -189,13 +189,14 @@ La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,24 +753,16 @@ La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, map
           <h1>68. La función map</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/4dkjpHI6vpA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
-<p>En esta lección, estudiaremos la función <code>map()</code>, que, como <code>filter()</code>, también forma parte de un conjunto de funciones conocidas como &ldquo;de orden superior&rdquo; y nos permiten utilizar en <em>Python</em> el paradigma de <strong>programación funcional</strong>.</p>
-
+<p>En esta lección, estudiaremos la función <code>map()</code>, que, como <code>filter()</code>, también forma parte de un conjunto de funciones conocidas como &lsquo;&lsquo;de orden superior&rsquo;&rsquo; y nos permiten utilizar en <em>Python</em> el paradigma de <strong>programación funcional</strong>.</p>
 <p>La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, <code>map()</code> aplica una función a cada elemento de un objeto de tipo iterable (listas, tuplas&hellip;) devolviendo a su vez un objeto de tipo iterable que contiene los resultados de dicha aplicación.</p>
-
 <p>Retomemos la clase definida en la lección anterior, junto con la lista de empleados generada:</p>
-
 <pre><code class="language-python">class Empleado:
     def __init__(self, nombre, cargo, salario):
         self.nombre = nombre
@@ -785,11 +781,8 @@ lista_empleados = [
     Empleado(&quot;Mario&quot;, &quot;Botones&quot;, 1000)
 ]
 </code></pre>
-
 <p><em>Nota</em>: hemos modificado los salarios para que sus cantidades sean mensuales, en lugar de las anuales declaradas en la lección anterior.</p>
-
 <p>Imaginemos ahora que todos los empleados recibien un extra monetario en forma de comisión, que hemos de agregar a su salario mensual.</p>
-
 <pre><code class="language-python">def calcula_comision(empleado):
     empleado.salario *= 1.03
     return empleado
@@ -799,16 +792,13 @@ lista_empleados_comision = map(calcula_comision, lista_empleados)
 
 [print(e) for e in lista_empleados_comision]
 </code></pre>
-
 <pre><code class="language-bash">Juan trabaja como Director y cobra 6901.0 €.
 Ana trabaja como Presidenta y cobra 7725.0 €.
 Antonio trabaja como Administrativo y cobra 1236.0 €.
 Sara trabaja como Secretaria y cobra 1287.5 €.
 Mario trabaja como Botones y cobra 1030.0 €.
 </code></pre>
-
 <p>¿Y si queremos aplicar la comisión solamente a aquellos trabajadores que tengan un salario inferior a 3000 euros?</p>
-
 <pre><code class="language-python">def calcula_comision(empleado):
     if empleado.salario &lt;= 3000:
         empleado.salario *= 1.03
@@ -819,17 +809,14 @@ lista_empleados_comision = map(calcula_comision, lista_empleados)
 
 [print(e) for e in lista_empleados_comision]
 </code></pre>
-
 <pre><code class="language-bash">Juan trabaja como Director y cobra 6700 €.
 Ana trabaja como Presidenta y cobra 7500 €.
 Antonio trabaja como Administrativo y cobra 1236.0 €.
 Sara trabaja como Secretaria y cobra 1287.5 €.
 Mario trabaja como Botones y cobra 1030.0 €.
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/68/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/68/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -880,7 +867,7 @@ Mario trabaja como Botones y cobra 1030.0 €.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -928,7 +915,7 @@ Mario trabaja como Botones y cobra 1030.0 €.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1000,7 +987,7 @@ Mario trabaja como Botones y cobra 1030.0 €.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

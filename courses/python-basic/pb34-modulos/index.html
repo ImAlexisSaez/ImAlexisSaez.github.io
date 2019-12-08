@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,24 +753,16 @@ Sirve para organizar y reutilizar el código (modularización y reutilización).
           <h1>34. Módulos</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/t93x-vnFvP4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Un <strong>módulo</strong> es un archivo con extensión <code>.py</code>, <code>.pyc</code> (Python compilado) o fichero escrito en <em>C</em> para <em>CPython</em>, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.</p>
-
 <p>Sirve para organizar y reutilizar el código (<strong>modularización</strong> y <strong>reutilización</strong>). Se genera uno creando un archivo con extensión <code>.py</code> (o <code>.pyc</code> o archivo en C) y guardándolo donde nos interese.</p>
-
-<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
-
+<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
 <pre><code class="language-python">def sumar(op1, op2):
     print(&quot;El resultado de la suma es:&quot;, op1 + op2)
 
@@ -778,9 +774,7 @@ def restar(op1, op2):
 def multiplicar(op1, op2):
     print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
 </code></pre>
-
 <p>Ahora, generamos otro archivo, <code>script_1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
-
 <pre><code class="language-python">import modulo_matematicas as modulo
 
 modulo.sumar(5, 7)
@@ -789,37 +783,28 @@ modulo.restar(9, 5)
 
 modulo.multiplicar(4, 9)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 12
 El resultado de la resta es: 4
 El resultado de la multiplicación es: 36
 </code></pre>
-
 <p>Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción <code>as</code>, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.</p>
-
 <p>Una alternativa a esta estrategia la encontramos en el fichero <code>script_2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
-
 <pre><code class="language-python">from modulo_matematicas import sumar
 
 sumar(5, 7)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 12
 </code></pre>
-
 <p>En el bloque de código anterior, únicamente hemos importado la función <code>sumar()</code> de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
-
 <pre><code class="language-python">from modulo_matematicas import sumar, restar
 
 sumar(5, 7)
 
 restar(12, 6)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 12
 El resultado de la resta es: 6
 </code></pre>
-
 <pre><code class="language-python">from modulo_matematicas import *
 
 sumar(5, 7)
@@ -828,16 +813,12 @@ restar(12, 6)
 
 multiplicar(12, 12)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 12
 El resultado de la resta es: 6
 El resultado de la multiplicación es: 144
 </code></pre>
-
 <p>No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter <code>*</code> provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.</p>
-
 <p>Creemos un módulo, <code>modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
-
 <pre><code class="language-python">class Vehiculo():
     def __init__(self, marca, modelo):
         self.marca = marca
@@ -890,29 +871,22 @@ class VehiculoElec(Vehiculo):
     def cargar_energia(self):
         self.cargando = True
 </code></pre>
-
 <p>Y ahora, en el fichero <code>script_5.py</code> tecleamos:</p>
-
 <pre><code class="language-python">from modulo_vehiculos import *
 
 mi_coche = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
 mi_coche.estado()
 </code></pre>
-
 <pre><code class="language-bash">Marca: Mazda 
 Modelo: MX5 
 En marcha: False 
 Acelerando: False 
 Frenando: False
 </code></pre>
-
 <p><em>Python</em> busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el <code>syspath</code> (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de <em>Python</em>).</p>
-
 <p>Si no tenemos los módulos en ninguna de ambas ubicaciones, <em>Python</em> arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de <strong>paquetes</strong> en la próxima lección.</p>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -963,7 +937,7 @@ Frenando: False
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1011,7 +985,7 @@ Frenando: False
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1083,7 +1057,7 @@ Frenando: False
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

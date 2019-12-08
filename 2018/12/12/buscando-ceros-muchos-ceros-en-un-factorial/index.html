@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/12/buscando-ceros-muchos-ceros-en-un-factorial/featured_hu271a90c06c1a4f6454ef8d8593487d2a_248355_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@asoggetti" target="_blank">asoggetti</a>, disponible en <a href="https://unsplash.com/photos/wH3POmZAsio" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@asoggetti">asoggetti</a>, disponible en <a href="https://unsplash.com/photos/wH3POmZAsio">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,37 +574,28 @@
 
     <div class="article-style">
       <p><strong>Problema 33:</strong></p>
-
 <ul>
 <li>(a) ¿En cuántos ceros acaba el número $1000!$?</li>
 <li>(b) Demuestra que $1000!$ no es divisible por $2^{995}$,</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado (a), nuestra labor consistiría en contar el número de dieces que podemos encontrar en la expresión de $1000! = 1\cdot2\cdot3\cdots999\cdot1000$. No estamos en condiciones de emplear directamente la <em>Fórmula de Legendre</em>, puesto que $10$ no es un número primo, pero $10=2\cdot5$, de manera que nuestra tarea se reduce a buscar el número de veces que figura $5$ en la factorización en números primos de $1000!$ (porque $2$ aparecerá con mayor frecuencia, al ser menor que $5$, por ello nos interesa solamente hallar el número de cincos).</p>
-
 <p>Así, aplicando la mencionada fórmula,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-v_5(1000!) &= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\\
-&= 200 + 40 + 8 + 1 = 249,
+v_5(1000!) &amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\<br>
+&amp;= 200 + 40 + 8 + 1 = 249,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir, $1000!$ acaba en $249$ ceros.</p>
-
 <p>Para el apartado (b), quizá de forma un tanto rebuscada, simplemente nos preguntan por el número de veces que aparece $2$ en la factorización en números primos de $1000!$, puesto que tal valor nos permitirá verificar la propiedad enunciada. Aplicando, de nuevo, la <em>Fórmula de Legendre</em>, tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-v_2(1000!) &= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\\
-&= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \\
-&= 994,
+v_2(1000!) &amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\<br>
+&amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \<br>
+&amp;= 994,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego $2^{994}|1000!$, pero $2^{995}\nmid 1000!$, como queríamos demostrar.</p>
 
     </div>
@@ -872,7 +870,7 @@ v_2(1000!) &= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -939,7 +937,7 @@ v_2(1000!) &= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -955,7 +953,7 @@ v_2(1000!) &= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

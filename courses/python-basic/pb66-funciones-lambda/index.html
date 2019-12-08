@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@ Cualquier tarea que llevemos a cabo con una función lambda se puede desarrollar
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ Cualquier tarea que llevemos a cabo con una función lambda se puede desarrollar
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ Cualquier tarea que llevemos a cabo con una función lambda se puede desarrollar
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,43 +753,31 @@ Cualquier tarea que llevemos a cabo con una función lambda se puede desarrollar
           <h1>66. Funciones lambda</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/tfYLcHbjc_A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, estudiaremos las funciones <em>lambda</em>. Una función <strong>lambda</strong> es una función anónima, y se utilizan en <em>Python</em> a la hora de programar para abreviar, ya que aligera la sintaxis del código. Además, no ocupan lugar en el espacio de nombres asociado a las funciones de una aplicación.</p>
-
 <p>Cualquier tarea que llevemos a cabo con una función <em>lambda</em> se puede desarrollar mediante una función normal, pero no así a la inversa (sobre todo cuando su lógica es compleja).</p>
-
 <p>Por ejemplo, para calcular el área de un triángulo, podemos construir la función:</p>
-
 <pre><code class="language-python">def area_triangulo(b, h):
     return b * h / 2
 </code></pre>
-
 <pre><code class="language-python">for b in range(1, 10, 5):
     for h in range(1, 10, 5):
         print(
             f&quot;El área del triángulo de base {b} y altura {h} es {area_triangulo(b, h)}.&quot;
         )
 </code></pre>
-
 <pre><code class="language-bash">El área del triángulo de base 1 y altura 1 es 0.5.
 El área del triángulo de base 1 y altura 6 es 3.0.
 El área del triángulo de base 6 y altura 1 es 3.0.
 El área del triángulo de base 6 y altura 6 es 18.0.
 </code></pre>
-
 <p>No obstante, una función tan sencilla puede ser abreviada como una función <em>lambda</em>.</p>
-
 <pre><code class="language-python">area_triangulo = lambda b, h: b * h / 2
 
 for b in range(1, 10, 5):
@@ -794,26 +786,19 @@ for b in range(1, 10, 5):
             f&quot;El área del triángulo de base {b} y altura {h} es {area_triangulo(b, h)}.&quot;
         )
 </code></pre>
-
 <pre><code class="language-bash">El área del triángulo de base 1 y altura 1 es 0.5.
 El área del triángulo de base 1 y altura 6 es 3.0.
 El área del triángulo de base 6 y altura 1 es 3.0.
 El área del triángulo de base 6 y altura 6 es 18.0.
 </code></pre>
-
 <p><em>Nota</em>: las funciones <em>lambda</em>, generalmente, no se asignan a variables. En tales casos, conviene hacer uso de la instrucción <code>def</code> y definir una función tal y como estamos habituados.</p>
-
-<p>Usadas &ldquo;al vuelo&rdquo;, su sintaxis queda como sigue:</p>
-
+<p>Usadas &lsquo;&lsquo;al vuelo&rsquo;', su sintaxis queda como sigue:</p>
 <pre><code class="language-python">print(&quot;El cubo de 3 es &quot; + str((lambda x:x**3) (3)))
 </code></pre>
-
 <pre><code class="language-bash">El cubo de 3 es 27
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/66/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/66/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -864,7 +849,7 @@ El área del triángulo de base 6 y altura 6 es 18.0.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -912,7 +897,7 @@ El área del triángulo de base 6 y altura 6 es 18.0.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -984,7 +969,7 @@ El área del triángulo de base 6 y altura 6 es 18.0.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

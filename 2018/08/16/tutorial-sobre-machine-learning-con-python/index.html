@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/16/tutorial-sobre-machine-learning-con-python/featured_hu8867c585abbcaa06452b97e0e07617ea_128185_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@salty_morning" target="_blank">Maria Krasnova</a>, disponible en <a href="https://unsplash.com/photos/ju1OVy2SB7k" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@salty_morning">Maria Krasnova</a>, disponible en <a href="https://unsplash.com/photos/ju1OVy2SB7k">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -527,109 +534,121 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p>¿Te has quedado sin planes para el fin de semana? Aunque tu lista de tareas pendientes y, generalmente, poco atractivas parezca haber crecido de manera exponencial en los últimos tiempos, ¿el cuerpo te pide algo distinto?</p>
-
+      <p>¿Te has quedado sin planes para el fin de semana? Aunque tu lista de tareas pendientes y, generalmente, poco atractivas parezca haber crecido de manera exponencial en los últimos tiempos, ¿el cuerpo te pide algo distinto?</p>
 <p>¿Qué tal invertir las próximas seis horas y media de tu vida disfrutando de un tutorial sobre <em>Machine Learning</em> con <em>Python</em>? Suena interesante, ¿verdad? Al menos es así en esta especie de universo paralelo donde parece que vivo últimamente.</p>
-
-<p>En la cuenta de <em>YouTube</em> asociada a <a href="https://www.youtube.com/user/EnthoughtMedia" target="_blank">Enthought</a>, creadores de la conocida distribución <em>Canopy</em> para <em>Python</em>, ha aparecido recientemente una <a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf" target="_blank">lista de reproducción</a> que alberga los tutoriales y charlas correspondientes a la última convención <em>SciPy</em>: &ldquo;SciPy 2017: Scientific Computing with Python Conference&rdquo;.</p>
-
+<p>En la cuenta de <em>YouTube</em> asociada a <a href="https://www.youtube.com/user/EnthoughtMedia">Enthought</a>, creadores de la conocida distribución <em>Canopy</em> para <em>Python</em>, ha aparecido recientemente una <a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf">lista de reproducción</a> que alberga los tutoriales y charlas correspondientes a la última convención <em>SciPy</em>: &ldquo;SciPy 2017: Scientific Computing with Python Conference&rdquo;.</p>
 <p>Aquel al que hacía referencia en el primer párrafo estuvo dividido en dos sesiones, a las que podemos acceder directamente a través de los siguientes enlaces:</p>
-
 <ul>
-<li><a href="https://youtu.be/2kT6QOVSgSg" target="_blank">Machine Learning with scikit learn Part One - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
-<li><a href="https://youtu.be/WLYzSas511I" target="_blank">Machine Learning with scikit learn Part Two - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
+<li><a href="https://youtu.be/2kT6QOVSgSg">Machine Learning with scikit learn Part One - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
+<li><a href="https://youtu.be/WLYzSas511I">Machine Learning with scikit learn Part Two - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
 </ul>
-
 <p>No obstante, antes de lanzarte de cabeza a su visualización, te recomendaría adoptases una actitud de aprendizaje activo para un mayor aprovechamiento. Es un tutorial bastante práctico, que se apoya en el uso de numerosos <em>Jupyter Notebooks</em> que también tenemos a nuestra disposición sin coste alguno. ¿Por qué no experimentar personalmente con el código para así reforzar las ideas vertidas y el uso de distintos algoritmos?</p>
-
 <p>La única pega que presenta esta aproximación al tutorial reside en que nuestro equipo debe cumplir una serie de requisitos, que exploraremos rápidamente en la siguiente sección.</p>
-
-<h2 id="instalación-de-las-herramientas-asociadas">Instalación de las herramientas asociadas</h2>
-
+<h2 id="instalacin-de-las-herramientas-asociadas">Instalación de las herramientas asociadas</h2>
 <p>En función de los distintos programas que ya estén instalados en nuestro sistema, el paseo por el siguiente listado nos llevará más o menos tiempo:</p>
-
 <ol>
-<li><p>Utilizando nuestro navegador favorito, dirijámonos en primer lugar al <a href="https://github.com/amueller/scipy-2017-sklearn" target="_blank">repositorio</a> en <em>GitHub</em>, que contiene los <em>notebooks</em> asociados al tutorial.</p></li>
-
-<li><p>Echemos un rápido vistazo a su archivo <code>README.md</code>, que alberga información de interés sobre el mencionado tutorial, así como unas breves instrucciones para que configuremos nuestro equipo de manera adecuada y podamos utilizar el material disponible sin problema alguno.</p></li>
-
-<li><p>Clonemos o &ldquo;forkeemos&rdquo; (no hace falta que lo compruebes, ambos sabemos que esa aberración no va a estar registrada en el diccionario, pero si utilizas <em>git</em> me habrás entendido) el propio repositorio. Si no tienes cuenta en <em>GitHub</em> o, directamente, no estás entiendo nada de lo que llevo escrito en este punto, sitúate en la parte superior derecha de la página asociada al repositorio, haz clic sobre el botón <code>Clone or download</code> y pulsa sobre el enlace <code>Download ZIP</code>. Descargarás un archivo comprimido que contiene todo el material de este repositorio, de forma que podrás descomprimirlo en tu unidad de disco duro donde desees y trabajar desde dicha localización.</p></li>
-
-<li><p>Iniciemos <em>Jupyter Notebook</em> y naveguemos por los directorios hasta alcanzar la ruta donde hayamos almacenado los materiales del repositorio. Si no dispones de esta aplicación en tu ordenador, una manera fácil de hacerte con ella, y a la vez con los módulos que se utilizarán a lo largo del tutorial, es descargar la distribución de <em>Python</em> <a href="https://www.anaconda.com/download/" target="_blank">Anaconda</a> asociada a la versión 3.6 del mencionado lenguaje de programación. Por otro lado, si es la primera vez que escuchas hablar de <em>notebooks</em> (en <em>R</em> y <em>Python</em> son muy populares hoy en día), te aconsejaría que previamente leyeses algún tutorial asociado a esta herramienta. <a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.uBagi2Q" target="_blank">Este</a> es más que recomendable.</p></li>
-
-<li><p>En la raíz del repositorio figura el <em>notebook</em> <code>check_env.ipynb</code>. Abrámoslo y ejecutemos la única celda que lo compone, que es un bloque de código que comprueba si nuestro sistema cumple los requisitos necesarios para seguir sin problemas el tutorial. En el caso de que alguna de las líneas de la salida asociadas a los diversos módulos no esté precedida por un <code>[OK]</code>, tendremos que actualizar manualmente la versión del paquete correspondiente.</p></li>
-
-<li><p>Opcionalmente, podemos descargar los conjuntos de datos asociados al tutorial (acción recomendable si en algunos momentos vamos a depender de redes wifi para trabajar con el material) sin más que teclear <code>python fetch_data.py</code>.</p></li>
+<li>
+<p>Utilizando nuestro navegador favorito, dirijámonos en primer lugar al <a href="https://github.com/amueller/scipy-2017-sklearn">repositorio</a> en <em>GitHub</em>, que contiene los <em>notebooks</em> asociados al tutorial.</p>
+</li>
+<li>
+<p>Echemos un rápido vistazo a su archivo <code>README.md</code>, que alberga información de interés sobre el mencionado tutorial, así como unas breves instrucciones para que configuremos nuestro equipo de manera adecuada y podamos utilizar el material disponible sin problema alguno.</p>
+</li>
+<li>
+<p>Clonemos o &ldquo;forkeemos&rdquo; (no hace falta que lo compruebes, ambos sabemos que esa aberración no va a estar registrada en el diccionario, pero si utilizas <em>git</em> me habrás entendido) el propio repositorio. Si no tienes cuenta en <em>GitHub</em> o, directamente, no estás entiendo nada de lo que llevo escrito en este punto, sitúate en la parte superior derecha de la página asociada al repositorio, haz clic sobre el botón <code>Clone or download</code> y pulsa sobre el enlace <code>Download ZIP</code>. Descargarás un archivo comprimido que contiene todo el material de este repositorio, de forma que podrás descomprimirlo en tu unidad de disco duro donde desees y trabajar desde dicha localización.</p>
+</li>
+<li>
+<p>Iniciemos <em>Jupyter Notebook</em> y naveguemos por los directorios hasta alcanzar la ruta donde hayamos almacenado los materiales del repositorio. Si no dispones de esta aplicación en tu ordenador, una manera fácil de hacerte con ella, y a la vez con los módulos que se utilizarán a lo largo del tutorial, es descargar la distribución de <em>Python</em> <a href="https://www.anaconda.com/download/">Anaconda</a> asociada a la versión 3.6 del mencionado lenguaje de programación. Por otro lado, si es la primera vez que escuchas hablar de <em>notebooks</em> (en <em>R</em> y <em>Python</em> son muy populares hoy en día), te aconsejaría que previamente leyeses algún tutorial asociado a esta herramienta. <a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.uBagi2Q">Este</a> es más que recomendable.</p>
+</li>
+<li>
+<p>En la raíz del repositorio figura el <em>notebook</em> <code>check_env.ipynb</code>. Abrámoslo y ejecutemos la única celda que lo compone, que es un bloque de código que comprueba si nuestro sistema cumple los requisitos necesarios para seguir sin problemas el tutorial. En el caso de que alguna de las líneas de la salida asociadas a los diversos módulos no esté precedida por un <code>[OK]</code>, tendremos que actualizar manualmente la versión del paquete correspondiente.</p>
+</li>
+<li>
+<p>Opcionalmente, podemos descargar los conjuntos de datos asociados al tutorial (acción recomendable si en algunos momentos vamos a depender de redes wifi para trabajar con el material) sin más que teclear <code>python fetch_data.py</code>.</p>
+</li>
 </ol>
-
 <h2 id="notebooks">Notebooks</h2>
-
 <p>En mi opinión, si tenemos un mínimo conocimiento de <em>Python</em> y <em>Machine Learning</em>, una buena manera de abordar el tutorial en sí consistiría en llevar a cabo una lectura previa del <em>notebook</em> que nos interese (experimentación con el código incluida), para luego visualizar la parte de la grabación del tutorial donde se desarrolla ese contenido en particular. Finalmente, con la explicación todavía fresca en nuestras cabezas, podríamos reforzar el contenido leyendo de nuevo el <em>notebook</em> concreto. No obstante, si no cumples el primer requisito comentado, directamente te aconsejaría empezar con la grabación e ir revisando posteriormente cada <em>notebook</em> a medida que se vayan abordando durante el vídeo.</p>
-
 <p>A poco que eches un vistazo por encima al material disponible, comprobarás que hay una cantidad más que considerable. Tanto que fue imposible abarcar los 23 <em>notebooks</em> durante las dos sesiones que se llevaron a cabo y, en algunos casos, ciertos temas fueron expuestos de manera bastante tangencial. Es por ello que vuelvo a recomendar no limitarse únicamente a disfrutar de la grabación, sino invertir también cierto tiempo en la lectura de los cuadernos, así como en la experimentación con ellos (realización de ejercicios incluida).</p>
-
 <p>Sin más preámbulos, a continuación, podemos acceder al listado completo de los <em>notebooks</em> disponibles, junto con sus respectivos enlaces tanto a <em>GitHub</em> como al instante en el que comienza su desarrollo en el vídeo de <em>YouTube</em>:</p>
-
 <ol>
-<li><p>&ldquo;Introduction to machine learning with sample applications, Supervised and Unsupervised learning&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/01.Introduction_to_Machine_Learning.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2m11s" target="_blank">Youtube</a>.</p></li>
-
-<li><p>&ldquo;Scientific Computing Tools for Python: NumPy, SciPy, and matplotlib&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/02.Scientific_Computing_Tools_in_Python.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=20m40s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Data formats, preparation, and representation&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/03.Data_Representation_for_Machine_Learning.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=27m11s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Training and test data&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/04.Training_and_Testing_Data.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=46m55s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Estimators for classification&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/05.Supervised_Learning-Classification.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h6m52s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Estimators for regression analysis&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/06.Supervised_Learning-Regression.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h37m43s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Unsupervised learning: Unsupervised Transformers&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/07.Unsupervised_Learning-Transformations_and_Dimensionality_Reduction.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h52m51s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Unsupervised learning: Clustering&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/08.Unsupervised_Learning-Clustering.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h20m25s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;The scikit-learn estimator interface&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/09.Review_of_Scikit-learn_API.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h41m6s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Preparing a real-world dataset (titanic)&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/10.Case_Study-Titanic_Survival.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h46m2s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Working with text data via the bag-of-words model&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/11.Text_Feature_Extraction.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=25s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Case Study - Text classification for SMS spam detection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/12.Case_Study-SMS_Spam_Detection.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=19m47s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Cross-Validation&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/13.Cross_Validation.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=37m9s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Model complexity and grid search for adjusting hyperparameters&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/14.Model_Complexity_and_GridSearchCV.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=52m6s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Scikit-learn Pipelines&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/15.Pipelining_Estimators.ipynb" target="_blank">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p></li>
-
-<li><p>&ldquo;Supervised learning: Performance metrics for classification&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/16.Performance_metrics_and_Model_Evaluation.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=1h14m58s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Linear Models&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/17.In_Depth-Linear_Models.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=1h32m36s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Decision trees and random forests, and ensemble methods&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/18.In_Depth-Trees_and_Forests.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h39s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: feature selection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/19.Feature_Selection.ipynb" target="_blank">GitHub</a>. Por falta de tiempo, se excluyó de la sesión.</p></li>
-
-<li><p>&ldquo;Unsupervised learning: Hierarchical and density-based clustering algorithms&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/20.Unsupervised_learning-Hierarchical_and_density-based_clustering_algorithms.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h56m6s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Unsupervised learning: Non-linear dimensionality reduction&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/21.Unsupervised_learning-Non-linear_dimensionality_reduction.ipynb" target="_blank">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p></li>
-
-<li><p>&ldquo;Unsupervised learning: Anomaly Detection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/22.Unsupervised_learning-anomaly_detection.ipynb" target="_blank">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h21m38s" target="_blank">YouTube</a>.</p></li>
-
-<li><p>&ldquo;Supervised learning: Out-of-core learning&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/23.Out-of-core_Learning_Large_Scale_Text_Classification.ipynb" target="_blank">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p></li>
+<li>
+<p>&ldquo;Introduction to machine learning with sample applications, Supervised and Unsupervised learning&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/01.Introduction_to_Machine_Learning.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2m11s">Youtube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Scientific Computing Tools for Python: NumPy, SciPy, and matplotlib&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/02.Scientific_Computing_Tools_in_Python.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=20m40s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Data formats, preparation, and representation&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/03.Data_Representation_for_Machine_Learning.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=27m11s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Training and test data&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/04.Training_and_Testing_Data.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=46m55s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Estimators for classification&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/05.Supervised_Learning-Classification.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h6m52s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Estimators for regression analysis&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/06.Supervised_Learning-Regression.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h37m43s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Unsupervised learning: Unsupervised Transformers&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/07.Unsupervised_Learning-Transformations_and_Dimensionality_Reduction.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=1h52m51s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Unsupervised learning: Clustering&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/08.Unsupervised_Learning-Clustering.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h20m25s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;The scikit-learn estimator interface&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/09.Review_of_Scikit-learn_API.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h41m6s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Preparing a real-world dataset (titanic)&quot;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/10.Case_Study-Titanic_Survival.ipynb">GitHub</a>. <a href="https://youtu.be/2kT6QOVSgSg?t=2h46m2s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Working with text data via the bag-of-words model&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/11.Text_Feature_Extraction.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=25s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Case Study - Text classification for SMS spam detection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/12.Case_Study-SMS_Spam_Detection.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=19m47s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Cross-Validation&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/13.Cross_Validation.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=37m9s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Model complexity and grid search for adjusting hyperparameters&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/14.Model_Complexity_and_GridSearchCV.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=52m6s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Scikit-learn Pipelines&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/15.Pipelining_Estimators.ipynb">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Performance metrics for classification&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/16.Performance_metrics_and_Model_Evaluation.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=1h14m58s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Linear Models&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/17.In_Depth-Linear_Models.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=1h32m36s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Decision trees and random forests, and ensemble methods&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/18.In_Depth-Trees_and_Forests.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h39s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: feature selection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/19.Feature_Selection.ipynb">GitHub</a>. Por falta de tiempo, se excluyó de la sesión.</p>
+</li>
+<li>
+<p>&ldquo;Unsupervised learning: Hierarchical and density-based clustering algorithms&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/20.Unsupervised_learning-Hierarchical_and_density-based_clustering_algorithms.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h56m6s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Unsupervised learning: Non-linear dimensionality reduction&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/21.Unsupervised_learning-Non-linear_dimensionality_reduction.ipynb">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p>
+</li>
+<li>
+<p>&ldquo;Unsupervised learning: Anomaly Detection&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/22.Unsupervised_learning-anomaly_detection.ipynb">GitHub</a>. <a href="https://youtu.be/WLYzSas511I?t=2h21m38s">YouTube</a>.</p>
+</li>
+<li>
+<p>&ldquo;Supervised learning: Out-of-core learning&rdquo;. <a href="https://github.com/amueller/scipy-2017-sklearn/blob/master/notebooks/23.Out-of-core_Learning_Large_Scale_Text_Classification.ipynb">GitHub</a>. Debido a la falta de tiempo disponible, este <em>notebook</em> tuvo que ser excluido de la sesión.</p>
+</li>
 </ol>
-
 <h2 id="enlaces-de-utilidad-asociados-al-tutorial">Enlaces de utilidad asociados al tutorial</h2>
-
 <p>Recojo, a continuación, algunos enlaces, que han surgido a lo largo del artículo, relacionados con el tutorial:</p>
-
 <ul>
-<li><a href="https://youtu.be/2kT6QOVSgSg" target="_blank">Machine Learning with scikit learn Part One - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
-<li><a href="https://youtu.be/WLYzSas511I" target="_blank">Machine Learning with scikit learn Part Two - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
-<li><a href="https://github.com/amueller/scipy-2017-sklearn" target="_blank">Repositorio</a> en <em>GitHub</em> asociado al tutorial.</li>
-<li><a href="https://www.anaconda.com/download/" target="_blank">Anaconda</a>.</li>
-<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.y34eIOY" target="_blank">Jupyter Notebook Tutorial: The Definitive Guide</a>.</li>
+<li><a href="https://youtu.be/2kT6QOVSgSg">Machine Learning with scikit learn Part One - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
+<li><a href="https://youtu.be/WLYzSas511I">Machine Learning with scikit learn Part Two - SciPy 2017 Tutorial - Andreas Mueller &amp; Alexandre Gram</a>.</li>
+<li><a href="https://github.com/amueller/scipy-2017-sklearn">Repositorio</a> en <em>GitHub</em> asociado al tutorial.</li>
+<li><a href="https://www.anaconda.com/download/">Anaconda</a>.</li>
+<li><a href="https://www.datacamp.com/community/tutorials/tutorial-jupyter-notebook#gs.y34eIOY">Jupyter Notebook Tutorial: The Definitive Guide</a>.</li>
 </ul>
 
     </div>
@@ -882,7 +901,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -949,7 +968,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -965,7 +984,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

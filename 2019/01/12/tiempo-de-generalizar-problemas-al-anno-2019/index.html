@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/12/tiempo-de-generalizar-problemas-al-anno-2019/featured_hu97ca7e7bef51ab78ea425aefd082ae62_83410_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@trapnation" target="_blank">Andre Benz</a>, disponible en <a href="https://unsplash.com/photos/e4xOmzd8vzg" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@trapnation">Andre Benz</a>, disponible en <a href="https://unsplash.com/photos/e4xOmzd8vzg">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,110 +574,86 @@
 
     <div class="article-style">
       <p><strong>Problema 42:</strong> Encuentra los tres últimos dígitos del número</p>
-
-<p><span  class="math">\[
+<p>$$
 N=3\times7\times11\times15\times\cdots\times2019.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Como estamos interesados en encontrar los tres últimos dígitos del producto de números dado, un posible enfoque de cara a la resolución de este ejercicio es encontrar el valor de la congruencia de dicho producto módulo $1000$, esto es, resolver $x\equiv N\pmod{1000}$. Ahora bien, como $1000 = 2^3 \cdot 5^3 = 8\cdot 125$ y $mcd(8,125)=1$ sabemos, por el <em>Teorema chino del resto</em>, que la anterior ecuación de congruencia lineal es equivalente al siguiente sistema de ecuaciones de congruencias lineales,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv N\pmod{8},\\
-x&\equiv N\pmod{125}.
+x&amp;\equiv N\pmod{8},\<br>
+x&amp;\equiv N\pmod{125}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Sin embargo, dado que en el producto $N$ aparecen, por ejemplo, los números $15 = 3\cdot5$, $35 = 5\cdot7$ y $55 = 5\cdot11$, resulta que encontraríamos $5^3$ en dicho producto, provocando que $N\equiv 0\pmod{125}$, esto es, $N$ es múltiplo de $125$. Por otro lado,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-3&\equiv 3\pmod{8},\\
-7&\equiv (-1)\pmod{8},\\
-11&\equiv 3\pmod{8},\\
-15&\equiv (-1)\pmod{8},
+3&amp;\equiv 3\pmod{8},\<br>
+7&amp;\equiv (-1)\pmod{8},\<br>
+11&amp;\equiv 3\pmod{8},\<br>
+15&amp;\equiv (-1)\pmod{8},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>por tanto</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(3\cdot7\cdot11\cdot15)&\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\\
-&\equiv 9\pmod{8}\equiv 1\pmod{8}.
+(3\cdot7\cdot11\cdot15)&amp;\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\<br>
+&amp;\equiv 9\pmod{8}\equiv 1\pmod{8}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Al ser los términos del producto $N$ de la forma $3+4t$, con $t$ número entero mayor o igual que cero, la anterior situación se reproduce cada cuatro términos del mencionado producto. Así, como $3+4t=2019$ implica que $t=504$ y empezamos la sucesión en $t=0$, $N$ está compuesto por $505$ términos, de forma que podemos conseguir $126$ grupos de $4$ elementos, quedando sin agrupar el último término, $2019$, que sabemos cumple $2019\equiv 3\pmod{8}$, por lo que</p>
-
-<p><span  class="math">\[
+<p>$$
 N\equiv (1^{126} \cdot3)\pmod{8}\equiv 3\pmod{8}.
-\]</span></p>
-
+$$</p>
 <p>Recapitulando, buscamos un múltiplo de $125$ que sea congruente con $3$ módulo $8$, es decir, hemos de resolver la ecuación, $125x\equiv 3\pmod{8}$. No obstante,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-125x\equiv 3\pmod{8}&\Leftrightarrow 5x\equiv 3\pmod{8}\\
-&\Leftrightarrow 15x\equiv 9\pmod{8}\\
-&\Leftrightarrow (-x)\equiv 1\pmod{8}\\
-&\Leftrightarrow x\equiv 7\pmod{8},
+125x\equiv 3\pmod{8}&amp;\Leftrightarrow 5x\equiv 3\pmod{8}\<br>
+&amp;\Leftrightarrow 15x\equiv 9\pmod{8}\<br>
+&amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\<br>
+&amp;\Leftrightarrow x\equiv 7\pmod{8},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, $125\cdot7=875$ son las tres últimas cifras de $N$.</p>
-
 <p>De manera más clásica, una vez hallado el valor de las anteriores dos congruencias, el sistema de ecuaciones de congruencias lineales propuesto es equivalente a</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 3\pmod{8},\\
-x&\equiv 0\pmod{125}.
+x&amp;\equiv 3\pmod{8},\<br>
+x&amp;\equiv 0\pmod{125}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por la estructura que presenta el anterior sistema y dado que $m_1=8$ y $m_2=125$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=8\cdot125 = 1000$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-M_1 &= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\\
-M_2 &= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\<br>
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-125x\equiv 1\pmod{8}&\Leftrightarrow 5x\equiv 1\pmod{8}\\
-&\Leftrightarrow 25x\equiv 5\pmod{8}\\
-&\Leftrightarrow x\equiv 5\pmod{8},\\
-4x\equiv 1\pmod{125}&\Leftrightarrow 376x\equiv 94\pmod{125}\\
-&\Leftrightarrow x\equiv 94\pmod{125}.
+125x\equiv 1\pmod{8}&amp;\Leftrightarrow 5x\equiv 1\pmod{8}\<br>
+&amp;\Leftrightarrow 25x\equiv 5\pmod{8}\<br>
+&amp;\Leftrightarrow x\equiv 5\pmod{8},\<br>
+4x\equiv 1\pmod{125}&amp;\Leftrightarrow 376x\equiv 94\pmod{125}\<br>
+&amp;\Leftrightarrow x\equiv 94\pmod{125}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Agrupando ahora toda la información adecuadamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 3\pmod{8},& 125x&\equiv 1\pmod{8},& x&\equiv 5\pmod{8},\\
-x&\equiv 0\pmod{125},& 4x&\equiv 1\pmod{125},& x&\equiv 94\pmod{125},
+x&amp;\equiv 3\pmod{8},&amp; 125x&amp;\equiv 1\pmod{8},&amp; x&amp;\equiv 5\pmod{8},\<br>
+x&amp;\equiv 0\pmod{125},&amp; 4x&amp;\equiv 1\pmod{125},&amp; x&amp;\equiv 94\pmod{125},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces la solución es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\
-&\equiv 1875\pmod{1000}\\
-&\equiv 875\pmod{1000},
+x &amp;\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\<br>
+&amp;\equiv 1875\pmod{1000}\<br>
+&amp;\equiv 875\pmod{1000},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, $875$ son los tres últimos dígitos de $N$.</p>
 
     </div>
@@ -945,7 +928,7 @@ x &\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1012,7 +995,7 @@ x &\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1028,7 +1011,7 @@ x &\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

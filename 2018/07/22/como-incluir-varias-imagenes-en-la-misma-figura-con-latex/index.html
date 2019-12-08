@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/22/como-incluir-varias-imagenes-en-la-misma-figura-con-latex/featured_hu94e6adaa8fcf2f6dc74a74fbb7470236_160972_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nervum" target="_blank">Jack B.</a>, disponible en <a href="https://unsplash.com/photos/9GHTP3BbEO8" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nervum">Jack B.</a>, disponible en <a href="https://unsplash.com/photos/9GHTP3BbEO8">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -528,11 +535,8 @@
 
     <div class="article-style">
       <p>Es muy útil poder incluir varias imágenes en la misma figura, bien sea porque están relacionadas de alguna manera, bien debido a que resulta mucho más sencillo hacer una comparación si se colocan juntas.</p>
-
 <p>Lidiar con elementos flotantes en <em>LaTeX</em> no siempre es una tarea agradecida, pero, en esta ocasión, y sin que sirva de precedente, crear composiciones de múltiples imágenes dentro de una figura es bastante sencillo.</p>
-
 <p>A continuación, muestro los pasos que podemos seguir para ello:</p>
-
 <ol>
 <li>Dentro del entorno <code>figure</code>, crearemos tantos entornos <code>subfigure</code> como imágenes queramos incluir en la composición.</li>
 <li>El parámetro opcional del entorno <code>subfigure</code>, <code>[b]</code> en el ejemplo que aparece abajo, sigue las clásicas pautas de los elementos flotantes en <em>LaTeX</em>, y será de suma utilidad que lo definamos con precisión si las imágenes poseen diferentes alturas.</li>
@@ -540,9 +544,7 @@
 <li>Una vez declarados tanto el parámetro opcional como el obligatorio, incluiremos la imagen dentro del entorno <code>subfigure</code> utilizando las instrucciones habituales. Como hemos cargado en el preámbulo los paquetes <em>caption</em> y <em>subcaption</em>, podremos incluir los comandos <code>caption</code> y <code>label</code> en cada una de las imágenes, por si luego queremos hacer referencia a alguna de ellas.</li>
 <li>Utilizar <code>hfill</code> entre los distintos entornos <code>subfigure</code> provoca que las imágenes queden empujadas hacia los márgenes del documento. Este efecto nos puede resultar de interés si no estamos trabajando con esos valores límites (como <code>0.49</code>) para la anchura de las imágenes.</li>
 </ol>
-
 <p>Con un ejemplo quedará más claro el procedimiento que hemos de seguir:</p>
-
 <pre><code class="language-tex">\documentclass{article}
  
 \usepackage[utf8]{inputenc}
@@ -571,9 +573,7 @@
  
 \end{document}
 </code></pre>
-
 <p>Podemos apreciar el resultado en la siguiente imagen:</p>
-
 
 
 
@@ -603,13 +603,10 @@
 
 </figure>
 
-
 <p><em>Nota</em>: no es recomendable que forcemos el parámetro <code>height</code> para que se ajuste al <code>textwidth</code> definido, pues generalmente provocará distorsiones no deseadas en nuestras imágenes. Si aparece en el ejemplo anterior no es más que por descuido, ya que de las distintas configuraciones con las que he estado experimentando, esa ha sido precisamente la última y no he caído en cambiar ese detalle antes de publicar el código.</p>
-
 <p><em>Referencia</em>:</p>
-
 <ul>
-<li><a href="http://tex.stackexchange.com/questions/148438/putting-two-images-beside-each-other" target="_blank">Putting two images beside each other</a>.</li>
+<li><a href="http://tex.stackexchange.com/questions/148438/putting-two-images-beside-each-other">Putting two images beside each other</a>.</li>
 </ul>
 
     </div>
@@ -867,7 +864,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -934,7 +931,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -950,7 +947,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

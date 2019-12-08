@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/11/empezando-con-teoria-de-numeros-ii/featured_huec9904f9cd102a8922c7e13fefcc2077_382567_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@jsalvino" target="_blank">John Salvino</a>, disponible en <a href="https://unsplash.com/photos/YsU8Z2-yGlA" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@jsalvino">John Salvino</a>, disponible en <a href="https://unsplash.com/photos/YsU8Z2-yGlA">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,40 +574,31 @@
 
     <div class="article-style">
       <p><strong>Problema 18:</strong> Calcula el inverso de $3$ módulo $7$.</p>
-
 <hr>
-
 <p>El enunciado nos plantea resolver</p>
-
-<p><span  class="math">\[
+<p>$$
 3x\equiv 1\pmod{7}.
-\]</span></p>
-
-<p>Como $mcd(3,7)=1$, es decir, $3$ y $7$ son coprimos, estamos en condiciones de asegurar que seremos capaces de encontrar el inverso de $3$ módulo $7$, $x$. Para ello, como los números involucrados son pequeños, podemos simplemente optar por emplear la ''cuenta de la vieja'' y extraer el valor de $x$ por fuerza bruta. Así,</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>Como $mcd(3,7)=1$, es decir, $3$ y $7$ son coprimos, estamos en condiciones de asegurar que seremos capaces de encontrar el inverso de $3$ módulo $7$, $x$. Para ello, como los números involucrados son pequeños, podemos simplemente optar por emplear la &lsquo;&lsquo;cuenta de la vieja&rsquo;&rsquo; y extraer el valor de $x$ por fuerza bruta. Así,</p>
+<p>$$
 \begin{aligned}
-3\cdot 1 &= 3\equiv 3\pmod{7},\\
-3\cdot 2 &= 6\equiv 6\pmod{7},\\
-3\cdot 3 &= 9\equiv 2\pmod{7},\\
-3\cdot 4 &= 12\equiv 5\pmod{7},\\
-3\cdot 5 &= 15\equiv 1\pmod{7},
+3\cdot 1 &amp;= 3\equiv 3\pmod{7},\<br>
+3\cdot 2 &amp;= 6\equiv 6\pmod{7},\<br>
+3\cdot 3 &amp;= 9\equiv 2\pmod{7},\<br>
+3\cdot 4 &amp;= 12\equiv 5\pmod{7},\<br>
+3\cdot 5 &amp;= 15\equiv 1\pmod{7},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego $x=5$ es el inverso de $3$ módulo $7$.</p>
-
 <p>Alternativamente, podemos llevar a cabo operaciones elementales sobre la propia ecuación de congruencia. Como $2\cdot3=6$, que es un valor muy cercano a $7$, entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-3x\equiv 1\pmod{7}&\Leftrightarrow 6x\equiv 2\pmod{7}\\
-&\Leftrightarrow -x\equiv 2\pmod{7}\\
-&\Leftrightarrow x\equiv (-2)\pmod{7}\\
-&\Leftrightarrow x\equiv 5\pmod{7},
+3x\equiv 1\pmod{7}&amp;\Leftrightarrow 6x\equiv 2\pmod{7}\<br>
+&amp;\Leftrightarrow -x\equiv 2\pmod{7}\<br>
+&amp;\Leftrightarrow x\equiv (-2)\pmod{7}\<br>
+&amp;\Leftrightarrow x\equiv 5\pmod{7},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>arribando así al mismo resultado que antes.</p>
 
     </div>
@@ -873,7 +871,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -940,7 +938,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -956,7 +954,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

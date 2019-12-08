@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,8 +30,8 @@
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos el estudio del widget Menu, que nos permitirá la posibilidad de crear barras de menús.
 Comencemos utilizando el siguiente esqueleto de aplicación:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.mainloop()  A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
-barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:">
+from tkinter import Tkraiz = Tk()raiz.title(&quot;Menús&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)raiz.mainloop() A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
+barra_menu = Menu(raiz) y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb52-interfaces-graficas-xi/">
@@ -128,8 +128,8 @@ barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz
   <meta property="og:title" content="52. Interfaces gráficas XI | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos el estudio del widget Menu, que nos permitirá la posibilidad de crear barras de menús.
 Comencemos utilizando el siguiente esqueleto de aplicación:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.mainloop()  A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
-barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+from tkinter import Tkraiz = Tk()raiz.title(&quot;Menús&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)raiz.mainloop() A continuación, generamos una variable, barra_menu, que será la encargada de almacenar el menú:
+barra_menu = Menu(raiz) y configuramos el valor del parámetro menu de la raíz para que figure en nuestra aplicación:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -193,13 +193,14 @@ barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -207,6 +208,12 @@ barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -731,14 +738,11 @@ barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -753,22 +757,15 @@ barra_menu = Menu(raiz)  y configuramos el valor del parámetro menu de la raíz
           <h1>52. Interfaces gráficas XI</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/Dv1ALaWwScI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, abordaremos el estudio del <em>widget</em> <code>Menu</code>, que nos permitirá la posibilidad de crear barras de menús.</p>
-
 <p>Comencemos utilizando el siguiente esqueleto de aplicación:</p>
-
 <pre><code class="language-python">from tkinter import Tk
 
 raiz = Tk()
@@ -777,29 +774,19 @@ raiz.iconbitmap(&quot;icon.ico&quot;)
 
 raiz.mainloop()
 </code></pre>
-
 <p>A continuación, generamos una variable, <code>barra_menu</code>, que será la encargada de almacenar el menú:</p>
-
 <pre><code class="language-python">barra_menu = Menu(raiz)
 </code></pre>
-
 <p>y configuramos el valor del parámetro <code>menu</code> de la <em>raíz</em> para que figure en nuestra aplicación:</p>
-
 <pre><code class="language-python">raiz.config(menu=barra_menu)
 </code></pre>
-
 <p>Acto seguido, establecemos los elementos que conformarán nuestro menú. Por ejemplo, para crear uno denominado <em>Archivo</em>, generamos la variable <code>archivo_menu</code>, indicándole que pertenece a la barra de menús <code>barra_menu</code>.</p>
-
 <pre><code class="language-python">archivo_menu = Menu(barra_menu)
 </code></pre>
-
 <p>No obstante, si ejecutamos el código, todavía no aparece barra de menús alguna. Añadamos el texto correspondiente a cada elemento. Así,</p>
-
 <pre><code class="language-python">barra_menu.add_cascade(label=&quot;Archivo&quot;, menu=archivo_menu)
 </code></pre>
-
 <p>Ahora, ya únicamente nos resta la tarea de añadir elementos de submenú. Para ello, tras la línea de declaración del elemento <code>archivo_menu</code>, tecleamos:</p>
-
 <pre><code class="language-python">archivo_menu.add_command(label=&quot;Nuevo&quot;)
 archivo_menu.add_command(label=&quot;Abrir&quot;)
 archivo_menu.add_command(label=&quot;Guardar&quot;)
@@ -807,19 +794,13 @@ archivo_menu.add_command(label=&quot;Guardar como...&quot;)
 archivo_menu.add_command(label=&quot;Cerrar&quot;)
 archivo_menu.add_command(label=&quot;Salir&quot;)
 </code></pre>
-
 <p>Aparece una barra separadora, que identificamos por los símbolos <code>- - - -</code>, al pulsar sobre cualquier elemento de la barra de menús. Para suprimirla, modificamos como sigue la línea de declaración de la variable <code>archivo_menu</code>:</p>
-
 <pre><code class="language-python">archivo_menu = Menu(barra_menu, tearoff=0)
 </code></pre>
-
 <p>No obstante, aunque la mencionada barra separada no nos interesaba, sí que podemos desear diferenciar, de alguna manera, los diversos elementos de un submenú, para que así queden agrupados por cierto criterio. Con tal objetivo, donde nos convenga, introducimos la instrucción</p>
-
 <pre><code class="language-python">archivo_menu.add_separator()
 </code></pre>
-
 <p>Para acabar, comparto el código completo de la aplicación, para obtener así una visión global del funcionamiento de la clase <code>Menu</code>.</p>
-
 <pre><code class="language-python">from tkinter import Menu, Tk
 
 raiz = Tk()
@@ -872,7 +853,6 @@ raiz.mainloop()
 
 
 
-
 <figure>
 
 
@@ -889,10 +869,8 @@ raiz.mainloop()
 
 </figure>
 
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/52/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/52/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -943,7 +921,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -991,7 +969,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1063,7 +1041,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/15/y-si-el-numero-de-divisores-es-impar/featured_hu79fa046cfc58afb6aa431c588866ecdc_324086_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@elijahsad" target="_blank">Elijah O&rsquo;Donnell</a>, disponible en <a href="https://unsplash.com/photos/ycMLPhq_tdk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@elijahsad">Elijah O'Donnell</a>, disponible en <a href="https://unsplash.com/photos/ycMLPhq_tdk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,27 +574,19 @@
 
     <div class="article-style">
       <p><strong>Problema 34:</strong> Caracteriza aquellos números naturales cuyo número de divisores es impar.</p>
-
 <hr>
-
 <p>De partida, sabemos que los números naturales buscados no serán primos, puestos estos últimos siempre poseen una cantidad par de divisores, dos para ser más concretos: $1$ y el propio número primo. Así pues, consideremos un número natural $m$ expresado mediante su factorización en factores primos,</p>
-
-<p><span  class="math">\[
+<p>$$
 m=a^x b^y c^z\cdots,
-\]</span></p>
-
+$$</p>
 <p>con $a,b,c,\ldots$ números primos y $x,y,z,\ldots$ números naturales. Sabemos que el número de divisores de $m$ es, en total,</p>
-
-<p><span  class="math">\[
+<p>$$
 (x + 1)(y + 1)(z + 1)\cdots.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, nos indican que dicho producto ha de ser un número impar, hecho que traduce en que todos y cada uno de sus términos han de ser números impares (ya que bastaría con que únicamente uno fuese par para que todo el producto resultase un número par). Como $x+1, y+1, z+1,\ldots$ son números impares, inmediatamente deducimos que $x,y,z,\ldots$ serán números pares, que podrán escribirse como $x=2p, y=2q, z=2r,\ldots$ para ciertos enteros $p,q,r,\ldots$. De esta manera,</p>
-
-<p><span  class="math">\[
+<p>$$
 m = a^x b^y c^z\cdots = a^{2p} b^{2q} c^{2r}\cdots = (a^p b^q c^r\cdots)^2,
-\]</span></p>
-
+$$</p>
 <p>esto es, los números naturales que se caracterizan por poseer una cifra impar de divisores son cuadrados perfectos. Con ello, en función de la cantidad de divisores de un número, contamos así con un criterio para decidir rápidamente si dicho número es o no un cuadrado perfecto, según su total de divisores sea o no una cifra impar.</p>
 
     </div>
@@ -860,7 +859,7 @@ m = a^x b^y c^z\cdots = a^{2p} b^{2q} c^{2r}\cdots = (a^p b^q c^r\cdots)^2,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -927,7 +926,7 @@ m = a^x b^y c^z\cdots = a^{2p} b^{2q} c^{2r}\cdots = (a^p b^q c^r\cdots)^2,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -943,7 +942,7 @@ m = a^x b^y c^z\cdots = a^{2p} b^{2q} c^{2r}\cdots = (a^p b^q c^r\cdots)^2,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

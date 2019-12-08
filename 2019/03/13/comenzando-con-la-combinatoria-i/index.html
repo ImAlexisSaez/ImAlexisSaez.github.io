@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/03/13/comenzando-con-la-combinatoria-i/featured_hu1286376254ec2c24fffa9321703af3f7_156618_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@rtearth" target="_blank">Matteo Marinelli</a>, disponible en <a href="https://unsplash.com/photos/P6uF0I_okfk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@rtearth">Matteo Marinelli</a>, disponible en <a href="https://unsplash.com/photos/P6uF0I_okfk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,7 +574,6 @@
 
     <div class="article-style">
       <p><strong>Problema 59:</strong></p>
-
 <ul>
 <li>(a) ¿De cuántas formas se pueden sentar ocho personas en una fila de ocho asientos?</li>
 <li>(b) ¿Cuántas palabras distintas de diez letras se pueden formar con las letras $A$, $B$, $C$ y $D$?</li>
@@ -577,27 +583,17 @@
 <li>(f) ¿Cuántos números de $4$ cifras se pueden formar con los dígitos $1,2,3,\ldots, 9$?</li>
 <li>(g) ¿Cuántas distribuciones de cumpleaños pueden darse entre diez amigos?</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado (a), dado que el orden importa y utilizamos todos los elementos, sin que ninguno de ellos se repita, buscamos la cantidad de permutaciones de ocho elementos. Así, $P_8 = 8! = 40320$ es el número de formas en que se pueden sentar ocho personas en una fila de ocho asientos.</p>
-
 <p>En el apartado (b), el orden vuelve a importar y, obviamente, hemos de permitir la repetición de las letras para conformar las palabras, por lo que ahora la herramienta adecuada para contar será el total de variaciones de cuatro elementos tomadas de diez en diez. Por tanto, hay $VR_{4,10} = 4^{10} = 1048576$ palabras distintas de diez letras conformadas a partir de las letras $A$, $B$, $C$ y $D$.</p>
-
-<p>En cuanto al apartado (c), hemos de ser cautos a la hora de escoger quién juega el papel de los ''elementos'' para contabilizar el total de maneras en que realizar la acción. En esta ocasión, son las calles. Si consideramos un cruce estándar de cuatro de ellas (y las denotamos por $a$, $b$, $c$ y $d$), una posible forma de escapar de la policía consistiría en que todos los niños optasen por la calle $a$, generando así el valor $(a,a,\ldots,a)$. Si el primer niño escogiese la calle $b$ y el resto la $a$, tendríamos el valor $(b,a,a,\ldots,a)$, y así sucesivamente. Por tanto, como importa el orden y alguna de las calles estará repetida dentro de las opciones de la huida, buscamos el número de variaciones con repetición de cuatro elementos tomados de diez en diez. Como antes, $VR_{4,10} = 4^{10}$ es el número de formas en que pueden huir diez niños de la policía en un cruce de calles.</p>
-
+<p>En cuanto al apartado (c), hemos de ser cautos a la hora de escoger quién juega el papel de los &lsquo;&lsquo;elementos&rsquo;&rsquo; para contabilizar el total de maneras en que realizar la acción. En esta ocasión, son las calles. Si consideramos un cruce estándar de cuatro de ellas (y las denotamos por $a$, $b$, $c$ y $d$), una posible forma de escapar de la policía consistiría en que todos los niños optasen por la calle $a$, generando así el valor $(a,a,\ldots,a)$. Si el primer niño escogiese la calle $b$ y el resto la $a$, tendríamos el valor $(b,a,a,\ldots,a)$, y así sucesivamente. Por tanto, como importa el orden y alguna de las calles estará repetida dentro de las opciones de la huida, buscamos el número de variaciones con repetición de cuatro elementos tomados de diez en diez. Como antes, $VR_{4,10} = 4^{10}$ es el número de formas en que pueden huir diez niños de la policía en un cruce de calles.</p>
 <p>Para el apartado (d), un tanto ambiguo, asumiremos que están interesados en conocer el número de secuencias de caras y cruces que se pueden encontrar lanzando diez monedas. Con esta reformulación, es claro que son dos los elementos protagonistas, cara y cruz, y consideraremos que el orden importa porque, suponemos, las monedas son distinguibles. Por tanto, buscamos el número de variaciones con repetición de dos elementos tomados de diez en diez, esto es, hay $VR_{2,10} = 2^{10} = 1024$ posibles secuencias de caras y cruces cuando se lanzan diez monedas.</p>
-
 <p>A continuación, en el apartado (e), como el orden continúa siendo importante y cada elemento se repite un número fijo de veces, estamos interesados en la cantidad de permutaciones con repetición de diez elementos, donde tanto un elemento, como el otro, se repite en cinco ocasiones. Es decir, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 P(10;5,5) = PR_{10}^{5,5} = \dfrac{10!}{5!\cdot 5!} = \dfrac{10\cdot9\cdot8\cdot7\cdot6}{5!} = 252
-\]</span></p>
-
+$$</p>
 <p>formas de obtener cinco caras y cinco cruces al lanzar diez monedas.</p>
-
 <p>En el apartado (f) hemos de considerar dos opciones posibles, en función de si admitimos o no repetición de los números. En caso afirmativo, al importar el orden y permitir repetición de los números, estamos interesados en el número de variaciones con repetición de nueve elementos tomados de cuatro en cuatro, esto es, hay $VR_{9,4} = 9^4 = 6561$ números de cuatro cifras conformados a partir de los dígitos $1,2,3,\ldots,9$ que pueden poseer, además, dígitos repetidos. En caso negativo, el orden continúa siendo importante, pero ahora no permitimos la repetición de cifras, por lo que estamos interesados en hallar el número de variaciones de nueve elementos tomados de cuatro en cuatro, es decir, $V_{9,4} = 9\cdot8\cdot7\cdot6 = 3024$ posibilidades.</p>
-
 <p>Finalmente, en el apartado (g), si todos los amigos celebrasen su cumpleaños el primer día del año, se generaría el valor $(1,1,\ldots,1)$. Si el primer amigo lo celebrase el quinto día del año y el resto el tercer día, se conformaría el valor $(5,3,3\ldots,3)$. Así, vemos que los elementos son los días del año, $365$, que los vamos a tomar de diez en diez. Como admitimos la posibilidad de que dos amigos cumplan año el mismo día, esto es, de repetir elemento, e importa el orden, estamos interesados en hallar el número de variaciones con repetición de $365$ elementos tomados de diez en diez. Así, hay $VR_{365,10} = 365^{10}$ distribuciones de cumpleaños posibles entre los diez amigos.</p>
 
     </div>
@@ -870,7 +866,7 @@ P(10;5,5) = PR_{10}^{5,5} = \dfrac{10!}{5!\cdot 5!} = \dfrac{10\cdot9\cdot8\cdot
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -937,7 +933,7 @@ P(10;5,5) = PR_{10}^{5,5} = \dfrac{10!}{5!\cdot 5!} = \dfrac{10\cdot9\cdot8\cdot
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -953,7 +949,7 @@ P(10;5,5) = PR_{10}^{5,5} = \dfrac{10!}{5!\cdot 5!} = \dfrac{10\cdot9\cdot8\cdot
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

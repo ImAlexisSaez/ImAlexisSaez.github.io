@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="Vídeo   Notas personales Continuemos con el ejemplo de la lección anterior:
-# Clase Padre class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;, self.frena) # Clase hija class Moto(Vehiculo): pass  Construyamos la clase Moto, añadiendo un comportamiento nuevo, caballito, que se va a sumar a los cuatro heredados de la clase Vehiculo:">
+# Clase Padreclass Vehiculo():def __init__(self, marca, modelo):self.marca = marcaself.modelo = modeloself.enmarcha = Falseself.acelera = Falseself.frena = Falsedef arrancar(self):self.enmarcha = Truedef acelerar(self):self.acelera = Truedef frenar(self):self.frena = Truedef estado(self):print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,self.frena)# Clase hijaclass Moto(Vehiculo):pass Construyamos la clase Moto, añadiendo un comportamiento nuevo, caballito, que se va a sumar a los cuatro heredados de la clase Vehiculo:">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb30-poo-vii/">
@@ -125,7 +125,7 @@
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb30-poo-vii/">
   <meta property="og:title" content="30. Programación orientada a objetos VII | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Continuemos con el ejemplo de la lección anterior:
-# Clase Padre class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.frena = True def estado(self): print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;, self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;, self.frena) # Clase hija class Moto(Vehiculo): pass  Construyamos la clase Moto, añadiendo un comportamiento nuevo, caballito, que se va a sumar a los cuatro heredados de la clase Vehiculo:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+# Clase Padreclass Vehiculo():def __init__(self, marca, modelo):self.marca = marcaself.modelo = modeloself.enmarcha = Falseself.acelera = Falseself.frena = Falsedef arrancar(self):self.enmarcha = Truedef acelerar(self):self.acelera = Truedef frenar(self):self.frena = Truedef estado(self):print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,self.frena)# Clase hijaclass Moto(Vehiculo):pass Construyamos la clase Moto, añadiendo un comportamiento nuevo, caballito, que se va a sumar a los cuatro heredados de la clase Vehiculo:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@
           <h1>30. Programación orientada a objetos VII</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/jMQQN9OxwVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Continuemos con el ejemplo de la lección anterior:</p>
-
 <pre><code class="language-python"># Clase Padre
 class Vehiculo():
     def __init__(self, marca, modelo):
@@ -791,38 +789,29 @@ class Vehiculo():
 class Moto(Vehiculo):
     pass
 </code></pre>
-
 <p>Construyamos la clase <code>Moto</code>, añadiendo un comportamiento nuevo, <code>caballito</code>, que se va a sumar a los cuatro heredados de la clase <code>Vehiculo</code>:</p>
-
 <pre><code class="language-python">class Moto(Vehiculo):
     hcaballito = &quot;&quot;
 
     def caballito(self):
         hcaballito = &quot;Voy haciendo el caballito.&quot;
 </code></pre>
-
 <p>Ahora podríamos teclear:</p>
-
 <pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
 
 mi_moto.caballito()
 
 mi_moto.estado()
 </code></pre>
-
 <pre><code class="language-bash">Marca: Honda 
 Modelo: CBR 
 En marcha: False 
 Acelerando: False 
 Frenando: False
 </code></pre>
-
-<p>El programa &ldquo;funciona&rdquo; (al menos no arroja errores), pero no nos está informando si estamos haciendo el caballito o no.</p>
-
+<p>El programa &lsquo;&lsquo;funciona&rsquo;&rsquo; (al menos no arroja errores), pero no nos está informando si estamos haciendo el caballito o no.</p>
 <p>Abordemos esta situación sobreescribiendo el método <code>estado</code> heredado de la clase <code>Vehiculo</code>, para así incorporar la información sobre el nuevo comportamiento de la clase <code>Moto</code>.</p>
-
 <p>Para sobreescribir un método de la clase padre definimos uno en la clase hija que se caracterice por tener el mismo nombre y número de parámetros:</p>
-
 <pre><code class="language-python">class Moto(Vehiculo):
     hcaballito = &quot;&quot;
 
@@ -834,18 +823,14 @@ Frenando: False
               self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
               self.frena, &quot;\n&quot;, self.hcaballito)
 </code></pre>
-
 <p>De esta manera, la ejecución del siguiente bloque de código:</p>
-
 <pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
 
 mi_moto.caballito()
 
 mi_moto.estado()
 </code></pre>
-
 <p>Produce como resultado ahora:</p>
-
 <pre><code class="language-bash">Marca: Honda 
 Modelo: CBR 
 En marcha: False 
@@ -853,9 +838,7 @@ Acelerando: False
 Frenando: False 
  Voy haciendo el caballito.
 </code></pre>
-
 <p>Modifiquemos el código para albergar la posibilidad de trabajar con furgonetas:</p>
-
 <pre><code class="language-python">class Furgoneta(Vehiculo):
     def carga(self, cargar):
         self.cargado = cargar
@@ -864,9 +847,7 @@ Frenando: False
         else:
             return &quot;La furgoneta no está cargada.&quot;
 </code></pre>
-
 <p>Así,</p>
-
 <pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
 
 mi_furgo.arrancar()
@@ -875,16 +856,13 @@ mi_furgo.estado()
 
 mi_furgo.carga(True)
 </code></pre>
-
 <pre><code class="language-bash">Marca: Renault 
 Modelo: Kangoo 
 En marcha: True 
 Acelerando: False 
 Frenando: False
 </code></pre>
-
 <p>Todo funciona de manera adecuada, con la salvedad de que no estamos viendo que la furgoneta está cargada. Como el método <code>carga()</code> devuelve una cadena de texto, añadiendo una función <code>print()</code> solucionamos el entuerto:</p>
-
 <pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
 
 mi_furgo.arrancar()
@@ -893,7 +871,6 @@ mi_furgo.estado()
 
 print(mi_furgo.carga(True))
 </code></pre>
-
 <pre><code class="language-bash">Marca: Renault 
 Modelo: Kangoo 
 En marcha: True 
@@ -901,11 +878,8 @@ Acelerando: False
 Frenando: False
 La furgoneta está cargada.
 </code></pre>
-
 <p>Obviamente, una instrucción del tipo <code>mi_moto.carga()</code> arroja un error, ya que no hereda de <code>Furgoneta</code> la clase <code>Moto</code>, sino de <code>Vehiculo</code>.</p>
-
 <p>Añademos soporte para vehículos electrónicos:</p>
-
 <pre><code class="language-python">class VehiculoElec():
     def __init__(self):
         self.autonomia = 100
@@ -913,26 +887,19 @@ La furgoneta está cargada.
     def cargar_energia(self):
         self.cargando = True
 </code></pre>
-
 <p>Y, a continuación, generemos una clase para trabajar con biciletas eléctricas. Estas tienen marca, modelo, pueden arrancar, frenar&hellip; y a la vez también poseen autonomia y la posibilidad de cargar energía. <em>Python</em> nos permite heredar de dos o más clases, que se conoce como <strong>herencia múltiple</strong>:</p>
-
 <pre><code class="language-python">class BicicletaElec(VehiculoElec, Vehiculo):
     pass
 </code></pre>
-
 <p>Hemos de tener en cuenta que cuando se da herencia múltiple, a la hora de tomar el constructor o los diferentes métodos, se da la preferencia según hayamos ordenado las clases padres de las que hereda. En este caso, no podemos iniciar una bicicleta eléctrica con marca y modelo, aprovechando así el constructor de la clase <code>Vehiculo</code>, ya que la clase <code>VehiculoElec</code> posee su propio constructor y este último tiene preferencia por haber colocado esta clase primero en la definición de <code>BicicletaElec</code>.</p>
-
 <pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
 </code></pre>
-
 <pre><code class="language-bash">Traceback (most recent call last):
   File &quot;prac30_poo7_3.py&quot;, line 58, in &lt;module&gt;
     mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
 TypeError: __init__() takes 1 positional argument but 3 were given
 </code></pre>
-
 <p>No obstante, si intercambiamos el orden de las clases padre en la definición de <code>BicicletaElec</code>:</p>
-
 <pre><code class="language-python">class BicicletaElec(Vehiculo, VehiculoElec):
     pass
 
@@ -941,19 +908,15 @@ mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
 
 mi_bici.estado()
 </code></pre>
-
 <p>La ejecución ya no arroja errores, mostrando el siguiente resultado:</p>
-
 <pre><code class="language-bash">Marca: Orbea 
 Modelo: HCI30 
 En marcha: False 
 Acelerando: False 
 Frenando: False
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/30/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/30/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -1004,7 +967,7 @@ Frenando: False
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1052,7 +1015,7 @@ Frenando: False
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1124,7 +1087,7 @@ Frenando: False
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

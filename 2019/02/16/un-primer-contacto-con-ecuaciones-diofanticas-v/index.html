@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/02/16/un-primer-contacto-con-ecuaciones-diofanticas-v/featured_huc82bee99dd2696098f7fe9dfd7ff0ec5_149848_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@bwobble11" target="_blank">Brennan Burling</a>, disponible en <a href="https://unsplash.com/photos/vpaHZEYx35U" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@bwobble11">Brennan Burling</a>, disponible en <a href="https://unsplash.com/photos/vpaHZEYx35U">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,110 +574,81 @@
 
     <div class="article-style">
       <p><strong>Problema 52:</strong> Halla las soluciones enteras de la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 30x+42y+70z-105u=(-3).
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Como</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-30 &= 2\cdot3\cdot5,\\
-42 &= 2\cdot3\cdot7,\\
-70 &= 2\cdot5\cdot7,\\
-105 &= 3\cdot5\cdot7,
+30 &amp;= 2\cdot3\cdot5,\<br>
+42 &amp;= 2\cdot3\cdot7,\<br>
+70 &amp;= 2\cdot5\cdot7,\<br>
+105 &amp;= 3\cdot5\cdot7,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces $mcd(30,42,70,105)=1$, por lo que estamos en condiciones de asegurar que la ecuación diofántica propuesta admite solución entera. A diferencia del <a href="/2019/02/13/un-primer-contacto-con-ecuaciones-diofanticas-iv/">problema anterior</a>, en esta ocasión ningún par de coeficientes está conformado por números primos entre sí. El procedimiento que seguiremos será entonces:</p>
-
 <ol>
 <li>Escogeremos dos coeficientes cualesquiera.</li>
 <li>Despejaremos para conseguir una ecuación diofántica con dos variables.</li>
 <li>Dividiremos por el máximo común divisor de los mencionados coeficientes y resolveremos dicha ecuación.</li>
 </ol>
-
 <p>De esta manera, si empezamos considerando los coeficientes asociados a las variables $x$ e $y$, como $mcd(30,42)=6$, la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 30x+42y = (-3) - 70z + 105u
-\]</span></p>
-
+$$</p>
 <p>la podemos simplificar por $6$, llegando así a</p>
-
-<p><span  class="math">\[
+<p>$$
 5x+7y = \dfrac{(-3)-70z+105u}{6} = v,\quad\text{con}\quad v = \dfrac{(-3)-70z+105u}{6}.
-\]</span></p>
-
+$$</p>
 <p>Llevando a cabo el cambio de variable $x = vx^{\prime}$ e $y = vy^{\prime}$, la ecuación queda $5x^{\prime} +7y^{\prime}=1$, y despejando la variable $x^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
-
-<p><span  class="math">\[
+<p>$$
 x^{\prime} = \dfrac{1-7y^{\prime}}{5},
-\]</span></p>
-
+$$</p>
 <p>hallando que para $y^{\prime}_0 = (-2)$, entonces $x^{\prime}_0 = 3$. Deshaciendo el cambio de variable efectuado, $x_0 = 3v$ e $y_0 = -2v$ es una solución particular para la ecuación diofántica planteada unas líneas arriba, por lo que su solución general queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 3v + 7t,\\
-y &= -2v - 5t,
+x &amp;= 3v + 7t,\<br>
+y &amp;= -2v - 5t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$ número entero.</p>
-
 <p>No obstante, recordemos que declaramos antes que</p>
-
-<p><span  class="math">\[
+<p>$$
 v = \dfrac{(-3) - 70z + 105u}{6},
-\]</span></p>
-
+$$</p>
 <p>esto es $105u - 70z - 6v = 3$, que resulta ser una ecuación diofántica de tres variables del mismo tipo que aquella con la cual iniciamos este ejercicio (el máximo común divisor de sus coeficientes asciende a $1$, pero no existe algún par de ellos que sean primos entre sí), pero con una incógnita menos. Como $mcd(6,70,105) = 1$, estamos en condiciones de asegurar que esta última ecuación diofántica planteada admite solución entera. Tomando, por ejemplo, los coeficientes asociados a las variables $u$ y $z$, escribimos entonces la ecuación $105u-70z = 3+6v$, que podemos simplificar por $35$, quedando así</p>
-
-<p><span  class="math">\[
+<p>$$
 3u-2z = \dfrac{3+6v}{35} = w,\quad\text{con}\quad w = \dfrac{3+6v}{35}.
-\]</span></p>
-
+$$</p>
 <p>Al igual que antes, si consideramos el cambio de variable $u = wu^{\prime}$ y $z = wz^{\prime}$, la anterior ecuación se convierte en $3u^{\prime} -2z^{\prime} =1$. Despejando la variable $z^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
-
-<p><span  class="math">\[
+<p>$$
 z^{\prime} = \dfrac{1-3u^{\prime}}{2}.
-\]</span></p>
-
+$$</p>
 <p>Luego, para $u^{\prime}_0 =(-1)$ hallamos que $z^{\prime}_0 =(-2)$, y deshaciendo el cambio de variable efectuado, $u_0 = -w$ y $z_0 = -2w$ es una solución particular de esta ecuación diofántica, por lo que su solución general queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-u &= -w+2t^{\prime},\\ 
-z &= -2w+3t^{\prime},
+u &amp;= -w+2t^{\prime},\ 
+z &amp;= -2w+3t^{\prime},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t^{\prime}$ número entero.</p>
-
-<p>Finalmente, como definimos antes <span  class="math">\(w = \dfrac{3+6v}{35},\)</span> generamos al ecuación diofántica $35w-6v=3$, que sabemos admite solución entera pues $mcd(6,35) = 1$. Así, despejando ahora la variable $w$, <span  class="math">\(w=\dfrac{3+6v}{35},\)</span> y entonces $v_0 = (-18)$ y $w_0=3$ es una solución particular para ella. De esta manera, su solución general es</p>
-
-<p><span  class="math">\[
+<p>Finalmente, como definimos antes $$w = \dfrac{3+6v}{35},$$ generamos al ecuación diofántica $35w-6v=3$, que sabemos admite solución entera pues $mcd(6,35) = 1$. Así, despejando ahora la variable $w$, $$w=\dfrac{3+6v}{35},$$ y entonces $v_0 = (-18)$ y $w_0=3$ es una solución particular para ella. De esta manera, su solución general es</p>
+<p>$$
 \begin{aligned}
-v &= (-18)+35t^{\prime\prime},\\
-w &= 3+6t^{\prime\prime}
+v &amp;= (-18)+35t^{\prime\prime},\<br>
+w &amp;= 3+6t^{\prime\prime}
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t^{\prime\prime}$ número entero. Únicamente nos resta reemplazar adecuadamente los resultados alcanzados para que así la solución quede expresada en función de valores enteros. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\\
-y &= -2v-5t = 36 - 5t - 70t^{\prime\prime},\\
-z &= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\\ 
-u &= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
+x &amp;= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\<br>
+y &amp;= -2v-5t = 36 - 5t - 70t^{\prime\prime},\<br>
+z &amp;= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\ 
+u &amp;= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$, $t^{\prime}$ y $t^{\prime\prime}$ números enteros.</p>
 
     </div>
@@ -943,7 +921,7 @@ u &= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1010,7 +988,7 @@ u &= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1026,7 +1004,7 @@ u &= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

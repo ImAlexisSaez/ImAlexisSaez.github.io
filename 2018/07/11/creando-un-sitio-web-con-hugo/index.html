@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -436,7 +443,7 @@
   <h1>Creando un sitio web con Hugo</h1>
 
   
-  <p class="page-subtitle">It&rsquo;s alive!</p>
+  <p class="page-subtitle">It's alive!</p>
   
 
   
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/11/creando-un-sitio-web-con-hugo/featured_hu2e035f74c6d4a8b4d9aa9830e3858794_133054_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@leecampbell" target="_blank">Lee Campbell</a>, disponible en <a href="https://unsplash.com/photos/DtDlVpy-vvQ" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@leecampbell">Lee Campbell</a>, disponible en <a href="https://unsplash.com/photos/DtDlVpy-vvQ">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,27 +574,17 @@
 
     <div class="article-style">
       <p>¡Ha llegado el momento que todos estábamos esperando! Tras un par de artículos en los que hemos preparado nuestros equipos instalando las herramientas necesarias, hoy veremos cómo generar nuestro primer sitio web con <em>Hugo</em>.</p>
-
-<p>Esta tercera entrada del <a href="/proyecto/metablog/">Proyecto Metablog</a> se va a apoyar en la guía de inicio recogida en la documentación oficial de <em>Hugo</em>, a la que podemos acceder a través de <a href="https://gohugo.io/getting-started/quick-start/" target="_blank">este enlace</a>.</p>
-
+<p>Esta tercera entrada del <a href="/proyecto/metablog/">Proyecto Metablog</a> se va a apoyar en la guía de inicio recogida en la documentación oficial de <em>Hugo</em>, a la que podemos acceder a través de <a href="https://gohugo.io/getting-started/quick-start/">este enlace</a>.</p>
 <p>En primer lugar, abrimos la terminal <em>Git Bash</em> y nos dirigimos al directorio de nuestro disco duro donde tengamos pensado almacenar localmente el sitio web. En la mencionada guía recomiendan ubicar las páginas en la ruta <code>C:\Hugo\Sites\</code>, aunque ya comenté en la <a href="/2018/07/08/instalando-hugo-en-windows/">anterior entrada</a> que no era estrictamente necesario proceder de tal forma.</p>
-
 <p>Dicho esto, en este artículo seguiremos al dedillo las indicaciones dadas en la guía, de manera que en la terminal tecleamos:</p>
-
 <pre><code class="language-bash">cd c:/Hugo/Sites/
 </code></pre>
-
-<p>El comando para generar un nuevo sitio web es <code>hugo new site [path] [flags]</code>, donde sustituiremos <code>[path]</code> por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las <code>[flags]</code>, en el apartado de la documentación oficial dedicado a <a href="https://gohugo.io/commands/hugo_new_site/" target="_blank">hugo new site</a> tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.</p>
-
+<p>El comando para generar un nuevo sitio web es <code>hugo new site [path] [flags]</code>, donde sustituiremos <code>[path]</code> por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las <code>[flags]</code>, en el apartado de la documentación oficial dedicado a <a href="https://gohugo.io/commands/hugo_new_site/">hugo new site</a> tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.</p>
 <p>Así pues, generemos un primer sitio de prueba y, en un alarde de extrema originalidad, ubiquémoslo en el directorio <code>\prueba\</code>. Para ello, escribimos en la terminal:</p>
-
 <pre><code class="language-bash">hugo new site prueba
 </code></pre>
-
 <p>Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de <em>Hugo</em> siguiendo las indicaciones de <a href="/2018/07/08/instalando-hugo-en-windows/">esta entrada</a>) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.</p>
-
 <p><em>Hugo</em> ha creado el directorio <code>\prueba\</code> en el interior de la ruta donde hemos ejecutado el comando <code>hugo new site</code>. Además, ha poblado el mismo con algunas carpetas (vacías en su mayor parte), quedando una estructura como la que figura en la siguiente imagen:</p>
-
 
 
 
@@ -617,29 +614,19 @@
 
 </figure>
 
-
 <p>En un futuro exploraremos con detalle el cometido de algunos de esos directorios que aparecen en la imagen (<code>\content\</code> y <code>\layouts\</code> son de extrema importancia, así como ese curioso archivo denominado <code>config.toml</code>). No obstante, por el momento, evitemos distraernos en exceso y sigamos las indicaciones de la guía.</p>
-
 <p>Volvemos a la terminal, nos movemos hacia el directorio <code>\prueba\</code> e iniciamos un repositorio <em>Git</em>, acciones que requieren teclear los dos siguientes comandos:</p>
-
 <pre><code class="language-bash">cd prueba
 </code></pre>
-
 <pre><code class="language-bash">git init
 </code></pre>
-
-<p>En el siguiente paso de la guía nos invitan a instalar un tema para la web, <a href="https://themes.gohugo.io/gohugo-theme-ananke/" target="_blank">Ananke</a>, utilizando <code>submodule</code> (un comando de <em>Git</em>). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta <code>\themes\</code> y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:</p>
-
+<p>En el siguiente paso de la guía nos invitan a instalar un tema para la web, <a href="https://themes.gohugo.io/gohugo-theme-ananke/">Ananke</a>, utilizando <code>submodule</code> (un comando de <em>Git</em>). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta <code>\themes\</code> y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:</p>
 <pre><code class="language-bash">cd themes
 </code></pre>
-
 <pre><code class="language-bash">git clone https://github.com/budparr/gohugo-theme-ananke.git
 </code></pre>
-
-<p>De esta manera, tenemos acceso localmente a un sitio web de prueba, con un poco de contenido ya generado, que nos permitirá hacernos una idea del aspecto final de nuestro sitio web utilizando el tema <em>Ananke</em>. Aunque soy consciente de que me estoy desviando &ldquo;ligeramente&rdquo; de la guía oficial, vamos a tomar esta senda para ver cómo luce nuestro sitio web.</p>
-
+<p>De esta manera, tenemos acceso localmente a un sitio web de prueba, con un poco de contenido ya generado, que nos permitirá hacernos una idea del aspecto final de nuestro sitio web utilizando el tema <em>Ananke</em>. Aunque soy consciente de que me estoy desviando &lsquo;&lsquo;ligeramente&rsquo;&rsquo; de la guía oficial, vamos a tomar esta senda para ver cómo luce nuestro sitio web.</p>
 <p>Abrimos el explorador de archivos de <em>Windows</em> y en el directorio donde hemos ubicado la página web (<code>C:\Hugo\Sites\prueba\</code>) accedemos a la carpeta <code>themes</code>. Una vez dentro de ella, hacemos doble clic sobre el directorio <code>gohugo-theme-ananke</code> y repetimos luego la acción con la carpeta denomiada <code>exampleSite</code>, cuyos contenidos son:</p>
-
 
 
 
@@ -669,42 +656,26 @@
 
 </figure>
 
-
 <p>Copiamos tanto las dos carpetas, como el archivo <code>config.toml</code>, y pegamos todo en el directorio <code>C:\Hugo\Sites\prueba\</code>, reemplazando los ficheros existentes con el mismo nombre que en él se encuentran.</p>
-
 <p>Ahora volvemos a la terminal, que todavía está apuntando a la carpeta <code>\themes\</code> y tecleamos</p>
-
 <pre><code class="language-bash">cd ...
 </code></pre>
-
 <p>para volver al directorio raíz de nuestro sitio web. A continuación, para revisar el sitio web localmente escribimos</p>
-
 <pre><code class="language-bash">hugo server
 </code></pre>
-
 <p>y, para mi sorpresa, recibimos el siguiente mensaje de error <code>Error: Unable to find theme Directory: C:\Hugo\gohugo-theme-ananke</code>, hecho que debe ser el <em>karma</em> haciendo acto de presencia por haberme desviado de las indicaciones de la guía oficial.</p>
-
 <p>Aunque no quería meterme en este artículo en el contenido del archivo <code>config.toml</code>, para evitar ofrecer mucha información de golpe, solucionemos rápidamente este pequeño <em>bug</em> para así poder revisar localmente el sitio web.</p>
-
 <p>Hacemos clic derecho sobre el mencionado fichero y lo abrimos con <em>Sublime Text</em>. Modificamos la quinta línea que aparece, de</p>
-
 <pre><code class="language-toml">themesDir = &quot;../..&quot;
 </code></pre>
-
 <p>a</p>
-
 <pre><code class="language-toml"># themesDir = &quot;../..&quot;
 </code></pre>
-
 <p>y guardamos los cambios.</p>
-
 <p>Volvemos ahora a la terminal y tecleamos de nuevo</p>
-
 <pre><code class="language-bash">hugo server
 </code></pre>
-
 <p>Tras recibir cierta información sobre el sitio, únicamente nos resta abrir nuestro navegador web favorito y en la barra de direcciones escribir <code>http://localhost:1313/</code>, accediendo así a la página de bienvenida de nuestro sitio web, que luce así de bien:</p>
-
 
 
 
@@ -734,9 +705,7 @@
 
 </figure>
 
-
 <p>Es el momento de navegar por la página, estudiar si nos complace estéticamente y comprobar si la manera en la que se organizan los contenidos es la apropiada para el sitio web que teníamos en mente. Cuando hayamos terminado el paseo, volvemos a la terminal y cerramos el servidor local utilizando la combinación de teclas <code>Ctrl + C</code>.</p>
-
 <p>En el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> exploraremos, ahora sí y con mucho más detalle, la configuración básica del sitio web, que reside en el fichero <code>config.toml</code>.</p>
 
     </div>
@@ -998,7 +967,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1065,7 +1034,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1081,7 +1050,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

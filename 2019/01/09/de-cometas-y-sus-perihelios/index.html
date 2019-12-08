@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/09/de-cometas-y-sus-perihelios/featured_hu3ffd20587a007568ac4de17329428186_205739_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@laurencpandolfi" target="_blank">Lauren Pandolfi</a>, disponible en <a href="https://unsplash.com/photos/zD5ry8Up83M" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@laurencpandolfi">Lauren Pandolfi</a>, disponible en <a href="https://unsplash.com/photos/zD5ry8Up83M">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,64 +574,51 @@
 
     <div class="article-style">
       <p><strong>Problema 41:</strong> Los cometas <em>2p/Encke</em>, <em>4P/Faye</em> y <em>8p/Tuttle</em> tienen períodos orbitales de $3$, $8$ y $13$ años, respectivamente. Los últimos perihelios (punto más cercano de la órbita de un cuerpo celeste alrededor del Sol) de cada uno de ellos fueron en $2017$, $2014$ y $2008$, respectivamente. ¿Cuál será el siguiente año en el cual coincidan sus perihelios? (Para este problema, asume que el tiempo se mide en años completos y que cada período orbital es constante.)</p>
-
 <hr>
-
 <p>Sea $x$ el valor entero del siguiente año en el cual coinciden los perihelios. Como el cometa <em>2p/Encke</em> tiene una órbita de la forma $2017+3t$, con $t$ un número entero, entonces $x\equiv 2017\pmod{3}$. Análogamente, dado el cometa <em>4p/Faye</em> posee una órbita de la forma $2014+8u$, con $u$ número entero, entonces $x\equiv 2014\pmod{8}$. Finalmente, debido a que el cometa <em>8p/Tuttle</em> tiene una órbita de la forma $2008+13v$, con $v$ número entero, entonces $x\equiv 2008\pmod{13}$.</p>
-
 <p>Así pues, hemos de resolver el siguiente sistema de ecuaciones de congruencias lineales,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2017\pmod{3}\equiv 1\pmod{3},\\
-x&\equiv 2014\pmod{8}\equiv 6\pmod{8}\\
-x&\equiv 2008\pmod{13}\equiv 6\pmod{13}.
+x&amp;\equiv 2017\pmod{3}\equiv 1\pmod{3},\<br>
+x&amp;\equiv 2014\pmod{8}\equiv 6\pmod{8}\<br>
+x&amp;\equiv 2008\pmod{13}\equiv 6\pmod{13}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por la estructura que presenta el anterior sistema y dado que $m_1=3$, $m_2=8$ y $m_3=13$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=3\cdot8\cdot13 = 312$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-M_1 &= \dfrac{M}{m_1} = \dfrac{312}{3} = 8\cdot13 = 104,\\
-M_2 &= \dfrac{M}{m_2} = \dfrac{312}{8} = 3\cdot13 = 39,\\
-M_3 &= \dfrac{M}{m_3} = \dfrac{312}{13} = 3\cdot8 = 24,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{312}{3} = 8\cdot13 = 104,\<br>
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{312}{8} = 3\cdot13 = 39,\<br>
+M_3 &amp;= \dfrac{M}{m_3} = \dfrac{312}{13} = 3\cdot8 = 24,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-104x\equiv 1\pmod{3}&\Leftrightarrow 2x\equiv 1\pmod{3}\\
-&\Leftrightarrow x\equiv 2\pmod{3},\\
-39x\equiv 1\pmod{8}&\Leftrightarrow (-x)\equiv 1\pmod{8}\\
-&\Leftrightarrow x\equiv (-1)\pmod{8},\\
-24x\equiv 1\pmod{13}&\Leftrightarrow (-2x)\equiv 1\pmod{13}\\
-&\Leftrightarrow (-12x)\equiv 6\pmod{13}\\
-&\Leftrightarrow x\equiv 6\pmod{13}.
+104x\equiv 1\pmod{3}&amp;\Leftrightarrow 2x\equiv 1\pmod{3}\<br>
+&amp;\Leftrightarrow x\equiv 2\pmod{3},\<br>
+39x\equiv 1\pmod{8}&amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\<br>
+&amp;\Leftrightarrow x\equiv (-1)\pmod{8},\<br>
+24x\equiv 1\pmod{13}&amp;\Leftrightarrow (-2x)\equiv 1\pmod{13}\<br>
+&amp;\Leftrightarrow (-12x)\equiv 6\pmod{13}\<br>
+&amp;\Leftrightarrow x\equiv 6\pmod{13}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Agrupando ahora toda la información adecuadamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 1\pmod{3},& 104x&\equiv 1\pmod{3},& x&\equiv 2\pmod{3},\\
-x&\equiv 6\pmod{8},& 39x&\equiv 1\pmod{8},& x&\equiv (-1)\pmod{8},\\
-x&\equiv 6\pmod{13},& 24x&\equiv 1\pmod{13},& x&\equiv 6\pmod{13},
+x&amp;\equiv 1\pmod{3},&amp; 104x&amp;\equiv 1\pmod{3},&amp; x&amp;\equiv 2\pmod{3},\<br>
+x&amp;\equiv 6\pmod{8},&amp; 39x&amp;\equiv 1\pmod{8},&amp; x&amp;\equiv (-1)\pmod{8},\<br>
+x&amp;\equiv 6\pmod{13},&amp; 24x&amp;\equiv 1\pmod{13},&amp; x&amp;\equiv 6\pmod{13},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces la solución es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\\
-&\equiv 838\pmod{312}\equiv 214\pmod{312},
+x &amp;\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\<br>
+&amp;\equiv 838\pmod{312}\equiv 214\pmod{312},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, en los años de la forma $214+316w$, con $w$ número entero, coinciden los tres perihelios. Para $w=5$, encontramos que el año $1794$ fue el último en el que coincidieron, mientras que si $w=6$, hallamos que $2086$ será el próximo año en el que coincidan.</p>
 
     </div>
@@ -899,7 +893,7 @@ x &\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -966,7 +960,7 @@ x &\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -982,7 +976,7 @@ x &\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

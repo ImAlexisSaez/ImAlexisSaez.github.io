@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack().">
+  <meta name="description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &lsquo;&lsquo;aplicación&rsquo;&rsquo; que generamos con anterioridad:
+from tkinter import Tkraiz = Tk()raiz.title(&quot;Ventana de pruebas&quot;)raiz.resizable(width=False, height=False) # raiz.resizable(0, 0)raiz.iconbitmap(&quot;icon.ico&quot;)raiz.geometry(&quot;450x300&quot;)raiz.config(bg=&quot;lightblue&quot;)raiz.mainloop() A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack().">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
@@ -124,8 +124,8 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
   <meta property="og:site_name" content="Infinitos Contrastes">
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb43-interfaces-graficas-ii/">
   <meta property="og:title" content="43. Interfaces gráficas II | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:
-from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) raiz.resizable(width=False, height=False) # raiz.resizable(0, 0) raiz.iconbitmap(&quot;icon.ico&quot;) raiz.geometry(&quot;450x300&quot;) raiz.config(bg=&quot;lightblue&quot;) raiz.mainloop()  A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack()."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:description" content="Vídeo   Notas personales Después de introducir, en la lección anterior, la raíz de una interfaz gráfica, en esta abordaremos la construcción y uso de frames. Comencemos recuperando el código fuente de la &lsquo;&lsquo;aplicación&rsquo;&rsquo; que generamos con anterioridad:
+from tkinter import Tkraiz = Tk()raiz.title(&quot;Ventana de pruebas&quot;)raiz.resizable(width=False, height=False) # raiz.resizable(0, 0)raiz.iconbitmap(&quot;icon.ico&quot;)raiz.geometry(&quot;450x300&quot;)raiz.config(bg=&quot;lightblue&quot;)raiz.mainloop() A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método pack()."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@ from tkinter import Tk raiz = Tk() raiz.title(&quot;Ventana de pruebas&quot;) ra
           <h1>43. Interfaces gráficas II</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/M80CzDC1Crc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
-<p>Después de introducir, en la lección anterior, la <em>raíz</em> de una interfaz gráfica, en esta abordaremos la construcción y uso de <em>frames</em>. Comencemos recuperando el código fuente de la &ldquo;aplicación&rdquo; que generamos con anterioridad:</p>
-
+<p>Después de introducir, en la lección anterior, la <em>raíz</em> de una interfaz gráfica, en esta abordaremos la construcción y uso de <em>frames</em>. Comencemos recuperando el código fuente de la &lsquo;&lsquo;aplicación&rsquo;&rsquo; que generamos con anterioridad:</p>
 <pre><code class="language-python">from tkinter import Tk
 
 raiz = Tk()
@@ -774,9 +772,7 @@ raiz.geometry(&quot;450x300&quot;)
 raiz.config(bg=&quot;lightblue&quot;)
 raiz.mainloop()
 </code></pre>
-
 <p>A continuación, crearemos un frame y lo empaquetaremos (ubicaremos) dentro de la raíz disponible a través del método <code>pack()</code>. Además, prescindiremos de la instrucción <code>raiz.geometry()</code>, para así estar en condiciones de configurar el tamaño del <em>frame</em> (la raíz se adaptará automáticamente al tamaño de sus elementos internos):</p>
-
 <pre><code class="language-python">from tkinter import Tk, Frame
 
 raiz = Tk()
@@ -792,9 +788,7 @@ frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot
 
 raiz.mainloop()
 </code></pre>
-
 <p>A primera vista, al ejecutar el aterior bloque de código, da la sensación de que hemos perdido el color de fondo declarado para la aplicación (<code>lightblue</code>). No obstante, como ahora permitimos manipular el tamaño de la ventana (mediante la instrucción <code>raiz.resizable(width=True, height=True)</code>), al agrandarla comprobamos que todo funciona correctamente.</p>
-
 
 
 
@@ -824,11 +818,8 @@ raiz.mainloop()
 
 </figure>
 
-
-<p><em>Nota</em>: en <a href="http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter" target="_blank">esta página</a> podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería <code>tkinter</code>.</p>
-
+<p><em>Nota</em>: en <a href="http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter">esta página</a> podemos encontrar un buen recurso para acceder a una paleta de colores declarados por nombres y disponibles para la librería <code>tkinter</code>.</p>
 <p>Por otro lado, observamos que el <em>frame</em> tiene un tamaño fijo, por mucho que manipulemos el tamaño de la ventana, las dimensiones del <em>frame</em> no se alteran, así como su posición, que permanece centrada en la parte superior de la ventana de la aplicación. Este comportamiento es el dado por defecto, que podemos configurar de manera diferente, si así lo deseamos, a través del método <code>pack()</code>.</p>
-
 <pre><code class="language-python">from tkinter import Tk, Frame
 
 raiz = Tk()
@@ -844,7 +835,6 @@ frame.config(bg=&quot;tomato&quot;, width=&quot;450&quot;, height=&quot;300&quot
 
 raiz.mainloop()
 </code></pre>
-
 
 
 
@@ -874,9 +864,7 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Las opciones de configuración de los <em>frames</em> son ciertamente numerosas. Por ejemplo, podemos añadirle un borde (parámetros <code>bd</code> y <code>relief</code>) o cambiar el icono del ratón cuando se adentra en el interior del <em>frame</em> (parámetro <code>cursor</code>):</p>
-
 <pre><code class="language-python">from tkinter import Tk, Frame
 
 raiz = Tk()
@@ -910,7 +898,6 @@ raiz.mainloop()
 
 
 
-
 <figure>
 
 
@@ -927,12 +914,9 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Obviamente, todo aquello que hemos visto de cara a configurar un <em>frame</em> es aplicable a la propia <em>raíz</em> y dependerá de cómo deseemos diseñar nuestra aplicación.</p>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/43/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/43/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -983,7 +967,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1031,7 +1015,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1103,7 +1087,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

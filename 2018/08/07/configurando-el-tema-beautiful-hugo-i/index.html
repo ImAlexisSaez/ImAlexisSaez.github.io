@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/07/configurando-el-tema-beautiful-hugo-i/featured_hu0ac64a89a9eee8e9791b784fb63e620d_168363_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@willianjusten" target="_blank">Willian Justen de Vasconcellos</a>, disponible en <a href="https://unsplash.com/photos/Cdb3-cWZBeo" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@willianjusten">Willian Justen de Vasconcellos</a>, disponible en <a href="https://unsplash.com/photos/Cdb3-cWZBeo">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -566,24 +573,16 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Continuemos esta serie de artículos, pertenecientes al <a href="/proyecto/metablog/">Proyecto Metablog</a>, donde examinamos con detalle la creación de sitios web utilizando <em>Hugo</em>. Hoy veremos cómo instalar y configurar el tema <a href="https://themes.gohugo.io/beautifulhugo/" target="_blank">Beautiful Hugo</a>.</p>
-
-<p>En la <a href="/2018/07/17/configurando-el-tema-ananke/">anterior entrada</a> vimos el proceso a seguir para el tema <em>Anake</em>. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para <em>Infinitos Contrastes</em>. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la <a href="https://themes.gohugo.io/" target="_blank">sección de temas</a> de la web oficial de <em>Hugo</em>, encontré, para mi fortuna, el tema <em>Beautiful Hugo</em>, una adaptación del tema <em>Beautiful Jekyll</em> que ya utilicé en su momento como plantilla para mi sitio web.</p>
-
+      <p>Continuemos esta serie de artículos, pertenecientes al <a href="/proyecto/metablog/">Proyecto Metablog</a>, donde examinamos con detalle la creación de sitios web utilizando <em>Hugo</em>. Hoy veremos cómo instalar y configurar el tema <a href="https://themes.gohugo.io/beautifulhugo/">Beautiful Hugo</a>.</p>
+<p>En la <a href="/2018/07/17/configurando-el-tema-ananke/">anterior entrada</a> vimos el proceso a seguir para el tema <em>Anake</em>. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para <em>Infinitos Contrastes</em>. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la <a href="https://themes.gohugo.io/">sección de temas</a> de la web oficial de <em>Hugo</em>, encontré, para mi fortuna, el tema <em>Beautiful Hugo</em>, una adaptación del tema <em>Beautiful Jekyll</em> que ya utilicé en su momento como plantilla para mi sitio web.</p>
 <p>Me encanta este tema por el protagonismo que ofrece al contenido, evitando toda esa miríada de elementos que algunas plantillas incorporan y que distraen enormemente la atención a la hora de consultar la información contenida en los artículos. Además, viene con el interesante añadido para un matemático de incorporar, de serie, la configuración adecuada para escribir fórmulas vía <em>KaTeX</em> (es un detalle con cierta trampa, ya que buenas batallas estoy lidiando, en ocasiones, para que las expresiones matemáticas se visualicen como deberían).</p>
-
 <p>Así pues, procedamos a su instalación. Para ello, en la terminal, desde el directorio raíz donde hayamos escogido alojar localmente nuestro sitio web, tecleamos:</p>
-
 <pre><code class="language-bash">cd themes
 </code></pre>
-
 <p>y clonamos, en esta carpeta, el tema <em>Beautiful Hugo</em> escribiendo:</p>
-
 <pre><code class="language-bash">git clone https://github.com/halogenica/beautifulhugo.git beautifulhugo
 </code></pre>
-
 <p>Al igual que el tema <em>Anake</em>, <em>Beautiful Hugo</em> viene acompañado, para nuestro gozo y disfrute, con un pequeño sitio web de muestra, ubicado en la carpeta <code>exampleSite</code> (siendo la ruta completa <code>\themes\beautifulhugo\exampleSite</code>). A través del <em>Explorador de archivos</em> de <em>Windows</em> podemos comprobar que su contenido es el que se muestra en la siguiente imagen:</p>
-
 
 
 
@@ -613,13 +612,9 @@
 
 </figure>
 
-
 <p>Procedemos entonces a copiar las carpetas <code>contents</code>, <code>layouts</code> y <code>static</code>, así como el archivo <code>config.toml</code> y las pegamos en el directorio raíz de nuestro sitio web. A estas alturas de la película, dependiendo de la intensidad con la que hayamos estado experimentando con diversas plantillas, recomendaría incluso eliminar previamente las mencionadas carpetas y el citado fichero antes de proceder a la acción de pegar, para así evitar la aparición de extraños conflictos en un futuro próximo.</p>
-
 <p>Ahora, editamos el archivo <code>config.toml</code>, utilizando <em>Sublime Text 3</em> para ello, con el objetivo de empezar a personalizar la configuración de esta plantilla. Algunos de los detalles que a continuación veremos son muy similares a los que discutimos durante el artículo dedicado al tema <em>Anake</em>, por lo que en esta ocasión el ritmo de exposición será más ligero.</p>
-
 <p>El primer bloque de código que encontramos es:</p>
-
 <pre><code class="language-toml">baseurl = &quot;https://username.github.io&quot;
 DefaultContentLanguage = &quot;en&quot;
 #DefaultContentLanguage = &quot;ja&quot;
@@ -635,9 +630,7 @@ pygmentsCodefencesGuessSyntax = true
 #disqusShortname = &quot;XXX&quot;
 #googleAnalytics = &quot;XXX&quot;
 </code></pre>
-
 <p>Algunas variables nos resultarán familiares, por lo que seremos capaces inmediatamente de asignarles sus correspondientes valores. Por ejemplo, las primeras líneas, en mi caso, han quedado como sigue:</p>
-
 <pre><code class="language-toml">#
 # Configuración básica del sitio
 #
@@ -647,11 +640,8 @@ baseurl = &quot;https://imalexissaez.github.io/&quot; # URL base
 metaDataFormat         = &quot;yaml&quot;             # Formato de las cabeceras de las entradas
 DefaultContentLanguage = &quot;es&quot;               # Lenguaje de la web (activa localización)
 </code></pre>
-
 <p>Ninguna sorpresa aquí. Entre los descriptivos nombres que poseen las variables y los comentarios que he añadido, no es descabellado suponer que todos configuraremos de manera adecuada el anterior bloque.</p>
-
 <p>Ahora bien, el siguiente apartado sí que merece explicación por mi parte:</p>
-
 <pre><code class="language-toml">#
 # Configuración de los bloques de código fuente
 # Guía en: https://gohugo.io/content-management/syntax-highlighting/
@@ -661,15 +651,10 @@ pygmentsUseClasses            = true
 pygmentsCodeFences            = true
 pygmentsCodefencesGuessSyntax = true
 </code></pre>
-
-<p>He dejado en los comentarios un enlace a la guía oficial para la configuración del <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank">resaltado de código</a> a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos <em>CSS</em> que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor <code>&quot;trac&quot;</code>, en mi opinión, es el que más a juego va con <em>Beautiful Hugo</em>. Por otro lado, como este tema utiliza la librería <a href="https://highlightjs.org/" target="_blank">highlight.js</a> (en lugar de la que <em>Hugo</em> incorpora por defecto) para el mencionado resaltado, hemos de asignar <code>true</code> a la variable <code>pygmentsUseClasses</code>.</p>
-
-<p>A continuación, habilitamos la posibilidad de escribir código fuente en &ldquo;<em>fences</em>&rdquo;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la <a href="https://kramdown.gettalong.org/quickref.html#code-blocks" target="_blank">guía oficial</a> de <em>Kramdown</em> sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el <em>shortcode</em> <code>highlight</code> se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.</p>
-
+<p>He dejado en los comentarios un enlace a la guía oficial para la configuración del <a href="https://gohugo.io/content-management/syntax-highlighting/">resaltado de código</a> a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos <em>CSS</em> que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor <code>&quot;trac&quot;</code>, en mi opinión, es el que más a juego va con <em>Beautiful Hugo</em>. Por otro lado, como este tema utiliza la librería <a href="https://highlightjs.org/">highlight.js</a> (en lugar de la que <em>Hugo</em> incorpora por defecto) para el mencionado resaltado, hemos de asignar <code>true</code> a la variable <code>pygmentsUseClasses</code>.</p>
+<p>A continuación, habilitamos la posibilidad de escribir código fuente en &ldquo;<em>fences</em>&quot;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la <a href="https://kramdown.gettalong.org/quickref.html#code-blocks">guía oficial</a> de <em>Kramdown</em> sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el <em>shortcode</em> <code>highlight</code> se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.</p>
 <p>Además, aunque hemos activado la opción de adivinar el lenguaje de programación por su sintaxis, recomendaría aquí que ayudásemos en lo posible a la librería y le indicáramos cuál estamos empleando, para que así aplique la configuración adecuada para él. Actuar así es crítico cuando, como en este artículo, compartimos pequeños bloques de código, de forma que es bastante complicado acertar con el lenguaje de programación dada la escasa información que suministramos.</p>
-
 <p>Finalmente, nos limitaremos a introducir los valores correspondientes a las cuentas que habremos creado para <em>Disqus</em> y para las estadísticas de <em>Google</em> en el siguiente bloque de código:</p>
-
 <pre><code class="language-toml">#
 # Configuración de los comentarios (Disqus)
 #
@@ -680,9 +665,7 @@ disqusShortname = &quot;&quot;
 #
 googleAnalytics = &quot;&quot;
 </code></pre>
-
 <p>Nuestra siguiente parada será en la sección dedicada a la configuración de los parámetros del sitio web, que originalmente presenta el aspecto que se muestra a continuación:</p>
-
 <pre><code class="language-toml">[Params]
 #  homeTitle = &quot;Beautiful Hugo Theme&quot; # Set a different text for the header on the home page
   subtitle = &quot;Build a beautiful and simple website in minutes&quot;
@@ -709,9 +692,7 @@ googleAnalytics = &quot;&quot;
 #  src = &quot;img/hexagon.jpg&quot;
 #  desc = &quot;Hexagon&quot;
 </code></pre>
-
 <p>Empecemos analizando la primera parte que, en mi caso, ha quedado como sigue:</p>
-
 <pre><code class="language-toml">#
 # Configuración de parámetros del sitio web
 #
@@ -727,9 +708,7 @@ googleAnalytics = &quot;&quot;
   useHLJS     = true                                           # Highlight.js para resaltado
   socialShare = true                                           # Compartir entradas en redes sociales
 </code></pre>
-
 <p>ya que:</p>
-
 <ul>
 <li>No he visto la necesidad de utilizar la variable <code>homeTitle</code> para modificar el texto que aparece al acceder al sitio web. Me parece adecuado que sea el nombre de la página web: <em>Infinitos Contrastes</em>, pero, como siempre, &ldquo;para gustos, los colores&rdquo;. La variable <code>subtitle</code> sí que me resulta interesante para ofrecer una breve descripción o eslogan de nuestra página web.</li>
 <li>Los valores para las variables <code>logo</code> y <code>favicon</code> deben apuntar a las rutas donde ubiquemos las respectivas imágenes. Por defecto, las hojas de estilo <em>CSS</em>, las librerías escritas con <em>JavaScript</em> y las imágenes las almacenaremos en el interior del directorio <code>static</code>. Como <em>Hugo</em> supone este hecho, no es necesario que antecedamos cada ruta con <code>static</code>, pero debemos ubicar cada recurso adecuadamente.</li>
@@ -737,7 +716,6 @@ googleAnalytics = &quot;&quot;
 <li>La variable <code>commit</code> nos permite insertar el código SHA correspondiente al <em>commit</em> que generó la última versión del sitio web. No he considerado que dicha información fuera a proporcionar demasiada utilidad para una página como la mía, así que he declarado su valor como <code>false</code>.</li>
 <li>El resto de las variables activan, pues su valor es <code>true</code>, respectivamente, la sindicación vía <em>RSS</em>, la posibilidad de realizar comentarios en los distintos artículos de la web (vía <em>Disqus</em>), una estimación del tiempo de lectura para cada entrada (utilizando como referencia 200 palabras por minuto), el uso de la librería <em>highlight.js</em> para resaltar código y el acceso a compartir nuestro contenido en distintas redes sociales.</li>
 </ul>
-
 <p>Como la entrada está empezando a adquirir una extensión considerable. Vamos a poner aquí un punto y seguido, dejando para el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> el análisis del resto de la configuración del archivo <code>config.toml</code>.</p>
 
     </div>
@@ -1005,7 +983,7 @@ googleAnalytics = &quot;&quot;
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1072,7 +1050,7 @@ googleAnalytics = &quot;&quot;
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1088,7 +1066,7 @@ googleAnalytics = &quot;&quot;
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

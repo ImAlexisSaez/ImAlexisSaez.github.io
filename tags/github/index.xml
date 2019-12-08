@@ -18,21 +18,15 @@
       <pubDate>Sat, 01 Sep 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/09/01/alojando-nuestro-sitio-web-en-github/</guid>
       <description>&lt;p&gt;A estas alturas de la película, seguramente con algún que otro artículo redactado y revisado localmente de manera concienzuda, no nos queda más remedio que ocuparnos de un asunto un tanto tedioso: el alojamiento de nuestro sitio web en &lt;em&gt;Internet&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Para tal empresa he optado por &lt;em&gt;GitHub&lt;/em&gt;, que nos permite alojar páginas web estáticas de manera gratuita (¡y sin publicidad!). Desgraciadamente, el proceso dista de ser intuitivo, por lo que examinaremos todos y cada uno de los pasos de la &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34; target=&#34;_blank&#34;&gt;guía oficial&lt;/a&gt; con sumo detalle.&lt;/p&gt;
-
+&lt;p&gt;Para tal empresa he optado por &lt;em&gt;GitHub&lt;/em&gt;, que nos permite alojar páginas web estáticas de manera gratuita (¡y sin publicidad!). Desgraciadamente, el proceso dista de ser intuitivo, por lo que examinaremos todos y cada uno de los pasos de la &lt;a href=&#34;https://gohugo.io/hosting-and-deployment/hosting-on-github/&#34;&gt;guía oficial&lt;/a&gt; con sumo detalle.&lt;/p&gt;
 &lt;p&gt;Para empezar, existe una serie de requisitos que hemos de cumplir para subir nuestro sitio web a &lt;em&gt;GitHub&lt;/em&gt; y son:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Tener instalado en nuestro equipo una versión de &lt;em&gt;Git&lt;/em&gt; superior a la &lt;code&gt;2.8&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Disponer de una cuenta de usuario en &lt;em&gt;GitHub&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;Contar con una página web lista para ser publicada en &lt;em&gt;Internet&lt;/em&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Por lo que respecta a los dos primeros puntos del listado anterior, si estamos siguiendo el &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; desde sus orígenes, no supondrán problema alguno, pues fueron abordados en la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/05/preparando-el-equipo-para-hugo/&#34;&gt;primera entrada&lt;/a&gt; de la serie. En cuanto al tercer punto, con todo el trabajo que llevamos acumulado hasta el momento, es más que posible que entre nuestras manos tengamos ya un esbozo de sitio web que merezca la pena mostrar al resto del mundo.&lt;/p&gt;
-
 &lt;p&gt;Una vez comprobado que satisfacemos los requisitos del procedimiento, el primer paso a realizar consiste en crear dos nuevos repositorios en nuestra cuenta de &lt;em&gt;GitHub&lt;/em&gt;. Para ello, acudimos a la página de nuestro perfil en &lt;em&gt;GitHub&lt;/em&gt; y hacemos clic en el símbolo &lt;code&gt;+&lt;/code&gt; situado en la parte derecha del menú superior, para, a continuación, seleccionar la opción &lt;code&gt;New repositoy&lt;/code&gt;.&lt;/p&gt;
-
 
 
 
@@ -62,9 +56,7 @@
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;El primer repositorio que crearemos estará dedicado a almacenar el código fuente de nuestro sitio web y, en un alarde de infinita originalidad, lo denominaremos &lt;code&gt;sitio-web&lt;/code&gt;, tal y como figura en la siguiente imagen. Cuando hayamos rellenado el campo &lt;code&gt;Repository name&lt;/code&gt; haremos clic en el botón &lt;code&gt;Create repository&lt;/code&gt;.&lt;/p&gt;
-
 
 
 
@@ -94,43 +86,26 @@
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;A continuación, de las tres opciones que nos ofrece la página que aparece ante nosotros, vamos a escoger la segunda, ya que cuando en &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;esta entrada&lt;/a&gt; generamos nuestro primer sitio web, a la vez iniciamos un repositorio &lt;em&gt;Git&lt;/em&gt;. Aquella acción, que en su momento podía parecer un tanto extraña, queda ahora totalmente justificada.&lt;/p&gt;
-
 &lt;p&gt;Así pues, abrimos la terminal del sistema, nos desplazamos hasta el directorio raíz donde hayamos decidido almacenar localmente nuestro sitio web y tecleamos:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git remote add origin https://github.com/&amp;lt;USERNAME&amp;gt;/sitio-web.git
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;En mi caso, en lugar de &lt;code&gt;&amp;lt;USERNAME&amp;gt;&lt;/code&gt;, aparece directamente &lt;code&gt;ImAlexisSaez&lt;/code&gt;. Cada uno de nosotros tendrá definida esa parte del comando de manera diferente, por lo que recomiendo encarecidamente copiar la instrucción de la página de &lt;em&gt;GitHub&lt;/em&gt; en lugar de la que aparece arriba.&lt;/p&gt;
-
 &lt;p&gt;Acto seguido, escribimos en la terminal:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;De esta manera, transcurridos unos segundos, tendremos disponible en &lt;em&gt;GitHub&lt;/em&gt; una copia del código fuente que permite generar nuestra página web estática.&lt;/p&gt;
-
 &lt;p&gt;A continuación, volvemos a &lt;em&gt;GitHub&lt;/em&gt; y creamos un nuevo repositorio. Este último tendrá un nombre especial que será, además, la dirección de acceso a nuestro sitio web. Hemos de combinar nuestra cuenta de usuario en &lt;em&gt;GitHub&lt;/em&gt; con la extensión &lt;code&gt;.github.io&lt;/code&gt;. Por ejemplo, en mi caso queda &lt;code&gt;ImAlexisSaez.github.io&lt;/code&gt; y así es como rellené en su momento el campo &lt;code&gt;Repository name&lt;/code&gt;. Una vez escrito, simplemente tenemos que hacer clic en el botón &lt;code&gt;Create repository&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Volvemos a la terminal del sistema y tecleamos &lt;code&gt;hugo server&lt;/code&gt;, para poder dar así una última revisión local a nuestro sitio web, utilizando la dirección `&lt;code&gt;http://localhost:1313&lt;/code&gt;, y comprobar que todo está en perfecto estado. Cuando estemos satisfechos, acudimos de nuevo a la terminal del sistema y cerramos el servidor local, empleando para ello la combinación de teclas &lt;code&gt;Ctrl + c&lt;/code&gt;.&lt;/p&gt;
-
+&lt;p&gt;Volvemos a la terminal del sistema y tecleamos &lt;code&gt;hugo server&lt;/code&gt;, para poder dar así una última revisión local a nuestro sitio web, utilizando la dirección ``http://localhost:1313&lt;code&gt;, y comprobar que todo está en perfecto estado. Cuando estemos satisfechos, acudimos de nuevo a la terminal del sistema y cerramos el servidor local, empleando para ello la combinación de teclas &lt;/code&gt;Ctrl + c`.&lt;/p&gt;
 &lt;p&gt;Acto seguido, escribimos:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;rm -rf public
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Este comando borra por completo la carpeta &lt;code&gt;public&lt;/code&gt;, que se encuentra en el directorio donde tenemos almacenado localmente nuestro sitio web. Dicha carpeta se genera automáticamente cada vez que tecleamos &lt;code&gt;hugo server&lt;/code&gt; en la terminal del sistema, y contiene la versión final de nuestra página web.&lt;/p&gt;
-
 &lt;p&gt;El siguiente paso, precisamente, es crear un submódulo de manera que la carpeta &lt;code&gt;public&lt;/code&gt; apunte a otra dirección de &lt;em&gt;GitHub&lt;/em&gt;. Para ello, desde la terminal del sistema, tecleamos&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule add -b master git@github.com:&amp;lt;USERNAME&amp;gt;/&amp;lt;USERNAME&amp;gt;.github.io.git public
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;donde sustituiremos &lt;code&gt;&amp;lt;USERNAME&amp;gt;&lt;/code&gt; por el nombre de nuestra cuenta de usuario en &lt;em&gt;GitHub&lt;/em&gt; (por ejemplo, &lt;code&gt;ImAlexisSaez&lt;/code&gt; en mi caso).&lt;/p&gt;
-
 &lt;p&gt;¡Ya casi tenemos todo a punto! Únicamente hemos de abrir &lt;em&gt;Sublime Text 3&lt;/em&gt; y en un archivo, que guardaremos como &lt;code&gt;deploy.sh&lt;/code&gt; en el directorio raíz donde hayamos almacenado localmente nuestro sitio web, copiamos el siguiente bloque de código:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
 
 echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;
@@ -156,16 +131,11 @@ git push origin master
 # Come Back up to the Project Root
 cd ..
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;El anterior bloque de código se encarga, de manera automática, del proceso de subida de nuestro sitio web a &lt;em&gt;GitHub&lt;/em&gt;. Para utilizarlo, desde la terminal del sistema, nos situaremos en el directorio raíz donde hayamos decidido almacenar nuestro sitio web y teclearemos&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;./deploy.sh &amp;quot;Mensaje que resuma los cambios&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;En mi caso, no me suelo esforzar mucho en declarar mensajes óptimamente descriptivos y, por ejemplo, cuando suba esta entrada el comando será del estilo &lt;code&gt;./deploy.sh &amp;quot;Añade entrada 20180901&amp;quot;&lt;/code&gt;. Los mensajes asociados al repositorio donde guardo el código fuente sí que intento que sean más expresivos y reflejen adecuadamente los cambios de las diferentes versiones.&lt;/p&gt;
-
 &lt;p&gt;Con esto, damos por finalizado el proceso y nuestro sitio web será ahora accesible para todo el mundo a través de la dirección web que proporciona el segundo repositorio que hemos creado (en mi caso &lt;code&gt;https://imalexissaez.github.io/&lt;/code&gt;).&lt;/p&gt;
-
 &lt;p&gt;En la siguiente entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; posiblemente empecemos a realizar cambios en la hoja de estilos &lt;em&gt;CSS&lt;/em&gt; y personalizar todavía más el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
@@ -175,16 +145,10 @@ cd ..
       <link>https://imalexissaez.github.io/2018/07/05/preparando-el-equipo-para-hugo/</link>
       <pubDate>Thu, 05 Jul 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/07/05/preparando-el-equipo-para-hugo/</guid>
-      <description>
-
-&lt;p&gt;Antes de lanzarnos, sin más, a generar sitios web con &lt;em&gt;Hugo&lt;/em&gt;, conviene que instalemos una serie de herramientas que nos facilitarán la vida: un sistema de control de versiones (&lt;em&gt;Git&lt;/em&gt; + &lt;em&gt;GitHub&lt;/em&gt;) y un editor de texto plano (&lt;em&gt;Sublime Text 3&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Tal es el propósito de esta primera entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, que consistirá en una serie de artículos que documentarán todo el proceso de instalación de &lt;em&gt;Hugo&lt;/em&gt;, el de la creación del propio sitio web empleando dicho generador y el de la personalización de la plantilla que actualmente estoy utilizando: &lt;a href=&#34;https://themes.gohugo.io/beautifulhugo/&#34; target=&#34;_blank&#34;&gt;Beautiful Hugo&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;Antes de lanzarnos, sin más, a generar sitios web con &lt;em&gt;Hugo&lt;/em&gt;, conviene que instalemos una serie de herramientas que nos facilitarán la vida: un sistema de control de versiones (&lt;em&gt;Git&lt;/em&gt; + &lt;em&gt;GitHub&lt;/em&gt;) y un editor de texto plano (&lt;em&gt;Sublime Text 3&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Tal es el propósito de esta primera entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, que consistirá en una serie de artículos que documentarán todo el proceso de instalación de &lt;em&gt;Hugo&lt;/em&gt;, el de la creación del propio sitio web empleando dicho generador y el de la personalización de la plantilla que actualmente estoy utilizando: &lt;a href=&#34;https://themes.gohugo.io/beautifulhugo/&#34;&gt;Beautiful Hugo&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;1-git&#34;&gt;1. Git&lt;/h2&gt;
-
-&lt;p&gt;El sistema de control de versiones al que personalmente estoy acostumbrado es &lt;em&gt;Git&lt;/em&gt;, en cuya &lt;a href=&#34;https://git-scm.com/&#34; target=&#34;_blank&#34;&gt;web oficial&lt;/a&gt; podemos encontrar una impresionante cantidad de información de interés. Si es la primera vez que escuchas hablar de &lt;em&gt;Git&lt;/em&gt; o, en general, de los sistemas de control de versiones, quizá te resulte útil echar un vistazo a su &lt;a href=&#34;https://try.github.io/&#34; target=&#34;_blank&#34;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;El sistema de control de versiones al que personalmente estoy acostumbrado es &lt;em&gt;Git&lt;/em&gt;, en cuya &lt;a href=&#34;https://git-scm.com/&#34;&gt;web oficial&lt;/a&gt; podemos encontrar una impresionante cantidad de información de interés. Si es la primera vez que escuchas hablar de &lt;em&gt;Git&lt;/em&gt; o, en general, de los sistemas de control de versiones, quizá te resulte útil echar un vistazo a su &lt;a href=&#34;https://try.github.io/&#34;&gt;tutorial&lt;/a&gt;.&lt;/p&gt;
 
 
 
@@ -214,9 +178,7 @@ cd ..
 
 &lt;/figure&gt;
 
-
-&lt;p&gt;La instalación de &lt;em&gt;Git&lt;/em&gt; en &lt;em&gt;Windows&lt;/em&gt; no podría ser más sencilla. Hacemos clic en &lt;a href=&#34;https://git-scm.com/download/win&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt; y automáticamente se descargará la versión más reciente de &lt;em&gt;Git&lt;/em&gt; (&lt;code&gt;2.18.0&lt;/code&gt; a la hora de escribir estas líneas).&lt;/p&gt;
-
+&lt;p&gt;La instalación de &lt;em&gt;Git&lt;/em&gt; en &lt;em&gt;Windows&lt;/em&gt; no podría ser más sencilla. Hacemos clic en &lt;a href=&#34;https://git-scm.com/download/win&#34;&gt;este enlace&lt;/a&gt; y automáticamente se descargará la versión más reciente de &lt;em&gt;Git&lt;/em&gt; (&lt;code&gt;2.18.0&lt;/code&gt; a la hora de escribir estas líneas).&lt;/p&gt;
 
 
 
@@ -246,11 +208,8 @@ cd ..
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;Una vez se haya completado la descarga, ejecutamos el archivo e instalamos el programa. Durante el proceso de instalación tenemos que escoger en varios momentos entre distintas opciones. A este respecto, he de comentar que las que vienen marcadas por defecto me parecen adecuadas para una primera toma de contacto con &lt;em&gt;Git&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Al completar la instalación tenemos, además, acceso a una terminal de sistema, &lt;em&gt;Git Bash&lt;/em&gt;, que personalmente es la que utilizo. Si bien es cierto que tenemos que emplear algunos comandos distintos a los podemos encontrar en la que por defecto acompaña a &lt;em&gt;Windows&lt;/em&gt;, es fácil llevar a cabo la transición de una terminal a otra (puede resultar de ayuda este &lt;a href=&#34;https://ss64.com/bash/&#34; target=&#34;_blank&#34;&gt;listado de comandos&lt;/a&gt;).&lt;/p&gt;
-
+&lt;p&gt;Al completar la instalación tenemos, además, acceso a una terminal de sistema, &lt;em&gt;Git Bash&lt;/em&gt;, que personalmente es la que utilizo. Si bien es cierto que tenemos que emplear algunos comandos distintos a los podemos encontrar en la que por defecto acompaña a &lt;em&gt;Windows&lt;/em&gt;, es fácil llevar a cabo la transición de una terminal a otra (puede resultar de ayuda este &lt;a href=&#34;https://ss64.com/bash/&#34;&gt;listado de comandos&lt;/a&gt;).&lt;/p&gt;
 
 
 
@@ -280,13 +239,9 @@ cd ..
 
 &lt;/figure&gt;
 
-
 &lt;h2 id=&#34;2-github&#34;&gt;2. GitHub&lt;/h2&gt;
-
-&lt;p&gt;&lt;em&gt;GitHub&lt;/em&gt; es una plataforma de desarrollo colaborativo utilizada para almacenar proyectos empleando el sistema de control de versiones &lt;em&gt;Git&lt;/em&gt;. Podemos encontrar más información en su &lt;a href=&#34;https://github.com/&#34; target=&#34;_blank&#34;&gt;web oficial&lt;/a&gt;. Al igual que antes, si es la primera vez que accedes a esta plataforma, convendría que le dedicases unos minutos al tutorial &lt;em&gt;Hello World&lt;/em&gt;, disponible en &lt;a href=&#34;https://guides.github.com/&#34; target=&#34;_blank&#34;&gt;esta página&lt;/a&gt;.&lt;/p&gt;
-
+&lt;p&gt;&lt;em&gt;GitHub&lt;/em&gt; es una plataforma de desarrollo colaborativo utilizada para almacenar proyectos empleando el sistema de control de versiones &lt;em&gt;Git&lt;/em&gt;. Podemos encontrar más información en su &lt;a href=&#34;https://github.com/&#34;&gt;web oficial&lt;/a&gt;. Al igual que antes, si es la primera vez que accedes a esta plataforma, convendría que le dedicases unos minutos al tutorial &lt;em&gt;Hello World&lt;/em&gt;, disponible en &lt;a href=&#34;https://guides.github.com/&#34;&gt;esta página&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Utilizaremos este portal para subir los archivos fuente que permitirán generar el sitio web, así como para alojar el propio sitio web en sí. Únicamente necesitaremos crear una cuenta de usuario para ello.&lt;/p&gt;
-
 
 
 
@@ -316,15 +271,10 @@ cd ..
 
 &lt;/figure&gt;
 
-
 &lt;h2 id=&#34;3-sublime-text-3&#34;&gt;3. Sublime Text 3&lt;/h2&gt;
-
 &lt;p&gt;El dicho &amp;ldquo;Para gustos los colores&amp;rdquo; tendría en este apartado la versión &amp;ldquo;Para gustos los editores de texto plano&amp;rdquo;. En mi caso, los proyectos de programación que he realizado y todo el trabajo con generadores de web estáticas los he llevado a cabo, tanto con el antiguo &lt;em&gt;Sublime Text 2&lt;/em&gt;, como con su más reciente versión: &lt;em&gt;Sublime Text 3&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Este editor de texto plano es bastante potente, rápido y la comunidad puede extender sus funcionalidades a través de paquetes. Además, su versión &amp;ldquo;de prueba&amp;rdquo; te permite utilizar la herramienta sin restricción alguna durante un período de tiempo ilimitado, con la única pega de aparecer un mensaje cada 20 o 30 veces que salvemos cualquier archivo y que te invita a comprar una licencia.&lt;/p&gt;
-
-&lt;p&gt;Nos podemos hacer con él a través de &lt;a href=&#34;https://www.sublimetext.com/3&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt;. Su proceso de instalación es similar&lt;/p&gt;
-
+&lt;p&gt;Este editor de texto plano es bastante potente, rápido y la comunidad puede extender sus funcionalidades a través de paquetes. Además, su versión &amp;lsquo;&amp;lsquo;de prueba&amp;rsquo;&amp;rsquo; te permite utilizar la herramienta sin restricción alguna durante un período de tiempo ilimitado, con la única pega de aparecer un mensaje cada 20 o 30 veces que salvemos cualquier archivo y que te invita a comprar una licencia.&lt;/p&gt;
+&lt;p&gt;Nos podemos hacer con él a través de &lt;a href=&#34;https://www.sublimetext.com/3&#34;&gt;este enlace&lt;/a&gt;. Su proceso de instalación es similar&lt;/p&gt;
 
 
 
@@ -354,9 +304,7 @@ cd ..
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;Además de cumplir de manera excelente sus labores a la hora de editar cualquier archivo de texto plano, &lt;em&gt;Sublime Text 3&lt;/em&gt; me encanta como herramienta para trabajar con archivos de tipo &lt;em&gt;markdown&lt;/em&gt;, que será el formato que vamos a emplear para redactar el contenido de nuestro sitio web. En un futuro no muy lejano tengo pensado escribir un artículo explicando cómo llevar a cabo la configuración de este programa para lidiar de forma agradable con dicho tipo de ficheros.&lt;/p&gt;
-
 &lt;p&gt;Y hasta aquí el primer artículo del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, que deja nuestros equipos a punto para proceder a la instalación de &lt;em&gt;Hugo&lt;/em&gt; y generar un sitio web.&lt;/p&gt;
 </description>
     </item>

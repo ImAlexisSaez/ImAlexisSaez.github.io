@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.
 Aprovechemos la clase Vehiculo que generamos anteriormente y cuyo código fuente recordemos era:
-class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self.">
+class Vehiculo():def __init__(self, marca, modelo):self.marca = marcaself.modelo = modeloself.enmarcha = Falseself.acelera = Falseself.frena = Falsedef arrancar(self):self.enmarcha = Truedef acelerar(self):self.acelera = Truedef frenar(self):self.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb40-serializacion-ii/">
@@ -127,7 +127,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
   <meta property="og:title" content="40. Serialización II | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.
 Aprovechemos la clase Vehiculo que generamos anteriormente y cuyo código fuente recordemos era:
-class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.modelo = modelo self.enmarcha = False self.acelera = False self.frena = False def arrancar(self): self.enmarcha = True def acelerar(self): self.acelera = True def frenar(self): self."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+class Vehiculo():def __init__(self, marca, modelo):self.marca = marcaself.modelo = modeloself.enmarcha = Falseself.acelera = Falseself.frena = Falsedef arrancar(self):self.enmarcha = Truedef acelerar(self):self.acelera = Truedef frenar(self):self."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,22 +755,15 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
           <h1>40. Serialización II</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/CkfDnMC79b4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.</p>
-
 <p>Aprovechemos la clase <code>Vehiculo</code> que generamos anteriormente y cuyo código fuente recordemos era:</p>
-
 <pre><code class="language-python">class Vehiculo():
     def __init__(self, marca, modelo):
         self.marca = marca
@@ -789,9 +786,7 @@ class Vehiculo(): def __init__(self, marca, modelo): self.marca = marca self.mod
               self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
               self.frena)
 </code></pre>
-
 <p>A continuación, importemos la librería <code>pickle</code> y creemos una lista con algunas instancias de la clase <code>Vehiculo</code>:</p>
-
 <pre><code class="language-python">import pickle
 
 coche1 = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
@@ -808,16 +803,12 @@ fichero.close()
 
 del fichero
 </code></pre>
-
 <p><em>Notas:</em></p>
-
 <ul>
 <li>Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función <code>open()</code> es <code>&quot;wb&quot;</code>.</li>
-<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>) el fichero <code>coches</code>.</li>
+<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>) el fichero <code>coches</code>.</li>
 </ul>
-
 <p>Para rescatar la información de este archivo que acabamos de generar, tecleamos:</p>
-
 <pre><code class="language-python">import pickle
 
 
@@ -850,16 +841,12 @@ coches = pickle.load(fichero)
 
 print(coches)
 </code></pre>
-
 <pre><code class="language-bash">[&lt;__main__.Vehiculo object at 0x00000259428D65C0&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F28&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F98&gt;]
 </code></pre>
-
 <p>Efectivamente, disponemos ahora de una lista con tres objetos. No obstante, recordemos que tenemos el método <code>estado</code> para acceder a información de interés sobre dichos objetos. Así, si escribimos:</p>
-
 <pre><code class="language-python">for coche in coches:
     print(coche.estado())
 </code></pre>
-
 <pre><code class="language-bash">Marca: Mazda 
 Modelo: MX5 
 En marcha: False 
@@ -879,12 +866,9 @@ Acelerando: False
 Frenando: False
 None
 </code></pre>
-
 <p><em>Nota</em>: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase <code>Vehiculo</code> es necesario que figure asimismo (en caso contrario arroja <em>Python</em> un error). El problema radica en que el nuevo archivo no tiene información sobre la clase <code>Vehiculo</code> ni, por supuesto, del método <code>estado()</code>.</p>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/40/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/40/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -935,7 +919,7 @@ None
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -983,7 +967,7 @@ None
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1055,7 +1039,7 @@ None
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

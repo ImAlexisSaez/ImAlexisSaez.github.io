@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/04/como-actualizar-facilmente-r-en-windows/featured_hub3680ead01d71bcd2c7d7f002ff6ea76_86785_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@sapegin" target="_blank">Artem Sapegin</a>, disponible en <a href="https://unsplash.com/photos/DErxVSSQNdM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@sapegin">Artem Sapegin</a>, disponible en <a href="https://unsplash.com/photos/DErxVSSQNdM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -528,11 +535,8 @@
 
     <div class="article-style">
       <p>El proceso de actualización de la versión del lenguaje de programación <em>R</em> puede resultar un tanto tedioso si lo llevamos a cabo de forma manual. Veamos cómo hacer más liviana esta pesada carga.</p>
-
-<p>Por fortuna, tenemos a nuestra disposición el paquete <a href="https://cran.r-project.org/web/packages/installr/index.html" target="_blank">installr</a>, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función <code>updateR()</code>.</p>
-
+<p>Por fortuna, tenemos a nuestra disposición el paquete <a href="https://cran.r-project.org/web/packages/installr/index.html">installr</a>, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función <code>updateR()</code>.</p>
 <p>De esta forma, basta con que tengamos a mano un <em>script</em> similar al que se muestra a continuación, y procedamos a ejecutarlo cuando se anuncie una nueva versión de <em>R</em>:</p>
-
 <pre><code class="language-r"># Instala el paquete
 install.packages(&quot;installr&quot;)
  
@@ -540,18 +544,13 @@ install.packages(&quot;installr&quot;)
 library(installr)
 updateR()
 </code></pre>
-
 <p>Al utilizar la función <code>updateR()</code>:</p>
-
 <ul>
 <li>Se comprueba cuál es la última versión de <em>R</em>. Si estamos al día, nos mostrará una ventana de confirmación de tal hecho. En caso contrario, nos dará la posibilidad de consultar las novedades de dicha versión y nos permitirá proceder a su descarga e instalación.</li>
 <li>Una vez completado el proceso, nos preguntará si deseamos mover (y borrar) las librerías desde nuestra antigua versión a la nueva. Además, nos dará la opción de ponerlas al día. Dependiendo del número de librerías que tengamos instaladas, completar estas acciones puede llevarnos un buen rato.</li>
 </ul>
-
 <p>Si usamos <em>RStudio</em>, al principio se nos mostrará un aviso sugiriéndonos que llevemos a cabo todo el proceso desde la propia interfaz de <em>R</em>, en lugar de a través de este <em>IDE</em>. No obstante, en mi experiencia, podemos tranquilamente ignorar la advertencia y realizar el procedimiento utilizando <em>RStudio</em>. Al terminar, bastará con que reiniciemos el programa para que todo funcione con normalidad.</p>
-
 <p>Finalmente, podemos ahorrarnos la sucesión de ventanas emergentes si sabemos de antemano que queremos actualizar <em>R</em>, mover (no copiar) las librerías y actualizarlas. Para ello, reescribimos el anterior script como sigue:</p>
-
 <pre><code class="language-r"># Instala / carga el paquete
 if(!require(installr)) {install.packages(&quot;installr&quot;); require(installr)} 
  
@@ -816,7 +815,7 @@ updateR(F, T, T, F, T, F, T)
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -883,7 +882,7 @@ updateR(F, T, T, F, T, F, T)
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -899,7 +898,7 @@ updateR(F, T, T, F, T, F, T)
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

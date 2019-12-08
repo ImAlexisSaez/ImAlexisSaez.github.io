@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/29/contando-soldados-de-una-manera-curiosa/featured_hu0f5c89bab5a7aa4f7bd70f983ee2cace_349273_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@seefromthesky" target="_blank">Ishan @seefromthesky</a>, disponible en <a href="https://unsplash.com/photos/GSZQ_eupukE" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@seefromthesky">Ishan @seefromthesky</a>, disponible en <a href="https://unsplash.com/photos/GSZQ_eupukE">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,64 +574,51 @@
 
     <div class="article-style">
       <p><strong>Problema 38:</strong> Un general cuenta el número de soldados supervivientes de una batalla alineándolos, sucesivamente, en filas de diferentes tamaños. En cada ocasión, anota el total que quedaron sin poder completar una fila. Disponía de $1200$ combatientes antes de la refriega. Tras el encuentro si los alineaba en filas de $5$, quedaban $3$ sin poder completar una fila; si lo hacía en filas de $6$, volvían a quedar $3$ sin poder completar una fila; si los repartía en filas de $7$, únicamente uno quedaba fuera de las filas y si los alineaba en filas de $11$, no quedaba soldado alguno que no estuviese en una fila ¿Cuántos soldados sobrevivieron la batalla?</p>
-
 <hr>
-
 <p>Consideremos $x$ el número de soldados supervivientes de la batalla, cantidad que sabemos es menor o igual que $1200$ por ser este el número de los que disponía el general inicialmente, es decir, $0\leq x\leq 1200$.</p>
-
 <p>Las sucesivas alineaciones de los soldados, las traducimos en el siguiente sistema de congruencias lineales,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 3\pmod{5},\\
-x&\equiv 3\pmod{6},\\
-x&\equiv 1\pmod{7},\\
-x&\equiv 0\pmod{11}.
+x&amp;\equiv 3\pmod{5},\<br>
+x&amp;\equiv 3\pmod{6},\<br>
+x&amp;\equiv 1\pmod{7},\<br>
+x&amp;\equiv 0\pmod{11}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por la estructura que presenta el anterior sistema y dado que $m_1=5$, $m_2=6$, $m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-M_1 &= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\
-M_2 &= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\
-M_3 &= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\
-M_4 &= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\<br>
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\<br>
+M_3 &amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\<br>
+M_4 &amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-462x\equiv 1\pmod{5}&\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\\
-385x\equiv 1\pmod{6}&\Leftrightarrow x\equiv 1\pmod{6},\\
-330x\equiv 1\pmod{7}&\Leftrightarrow x\equiv 1\pmod{7},\\
-210x\equiv 1\pmod{11}&\Leftrightarrow x\equiv 1\pmod{11}.
+462x\equiv 1\pmod{5}&amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\<br>
+385x\equiv 1\pmod{6}&amp;\Leftrightarrow x\equiv 1\pmod{6},\<br>
+330x\equiv 1\pmod{7}&amp;\Leftrightarrow x\equiv 1\pmod{7},\<br>
+210x\equiv 1\pmod{11}&amp;\Leftrightarrow x\equiv 1\pmod{11}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Agrupando ahora toda la información adecuadamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 3\pmod{5},& 462x&\equiv 1\pmod{5},& x&\equiv 3\pmod{5},\\
-x&\equiv 3\pmod{6},& 385x&\equiv 1\pmod{6},& x&\equiv 1\pmod{6},\\
-x&\equiv 1\pmod{7},& 330x&\equiv 1\pmod{7},& x&\equiv 1\pmod{7},\\
-x&\equiv 0\pmod{11},& 210x&\equiv 1\pmod{11},& x&\equiv 1\pmod{11},
+x&amp;\equiv 3\pmod{5},&amp; 462x&amp;\equiv 1\pmod{5},&amp; x&amp;\equiv 3\pmod{5},\<br>
+x&amp;\equiv 3\pmod{6},&amp; 385x&amp;\equiv 1\pmod{6},&amp; x&amp;\equiv 1\pmod{6},\<br>
+x&amp;\equiv 1\pmod{7},&amp; 330x&amp;\equiv 1\pmod{7},&amp; x&amp;\equiv 1\pmod{7},\<br>
+x&amp;\equiv 0\pmod{11},&amp; 210x&amp;\equiv 1\pmod{11},&amp; x&amp;\equiv 1\pmod{11},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces la solución es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\
-&\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
+x &amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\<br>
+&amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, asciende a $1023$ el número de soldados que sobrevivieron a la batalla.</p>
 
     </div>
@@ -899,7 +893,7 @@ x &\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -966,7 +960,7 @@ x &\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -982,7 +976,7 @@ x &\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

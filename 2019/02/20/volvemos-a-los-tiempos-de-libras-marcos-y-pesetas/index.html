@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/02/20/volvemos-a-los-tiempos-de-libras-marcos-y-pesetas/featured_hu52a82d22b6a5465d2a156a1b948800ef_89960_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@trapnation" target="_blank">Andre Benz</a>, disponible en <a href="https://unsplash.com/photos/HwWBTd21wiA" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@trapnation">Andre Benz</a>, disponible en <a href="https://unsplash.com/photos/HwWBTd21wiA">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,67 +574,49 @@
 
     <div class="article-style">
       <p><strong>Problema 53:</strong> Para abonar una factura de $1840$ pesetas se entregan libras esterlinas y dan la vuelta en marcos. Calcula las libras esterlinas entregadas y los marcos devueltos suponiendo que se ha entregado la cantidad mínima de libras necesarias para pagar y que la devolución es en marcos ($1$ marco $=$ $70$ pesetas, $1$ libra $=$ $180$ pesetas).</p>
-
 <hr>
-
 <p>Sea $x$ la cantidad de libras esterlinas entregadas e $y$ el total de marcos recibidos en la devolución. Como la factura viene dada en pesetas y tenemos indicadas las tasas de conversión de las otras dos monedas en relación a las pesetas, trabajaremos durante el resto del ejercicio con esta unidad monetaria.</p>
-
 <p>Con ello en mente, la cantidad que desembolso en libras para cumplir con la factura más el total de marcos que recibo en concepto de devolución ha de ascender a $1840$ pesetas, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 180x + 70y = 1840.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, como $70 = 2\cdot5\cdot7$ y $180 = 2^2 \cdot 3^2 \cdot5$, $mcd(70, 180) = 10$. Dado que, trivialmente, $10|1840$, la ecuación diofántica propuesta admite solución entera. Simplificando dicha ecuación por $10$, tenemos que $18x + 7y = 184$, expresión que nos invita, para empezar, a llevar a cabo el cambio de variable</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 184x^{\prime},\\
-y &= 184y^{\prime}
+x &amp;= 184x^{\prime},\<br>
+y &amp;= 184y^{\prime}
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>que la transforma en $18x^{\prime} +7y^{\prime} =1$. Ahora, despejando la variable $y^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, hallamos que</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime} = \dfrac{1-18x^{\prime}}{7},
-\]</span></p>
-
+$$</p>
 <p>por lo que basta probar, para $x^{\prime}$, valores pertenecientes al <em>menor sistema completo de restos módulo</em> $7$. Para $x^{\prime}_0 = 2$, resulta que $y^{\prime}_0 = (-5)$, y deshaciendo el anterior cambio de variable,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x_0 &= 184x^{\prime} = 184\cdot2 = 368,\\
-y_0 &= 184y^{\prime} = 184\cdot(-5) = (-920),
+x_0 &amp;= 184x^{\prime} = 184\cdot2 = 368,\<br>
+y_0 &amp;= 184y^{\prime} = 184\cdot(-5) = (-920),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es una solución particular para la ecuación diofántica planteada. Su solución genera queda, entonces,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 368 + 7t,\\ 
-y &= (-920) - 18t,
+x &amp;= 368 + 7t,\ 
+y &amp;= (-920) - 18t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$ número entero.</p>
-
 <p>De entre las infinitas soluciones que tenemos a nuestra disposición, busquemos aquella que se ajusta a los dictados del enunciado del ejercicio, es decir, aquella para la cual se desembolsa la mínima cantidad de libras esterlinas necesarias para abonar la factura. Esta situación se traduce en averiguar el valor de $x$ tal que, $18x \geq 184$. Sustituyendo,</p>
-
-<p><span  class="math">\[
+<p>$$
 18(368 + 7t)\geq 184,
-\]</span></p>
-
+$$</p>
 <p>es decir, $6624 + 126t \geq 184$. Por tanto, $126t \geq (-6498)$, luego $t\geq (-51.6)$ y como $t$ ha de ser entero, la inecuación entonces queda $t\geq (-51)$. Como buscamos el menor valor para el que satisface la inecuación, este será, evidentemente, $t=(-51)$, resultando entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 368 + 7\cdot(-51) = 11,\\
-y &= (-920) - 18\cdot(-51) = -2,
+x &amp;= 368 + 7\cdot(-51) = 11,\<br>
+y &amp;= (-920) - 18\cdot(-51) = -2,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, abonaremos la factura con $11$ libras esterlinas y nos devolverán $2$ marcos.</p>
 
     </div>
@@ -900,7 +889,7 @@ y &= (-920) - 18\cdot(-51) = -2,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -967,7 +956,7 @@ y &= (-920) - 18\cdot(-51) = -2,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -983,7 +972,7 @@ y &= (-920) - 18\cdot(-51) = -2,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/05/la-cesta-de-huevos-de-brahmagupta/featured_hu611036eeb4c57315e3ba400191a2b425_29219_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@benkleaphoto" target="_blank">Ben Klea</a>, disponible en <a href="https://unsplash.com/photos/QF8qP_pWMvs" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@benkleaphoto">Ben Klea</a>, disponible en <a href="https://unsplash.com/photos/QF8qP_pWMvs">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,112 +574,92 @@
 
     <div class="article-style">
       <p><strong>Problema 40:</strong> Brahmagupta tiene una enorme cesta repleta de huevos camperos. Si los saca de $2$ en $2$, resulta que queda un huevo en la cesta. Si opta por extraerlos de $3$ en $3$, ahora $2$ son los huevos que restan en la cesta. Análogamente, si realiza el proceso utilizando grupos de $4$, $5$ y $6$ huevos, quedan en la cesta, respectivamente, $3$, $4$ y $5$ huevos. Sin embargo, si los saca de $7$ en $7$, la cesta se vacía por completo. ¿Cuál es la menor cantidad de huevos que puede haber en la cesta de Brahmagupta?</p>
-
 <hr>
-
 <p>Consideremos $x$ el número de huevos que se encuentran en la cesta de Brahmagupta. Los distintos modos de extracción dan lugar al siguiente sistema de ecuaciones de congruencias lineales,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 1\pmod{2},\\
-x&\equiv 2\pmod{3},\\
-x&\equiv 3\pmod{4},\\
-x&\equiv 4\pmod{5},\\
-x&\equiv 5\pmod{6},\\
-x&\equiv 0\pmod{7}.
+x&amp;\equiv 1\pmod{2},\<br>
+x&amp;\equiv 2\pmod{3},\<br>
+x&amp;\equiv 3\pmod{4},\<br>
+x&amp;\equiv 4\pmod{5},\<br>
+x&amp;\equiv 5\pmod{6},\<br>
+x&amp;\equiv 0\pmod{7}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por desgracia, no podemos aplicar directamente el <em>Teorema chino del resto</em>, pues algunos módulos no son primos entre sí. No obstante, como estamos en las condiciones de la proposición que generaliza este resultado teórico (las comprobaciones sobre los pares de congruencias se pueden llevar a cabo mentalmente de forma sencilla), sabemos que el sistema de ecuaciones de congruencias lineales posee solución. Para hallarla, desdoblando la ecuación de congruencia lineal $x\equiv 5\pmod{6}$, queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 1\pmod{2},\\
-x&\equiv 2\pmod{3},\\
-x&\equiv 3\pmod{4},\\
-x&\equiv 4\pmod{5},\\
-x&\equiv 5\pmod{2}\equiv 1\pmod{2},\\
-x&\equiv 5\pmod{3}\equiv 2\pmod{3},\\
-x&\equiv 0\pmod{7}.
+x&amp;\equiv 1\pmod{2},\<br>
+x&amp;\equiv 2\pmod{3},\<br>
+x&amp;\equiv 3\pmod{4},\<br>
+x&amp;\equiv 4\pmod{5},\<br>
+x&amp;\equiv 5\pmod{2}\equiv 1\pmod{2},\<br>
+x&amp;\equiv 5\pmod{3}\equiv 2\pmod{3},\<br>
+x&amp;\equiv 0\pmod{7}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Encontramos dos ecuaciones de congruencias lineales repetidas, cuya escritura podemos ahorrarnos, de manera que llegamos a que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 1\pmod{2},\\
-x&\equiv 2\pmod{3},\\
-x&\equiv 3\pmod{4},\\
-x&\equiv 4\pmod{5},\\
-x&\equiv 0\pmod{7}.
+x&amp;\equiv 1\pmod{2},\<br>
+x&amp;\equiv 2\pmod{3},\<br>
+x&amp;\equiv 3\pmod{4},\<br>
+x&amp;\equiv 4\pmod{5},\<br>
+x&amp;\equiv 0\pmod{7}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Llegados a este punto, la primera y la tercera ecuación involucran módulos de manera que uno es un factor del otro $4=2^2$. Por tanto, tenemos entre manos una posible contradicción aquí que hemos de investigar para hallar si existe o no dicha contradicción. No obstante, para cierto número entero $t$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x\equiv 3\pmod{4}&\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\\
-&\Rightarrow x\equiv 1\pmod{2},
+x\equiv 3\pmod{4}&amp;\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\<br>
+&amp;\Rightarrow x\equiv 1\pmod{2},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego la primera ecuación de congruencia lineal es redundante y la podremos suprimir del sistema, quedando pues</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2\pmod{3},\\ 
-x&\equiv 3\pmod{4},\\
-x&\equiv 4\pmod{5},\\
-x&\equiv 0\pmod{7}.
+x&amp;\equiv 2\pmod{3},\ 
+x&amp;\equiv 3\pmod{4},\<br>
+x&amp;\equiv 4\pmod{5},\<br>
+x&amp;\equiv 0\pmod{7}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por la estructura que presenta el anterior sistema y dado que $m_1=3$, $m_2=4$, $m_3=5$ y $m_4=7$ son primos entre sí, sabemos, por el <em>Teorema chino del resto</em>, que dicho sistema admite solución módulo $M=3\cdot4\cdot5\cdot7 = 420$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-M_1 &= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\\
-M_2 &= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\\
-M_3 &= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\\
-M_4 &= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
+M_1 &amp;= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\<br>
+M_2 &amp;= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\<br>
+M_3 &amp;= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\<br>
+M_4 &amp;= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-140x\equiv 1\pmod{3}&\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\\
-&\Leftrightarrow x\equiv 2\pmod{3},\\
-105x\equiv 1\pmod{4}&\Leftrightarrow x\equiv 1\pmod{4},\\
-84x\equiv 1\pmod{5}&\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\\
-60x\equiv 1\pmod{7}&\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\\
-&\Leftrightarrow x\equiv 2\pmod{7}.
+140x\equiv 1\pmod{3}&amp;\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\<br>
+&amp;\Leftrightarrow x\equiv 2\pmod{3},\<br>
+105x\equiv 1\pmod{4}&amp;\Leftrightarrow x\equiv 1\pmod{4},\<br>
+84x\equiv 1\pmod{5}&amp;\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\<br>
+60x\equiv 1\pmod{7}&amp;\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\<br>
+&amp;\Leftrightarrow x\equiv 2\pmod{7}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Agrupando ahora toda la información adecuadamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2\pmod{3},& 140x&\equiv 1\pmod{3},& x&\equiv 2\pmod{3},\\
-x&\equiv 3\pmod{4},& 105x&\equiv 1\pmod{4},& x&\equiv 1\pmod{4},\\
-x&\equiv 4\pmod{5},& 84x&\equiv 1\pmod{5},& x&\equiv 4\pmod{5},\\
-x&\equiv 0\pmod{7},& 60x&\equiv 1\pmod{7},& x&\equiv 2\pmod{7},
+x&amp;\equiv 2\pmod{3},&amp; 140x&amp;\equiv 1\pmod{3},&amp; x&amp;\equiv 2\pmod{3},\<br>
+x&amp;\equiv 3\pmod{4},&amp; 105x&amp;\equiv 1\pmod{4},&amp; x&amp;\equiv 1\pmod{4},\<br>
+x&amp;\equiv 4\pmod{5},&amp; 84x&amp;\equiv 1\pmod{5},&amp; x&amp;\equiv 4\pmod{5},\<br>
+x&amp;\equiv 0\pmod{7},&amp; 60x&amp;\equiv 1\pmod{7},&amp; x&amp;\equiv 2\pmod{7},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces la solución es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\\
-&\equiv 2219\pmod{420}\equiv 119\pmod{420},
+x &amp;\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\<br>
+&amp;\equiv 2219\pmod{420}\equiv 119\pmod{420},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, la cesta de Brahmagupta contaba con $119$ huevos.</p>
 
     </div>
@@ -947,7 +934,7 @@ x &\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1014,7 +1001,7 @@ x &\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1030,7 +1017,7 @@ x &\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -17,28 +17,18 @@
       <link>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</link>
       <pubDate>Sat, 25 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</guid>
-      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;), &lt;em&gt;Daniël Lakens&lt;/em&gt; (&lt;a href=&#34;https://twitter.com/lakens&#34; target=&#34;_blank&#34;&gt;@lakens&lt;/a&gt;), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
-
-&lt;p&gt;Hace unos días anunciaba que había actualizado un &lt;em&gt;script&lt;/em&gt; para &lt;em&gt;R&lt;/em&gt; cuyo nombre no tiene desperdicio: &amp;ldquo;&lt;em&gt;Perfect t-test&lt;/em&gt;&amp;rdquo;. Las principales referencias que tenemos que consultar son:&lt;/p&gt;
-
+      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34;&gt;enlace&lt;/a&gt;), &lt;em&gt;Daniël Lakens&lt;/em&gt; (&lt;a href=&#34;https://twitter.com/lakens&#34;&gt;@lakens&lt;/a&gt;), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
+&lt;p&gt;Hace unos días anunciaba que había actualizado un &lt;em&gt;script&lt;/em&gt; para &lt;em&gt;R&lt;/em&gt; cuyo nombre no tiene desperdicio: &amp;ldquo;&lt;em&gt;Perfect t-test&lt;/em&gt;&amp;quot;. Las principales referencias que tenemos que consultar son:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34; target=&#34;_blank&#34;&gt;The perfect t-test&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34; target=&#34;_blank&#34;&gt;Repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34;&gt;The perfect t-test&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34;&gt;Repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Como no podía ser de otra manera, un recurso así despierta enormemente tanto mi curiosidad, como las ganas de echar un rato explorando las posibilidades que ofrece.&lt;/p&gt;
-
 &lt;p&gt;Ahora bien, ¿de qué trata todo el asunto? Estamos ante un documento escrito con &lt;em&gt;R Markdown&lt;/em&gt; cuyo objetivo es automatizar el proceso de comparación de medias para dos muestras, tanto independientes como dependientes (cada caso tiene su archivo asociado). No obstante, cuando la mayoría de programas informáticos orientados al análisis de datos ya incorporan este tipo de herramienta, ¿qué justifica la existencia de este recurso?&lt;/p&gt;
-
 &lt;p&gt;Según el autor, no todos los investigadores siguen las recomendaciones que los estadísticos indican (o bien no están al día de las mismas), e incluso, hecho que personalmente considero más grave, los propios programas informáticos ignoran dichas recomendaciones en ocasiones.&lt;/p&gt;
-
 &lt;p&gt;Dentro del &amp;ldquo;peligro&amp;rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?&lt;/p&gt;
-
 &lt;p&gt;Veamos qué nos ofrece el código de &lt;em&gt;Daniël Lakens&lt;/em&gt;. Una vez digerido el &lt;em&gt;README&lt;/em&gt; del repositorio, e instalado los paquetes necesarios (así como actualizado &lt;em&gt;JAGS&lt;/em&gt;, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
-
 &lt;p&gt;He escogido el conjunto de datos &lt;code&gt;hsb2&lt;/code&gt; (incluido en el paquete &lt;code&gt;openintro&lt;/code&gt;), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Carga la librería que contiene el conjunto de datos hsb2
 library(openintro)
 
@@ -57,15 +47,10 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
             row.names = FALSE,
             sep = &amp;quot;,&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
-
 &lt;p&gt;Ahora, con &lt;code&gt;datos_hsb2_math.txt&lt;/code&gt; ubicado en el mismo directorio que &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable &lt;code&gt;alldata&lt;/code&gt; (y, en mi caso, añadir &lt;code&gt;sep = &amp;quot;,&amp;quot;&lt;/code&gt;), así como correctamente asignar las variables &lt;code&gt;xlabel&lt;/code&gt;, &lt;code&gt;ylabel&lt;/code&gt;, &lt;code&gt;factorlabel&lt;/code&gt;, &lt;code&gt;measurelabel&lt;/code&gt;, &lt;code&gt;xlabelstring&lt;/code&gt; e &lt;code&gt;ylabelstring&lt;/code&gt; siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.&lt;/p&gt;
-
 &lt;p&gt;En mi caso, he cambiado el formato del documento de salida de &lt;em&gt;Word&lt;/em&gt; a &lt;em&gt;PDF&lt;/em&gt;, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba &lt;em&gt;t&lt;/em&gt;! A la próxima persona que escuche quejarse de que &lt;em&gt;SPSS&lt;/em&gt; devuelve una miríada de resultados voy a invitarle amablemente a que utilice este &lt;em&gt;script&lt;/em&gt;.&lt;/p&gt;
-
 &lt;p&gt;Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente &lt;em&gt;boxplot&lt;/em&gt; (creo que en español se llama &lt;em&gt;diagrama de caja y bigotes&lt;/em&gt;, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:&lt;/p&gt;
-
 
 
 
@@ -95,9 +80,7 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;A continuación, se realizan cuatro contrastes de hipótesis para comprobar si se verifica el supuesto de normalidad para las puntuaciones de ambos grupos (su violación tiene efectos, por ejemplo, sobre el &lt;em&gt;error de tipo I&lt;/em&gt;):&lt;/p&gt;
-
 
 
 
@@ -127,11 +110,8 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;En uno de los cuatros contrastes, los datos con los que estamos trabajando aportan evidencia suficiente para sospechar de la veracidad de la hipótesis nula (&amp;ldquo;las puntuaciones siguen una distribución normal&amp;rdquo;), por lo que tendríamos que preferiblemente recurrir a métodos no paramétricos o estadísticos robustos. No obstante, en el propio documento nos avisan de que con muestras grandes (y podemos considerar que la dada lo es) este tipo de situaciones pueden presentarse.&lt;/p&gt;
-
 &lt;p&gt;Podemos examinar la distribución de puntuaciones, para cada uno de los grupos, de manera gráfica, a partir de las siguientes figuras, y juzgar así cómo se desvían nuestros datos (línea negra) de la distribución normal asociada (línea discontinua roja):&lt;/p&gt;
-
 
 
 
@@ -174,7 +154,6 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
-
 &lt;figure&gt;
 
 
@@ -191,9 +170,7 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;Por si las anteriores figuras todavía no resolvieran el interrogante, tenemos a nuestra disposición los siguientes &lt;em&gt;gráficos Q-Q&lt;/em&gt;:&lt;/p&gt;
-
 
 
 
@@ -223,23 +200,16 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 &lt;/figure&gt;
 
-
 &lt;p&gt;No resulta por tanto descabellado aceptar que se verifica el supuesto de normalidad para los datos dados. Pasemos ahora a estudiar la hipótesis de igualdad de varianzas entre los grupos considerados. Para ello, utilizaremos la &lt;em&gt;prueba de Levene&lt;/em&gt;, que en nuestro caso particular concluye:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Levene’s test for equality of variances (p = 0.46) indicates that the assumption that variances are equal is not rejected.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;A continuación encontramos la sección de resultados donde, siguiendo el estilo de publicación de las revistas científicas, se recogen las conclusiones para la prueba &lt;em&gt;t&lt;/em&gt; que hemos llevado a cabo. Aquí, en función de la filosofía con la que solamos trabajar y de si se verifican las condiciones asociadas a esta prueba, tendremos que escoger entre la sección dedicada a estadísticos frecuentistas, bayesianos o robustos. Por ejemplo, para la primera opción encontraríamos:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;The mean math of participants in the male condition (M = 52.95, SD = 9.66, n = 91) was greater than the mean of participants in the female condition (M = 52.39, SD = 9.15, n = 109). The difference between the two measurements (M = 0.55, 95% CI = [-2.09;3.19]) was analyzed with Welch’s t-test, t(187.58) = 0.41, p = 0.682, Hedges’ g = 0.06, 95% CI [-0.22;0.34]. This can be considered a tiny effect. The observed data is not surprising under the assumption that the null-hypothesis is true. The Common Language effect size (McGraw &amp;amp; Wong, 1992) indicates that the likelihood that the math of a random person in the male condition is greater than the math of a random person in the female condition is 52%.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;Tenemos a nuestra disposición la media, la desviación estándar y el tamaño muestral para cada uno de los grupos considerados. A continuación encontramos el valor del estadístico asociado a la prueba &lt;em&gt;t&lt;/em&gt; de &lt;em&gt;Welch&lt;/em&gt;, así como su correspondiente &lt;em&gt;p&lt;/em&gt;-valor. Como indicador del tamaño del efecto encontramos la &lt;em&gt;g&lt;/em&gt; de &lt;em&gt;Hedges&lt;/em&gt;. Sin embargo, al margen del aluvión de valores con el que ya seríamos capaces de dar respuesta al interrogante que ha motivado este artículo (¿seríamos de verdad capaces?), me ha encantado la parte final de este párrafo, donde nos transmiten con palabras llanas qué conclusiones deberíamos extraer.&lt;/p&gt;
-
 &lt;p&gt;El documento añade los gráficos que mostraré a continuación, así como las referencias para las justificaciones vertidas a lo largo de él, el propio conjunto de datos y cierta información técnica de la sesión de trabajo en &lt;em&gt;R&lt;/em&gt;. Es un estupendo recurso para tener siempre disponible a mano, ¿verdad?&lt;/p&gt;
-
 
 
 
@@ -268,7 +238,6 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 &lt;/figure&gt;
-
 
 
 
@@ -312,7 +281,6 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
-
 &lt;figure&gt;
 
 
@@ -337,12 +305,9 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
       <link>https://imalexissaez.github.io/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/</link>
       <pubDate>Thu, 23 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/</guid>
-      <description>&lt;p&gt;Cuanto menos, es ciertamente llamativo, así como invita con fuerza a su lectura, el título de uno de los artículos de &lt;em&gt;John P. A. Ioannidis&lt;/em&gt;: &amp;ldquo;&lt;em&gt;Why Most Published Research Findings Are False&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;Estaba echando un vistazo a los contenidos de la primera semana del &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;), disponible en la plataforma &lt;em&gt;Coursera&lt;/em&gt; (curso que, por cierto, me ha dejado muy buenas sensaciones), y en uno de sus vídeos recomiendan la lectura del mencionado artículo.&lt;/p&gt;
-
-&lt;p&gt;Por fortuna, es un texto de acceso abierto que podemos encontrar en este &lt;a href=&#34;http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;. Tras la introducción técnica, la sección de corolarios no tiene desperdicio alguno. En ella se afirma que es menos probable que los resultados de la investigación en una disciplina científica sean verdaderos:&lt;/p&gt;
-
+      <description>&lt;p&gt;Cuanto menos, es ciertamente llamativo, así como invita con fuerza a su lectura, el título de uno de los artículos de &lt;em&gt;John P. A. Ioannidis&lt;/em&gt;: &amp;ldquo;&lt;em&gt;Why Most Published Research Findings Are False&lt;/em&gt;&amp;quot;.&lt;/p&gt;
+&lt;p&gt;Estaba echando un vistazo a los contenidos de la primera semana del &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34;&gt;enlace&lt;/a&gt;), disponible en la plataforma &lt;em&gt;Coursera&lt;/em&gt; (curso que, por cierto, me ha dejado muy buenas sensaciones), y en uno de sus vídeos recomiendan la lectura del mencionado artículo.&lt;/p&gt;
+&lt;p&gt;Por fortuna, es un texto de acceso abierto que podemos encontrar en este &lt;a href=&#34;http://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0020124&#34;&gt;enlace&lt;/a&gt;. Tras la introducción técnica, la sección de corolarios no tiene desperdicio alguno. En ella se afirma que es menos probable que los resultados de la investigación en una disciplina científica sean verdaderos:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Cuanto menor sea el tamaño muestral.&lt;/li&gt;
 &lt;li&gt;Cuanto menor sea el tamaño del efecto.&lt;/li&gt;
@@ -351,9 +316,7 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;li&gt;Cuanto mayor sean la financiación y otros intereses y prejuicios.&lt;/li&gt;
 &lt;li&gt;Cuanto mayor sea el número de equipos científicos involucrados.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Además, aunque encontramos los anteriores factores expuestos de manera separada, a menudo es cierto que unos poseen influencia sobre otros y pueden presentarse de forma simultánea. El autor finaliza el artículo exponiendo algunas directrices para mejorar la situación planteada.&lt;/p&gt;
-
 &lt;p&gt;Merece la pena dedicar un poco de nuestro tiempo a la lectura y estudio de este texto.&lt;/p&gt;
 </description>
     </item>
@@ -363,41 +326,39 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
       <link>https://imalexissaez.github.io/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/</link>
       <pubDate>Tue, 21 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/</guid>
-      <description>&lt;p&gt;Por recomendación, el otro día puse las manos sobre el artículo de &lt;em&gt;Jacob Cohen&lt;/em&gt;: &amp;ldquo;&lt;em&gt;Things I Have Learned (So Far)&lt;/em&gt;&amp;rdquo;, publicado originalmente en diciembre de 1990 en la revista &lt;em&gt;American Psychologist&lt;/em&gt;. Veamos qué impresiones me ha dejado su lectura.&lt;/p&gt;
-
+      <description>&lt;p&gt;Por recomendación, el otro día puse las manos sobre el artículo de &lt;em&gt;Jacob Cohen&lt;/em&gt;: &amp;ldquo;&lt;em&gt;Things I Have Learned (So Far)&lt;/em&gt;&amp;quot;, publicado originalmente en diciembre de 1990 en la revista &lt;em&gt;American Psychologist&lt;/em&gt;. Veamos qué impresiones me ha dejado su lectura.&lt;/p&gt;
 &lt;p&gt;Es posible que, por su antigüedad, alguien pueda llegar a pensar que no merece demasiado la pena dedicarle tiempo a este texto, ¡nada más lejos de la realidad!&lt;/p&gt;
-
-&lt;p&gt;El acceso al documento original (&lt;a href=&#34;http://psycnet.apa.org/psycinfo/1991-11596-001&#34; target=&#34;_blank&#34;&gt;enlace&lt;/a&gt;), desgraciadamente, implica un desembolso de aproximadamente doce dólares. No obstante, a través de una búsqueda rápida en &lt;em&gt;Google&lt;/em&gt; es fácil (y, posiblemente, ilegal) dar con él e, incluso, con una traducción al español, publicada en el año 1992 en la revista &lt;em&gt;Anales de Psicología&lt;/em&gt;. La pregunta natural aquí es, ¿por qué un artículo publicado hace más de dos décadas no ha sido liberado completamente?&lt;/p&gt;
-
+&lt;p&gt;El acceso al documento original (&lt;a href=&#34;http://psycnet.apa.org/psycinfo/1991-11596-001&#34;&gt;enlace&lt;/a&gt;), desgraciadamente, implica un desembolso de aproximadamente doce dólares. No obstante, a través de una búsqueda rápida en &lt;em&gt;Google&lt;/em&gt; es fácil (y, posiblemente, ilegal) dar con él e, incluso, con una traducción al español, publicada en el año 1992 en la revista &lt;em&gt;Anales de Psicología&lt;/em&gt;. La pregunta natural aquí es, ¿por qué un artículo publicado hace más de dos décadas no ha sido liberado completamente?&lt;/p&gt;
 &lt;p&gt;Algunas de las claves que comparte Jacob Cohen y me han parecido interesantes son:&lt;/p&gt;
-
 &lt;ul&gt;
-&lt;li&gt;En la medida de nuestras posibilidades, debemos evitar el uso inconsciente de las famosas &amp;ldquo;&lt;em&gt;reglas de oro&lt;/em&gt;&amp;rdquo;, que suelen instaurar rígidos criterios universales. Por ejemplo, en lugar de calificar una muestra como pequeña porque su tamaño es menor que treinta, conviene que llevemos a cabo un análisis del poder estadístico del estudio, para decidir si el tamaño muestral es el idóneo para los objetivos que perseguimos.&lt;/li&gt;
+&lt;li&gt;En la medida de nuestras posibilidades, debemos evitar el uso inconsciente de las famosas &amp;ldquo;&lt;em&gt;reglas de oro&lt;/em&gt;&amp;quot;, que suelen instaurar rígidos criterios universales. Por ejemplo, en lugar de calificar una muestra como pequeña porque su tamaño es menor que treinta, conviene que llevemos a cabo un análisis del poder estadístico del estudio, para decidir si el tamaño muestral es el idóneo para los objetivos que perseguimos.&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;&lt;em&gt;Menos es más&lt;/em&gt;&amp;rdquo; (salvo cuando hablamos de tamaños muestrales). No es demasiado recomendable que nuestros proyectos se caractericen por tener un número desproporcionado de variables dependientes, o independientes, o de ambos tipos. En esos casos, la cantidad de hipótesis a contrastar crece desmesuradamente, y deberíamos estar muy atentos al control del &lt;em&gt;error de tipo I&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;En relación con lo anterior, es aconsejable que prestemos atención también a la forma de presentar resultados. Los programas informáticos de hoy en día son capaces de arrojar cifras con un alto número de decimales, pero debemos detenernos a pensar hasta qué punto es útil reportarlos todos.&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;&lt;em&gt;Simple es mejor&lt;/em&gt;&amp;rdquo;. Conviene que describamos gráficamente una variable antes que optar por hacerlo vía sus primeros momentos, así como que utilicemos un diagrama de puntos en lugar de escoger un indicador numérico para transmitir en qué medida están asociadas dos variables.&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&lt;em&gt;Simple es mejor&lt;/em&gt;&amp;quot;. Conviene que describamos gráficamente una variable antes que optar por hacerlo vía sus primeros momentos, así como que utilicemos un diagrama de puntos en lugar de escoger un indicador numérico para transmitir en qué medida están asociadas dos variables.&lt;/li&gt;
 &lt;li&gt;Que podamos realizar, de manera sencilla, complejos análisis de datos utilizando programas informáticos, no implica que no sea necesario entender perfectamente qué estamos haciendo en cada momento del proceso.&lt;/li&gt;
-&lt;li&gt;Conviene que nos detengamos a estudiar con detalle todo lo relacionado con la correcta interpretación del &lt;em&gt;p&lt;/em&gt;-valor (&amp;rdquo;&lt;em&gt;this result does not tell us about the truth of the null hypothesis, given the data […] What it tells us is the probability of the data, given the truth of the null hypothesis.&lt;/em&gt;&amp;rdquo;).&lt;/li&gt;
+&lt;li&gt;Conviene que nos detengamos a estudiar con detalle todo lo relacionado con la correcta interpretación del &lt;em&gt;p&lt;/em&gt;-valor (&amp;quot;&lt;em&gt;this result does not tell us about the truth of the null hypothesis, given the data […] What it tells us is the probability of the data, given the truth of the null hypothesis.&lt;/em&gt;&amp;quot;).&lt;/li&gt;
 &lt;li&gt;Continuando con el punto anterior, no tenemos que utilizar el &lt;em&gt;p&lt;/em&gt;-valor como sustituto de un indicador del tamaño del efecto, y es recomendable que reportemos un intervalo de confianza de este último (de hecho, debería ser el principal objetivo de cualquier investigación) en la sección de resultados, para que los hallazgos significativos queden correctamente contextualizados.&lt;/li&gt;
 &lt;li&gt;Conviene, antes de llevar a cabo cualquier estudio, que planeemos con atención el tamaño del efecto que buscamos, el nivel de significación que vamos a asumir y el poder estadístico con el que queremos trabajar. A partir de ellos, obtendremos el tamaño muestral necesario y, en el caso de encontrarse éste fuera de nuestras posibilidades, procederemos a realizar ajustes en las anteriores cantidades.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Por otra parte, algunas de las citas que me han encantado del artículo son:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;I have so heavily emphasized the desirability of working with few variables and large sample sizes that some of my students have spread the rumor that my idea of the perfect study is one with 10,000 cases and no variables. They go too far.&amp;rdquo;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;We sometimes learn more from what we see than from what we compute; sometimes what we learn from what we see is that we shouldn’t compute, at least not on those data as they stand.&amp;rdquo;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;The atmosphere that characterizes statistics as applied in the social and biomedical sciences is that of a secular religion (Salsburg, 1985), apparently of Judeo-Christian derivation, as it employs as its most powerful icon a six-pointed cross, often presented multiply for enhanced authority. I confess that I am an agnostic.&amp;rdquo;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Despite widespread misconceptions to the contrary, the rejection of a given null hypothesis gives us no basis for estimating the probability that a replication of the research will again result in rejecting that null hypothesis.&amp;rdquo;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;consider the sanctified (and sanctifying) magic .05 level. […] Its arbitrary unreasonable tyranny has led to data fudging of varying degrees of subtlety from grossly altering data to dropping cases where there &amp;lsquo;must have been&amp;rsquo; errors.&amp;rdquo;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;I have learned and taught that the primary product of a research inquiry is one or more measures of effect size, not &lt;em&gt;p&lt;/em&gt; values.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;En resumen, una amena lectura aderezada de píldoras de sabiduría que recomendaría a cualquier persona interesada en esta disciplina.&lt;/p&gt;
 </description>
     </item>
@@ -407,31 +368,22 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
       <link>https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/</link>
       <pubDate>Thu, 02 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/02/los-34-grados-de-libertad-de-un-estudio/</guid>
-      <description>&lt;p&gt;Hace unos días, completé la lectura del estupendo artículo &lt;em&gt;&amp;ldquo;Degrees of freedom in planning, running, analyzing, and reporting psychological studies. A checklist to avoid p-hacking&amp;rdquo;&lt;/em&gt;, cuya lista de autores es casi tan extensa como el propio título, y de acceso abierto a través de &lt;a href=&#34;http://journal.frontiersin.org/article/10.3389/fpsyg.2016.01832/abstract&#34; target=&#34;_blank&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
-
+      <description>&lt;p&gt;Hace unos días, completé la lectura del estupendo artículo &lt;em&gt;&amp;ldquo;Degrees of freedom in planning, running, analyzing, and reporting psychological studies. A checklist to avoid p-hacking&amp;rdquo;&lt;/em&gt;, cuya lista de autores es casi tan extensa como el propio título, y de acceso abierto a través de &lt;a href=&#34;http://journal.frontiersin.org/article/10.3389/fpsyg.2016.01832/abstract&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;En la línea de la famosa idea conocida como &lt;em&gt;&amp;ldquo;The Garden of Forking Paths&amp;rdquo;&lt;/em&gt;, acuñada por &lt;em&gt;Andrew Gelman&lt;/em&gt;, el mencionado documento lista los múltiples grados de libertad existentes en todas y cada una de las fases de un estudio. Ahora bien, ¿a qué nos referimos cuando hablamos de los grados de libertad de un estudio?&lt;/p&gt;
-
 &lt;p&gt;Sin entrar aquí en demasiado detalle, se trata de ciertas decisiones arbitrarias (intencionadas o no) que los investigadores toman en sus investigaciones a la hora de diseñarlas, recoger los datos de interés, analizar éstos y posteriormente reportarlos en publicaciones científicas. Es lógico entonces que nos planteemos la siguiente cuestión: ¿qué efecto poseen los grados de libertad de un estudio sobre las conclusiones alcanzadas?&lt;/p&gt;
-
 &lt;p&gt;Entre otras, las dos principales consecuencias son, por un lado, el incremento de la probabilidad de hallar resultados que no son más que falsos positivos, y, por otra parte, la posibilidad de inflar las estimaciones para los tamaños de los efectos observados. Así pues, ¿es posible evitar su aparición en un estudio?&lt;/p&gt;
-
 &lt;p&gt;A día de hoy, el mejor método (aunque dista de ser perfecto) para que un estudio esté libre de grados de libertad es utilizar, de manera precisa y muy detallada, un recurso conocido como &lt;em&gt;pre-registro&lt;/em&gt; (&lt;em&gt;preregistration&lt;/em&gt; en inglés). La idea es presentar, e incluso someter a revisión de pares, el plan que seguirá cierta investigación antes de realizar la propia recolección de los datos de interés.&lt;/p&gt;
-
 &lt;p&gt;En el citado artículo se ofrece un listado (no totalmente exhaustivo) de los grados de libertad que puede presentar un estudio, restringiendo este al marco de referencia habitual utilizado para el contraste de hipótesis. De esta forma, los autores advierten que habría que eliminar o añadir ciertos grados de libertad si es otra la metodología empleada.&lt;/p&gt;
-
 &lt;p&gt;Algunos de los mencionados grados de libertad están relacionados entre sí (recomiendo consultar la tabla que figura en la última página del artículo) o incluso pueden llegar a dar la impresión de aparecer por duplicado. No obstante, se justifica este hecho por la importancia de adoptar cierta decisión en una fase del estudio u otra.&lt;/p&gt;
-
 &lt;p&gt;A modo de resumen, estos son los 34 grados de libertad de un estudio, desglosados en función de las distintas etapas de una investigación:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Fase de generación de hipótesis&lt;/em&gt;:
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;[T1]&lt;/em&gt; Llevar a cabo investigaciones exploratorias. Esto conduce a una práctica conocida como &lt;em&gt;&amp;ldquo;HARKing&amp;rdquo;&lt;/em&gt; (&lt;em&gt;&amp;ldquo;Hypothesizing After Results are Known&amp;rdquo;&lt;/em&gt;, que vendría a ser generar hipótesis una vez se conocen los resultados).&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[T2]&lt;/em&gt; Declarar hipótesis imprecisas que no indiquen la dirección del posible efecto. Es un tipo especial de &lt;em&gt;&amp;ldquo;HARKing&amp;rdquo;&lt;/em&gt;, ya que el investigador puede luego analizar los datos de dos maneras alternativas.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Fase de diseño&lt;/em&gt;:
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;[D1]&lt;/em&gt; Crear múltiples condiciones y variables independientes manipuladas. A medida que el diseño de un estudio adquiere complejidad, esta práctica puede conducir a posibles futuras decisiones con respecto a los niveles de las variables que se están considerando o sobre las condiciones en la que centra el foco de atención.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[D2]&lt;/em&gt; Medir variables adicionales sin decidir de antemano si éstas serán bien covariables, bien variables independientes, bien variables mediadoras, o bien variables moderadoras.&lt;/li&gt;
@@ -440,17 +392,17 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;li&gt;&lt;em&gt;[D5]&lt;/em&gt; Incorporar variables adicionales que permitan, &lt;em&gt;a posteriori&lt;/em&gt;, al investigador, la exclusión del análisis de ciertos (o incluso grupos de) participantes, con el propósito de encontrar así resultados significativos.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[D6]&lt;/em&gt; No realizar un análisis del poder estadístico del estudio. Es más, el investigador suele adoptar una posición extremadamente optimista al respecto de este asunto cuando trabaja con muestras pequeñas, lo cual se traduce en estudios de bajo poder estadístico.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[D7]&lt;/em&gt; No informar acerca del plan de muestreo, permitiendo así la posibilidad de realizar, de manera consecutiva, múltiples pequeños estudios hasta dar con el resultado significativo deseado (y sin haber controlado el efecto que esta práctica posee sobre el &lt;em&gt;error de tipo I&lt;/em&gt;).&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Fase de recolección de datos&lt;/em&gt;:
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;[C1]&lt;/em&gt; No asignar los participantes de un estudio a las condiciones de forma aleatoria, lo cual da lugar a la posible aparición de variables de confusión.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[C2]&lt;/em&gt; No escoger de manera acertada la técnica de enmascaramiento (simple, doble o triple ciego), bien para los participantes, bien para los investigadores, pudiendo sesgar así los resultados del estudio.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[C3]&lt;/em&gt; Corregir, codificar o descartar datos durante la fase de recolección, de una forma no coherente con la técnica de enmascaramiento asociada al estudio.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[C4]&lt;/em&gt; Determinar la regla de parada de recolección de datos en función de si se ha obtenido, o no, el resultado deseado.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Fase de análisis&lt;/em&gt;: los puntos que se listan a continuación en este apartado son una serie de decisiones con marcado carácter &lt;a href=&#34;https://es.wikipedia.org/wiki/Ad_hoc&#34; target=&#34;_blank&#34;&gt;&lt;em&gt;ad hoc&lt;/em&gt;&lt;/a&gt; por parte del investigador.
-
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Fase de análisis&lt;/em&gt;: los puntos que se listan a continuación en este apartado son una serie de decisiones con marcado carácter &lt;a href=&#34;https://es.wikipedia.org/wiki/Ad_hoc&#34;&gt;&lt;em&gt;ad hoc&lt;/em&gt;&lt;/a&gt; por parte del investigador.
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;[A1]&lt;/em&gt; Seleccionar entre diferentes opciones de tratamiento para los datos incompletos o perdidos.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[A2]&lt;/em&gt; Especificar el pre-procesamiento de los datos (limpieza, normalización, suavizado o correcciones).&lt;/li&gt;
@@ -467,9 +419,9 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;li&gt;&lt;em&gt;[A13]&lt;/em&gt; La propia determinación del modelo estadístico.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[A14]&lt;/em&gt; La elección del método de estimación, el programa informático donde se va a llevar a cabo el análisis de datos, y la forma en la que se calculan los errores estándar.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[A15]&lt;/em&gt; La elección del criterio de inferencia.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;Fase de informe&lt;/em&gt;:
-
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;[R1]&lt;/em&gt; No asegurar la reproducibilidad del estudio.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[R2]&lt;/em&gt; No habilitar (o facilitar la posibilidad de) la replicación del estudio.&lt;/li&gt;
@@ -477,11 +429,10 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 &lt;li&gt;&lt;em&gt;[R4]&lt;/em&gt; No informar de los denominados &amp;ldquo;estudios fallidos&amp;rdquo; que fueron originalmente considerados relevantes para la investigación propuesta.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[R5]&lt;/em&gt; No informar adecuadamente de los resultados y los &lt;em&gt;p&lt;/em&gt;-valores.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;[R6]&lt;/em&gt; Formular hipótesis después de observar los resultados (el ya nombrado &lt;em&gt;&amp;ldquo;HARKing&amp;rdquo;&lt;/em&gt;).&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;Los autores dedican en el artículo, a cada uno de los anteriores 34 puntos, algunos párrafos para contextualizarlos, explicar su influencia sobre los resultados y ofrecer buenas prácticas para evitar que hagan acto de presencia en el estudio.&lt;/p&gt;
-
 &lt;p&gt;En resumen, una lectura que merece la pena y que recomiendo encarecidamente.&lt;/p&gt;</description>
     </item>
     

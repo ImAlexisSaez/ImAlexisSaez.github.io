@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@iswanto" target="_blank">Iswanto Arif</a>, disponible en <a href="https://unsplash.com/photos/rBSRJxzymNk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@iswanto">Iswanto Arif</a>, disponible en <a href="https://unsplash.com/photos/rBSRJxzymNk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -527,28 +534,18 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>En mi reciente vuelta a <em>Twitter</em>, he empezado a seguir al profesor responsable del excelente <em>MOOC</em> &ldquo;<em>Improving your statistical inferences</em>&rdquo; (<a href="https://www.coursera.org/learn/statistical-inferences" target="_blank">enlace</a>), <em>Daniël Lakens</em> (<a href="https://twitter.com/lakens" target="_blank">@lakens</a>), que comparte más que interesantes perlas relacionadas con el campo de la estadística.</p>
-
-<p>Hace unos días anunciaba que había actualizado un <em>script</em> para <em>R</em> cuyo nombre no tiene desperdicio: &ldquo;<em>Perfect t-test</em>&rdquo;. Las principales referencias que tenemos que consultar son:</p>
-
+      <p>En mi reciente vuelta a <em>Twitter</em>, he empezado a seguir al profesor responsable del excelente <em>MOOC</em> &ldquo;<em>Improving your statistical inferences</em>&rdquo; (<a href="https://www.coursera.org/learn/statistical-inferences">enlace</a>), <em>Daniël Lakens</em> (<a href="https://twitter.com/lakens">@lakens</a>), que comparte más que interesantes perlas relacionadas con el campo de la estadística.</p>
+<p>Hace unos días anunciaba que había actualizado un <em>script</em> para <em>R</em> cuyo nombre no tiene desperdicio: &ldquo;<em>Perfect t-test</em>&quot;. Las principales referencias que tenemos que consultar son:</p>
 <ul>
-<li><a href="http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html" target="_blank">The perfect t-test</a>.</li>
-<li><a href="https://github.com/Lakens/Perfect-t-test" target="_blank">Repositorio</a> en <em>GitHub</em> con el código asociado al anterior artículo.
-<br /></li>
+<li><a href="http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html">The perfect t-test</a>.</li>
+<li><a href="https://github.com/Lakens/Perfect-t-test">Repositorio</a> en <em>GitHub</em> con el código asociado al anterior artículo.</li>
 </ul>
-
 <p>Como no podía ser de otra manera, un recurso así despierta enormemente tanto mi curiosidad, como las ganas de echar un rato explorando las posibilidades que ofrece.</p>
-
 <p>Ahora bien, ¿de qué trata todo el asunto? Estamos ante un documento escrito con <em>R Markdown</em> cuyo objetivo es automatizar el proceso de comparación de medias para dos muestras, tanto independientes como dependientes (cada caso tiene su archivo asociado). No obstante, cuando la mayoría de programas informáticos orientados al análisis de datos ya incorporan este tipo de herramienta, ¿qué justifica la existencia de este recurso?</p>
-
 <p>Según el autor, no todos los investigadores siguen las recomendaciones que los estadísticos indican (o bien no están al día de las mismas), e incluso, hecho que personalmente considero más grave, los propios programas informáticos ignoran dichas recomendaciones en ocasiones.</p>
-
 <p>Dentro del &ldquo;peligro&rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?</p>
-
 <p>Veamos qué nos ofrece el código de <em>Daniël Lakens</em>. Una vez digerido el <em>README</em> del repositorio, e instalado los paquetes necesarios (así como actualizado <em>JAGS</em>, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba <em>t</em>.</p>
-
 <p>He escogido el conjunto de datos <code>hsb2</code> (incluido en el paquete <code>openintro</code>), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo <code>perfect_independent_t-test.Rmd</code>.</p>
-
 <pre><code class="language-r"># Carga la librería que contiene el conjunto de datos hsb2
 library(openintro)
 
@@ -567,15 +564,10 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
             row.names = FALSE,
             sep = &quot;,&quot;)
 </code></pre>
-
 <p><em>Nota</em>: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba <em>t</em>.</p>
-
 <p>Ahora, con <code>datos_hsb2_math.txt</code> ubicado en el mismo directorio que <code>perfect_independent_t-test.Rmd</code>, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable <code>alldata</code> (y, en mi caso, añadir <code>sep = &quot;,&quot;</code>), así como correctamente asignar las variables <code>xlabel</code>, <code>ylabel</code>, <code>factorlabel</code>, <code>measurelabel</code>, <code>xlabelstring</code> e <code>ylabelstring</code> siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.</p>
-
 <p>En mi caso, he cambiado el formato del documento de salida de <em>Word</em> a <em>PDF</em>, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba <em>t</em>! A la próxima persona que escuche quejarse de que <em>SPSS</em> devuelve una miríada de resultados voy a invitarle amablemente a que utilice este <em>script</em>.</p>
-
 <p>Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente <em>boxplot</em> (creo que en español se llama <em>diagrama de caja y bigotes</em>, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:</p>
-
 
 
 
@@ -605,9 +597,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 </figure>
 
-
 <p>A continuación, se realizan cuatro contrastes de hipótesis para comprobar si se verifica el supuesto de normalidad para las puntuaciones de ambos grupos (su violación tiene efectos, por ejemplo, sobre el <em>error de tipo I</em>):</p>
-
 
 
 
@@ -637,11 +627,8 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 </figure>
 
-
 <p>En uno de los cuatros contrastes, los datos con los que estamos trabajando aportan evidencia suficiente para sospechar de la veracidad de la hipótesis nula (&ldquo;las puntuaciones siguen una distribución normal&rdquo;), por lo que tendríamos que preferiblemente recurrir a métodos no paramétricos o estadísticos robustos. No obstante, en el propio documento nos avisan de que con muestras grandes (y podemos considerar que la dada lo es) este tipo de situaciones pueden presentarse.</p>
-
 <p>Podemos examinar la distribución de puntuaciones, para cada uno de los grupos, de manera gráfica, a partir de las siguientes figuras, y juzgar así cómo se desvían nuestros datos (línea negra) de la distribución normal asociada (línea discontinua roja):</p>
-
 
 
 
@@ -684,7 +671,6 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
-
 <figure>
 
 
@@ -701,9 +687,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 </figure>
 
-
 <p>Por si las anteriores figuras todavía no resolvieran el interrogante, tenemos a nuestra disposición los siguientes <em>gráficos Q-Q</em>:</p>
-
 
 
 
@@ -733,23 +717,16 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 </figure>
 
-
 <p>No resulta por tanto descabellado aceptar que se verifica el supuesto de normalidad para los datos dados. Pasemos ahora a estudiar la hipótesis de igualdad de varianzas entre los grupos considerados. Para ello, utilizaremos la <em>prueba de Levene</em>, que en nuestro caso particular concluye:</p>
-
 <blockquote>
 <p>Levene’s test for equality of variances (p = 0.46) indicates that the assumption that variances are equal is not rejected.</p>
 </blockquote>
-
 <p>A continuación encontramos la sección de resultados donde, siguiendo el estilo de publicación de las revistas científicas, se recogen las conclusiones para la prueba <em>t</em> que hemos llevado a cabo. Aquí, en función de la filosofía con la que solamos trabajar y de si se verifican las condiciones asociadas a esta prueba, tendremos que escoger entre la sección dedicada a estadísticos frecuentistas, bayesianos o robustos. Por ejemplo, para la primera opción encontraríamos:</p>
-
 <blockquote>
 <p>The mean math of participants in the male condition (M = 52.95, SD = 9.66, n = 91) was greater than the mean of participants in the female condition (M = 52.39, SD = 9.15, n = 109). The difference between the two measurements (M = 0.55, 95% CI = [-2.09;3.19]) was analyzed with Welch’s t-test, t(187.58) = 0.41, p = 0.682, Hedges’ g = 0.06, 95% CI [-0.22;0.34]. This can be considered a tiny effect. The observed data is not surprising under the assumption that the null-hypothesis is true. The Common Language effect size (McGraw &amp; Wong, 1992) indicates that the likelihood that the math of a random person in the male condition is greater than the math of a random person in the female condition is 52%.</p>
 </blockquote>
-
 <p>Tenemos a nuestra disposición la media, la desviación estándar y el tamaño muestral para cada uno de los grupos considerados. A continuación encontramos el valor del estadístico asociado a la prueba <em>t</em> de <em>Welch</em>, así como su correspondiente <em>p</em>-valor. Como indicador del tamaño del efecto encontramos la <em>g</em> de <em>Hedges</em>. Sin embargo, al margen del aluvión de valores con el que ya seríamos capaces de dar respuesta al interrogante que ha motivado este artículo (¿seríamos de verdad capaces?), me ha encantado la parte final de este párrafo, donde nos transmiten con palabras llanas qué conclusiones deberíamos extraer.</p>
-
 <p>El documento añade los gráficos que mostraré a continuación, así como las referencias para las justificaciones vertidas a lo largo de él, el propio conjunto de datos y cierta información técnica de la sesión de trabajo en <em>R</em>. Es un estupendo recurso para tener siempre disponible a mano, ¿verdad?</p>
-
 
 
 
@@ -792,7 +769,6 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
-
 <figure>
 
 
@@ -808,7 +784,6 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 </figure>
-
 
 
 
@@ -1099,7 +1074,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1166,7 +1141,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1182,7 +1157,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

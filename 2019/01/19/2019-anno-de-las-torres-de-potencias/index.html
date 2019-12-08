@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/19/2019-anno-de-las-torres-de-potencias/featured_hu72c48b4f96aaa03256a8ba8722469251_123162_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@asoggetti" target="_blank">asoggetti</a>, disponible en <a href="https://unsplash.com/photos/T-6J6uvjDec" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@asoggetti">asoggetti</a>, disponible en <a href="https://unsplash.com/photos/T-6J6uvjDec">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,221 +574,162 @@
 
     <div class="article-style">
       <p><strong>Problema 44:</strong> Encuentra los dos últimos dígitos de</p>
-
-<p><span  class="math">\[
+<p>$$
 2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Para encontrar las dos últimas cifras de la operación indicada en el enunciado del ejercicio, un posible enfoque pasa por trabajar con el valor de las congruencias módulo $100$. Estudiemos el valor de dichas congruencias para cada uno de los tres sumandos por separado.</p>
-
 <p>En primer lugar, es cierto que</p>
-
-<p><span  class="math">\[
+<p>$$
 2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}.
-\]</span></p>
-
+$$</p>
 <p>Ahora, como $mcd(17,100) = 1$, por el <em>Teorema de Euler-Fermat</em>, sabemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 17^{\varphi(100)} \equiv 1\pmod{100},
-\]</span></p>
-
+$$</p>
 <p>y como $100 = 2^2 \cdot 5^2$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \varphi(100) = 100\cdot\left(1-\dfrac{1}{2}\right)\cdot\left(1-\dfrac{1}{5}\right) = 40,
-\]</span></p>
-
+$$</p>
 <p>esto es, $17^{40} \equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el <em>Teorema chino del resto</em>, la ecuación de congruencia lineal $x\equiv 2018^{2019} \pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2018^{2019} \pmod{5},\\
-x&\equiv 2018^{2019} \pmod{8},
+x&amp;\equiv 2018^{2019} \pmod{5},\<br>
+x&amp;\equiv 2018^{2019} \pmod{8},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,</p>
-
-<p><span  class="math">\[
+<p>$$
 2018^{2019} \equiv 3^{2019}\pmod{5},
-\]</span></p>
-
+$$</p>
 <p>y como $5$ es un número primo y $mcd(3,5) = 1$, por el <em>Pequeño Teorema de Fermat</em>, $3^4 \equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que</p>
-
-<p><span  class="math">\[
+<p>$$
 3^{2019} = 3^3\cdot (3^4)^{504} \equiv (3^3 \cdot 1^{504}) \pmod{5} \equiv 2\pmod{5}.
-\]</span></p>
-
+$$</p>
 <p>Por otro lado, $2018 = 2\cdot1009$, por lo que,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-2018^{2019} &= (2\cdot1009)^{2019} \\
-&= 2^{2019} \cdot 1009^{2019} \\
-&= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \\
-&= 8 \cdot 2^{2016} \cdot 1009^{2019},
+2018^{2019} &amp;= (2\cdot1009)^{2019} \<br>
+&amp;= 2^{2019} \cdot 1009^{2019} \<br>
+&amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \<br>
+&amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y así, podemos concluir que $2018^{2019} \equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2\pmod{5},\\
-x&\equiv 0\pmod{8}.
+x&amp;\equiv 2\pmod{5},\<br>
+x&amp;\equiv 0\pmod{8}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el <em>Teorema chino del resto</em> o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que</p>
-
-<p><span  class="math">\[
+<p>$$
 2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}\equiv 17^{32} \pmod{100}.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, $17^{32} = ( 17^2 )^{16} = 189^{16} \equiv 89^{16} \pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-17^{32} &\equiv 89^{16} \pmod{100} \\
-&\equiv (-11)^{16} \pmod{100} \\
-&\equiv 11^{16} \pmod{100} \\
-&\equiv 21^8 \pmod{100}\\
-&\equiv 41^4 \pmod{100} \\
-&\equiv 81^2 \pmod{100} \\
-&\equiv 61\pmod{100},
+17^{32} &amp;\equiv 89^{16} \pmod{100} \<br>
+&amp;\equiv (-11)^{16} \pmod{100} \<br>
+&amp;\equiv 11^{16} \pmod{100} \<br>
+&amp;\equiv 21^8 \pmod{100}\<br>
+&amp;\equiv 41^4 \pmod{100} \<br>
+&amp;\equiv 81^2 \pmod{100} \<br>
+&amp;\equiv 61\pmod{100},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 2017^{2018^{2019}} \equiv 61\pmod{100}.
-\]</span></p>
-
+$$</p>
 <p>Para el segundo sumando, utilizaremos el <em>Teorema chino del resto</em> desde el principio. Así, la ecuación de congruencia lineal</p>
-
-<p><span  class="math">\[
+<p>$$
 x\equiv 2018^{2019^{2020}} \pmod{100}
-\]</span></p>
-
+$$</p>
 <p>es equivalente al sistema de ecuaciones de congruencia lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2018^{2019^{2020}} \pmod{4},\\
-x&\equiv 2018^{2019^{2020}} \pmod{25},
+x&amp;\equiv 2018^{2019^{2020}} \pmod{4},\<br>
+x&amp;\equiv 2018^{2019^{2020}} \pmod{25},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,</p>
-
-<p><span  class="math">\[
+<p>$$
 2018^{2019^{2020}} \equiv 0\pmod{4},
-\]</span></p>
-
+$$</p>
 <p>pues $2018 = 2\cdot1009$ y, gracias a ese dos que figura en la descomposición en factores primos de $2018$, operando adecuadamente con las propiedades de los exponentes (de una forma similar a como actuamos en el caso anterior) es fácil ver que la torre de potencias es múltiplo de cuatro. Por otro lado,</p>
-
-<p><span  class="math">\[
+<p>$$
 2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25},
-\]</span></p>
-
+$$</p>
 <p>y como $mcd(18,25)=1$ estamos en condiciones de volver a aplicar el <em>Teorema de Euler-Fermat</em>. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 18^{\varphi(25)}\equiv 1\pmod{25},
-\]</span></p>
-
+$$</p>
 <p>y, dado que $25=5^2$, es cierto que</p>
-
-<p><span  class="math">\[
+<p>$$
 \varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20.
-\]</span></p>
-
+$$</p>
 <p>Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-2019^{2020} &\equiv (-1)^{2020} \pmod{20} \\
-&\equiv 1^{2020}\pmod{20} \\
-&\equiv 1\pmod{20},
+2019^{2020} &amp;\equiv (-1)^{2020} \pmod{20} \<br>
+&amp;\equiv 1^{2020}\pmod{20} \<br>
+&amp;\equiv 1\pmod{20},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25}\equiv 18\pmod{25}.
-\]</span></p>
-
+$$</p>
 <p>Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 0\pmod{4},\\
-x&\equiv 18\pmod{25}.
+x&amp;\equiv 0\pmod{4},\<br>
+x&amp;\equiv 18\pmod{25}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al <em>Teorema chino del resto</em> o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.</p>
-
 <p>Finalmente, el modo de actuar con el tercer sumando es similar al llevado a cabo para el primero. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100},
-\]</span></p>
-
+$$</p>
 <p>y como $mcd(19,100)=1$ sabemos, por el <em>Teorema de Euler-Fermat</em>, que $19^{\varphi(100)} = 19^{40} \equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el <em>Teorema chino del resto</em>, que nos garantiza que la ecuación de congruencia lineal</p>
-
-<p><span  class="math">\[
+<p>$$
 x\equiv 2020^{2021} \pmod{40}
-\]</span></p>
-
+$$</p>
 <p>es equivalente al sistema de ecuaciones de congruencia lineales</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 2020^{2021} \pmod{5},\\
-x&\equiv 2020^{2021} \pmod{8},
+x&amp;\equiv 2020^{2021} \pmod{5},\<br>
+x&amp;\equiv 2020^{2021} \pmod{8},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2 \cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x&\equiv 0\pmod{5},\\
-x&\equiv 0\pmod{8},
+x&amp;\equiv 0\pmod{5},\<br>
+x&amp;\equiv 0\pmod{8},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,</p>
-
-<p><span  class="math">\[
+<p>$$
 2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100}\equiv 1\pmod{100}.
-\]</span></p>
-
+$$</p>
 <p>Recapitulando,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-2017^{2018^{2019}} &\equiv 61\pmod{100},\\
-2018^{2019^{2020}} &\equiv 68\pmod{100},\\
-2019^{2020^{2021}} &\equiv  1\pmod{100},
+2017^{2018^{2019}} &amp;\equiv 61\pmod{100},\<br>
+2018^{2019^{2020}} &amp;\equiv 68\pmod{100},\<br>
+2019^{2020^{2021}} &amp;\equiv  1\pmod{100},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&\equiv (61+68+1)\pmod{100}\\
-&\equiv 30\pmod{100},
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;\equiv (61+68+1)\pmod{100}\<br>
+&amp;\equiv 30\pmod{100},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.</p>
 
     </div>
@@ -1062,7 +1010,7 @@ x&\equiv 0\pmod{8},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1129,7 +1077,7 @@ x&\equiv 0\pmod{8},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1145,7 +1093,7 @@ x&\equiv 0\pmod{8},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

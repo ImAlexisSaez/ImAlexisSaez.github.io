@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/04/24/presentando-desarreglos/featured_hu605a08cf48980852cd4399603b914473_456242_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@fezbot2000" target="_blank">Fezbot2000</a>, disponible en <a href="https://unsplash.com/photos/xVXlEoQbKc4" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@fezbot2000">Fezbot2000</a>, disponible en <a href="https://unsplash.com/photos/xVXlEoQbKc4">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,60 +574,43 @@
 
     <div class="article-style">
       <p><strong>Problema 71:</strong> Un desarreglo es una permutación de objetos en la que ningún objeto está en su posición original. Por ejemplo, $234561$ es un desarreglo de $123456$, pero $213645$ no, ya que $3$ está en su posición original.</p>
-
 <ul>
 <li>(a) Escribe los desarreglos de $123$.</li>
 <li>(b) Demuestra que, dados $n$ objetos, el total de desarreglos asciende a</li>
 </ul>
-
-<p><span  class="math">\[
+<p>$$
 D_n = n!\left(1-\dfrac{1}{1!} + \dfrac{1}{2!} - \dfrac{1}{3!}+\cdots+(-1)^n \dfrac{1}{n!}\right).
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>En cuanto al apartado (a), empecemos escribiendo todas las permutaciones de $123$,</p>
-
-<p><span  class="math">\[
+<p>$$
 123,\quad 132,\quad 213,\quad 231,\quad 312,\quad 321.
-\]</span></p>
-
+$$</p>
 <p>De entre ellas, descartamos $123$ y $132$, por mantener $1$ su posición original; asimismo hacemos lo propio con $321$, porque $2$ permanece invariante; y con $213$, ya que $3$ continúa en el mismo lugar. Por tanto, dos son los desarreglos de $123$, a saber, $231$ y $312$.</p>
-
-<p>Para abordar el apartado (b) haremos uso del <em>Principio de complementación</em>, y, en lugar de buscar la cantidad de desarreglos, hallaremos el número de permutaciones que al menos mantienen una cifra en su posición original (los ''arreglos''), pues, aunque resulte sorprendente a primera vista, es más fácil contar estas últimas. Una vez encontrado dicho número, se lo sustraeremos al total de permutaciones, obteniendo así la cifra de desarreglos.</p>
-
+<p>Para abordar el apartado (b) haremos uso del <em>Principio de complementación</em>, y, en lugar de buscar la cantidad de desarreglos, hallaremos el número de permutaciones que al menos mantienen una cifra en su posición original (los &lsquo;&lsquo;arreglos&rsquo;'), pues, aunque resulte sorprendente a primera vista, es más fácil contar estas últimas. Una vez encontrado dicho número, se lo sustraeremos al total de permutaciones, obteniendo así la cifra de desarreglos.</p>
 <p>Por consiguiente, para empezar, dados $n$ objetos, sabemos que el total de permutaciones posibles asciende a $P_n = n!$. Ahora, definamos $A_i$ como el total de conjuntos en el que $i$ objetos mantienen su posición original, con $1\leq i\leq n$. Por tanto, el número de desarreglos vendrá dado por</p>
-
-<p><span  class="math">\[
+<p>$$
 D_n = n! - card(A_1\cup A_2\cup\cdots\cup A_n).
-\]</span></p>
-
-<p>Ahora bien, ¿cuántos conjuntos encontramos que se caractericen por mantener un objeto su posición original? De entre los $n$ objetos, seleccionamos uno, acción que podemos llevar a cabo de $C_{n,1}$ maneras posibles. Después, el resto de objetos, $n-1$, simplemente los permutamos, situación que podemos realizar de $P_{n-1} = (n-1)!$ formas posibles. Aplicando la <em>regla del producto</em> hay</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>Ahora bien, ¿cuántos conjuntos encontramos que se caractericen por mantener un objeto su posición original? De entre los $n$ objetos, seleccionamos uno, acción que podemos llevar a cabo de $C_{n,1}$ maneras posibles. Después, el resto de objetos, $n-1$, simplemente los permutamos, situación que podemos realizar de $P_{n-1} = (n-1)!$ formas posibles. Aplicando la *regla del producto* hay</p>
+<p>$$
 C_{n,1}(n-1)! = \dbinom{n}{1}(n-1)!
-\]</span></p>
-
-<p>conjuntos que mantienen un objeto en su posición original. Análogamente, ¿cuántos conjuntos encontramos que se caractericen por mantener dos objetos sus posiciones originales? De entre los $n$ objetos, seleccionamos dos, acción que podemos llevar a cabo de $C_{n,2}$ maneras posibles. Luego, el resto de objetos, $n-2$, simplemente los permutamos, situación que podemos realizar de $P_{n-2} = (n-2)!$ formas posibles. Aplicando la <em>regla del producto</em> hay</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>conjuntos que mantienen un objeto en su posición original. Análogamente, ¿cuántos conjuntos encontramos que se caractericen por mantener dos objetos sus posiciones originales? De entre los $n$ objetos, seleccionamos dos, acción que podemos llevar a cabo de $C_{n,2}$ maneras posibles. Luego, el resto de objetos, $n-2$, simplemente los permutamos, situación que podemos realizar de $P_{n-2} = (n-2)!$ formas posibles. Aplicando la *regla del producto* hay</p>
+<p>$$
 C_{n,2}(n-2)! = \dbinom{n}{2}(n-2)!
-\]</span></p>
-
+$$</p>
 <p>conjuntos que mantienen dos objetos en sus posiciones originales. El mismo razonamiento se puede aplicar para el caso de tres objetos, cuatro objetos, etc.</p>
-
 <p>Por consiguiente, aplicando el <em>Principio de inclusión-exclusión</em>,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-D_n &= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\
-&= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1} \dbinom{n}{n}\right)\\
-&= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1} \cdot 1\right)\\
-&= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1} \dfrac{n!}{n!}\right)\\
-&= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n \dfrac{1}{n!}\right),
+D_n &amp;= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\<br>
+&amp;= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1} \dbinom{n}{n}\right)\<br>
+&amp;= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1} \cdot 1\right)\<br>
+&amp;= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1} \dfrac{n!}{n!}\right)\<br>
+&amp;= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n \dfrac{1}{n!}\right),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>tal y como queríamos demostrar.</p>
 
     </div>
@@ -895,7 +885,7 @@ D_n &= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -962,7 +952,7 @@ D_n &= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -978,7 +968,7 @@ D_n &= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

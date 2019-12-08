@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -191,13 +191,14 @@ Existen dos alternativas para conseguir el mencionado objetivo:
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ Existen dos alternativas para conseguir el mencionado objetivo:
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ Existen dos alternativas para conseguir el mencionado objetivo:
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,51 +755,35 @@ Existen dos alternativas para conseguir el mencionado objetivo:
           <h1>37. Archivos I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/V87m9SltcI8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección abordaremos cómo trabajar con ficheros externos de texto, utilizando para tal empresa el módulo <code>io</code>. Nuestro objetivo será conseguir la <strong>persistencia de datos</strong>, es decir, salvaguardar los datos que estamos manipulando para que no se pierdan al finalizar una sesión de <em>Python</em>.</p>
-
 <p>Existen dos alternativas para conseguir el mencionado objetivo:</p>
-
 <ul>
 <li>Manejar archivos externos.</li>
 <li>Trabajar con bases de datos (BBDD).</li>
 </ul>
-
 <p>Las fases necesarias para guardar cierta información en archivos externos son:</p>
-
 <ol>
 <li>Creación del archivo externo.</li>
 <li>Apertura del archivo externo.</li>
 <li>Manipulación del archivo externo.</li>
 <li>Cierre del archivo externo.</li>
 </ol>
-
-<p>La documentación del módulo <code>io</code> la podemos encontrar en <a href="https://docs.python.org/3/library/io.html" target="_blank">este enlace</a>.</p>
-
+<p>La documentación del módulo <code>io</code> la podemos encontrar en <a href="https://docs.python.org/3/library/io.html">este enlace</a>.</p>
 <p>Veamos un ejemplo sencillo en el que crearemos un archivo donde almacenar una frase. Empecemos tecleando:</p>
-
 <pre><code class="language-python">from io import open
 
 archivo_texto = open(&quot;archivo.txt&quot;, &quot;w&quot;)
 </code></pre>
-
 <p><em>Nota</em>: un archivo lo podemos abrir en modo lectura (<code>r</code>), escritura (<code>w</code>), agregar (<code>a</code>)&hellip;</p>
-
-<p>Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> mantenga una estructura coherente.</p>
-
+<p>Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a> mantenga una estructura coherente.</p>
 <p>A continuación, veamos cómo incluir información (texto) en dicho archivo:</p>
-
 <pre><code class="language-python">from io import open
 
 # Creación + Apertura
@@ -809,11 +797,8 @@ archivo_texto.write(frase)
 # Cierre
 archivo_texto.close()
 </code></pre>
-
 <p>De esta manera, hemos incluido el texto declarado en la variable <code>frase</code> en el fichero <code>archivo.txt</code>.</p>
-
 <p>Acto seguido, estudiemos cómo abrir un archivo en modo lectura y acceder a su contenido:</p>
-
 <pre><code class="language-python">from io import open
 
 archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
@@ -824,13 +809,10 @@ archivo_texto.close()
 
 print(texto)
 </code></pre>
-
 <pre><code class="language-bash">Es un estupendo día para estudiar Python
 en Youtube.
 </code></pre>
-
 <p>Otro método que nos puede resultar de utilidad a la hora de leer un archivo es <code>readlines()</code>, que accede a la información almacenada línea a línea y la guarda en una lista:</p>
-
 <pre><code class="language-python">from io import open
 
 archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
@@ -841,20 +823,14 @@ archivo_texto.close()
 
 print(lineas_texto)
 </code></pre>
-
 <pre><code class="language-bash">['Es un estupendo día para estudiar Python\n', 'en Youtube.']
 </code></pre>
-
 <p>Al ser una lista, podemos utilizar ahora todo lo que hemos aprendido sobre ellas:</p>
-
 <pre><code class="language-python">print(lineas_texto[0])
 </code></pre>
-
 <pre><code class="language-bash">Es un estupendo día para estudiar Python
 </code></pre>
-
 <p>Finalmente, veamos cómo abrir un archivo para agregar información. Para no alterar el contenido de <code>archivo.txt</code>, almacenaremos sus frases en una variable, las escribiremos en un nuevo fichero, <code>archivo2.txt</code>, y sobre este último será donde agreguemos contenido adicional:</p>
-
 <pre><code class="language-python">from io import open
 
 archivo1 = open(&quot;archivo.txt&quot;, &quot;r&quot;)
@@ -869,12 +845,9 @@ archivo2 = open(&quot;archivo2.txt&quot;, &quot;a&quot;)
 archivo2.write(&quot;\n¡Mañana más!&quot;)
 archivo2.close()
 </code></pre>
-
 <p>Si acudimos a la carpeta, comprobaremos la existencia de un fichero denominado <code>archivo2.txt</code>, que contiene tres líneas.</p>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/37/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/37/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -925,7 +898,7 @@ archivo2.close()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -973,7 +946,7 @@ archivo2.close()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1045,7 +1018,7 @@ archivo2.close()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/12/probando-katex-con-un-problema-de-induccion-clasico/featured_hu85285c8901c96839abd57248b9e7658f_99698_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@antoine1003" target="_blank">Antoine Dautry</a>, disponible en <a href="https://unsplash.com/photos/05A-kdOH6Hw" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@antoine1003">Antoine Dautry</a>, disponible en <a href="https://unsplash.com/photos/05A-kdOH6Hw">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,71 +574,46 @@
 
     <div class="article-style">
       <p><strong>Problema 1:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
-
-<p><span  class="math">\[
+<p>$$
 1 + 2 + \cdots + n = \dfrac{n(n+1)}{2}.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Generalmente, cuando abordamos problemas en los que tenemos que demostrar que cierta fórmula o afirmación se satisface, para un conjunto de índices de cardinal infinito (en esta ocasión hablaríamos del conjunto $n\geq1$, con $n\in\mathbb{N}$), es recomendable que llevemos a cabo una primera aproximación a su resolución empleando el <em>principio de inducción matemática</em>.</p>
-
 <p>Así pues, vamos a considerar la propiedad, que denotaremos por $P(n)$, dada en el enunciado del problema,</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+\cdots+n = \dfrac{n(n+1)}{2}.
-\]</span></p>
-
+$$</p>
 <p>Por lo que respecta al <em>caso base</em>, $P(1)$, rápidamente comprobamos que se verifica de manera trivial, ya que</p>
-
-<p><span  class="math">\[
+<p>$$
 1 = \dfrac{1\cdot2}{2} = 1.
-\]</span></p>
-
+$$</p>
 <p>Abordemos ahora el <em>paso inductivo</em>, para lo cual hemos de mostrar que si $P(n)$ se cumple, para un $n\geq1$, entonces asimismo se satisface $P(n+1)$, cuya expresión es</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2}.
-\]</span></p>
-
+$$</p>
 <p>La clave en este tipo de situaciones consiste en encontrar una manera acertada de manipular la conocida como <em>hipótesis de inducción</em>, $P(n)$, que nos ayude a verificar el resultado que estamos buscando comprobar.</p>
-
 <p>Por fortuna para nosotros, si nos fijamos en el miembro izquierdo de la ecuación de $P(n+1)$, apreciamos que directamente aparece la suma de los $n$ primeros números naturales, cuyo valor, por la <em>hipótesis de inducción</em>, es</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{n(n+1)}{2}.
-\]</span></p>
-
+$$</p>
 <p>Este hecho nos permite afirmar que</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+\cdots+n+(n+1) = \dfrac{n(n+1)}{2} + (n+1).
-\]</span></p>
-
+$$</p>
 <p>Ahora, sumando algebraicamente ambos términos,</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{n(n+1)}{2} + (n+1)= \dfrac{n(n+1) + 2(n+1)}{2}= \dfrac{(n+1)(n+2)}{2},
-\]</span></p>
-
+$$</p>
 <p>es decir, hemos llegado a mostrar que</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2},
-\]</span></p>
-
+$$</p>
 <p>completando así el <em>paso inductivo</em>.</p>
-
 <p>Así pues, por el <em>principio de inducción matemática</em>, podemos concluir que $P(n)$ se verifica para cada $n\in\mathbb{N}$, con $n\geq 1$.</p>
-
 <hr>
-
 <p>Podría decir que la experiencia de usar <em>KaTeX</em> ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en <em>TeX</em> y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por <em>KaTeX</em>, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la <a href="https://khan.github.io/KaTeX/function-support.html">web oficial</a>, están disponibles, como por ejemplo <code>aligned</code> o <code>pmatrix</code>. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.</p>
-
 <p>Seguiré investigando, ya que me gustaría ir publicando habitualmente problemas matemáticos sin tener que recurrir a la clásica solución de compartirlos en formato <code>PDF</code> vía algún servicio de alojamiento de ficheros.</p>
-
 <p><em>Actualización:</em> tras un descanso para aclarar ideas, ¡por fin he dado con la solución al problema de los entornos! Si escribimos</p>
-
 <pre><code class="language-tex">$$
 x = 
 \begin{cases}
@@ -640,13 +622,9 @@ x =
 \end{cases}
 $$
 </code></pre>
-
 <p>el resultado no se visualiza correctamente, y así sucede para cualquier entorno que requiera cambios de línea, como <code>aligned</code>, <code>pmatrix</code>, etc. La clave reside en el tratamiento que recibe en <em>Markdown</em> el carácter <code>\</code>, que interfiere con el funcionamiento adecuado de <em>KaTeX</em>.</p>
-
-<p>La solución pasa por &quot;escapar&quot; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.</p>
-
+<p>La solución pasa por &ldquo;escapar&rdquo; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.</p>
 <p>Es decir, el siguiente bloque de código</p>
-
 <pre><code class="language-tex">$$
 x = 
 \begin{cases}
@@ -654,17 +632,14 @@ x =
 \end{cases}
 $$
 </code></pre>
-
 <p>funciona a la perfección, como podemos comprobar a continuación</p>
-
-<p><span  class="math">\[
+<p>$$
 x = 
 \begin{cases}
-  a &\text{if } b\\
-  c &\text{if } d
+a &amp;\text{if } b\<br>
+c &amp;\text{if } d
 \end{cases}
-\]</span></p>
-
+$$</p>
 <p>Esto va a requerir cierto tiempo adicional para que edite algunas de las expresiones escritas con <em>TeX</em>, pero me alegro de poder tener a mi disposición la posibilidad de utilizar algunos entornos matemáticos básicos.</p>
 
     </div>
@@ -922,7 +897,7 @@ x =
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -989,7 +964,7 @@ x =
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1005,7 +980,7 @@ x =
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

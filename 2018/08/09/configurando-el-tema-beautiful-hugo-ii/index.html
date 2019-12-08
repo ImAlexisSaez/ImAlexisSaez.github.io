@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/featured_hue5c79c46871f00548de0000e34534051_368311_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@theandrewwilliam" target="_blank">Andrew Charney</a>, disponible en <a href="https://unsplash.com/photos/UsbMGphPWw4" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@theandrewwilliam">Andrew Charney</a>, disponible en <a href="https://unsplash.com/photos/UsbMGphPWw4">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,9 +574,7 @@
 
     <div class="article-style">
       <p>Nos quedamos, en la <a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">anterior entrada</a> del <a href="/proyecto/metablog/">Proyecto Metablog</a>, a falta de revisar la parte final del archivo de configuración <code>config.toml</code>. Terminemos pues de echarle un vistazo a dicho fichero en este artículo.</p>
-
 <p>Al finalizar la personalización de los parámetros básicos del sitio web, se asomaba ante nosotros el siguiente, y muy extraño, bloque de código:</p>
-
 <pre><code class="language-toml">#[[Params.bigimg]]
 #  src = &quot;img/triangle.jpg&quot;
 #  desc = &quot;Triangle&quot;
@@ -582,18 +587,13 @@
 #  src = &quot;img/hexagon.jpg&quot;
 #  desc = &quot;Hexagon&quot;
 </code></pre>
-
 <p>Nada intuitivo su contenido y carente por completo de comentarios, hecho nada halagüeño. Sin embargo, basta que experimentemos un poco con la anteriores líneas para comprobar que esta sección del archivo <code>config.toml</code> es la dedicada a gestionar la aparición de un carrusel de imágenes en la página web de acceso, situándolo justo detrás del título.</p>
-
 <p>Conviene que le echemos un vistazo a la entrada que aparece en el propio blog de ejemplo del tema <em>Beautiful Hugo</em> hablando de la gestión de imágenes de cabecera. En el caso de haber varias declaradas, estas rotan cada diez segundos. Por otro lado, tenemos a nuestra disposición los siguientes parámetros de configuración:</p>
-
 <ul>
 <li><code>src</code>: ruta que apunta a la ubicación de la imagen de cabecera.</li>
 <li><code>desc</code>: parámetro opcional que nos permite incorporar un pequeño texto sobre la imagen, a modo de pie de figura.</li>
 </ul>
-
-<p>En mi caso, tras navegar un rato por <a href="https://unsplash.com/" target="_blank">Unsplash</a>, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:</p>
-
+<p>En mi caso, tras navegar un rato por <a href="https://unsplash.com/">Unsplash</a>, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:</p>
 <pre><code class="language-toml">#
 # Configuración del carrusel de imágenes de la página de inicio
 #
@@ -608,9 +608,7 @@
 [[Params.bigimg]]
   src = &quot;img/homepage-cabecera-05.jpg&quot;
 </code></pre>
-
 <p>Desvelado el anterior misterio, continuemos con la revisión del archivo <code>config.toml</code>. El siguiente bloque de instrucciones hace referencia a los datos sobre el autor del sitio web (nombre, correo electrónico, etc.). Nos permite, además, configurar una amplia gama de enlaces a nuestras cuentas de redes sociales para así facilitar la conexión entre personas. Originalmente, dicho bloque presenta el siguiente aspecto:</p>
-
 <pre><code class="language-toml">[Author]
   name = &quot;Some Person&quot;
   website = &quot;yourwebsite.com&quot;
@@ -636,9 +634,7 @@
   paypal = &quot;username&quot;
   telegram = &quot;username&quot;
 </code></pre>
-
 <p>Personalmente, no utilizo apenas las redes sociales y confieso que, del anterior listado, ni siquiera conozco algunas de ellas. Así pues, como no podía ser de otra manera, en mi caso el anterior bloque de código ha quedado ciertamente reducido:</p>
-
 <pre><code class="language-toml">#
 # Configuración del autor
 #
@@ -649,9 +645,7 @@
   github  = &quot;ImAlexisSaez&quot;
   twitter = &quot;imalexissaez&quot;
 </code></pre>
-
 <p>El último bloque de instrucciones que se presenta ante nosotros nos ofrece la posibilidad de configurar el menú que aparece en la parte superior derecha y presenta el siguiente aspecto:</p>
-
 <pre><code class="language-toml">[[menu.main]]
     name = &quot;Blog&quot;
     url = &quot;&quot;
@@ -690,17 +684,11 @@
     url = &quot;tags&quot;
     weight = 3
 </code></pre>
-
 <p>No obstante, de momento, dejaremos el anterior bloque tal cual figura arriba y ya procederemos en un futuro a su modificación, cuando incorporemos algunos cambios adicionales al sitio web.</p>
-
 <p>Fin del archivo <code>config.toml</code>, fin de la entrada, ¿verdad? Todavía no. Nos quedan un par de detalles a los que echarles un vistazo.</p>
-
 <p>Para empezar, a continuación, configuraremos las taxonomías de nuestro sitio web. ¿Qué es una taxonomía? Sin pretender entrar en detalles técnicos aquí, para que nos hagamos una idea, una taxonomía es un instrumento que nos permite agrupar contenido relacionado. Los ejemplos más habituales a los que estamos acostumbrados son <em>categorías</em> y <em>etiquetas</em> (que aquí se llamarán <em>categories</em> y <em>tags</em>), que facilitan al lector encontrar artículos que comparten cierta temática.</p>
-
 <p>En mi caso, para <em>Infinitos Contrastes</em>, conservaré ambas, aunque renombrando su versión inglesa al castellano, para facilitar después la configuración de la localización de la plantilla. Así, <code>categories</code> pasará a ser <code>apartados</code>, mientras que <code>tags</code> se convertirá en <code>etiquetas</code>. Además, declararé una nueva taxonomía denominada <code>proyectos</code>, que me facilitará agrupar fácilmente contenido, llegado el caso, de distintos apartados o etiquetas.</p>
-
 <p>Todo ello se traduce en incluir el siguiente bloque de código en el fichero <code>config.toml</code>:</p>
-
 <pre><code class="language-toml">#
 # Configuración de taxonomías
 #
@@ -711,24 +699,17 @@
   proyecto = &quot;proyectos&quot;
   etiqueta = &quot;etiquetas&quot;
 </code></pre>
-
-<p>Recomiendo seguir la estructura <code>singular = plural</code> marcada en la <a href="https://gohugo.io/content-management/taxonomies/" target="_blank">guía oficial</a> de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
-
+<p>Recomiendo seguir la estructura <code>singular = plural</code> marcada en la <a href="https://gohugo.io/content-management/taxonomies/">guía oficial</a> de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
 <p>¿Por qué debemos cuidar tanto el detalle a la hora de declarar taxonomías? Es posible que en un futuro nos adentremos en la personalización de las plantillas del tema y <em>Hugo</em> incorpora útiles funciones para recorrer bucles apoyándose en esta curiosa relación singular-plural. Es por ello que no vamos a pegarnos un tiro en los pies declarando parejas de variables y valores que luego nos impidan aprovecharnos de las mencionadas herramientas.</p>
-
-<p>Por último, para finalizar este artículo, echaremos un vistazo a la configuración del <a href="https://gohugo.io/content-management/urls/" target="_blank">permalink</a> de las entradas del sitio web. Por defecto, <em>Hugo</em> utiliza el directorio donde se encuentre el contenido (generalmente es <code>\post\</code>) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.</p>
-
+<p>Por último, para finalizar este artículo, echaremos un vistazo a la configuración del <a href="https://gohugo.io/content-management/urls/">permalink</a> de las entradas del sitio web. Por defecto, <em>Hugo</em> utiliza el directorio donde se encuentre el contenido (generalmente es <code>\post\</code>) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.</p>
 <p>Para empezar, me gustaría que apareciese el día de publicación del artículo en el <em>permalink</em>, siguiendo el formato <code>/año/mes/día</code>. Por otro lado, como soy consciente de que utilizar caracteres extraños a ojos del alfabeto inglés (tildes, eñes, etc.), en ocasiones, es fuente de problemas, en cada entrada definiré manualmente mi propio <em>slug</em>, para evitar que la traducción automática del título hacia su correspondiente parte del <em>permalink</em> dé lugar a resultados no deseados.</p>
-
 <p>Así pues, mi archivo <code>config.toml</code> finaliza con el siguiente bloque código:</p>
-
 <pre><code class="language-toml">#
 # Configuración del permalink
 #
 [permalinks]
   post = &quot;/:year/:month/:day/:slug/&quot;
 </code></pre>
-
 <p>En el siguiente artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.</p>
 
     </div>
@@ -996,7 +977,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1063,7 +1044,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1079,7 +1060,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/11/03/empezando-con-teoria-de-numeros-vii/featured_hu66a941bdeadea5373b38c6f2696a8198_250475_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@finding_dan" target="_blank">Finding Dan | Dan Grinwis</a>, disponible en <a href="https://unsplash.com/photos/bTFNVc4pWvY" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@finding_dan">Finding Dan | Dan Grinwis</a>, disponible en <a href="https://unsplash.com/photos/bTFNVc4pWvY">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,51 +574,38 @@
 
     <div class="article-style">
       <p><strong>Problema 23:</strong> Sea $n$ un número natural. Sea $A_n = 2^n + 2^{2n} + 2^{3n}$.</p>
-
 <ul>
 <li>a) Demuestra que para todo $n$, $A_{n+3}\equiv A_n\pmod{7}$.</li>
 <li>b) ¿Para qué valores de $n$, $A_n$ es múltiplo de $7$?</li>
 <li>c) Los números en base $2$, $1110$, $1010100$ y $1001001000$, ¿son divisibles por $7$?</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado a),</p>
-
-<p><span  class="math">\[
+<p>$$
 A_{n+3} = 2^{n+3} + 2^{2(n+3)} + 2^{3(n+3)} = 2^{n+3} + 2^{2n+6} + 2^{3n+9}.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, aprovechando que $2^3=8\equiv 1\pmod{7}$, tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 A_{n+3} = 2^3\cdot2^n + (2^3)^2\cdot2^{2n} + (2^3)^3\cdot 2^{3n} \equiv (2^n + 2^{2n} + 2^{3n})\pmod{7},
-\]</span></p>
-
+$$</p>
 <p>es decir, $A_{n+3}\equiv A_n\pmod{7}$, como queríamos demostrar.</p>
-
 <p>En cuanto al apartado b), teniendo presente el resultado alcanzado en el apartado anterior, estudiemos qué sucede para tres números consecutivos. Por comodidad de cara a los cálculos, tomaremos $1$, $2$ y $3$ como valores para $n$, y así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-A_1 &= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\\
-A_2 &= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\\
-A_3 &= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
+A_1 &amp;= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\<br>
+A_2 &amp;= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\<br>
+A_3 &amp;= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir, como $A_{1}$ es múltiplo de $7$ y se satisface la propiedad dada en a), que podemos escribir como $( A_{n + 3} - A_{n} ) \equiv 0 \pmod{7}$, concluimos que $A_{4}$ será múltiplo de $7$ también, así como $A_{7}, A_{10}, A_{13}$ y, en general, los números de la forma $n=3k+1$, con $k\in\mathbb{Z}$, sin más que aplicar reiteradamente la citada propiedad. Un argumento similar se podría esgrimir para los números de la forma $n=3k+2$, con $k\in\mathbb{Z}$, a la vista del resultado alcanzado para $A_2$. De igual manera, este cauce de pensamiento nos llevaría a descartar que cualquier número de la forma $n=3k$, con $k\in\mathbb{Z}$, vaya a ser múltiplo de $7$, ya que $A_3$ no lo es. En conclusión, $A_n$ será múltiplo de $7$ para todos aquellos valores de $n$ que no sean múltiplo de $3$.</p>
-
 <p>Finalmente, en el apartado c), por el <em>Teorema Fundamental de la Numeración</em>, sabemos que podemos escribir</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-1110_{(2} &= 2^1+2^2+2^3 = A_1,\\
-1010100_{(2} &= 2^2+2^4+2^6 = A_2,\\ 
-1001001000_{(2} &= 2^3+2^6+2^9 = A_3,
+1110_{(2} &amp;= 2^1+2^2+2^3 = A_1,\<br>
+1010100_{(2} &amp;= 2^2+2^4+2^6 = A_2,\ 
+1001001000_{(2} &amp;= 2^3+2^6+2^9 = A_3,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y por lo establecido para el apartado anterior, $A_{1}$ y $A_{2}$ son divisibles por $7$, mientras que $A_{3}$ no lo es. De esta manera, los números $1110_{(2}$ y $1010100_{(2}$ son divisibles por $7$, mientras que $1001001000_{(2}$ no lo es.</p>
 
     </div>
@@ -888,7 +882,7 @@ A_3 &= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -955,7 +949,7 @@ A_3 &= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -971,7 +965,7 @@ A_3 &= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

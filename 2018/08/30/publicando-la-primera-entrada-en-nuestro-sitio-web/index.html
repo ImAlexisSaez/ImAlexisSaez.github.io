@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/featured_hu4630d5ee2e2552da97cd069d65fcd850_152728_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@aaronburden" target="_blank">Aaron Burden</a>, disponible en <a href="https://unsplash.com/photos/xG8IQMqMITM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@aaronburden">Aaron Burden</a>, disponible en <a href="https://unsplash.com/photos/xG8IQMqMITM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,17 +574,11 @@
 
     <div class="article-style">
       <p>Tras haber recorrido, en el <a href="/proyecto/metablog/">Proyecto Metablog</a>, las seis estaciones del vía crucis asociado al calvario de la instalación de <em>Hugo</em> y la personalización del tema <em>Beautiful Hugo</em>, llega el momento más anhelado por todos: generar contenido para el sitio web.</p>
-
-<p>A continuación, examinaremos, con sumo detalle, todo el proceso de elaboración y revisión local de artículos para nuestra página web. Para empezar, me gustaría comentar que, en el apartado de la <a href="https://gohugo.io/getting-started/quick-start/#step-4-add-some-content" target="_blank">guía oficial</a> asociado a este asunto, se utiliza la combinación de la terminal del sistema y el comando <code>hugo new</code> para dar a luz, de manera automática, una nueva entrada en el sitio web.</p>
-
+<p>A continuación, examinaremos, con sumo detalle, todo el proceso de elaboración y revisión local de artículos para nuestra página web. Para empezar, me gustaría comentar que, en el apartado de la <a href="https://gohugo.io/getting-started/quick-start/#step-4-add-some-content">guía oficial</a> asociado a este asunto, se utiliza la combinación de la terminal del sistema y el comando <code>hugo new</code> para dar a luz, de manera automática, una nueva entrada en el sitio web.</p>
 <p>No obstante, como no podía ser de otra manera y en un acto de la más absurda rebeldía, prefiero llevar a cabo este proceso de forma manual (qué obsesión con el control tengo, ¿verdad?). Si nos fijamos, desde el <em>explorador de archivos</em> de <em>Windows</em>, en la estructura de nuestra página web (heredada del sitio de ejemplo del tema <em>Beautiful Hugo</em>), en el interior del directorio raíz existe una carpeta denominada <code>\content\</code>, dentro de la cual residen anidadas otras dos: <code>\page\</code> y <code>\post\</code>.</p>
-
 <p>Para respetar este esquema, he decidido ubicar todos los artículos del sitio web que se organicen por alguna taxonomía (recordemos que, en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, incluso añadimos alguna adicional a las que vienen dadas por defecto con <em>Hugo</em>) en la carpeta <code>\post\</code>, mientras que el resto irá al directorio <code>\page\</code>.</p>
-
-<p>Siguiendo esta lógica, como seguramente la primera entrada que vayamos a publicar en nuestro sitio web será una especie de presentación en su blog, generaremos, utilizando <em>Sublime Text 3</em>, un nuevo fichero en la carpeta <code>\post\</code>. Este poseerá la extensión <code>.md</code>, pues vamos a escribir todos y cada uno de nuestros artículos utilizando el lenguaje de marcado <em>Markdown</em>. Para aquellas personas que escuchan por primera vez hablar de él, recomiendo encarecidamente que dediquen unos minutos a completar <a href="https://www.markdowntutorial.com/" target="_blank">este tutorial</a> sobre el mismo.</p>
-
+<p>Siguiendo esta lógica, como seguramente la primera entrada que vayamos a publicar en nuestro sitio web será una especie de presentación en su blog, generaremos, utilizando <em>Sublime Text 3</em>, un nuevo fichero en la carpeta <code>\post\</code>. Este poseerá la extensión <code>.md</code>, pues vamos a escribir todos y cada uno de nuestros artículos utilizando el lenguaje de marcado <em>Markdown</em>. Para aquellas personas que escuchan por primera vez hablar de él, recomiendo encarecidamente que dediquen unos minutos a completar <a href="https://www.markdowntutorial.com/">este tutorial</a> sobre el mismo.</p>
 <p>La estructura de todo artículo será la que figura acto seguido:</p>
-
 <pre><code class="language-yaml">---
 Metadatos del artículo.
 ---
@@ -587,11 +588,8 @@ Párrafo (o párrafos) de introducción al artículo.
 Cuerpo del artículo.
 
 </code></pre>
-
 <p>Al comienzo de cada entrada ubicaremos, delimitada por los caracteres <code>---</code>, cierta información relevante (metadatos) acerca de la misma, que suministraremos en la forma de pares <code>variable: valor</code>. Las variables disponibles a nuestro alcance vendrán determinadas por el tema que hayamos escogido finalmente para nuestro sitio web, aunque sí que es cierto que algunas de ellas son comunes a la mayoría de los temas (como, por ejemplo, <code>title</code>, <code>date</code> o <code>draft</code>).</p>
-
 <p>Teniendo en cuenta que nuestra página web hace uso del tema <em>Beautiful Hugo</em>, y considerando la definición de taxonomías y la personalización del <em>permalink</em> que llevamos a cabo en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, utilizo siempre el mismo esquema para la cabecera de mis artículos:</p>
-
 <pre><code class="language-yaml">---
 title:
 slug:
@@ -603,9 +601,7 @@ etiquetas:
 proyectos:
 ---
 </code></pre>
-
 <p>En el caso particular de esta entrada, la anterior cabecera ha quedado como sigue:</p>
-
 <pre><code class="language-yaml">---
 title:  &quot;Publicando la primera entrada en nuestro sitio web&quot;
 slug:   &quot;publicando-la-primera-entrada-en-nuestro-sitio-web&quot;
@@ -617,9 +613,7 @@ etiquetas: [&quot;Hugo&quot;]
 proyectos: [&quot;MetaBlog&quot;]
 ---
 </code></pre>
-
 <p>Veamos a continuación el cometido de cada una de las variables que figuran en la cabecera:</p>
-
 <ul>
 <li><code>title</code>: contiene el título del artículo. A diferencia de otros temas, por desgracia <em>Beautiful Hugo</em> no admite la posibilidad de emplear <em>Markdown</em> o <em>LaTeX</em> en ciertas partes del título, hecho que debemos tener en consideración.</li>
 <li><code>slug</code>: tal y como comentamos en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, vamos a configurar manualmente el <em>permalink</em> de cada entrada. Una de sus partes será, precisamente, la asociada a esta variable. Para generar su valor, sustituyo a mano los espacios por guiones y suprimo cualquier acento, eñe o carácter extraño a los ojos del alfabeto inglés que pudiese figurar en el título del artículo. En particular, para esta entrada, el <em>permalink</em> será <code>/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/</code>, es decir, la fecha de publicación junto al valor que hemos asignado a la variable <code>slug</code>.</li>
@@ -630,11 +624,8 @@ proyectos: [&quot;MetaBlog&quot;]
 <li><code>etiquetas</code>: segunda taxonomía que utilizaremos para agrupar contenido según las palabras clave que caractericen a la entrada. No es más que la localización al español de la habitual <code>tags</code>.</li>
 <li><code>proyectos</code>: tercera taxonomía (generalmente opcional) que nos permitirá agrupar contenido que pertenezca a distintos apartados y posea diferentes etiquetas.</li>
 </ul>
-
 <p>Tras declarar la cabecera, redactaremos un párrafo (o varios) de introducción al artículo, tras los cuales escribiremos la instrucción <code>more</code>, precedida de los símbolos <code>&lt;!--</code> y seguida de <code>--&gt;</code>. Dichos párrafos, además de ser aquellos que den comienzo a nuestra entrada, serán los que figuren en las páginas de listado de nuestro sitio web. ¿A qué me refiero con las páginas de listado? Serían, por ejemplo, la principal de acceso al sitio web y todas aquellas que ofrecen un índice que contiene los artículos asociados a una taxonomía en particular.</p>
-
 <p>Tras dicha instrucción, finalmente, ya solo nos restará explayarnos tanto como deseemos en el cuerpo de la entrada. <em>The sky is the limit!</em></p>
-
 <p>En el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> estudiaremos cómo utilizar <em>GitHub</em> para alojar nuestra página web en <em>Internet</em>.</p>
 
     </div>
@@ -902,7 +893,7 @@ proyectos: [&quot;MetaBlog&quot;]
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -969,7 +960,7 @@ proyectos: [&quot;MetaBlog&quot;]
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -985,7 +976,7 @@ proyectos: [&quot;MetaBlog&quot;]
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

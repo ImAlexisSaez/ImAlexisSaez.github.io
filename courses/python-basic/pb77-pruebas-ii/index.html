@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las pruebas que realizamos utilizando la documentación, pero incrementando un tanto su complejidad (con expresiones anidadas), para así ver las opciones que nos plantea el módulo doctest.
 Para empezar, partamos del siguiente código fuente, que no es todo lo eficiente que debería, pero que cumple su propósito a efectos metodológicos para ilustrar pruebas con expresiones anidadas:
-import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función devuelve una lista con la raíz cuadrada de los elementos numéricos pasados por parámetros en otra lista.">
+import mathdef raiz_cuadrada(lista_numeros):&quot;&quot;&quot;La función devuelve una lista con la raíz cuadrada delos elementos numéricos pasados por parámetros en otralista.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb77-pruebas-ii/">
@@ -127,7 +127,7 @@ import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función dev
   <meta property="og:title" content="77. Pruebas II | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las pruebas que realizamos utilizando la documentación, pero incrementando un tanto su complejidad (con expresiones anidadas), para así ver las opciones que nos plantea el módulo doctest.
 Para empezar, partamos del siguiente código fuente, que no es todo lo eficiente que debería, pero que cumple su propósito a efectos metodológicos para ilustrar pruebas con expresiones anidadas:
-import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función devuelve una lista con la raíz cuadrada de los elementos numéricos pasados por parámetros en otra lista."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+import mathdef raiz_cuadrada(lista_numeros):&quot;&quot;&quot;La función devuelve una lista con la raíz cuadrada delos elementos numéricos pasados por parámetros en otralista."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función dev
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función dev
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función dev
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,22 +755,15 @@ import math def raiz_cuadrada(lista_numeros): &quot;&quot;&quot; La función dev
           <h1>77. Pruebas II</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/64v9X7K-iuc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, continuaremos el estudio de las pruebas que realizamos utilizando la documentación, pero incrementando un tanto su complejidad (con expresiones anidadas), para así ver las opciones que nos plantea el módulo <code>doctest</code>.</p>
-
 <p>Para empezar, partamos del siguiente código fuente, que no es todo lo eficiente que debería, pero que cumple su propósito a efectos metodológicos para ilustrar pruebas con expresiones anidadas:</p>
-
 <pre><code class="language-python">import math
 
 
@@ -781,12 +778,9 @@ def raiz_cuadrada(lista_numeros):
 
 print(raiz_cuadrada([1, 4, 9, 16]))
 </code></pre>
-
 <pre><code class="language-bash">[1.0, 2.0, 3.0, 4.0]
 </code></pre>
-
 <p>A continuación, para diseñar una prueba que contenta estructuras complejas como condicionales o bucles, simplemente hemos de utilizar <code>...</code> apropiadamente para anidar instrucciones:</p>
-
 <pre><code class="language-python">import doctest
 import math
 
@@ -808,12 +802,9 @@ def raiz_cuadrada(lista_numeros):
 
 doctest.testmod()
 </code></pre>
-
 <p>Acto seguido, analicemos cómo implementar pruebas que arrojen excepciones. Por ejemplo, incluyamos un elemento negativo en la lista que pasamos como argumento a la función <code>raiz_cuadrada()</code>:</p>
-
 <pre><code class="language-python">print(raiz_cuadrada([4, -9, 16]))
 </code></pre>
-
 <pre><code class="language-bash">Traceback (most recent call last):
   File &quot;pruebas_2.py&quot;, line 27, in &lt;module&gt;
     print(raiz_cuadrada([4, -9, 16]))
@@ -823,9 +814,7 @@ doctest.testmod()
     return [math.sqrt(n) for n in lista_numeros]
 ValueError: math domain error
 </code></pre>
-
 <p>No obstante, para diseñar una prueba que contemple el uso de número negativos en general (y no el de esta lista en concreto), utilizaremos <code>...</code> y nos quedaremos únicamente con la primera y última línea de la excepción arrojada arriba:</p>
-
 <pre><code class="language-python">import doctest
 import math
 
@@ -855,10 +844,8 @@ def raiz_cuadrada(lista_numeros):
 
 doctest.testmod()
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/77/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/77/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -909,7 +896,7 @@ doctest.testmod()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -957,7 +944,7 @@ doctest.testmod()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1029,7 +1016,7 @@ doctest.testmod()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

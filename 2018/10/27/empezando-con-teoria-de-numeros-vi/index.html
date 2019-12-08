@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/27/empezando-con-teoria-de-numeros-vi/featured_hue1a300acec02a460660556f71c36e2d5_124936_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dnevozhai" target="_blank">Denys Nevozhai</a>, disponible en <a href="https://unsplash.com/photos/P1Irb5y18-A" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dnevozhai">Denys Nevozhai</a>, disponible en <a href="https://unsplash.com/photos/P1Irb5y18-A">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,97 +574,71 @@
 
     <div class="article-style">
       <p><strong>Problema 22 (Comunidad Valenciana, 2006):</strong></p>
-
 <ul>
-<li>a) Halla la base en que <span  class="math">\(3753_{(x} - 3586_{(x} = 189_{(x}.\)</span></li>
+<li>a) Halla la base en que $$3753_{(x} - 3586_{(x} = 189_{(x}.$$</li>
 <li>b) Una vez hallado el valor de $x$, deduce el criterio de divisibilidad entre $x-1$ de dicha base.</li>
 <li>c) Después, justifica si alguno de los números dados es divisible por $x-1$ en dicha base.</li>
 <li>d) Por último, pasa el primero de los números dados a base $9$.</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado a), por el <em>Teorema Fundamental de la Numeración</em>, sabemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-3753_{(x} &= 3x^0 + 5x^1 + 7x^2 + 3x^3 = 3+5x+7x^2+3x^3,\\
-3586_{(x} &= 6x^0 + 8x^1 + 5x^2 + 3x^3 = 6+8x+5x^2+3x^3,\\
-189_{(x} &= 9x^0 + 8x^1 + 1x^2 = 9+8x+x^2,
+3753_{(x} &amp;= 3x^0 + 5x^1 + 7x^2 + 3x^3 = 3+5x+7x^2+3x^3,\<br>
+3586_{(x} &amp;= 6x^0 + 8x^1 + 5x^2 + 3x^3 = 6+8x+5x^2+3x^3,\<br>
+189_{(x} &amp;= 9x^0 + 8x^1 + 1x^2 = 9+8x+x^2,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>por lo que la igualdad planteada en el enunciado es equivalente a:</p>
-
-<p><span  class="math">\[
+<p>$$
 3+5x+7x^2 + 3x^3 - (6+8x+5x^2 + 3x^3) = 9+8x+x^2.
-\]</span></p>
-
+$$</p>
 <p>Operando, esta se convierte en $x^2 - 11x-12=0$, y como</p>
-
-<p><span  class="math">\[
+<p>$$
 x^2 - 11x-12 = (x-12)(x+1),
-\]</span></p>
-
+$$</p>
 <p>concluimos que la base del sistema de numeración en la que se satisface la anterior igualdad es $x=12$ ($x=-1$ queda descartada automáticamente pues toda base ha de ser un número natural estrictamente mayor que $1$. Es más, a modo anecdótico, si las soluciones hubiesen sido $x=7$ y $x=12$, también habríamos descartado de forma automática la primera, pues en la expresión de los números implicados en la igualdad hay dígitos mayores o iguales que $7$).</p>
-
 <p>Para el apartado b), consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $12$. Utilizando el mismo resultado anterior, sabemos que podemos expresarlo como</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_112+\cdots+a_{n-2}12^{n-1}+a_{n-1}12^{n-1}.
-\]</span></p>
-
+$$</p>
 <p>De cara a encontrar el criterio de divisibilidad del $11$ emplearemos las propiedades de las congruencias sobre las potencias de $12$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_112+a_212^2+\cdots+a_{n-1}12^{n-1}\equiv 0\pmod{11}.
-\]</span></p>
-
+$$</p>
 <p>Ahora, como $12\equiv 1\pmod{11}$, fácilmente apreciamos que</p>
-
-<p><span  class="math">\[
+<p>$$
 12^2\equiv 1^2\pmod{11}\equiv 1\pmod{11}
-\]</span></p>
-
+$$</p>
 <p>y, en general, $12^i\equiv 1\pmod{11}$, para cada $i\in\mathbb{N}$, por lo que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
-\]</span></p>
-
+$$</p>
 <p>es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$, en base $12$, es divisible por $11$ siempre y cuando la suma de sus dígitos sea múltiplo de $11$.</p>
-
 <p>En el apartado c), a partir de la condición obtenida arriba, podemos concluir que</p>
-
 <ul>
 <li>$3+7+5+3 = 18\equiv 7\pmod{11}$,</li>
 <li>$3+5+8+6 = 22\equiv 0\pmod{11}$,</li>
 <li>$1+8+9 = 18\equiv 7\pmod{11}$,</li>
 </ul>
-
 <p>esto es, $3586_{(12}$ es el único número, de entre los tres propuestos, divisible por $11$.</p>
-
 <p>Finalmente, en el apartado d) tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-3753_{(12} &= 3\cdot12^0 + 5\cdot12^1 + 7\cdot12^2 + 3\cdot12^3 \\
-&= 5184+1008+60+3 \\
-&= 6255_{(10},
+3753_{(12} &amp;= 3\cdot12^0 + 5\cdot12^1 + 7\cdot12^2 + 3\cdot12^3 \<br>
+&amp;= 5184+1008+60+3 \<br>
+&amp;= 6255_{(10},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y dividiendo ahora sucesivamente por $9$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-6255 &= 9\cdot 695 + 0,\\
-695 &= 9\cdot 77 + 2,\\
-77 &= 9\cdot 8 + 5,
+6255 &amp;= 9\cdot 695 + 0,\<br>
+695 &amp;= 9\cdot 77 + 2,\<br>
+77 &amp;= 9\cdot 8 + 5,
 \end{aligned}
-\]</span></p>
-
-<p>arribamos a que $6255_{(10} = 8520_{(9}$, de manera que $3753_{(12} = 8520_{(9}$ por la unicidad que nos concede el <em>Teorema Fundamental de la Numeración</em>.</p>
+$$</p>
+<p>arribamos a que $6255_{(10} = 8520_{(9}$, de manera que $3753_{(12} = 8520_{(9}$ por la unicidad que nos concede el *Teorema Fundamental de la Numeración*.</p>
 
     </div>
 
@@ -933,7 +914,7 @@ a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1000,7 +981,7 @@ a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1016,7 +997,7 @@ a_0+a_112+\cdots+a_{n-1}12^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{11},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

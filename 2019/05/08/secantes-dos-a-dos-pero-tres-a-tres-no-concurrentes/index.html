@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/05/08/secantes-dos-a-dos-pero-tres-a-tres-no-concurrentes/featured_hu9aa2c97d7f6a33fa1af178258f29a1f9_245027_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@ketankr9" target="_blank">Ketan Krishnan</a>, disponible en <a href="https://unsplash.com/photos/qZdYFVGsD6c" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@ketankr9">Ketan Krishnan</a>, disponible en <a href="https://unsplash.com/photos/qZdYFVGsD6c">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,11 +574,8 @@
 
     <div class="article-style">
       <p><strong>Problema 75:</strong> Trazamos en un plano $n$ rectas secantes dos a dos, pero tres a tres no concurrentes, ¿en cuántas regiones queda dividido el plano?</p>
-
 <hr>
-
 <p>Claramente observamos, en la siguiente imagen, que dos rectas secantes dividen el plano en cuatro regiones. Al añadir una nueva recta, de manera que las tres no sean concurrentes en un punto, necesariamente aparecerán dos nuevos puntos de intersección con las rectas originales (puesto que la incorporada no puede ser paralela a las existentes, al existir la restricción de que las rectas sean secantes dos a dos), hecho que implica que la recta subdivide en dos tres de las cuatro regiones en las que se encontraba dividido el plano, produciendo entonces en total siete regiones ($4 + 3 = 7$).</p>
-
 
 
 
@@ -601,47 +605,31 @@
 
 </figure>
 
-
 <p>Una cuarta recta, que fuese secante dos a dos con las tres anteriores, daría lugar a tres nuevos puntos de intersección, situación que provocaría que cuatro de las anteriores regiones quedasen, cada una de ellas, subdividas en dos nuevas regiones. En total, contaríamos pues con once regiones ($7 + 4 = 11$).</p>
-
 <p>En general, denotemos por $R_n$ al número de regiones en que el plano queda dividido por $n$ rectas que son secantes dos a dos, pero tres a tres no concurrentes. Al incorporar una nueva recta, que será secante dos a dos con todas las anteriores, esta dará lugar a $n$ nuevos puntos de intersección (ya que no será concurrente tres a tres con ninguno de los pares presentes), hecho que provoca que, de las $R_n$ regiones que se contaban antes de introducir la nueva recta, $n+1$ queden, cada una de ellas, subdividas en dos regiones. Así, es cierto que, para cada número natural $n$,</p>
-
-<p><span  class="math">\[
+<p>$$
 R_{n+1} = R_n + (n+1),
-\]</span></p>
-
+$$</p>
 <p>dando lugar a una ecuación en diferencias lineal completa de orden uno. Su ecuación homogénea asociada es $R_{n+1} - R_n = 0$, con ecuación característica correspondiente $\lambda - 1 = 0$, esto es, $\lambda = 1$. Así, la solución para dicha ecuación homogénea es $R_h = c_1$, con $c_1\in\mathbb{R}$.</p>
-
 <p>Ahora, como el término independiente, $n+1$, es un polinomio de grado uno en $n$ y $\lambda = 1$ es una raíz simple de la ecuación característica, proponemos como solución particular $n^1(an+b) = an^2+bn$ y sustituyendo en la ecuación en diferencias inicial, queda</p>
-
-<p><span  class="math">\[
+<p>$$
 a(n+1)^2 + b(n+1) - an^2 - bn = n+1.
-\]</span></p>
-
+$$</p>
 <p>Operando, llegamos a que $2an + (a+b) = n+1$ e igualando coeficientes $a = b = 1 / 2$, por lo que la solución particular a la ecuación en diferencias planteada es, para cada número natural $n$, $R_p = (n^2+n) / 2$.</p>
-
 <p>Por consiguiente, la solución general a la ecuación en diferencias propuestas, que es la suma de la solución para la ecuación homogénea y la solución particular, es</p>
-
-<p><span  class="math">\[
+<p>$$
 R_n = c_1 + \dfrac{n^2+n}{2},
-\]</span></p>
-
+$$</p>
 <p>con $c_1\in\mathbb{R}$. Dado que para $n = 2$ hemos establecido, al principio del ejercicio, que $R_2 = 4$, sustituyendo podemos averiguar el valor de $c_1$. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 4 = c_1 + \dfrac{2^2+2}{2},
-\]</span></p>
-
+$$</p>
 <p>esto es, $c_1 = 1$ y concluimos que, para cada número natural $n$,</p>
-
-<p><span  class="math">\[
+<p>$$
 R_n = \dfrac{n^2+n+2}{2}
-\]</span></p>
-
+$$</p>
 <p>es el número de regiones en que queda dividido un plano cuando trazamos $n$ rectas secantes dos a dos, pero tres a tres no concurrentes.</p>
-
 <p>Alternativamente, por tanteo de unos cuantos casos particulares para los primeros valores de $n$, obtenemos la siguiente tabla</p>
-
 <table>
 <thead>
 <tr>
@@ -654,7 +642,6 @@ R_n = \dfrac{n^2+n+2}{2}
 <th>$6$</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>$R_n$</td>
@@ -665,7 +652,6 @@ R_n = \dfrac{n^2+n+2}{2}
 <td>$16$</td>
 <td>$22$</td>
 </tr>
-
 <tr>
 <td>$\Delta R_n$</td>
 <td>$2$</td>
@@ -675,7 +661,6 @@ R_n = \dfrac{n^2+n+2}{2}
 <td>$6$</td>
 <td>$7$</td>
 </tr>
-
 <tr>
 <td>$\Delta^2 R_n$</td>
 <td>$1$</td>
@@ -687,18 +672,15 @@ R_n = \dfrac{n^2+n+2}{2}
 </tr>
 </tbody>
 </table>
-
 <p>Por consiguiente, la sucesión $(R_n)$ es una progresión aritmética de orden dos, luego, por los resultados teóricos asociados a este tipo de sucesiones,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-R_n &= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 R_1\\
-&= 1\cdot2 + (n-1)\cdot2 + \dfrac{(n-1)(n-2)}{2}\cdot1\\
-&= \dfrac{4 + 4(n-1) + (n-1)(n-2)}{2}\\
-&= \dfrac{n^2 +n+2}{2},
+R_n &amp;= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 R_1\<br>
+&amp;= 1\cdot2 + (n-1)\cdot2 + \dfrac{(n-1)(n-2)}{2}\cdot1\<br>
+&amp;= \dfrac{4 + 4(n-1) + (n-1)(n-2)}{2}\<br>
+&amp;= \dfrac{n^2 +n+2}{2},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>arribando al mismo resultado que antes.</p>
 
     </div>
@@ -971,7 +953,7 @@ R_n &= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1038,7 +1020,7 @@ R_n &= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1054,7 +1036,7 @@ R_n &= \dbinom{n-1}{0}R_1 + \dbinom{n-1}{1}\Delta R_1 + \dbinom{n-1}{2}\Delta^2 
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

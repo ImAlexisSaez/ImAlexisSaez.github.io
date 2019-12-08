@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,31 +753,21 @@ Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet
           <h1>39. Serialización I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/SOimkkfQIOM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección estudiaremos cómo serializar colecciones de ciertos objetos. La <strong>serialización</strong> consiste en guardar en un fichero externo una lista, un diccionario o, incluso, un objeto; con la particularidad de que la codificación de dicho fichero es binaria.</p>
-
 <p>Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet, ya que su distribución es más sencilla, o bien si deseamos guardarlo en un dispositivo de almacenamiento externo o en una base de datos.</p>
-
 <p>Para tal empresa utilizaremos la biblioteca de <em>Python</em> <code>pickle</code>, para aprovechar los métodos:</p>
-
 <ul>
 <li><code>dump()</code>: vuelca datos en un fichero binario externo, y</li>
 <li><code>load()</code>: carga datos de un fichero binario externo.</li>
 </ul>
-
 <p>Veamos un ejemplo sencillo de aplicación de ambas funciones. Almacenaremos en un archivo binario externo una lista de nombres y, posteriormente, la rescataremos:</p>
-
 <pre><code class="language-python">import pickle
 
 nombres = [&quot;Pedro&quot;, &quot;Ana&quot;, &quot;María&quot;, &quot;Isabel&quot;]
@@ -786,17 +780,13 @@ fichero.close()
 
 del fichero
 </code></pre>
-
 <p><em>Notas</em>:</p>
-
 <ul>
 <li>A la hora de crear el fichero externo en modo escritura, con el método <code>open()</code>, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento <code>&quot;wb&quot;</code>.</li>
 <li>La instrucción <code>del</code> borra el puntero de la memoria hacia la variable <code>fichero</code>, dejando de estar disponible su acceso a partir de ese momento.</li>
-<li>Al ejecutar el anterior bloque de código, en la carpeta correspondiente del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
+<li>Al ejecutar el anterior bloque de código, en la carpeta correspondiente del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
 </ul>
-
 <p>A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.</p>
-
 <pre><code class="language-python">import pickle
 
 fichero = open(&quot;lista_nombres&quot;, &quot;rb&quot;)
@@ -807,15 +797,11 @@ fichero.close()
 
 print(lista)
 </code></pre>
-
 <pre><code class="language-bash">['Pedro', 'Ana', 'María', 'Isabel']
 </code></pre>
-
 <p><em>Nota</em>: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función <code>open()</code> ha de tomar el valor de argumento <code>&quot;rb&quot;</code>.</p>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/39/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/39/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -866,7 +852,7 @@ print(lista)
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -914,7 +900,7 @@ print(lista)
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -986,7 +972,7 @@ print(lista)
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

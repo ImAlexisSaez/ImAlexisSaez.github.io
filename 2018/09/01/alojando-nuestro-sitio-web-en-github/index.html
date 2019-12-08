@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -436,7 +443,7 @@
   <h1>Alojando nuestro sitio web en GitHub</h1>
 
   
-  <p class="page-subtitle">It&rsquo;s globally alive!</p>
+  <p class="page-subtitle">It's globally alive!</p>
   
 
   
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/01/alojando-nuestro-sitio-web-en-github/featured_hue23d6638d086f2adc68d1a31b97f6309_112427_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@soroushgolpoor" target="_blank">Soroush golpoor</a>, disponible en <a href="https://unsplash.com/photos/mbUXFI5ZpLc" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@soroushgolpoor">Soroush golpoor</a>, disponible en <a href="https://unsplash.com/photos/mbUXFI5ZpLc">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,21 +574,15 @@
 
     <div class="article-style">
       <p>A estas alturas de la película, seguramente con algún que otro artículo redactado y revisado localmente de manera concienzuda, no nos queda más remedio que ocuparnos de un asunto un tanto tedioso: el alojamiento de nuestro sitio web en <em>Internet</em>.</p>
-
-<p>Para tal empresa he optado por <em>GitHub</em>, que nos permite alojar páginas web estáticas de manera gratuita (¡y sin publicidad!). Desgraciadamente, el proceso dista de ser intuitivo, por lo que examinaremos todos y cada uno de los pasos de la <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank">guía oficial</a> con sumo detalle.</p>
-
+<p>Para tal empresa he optado por <em>GitHub</em>, que nos permite alojar páginas web estáticas de manera gratuita (¡y sin publicidad!). Desgraciadamente, el proceso dista de ser intuitivo, por lo que examinaremos todos y cada uno de los pasos de la <a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">guía oficial</a> con sumo detalle.</p>
 <p>Para empezar, existe una serie de requisitos que hemos de cumplir para subir nuestro sitio web a <em>GitHub</em> y son:</p>
-
 <ul>
 <li>Tener instalado en nuestro equipo una versión de <em>Git</em> superior a la <code>2.8</code>.</li>
 <li>Disponer de una cuenta de usuario en <em>GitHub</em>.</li>
 <li>Contar con una página web lista para ser publicada en <em>Internet</em>.</li>
 </ul>
-
 <p>Por lo que respecta a los dos primeros puntos del listado anterior, si estamos siguiendo el <a href="/proyecto/metablog/">Proyecto Metablog</a> desde sus orígenes, no supondrán problema alguno, pues fueron abordados en la <a href="/2018/07/05/preparando-el-equipo-para-hugo/">primera entrada</a> de la serie. En cuanto al tercer punto, con todo el trabajo que llevamos acumulado hasta el momento, es más que posible que entre nuestras manos tengamos ya un esbozo de sitio web que merezca la pena mostrar al resto del mundo.</p>
-
 <p>Una vez comprobado que satisfacemos los requisitos del procedimiento, el primer paso a realizar consiste en crear dos nuevos repositorios en nuestra cuenta de <em>GitHub</em>. Para ello, acudimos a la página de nuestro perfil en <em>GitHub</em> y hacemos clic en el símbolo <code>+</code> situado en la parte derecha del menú superior, para, a continuación, seleccionar la opción <code>New repositoy</code>.</p>
-
 
 
 
@@ -611,9 +612,7 @@
 
 </figure>
 
-
 <p>El primer repositorio que crearemos estará dedicado a almacenar el código fuente de nuestro sitio web y, en un alarde de infinita originalidad, lo denominaremos <code>sitio-web</code>, tal y como figura en la siguiente imagen. Cuando hayamos rellenado el campo <code>Repository name</code> haremos clic en el botón <code>Create repository</code>.</p>
-
 
 
 
@@ -643,43 +642,26 @@
 
 </figure>
 
-
 <p>A continuación, de las tres opciones que nos ofrece la página que aparece ante nosotros, vamos a escoger la segunda, ya que cuando en <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">esta entrada</a> generamos nuestro primer sitio web, a la vez iniciamos un repositorio <em>Git</em>. Aquella acción, que en su momento podía parecer un tanto extraña, queda ahora totalmente justificada.</p>
-
 <p>Así pues, abrimos la terminal del sistema, nos desplazamos hasta el directorio raíz donde hayamos decidido almacenar localmente nuestro sitio web y tecleamos:</p>
-
 <pre><code class="language-bash">git remote add origin https://github.com/&lt;USERNAME&gt;/sitio-web.git
 </code></pre>
-
 <p>En mi caso, en lugar de <code>&lt;USERNAME&gt;</code>, aparece directamente <code>ImAlexisSaez</code>. Cada uno de nosotros tendrá definida esa parte del comando de manera diferente, por lo que recomiendo encarecidamente copiar la instrucción de la página de <em>GitHub</em> en lugar de la que aparece arriba.</p>
-
 <p>Acto seguido, escribimos en la terminal:</p>
-
 <pre><code class="language-bash">git push -u origin master
 </code></pre>
-
 <p>De esta manera, transcurridos unos segundos, tendremos disponible en <em>GitHub</em> una copia del código fuente que permite generar nuestra página web estática.</p>
-
 <p>A continuación, volvemos a <em>GitHub</em> y creamos un nuevo repositorio. Este último tendrá un nombre especial que será, además, la dirección de acceso a nuestro sitio web. Hemos de combinar nuestra cuenta de usuario en <em>GitHub</em> con la extensión <code>.github.io</code>. Por ejemplo, en mi caso queda <code>ImAlexisSaez.github.io</code> y así es como rellené en su momento el campo <code>Repository name</code>. Una vez escrito, simplemente tenemos que hacer clic en el botón <code>Create repository</code>.</p>
-
-<p>Volvemos a la terminal del sistema y tecleamos <code>hugo server</code>, para poder dar así una última revisión local a nuestro sitio web, utilizando la dirección `<code>http://localhost:1313</code>, y comprobar que todo está en perfecto estado. Cuando estemos satisfechos, acudimos de nuevo a la terminal del sistema y cerramos el servidor local, empleando para ello la combinación de teclas <code>Ctrl + c</code>.</p>
-
+<p>Volvemos a la terminal del sistema y tecleamos <code>hugo server</code>, para poder dar así una última revisión local a nuestro sitio web, utilizando la dirección ``http://localhost:1313<code>, y comprobar que todo está en perfecto estado. Cuando estemos satisfechos, acudimos de nuevo a la terminal del sistema y cerramos el servidor local, empleando para ello la combinación de teclas </code>Ctrl + c`.</p>
 <p>Acto seguido, escribimos:</p>
-
 <pre><code class="language-bash">rm -rf public
 </code></pre>
-
 <p>Este comando borra por completo la carpeta <code>public</code>, que se encuentra en el directorio donde tenemos almacenado localmente nuestro sitio web. Dicha carpeta se genera automáticamente cada vez que tecleamos <code>hugo server</code> en la terminal del sistema, y contiene la versión final de nuestra página web.</p>
-
 <p>El siguiente paso, precisamente, es crear un submódulo de manera que la carpeta <code>public</code> apunte a otra dirección de <em>GitHub</em>. Para ello, desde la terminal del sistema, tecleamos</p>
-
 <pre><code class="language-bash">git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
 </code></pre>
-
 <p>donde sustituiremos <code>&lt;USERNAME&gt;</code> por el nombre de nuestra cuenta de usuario en <em>GitHub</em> (por ejemplo, <code>ImAlexisSaez</code> en mi caso).</p>
-
 <p>¡Ya casi tenemos todo a punto! Únicamente hemos de abrir <em>Sublime Text 3</em> y en un archivo, que guardaremos como <code>deploy.sh</code> en el directorio raíz donde hayamos almacenado localmente nuestro sitio web, copiamos el siguiente bloque de código:</p>
-
 <pre><code class="language-bash">#!/bin/bash
 
 echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
@@ -705,16 +687,11 @@ git push origin master
 # Come Back up to the Project Root
 cd ..
 </code></pre>
-
 <p>El anterior bloque de código se encarga, de manera automática, del proceso de subida de nuestro sitio web a <em>GitHub</em>. Para utilizarlo, desde la terminal del sistema, nos situaremos en el directorio raíz donde hayamos decidido almacenar nuestro sitio web y teclearemos</p>
-
 <pre><code class="language-bash">./deploy.sh &quot;Mensaje que resuma los cambios&quot;
 </code></pre>
-
 <p>En mi caso, no me suelo esforzar mucho en declarar mensajes óptimamente descriptivos y, por ejemplo, cuando suba esta entrada el comando será del estilo <code>./deploy.sh &quot;Añade entrada 20180901&quot;</code>. Los mensajes asociados al repositorio donde guardo el código fuente sí que intento que sean más expresivos y reflejen adecuadamente los cambios de las diferentes versiones.</p>
-
 <p>Con esto, damos por finalizado el proceso y nuestro sitio web será ahora accesible para todo el mundo a través de la dirección web que proporciona el segundo repositorio que hemos creado (en mi caso <code>https://imalexissaez.github.io/</code>).</p>
-
 <p>En la siguiente entrada del <a href="/proyecto/metablog/">Proyecto Metablog</a> posiblemente empecemos a realizar cambios en la hoja de estilos <em>CSS</em> y personalizar todavía más el tema <em>Beautiful Hugo</em>.</p>
 
     </div>
@@ -982,7 +959,7 @@ cd ..
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1049,7 +1026,7 @@ cd ..
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1065,7 +1042,7 @@ cd ..
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

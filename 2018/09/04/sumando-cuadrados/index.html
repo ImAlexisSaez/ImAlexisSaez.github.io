@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/04/sumando-cuadrados/featured_hu42fc851bb40b908d37737a0a5db49b8f_232413_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nutsycoco" target="_blank">Melanie Hughes</a>, disponible en <a href="https://unsplash.com/photos/AY-4rm_WBB4" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nutsycoco">Melanie Hughes</a>, disponible en <a href="https://unsplash.com/photos/AY-4rm_WBB4">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,59 +574,42 @@
 
     <div class="article-style">
       <p><strong>Problema 5:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \sum_{k=1}^{n}{k^2} = \dfrac{n(n+1)(2n+1)}{6}.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Ante nosotros se plantea la tarea de demostrar una propiedad (la identidad sugerida arriba), que supuestamente se satisface para una sucesión de índices enteros que conforman un conjunto cuyo cardinal es infinito ($n\in\mathbb{N}$, con $n\geq 1$, en este caso). Entre las diferentes estrategias que tenemos a nuestra disposición para abordar esta empresa, el <em>principio de inducción matemática</em>, dado en el Teorema 1.1 (ver abajo), quizá sea el instrumento más aconsejable para una primera aproximación a la resolución del problema.</p>
-
 <p>Así pues, la manera en la que ahora procederemos será ciertamente similar a la seguida en una <a href="/2018/07/12/probando-katex-con-un-problema-de-induccion-clasico/">entrada anterior</a>. Para empezar, a simple vista, podemos apreciar rápidamente que la igualdad se satisface de forma trivial para $n=1$, puesto que</p>
-
-<p><span  class="math">\[
+<p>$$
 1 = \sum_{k=1}^{1}{k^2} = \dfrac{1\cdot2\cdot3}{6} = 1.
-\]</span></p>
-
+$$</p>
 <p>Acto seguido, asumimos verdadera la identidad para un cierto $n\in\mathbb{N}$, con $n\geq 1$, es decir, que efectivamente se verifica que</p>
-
-<p><span  class="math">\[
+<p>$$
 \sum_{k=1}^{n}{k^2} = \dfrac{n(n+1)(2n+1)}{6},
-\]</span></p>
-
+$$</p>
 <p>y estudiamos si se satisface asimismo para $n+1$. Así pues, ahora comprobaremos si se cumple la igualdad</p>
-
-<p><span  class="math">\[
+<p>$$
 \sum_{k=1}^{n+1}{k^2} = \dfrac{(n+1)(n+2)(2n+3)}{6}.
-\]</span></p>
-
+$$</p>
 <p>Para ello, apliquemos la <em>hipótesis de inducción</em> y llevemos a cabo algunas operaciones algebraicas elementales, de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\sum_{k=1}^{n+1}{k^2} &= (n+1)^2 + \sum_{k=1}^{n}{k^2}\\
-& = (n+1)^2 + \dfrac{n(n+1)(2n+1)}{6}\\
-& = \dfrac{6(n+1)^2 + n(n+1)(2n+1)}{6}\\
-& = \dfrac{(n+1)(6(n+1) + n(2n+1))}{6}\\
-& = \dfrac{(n+1)(2n^2+7n+6)}{6}\\
-& = \dfrac{(n+1)(n+2)(2n+3)}{6},
+\sum_{k=1}^{n+1}{k^2} &amp;= (n+1)^2 + \sum_{k=1}^{n}{k^2}\<br>
+&amp; = (n+1)^2 + \dfrac{n(n+1)(2n+1)}{6}\<br>
+&amp; = \dfrac{6(n+1)^2 + n(n+1)(2n+1)}{6}\<br>
+&amp; = \dfrac{(n+1)(6(n+1) + n(2n+1))}{6}\<br>
+&amp; = \dfrac{(n+1)(2n^2+7n+6)}{6}\<br>
+&amp; = \dfrac{(n+1)(n+2)(2n+3)}{6},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, por tanto, la identidad se verifica para $n+1$. El <em>principio de inducción matemática</em> nos permite concluir que es cierta para cada $n\in\mathbb{N}$.</p>
-
 <hr>
-
 <p><strong>Teorema 1.1 (Principio de inducción matemática)</strong>: Sea $S$ un conjunto de enteros positivos que tienen las dos propiedades siguientes:</p>
-
 <ul>
 <li>El número 1 pertenece al conjunto $S$.</li>
 <li>Si un entero $k$ pertenece a $S$, también $k+1$ pertenece a S.</li>
 </ul>
-
 <p>Entonces todo entero positivo pertenece al conjunto $S$.</p>
-
 <hr>
 
     </div>
@@ -892,7 +882,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -959,7 +949,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -975,7 +965,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/featured_hu99ca3f5e2b9dbd41476a3161303fa70e_158804_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@eberhardgross" target="_blank">eberhard grossgasteiger</a>, disponible en <a href="https://unsplash.com" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@eberhardgross">eberhard grossgasteiger</a>, disponible en <a href="https://unsplash.com">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -528,29 +535,20 @@
 
     <div class="article-style">
       <p>La <a href="/2018/10/31/como-dividir-polinomios-con-latex/">semana anterior</a> analizamos el paquete <code>polynom</code>, que nos permite fácilmente llevar a cabo la transcripción de divisiones de polinomios con <em>LaTeX</em>. A continuación, estudiaremos una manera alternativa para lidiar con este asunto que, además, nos permitirá operar en conjuntos finitos.</p>
-
 <p>Supongamos, sin pérdida de generalidad, que nuestro objetivo es dividir los polinomios</p>
-
-<p><span  class="math">\[
+<p>$$
 5x^5 - 2x^4 + 2x^3 - 5x^2 + 2x + 1
-\]</span></p>
-
+$$</p>
 <p>y</p>
-
-<p><span  class="math">\[
+<p>$$
 3x^3 + x^2 - 5x + 2
-\]</span></p>
-
-<p>en $\mathbb{Z}_7$. Para ello, ''dibujaremos'' la operación matemática en una matriz, método que nos permitirá organizar fácilmente los pasos y, de paso, imprimir algunas rayas horizontales cuando proceda.</p>
-
+$$</p>
+<p>en $\mathbb{Z}_7$. Para ello, &lsquo;&lsquo;dibujaremos&rsquo;&rsquo; la operación matemática en una matriz, método que nos permitirá organizar fácilmente los pasos y, de paso, imprimir algunas rayas horizontales cuando proceda.</p>
 <p>Para empezar, en el preámbulo del documento, insertamos las dos siguientes líneas:</p>
-
 <pre><code class="language-tex">\usepackage{tikz}
 \usetikzlibrary{matrix}
 </code></pre>
-
 <p>Ahora, donde deseemos ubicar la división de los anteriores polinomios, tecleamos:</p>
-
 <pre><code class="language-tex">\begin{center}
 \begin{tikzpicture}
 \matrix (a) [matrix of math nodes, column sep=0pt]
@@ -561,9 +559,7 @@
 \end{tikzpicture}
 \end{center}
 </code></pre>
-
 <p>dando el resultado que figura en la siguiente imagen:</p>
-
 
 
 
@@ -593,11 +589,8 @@
 
 </figure>
 
-
-<p>Organizar los monomios del dividendo como elementos individuales de una matriz nos facilitará la empresa de ''alinear'' las posteriores operaciones de la división. Por otro lado, el comando <code>draw</code> es el que dibuja la ''caja'' de esta operación matemática, tomando como referencia las posiciones de los elementos de la matriz.</p>
-
+<p>Organizar los monomios del dividendo como elementos individuales de una matriz nos facilitará la empresa de &lsquo;&lsquo;alinear&rsquo;&rsquo; las posteriores operaciones de la división. Por otro lado, el comando <code>draw</code> es el que dibuja la &lsquo;&lsquo;caja&rsquo;&rsquo; de esta operación matemática, tomando como referencia las posiciones de los elementos de la matriz.</p>
 <p>Continuemos la división, siempre teniendo en cuenta que trabajamos en $\mathbb{Z}_7$. Así, para la primera etapa, teclearíamos acto seguido:</p>
-
 <pre><code class="language-tex">\begin{center}
 \begin{tikzpicture}
 \matrix (a) [matrix of math nodes, column sep=0pt]
@@ -611,9 +604,7 @@
 \end{tikzpicture}
 \end{center}
 </code></pre>
-
 <p>cuyo resultado se recoge en la siguiente figura:</p>
-
 
 
 
@@ -643,11 +634,8 @@
 
 </figure>
 
-
 <p>Efectivamente, no queda tan estético como el que conseguíamos la semana pasada con el paquete <code>polynom</code>. No obstante, funcionalmente hablando, los pequeños desajustes horizontales de signos no molestan en exceso.</p>
-
 <p>Una vez asimilada la idea del procedimiento a seguir, únicamente nos resta continuar con la división, escribiendo ahora:</p>
-
 <pre><code class="language-tex">\begin{center}
 \begin{tikzpicture}
 \matrix (a) [matrix of math nodes, column sep=0pt]
@@ -667,9 +655,7 @@
 \end{tikzpicture}
 \end{center}
 </code></pre>
-
 <p>Obteniendo como resultado el que aparece en la siguiente imagen:</p>
-
 
 
 
@@ -966,7 +952,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1033,7 +1019,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1049,7 +1035,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -31,7 +31,7 @@
   <meta name="description" content="Vídeo   Notas personales En esta lección, abordaremos el concepto de polimorfismo. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.
 Como Python es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.
 Veamos un ejemplo:
-class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuatro ruedas.&quot;) class Moto(): def desplazamiento(self): print(&quot;Me desplazo utilizando dos ruedas.">
+class Coche():def desplazamiento(self):print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)class Moto():def desplazamiento(self):print(&quot;Me desplazo utilizando dos ruedas.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb32-poo-ix/">
@@ -129,7 +129,7 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, abordaremos el concepto de polimorfismo. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.
 Como Python es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.
 Veamos un ejemplo:
-class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuatro ruedas.&quot;) class Moto(): def desplazamiento(self): print(&quot;Me desplazo utilizando dos ruedas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+class Coche():def desplazamiento(self):print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)class Moto():def desplazamiento(self):print(&quot;Me desplazo utilizando dos ruedas."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -193,13 +193,14 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -207,6 +208,12 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -731,14 +738,11 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -753,24 +757,16 @@ class Coche(): def desplazamiento(self): print(&quot;Me desplazo utilizando cuat
           <h1>32. Programación orientada a objetos IX</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/kV1cN_bqcSw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, abordaremos el concepto de <strong>polimorfismo</strong>. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.</p>
-
 <p>Como <em>Python</em> es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.</p>
-
 <p>Veamos un ejemplo:</p>
-
 <pre><code class="language-python">class Coche():
     def desplazamiento(self):
         print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)
@@ -785,9 +781,7 @@ class Camion():
     def desplazamiento(self):
         print(&quot;Me desplazo utilizando seis ruedas.&quot;)
 </code></pre>
-
 <p>Así, si ahora tecleamos:</p>
-
 <pre><code class="language-python">mi_vehiculo = Moto()
 
 mi_vehiculo.desplazamiento()
@@ -800,24 +794,17 @@ mi_vehiculo3 = Camion()
 
 mi_vehiculo3.desplazamiento()
 </code></pre>
-
 <pre><code class="language-bash">Me desplazo utilizando dos ruedas.
 Me desplazo utilizando cuatro ruedas.
 Me desplazo utilizando seis ruedas.
 </code></pre>
-
 <p>Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.</p>
-
 <p>No obstante, nos podemos aprovechar de la magia del polimorfismo creando una función como se muestra a continuación:</p>
-
 <pre><code class="language-python">def desplazamiento_vehiculo(vehiculo):
     vehiculo.desplazamiento()
 </code></pre>
-
 <p>Y como el objeto <code>vehiculo</code> posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), <em>Python</em> en todo momento sabrá a qué método <code>desplazamiento()</code> acudir en cada instante.</p>
-
 <p>Así, si escribimos:</p>
-
 <pre><code class="language-python">mi_vehiculo = Camion()
 
 desplazamiento_vehiculo(mi_vehiculo)
@@ -830,15 +817,12 @@ mi_vehiculo = Moto()
 
 desplazamiento_vehiculo(mi_vehiculo)
 </code></pre>
-
 <pre><code class="language-bash">Me desplazo utilizando seis ruedas.
 Me desplazo utilizando cuatro ruedas.
 Me desplazo utilizando dos ruedas.
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/32/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/32/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -889,7 +873,7 @@ Me desplazo utilizando dos ruedas.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -937,7 +921,7 @@ Me desplazo utilizando dos ruedas.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1009,7 +993,7 @@ Me desplazo utilizando dos ruedas.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

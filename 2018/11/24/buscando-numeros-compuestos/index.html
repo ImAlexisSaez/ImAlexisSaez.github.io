@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/11/24/buscando-numeros-compuestos/featured_huec77e62de12d2c2c2d0f91a9e083cd67_60488_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@rresenden" target="_blank">Ricardo Resende</a>, disponible en <a href="https://unsplash.com/photos/Vq3B58_XgjQ" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@rresenden">Ricardo Resende</a>, disponible en <a href="https://unsplash.com/photos/Vq3B58_XgjQ">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,45 +574,33 @@
 
     <div class="article-style">
       <p><strong>Problema 28:</strong> Encuentra diez números compuestos consecutivos.</p>
-
 <hr>
-
 <p>Dado que preguntan por diez números compuestos consecutivos cualesquiera (y no, por ejemplo, por los diez primeros números que satisfacen dicha propiedad), existen dos estrategias habituales para abordar la resolución de este tipo de ejercicios.</p>
-
 <p>En primer lugar, consideremos que buscamos únicamente tres números compuestos consecutivos, en lugar de los diez que solicita el enunciado, de cara a aliviar un tanto la escritura. Tomemos entonces el factorial de $4$, $4! = 1\cdot2\cdot3\cdot4$, de manera que es cierto que:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-4! + 2 &= 2\cdot(1\cdot3\cdot4 + 1),\\
-4! + 3 &= 3\cdot(1\cdot2\cdot4 + 1),\\
-4! + 4 &= 4\cdot(1\cdot2\cdot3 + 1),
+4! + 2 &amp;= 2\cdot(1\cdot3\cdot4 + 1),\<br>
+4! + 3 &amp;= 3\cdot(1\cdot2\cdot4 + 1),\<br>
+4! + 4 &amp;= 4\cdot(1\cdot2\cdot3 + 1),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>son tres números consecutivos compuestos. En general, dado $n\in\mathbb{N}$, si buscamos $n$ números compuestos consecutivos, una opción es considerar el número $(n+1)!$ y, a partir de él, generar el conjunto de números compuestos consecutivos siguiente:</p>
-
-<p><span  class="math">\[
-\{(n+1)! + k: k\in\mathbb{N}, 2\leq k\leq n+1\}.
-\]</span></p>
-
+<p>$$
+{(n+1)! + k: k\in\mathbb{N}, 2\leq k\leq n+1}.
+$$</p>
 <p>Así, para $n=10$, siguiendo esta indicación, un conjunto de diez números compuestos consecutivos es $\{11! + k: k\in\mathbb{N}, 2\leq k\leq 11\}$.</p>
-
 <p>Alternativamente, si no queremos trabajar con números cuya magnitud es tan severa, podemos optar por construir el producto de los primeros números primos hasta encontrar aquel que supere en valor la cantidad de números compuestos consecutivos que deseamos encontrar. Por ejemplo, para $n=3$, el mencionado producto sería $2\cdot3\cdot5$, que satisface que:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-2\cdot3\cdot5 + 2 &= 2(3\cdot 5 + 1),\\
-2\cdot3\cdot5 + 3 &= 3(2\cdot 5 + 1),\\
-2\cdot3\cdot5 + 4 &= 2(3\cdot 5 + 2),
+2\cdot3\cdot5 + 2 &amp;= 2(3\cdot 5 + 1),\<br>
+2\cdot3\cdot5 + 3 &amp;= 3(2\cdot 5 + 1),\<br>
+2\cdot3\cdot5 + 4 &amp;= 2(3\cdot 5 + 2),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>son tres números consecutivos compuestos. Para $n=10$, consideraríamos entonces el conjunto</p>
-
-<p><span  class="math">\[
-\{2\cdot3\cdot5\cdot7\cdot11 + k:k\in\mathbb{N}, 2\leq k\leq 11\},
-\]</span></p>
-
+<p>$$
+{2\cdot3\cdot5\cdot7\cdot11 + k:k\in\mathbb{N}, 2\leq k\leq 11},
+$$</p>
 <p>que contiene diez números compuestos consecutivos.</p>
 
     </div>
@@ -878,7 +873,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -945,7 +940,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -961,7 +956,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

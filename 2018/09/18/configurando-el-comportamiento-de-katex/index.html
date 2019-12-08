@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/18/configurando-el-comportamiento-de-katex/featured_hu0df9157703418d59a5cd29117b867e50_58684_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@freezydreamin" target="_blank">@freezydreamin</a>, disponible en <a href="https://unsplash.com/photos/SV3V-D1G2q4" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@freezydreamin">@freezydreamin</a>, disponible en <a href="https://unsplash.com/photos/SV3V-D1G2q4">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -566,26 +573,18 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>El tema <em>Beautiful Hugo</em> viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando <a href="https://khan.github.io/KaTeX/" target="_blank">KaTeX</a>. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?</p>
-
-<p>Para empezar, recomiendo encarecidamente que acudamos a la página de <a href="https://github.com/Khan/KaTeX/releases" target="_blank">versiones</a> de <em>KaTeX</em> y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como <code>v0.10.0-rc.1</code>.</p>
-
+      <p>El tema <em>Beautiful Hugo</em> viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando <a href="https://khan.github.io/KaTeX/">KaTeX</a>. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?</p>
+<p>Para empezar, recomiendo encarecidamente que acudamos a la página de <a href="https://github.com/Khan/KaTeX/releases">versiones</a> de <em>KaTeX</em> y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como <code>v0.10.0-rc.1</code>.</p>
 <p>Para ello, hacemos clic sobre el enlace denominado <code>katex.zip</code> y así iniciaremos la descarga de un archivo comprimido, del cual nos interesan especialmente dos archivos contenidos en su interior:</p>
-
 <ul>
 <li><code>katex.min.css</code> y</li>
 <li><code>katex.min.js</code>.</li>
 </ul>
-
 <p>El primero de ellos lo ubicaremos, dentro del directorio donde hayamos decidido almacenar localmente el sitio web, en la ruta <code>\static\css\</code>, mientras que el segundo en <code>\static\js\</code>, sobrescribiendo en ambos casos las antiguas versiones que existiesen en dichas carpetas.</p>
-
 <p>Una vez al día, la siguiente tarea implica la modificación de una de las plantillas del tema <em>Beautiful Hugo</em>, concretamente la denominada como <code>footer.html</code>, ubicada en la ruta <code>\layouts\partials\</code>. Editamos el mencionado fichero con <em>Sublime Text 3</em> y buscamos la siguiente línea:</p>
-
 <pre><code class="language-html">&lt;script&gt; renderMathInElement(document.body); &lt;/script&gt;
 </code></pre>
-
 <p>Vamos a configurar <em>KaTeX</em> de manera que reconozca las expresiones encerradas entre <code>$</code> o <code>\\(</code> como ecuaciones en línea, mientras que las delimitadas por <code>$$</code> o <code>\\[</code> como ecuaciones centradas en sus propias líneas. Para ello, tecleamos en el lugar de la anterior instrucción el siguiente bloque de código:</p>
-
 <pre><code class="language-html">&lt;script&gt;
   renderMathInElement(
     document.body,
@@ -600,15 +599,11 @@
   );
 &lt;/script&gt;
 </code></pre>
-
 <p>Una vez habilitada la opción de escribir ecuaciones en línea, un hecho salta a la vista de inmediato: ¿no parece que el tamaño de letra para las expresiones matemáticas es mayor que el declarado para el texto estándar? Efectivamente, peculiaridad que, en mi opinión, desluce bastante el aspecto (e incluso diría que dificulta la lectura) de los artículos.</p>
-
 <p>La solución pasa por modificar la hoja de estilos del tema <em>Beautiful Hugo</em>, almacenada en el archivo <code>main.css</code>, que está ubicado en la ruta <code>\static\css\</code>. Tras experimentar con cierto rango de valores para el tamaño de fuente de los objetos de la clase <code>.katex</code>, al final me he decantado por la siguiente solución, que he colocado al principio del fichero <code>main.css</code>:</p>
-
 <pre><code class="language-css">/* Modificación para hacer que el tamaño de letra de KaTeX sea similar al de la web */
 .katex { font-size: 1.1em !important; }
 </code></pre>
-
 <p>En los próximos artículos del <a href="/proyecto/metablog/">Proyecto Metablog</a> continuaremos con la edición de diversas plantillas del tema <em>Beautiful Hugo</em>, para terminar de aprender cómo adaptarlo a nuestro gusto.</p>
 
     </div>
@@ -878,7 +873,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -945,7 +940,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -961,7 +956,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales Una vez elaborada la interfaz gráfica de la calculadora, en esta lección abordaremos cómo programar parte de la funcionalidad de la misma. Para empezar, nuestro objetivo será conseguir que al pulsar los diferentes botones numéricos aparezcan sus valores asociados en la pantalla.
 Empecemos creando una variable para almacenar una cadena de texto y asociémosla a la pantalla:
-numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantalla)  A continuación, creemos una función que, por ejemplo, escriba el número 4 en pantalla:">
+numero_pantalla = StringVar()pantalla = Entry(frame, textvariable=numero_pantalla) A continuación, creemos una función que, por ejemplo, escriba el número 4 en pantalla:">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb48-interfaces-graficas-vii/">
@@ -127,7 +127,7 @@ numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantal
   <meta property="og:title" content="48. Interfaces gráficas VII | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Una vez elaborada la interfaz gráfica de la calculadora, en esta lección abordaremos cómo programar parte de la funcionalidad de la misma. Para empezar, nuestro objetivo será conseguir que al pulsar los diferentes botones numéricos aparezcan sus valores asociados en la pantalla.
 Empecemos creando una variable para almacenar una cadena de texto y asociémosla a la pantalla:
-numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantalla)  A continuación, creemos una función que, por ejemplo, escriba el número 4 en pantalla:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+numero_pantalla = StringVar()pantalla = Entry(frame, textvariable=numero_pantalla) A continuación, creemos una función que, por ejemplo, escriba el número 4 en pantalla:"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantal
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantal
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantal
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,56 +755,39 @@ numero_pantalla = StringVar() pantalla = Entry(frame, textvariable=numero_pantal
           <h1>48. Interfaces gráficas VII</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/oIzt6ESA7nU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Una vez elaborada la interfaz gráfica de la calculadora, en esta lección abordaremos cómo programar parte de la funcionalidad de la misma. Para empezar, nuestro objetivo será conseguir que al pulsar los diferentes botones numéricos aparezcan sus valores asociados en la pantalla.</p>
-
 <p>Empecemos creando una variable para almacenar una cadena de texto y asociémosla a la pantalla:</p>
-
 <pre><code class="language-python">numero_pantalla = StringVar()
 
 pantalla = Entry(frame, textvariable=numero_pantalla)
 </code></pre>
-
 <p>A continuación, creemos una función que, por ejemplo, escriba el número <code>4</code> en pantalla:</p>
-
 <pre><code class="language-python"># Pulsaciones teclado
 def numero_pulsado():
     numero_pantalla.set(&quot;4&quot;)
 </code></pre>
-
 <p>Ahora, asociémosla al botón correspondiente:</p>
-
 <pre><code class="language-python">boton4 = Button(frame, text=&quot;4&quot;, width=3, command=numero_pulsado)
 </code></pre>
-
 <p>Ahora, al pulsar en el botón del número cuatro, aparece un <code>4</code> en la pantalla. Vemos que si pulsamos en varias ocasiones, no se añaden más cuatros, que sería el comportamiento deseable. Modifiquemos la función <code>numero_pulsado()</code> para conseguir tal efecto. Para ello, obtendremos la información actual de la pantalla y le agregaremos el número <code>4</code> después:</p>
-
 <pre><code class="language-python"># Pulsaciones teclado
 def numero_pulsado():
     numero_pantalla.set(numero_pantalla.get() + &quot;4&quot;)
 </code></pre>
-
 <p>Para generalizar, necesitaremos el uso de funciones <em>lambda</em> o <em>anónimas</em> en la declaración de los botones. De no utilizarlas, tal y como transcurre el flujo del programa, al llegar a la línea de la declaración de <code>boton4</code>, se produciría directamente la llamada de la función <code>numero_pulsado(&quot;4&quot;)</code>, mostrando (sin que el usuario pulse sobre nada) un <code>4</code> en la pantalla al abrir la calculadura y, además, deshabilitando la funcionalidad del botón, puesto que al seguir pulsando sobre él no añade más cuatros.</p>
-
 <pre><code class="language-python">def numero_pulsado(num):
     numero_pantalla.set(numero_pantalla.get() + num)
 
 boton4 = Button(frame, text=&quot;4&quot;, width=3, command=lambda: numero_pulsado(&quot;4&quot;))
 </code></pre>
-
 <p>Para finalizar, incluyo el código completo de la aplicación elaborada hasta este instante, para obtener así una visión global de la calculadora:</p>
-
 <pre><code class="language-python">from tkinter import Button, Entry, Frame, StringVar, Tk
 
 # Raíz
@@ -871,10 +858,8 @@ boton_suma.grid(row=5, column=4)
 
 raiz.mainloop()
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/48/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/48/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -925,7 +910,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -973,7 +958,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1045,7 +1030,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

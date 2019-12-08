@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/24/empezando-con-teoria-de-numeros-v/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@iswanto" target="_blank">Iswanto Arif</a>, disponible en <a href="https://unsplash.com/photos/rBSRJxzymNk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@iswanto">Iswanto Arif</a>, disponible en <a href="https://unsplash.com/photos/rBSRJxzymNk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,56 +574,40 @@
 
     <div class="article-style">
       <p><strong>Problema 21:</strong> Calcula la regla de divisibilidad por $7$.</p>
-
 <hr>
-
-<p>Veamos que, en esta ocasión, proceder como en ejercicios anteriores no dará lugar a establecer una sencilla regla para el criterio de divisibilidad del $7$. En efecto, consideremos el número de $n$ cifras $a_{n - 1} a_{n - 2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el <em>Teorema Fundamental de la Numeración</em>, que podemos expresarlo como</p>
-
-<p><span  class="math">\[
+<p>Veamos que, en esta ocasión, proceder como en ejercicios anteriores no dará lugar a establecer una sencilla regla para el criterio de divisibilidad del $7$. En efecto, consideremos el número de $n$ cifras $a_{n - 1} a_{n - 2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el *Teorema Fundamental de la Numeración*, que podemos expresarlo como</p>
+<p>$$
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_110+ \cdots + a_{n-2}10^{n-2}+a_{n-1}10^{n-1}.
-\]</span></p>
-
+$$</p>
 <p>Para encontrar el criterio de divisibilidad del $7$ utilizaremos las propiedades de las congruencias sobre las potencias de $10$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+a_210^2 + \cdots + a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{7},
-\]</span></p>
-
+$$</p>
 <p>esto es, dicho número sea múltiplo de $7$.</p>
-
 <p>Ahora bien,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-10&\equiv 3\pmod{7},\\
-10^2&\equiv 3^2\pmod{7}\equiv 9\pmod{7}\equiv 2\pmod{7},\\
-10^3&\equiv 3^3\pmod{7}\equiv 27\pmod{7}\equiv 6\pmod{7},\\
-10^4&\equiv 3^4\pmod{7}\equiv 81\pmod{7}\equiv 4\pmod{7},\\
-&\vdots
+10&amp;\equiv 3\pmod{7},\<br>
+10^2&amp;\equiv 3^2\pmod{7}\equiv 9\pmod{7}\equiv 2\pmod{7},\<br>
+10^3&amp;\equiv 3^3\pmod{7}\equiv 27\pmod{7}\equiv 6\pmod{7},\<br>
+10^4&amp;\equiv 3^4\pmod{7}\equiv 81\pmod{7}\equiv 4\pmod{7},\<br>
+&amp;\vdots
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y comenzamos a atisbar que el criterio que podríamos extraer es ciertamente extraño y muy complicado de recordar, puesto que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+\cdots + a_{n-1}10^{n-1}\equiv (a_0 + 3a_1 + 2a_2 + \cdots)\pmod{7}.
-\]</span></p>
-
-<p>Por lo que respecta a la divisibilidad de un número por $7$, conviene que tengamos a mano el siguiente resultado: ''<em>un número de la forma $n=10d+u$, con $d&gt;0$ y $0\leq u\leq 9$ es múltiplo de $7$ si, y solo si, $d-2u$ es múltiplo de $7$</em>''.</p>
-
+$$</p>
+<p>Por lo que respecta a la divisibilidad de un número por $7$, conviene que tengamos a mano el siguiente resultado: &lsquo;'<em>un número de la forma $n=10d+u$, con $d&gt;0$ y $0\leq u\leq 9$ es múltiplo de $7$ si, y solo si, $d-2u$ es múltiplo de $7$</em>''.</p>
 <p>Efectivamente, si suponemos cierto que $(10d+u)\equiv 0\pmod{7}$, es decir, que $n=10d+u$ es múltiplo de $7$, y aplicamos ahora propiedades de las congruencias sobre la forma del número $n$, llegamos a que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(10d+u)\equiv 0\pmod{7} &\Leftrightarrow (3d-6u)\equiv 0\pmod{7} \\
-&\Leftrightarrow (3(d-2u))\equiv 0\pmod{7},
+(10d+u)\equiv 0\pmod{7} &amp;\Leftrightarrow (3d-6u)\equiv 0\pmod{7} \<br>
+&amp;\Leftrightarrow (3(d-2u))\equiv 0\pmod{7},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, hemos arribado a que el producto de dos números es múltiplo de $7$, y como sabemos que el número $3$ no lo es, concluimos que $d-2u$ es múltiplo de $7$.</p>
-
 <p>Recíprocamente, si $d-2u$ es múltiplo de $7$, $(d-2u)\equiv 0\pmod{7}$ y multiplicando por $10$ la ecuación de congruencia, $(10d-20u)\equiv 0\pmod{7}$. Ahora, como $(-20)\equiv 1\pmod{7}$, llegamos a que $(10d+u)\equiv 0\pmod{7}$, es decir, el número $n=10d+u$ es un múltiplo de $7$, quedando así la doble implicación probada.</p>
-
 <p>Veamos en acción esta proposición con un par de ejemplos sencillos. Si $n=63 = 60+3$, entonces $d = 6$, $u=3$ y $d-2u = 6-2\cdot3=0$ que, efectivamente, es un múltiplo de $7$, luego $63$ asimismo lo es. Si $n = 9009$, tenemos que $d = 900$, $u=9$ y $d-2u = 900-2\cdot9=882 = 7\cdot126$, luego $d-2u$ es un múltiplo de $7$, por lo que podemos concluir que el número $9009$ también lo es.</p>
 
     </div>
@@ -893,7 +884,7 @@ a_0+a_110+\cdots + a_{n-1}10^{n-1}\equiv (a_0 + 3a_1 + 2a_2 + \cdots)\pmod{7}.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -960,7 +951,7 @@ a_0+a_110+\cdots + a_{n-1}10^{n-1}\equiv (a_0 + 3a_1 + 2a_2 + \cdots)\pmod{7}.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -976,7 +967,7 @@ a_0+a_110+\cdots + a_{n-1}10^{n-1}\equiv (a_0 + 3a_1 + 2a_2 + \cdots)\pmod{7}.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

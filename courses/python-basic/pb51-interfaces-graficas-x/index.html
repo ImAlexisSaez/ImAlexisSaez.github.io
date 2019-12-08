@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@ Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, 
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, 
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, 
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,22 +753,15 @@ Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, 
           <h1>51. Interfaces gráficas X</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/TzeU61X-dnI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, introduciremos el funcionamiento de la clase <code>Checkbutton</code>, que se encarga de gestionar los clásicos <em>botones de selección</em> (también denominados <em>casillas de verificación</em>). Estos nos permiten la posibilidad de realizar una selección múltiple sobre distintas opciones ofrecidas.</p>
-
 <p>Acto seguido, veamos un sencillo ejemplo de aplicación de la mencionada clase, donde el usuario ha de escoger qué tipo de destinos prefiere para sus vacaciones.</p>
-
 <pre><code class="language-python">from tkinter import Checkbutton, Frame, IntVar, Label, PhotoImage, Tk
 
 raiz = Tk()
@@ -819,17 +816,12 @@ texto_final.pack()
 
 raiz.mainloop()
 </code></pre>
-
 <p>Para empezar, el siguiente bloque de código</p>
-
 <pre><code class="language-python">foto = PhotoImage(file=&quot;helicoptero.png&quot;)
 Label(raiz, image=foto).pack()
 </code></pre>
-
-<p>nos permite introducir, como cabecera de nuestra aplicación, la imagen de un helicóptero (disponible en <a href="https://www.freepng.es/png-ct7rpy/download.html" target="_blank">este enlace</a>).</p>
-
+<p>nos permite introducir, como cabecera de nuestra aplicación, la imagen de un helicóptero (disponible en <a href="https://www.freepng.es/png-ct7rpy/download.html">este enlace</a>).</p>
 <p>A continuación, las líneas de código asociadas a la primera casilla de verificación son</p>
-
 <pre><code class="language-python">Checkbutton(frame,
             text=&quot;Playa&quot;,
             variable=playa,
@@ -837,24 +829,17 @@ Label(raiz, image=foto).pack()
             offvalue=0,
             command=opciones_viaje).pack()
 </code></pre>
-
 <p>Observamos que dicha casilla está ubicada en el <em>frame</em> <code>frame</code> y muestra como texto, en la ventana de la aplicación, la palabra <code>Playa</code>. Para posibilitar la interacción con ella, almacenamos su valor en la variable <code>playa</code>, siendo este <code>1</code> cuando esté seleccionada y <code>0</code> en otro caso. Finalmente, su comportamiento se gestiona a través de la función <code>opciones_viaje()</code>, tal y como figura en el valor del parámetro <code>command</code>.</p>
-
 <p>Por lo que respecta a la variable <code>playa</code>, así como al resto, las declaramos utilizando la clase <code>IntVar</code>, puesto que nuestra intención es almacenar en ellas valores enteros:</p>
-
 <pre><code class="language-python">playa = IntVar()
 montana = IntVar()
 turismo_rural = IntVar()
 </code></pre>
-
 <p>Por otro lado, mostraremos las opciones seleccionadas por el usuario empleando una etiqueta para ello, de ahí que figure el siguiente bloque de código al final del programa:</p>
-
 <pre><code class="language-python">texto_final = Label(frame)
 texto_final.pack()
 </code></pre>
-
 <p>Finalmente, la función que gestiona el comportamiento de las casillas de verificación simplemente se ocupa de establecer el texto de la variable <code>texto_final</code> según una serie de bloques condicionales:</p>
-
 <pre><code class="language-python">def opciones_viaje():
     opcion_escogida = &quot;&quot;
     if playa.get() == 1:
@@ -865,7 +850,6 @@ texto_final.pack()
         opcion_escogida += &quot; turismo rural&quot;
     texto_final.config(text=opcion_escogida)
 </code></pre>
-
 
 
 
@@ -895,10 +879,8 @@ texto_final.pack()
 
 </figure>
 
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/51/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/51/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -949,7 +931,7 @@ texto_final.pack()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -997,7 +979,7 @@ texto_final.pack()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1069,7 +1051,7 @@ texto_final.pack()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/05/11/buscando-el-total-de-soluciones-de-una-inecuacion/featured_hu5451e1d122871322b1536d28f3ccb8d9_372148_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@serge_vorobets" target="_blank">Serge Vorobets</a>, disponible en <a href="https://unsplash.com/photos/CSORty3B_hs" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@serge_vorobets">Serge Vorobets</a>, disponible en <a href="https://unsplash.com/photos/CSORty3B_hs">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,32 +574,24 @@
 
     <div class="article-style">
       <p><strong>Problema 76:</strong> Calcula el número de soluciones enteras no negativas de la inecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 x+y+z+t \leq 2001.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>A diferencia de ejercicios anteriores, en el presente encontramos una inecuación en lugar de una ecuación. Razonando en términos de urnas indistinguibles y bolas idénticas, esta situación se traduce en que, para ciertos repartos, algunas de las $2001$ bolas pueden quedar fuera de las cuatro urnas que emplearíamos para representar las variables $x$, $y$, $z$ y $t$. Así pues, procederemos generando una urna adicional, para una variable $u$, que será aquella donde depositemos el exceso de bolas del reparto. Por tanto, la inecuación planteada quedaría ahora como la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 x+y+z+t+u=2001,
-\]</span></p>
-
+$$</p>
 <p>de la cual deseamos encontrar el número de soluciones enteras no negativas.</p>
-
 <p>Ahora ya estamos en condiciones de volver a utilizar las estrategias vistas en ejercicios previos. Aplicando la técnica de <em>barras y estrellas</em>, necesitamos cuatro <em>barras</em> para representar sobre la recta real las cinco urnas y buscamos ubicar luego $2001$ <em>estrellas</em> en los huecos que dicha configuración produce. Por consiguiente, el número de formas en que el valor de la suma de cinco variables puede ascender a $2001$, equivale a la cantidad de permutaciones con repetición de $2005$ elementos, donde uno de ellos se repite cuatro veces, mientras que el otro lo hace en $2001$ ocasiones. Así, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-PR_{2005}^{4, 2001} &= CR_{5, 2001}\\
-&= \dbinom{2005}{2001}\\
-&= \dfrac{2005\cdot2004\cdot2003\cdot2002}{4!}\\
-&= 671345179505
+PR_{2005}^{4, 2001} &amp;= CR_{5, 2001}\<br>
+&amp;= \dbinom{2005}{2001}\<br>
+&amp;= \dfrac{2005\cdot2004\cdot2003\cdot2002}{4!}\<br>
+&amp;= 671345179505
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>soluciones enteras no negativas para la ecuación propuesta y, por tanto, asimismo para la inecuación planteada en el enunciado del ejercicio.</p>
 
     </div>
@@ -867,7 +866,7 @@ PR_{2005}^{4, 2001} &= CR_{5, 2001}\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -934,7 +933,7 @@ PR_{2005}^{4, 2001} &= CR_{5, 2001}\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -950,7 +949,7 @@ PR_{2005}^{4, 2001} &= CR_{5, 2001}\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

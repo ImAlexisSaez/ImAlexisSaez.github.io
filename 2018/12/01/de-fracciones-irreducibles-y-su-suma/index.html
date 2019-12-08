@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/01/de-fracciones-irreducibles-y-su-suma/featured_hufc85e81213cbf100401433b8cc0a2649_83890_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@adrienolichon" target="_blank">Adrien Olichon</a>, disponible en <a href="https://unsplash.com/photos/wI96vLftzkE" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@adrienolichon">Adrien Olichon</a>, disponible en <a href="https://unsplash.com/photos/wI96vLftzkE">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,65 +574,43 @@
 
     <div class="article-style">
       <p><strong>Problema 30:</strong> Sea $n$ un número natural no nulo. Dado el conjunto de fracciones</p>
-
-<p><span  class="math">\[
-A_n = \left\{\dfrac{1}{n},\dfrac{2}{n},\dfrac{3}{n},\ldots,\dfrac{n}{n}\right\}.
-\]</span></p>
-
+<p>$$
+A_n = \left{\dfrac{1}{n},\dfrac{2}{n},\dfrac{3}{n},\ldots,\dfrac{n}{n}\right}.
+$$</p>
 <p>Calcula el número de fracciones irreducibles y la suma de dichas fracciones.</p>
-
 <hr>
-
 <p>Acompañemos la resolución de este ejercicio con un caso particular para $n$, con el objetivo de que esta sea así más ilustrativa. Por ejemplo, si $n=8$, el conjunto de fracciones a estudiar es</p>
-
-<p><span  class="math">\[
-A_8 = \left\{\dfrac{1}{8},\dfrac{2}{8},\dfrac{3}{8},\dfrac{4}{8},\dfrac{5}{8},\dfrac{6}{8},\dfrac{7}{8},\dfrac{8}{8}\right\},
-\]</span></p>
-
+<p>$$
+A_8 = \left{\dfrac{1}{8},\dfrac{2}{8},\dfrac{3}{8},\dfrac{4}{8},\dfrac{5}{8},\dfrac{6}{8},\dfrac{7}{8},\dfrac{8}{8}\right},
+$$</p>
 <p>que contiene $4$ fracciones irreducibles,</p>
-
-<p><span  class="math">\[
-\left\{\dfrac{1}{8},\dfrac{3}{8},\dfrac{5}{8},\dfrac{7}{8}\right\}.
-\]</span></p>
-
+<p>$$
+\left{\dfrac{1}{8},\dfrac{3}{8},\dfrac{5}{8},\dfrac{7}{8}\right}.
+$$</p>
 <p>Estas se caracterizan por ser aquellas en las que numerador y denominador son coprimos. Así pues, el problema se reduce a encontrar, dado un número natural $n$ no nulo, la cantidad de enteros positivos menores o iguales a $n$ y coprimos con $n$, esto es, $\varphi(n)$.</p>
-
 <p>En nuestro caso concreto, para $n=8=2^3$, efectivamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \varphi(8) = 8\left(1 - \dfrac{1}{2}\right) = 8\cdot\dfrac{1}{2} = 4.
-\]</span></p>
-
+$$</p>
 <p>Por tanto, recapitulando, dado $n$ un número natural no nulo, la cantidad de fracciones irreducibles que figuran en el conjunto $A_n$ es igual a $\varphi(n)$.</p>
-
 <p>Para calcular su suma, si volvemos a centrar nuestra atención en el caso particular de $n=8$, tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{1}{8} + \dfrac{7}{8} = 1,\qquad \dfrac{3}{8} + \dfrac{5}{8} = 1,
-\]</span></p>
-
+$$</p>
 <p>esto es, podemos agrupar las fracciones irreducibles de dos en dos, de manera que su suma es $1$. Efectivamente, haciendo uso del Teorema 1.9 de [1], sabemos que, dados dos números enteros $a$ y $b$, para cualquier número entero $x$ se cumple que</p>
-
-<p><span  class="math">\[
+<p>$$
 mcd(a,b) = mcd(b,a) = mcd(a,-b) = mcd(a,b+ax).
-\]</span></p>
-
+$$</p>
 <p>Considerando ahora un número natural $k&lt;n$ coprimo con $n$, se tiene que $mcd(k,n)=1$, y basta tomar en el resultado anterior $a=n$, $b=(-k)$ y $x=1$ para deducir que $1 = mcd(n,k) = mcd(n,(-k))= mcd(n,n-k)$ y, así, concluimos que si la fracción $k / n$ es irreducible, asimismo lo es $(n - k) / n$. Además, trivialmente</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{k}{n} + \dfrac{n-k}{n} = 1.
-\]</span></p>
-
+$$</p>
 <p>Por tanto, aplicando el resultado alcanzado, la suma de las fracciones irreducibles del conjunto $A_n$ será</p>
-
-<p><span  class="math">\[
+<p>$$
 S = \dfrac{\varphi(n)}{2},
-\]</span></p>
-
+$$</p>
 <p>quedando resuelto así el ejercicio.</p>
-
 <h3 id="referencias">Referencias</h3>
-
 <ul>
 <li>[1] Ivan Niven, Herbert S. Zuckerman y Hugh L. Montgomery. <em>An Introduction to the Theory of Numbers</em>. 5ª edición. New York, United States: Wiley, 1991. ISBN: 9780471625469.</li>
 </ul>
@@ -900,7 +885,7 @@ S = \dfrac{\varphi(n)}{2},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -967,7 +952,7 @@ S = \dfrac{\varphi(n)}{2},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -983,7 +968,7 @@ S = \dfrac{\varphi(n)}{2},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

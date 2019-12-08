@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/22/y-volvemos-con-los-problemas-de-mover-digitos/featured_hu9f2952bd07eeedd454374da5c14e2d3d_87250_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@psalms" target="_blank">David Wirzba</a>, disponible en <a href="https://unsplash.com/photos/PwF1m8jajyM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@psalms">David Wirzba</a>, disponible en <a href="https://unsplash.com/photos/PwF1m8jajyM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,72 +574,50 @@
 
     <div class="article-style">
       <p><strong>Problema 36:</strong> ¿Cuántas cifras tiene el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial?</p>
-
 <hr>
-
 <p>Antes de abordar la resolución del ejercicio propiamente dicho, veamos con un par de ejemplos la manera de proceder, para así intentar detectar patrones. Por ejemplo, si consideramos el número $354$, podemos aislar la primera cifra escribiéndolo como $300 + 54$, es decir, $3 \cdot 10^2 + 54$. Ahora, si colocamos la primera cifra en el último lugar de la derecha, el número pasa a ser $543$, y como deseamos aislar de nuevo el $3$, podemos escribirlo como $540 + 3$ o, equivalentemente, como $54\cdot10 + 3$. Por desgracia, no se cumple para este ejemplo la condición exigida en el enunciado del ejercicio, puesto que</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{3}{2}\cdot 354 = 531\neq 543.
-\]</span></p>
-
+$$</p>
 <p>Si ahora consideramos el número $4537 = 4\cdot10^3 + 537$, después conformaríamos el número $5374=537\cdot10 + 4$ y, desgraciadamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{3}{2}\cdot4537 = 6805.5\neq 5374.
-\]</span></p>
-
+$$</p>
 <p>No obstante, estos dos intentos fallidos nos permiten atisbar los protagonistas de este ejercicio: la primera cifra del número buscado, que denotaremos como $A$ y el resto del número, que señalaremos como $B$. Así, dado un número de $n$ cifras, buscamos que se satisfaga la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{3}{2}(A\cdot10^{n-1} + B) = B\cdot10 + A.
-\]</span></p>
-
+$$</p>
 <p>Operando algebraicamente, llegamos a que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-3A\cdot10^{n-1} + 3B &= 20B+2A,\\
-17B &= 3A\cdot10^{n-1} - 2A,\\
-17B &= A(3\cdot10^{n-1} - 2),\\
-B &= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
+3A\cdot10^{n-1} + 3B &amp;= 20B+2A,\<br>
+17B &amp;= 3A\cdot10^{n-1} - 2A,\<br>
+17B &amp;= A(3\cdot10^{n-1} - 2),\<br>
+B &amp;= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1} - 2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.</p>
-
 <p>Alternativamente, usando congruencias, que $3\cdot10^{n-1} - 2$ sea múltiplo de $17$ es equivalente a escribir</p>
-
-<p><span  class="math">\[
+<p>$$
 (3\cdot10^{n-1} - 2)\equiv 0\pmod{17},
-\]</span></p>
-
+$$</p>
 <p>esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 3\cdot10^{n-1} \equiv 2\pmod{17}.
-\]</span></p>
-
+$$</p>
 <p>Multiplicando toda la ecuación de congruencia lineal por $6$ (ya que $3\cdot6=18$, cifra que queda muy cercana a un múltiplo de $17$) queda</p>
-
-<p><span  class="math">\[
+<p>$$
 18\cdot10^{n-1} \equiv 12\pmod{17},
-\]</span></p>
-
+$$</p>
 <p>es decir,</p>
-
-<p><span  class="math">\[
+<p>$$
 10^{n-1} \equiv 12\pmod{17}.
-\]</span></p>
-
+$$</p>
 <p>Nos aproximamos a la estructura de un resultado muy conocido de <em>Teoría de números</em>, por lo que podemos investigar qué sucede al multiplicar ahora por $10$ la ecuación de congruencia lineal. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 10^{n-1} \equiv 12\pmod{17}\Leftrightarrow 10^n\equiv 120\pmod{17}\equiv 1\pmod{17},
-\]</span></p>
-
+$$</p>
 <p>y como $17$ es un número primo y $mcd(10,17)=1$, entonces, por el <em>Pequeño Teorema de Fermat</em>, sabemos que $10^{16} \equiv 1\pmod{17}$.</p>
-
 <p>Igualando términos con la anterior ecuación de congruencia lineal, concluimos que $n=16$. No obstante, dicho resultado no garantiza haber encontrado el menor número natural que verifica esa propiedad, por lo que hemos de proceder con cautela y seguir investigando. No obstante, como $10^8 \equiv (-1)\pmod{17}$ (a modo anecdótico, si hubiera salido $10^8 \equiv 1\pmod{17}$, hubiésemos tenido que probar con $10^4$ y así sucesivamente), en esta ocasión sí podemos concluir que el resultado teórico nos ha llevado al menor valor de $n$ para el que se satisface la propiedad. Así, el menor número que cumple que, cuando la primera cifra de la izquierda se coloca en el último lugar de la derecha, el número que resulta es una vez y media el número inicial posee $16$ cifras.</p>
 
     </div>
@@ -905,7 +890,7 @@ B &= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -972,7 +957,7 @@ B &= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -988,7 +973,7 @@ B &= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/31/como-dividir-polinomios-con-latex/featured_hu7ac0460b178d168c6d25490e83536ff5_139580_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@adrian_infernus" target="_blank">Adrian Infernus</a>, disponible en <a href="https://unsplash.com/photos/5apewqWk978" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@adrian_infernus">Adrian Infernus</a>, disponible en <a href="https://unsplash.com/photos/5apewqWk978">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -528,48 +535,32 @@
 
     <div class="article-style">
       <p>Escribiendo unos apuntes sobre polinomios, llegó el momento de mostrar un ejemplo de la división de un par de ellos. La clásica pregunta no se hizo esperar, ¿cómo transcribo en <em>LaTeX</em> esa operación matemática?</p>
-
 <p>Acompañemos este artículo con un ejemplo concreto. Sean</p>
-
-<p><span  class="math">\[
+<p>$$
 P = x^4 + 3x^3 - 2x^2 + x - 1
-\]</span></p>
-
+$$</p>
 <p>y</p>
-
-<p><span  class="math">\[
+<p>$$
 Q = x^2 + x - 1
-\]</span></p>
-
+$$</p>
 <p>los polinomios implicados en la división, siendo nuestro objetivo mostrar la mencionada operación paso por paso (y no simplemente ofrecer el resultado final, acción que no entraña misterio a la hora de llevarla a cabo con <em>LaTeX</em>).</p>
-
 <p>Como suele ser habitual, tras una rápida búsqueda con <em>Google</em>, no soy la primera persona que se ha encontrado en esta encrucijada. En los foros que consulté, la recomendación estándar era emplear el paquete <a href="https://ctan.org/pkg/polynom">polynom</a>, que a través del comando <code>\polylongdiv</code> nos facilita enormemente la tarea. De forma automática, se ocupa de realizar y organizar (con <em>LaTeX</em>) todos los pasos involucrados en una división de polinomios.</p>
-
 <p>Así pues, empecemos ubicando en el preámbulo de nuestro documento la siguiente instrucción:</p>
-
 <pre><code class="language-tex">\usepackage{polynom}
 </code></pre>
-
 <p>Antes de proceder a realizar división alguna, conviene que declaremos personalmente el valor de ciertos argumentos opcionales:</p>
-
 <pre><code class="language-tex">\polyset{style=C, div=:, vars=x}
 </code></pre>
-
 <p>donde:</p>
-
 <ul>
 <li><code>style</code>: declara el estilo con el que efectuará la división de polinomios, pudiendo escoger entre los valores <code>A</code>, <code>B</code> y <code>C</code>.</li>
 <li><code>div</code>: señala el símbolo con el que se expresará la división (dependiendo del estilo escogido, la asignación de este parámetro es importante).</li>
 <li><code>vars</code>: indica el valor de la variable del polinomio. Generalmente utilizamos <code>x</code>, pero no es descabellado emplear <code>n</code> cuando estamos lidiando con temas asociados a números enteros.</li>
 </ul>
-
 <p>Ahora, allí donde deseemos ubicar la división de los polinomios $P$ y $Q$ definidos arriba, tecleamos:</p>
-
 <pre><code class="language-tex">$$\polylongdiv{x^4+3x^3-2x^2+x-1}{x^2+x-1}$$
 </code></pre>
-
 <p>Obteniendo como resultado:</p>
-
 
 
 
@@ -599,11 +590,8 @@ Q = x^2 + x - 1
 
 </figure>
 
-
 <p>Estudiemos el resultado visual de la operación bajo los distintos estilos que nos ofrece el paquete <code>polynom</code>.</p>
-
 <p><strong>Estilo A</strong>:</p>
-
 
 
 
@@ -633,9 +621,7 @@ Q = x^2 + x - 1
 
 </figure>
 
-
 <p><strong>Estilo B</strong>:</p>
-
 
 
 
@@ -665,9 +651,7 @@ Q = x^2 + x - 1
 
 </figure>
 
-
 <p><strong>Estilo C</strong>:</p>
-
 
 
 
@@ -697,17 +681,13 @@ Q = x^2 + x - 1
 
 </figure>
 
-
-<p>Personalmente, el último de los mostrados es el estilo que me resulta más atractivo para mostrar cómo realizar paso a paso una división de polinomios con <em>LaTeX</em>. No obstante, como siempre, ''para gustos, los colores''.</p>
-
+<p>Personalmente, el último de los mostrados es el estilo que me resulta más atractivo para mostrar cómo realizar paso a paso una división de polinomios con <em>LaTeX</em>. No obstante, como siempre, &lsquo;&lsquo;para gustos, los colores&rsquo;'.</p>
 <p>Para finalizar, me gustaría comentar que:</p>
-
 <ul>
 <li>Aun siendo bastante satisfactoria esta solución, ninguno de los estilos que ofrece el paquete <code>polynom</code> se ajusta exactamente a como habitualmente organizamos la división por estos lares.</li>
 <li>Por limitaciones de <em>TeX</em>, no podemos llevar a cabo la división de polinomios en conjuntos finitos como, por ejemplo, $\mathbb{Z}_4$ o en el cuerpo $\mathbb{Z}_7$.</li>
 </ul>
-
-<p>En ambos casos, una posible vía de escape que he encontrado es recurrir al paquete <code>tikz</code> y, manualmente, ''dibujar'' la propia división de polinomios. No es un proceso demasiado complejo y quizá lo ilustre en una futura entrada.</p>
+<p>En ambos casos, una posible vía de escape que he encontrado es recurrir al paquete <code>tikz</code> y, manualmente, &lsquo;&lsquo;dibujar&rsquo;&rsquo; la propia división de polinomios. No es un proceso demasiado complejo y quizá lo ilustre en una futura entrada.</p>
 
     </div>
 
@@ -973,7 +953,7 @@ Q = x^2 + x - 1
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1040,7 +1020,7 @@ Q = x^2 + x - 1
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1056,7 +1036,7 @@ Q = x^2 + x - 1
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

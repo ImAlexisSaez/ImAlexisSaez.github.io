@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/04/06/a-la-mesa-todos-a-la-mesa/featured_hu4265b6705be75b54865cc783fafad8bf_175409_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@introspectivedsgn" target="_blank">Erik Mclean</a>, disponible en <a href="https://unsplash.com/photos/rCCF1wC-c8M" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@introspectivedsgn">Erik Mclean</a>, disponible en <a href="https://unsplash.com/photos/rCCF1wC-c8M">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,55 +574,38 @@
 
     <div class="article-style">
       <p><strong>Problema 66:</strong> ¿De cuántas maneras pueden cinco chicos y tres chicas sentarse alrededor de una mesa si</p>
-
 <ul>
 <li>a) no hay restricción alguna?</li>
 <li>b) el chico $H_1$ y la chica $M_1$ no pueden estar juntos?</li>
 <li>c) ninguna chica ha de tener a otra a su lado?</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado a), al no imponer restricción alguna sobre la disposición de los ocho integrantes del grupo, el número de formas en las que pueden sentarse alrededor de una mesa equivale al total de permutaciones circulares de ocho elementos. Así, tienen</p>
-
-<p><span  class="math">\[
+<p>$$
 PC_8 = (8-1)! = 7! = 5040
-\]</span></p>
-
+$$</p>
 <p>maneras de sentarse alrededor de la mesa.</p>
-
 <p>Por lo que respecta al apartado b), ya que acabamos de calcular en el párrafo anterior el total de maneras en que pueden sentarse, resulta más sencillo utilizar ahora el <em>Principio de complementación</em>, que recordemos dice <em>si $A$ es un subconjunto de un conjunto finito universal $U$, entonces</em></p>
-
-<p><span  class="math">\[
+<p>$$
 card(U - A) = card(U) - card(A).
-\]</span></p>
-
+$$</p>
 <p>De esta forma, en lugar de contar el número de formas en que $H_1$ y $M_1$ pueden sentarse estando separados (es decir, con al menos un integrante del grupo entre ellos), averigüemos de cuántas maneras pueden sentarse todos alrededor de la mesa estando $H_1$ y $M_1$ juntos. Así, si consideramos la pareja como una unidad, el nuevo problema se reduce a encontrar el número de formas en que pueden disponerse siete elementos alrededor de una mesa, que sabemos equivale al total de permutaciones circulares de siete elementos, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 PC_7 = (7-1)! = 6! = 720.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, como la pareja puede sentarse de maneras posibles, ($H_1M_1$ y $M_1H_1$), hemos de incorporar las permutaciones de dos elementos ($2! = 2$) al anterior resultado, aplicando la <em>regla del producto</em>. Por consiguiente, existen $720\cdot2 = 1440$ formas de sentarse los ocho integrantes del grupo asumiendo que $H_1$ y $M_1$ se colocaron uno al lado del otro. Luego, por el <em>Principio de complementación</em> hay</p>
-
-<p><span  class="math">\[
+<p>$$
 7! - 1440 = 3600
-\]</span></p>
-
+$$</p>
 <p>maneras de disponer a los miembros del grupo donde $H_1$ y $M_1$ no están juntos.</p>
-
 <p>Finalmente, en el apartado c), comencemos sentando a los chicos en la tabla, ya que su número es más elevado que el de chicas. Por apartados anteriores, sabemos que el número de formas de sentar cinco personas alrededor de una tabla asciende al total de permutaciones circulares de cinco elementos, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 PC_5 = (5-1)! = 4! = 24
-\]</span></p>
-
+$$</p>
 <p>maneras posibles. A continuación, en los huecos que quedan entre ellos, empecemos a sentar chicas. Para la primera de ella encontramos cinco opciones disponibles, pues tal es el número de huecos que quedan entre los chicos. Para la segunda chica, una vez sentada la primera, dichas opciones se reducen a cuatro. Por último, la tercera chica, una vez sentadas las otras dos, puede escoger entre las tres posiciones disponibles que restan. Luego, aplicando la <em>regla del producto</em> hay</p>
-
-<p><span  class="math">\[
+<p>$$
 4! \cdot 5\cdot 4\cdot3 = 1440
-\]</span></p>
-
+$$</p>
 <p>maneras de disponer a los ocho integrantes del grupo de forma que ninguna chica tenga a otra a su lado.</p>
 
     </div>
@@ -890,7 +880,7 @@ PC_5 = (5-1)! = 4! = 24
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -957,7 +947,7 @@ PC_5 = (5-1)! = 4! = 24
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -973,7 +963,7 @@ PC_5 = (5-1)! = 4! = 24
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

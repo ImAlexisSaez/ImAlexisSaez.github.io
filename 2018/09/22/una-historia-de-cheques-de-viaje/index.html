@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/22/una-historia-de-cheques-de-viaje/featured_hu2c1f0883bed3619ad2d240c28f06edd4_214560_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@vivanebro" target="_blank">Aviv Ben Or</a>, disponible en <a href="https://unsplash.com/photos/g_Abgn1slAM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@vivanebro">Aviv Ben Or</a>, disponible en <a href="https://unsplash.com/photos/g_Abgn1slAM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,99 +574,69 @@
 
     <div class="article-style">
       <p>En el presente artículo abordaremos con sumo detalle un problema propuesto en la convocatoria de oposiciones de Extremadura, de este mismo año 2018, para la especialidad de matemáticas.</p>
-
 <hr>
-
 <p><strong>Problema 11:</strong> En su último viaje a Estados Unidos, el señor Martínez cambió un cheque de viaje. El cajero, al pagarle, confundió el número de dólares con los centavos y viceversa. El señor Martínez gastó 68 centavos en sellos y comprobó que el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado. ¿Qué valor mínimo tenía el cheque de viaje?</p>
-
 <hr>
-
-<p>Al leer el enunciado, enseguida apreciamos dos partes que nos sirven de pista hacia el tipo de problema que tenemos entre manos. Para empezar, cuando aparece ''el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado'', debemos sospechar que, en algún momento de la resolución del ejercicio, plantearemos una ecuación algebraica, posiblemente lineal. Esta poseerá múltiples soluciones, quizá incluso infinitas, ya que en la cuestión se interesan por el ''valor mínimo''. Al estar trabajando con dólares y centavos, cantidades monetarias que usualmente se representan utilizando números enteros, todo ello nos va a hacer pensar rápidamente en ecuaciones diofánticas.</p>
-
+<p>Al leer el enunciado, enseguida apreciamos dos partes que nos sirven de pista hacia el tipo de problema que tenemos entre manos. Para empezar, cuando aparece &lsquo;&lsquo;el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado&rsquo;', debemos sospechar que, en algún momento de la resolución del ejercicio, plantearemos una ecuación algebraica, posiblemente lineal. Esta poseerá múltiples soluciones, quizá incluso infinitas, ya que en la cuestión se interesan por el &lsquo;&lsquo;valor mínimo&rsquo;'. Al estar trabajando con dólares y centavos, cantidades monetarias que usualmente se representan utilizando números enteros, todo ello nos va a hacer pensar rápidamente en ecuaciones diofánticas.</p>
 <p>Así pues, una de las claves de este ejercicio reside en trabajar en centavos, para evitar así operar con decimales. De esta manera, si el señor Martínez viajó a Estados con un cheque de viaje cuyo valor ascendía a $a$ dólares y $b$ centavos, con $a$ y $b$ números enteros mayores o iguales de cero, en total el valor de dicho cheque era de $100a + b$ centavos.</p>
-
 <p>Ahora, en el banco se equivocaron al cambiarle el cheque de viaje, intercambiando los papeles de dólares y centavos, de forma que, al final, el señor Martínez recibió $100b + a$ centavos. De estos, gastó 68 centavos en sellos, quedándole entonces disponible $100b + a - 68$ centavos.</p>
-
 <p>La anterior cantidad nos dicen que equivalía al doble del importe del cheque de viaje que había cambiado ($2(100a + b)$), es decir, tenemos la ecuación diofántica</p>
-
-<p><span  class="math">\[
+<p>$$
 100b + a - 68 = 200a + 2b,
-\]</span></p>
-
+$$</p>
 <p>que queda, operando,</p>
-
-<p><span  class="math">\[
+<p>$$
 199a-98b=-68.
-\]</span></p>
-
+$$</p>
 <p>Obtengamos el $mcd(199,98)$ utilizando el <em>Algoritmo de Euclides</em>:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-199 &= 98\cdot 2 + 3,\\ 
-98 &= 3\cdot 32 + 2,\\
-3 &= 2\cdot 1 + 1,\\
-2 &= 1\cdot 2,
+199 &amp;= 98\cdot 2 + 3,\ 
+98 &amp;= 3\cdot 32 + 2,\<br>
+3 &amp;= 2\cdot 1 + 1,\<br>
+2 &amp;= 1\cdot 2,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>luego $mcd(199, 98) = 1$ y como $1|68$ sabemos que la ecuación diofántica admite solución entera.</p>
-
 <p>Despejamos entonces $b$, por ser la variable cuyo coeficiente asociado es más pequeño, quedando así</p>
-
-<p><span  class="math">\[
+<p>$$
 b = \dfrac{199a + 68}{98}.
-\]</span></p>
-
+$$</p>
 <p>Ahora, como el valor que figura en el denominador de la igualdad anterior es $98$, a continuación, tendríamos que darle a $a$, de manera ordenada, valores del <em>menor sistema completo de restos módulo</em> $98$ hasta hallar una solución particular.</p>
-
 <p>No obstante, en lugar de llevar a cabo tan titánica labor, aprovecharemos las operaciones realizadas durante el <em>Algoritmo de Euclides</em> para descomponer la anterior fracción como sigue:</p>
-
-<p><span  class="math">\[
+<p>$$
 b = 2a + \dfrac{3a+68}{98} = 2a + b^{\prime},
-\]</span></p>
-
+$$</p>
 <p>con</p>
-
-<p><span  class="math">\[
+<p>$$
 b^{\prime} = \dfrac{3a+68}{98},
-\]</span></p>
-
+$$</p>
 <p>que equivale a $98b^{\prime} = 3a + 68$, ecuación en la que ahora despejaremos $a$, teniendo que</p>
-
-<p><span  class="math">\[
+<p>$$
 a = \dfrac{98b^{\prime} - 68}{3}.
-\]</span></p>
-
+$$</p>
 <p>Podemos así dar valores a $b^{\prime}$, ya que únicamente tendríamos que probar $b^{\prime}=0$, $b^{\prime}=1$ y $b^{\prime}=2$ (que conforma el <em>menor sistema completo de restos módulo</em> $3$). Para $b^{\prime}=0$, $a\notin\mathbb{Z}$, pero si $b^{\prime}=1$, entonces $a=10$ y, por tanto, $b = 2a+b^{\prime} = 21$, quedando así la solución particular como sigue:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a_0 &= 10,\\
-b_0 &= 21,
+a_0 &amp;= 10,\<br>
+b_0 &amp;= 21,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>mientras que la solución general es</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a &= 10 - 98t,\\
-b &= 21 - 199t,
+a &amp;= 10 - 98t,\<br>
+b &amp;= 21 - 199t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t\in\mathbb{Z}$.</p>
-
-<p>Una vez resuelta la ecuación diofántica, centrémonos de nuevo en aquello que nos pedían en el enunciado: ''¿Qué valor mínimo tenía el cheque de viaje?''. Como hablamos de cantidades monetarias, tanto $a$, como $b$, han de ser mayores o iguales que cero, es decir,</p>
-
-<p><span  class="math">\[
+<p>Una vez resuelta la ecuación diofántica, centrémonos de nuevo en aquello que nos pedían en el enunciado: &lsquo;'¿Qué valor mínimo tenía el cheque de viaje?''. Como hablamos de cantidades monetarias, tanto $a$, como $b$, han de ser mayores o iguales que cero, es decir,</p>
+<p>$$
 \begin{aligned}
-a &= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\\
-b &= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
+a &amp;= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\<br>
+b &amp;= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y $t\in\mathbb{Z}$. Por consiguiente, el valor mínimo se alcanza cuando $t=0$, donde $a=10$ y $b=21$. Así, el señor Martínez viajó a Estados Unidos con un cheque de viaje cuyo valor ascendía a 10 dólares y 21 centavos.</p>
 
     </div>
@@ -932,7 +909,7 @@ b &= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -999,7 +976,7 @@ b &= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1015,7 +992,7 @@ b &= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

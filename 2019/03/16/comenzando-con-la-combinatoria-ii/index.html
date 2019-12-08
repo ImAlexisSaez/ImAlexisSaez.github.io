@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/03/16/comenzando-con-la-combinatoria-ii/featured_hu6c7a91725ae418f0903229bd6405e773_223743_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@keisuke_h" target="_blank">Keisuke Higashio</a>, disponible en <a href="https://unsplash.com/photos/jHMiVrTl6Fs" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@keisuke_h">Keisuke Higashio</a>, disponible en <a href="https://unsplash.com/photos/jHMiVrTl6Fs">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,7 +574,6 @@
 
     <div class="article-style">
       <p><strong>Problema 60:</strong> Considerando una baraja de póquer de $52$ cartas,</p>
-
 <ul>
 <li>(a) ¿cuántas manos de cinco cartas se pueden extraer?</li>
 <li>(b) De las manos anteriores, ¿cuántas tienen tres ases?</li>
@@ -575,71 +581,47 @@
 <li>(d) En general, ¿cuántos <em>full</em> podemos extraer de la baraja?</li>
 <li>(e) ¿Y cuántas manos contienen una <em>doble pareja</em>?</li>
 </ul>
-
 <hr>
-
 <p>De cara al apartado (a), como no importa el orden en el que recibamos las cartas en una mano cualquiera y no existe la posibilidad de recibir cartas recibidas, estamos interesados en calcular el número de combinaciones de $52$ elementos tomados de cinco en cinco. Así, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{52}{5} = \dfrac{52!}{5!\cdot47!} = \dfrac{52\cdot51\cdot50\cdot49\cdot48}{5!} = 2598960
-\]</span></p>
-
+$$</p>
 <p>manos posibles de cinco cartas que podemos extraer de una baraja de póquer de $52$ cartas.</p>
-
 <p>En cuanto al apartado (b), razonaremos como sigue: de los cuatro ases que posee la baraja, tomamos tres de ellos. Como no importa el orden en el que los extraigamos y no habrá ninguno repetido, esta acción la podemos llevar a cabo de</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-\]</span></p>
-
+$$</p>
 <p>formas posibles. Ahora, del resto de cartas de la baraja que no son ases, $52-4=48$, simplemente hemos de tomar dos cartas adicionales, situación que puede darse de</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{48}{2} = \dfrac{48!}{2!\cdot46!} = \dfrac{48\cdot47}{2} = 1128
-\]</span></p>
-
+$$</p>
 <p>maneras posibles. Aplicando la regla del producto, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{4}{3}\cdot\dbinom{48}{2} = 4\cdot1128 = 4512
-\]</span></p>
-
+$$</p>
 <p>manos que poseen tres ases.</p>
-
 <p>Siguiendo con el apartado (c), para conformar un <em>full</em> a partir de tres ases necesitamos que las otras dos cartas (distintas ambas del as) posean idéntico número. Así, empecemos tomando nuestros tres ases, que sabemos es una acción que podemos llevar a cabo de</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{4}{3} = \dfrac{4!}{3!\cdot1!} = 4
-\]</span></p>
-
+$$</p>
 <p>formas posibles. Ahora, de los doce números distintos de cartas que restan, seleccionamos uno en particular ($C_{12,1}$) y, de las cuatro cartas posibles asociadas a dicho número, tomamos dos ($C_{4,2}$). Aplicando la regla del producto, existen</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{12}{1}\cdot\dbinom{4}{2} = 12\cdot\dfrac{4!}{2!\cdot2!} = 72
-\]</span></p>
-
+$$</p>
 <p>maneras de realizar la anterior elección. Finalmente, utilizando de nuevo la regla del producto, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 4\cdot72 = 288
-\]</span></p>
-
+$$</p>
 <p>manos con $3$ ases que son <em>full</em>.</p>
-
 <p>Para el apartado (d), la manera de razonar es muy similar a la mostrada en el párrafo anterior. De los $13$ números posibles, seleccionamos uno de ellos ($C_{13,1}$) y será de este del que tomaremos tres cartas iguales ($C_{4,3}$). Ahora de los $12$ números restantes, escogemos uno ($C_{12,1}$) y extraemos luego dos cartas idénticas ($C_{4,2}$). Aplicando la regla del producto, hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{13}{1}\cdot\dbinom{4}{3}\cdot\dbinom{12}{1}\cdot\dbinom{4}{2} = 13\cdot4\cdot12\cdot6 = 3744
-\]</span></p>
-
+$$</p>
 <p>manos que son <em>full</em>.</p>
-
 <p>Finalmente, en el apartado (e), de los $13$ números disponibles en la baraja seleccionamos dos de ellos ($C_{13,2}$), de los cuales, de entre las cuatro cartas asociadas a cada uno de ellos, escogeremos dos idénticas ($C_{4,2}\cdot C_{4,2}$). Por último, de las restantes cartas, $52-4-4=44$, tomaremos una de ellas cualquiera ($C_{44,1}$). Aplicando la regla del producto hay</p>
-
-<p><span  class="math">\[
+<p>$$
 \dbinom{13}{2}\cdot\dbinom{4}{2}\cdot\dbinom{4}{2}\cdot\dbinom{44}{1} = 78\cdot6\cdot6\cdot44 = 123552
-\]</span></p>
-
+$$</p>
 <p>manos que son <em>doble pareja</em>.</p>
 
     </div>
@@ -912,7 +894,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -979,7 +961,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -995,7 +977,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

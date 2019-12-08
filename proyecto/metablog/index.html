@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -234,13 +234,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -248,6 +249,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -489,7 +496,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/proyecto/metablog/featured_hu31aee7314c2f343f02287939232d0ed5_93781_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@domenicoloia" target="_blank">Domenico Loia</a>, disponible en <a href="https://unsplash.com/photos/hGV2TfOh0ns" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@domenicoloia">Domenico Loia</a>, disponible en <a href="https://unsplash.com/photos/hGV2TfOh0ns">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -499,11 +506,8 @@
 
     <div class="article-style">
       <p>Personalmente, me encanta experimentar con nuevas tecnologías y el campo del desarrollo web es cierto que posee una miríada de ellas con las que, literalmente, pasar cientos de horas de entretenimiento. La cifra incluso se incrementa si a ello le añadimos que, en algunas ocasiones, es necesario aprender algún lenguaje de programación (más allá de la combinación <em>HTML</em> con <em>CSS</em>) para poder llevar a cabo modificaciones personales en los sitios web.</p>
-
 <p>Tras pasar por plataformas clásicas como <em>Blogger</em> o <em>Wordpress</em>, la construcción de sitios webs estáticos ha captado poderosamente mi atención, pues de momento se ajusta perfectamente a mis necesidades. Una breve idilio con la combinación <em>Jekyll</em> y <em>Ruby</em> (tristemente finalizado al encontrar ciertos problemas de velocidad a la hora de generar localmente las páginas web), me ha llevado en la actualidad a lidiar con <em>Hugo</em>. De momento, aunque todavía no he iniciado el aprendizaje de su lenguaje de programación asociado, <em>Go</em>, he de confesar que el resultado a la hora de trabajar con el sitio web es más que satisfactorio.</p>
-
 <p>Es por ello que, en este proyecto, recogeré a continuación diversas entradas del blog que ilustran detalladamente cómo generar una página web como <em>Infinitos Contrastes</em>, utilizando principalmente el tema <em>Beautiful Hugo</em>.</p>
-
 <table>
 <thead>
 <tr>
@@ -511,58 +515,47 @@
 <th>Título</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>1</td>
 <td><a href="/2018/07/05/preparando-el-equipo-para-hugo/">Preparando el equipo para Hugo</a></td>
 </tr>
-
 <tr>
 <td>2</td>
 <td><a href="/2018/07/08/instalando-hugo-en-windows/">Instalando Hugo en Windows</a></td>
 </tr>
-
 <tr>
 <td>3</td>
 <td><a href="/2018/07/11/creando-un-sitio-web-con-hugo/">Creando un sitio web con Hugo</a></td>
 </tr>
-
 <tr>
 <td>4</td>
 <td><a href="/2018/07/17/configurando-el-tema-ananke/">Configurando el tema Ananke</a></td>
 </tr>
-
 <tr>
 <td>5</td>
 <td><a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">Configurando el tema Beautiful Hugo (I)</a></td>
 </tr>
-
 <tr>
 <td>6</td>
 <td><a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">Configurando el tema Beautiful Hugo (II)</a></td>
 </tr>
-
 <tr>
 <td>7</td>
 <td><a href="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/">Publicando la primera entrada en nuestro sitio web</a></td>
 </tr>
-
 <tr>
 <td>8</td>
 <td><a href="/2018/09/01/alojando-nuestro-sitio-web-en-github/">Alojando nuestro sitio web en GitHub</a></td>
 </tr>
-
 <tr>
 <td>9</td>
 <td><a href="/2018/09/18/configurando-el-comportamiento-de-katex/">Configurando el comportamiento de KaTeX</a></td>
 </tr>
-
 <tr>
 <td>10</td>
 <td><a href="/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/">Mejorando la estética de los bloques de código</a></td>
 </tr>
-
 <tr>
 <td>11</td>
 <td><a href="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/">Unos cambios rápidos a las plantillas</a></td>
@@ -2035,7 +2028,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -2102,7 +2095,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -2118,7 +2111,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

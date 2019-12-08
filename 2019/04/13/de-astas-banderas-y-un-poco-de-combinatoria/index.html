@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/04/13/de-astas-banderas-y-un-poco-de-combinatoria/featured_hu1d213e08f822561d1d0ea2aa3004300e_234731_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@afs_snapshots" target="_blank">Angel Santos</a>, disponible en <a href="https://unsplash.com/photos/LcCpvQhjJSM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@afs_snapshots">Angel Santos</a>, disponible en <a href="https://unsplash.com/photos/LcCpvQhjJSM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,53 +574,39 @@
 
     <div class="article-style">
       <p><strong>Problema 68:</strong> En un puesto de mando, para transmitir señales, hay en línea recta cuatro astas. En cada asta solamente se puede colocar una bandera. Las señales consisten en colocar banderas de distintos colores en dichas astas. Según el número de banderas colocadas, colores de las mismas y lugar que ocupen, la señal será distinta. Halla el número de señales que se pueden transmitir si se posee un juego de siete banderas con los colores del arco iris.</p>
-
 <hr>
-
-<p>Una de las claves de este ejercicio pasa por darse cuenta de que en cada asta se ''puede'' colocar (o no) una bandera para transmitir una determinada señal. Así pues, hemos de discutir las opciones posibles, para las señales disponibles, en función del número de astas empleadas:</p>
-
+<p>Una de las claves de este ejercicio pasa por darse cuenta de que en cada asta se &lsquo;&lsquo;puede&rsquo;&rsquo; colocar (o no) una bandera para transmitir una determinada señal. Así pues, hemos de discutir las opciones posibles, para las señales disponibles, en función del número de astas empleadas:</p>
 <ul>
 <li>Si emplean las cuatro astas, dado que el orden en el que coloquen las banderas importa y no es posible repetir bandera alguna, la cantidad de señales que pueden transmitir en este caso equivale al número de variaciones de siete elementos tomados de cuatro en cuatro, esto es,</li>
 </ul>
-
-<p><span  class="math">\[
+<p>$$
 V_{7,4} = 7\cdot6\cdot5\cdot4 = 840.
-\]</span></p>
-
+$$</p>
 <ul>
-<li>Si utilizan tres astas, ello implica que de las cuatro disponibles han de escoger tres, acción que pueden llevar a cabo de $C_{4,3}$ maneras posibles. Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de tres en tres, es decir, $V_{7,3}$. Ahora, aplicando la <em>regla del producto</em>, utilizando tres astas pueden transmitir un número de señales que asciende a</li>
+<li>Si utilizan tres astas, ello implica que de las cuatro disponibles han de escoger tres, acción que pueden llevar a cabo de $C_{4,3}$ maneras posibles. Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de tres en tres, es decir, $V_{7,3}$. Ahora, aplicando la *regla del producto*, utilizando tres astas pueden transmitir un número de señales que asciende a</li>
 </ul>
-
-<p><span  class="math">\[
+<p>$$
 C_{4,3}\cdot V_{7,3} = \dbinom{4}{3}\cdot7\cdot6\cdot5 = 840.
-\]</span></p>
-
+$$</p>
 <ul>
-<li>Si utilizan dos astas, ello implica que de las cuatro disponibles han de escoger dos, acción que pueden llevar a cabo de $C_{4,2}$ maneras posibles (aquí, como antes, no importa el orden, pues es igual escoger las astas primera y segunda, que las astas segunda y primera, lo importante ahora es seleccionar dos astas). Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de dos en dos, es decir, $V_{7,2}$. Ahora, aplicando la <em>regla del producto</em>, utilizando dos astas pueden transmitir un número de señales que asciende a</li>
+<li>Si utilizan dos astas, ello implica que de las cuatro disponibles han de escoger dos, acción que pueden llevar a cabo de $C_{4,2}$ maneras posibles (aquí, como antes, no importa el orden, pues es igual escoger las astas primera y segunda, que las astas segunda y primera, lo importante ahora es seleccionar dos astas). Una vez escogidas las astas, como el orden en el que coloquen las banderas importa y no pueden repetir bandera alguna, podrían transmitir, para una elección de astas particular, un total de señales que asciende al número de variaciones de siete elementos tomados de dos en dos, es decir, $V_{7,2}$. Ahora, aplicando la *regla del producto*, utilizando dos astas pueden transmitir un número de señales que asciende a</li>
 </ul>
-
-<p><span  class="math">\[
+<p>$$
 C_{4,2}\cdot V_{7,2} = \dbinom{4}{2}\cdot7\cdot6 = 252.
-\]</span></p>
-
+$$</p>
 <ul>
 <li>Si utilizan una asta, ello implica que de las cuatro disponibles han de escoger una, acción que pueden llevar a cabo de cuatro maneras posibles. Una vez escogida, tienen siete opciones de cara a escoger la bandera que emplearán para transmitir la señal. Ahora, aplicando la <em>regla del producto</em>, utilizando una asta pueden transmitir un número de señales que asciende a</li>
 </ul>
-
-<p><span  class="math">\[
+<p>$$
 C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.
-\]</span></p>
-
+$$</p>
 <ul>
 <li>Finalmente, existe una posibilidad adicional que hemos de considerar y consiste en que no utilicen bandera alguna para transmitir una determinada señal (esto es, que no hagan uso de ninguna asta).</li>
 </ul>
-
 <p>Recapitulando, si se posee un juego de siete banderas con los colores del arco iris y cuatro astas donde colocarlas, podrán transmitir un total de</p>
-
-<p><span  class="math">\[
+<p>$$
 840+840+252+28+1 = 1961
-\]</span></p>
-
+$$</p>
 <p>señales.</p>
 
     </div>
@@ -886,7 +879,7 @@ C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -953,7 +946,7 @@ C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -969,7 +962,7 @@ C_{4,1}\cdot V_{7,1} = 4\cdot7 = 28.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

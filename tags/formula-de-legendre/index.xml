@@ -18,221 +18,162 @@
       <pubDate>Sat, 19 Jan 2019 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2019/01/19/2019-anno-de-las-torres-de-potencias/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 44:&lt;/strong&gt; Encuentra los dos últimos dígitos de&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;hr&gt;
-
 &lt;p&gt;Para encontrar las dos últimas cifras de la operación indicada en el enunciado del ejercicio, un posible enfoque pasa por trabajar con el valor de las congruencias módulo $100$. Estudiemos el valor de dichas congruencias para cada uno de los tres sumandos por separado.&lt;/p&gt;
-
 &lt;p&gt;En primer lugar, es cierto que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Ahora, como $mcd(17,100) = 1$, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, sabemos que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 17^{\varphi(100)} \equiv 1\pmod{100},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y como $100 = 2^2 \cdot 5^2$,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \varphi(100) = 100\cdot\left(1-\dfrac{1}{2}\right)\cdot\left(1-\dfrac{1}{5}\right) = 40,
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;esto es, $17^{40} \equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019} \pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 2018^{2019} \pmod{5},\\
-x&amp;\equiv 2018^{2019} \pmod{8},
+x&amp;amp;\equiv 2018^{2019} \pmod{5},\&lt;br&gt;
+x&amp;amp;\equiv 2018^{2019} \pmod{8},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2018^{2019} \equiv 3^{2019}\pmod{5},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y como $5$ es un número primo y $mcd(3,5) = 1$, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $3^4 \equiv 1\pmod{5}$. Como $2019 = 4\cdot 504 + 3$, es cierto que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 3^{2019} = 3^3\cdot (3^4)^{504} \equiv (3^3 \cdot 1^{504}) \pmod{5} \equiv 2\pmod{5}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Por otro lado, $2018 = 2\cdot1009$, por lo que,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-2018^{2019} &amp;= (2\cdot1009)^{2019} \\
-&amp;= 2^{2019} \cdot 1009^{2019} \\
-&amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \\
-&amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
+2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \&lt;br&gt;
+&amp;amp;= 2^{2019} \cdot 1009^{2019} \&lt;br&gt;
+&amp;amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \&lt;br&gt;
+&amp;amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y así, podemos concluir que $2018^{2019} \equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 2\pmod{5},\\
-x&amp;\equiv 0\pmod{8}.
+x&amp;amp;\equiv 2\pmod{5},\&lt;br&gt;
+x&amp;amp;\equiv 0\pmod{8}.
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el &lt;em&gt;Teorema chino del resto&lt;/em&gt; o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2017^{2018^{2019}} \equiv 17^{2018^{2019}} \pmod{100}\equiv 17^{32} \pmod{100}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Ahora bien, $17^{32} = ( 17^2 )^{16} = 189^{16} \equiv 89^{16} \pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-17^{32} &amp;\equiv 89^{16} \pmod{100} \\
-&amp;\equiv (-11)^{16} \pmod{100} \\
-&amp;\equiv 11^{16} \pmod{100} \\
-&amp;\equiv 21^8 \pmod{100}\\
-&amp;\equiv 41^4 \pmod{100} \\
-&amp;\equiv 81^2 \pmod{100} \\
-&amp;\equiv 61\pmod{100},
+17^{32} &amp;amp;\equiv 89^{16} \pmod{100} \&lt;br&gt;
+&amp;amp;\equiv (-11)^{16} \pmod{100} \&lt;br&gt;
+&amp;amp;\equiv 11^{16} \pmod{100} \&lt;br&gt;
+&amp;amp;\equiv 21^8 \pmod{100}\&lt;br&gt;
+&amp;amp;\equiv 41^4 \pmod{100} \&lt;br&gt;
+&amp;amp;\equiv 81^2 \pmod{100} \&lt;br&gt;
+&amp;amp;\equiv 61\pmod{100},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;esto es,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2017^{2018^{2019}} \equiv 61\pmod{100}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Para el segundo sumando, utilizaremos el &lt;em&gt;Teorema chino del resto&lt;/em&gt; desde el principio. Así, la ecuación de congruencia lineal&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 x\equiv 2018^{2019^{2020}} \pmod{100}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 2018^{2019^{2020}} \pmod{4},\\
-x&amp;\equiv 2018^{2019^{2020}} \pmod{25},
+x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{4},\&lt;br&gt;
+x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{25},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2018^{2019^{2020}} \equiv 0\pmod{4},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;pues $2018 = 2\cdot1009$ y, gracias a ese dos que figura en la descomposición en factores primos de $2018$, operando adecuadamente con las propiedades de los exponentes (de una forma similar a como actuamos en el caso anterior) es fácil ver que la torre de potencias es múltiplo de cuatro. Por otro lado,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y como $mcd(18,25)=1$ estamos en condiciones de volver a aplicar el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;. Así,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 18^{\varphi(25)}\equiv 1\pmod{25},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y, dado que $25=5^2$, es cierto que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-2019^{2020} &amp;\equiv (-1)^{2020} \pmod{20} \\
-&amp;\equiv 1^{2020}\pmod{20} \\
-&amp;\equiv 1\pmod{20},
+2019^{2020} &amp;amp;\equiv (-1)^{2020} \pmod{20} \&lt;br&gt;
+&amp;amp;\equiv 1^{2020}\pmod{20} \&lt;br&gt;
+&amp;amp;\equiv 1\pmod{20},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y entonces&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2018^{2019^{2020}} \equiv 18^{2019^{2020}} \pmod{25}\equiv 18\pmod{25}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 0\pmod{4},\\
-x&amp;\equiv 18\pmod{25}.
+x&amp;amp;\equiv 0\pmod{4},\&lt;br&gt;
+x&amp;amp;\equiv 18\pmod{25}.
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al &lt;em&gt;Teorema chino del resto&lt;/em&gt; o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.&lt;/p&gt;
-
 &lt;p&gt;Finalmente, el modo de actuar con el tercer sumando es similar al llevado a cabo para el primero. Así,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y como $mcd(19,100)=1$ sabemos, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, que $19^{\varphi(100)} = 19^{40} \equiv 1\pmod{100}$, por lo que únicamente nos resta averiguar el valor de la congruencia módulo $40$ de exponente, $2020^{2021}$. Para ello utilizaremos, de nuevo, el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que nos garantiza que la ecuación de congruencia lineal&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 x\equiv 2020^{2021} \pmod{40}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 2020^{2021} \pmod{5},\\
-x&amp;\equiv 2020^{2021} \pmod{8},
+x&amp;amp;\equiv 2020^{2021} \pmod{5},\&lt;br&gt;
+x&amp;amp;\equiv 2020^{2021} \pmod{8},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2 \cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 0\pmod{5},\\
-x&amp;\equiv 0\pmod{8},
+x&amp;amp;\equiv 0\pmod{5},\&lt;br&gt;
+x&amp;amp;\equiv 0\pmod{8},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2019^{2020^{2021}} \equiv 19^{2020^{2021}} \pmod{100}\equiv 1\pmod{100}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Recapitulando,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-2017^{2018^{2019}} &amp;\equiv 61\pmod{100},\\
-2018^{2019^{2020}} &amp;\equiv 68\pmod{100},\\
-2019^{2020^{2021}} &amp;\equiv  1\pmod{100},
+2017^{2018^{2019}} &amp;amp;\equiv 61\pmod{100},\&lt;br&gt;
+2018^{2019^{2020}} &amp;amp;\equiv 68\pmod{100},\&lt;br&gt;
+2019^{2020^{2021}} &amp;amp;\equiv  1\pmod{100},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;luego&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;\equiv (61+68+1)\pmod{100}\\
-&amp;\equiv 30\pmod{100},
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;amp;\equiv (61+68+1)\pmod{100}\&lt;br&gt;
+&amp;amp;\equiv 30\pmod{100},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.&lt;/p&gt;
 </description>
     </item>
@@ -243,164 +184,121 @@ x&amp;\equiv 0\pmod{8},
       <pubDate>Wed, 16 Jan 2019 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2019/01/16/buscando-digitos-no-nulos-en-numeros-factoriales/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 43:&lt;/strong&gt; Encuentra los dos últimos dígitos no nulos de $2017!$.&lt;/p&gt;
-
 &lt;hr&gt;
-
 &lt;p&gt;Dado que hay menos potencias de $5$ que de $2$ en $n!$ para cada $n&amp;gt;1$, el número de ceros al final de $n!$ es&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \left\lfloor\dfrac{n}{5}\right\rfloor + \left\lfloor\dfrac{n}{5^2}\right\rfloor + \left\lfloor\dfrac{n}{5^3}\right\rfloor + \cdots.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Para $n=2017$, tenemos que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-\left\lfloor\dfrac{2017}{5}\right\rfloor + \left\lfloor\dfrac{2017}{25}\right\rfloor + \left\lfloor\dfrac{2017}{125}\right\rfloor + \left\lfloor\dfrac{2017}{625}\right\rfloor &amp;= 403 + 80 + 16 + 3 \\
-&amp;= 502,
+\left\lfloor\dfrac{2017}{5}\right\rfloor + \left\lfloor\dfrac{2017}{25}\right\rfloor + \left\lfloor\dfrac{2017}{125}\right\rfloor + \left\lfloor\dfrac{2017}{625}\right\rfloor &amp;amp;= 403 + 80 + 16 + 3 \&lt;br&gt;
+&amp;amp;= 502,
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;esto es $2017!$ acaba en $502$ ceros, situación que nos obliga a encontrar entonces el valor de la congruencia&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 x \equiv \dfrac{2017!}{2^{502}\cdot 5^{502}}\pmod{100}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Como $100=4\cdot25$ y $mcd(4,25)=1$, es decir, son primos entre sí, hallaremos el valor de las congruencias para estos dos módulos y, después, aplicaremos el &lt;em&gt;Teorema chino del resto&lt;/em&gt;.&lt;/p&gt;
-
 &lt;p&gt;Para empezar,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \dfrac{2017!}{2^{502} \cdot 5^{502}}\equiv 0\pmod{4},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;debido a que en el numerador encontramos muchas más potencias de $2$ que las $502$ que hay de $5$ (de hecho, aplicando la fórmula anterior, podríamos calcular el exponente del número primo $2$ en la factorización de $2017!$ si fuese preciso).&lt;/p&gt;
-
 &lt;p&gt;Por comodidad, consideremos&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 f(x) = \dfrac{x!}{5^k}\pmod{25},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;donde $5^k$ es la mayor potencia de $5$ que divide a $x$, valor que podemos hallar haciendo uso de la expresión que figura unos párrafos arriba.&lt;/p&gt;
-
 &lt;p&gt;Ahora bien, resulta que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-(5k+1)(5k+2)(5k+3)(5k+4)&amp;= 625k^4 + 1250k^3 + 875k^2 + 250k + 24\\
-&amp;\equiv (-1)\pmod{25},
+(5k+1)(5k+2)(5k+3)(5k+4)&amp;amp;= 625k^4 + 1250k^3 + 875k^2 + 250k + 24\&lt;br&gt;
+&amp;amp;\equiv (-1)\pmod{25},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;hecho que nos permite escribir&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-f(2017)&amp;=\dfrac{2017!}{5^{502}}\pmod{25}\\
-&amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot403\cdot(16\cdot17)}{5^{99}}\pmod{25}\\
-&amp;=(-1)^{403}\cdot22\cdot f(403)\pmod{25}.
+f(2017)&amp;amp;=\dfrac{2017!}{5^{502}}\pmod{25}\&lt;br&gt;
+&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot403\cdot(16\cdot17)}{5^{99}}\pmod{25}\&lt;br&gt;
+&amp;amp;=(-1)^{403}\cdot22\cdot f(403)\pmod{25}.
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Veamos en detalle la anterior cadena de igualdades:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Los primeros términos de $2017!$ son $1\cdot2\cdot3\cdot4\cdot5$, de manera que ese $5$ se simplifica con uno de los que aparece en el denominador, quedando $1$. Por otra parte, por lo visto anteriormente, $(1\cdot2\cdot3\cdot4)\equiv(-1)\pmod{25}$.&lt;/li&gt;
 &lt;li&gt;A continuación, aparecería el producto $6\cdot7\cdot8\cdot9\cdot10$. Por lo que respecta al $10=2\cdot5$, queda como $2$ al simplificar el $5$ con uno de los que figura en el denominador. Por otro lado, $6\cdot7\cdot8\cdot9$ $=$ $(5\cdot1+1)$ $(5\cdot1+2)$ $(5\cdot1+3)$ $(5\cdot1+4)\equiv (-1)\pmod{25}$, tal y como vimos anteriormente. Al ser cierta esa congruencia podemos, por ejemplo, sustituir el anterior producto simplemente por $1\cdot2\cdot3\cdot4$, del que también sabemos es congruente con $(-1)$ módulo $25$.&lt;/li&gt;
-&lt;li&gt;Como $2017 = 5\cdot403+2$, esta manera de proceder la podemos llevar a cabo en $403$ ocasiones (hecho que explica el $(-1)^{403}$ que aparece posteriormente), quedando sin &#39;&#39;agrupar&#39;&#39; los dos últimos términos (dado el orden que hemos establecido) de $2017!$, esto es, $2016$ y $2017$. Sin embargo, $2016\equiv 16\pmod{25}$ y $2017\equiv 17\pmod{25}$. Además, $16\cdot17 = 272\equiv 22\pmod{25}$, cifra que figura en la última igualdad.&lt;/li&gt;
+&lt;li&gt;Como $2017 = 5\cdot403+2$, esta manera de proceder la podemos llevar a cabo en $403$ ocasiones (hecho que explica el $(-1)^{403}$ que aparece posteriormente), quedando sin &amp;lsquo;&amp;lsquo;agrupar&amp;rsquo;&amp;rsquo; los dos últimos términos (dado el orden que hemos establecido) de $2017!$, esto es, $2016$ y $2017$. Sin embargo, $2016\equiv 16\pmod{25}$ y $2017\equiv 17\pmod{25}$. Además, $16\cdot17 = 272\equiv 22\pmod{25}$, cifra que figura en la última igualdad.&lt;/li&gt;
 &lt;li&gt;Los anteriores $403$ grupos nombrados provocan el mismo número de simplificaciones de cincos, por lo que el denominador pasa lógicamente de ser $5^{502}$ a $5^{99}$.&lt;/li&gt;
 &lt;li&gt;Finalmente, en el numerador aparece $1\cdot2\cdots403 = 403!$, cifra que podemos comprobar fácilmente que acaba en $99$ ceros, quedando así justificada la presencia de $f(403)$.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Razonando de manera similar,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-f(403)&amp;=\dfrac{403!}{5^{99}}\pmod{25}\\
-&amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot80\cdot(1\cdot2\cdot3)}{5^{19}}\pmod{25}\\
-&amp;=(-1)^{80}\cdot6\cdot f(80)\pmod{25},\\
-f(80)&amp;=\dfrac{80!}{5^{19}}\pmod{25}\\
-&amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot16}{5^{3}}\pmod{25}\\
-&amp;=(-1)^{16}\cdot f(16)\pmod{25},\\
-f(16)&amp;=\dfrac{16!}{5^{3}}\pmod{25}\\
-&amp;=((1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdot(1\cdot2\cdot3\cdot4)\cdot3\cdot16)\pmod{25}\\
-&amp;=(-1)^{3}\cdot16\cdot 3!\pmod{25},
+f(403)&amp;amp;=\dfrac{403!}{5^{99}}\pmod{25}\&lt;br&gt;
+&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot80\cdot(1\cdot2\cdot3)}{5^{19}}\pmod{25}\&lt;br&gt;
+&amp;amp;=(-1)^{80}\cdot6\cdot f(80)\pmod{25},\&lt;br&gt;
+f(80)&amp;amp;=\dfrac{80!}{5^{19}}\pmod{25}\&lt;br&gt;
+&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot16}{5^{3}}\pmod{25}\&lt;br&gt;
+&amp;amp;=(-1)^{16}\cdot f(16)\pmod{25},\&lt;br&gt;
+f(16)&amp;amp;=\dfrac{16!}{5^{3}}\pmod{25}\&lt;br&gt;
+&amp;amp;=((1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdot(1\cdot2\cdot3\cdot4)\cdot3\cdot16)\pmod{25}\&lt;br&gt;
+&amp;amp;=(-1)^{3}\cdot16\cdot 3!\pmod{25},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y realizando ahorra las correspondientes sustituciones,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-f(2017) &amp;= (-1)^{502}\cdot22\cdot6\cdot16\cdot6\pmod{25}\\
-&amp;\equiv 12672\pmod{25}\\
-&amp;\equiv 22\pmod{25},
+f(2017) &amp;amp;= (-1)^{502}\cdot22\cdot6\cdot16\cdot6\pmod{25}\&lt;br&gt;
+&amp;amp;\equiv 12672\pmod{25}\&lt;br&gt;
+&amp;amp;\equiv 22\pmod{25},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;esto es,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \dfrac{2017!}{5^{502}}\equiv 22\pmod{25}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Recordemos en este instante que, en realidad, estamos interesados en hallar el valor de la congruencia&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \dfrac{2017!}{2^{502}\cdot 5^{502}}\pmod{25},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;de forma que todavía queda un poco de trabajo que llevar a cabo. Sin embargo, por el &lt;em&gt;Teorema de Euler-Fermat&lt;/em&gt;, como $mcd(2,25)=1$, es decir, son primos entre sí, entonces $2^{\varphi(25)}\equiv 1\pmod{25}$. Dado que,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \varphi(25) = 25\cdot\left(1-\dfrac{1}{5}\right) = 20,
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;y $502 = 20\cdot25+2$, entonces&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 2^{502} = (2^{20})^{25}\cdot2^2\equiv 4\cdot1^{25}\pmod{25}\equiv 4\pmod{25}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Así, sabemos que el resto de dividir&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 a = \dfrac{2017!}{5^{502}}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;entre $25$ asciende a $22$. Como el número que nos interesa, en términos del resto, es $4$ veces el anterior, esto es, $4a$, para hallar el resto al dividir por $25$ planteamos la ecuación de congruencia lineal,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-4a\equiv 22\pmod{25}&amp;\Leftrightarrow 24a\equiv 132\pmod{25}\\
-&amp;\Leftrightarrow (-a)\equiv 7\pmod{25}\\
-&amp;\Leftrightarrow a\equiv 18\pmod{25},
+4a\equiv 22\pmod{25}&amp;amp;\Leftrightarrow 24a\equiv 132\pmod{25}\&lt;br&gt;
+&amp;amp;\Leftrightarrow (-a)\equiv 7\pmod{25}\&lt;br&gt;
+&amp;amp;\Leftrightarrow a\equiv 18\pmod{25},
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es decir, finalmente hemos llegado a que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \dfrac{2017!}{2^{502}\cdot 5^{502}}\equiv 18\pmod{25}.
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Combinando este último resultado alcanzado con el anterior, es cierto que la ecuación de congruencia lineal&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 x \equiv \dfrac{2017!}{2^{502}\cdot 5^{502}}\pmod{100},
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencias lineales&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-x&amp;\equiv 0\pmod{4},\\
-x&amp;\equiv 18\pmod{25}.
+x&amp;amp;\equiv 0\pmod{4},\&lt;br&gt;
+x&amp;amp;\equiv 18\pmod{25}.
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=4$ y $m_2=25$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=4\cdot25 = 100$. Podemos hallar esta vía el procedimiento habitual; sin embargo, dado que la primera ecuación indica que la solución es múltiplo de $4$ y la segunda ecuación se traduce en que al dividir dicho múltiplo por $25$ ha de dejar un resto igual a $18$, llegamos, por tanteo, a que $x\equiv 68\pmod{100}$. Es decir, $68$ son los dos últimos dígitos no nulos de $2017!$.&lt;/p&gt;
 </description>
     </item>
@@ -411,37 +309,28 @@ x&amp;\equiv 18\pmod{25}.
       <pubDate>Wed, 12 Dec 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/12/12/buscando-ceros-muchos-ceros-en-un-factorial/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 33:&lt;/strong&gt;&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;(a) ¿En cuántos ceros acaba el número $1000!$?&lt;/li&gt;
 &lt;li&gt;(b) Demuestra que $1000!$ no es divisible por $2^{995}$,&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;hr&gt;
-
 &lt;p&gt;Para el apartado (a), nuestra labor consistiría en contar el número de dieces que podemos encontrar en la expresión de $1000! = 1\cdot2\cdot3\cdots999\cdot1000$. No estamos en condiciones de emplear directamente la &lt;em&gt;Fórmula de Legendre&lt;/em&gt;, puesto que $10$ no es un número primo, pero $10=2\cdot5$, de manera que nuestra tarea se reduce a buscar el número de veces que figura $5$ en la factorización en números primos de $1000!$ (porque $2$ aparecerá con mayor frecuencia, al ser menor que $5$, por ello nos interesa solamente hallar el número de cincos).&lt;/p&gt;
-
 &lt;p&gt;Así, aplicando la mencionada fórmula,&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-v_5(1000!) &amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\\
-&amp;= 200 + 40 + 8 + 1 = 249,
+v_5(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\&lt;br&gt;
+&amp;amp;= 200 + 40 + 8 + 1 = 249,
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;es decir, $1000!$ acaba en $249$ ceros.&lt;/p&gt;
-
 &lt;p&gt;Para el apartado (b), quizá de forma un tanto rebuscada, simplemente nos preguntan por el número de veces que aparece $2$ en la factorización en números primos de $1000!$, puesto que tal valor nos permitirá verificar la propiedad enunciada. Aplicando, de nuevo, la &lt;em&gt;Fórmula de Legendre&lt;/em&gt;, tenemos que&lt;/p&gt;
-
-&lt;p&gt;&lt;span  class=&#34;math&#34;&gt;\[
+&lt;p&gt;$$
 \begin{aligned}
-v_2(1000!) &amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\\
-&amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \\
-&amp;= 994,
+v_2(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\&lt;br&gt;
+&amp;amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \&lt;br&gt;
+&amp;amp;= 994,
 \end{aligned}
-\]&lt;/span&gt;&lt;/p&gt;
-
+$$&lt;/p&gt;
 &lt;p&gt;luego $2^{994}|1000!$, pero $2^{995}\nmid 1000!$, como queríamos demostrar.&lt;/p&gt;
 </description>
     </item>

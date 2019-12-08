@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados metacaracteres (o caracteres comodín).
 Empecemos con las anclas, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla ^, las buscamos al inicio de la cadena de texto:
-import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &quot;Sandra López&quot;, &quot;Santiago Martín&quot;] for nombre in lista_nombres: if re.">
+import relista_nombres = [&quot;Ana Gómez&quot;,&quot;María Martín&quot;,&quot;Sandra López&quot;,&quot;Santiago Martín&quot;]for nombre in lista_nombres:if re.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb70-expresiones-regulares-ii/">
@@ -127,7 +127,7 @@ import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &
   <meta property="og:title" content="70. Expresiones regulares II | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados metacaracteres (o caracteres comodín).
 Empecemos con las anclas, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla ^, las buscamos al inicio de la cadena de texto:
-import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &quot;Sandra López&quot;, &quot;Santiago Martín&quot;] for nombre in lista_nombres: if re."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+import relista_nombres = [&quot;Ana Gómez&quot;,&quot;María Martín&quot;,&quot;Sandra López&quot;,&quot;Santiago Martín&quot;]for nombre in lista_nombres:if re."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,22 +755,15 @@ import re lista_nombres = [&quot;Ana Gómez&quot;, &quot;María Martín&quot;, &
           <h1>70. Expresiones regulares II</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/V8316ao08tQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados <strong>metacaracteres</strong> (o <em>caracteres comodín</em>).</p>
-
 <p>Empecemos con las <em>anclas</em>, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla <code>^</code>, las buscamos al inicio de la cadena de texto:</p>
-
 <pre><code class="language-python">import re
 
 lista_nombres = [&quot;Ana Gómez&quot;,
@@ -778,17 +775,12 @@ for nombre in lista_nombres:
     if re.findall(&quot;^Sandra&quot;, nombre):
         print(nombre)
 </code></pre>
-
 <pre><code class="language-bash">Sandra López
 </code></pre>
-
 <p>El último bucle lo podemos compactar utilizando comprensiones de listas de la siguiente forma:</p>
-
 <pre><code class="language-python">[print(nombre) for nombre in lista_nombres if re.findall(&quot;^Sandra&quot;, nombre)]
 </code></pre>
-
 <p>Así, podemos extraer de <code>lista_nombres</code>, si nos interesa, todos los nombres que comiencen por <code>S</code>:</p>
-
 <pre><code class="language-python">import re
 
 lista_nombres = [&quot;Ana Gómez&quot;,
@@ -798,13 +790,10 @@ lista_nombres = [&quot;Ana Gómez&quot;,
 
 [print(nombre) for nombre in lista_nombres if re.findall(&quot;^S&quot;, nombre)]
 </code></pre>
-
 <pre><code class="language-bash">Sandra López
 Santiago Martín
 </code></pre>
-
 <p>¿Y si queremos todos los nombres cuyo apellido sea <code>Martín</code>? El ancla <code>$</code> es el metacarácter que hemos de emplear:</p>
-
 <pre><code class="language-python">import re
 
 lista_nombres = [&quot;Ana Gómez&quot;,
@@ -814,13 +803,10 @@ lista_nombres = [&quot;Ana Gómez&quot;,
 
 [print(nombre) for nombre in lista_nombres if re.findall(&quot;Martín$&quot;, nombre)]
 </code></pre>
-
 <pre><code class="language-bash">María Martín
 Santiago Martín
 </code></pre>
-
 <p>Veamos otro ejemplo de su uso, trabajando ahora con una lista de dominios, estamos interesados en encontrar aquellos que acaben en <code>.es</code>:</p>
-
 <pre><code class="language-python">import re
 
 urls = [&quot;https://pildorasinformaticas.es&quot;,
@@ -830,13 +816,10 @@ urls = [&quot;https://pildorasinformaticas.es&quot;,
 
 [print(url) for url in urls if re.findall(&quot;.es$&quot;, url)]
 </code></pre>
-
 <pre><code class="language-bash">https://pildorasinformaticas.es
 ftp://pildorasinformaticas.es
 </code></pre>
-
 <p>Quizá nos interese hallar qué dominios son de tipo <code>ftp</code>:</p>
-
 <pre><code class="language-python">import re
 
 urls = [&quot;https://pildorasinformaticas.es&quot;,
@@ -846,13 +829,10 @@ urls = [&quot;https://pildorasinformaticas.es&quot;,
 
 [print(url) for url in urls if re.findall(&quot;^ftp&quot;, url)]
 </code></pre>
-
 <pre><code class="language-bash">ftp://pildorasinformaticas.es
 ftp://pildorasinformaticas.com
 </code></pre>
-
 <p>Por otro lado, tenemos las <strong>clases de caracteres</strong>, que nos permiten introducir patrones de búsqueda utilizando el operador <code>[]</code>. Cambiemos ligeramente los dominios para ver su utilidad (buscando aquellos dominios que contengan el carácter <code>ñ</code>):</p>
-
 <pre><code class="language-python">import re
 
 urls = [&quot;https://pildorasinformaticas.es&quot;,
@@ -863,41 +843,31 @@ urls = [&quot;https://pildorasinformaticas.es&quot;,
 
 [print(url) for url in urls if re.findall(&quot;[ñ]&quot;, url)]
 </code></pre>
-
 <pre><code class="language-bash">https://informaticaenespaña.es
 </code></pre>
-
 <p>Un ejemplo un tanto más complejo: en una lista de palabras, queremos encontrar si se hallan las palabras <code>niños</code> y <code>niñas</code>. Como solo se diferencias ambas cadenas en un carácter, podemos escribir:</p>
-
 <pre><code class="language-python">import re
 
 urls = [&quot;hombres&quot;, &quot;mujeres&quot;, &quot;mascotas&quot;, &quot;niños&quot;, &quot;niñas&quot;]
 
 [print(url) for url in urls if re.findall(&quot;niñ[oa]s&quot;, url)]
 </code></pre>
-
 <pre><code class="language-bash">niños
 niñas
 </code></pre>
-
 <p><em>Nota</em>: al escribir <code>[oa]</code> no exigimos que deban estar presentes los dos caracteres y en ese preciso orden. La función <code>findall()</code> nos arrojará una coincidencia cuando alguno de los dos esté presente (o ambos, siendo indiferente el orden en el que se encuentren en este último caso).</p>
-
 <p>Esta estrategia es también útil cuando lidiamos con tildes:</p>
-
 <pre><code class="language-python">import re
 
 urls = [&quot;hombres&quot;, &quot;mujeres&quot;, &quot;mascotas&quot;, &quot;camión&quot;, &quot;camion&quot;]
 
 [print(url) for url in urls if re.findall(&quot;cami[oó]n&quot;, url)]
 </code></pre>
-
 <pre><code class="language-bash">camión
 camion
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/70/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/70/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -948,7 +918,7 @@ camion
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -996,7 +966,7 @@ camion
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1068,7 +1038,7 @@ camion
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

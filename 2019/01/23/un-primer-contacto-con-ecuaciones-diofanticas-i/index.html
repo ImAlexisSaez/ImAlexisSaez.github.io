@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/01/23/un-primer-contacto-con-ecuaciones-diofanticas-i/featured_hue3b9d6d1cd2be177ef8c4159a102c363_211506_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@johnwestrock" target="_blank">John Westrock</a>, disponible en <a href="https://unsplash.com/photos/ZA2vDly2om0" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@johnwestrock">John Westrock</a>, disponible en <a href="https://unsplash.com/photos/ZA2vDly2om0">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,90 +574,67 @@
 
     <div class="article-style">
       <p><strong>Problema 45:</strong></p>
-
 <ul>
 <li>(a) Sea $c$ un número entero positivo tal que $10\leq c\leq 100$. ¿Cuál es el valor mínimo de $c$ para el cual la ecuación $84x+990y=c$ admite  solución entera?</li>
 <li>(b) Un hombre compra caballos y vacas, pagando $1770$ euros. Una vaca cuesta $21$ euros y un caballo $31$ euros. ¿Cuántos caballos y vacas ha comprado?</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado (a), como</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
- 84 &= 2^2 \cdot3\cdot7,\\
- 990 &= 2\cdot 3^2 \cdot5\cdot11,
+84 &amp;= 2^2 \cdot3\cdot7,\<br>
+990 &amp;= 2\cdot 3^2 \cdot5\cdot11,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces $mcd(84, 990) = 6$. Para que la ecuación diofántica planteada admita soluciones enteras, $6$ ha de dividir a $c$ y como buscamos el valor mínimo de $c$, nuestra tarea se reduce pues a encontrar el primer múltiplo de $6$ que pertenezca al intervalo $[10,100]$. La solución será, por tanto, $c=12$.</p>
-
 <p>En cuanto al apartado (b), consideremos $x$ el número de vacas compradas e $y$ el total de caballos adquiridos. Dados sus respectivos precios y el importe total desembolsado, planteamos la ecuación diofántica</p>
-
-<p><span  class="math">\[
+<p>$$
 21x + 31y = 1770.
-\]</span></p>
-
+$$</p>
 <p>Como $mcd(21,31) = 1$ y $1|1770$, estamos en condiciones de asegurar que la anterior ecuación diofántica admite solución entera. Para aliviar cálculos, empecemos llevando a cabo el cambio de variable</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 1770x^{\prime},\\
-y &= 1770y^{\prime},
+x &amp;= 1770x^{\prime},\<br>
+y &amp;= 1770y^{\prime},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con lo cual queda $21x^{\prime} + 31y^{\prime} = 1$. Despejando ahora la variable $x^{\prime}$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
 x^{\prime} = \dfrac{1-31y^{\prime}}{21} = -y^{\prime} + \dfrac{1 - 10y^{\prime}}{21} = -y^{\prime} + x^{\prime\prime},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con</p>
-
-<p><span  class="math">\[
+<p>$$
 x^{\prime\prime} = \dfrac{1-10y^{\prime}}{21},
-\]</span></p>
-
+$$</p>
 <p>es decir, $21x^{\prime\prime} = 1-10y^{\prime}$, y despejando ahora la variable $y^{\prime}$,</p>
-
-<p><span  class="math">\[
+<p>$$
 y^{\prime} = \dfrac{1-21x^{\prime\prime}}{10},
-\]</span></p>
-
+$$</p>
 <p>ecuación para la que, por tanteo, rápidamente observamos que si $x^{\prime\prime} = 1$, entonces $y^{\prime} = (-2)$. Deshaciendo ahora los cambios de variable realizados,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x^{\prime} &= -y^{\prime} + x^{\prime\prime} = 2 + 1 = 3,\\
-x  &= 1770x^{\prime} = 1770\cdot3 = 5310,\\
-y  &= 1770y^{\prime} = 1770\cdot(-2) = -3540,
+x^{\prime} &amp;= -y^{\prime} + x^{\prime\prime} = 2 + 1 = 3,\<br>
+x  &amp;= 1770x^{\prime} = 1770\cdot3 = 5310,\<br>
+y  &amp;= 1770y^{\prime} = 1770\cdot(-2) = -3540,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>llegamos a una solución particular de la ecuación diofántica propuesta. Así, su solución general queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 5310 + 31t,\\
-y &= (-3540) - 21t,
+x &amp;= 5310 + 31t,\<br>
+y &amp;= (-3540) - 21t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$ número entero. El número de animales que ha comprado de cada clase ha de ser, necesariamente, mayor o igual que cero, por lo que planteamos las inecuaciones,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-5310 + 31t &\geq 0\Rightarrow t\geq -\dfrac{5310}{31} = -171.29,\\
--3540-21t  &\geq 0\Rightarrow t\leq -\dfrac{3540}{21} = -168.57.
+5310 + 31t &amp;\geq 0\Rightarrow t\geq -\dfrac{5310}{31} = -171.29,\<br>
+-3540-21t  &amp;\geq 0\Rightarrow t\leq -\dfrac{3540}{21} = -168.57.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Como $t$ ha de ser entero, concluimos que $-171\leq t\leq -169$. Por tanto,</p>
-
 <table>
 <thead>
 <tr>
@@ -659,20 +643,17 @@ y &= (-3540) - 21t,
 <th>$y$ (caballos)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>$-171$</td>
 <td>$9$</td>
 <td>$51$</td>
 </tr>
-
 <tr>
 <td>$-170$</td>
 <td>$40$</td>
 <td>$30$</td>
 </tr>
-
 <tr>
 <td>$-169$</td>
 <td>$71$</td>
@@ -680,7 +661,6 @@ y &= (-3540) - 21t,
 </tr>
 </tbody>
 </table>
-
 <p>Siendo así la posible respuesta, al interrogante planteado en el enunciado del ejercicio, cualquiera de las anteriores tres posibilidades.</p>
 
     </div>
@@ -953,7 +933,7 @@ y &= (-3540) - 21t,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1020,7 +1000,7 @@ y &= (-3540) - 21t,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1036,7 +1016,7 @@ y &= (-3540) - 21t,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

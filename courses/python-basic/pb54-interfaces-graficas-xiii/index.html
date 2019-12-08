@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, construiremos la típica ventana emergente que nos permite abrir un archivo en una aplicación. Para empezar, recuperemos el código fuente generado en las últimas lecciones:
-from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showinfo(title=&quot;Acerca de...&quot;, message=&quot;Aplicación creada por Alexis Sáez.&quot;) def aviso_licencia(): messagebox.showwarning(title=&quot;Licencia&quot;, message=&quot;Producto bajo licencia GNU.&quot;) def salir_aplicacion(): respuesta = messagebox.askquestion( title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;) if respuesta == &quot;yes&quot;: raiz.">
+from tkinter import Menu, messagebox, Tkdef info_adicional():messagebox.showinfo(title=&quot;Acerca de...&quot;,message=&quot;Aplicación creada por Alexis Sáez.&quot;)def aviso_licencia():messagebox.showwarning(title=&quot;Licencia&quot;,message=&quot;Producto bajo licencia GNU.&quot;)def salir_aplicacion():respuesta = messagebox.askquestion(title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;)if respuesta == &quot;yes&quot;:raiz.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb54-interfaces-graficas-xiii/">
@@ -125,7 +125,7 @@ from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showin
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb54-interfaces-graficas-xiii/">
   <meta property="og:title" content="54. Interfaces gráficas XIII | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, construiremos la típica ventana emergente que nos permite abrir un archivo en una aplicación. Para empezar, recuperemos el código fuente generado en las últimas lecciones:
-from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showinfo(title=&quot;Acerca de...&quot;, message=&quot;Aplicación creada por Alexis Sáez.&quot;) def aviso_licencia(): messagebox.showwarning(title=&quot;Licencia&quot;, message=&quot;Producto bajo licencia GNU.&quot;) def salir_aplicacion(): respuesta = messagebox.askquestion( title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;) if respuesta == &quot;yes&quot;: raiz."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+from tkinter import Menu, messagebox, Tkdef info_adicional():messagebox.showinfo(title=&quot;Acerca de...&quot;,message=&quot;Aplicación creada por Alexis Sáez.&quot;)def aviso_licencia():messagebox.showwarning(title=&quot;Licencia&quot;,message=&quot;Producto bajo licencia GNU.&quot;)def salir_aplicacion():respuesta = messagebox.askquestion(title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;)if respuesta == &quot;yes&quot;:raiz."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@ from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showin
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showin
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showin
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@ from tkinter import Menu, messagebox, Tk def info_adicional(): messagebox.showin
           <h1>54. Interfaces gráficas XIII</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/TmQZBzwIMGk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, construiremos la típica ventana emergente que nos permite abrir un archivo en una aplicación. Para empezar, recuperemos el código fuente generado en las últimas lecciones:</p>
-
 <pre><code class="language-python">from tkinter import Menu, messagebox, Tk
 
 
@@ -826,31 +824,22 @@ barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
 
 raiz.mainloop()
 </code></pre>
-
 <p>A continuación, importamos el módulo <code>filedialog</code>, de la librería <code>tkinter</code>, y construimos la siguiente función:</p>
-
 <pre><code class="language-python">def abrir_archivo():
     fichero = filedialog.askopenfilename(title=&quot;Abrir archivo&quot;)
     print(fichero)
 </code></pre>
-
 <p>En la variable <code>fichero</code>, almacenamos la ruta al archivo que seleccionemos a través de la ventana emergente, como bien podremos comprobar en la consola de <em>Python</em> gracias a la función <code>print()</code> que hemos incorporado en el interior de <code>abrir_archivo()</code>. Después, acudimos al elemento del menú <em>Archivo</em> correspondiente y modificamos la línea como sigue:</p>
-
 <pre><code class="language-python">archivo_menu.add_command(label=&quot;Abrir&quot;, command=abrir_archivo)
 </code></pre>
-
 <p>A la vista del resultado, es posible que nos interese modificar la ubicación de la ruta desde la que un usuario ha de comenzar la búsqueda de un archivo. Para ello, modificamos la función <code>abrir_archivo()</code> como sigue:</p>
-
 <pre><code class="language-python">def abrir_archivo():
     fichero = filedialog.askopenfilename(title=&quot;Abrir archivo&quot;,
                                          initialdir=&quot;/&quot;)
     print(fichero)
 </code></pre>
-
 <p>y, de esta manera, ahora la ventana emergente nos muestra los directorios ubicados en la raíz de nuestro disco duro.</p>
-
 <p>Además, podemos restringir el tipo de archivo que deseamos un usuario examine (por ejemplo, restringir la búsqueda a imágenes o documentos) mediante el parámetro <code>filetypes</code>. Así, si modificamos la función <code>abrir_archivo()</code> como sigue:</p>
-
 <pre><code class="language-python">def abrir_archivo():
     fichero = filedialog.askopenfilename(title=&quot;Abrir archivo&quot;,
                                          initialdir=&quot;/&quot;,
@@ -860,11 +849,8 @@ raiz.mainloop()
                                                      &quot;*.txt&quot;)))
     print(fichero)
 </code></pre>
-
 <p>ahora la ventana emergente nos restringe el tipo de fichero que podemos seleccionar y, además, nos permite filtrar por dos opciones diferentes (de Excel o de texto), según sus correspondientes extensiones.</p>
-
 <p>Para comodidad del usuario, conviene siempre incluir una opción para abrir cualquier tipo de archivo, independientemente de su extensión:</p>
-
 <pre><code class="language-python">def abrir_archivo():
     fichero = filedialog.askopenfilename(
         title=&quot;Abrir archivo&quot;,
@@ -874,9 +860,7 @@ raiz.mainloop()
                    (&quot;Todos los archivos&quot;, &quot;*.*&quot;)))
     print(fichero)
 </code></pre>
-
 <p>Finalmente, como ya viene siendo habitual en esta serie de lecciones dedicadas a las interfaces gráficas, comparto el código fuente completo de la aplicación generada, para tener así una visión global de la misma:</p>
-
 <pre><code class="language-python">from tkinter import filedialog, Menu, messagebox, Tk
 
 
@@ -950,10 +934,8 @@ barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
 
 raiz.mainloop()
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/54/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/54/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -1004,7 +986,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1052,7 +1034,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1124,7 +1106,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

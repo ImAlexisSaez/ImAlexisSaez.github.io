@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="Vídeo   Notas personales Partamos, en esta lección, del siguiente código fuente, que incluye, además de la función para sumar, las correspondientes a las operaciones resta, multiplicación y división:
-from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz.title(&quot;Calculadora&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) # Frame frame = Frame(raiz) frame.pack() # Variables numero_pantalla = StringVar() operacion = &quot;&quot; resultado = 0 reset_pantalla = False # Pantalla pantalla = Entry(frame, textvariable=numero_pantalla) pantalla.">
+from tkinter import Button, Entry, Frame, StringVar, Tk# Raízraiz = Tk()raiz.title(&quot;Calculadora&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)# Frameframe = Frame(raiz)frame.pack()# Variablesnumero_pantalla = StringVar()operacion = &quot;&quot;resultado = 0reset_pantalla = False# Pantallapantalla = Entry(frame, textvariable=numero_pantalla)pantalla.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb50-interfaces-graficas-ix/">
@@ -125,7 +125,7 @@ from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb50-interfaces-graficas-ix/">
   <meta property="og:title" content="50. Interfaces gráficas IX | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Partamos, en esta lección, del siguiente código fuente, que incluye, además de la función para sumar, las correspondientes a las operaciones resta, multiplicación y división:
-from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz.title(&quot;Calculadora&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) # Frame frame = Frame(raiz) frame.pack() # Variables numero_pantalla = StringVar() operacion = &quot;&quot; resultado = 0 reset_pantalla = False # Pantalla pantalla = Entry(frame, textvariable=numero_pantalla) pantalla."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+from tkinter import Button, Entry, Frame, StringVar, Tk# Raízraiz = Tk()raiz.title(&quot;Calculadora&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)# Frameframe = Frame(raiz)frame.pack()# Variablesnumero_pantalla = StringVar()operacion = &quot;&quot;resultado = 0reset_pantalla = False# Pantallapantalla = Entry(frame, textvariable=numero_pantalla)pantalla."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@ from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@ from tkinter import Button, Entry, Frame, StringVar, Tk # Raíz raiz = Tk() raiz
           <h1>50. Interfaces gráficas IX</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/YfYUOUGMaXU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Partamos, en esta lección, del siguiente código fuente, que incluye, además de la función para sumar, las correspondientes a las operaciones resta, multiplicación y división:</p>
-
 <pre><code class="language-python">from tkinter import Button, Entry, Frame, StringVar, Tk
 
 # Raíz
@@ -946,9 +944,7 @@ boton_suma.grid(row=5, column=4)
 
 raiz.mainloop()
 </code></pre>
-
 <p>A continuación, veremos cómo trabajar con botones de radio, es decir, con la clase <code>Radiobutton</code>.</p>
-
 <pre><code class="language-python">from tkinter import Radiobutton, Tk
 
 raiz = Tk()
@@ -960,7 +956,6 @@ Radiobutton(raiz, text=&quot;Masculino&quot;).pack()
 
 raiz.mainloop()
 </code></pre>
-
 
 
 
@@ -990,16 +985,12 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>A primera vista, observamos dos inconvenientes:</p>
-
 <ul>
 <li>aparecen ambas opciones seleccionadas al abrir la aplicación y</li>
 <li>por mucho que pulse sobre ellas, la selección no se modifica.</li>
 </ul>
-
 <p>Para abordar esta situación, comenzamos creando una variable global, <code>opcion</code>, perteneciente a la clase <code>IntVar</code> y se la asignamos a ambos botones a través del parámetro <code>variable</code>; junto con un valor para cada uno de ellos, utilizando el parámetro <code>value</code>.</p>
-
 <pre><code class="language-python">from tkinter import IntVar, Radiobutton, Tk
 
 raiz = Tk()
@@ -1013,7 +1004,6 @@ Radiobutton(raiz, text=&quot;Masculino&quot;, variable=opcion, value=2).pack()
 
 raiz.mainloop()
 </code></pre>
-
 
 
 
@@ -1043,13 +1033,9 @@ raiz.mainloop()
 
 </figure>
 
-
 <p><em>Nota técnica</em>: si asignamos <code>value=0</code> a alguno de los botones, aparecerá seleccionado por defecto cuando abramos la aplicación. Esta característica puede resultar de cierta utilidad en algunos contextos.</p>
-
 <p>Ahora bien, ¿cómo rescatamos el valor que ha seleccionado el usuario? Al igual que sucedía en el caso de la calculadora, recurriremos al uso de funciones en esta ocasión.</p>
-
 <p>Así, generemos una, denominada <code>imprimir</code>, que imprima en la consola de <em>Python</em> el valor del botón seleccionado:</p>
-
 <pre><code class="language-python">from tkinter import IntVar, Label, Radiobutton, Tk
 
 raiz = Tk()
@@ -1071,9 +1057,7 @@ Radiobutton(raiz, text=&quot;Masculino&quot;, variable=opcion, value=2,
 
 raiz.mainloop()
 </code></pre>
-
 <p>Modifiquemos el código para ver dichos valores en la propia interfaz:</p>
-
 <pre><code class="language-python">from tkinter import IntVar, Label, Radiobutton, Tk
 
 raiz = Tk()
@@ -1114,7 +1098,6 @@ raiz.mainloop()
 
 
 
-
 <figure>
 
 
@@ -1131,9 +1114,7 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Incorporar un botón adicional que contemple otros géneros es sencillo:</p>
-
 <pre><code class="language-python">from tkinter import IntVar, Label, Radiobutton, Tk
 
 raiz = Tk()
@@ -1178,7 +1159,6 @@ raiz.mainloop()
 
 
 
-
 <figure>
 
 
@@ -1195,10 +1175,8 @@ raiz.mainloop()
 
 </figure>
 
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/50/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/50/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -1249,7 +1227,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1297,7 +1275,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1369,7 +1347,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

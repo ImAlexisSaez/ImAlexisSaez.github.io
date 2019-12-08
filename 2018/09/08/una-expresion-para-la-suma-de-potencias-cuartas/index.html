@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/08/una-expresion-para-la-suma-de-potencias-cuartas/featured_hufe9a2692ad8bab12e2cdb89e73cd799d_146835_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía disponible en <a href="https://unsplash.com/" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía disponible en <a href="https://unsplash.com/">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,118 +574,85 @@
 
     <div class="article-style">
       <p><strong>Problema 7:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
-
-<p><span  class="math">\[
+<p>$$
 1^4+2^4+\cdots+n^4=\dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Vaya por delante que estamos ante uno de esos problemas que rápidamente se ganan el apelativo de tediosos, no tanto por su dificultad, sino por el elevado número de operaciones algebraicas que debemos llevar a cabo durante el proceso de su resolución.</p>
-
 <p>Cuando en una propiedad a verificar aparecen involucrados polinomios de grado considerable, la segunda parte del <em>principio de inducción matemática</em> conlleva el desarrollo de múltiples binomios de la forma $(n+1)^m$, con $m\in\mathbb{N}$. Para reducir un tanto el tedio, siempre es aconsejable que, en primer lugar, factoricemos los mencionados polinomios.</p>
-
 <p>Como nota curiosa, consultados diferentes recursos didácticos, la fórmula para la suma de las potencias cuartas de los $n$ primeros números naturales suele venir dada por</p>
-
-<p><span  class="math">\[
+<p>$$
 1^4 + 2^4 + \cdots + n^4=\dfrac{6n^5+15n^4+10n^3-n}{30},
-\]</span></p>
-
+$$</p>
 <p>hecho que nos puede llevar a sospechar que la proporcionada en el enunciado del presente problema ya está completamente factorizada.</p>
-
 <p>No obstante, como por naturaleza hemos de ser recelosos, utilicemos el <em>Teorema de la raíz racional</em> para investigar si podemos escribir el polinomio $6n^3 + 9n^2 + n - 1$ de una manera que nos resulte más cómoda de cara a futuras operaciones con él. Recordemos que, dada una ecuación polinómica con coeficientes enteros</p>
-
-<p><span  class="math">\[
+<p>$$
 a_mn^m + a_{m-1}n^{m-1} + \cdots + a_0=0,
-\]</span></p>
-
+$$</p>
 <p>si $a_0$ y $a_m$ son enteros distintos de cero, entonces las posibles soluciones que son del tipo $n = p/q$ satisfacen:</p>
-
 <ul>
 <li>$p$ es divisor de $a_0$.</li>
 <li>$q$ es divisor de $a_m$.</li>
 <li>$p$ y $q$ son primos entre sí.</li>
 </ul>
-
 <p>En nuestro problema, el conjunto de candidatos para $p$ es $\{\pm1\}$, mientras que para $q$ es $\{\pm1,\pm2,\pm3,\pm6\}$ y rápidamente podemos comprobar que $n = -1 / 2$ es solución del polinomio dado. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 6n^3 + 9n^2 + n - 1 = (2n + 1)(3n^2 + 3n - 1),
-\]</span></p>
-
+$$</p>
 <p>de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\sum_{k=1}^{n}{k^4} &= 1^4+2^4+\cdots+n^4\\
-&= \dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}\\
-&=\dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}.
+\sum_{k=1}^{n}{k^4} &amp;= 1^4+2^4+\cdots+n^4\<br>
+&amp;= \dfrac{n(n+1)(6n^3+9n^2+n-1)}{30}\<br>
+&amp;=\dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Una vez hemos alcanzado una expresión irreducible para el polinomio que figura en el numerador de la identidad anterior, utilizamos el <em>principio de inducción matemática</em>, dado en el teorema 1.1 (ver abajo), para comprobar dicha igualdad. Enseguida observamos que se satisface de manera trivial para $n=1$, puesto que</p>
-
-<p><span  class="math">\[
+<p>$$
 1 = 1^4 = \dfrac{1\cdot2\cdot3\cdot5}{30}=1.
-\]</span></p>
-
+$$</p>
 <p>A continuación, suponemos verdadera la identidad para un cierto $n\in\mathbb{N}$, con $n\geq 1$, es decir, que efectivamente se verifica que</p>
-
-<p><span  class="math">\[
+<p>$$
 \sum_{k=1}^{n}{k^4} = \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}
-\]</span></p>
-
+$$</p>
 <p>y estudiamos si se satisface para $n+1$. Así pues, el objetivo que tenemos ahora entre manos es comprobar si</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\sum_{k=1}^{n+1}{k^4} &= \dfrac{(n+1)(n+2)(2(n+1)+1)(3(n+1)^2+3(n+1)-1)}{30}\\
-&= \dfrac{(n+1)(n+2)(2n+3)(3n^2+9n+5)}{30}.
+\sum_{k=1}^{n+1}{k^4} &amp;= \dfrac{(n+1)(n+2)(2(n+1)+1)(3(n+1)^2+3(n+1)-1)}{30}\<br>
+&amp;= \dfrac{(n+1)(n+2)(2n+3)(3n^2+9n+5)}{30}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Apliquemos la <em>hipótesis de inducción</em> y llevemos a cabo algunas operaciones algebraicas elementales, de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\sum_{k=1}^{n+1}{k^4} &= (n+1)^4 + \sum_{k=1}^{n}{k^4}\\
-&= (n+1)^4 + \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}\\
-&= \dfrac{30(n+1)^4 + n(n+1)(2n+1)(3n^2+3n-1)}{30}\\
-&= \dfrac{(n+1)(30(n+1)^3+n(2n+1)(3n^2+3n-1))}{30}.
+\sum_{k=1}^{n+1}{k^4} &amp;= (n+1)^4 + \sum_{k=1}^{n}{k^4}\<br>
+&amp;= (n+1)^4 + \dfrac{n(n+1)(2n+1)(3n^2+3n-1)}{30}\<br>
+&amp;= \dfrac{30(n+1)^4 + n(n+1)(2n+1)(3n^2+3n-1)}{30}\<br>
+&amp;= \dfrac{(n+1)(30(n+1)^3+n(2n+1)(3n^2+3n-1))}{30}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Por tanto, el resultado quedaría probado siempre y cuando fuesen equivalentes las expresiones de los polinomios $(n+2)(2n+3)(3n^2+9n+5)$ y $30(n+1)^3 + n(2n+1)(3n^2+3n-1)$. Efectivamente, si desarrollamos</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(n+2)(2n+3) &= 2n^2+3n+4n+6 = 2n^2+7n+6,\\
-(2n^2+7n+6)(3n^2+9n+5) &= 6n^4+39n^3+91n^2+89n+30,
+(n+2)(2n+3) &amp;= 2n^2+3n+4n+6 = 2n^2+7n+6,\<br>
+(2n^2+7n+6)(3n^2+9n+5) &amp;= 6n^4+39n^3+91n^2+89n+30,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, por otro lado,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-30(n+1)^3 &= 30n^3 + 90n^2 + 90n + 30,\\
-n(2n+1)(3n^2+3n-1) &= 6n^4+9n^3+n^2-n,
+30(n+1)^3 &amp;= 30n^3 + 90n^2 + 90n + 30,\<br>
+n(2n+1)(3n^2+3n-1) &amp;= 6n^4+9n^3+n^2-n,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>de manera que la suma de estas dos últimas ecuaciones asciende a $6n^4 + 39n^3 + 91n^2 + 89n + 30,$ y, por tanto, la identidad se verifica para $n+1$. El <em>principio de inducción matemática</em> nos permite concluir que es cierta para cada $n\in\mathbb{N}$.</p>
-
 <hr>
-
 <p><strong>Teorema 1.1 (Principio de inducción matemática)</strong>: Sea $S$ un conjunto de enteros positivos que tienen las dos propiedades siguientes:</p>
-
 <ul>
 <li>El número 1 pertenece al conjunto $S$.</li>
 <li>Si un entero $k$ pertenece a $S$, también $k+1$ pertenece a S.</li>
 </ul>
-
 <p>Entonces todo entero positivo pertenece al conjunto $S$.</p>
-
 <hr>
 
     </div>
@@ -951,7 +925,7 @@ n(2n+1)(3n^2+3n-1) &= 6n^4+9n^3+n^2-n,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1018,7 +992,7 @@ n(2n+1)(3n^2+3n-1) &= 6n^4+9n^3+n^2-n,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1034,7 +1008,7 @@ n(2n+1)(3n^2+3n-1) &= 6n^4+9n^3+n^2-n,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

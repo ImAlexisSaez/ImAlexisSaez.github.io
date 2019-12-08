@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales Una función es un conjunto de líneas de código agrupadas, que funcionan como una unidad realizando una tarea específica. Puede devolver valores, tener parámetros o argumentos y recibe el nombre de método cuando está definida dentro de una clase.
 En Python existen funciones predifinidas, como por ejemplo print(). Su principal utilidad es la reutilización de código y su sintaxis es:
-def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutamos (o llamamos) una función tecleando nombre_función(parámetros).">
+def nombre(parámetros):instrucciones de la funciónreturn(opcional) Ejecutamos (o llamamos) una función tecleando nombre_función(parámetros).">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb05-funciones-i/">
@@ -127,7 +127,7 @@ def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutam
   <meta property="og:title" content="5. Funciones I | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Una función es un conjunto de líneas de código agrupadas, que funcionan como una unidad realizando una tarea específica. Puede devolver valores, tener parámetros o argumentos y recibe el nombre de método cuando está definida dentro de una clase.
 En Python existen funciones predifinidas, como por ejemplo print(). Su principal utilidad es la reutilización de código y su sintaxis es:
-def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutamos (o llamamos) una función tecleando nombre_función(parámetros)."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+def nombre(parámetros):instrucciones de la funciónreturn(opcional) Ejecutamos (o llamamos) una función tecleando nombre_función(parámetros)."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutam
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutam
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutam
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,45 +755,30 @@ def nombre(parámetros): instrucciones de la función return(opcional)  Ejecutam
           <h1>5. Funciones I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/VY448UWAQ_0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Una <strong>función</strong> es un conjunto de líneas de código agrupadas, que funcionan como una unidad realizando una tarea específica. Puede devolver valores, tener parámetros o argumentos y recibe el nombre de <strong>método</strong> cuando está definida dentro de una clase.</p>
-
 <p>En <em>Python</em> existen funciones predifinidas, como por ejemplo <code>print()</code>. Su principal utilidad es la reutilización de código y su sintaxis es:</p>
-
 <pre><code class="language-python">def nombre(parámetros):
     instrucciones de la función
     return(opcional)
 </code></pre>
-
 <p>Ejecutamos (o llamamos) una función tecleando <code>nombre_función(parámetros)</code>.</p>
-
 <p>A continuación, dejamos de lado el IDLE de <em>Sublime Text 3</em> y pasamos a compilar directamente ficheros desde el propio editor. Para ello, desplegamos el menú <code>Tools</code> y en el apartado <code>Build System</code> escogemos la opción <code>Python</code>. Acto seguido, creamos el fichero <code>funciones.py</code>, que contendrá la instrucción</p>
-
 <pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
 </code></pre>
-
 <p>y utilizamos la combinación de teclas <code>ctrl + b</code> para compilar. En la parte inferior de la ventana aparecerá el resultado de la ejecución y el tiempo invertido.</p>
-
 <p>Ampliemos el anterior fichero a</p>
-
 <pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
 print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
 print(&quot;Poco a poco iremos avanzando.&quot;)
 </code></pre>
-
 <p>e imaginemos que necesitamos que las anteriores tres líneas se impriman cinco veces. Podemos, simplemente, copiar y pegar el anterior bloque de código reiteradamente:</p>
-
 <pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
 print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
 print(&quot;Poco a poco iremos avanzando.&quot;)
@@ -810,36 +799,28 @@ print(&quot;Estamos aprendiendo Python.&quot;)
 print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
 print(&quot;Poco a poco iremos avanzando.&quot;)
 </code></pre>
-
 <p>Las funciones nos permiten reutilizar código para, precisamente, evitar que actuemos como arriba. Definamos una función llamada <code>mensaje()</code> y ejecutémosla tantas veces como deseemos.</p>
-
 <pre><code class="language-python">def mensaje():
     print(&quot;Estamos aprendiendo Python.&quot;)
     print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
     print(&quot;Poco a poco iremos avanzando.&quot;)
 </code></pre>
-
 <p>Ahora, la tarea que buscábamos realizar quedaría como:</p>
-
 <pre><code class="language-python">mensaje()
 mensaje()
 mensaje()
 mensaje()
 mensaje()
 </code></pre>
-
 <p>Entre distintas llamadas a una función puede haber cualquier otro tipo de instrucción:</p>
-
 <pre><code class="language-python">mensaje()
 
 print(&quot;Ejecutando código fuera de función&quot;)
 
 mensaje()
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/05/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/05/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -890,7 +871,7 @@ mensaje()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -938,7 +919,7 @@ mensaje()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1010,7 +991,7 @@ mensaje()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -477,7 +484,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    1 min de lectura
+    2 min de lectura
   </span>
   
 
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/09/11/probando-una-sencilla-desigualdad-por-induccion/featured_hubed79c381a0aedca08e64178cbae85fa_365620_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@daniel_von_appen" target="_blank">Daniel von Appen</a>, disponible en <a href="https://unsplash.com/photos/KqKruA8nMdE" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@daniel_von_appen">Daniel von Appen</a>, disponible en <a href="https://unsplash.com/photos/KqKruA8nMdE">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,55 +574,39 @@
 
     <div class="article-style">
       <p><strong>Problema 8:</strong> Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,</p>
-
-<p><span  class="math">\[
-n<2^n.
-\]</span></p>
-
+<p>$$
+n&lt;2^n.
+$$</p>
 <hr>
-
 <p>Hagamos uso del <em>principio de inducción matemática</em>, dado en el teorema 1.1 (ver abajo), para demostrar la desigualdad planteada en el enunciado del problema. Enseguida apreciamos que esta se cumple de forma trivial para $n=1$, ya que</p>
-
-<p><span  class="math">\[
-1 < 2^1 = 2.
-\]</span></p>
-
+<p>$$
+1 &lt; 2^1 = 2.
+$$</p>
 <p>Ahora, asumimos cierta la desigualdad para un $n\in\mathbb{N}$ dado, con $n\geq 1$, es decir, que efectivamente se cumple que</p>
-
-<p><span  class="math">\[
-n < 2^n,
-\]</span></p>
-
+<p>$$
+n &lt; 2^n,
+$$</p>
 <p>y estudiamos si se verifica asimismo para $n+1$. Así pues, el objetivo pasa ahora por demostrar que se satisface la siguiente desigualdad</p>
-
-<p><span  class="math">\[
-n+1 < 2^{n+1}.
-\]</span></p>
-
+<p>$$
+n+1 &lt; 2^{n+1}.
+$$</p>
 <p>Apoyándonos en que $n+1\leq n+n = 2n$, para cada $n\in\mathbb{N}$, (siendo una desigualdad estricta cuando $n&gt;1$) y en la <em>hipótesis de inducción</em>, tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-n+1 &\leq n+n\\
-&= 2n\\
-&< 2\cdot 2^n\\
-&= 2^{n+1},
+n+1 &amp;\leq n+n\<br>
+&amp;= 2n\<br>
+&amp;&lt; 2\cdot 2^n\<br>
+&amp;= 2^{n+1},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir, la desigualdad se verifica para $n+1$. El <em>principio de inducción matemática</em> nos permite concluir que es cierta para cada $n\in\mathbb{N}$.</p>
-
 <hr>
-
 <p><strong>Teorema 1.1 (Principio de inducción matemática)</strong>: Sea $S$ un conjunto de enteros positivos que tienen las dos propiedades siguientes:</p>
-
 <ul>
 <li>El número 1 pertenece al conjunto $S$.</li>
 <li>Si un entero $k$ pertenece a $S$, también $k+1$ pertenece a S.</li>
 </ul>
-
 <p>Entonces todo entero positivo pertenece al conjunto $S$.</p>
-
 <hr>
 
     </div>
@@ -888,7 +879,7 @@ n+1 &\leq n+n\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -955,7 +946,7 @@ n+1 &\leq n+n\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -971,7 +962,7 @@ n+1 &\leq n+n\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

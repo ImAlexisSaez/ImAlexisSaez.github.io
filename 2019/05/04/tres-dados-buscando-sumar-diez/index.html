@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/05/04/tres-dados-buscando-sumar-diez/featured_hu7c4c32f02594b35414688c8706eefd15_42146_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@fabulu75" target="_blank">Fabrice Villard</a>, disponible en <a href="https://unsplash.com/photos/UqGeqvrwBKg" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@fabulu75">Fabrice Villard</a>, disponible en <a href="https://unsplash.com/photos/UqGeqvrwBKg">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,51 +574,34 @@
 
     <div class="article-style">
       <p><strong>Problema 74:</strong> En el lanzamiento simultáneo de tres dados distintos, ¿de cuántas maneras la suma de las puntuaciones puede ascender a diez?</p>
-
 <hr>
-
 <p>Si asumimos que trabajamos con tres dados estándar y representamos por $x_i$ la puntuación obtenida en el lanzamiento del $i$-ésimo dado, con $1\leq i\leq 3$, buscamos encontrar el número de soluciones enteras de la ecuación $x_1+x_2+x_3 = 10$, donde $1\leq x_i\leq 6$, para $1\leq i\leq 3$.</p>
-
 <p>Seguiremos, a continuación, el mismo esquema que figura en el <a href="/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/">ejercicio anterior</a>, esto es, utilizaremos el <em>Principio de complementación</em>, de forma que calcularemos el número de soluciones enteras no negativas (que satisfagan las restricciones de mayor o igual para las variables involucradas) de la ecuación propuesta y, después, haciendo uso del <em>Principio de inclusión-exclusión</em>, descontaremos aquellas que no satisfagan las restricciones impuestas.</p>
-
 <p>Así pues, empecemos planteando la ecuación $x_1+x_2+x_3=10$, con $x_i\geq 1$ para todo $1\leq i\leq 3$. Pensando en términos de urnas y bolas, hemos de almacenar una bola en cada urna y pasar a encontrar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3=7$, ahora con $x_i\geq 0$, para $1\leq i\leq 3$. Aplicando la técnica de <em>barras y estrellas</em>, como en ejercicios previos, sabemos que dicho número equivale al total de permutaciones con repetición de nueve elementos, donde uno de ellos se repite dos veces, mientras que el otro lo hace en siete ocasiones, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 PR_{9}^{2,7} = CR_{3,7} = \dbinom{9}{7} = \dfrac{9\cdot8}{2!} = 36.
-\]</span></p>
-
+$$</p>
 <p>Definamos, acto seguido, los conjuntos $A_i = \{x_i\geq 7\}$, para $1\leq i\leq 3$, por lo que estamos interesados en hallar el valor de $card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3})$. Por el <em>Principio de complementación</em>,</p>
-
-<p><span  class="math">\[
+<p>$$
 card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}) = card(E) - card(A_1\cup A_2\cup A_3),
-\]</span></p>
-
-<p>donde por $E$ representamos al <em>conjunto total</em>, que en este contexto se refiere al total de soluciones enteras no negativas de la ecuación planteada y cuyo cardinal hemos obtenido en párrafos anteriores, $PR_{9}^{2,7} = 36$. Aplicando ahora el <em>Principio de inclusión-exclusión</em>,</p>
-
-<p><span  class="math">\[
-card\left( \bigcup_{i = 1}^{3}{A_{i}} \right) = \sum_{i = 1}^{3}{card(A_{i})} - \sum_{1 \leq i < j \leq 3}{card(A_{i} \cap A_{j})} + card\left( \bigcap_{i = 1}^{3}{A_{i}} \right).
-\]</span></p>
-
+$$</p>
+<p>donde por $E$ representamos al <em>conjunto total</em>, que en este contexto se refiere al total de soluciones enteras no negativas de la ecuación planteada y cuyo cardinal hemos obtenido en párrafos anteriores, $PR_{9}^{2,7} = 36$. Aplicando ahora el *Principio de inclusión-exclusión*,</p>
+<p>$$
+card\left( \bigcup_{i = 1}^{3}{A_{i}} \right) = \sum_{i = 1}^{3}{card(A_{i})} - \sum_{1 \leq i &lt; j \leq 3}{card(A_{i} \cap A_{j})} + card\left( \bigcap_{i = 1}^{3}{A_{i}} \right).
+$$</p>
 <p>Estudiemos ahora el conjunto $A_1 = \{x_1\geq 7\}$ y averigüemos $card(A_1)$. La situación requiere calcular el número de soluciones enteras no negativas para la ecuación $x_1+x_2+x_3=10$, con $x_1\geq 7$, $x_i\geq 1$ para $2\leq i\leq 3$. Pensando en términos de urnas y bolas, hemos de almacenar siete bolas en la primera urna, una en la segunda, una en la tercera y pasar a encontrar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3=1$, ahora con $x_i\geq 0$, para $1\leq i\leq 3$. Aplicando, de manera análoga a como lo hicimos arriba, la técnica de <em>barras y estrellas</em>, sabemos que dicho número equivale al total de permutaciones con repetición de tres elementos, donde uno de ellos se repite dos veces, mientras que el otro lo hace en una ocasión, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 PR_{3}^{1,2} = CR_{3,1} = \dbinom{3}{1} = 3.
-\]</span></p>
-
+$$</p>
 <p>Por simetría, $card(A_1)=card(A_2)=card(A_3)=3$, de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 \sum_{i=1}^{3}{card(A_i)} = 9.
-\]</span></p>
-
+$$</p>
 <p>Por lo que respecta al resto de casos, cuando intersecamos dos o más conjuntos las restricciones imponen una suma mayor o igual que $14$, por lo que es imposible que se satisfaga en enteros no negativos la ecuación $x_1+x_2+x_3=10$, esto es, los cardinales asociados a las correspondientes intersecciones serán nulos.</p>
-
 <p>Por tanto, recapitulando,</p>
-
-<p><span  class="math">\[
+<p>$$
 card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}) = 36-9 = 27
-\]</span></p>
-
+$$</p>
 <p>son las maneras en las que, en el lanzamiento simultáneo de tres dados distintos, la suma de las puntuaciones asciende a diez.</p>
 
     </div>
@@ -886,7 +876,7 @@ card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}) = 36-9 = 27
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -953,7 +943,7 @@ card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}) = 36-9 = 27
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -969,7 +959,7 @@ card(\overline{A_1} \cap \overline{A_2} \cap \overline{A_3}) = 36-9 = 27
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

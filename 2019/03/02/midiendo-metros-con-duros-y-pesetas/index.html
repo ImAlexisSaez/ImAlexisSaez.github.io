@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/03/02/midiendo-metros-con-duros-y-pesetas/featured_hue0925a3b1537912ef36bd91ca299f207_103640_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@kydroon" target="_blank">Kurt Cotoaga</a>, disponible en <a href="https://unsplash.com/photos/cqbLg3lZEpk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@kydroon">Kurt Cotoaga</a>, disponible en <a href="https://unsplash.com/photos/cqbLg3lZEpk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,93 +574,72 @@
 
     <div class="article-style">
       <p><strong>Problema 56:</strong> El diámetro de una moneda de $5$ pesetas es de $37$ mm y el de una peseta es de $23$ mm, ¿de cuántas maneras puede obtenerse la longitud de un metro alineando monedas de $5$ pesetas y de pesetas?</p>
-
 <hr>
-
 <p>Sea $x$ el número de monedas de $5$ pesetas e $y$ la cifra total de monedas de $1$ peseta. Expresando todas las cantidades involucradas en el enunciado del ejercicio en milímetros, para así trabajar con números enteros, hemos de resolver la ecuación diofántica</p>
-
-<p><span  class="math">\[
+<p>$$
 37x+23y=1000,
-\]</span></p>
-
+$$</p>
 <p>para encontrar el número de maneras en las que puede obtenerse un metro alineando monedas de los dos tipos indicados.</p>
-
 <p>Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 1000x^{\prime},\\
-y &= 1000y^{\prime}
+x &amp;= 1000x^{\prime},\<br>
+y &amp;= 1000y^{\prime}
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el <em>Algoritmo de Euclides</em>, como</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-37 &= 23\cdot1 + 14,\\
-23 &= 14\cdot1 +  9,\\
-14 &=  9\cdot1 +  5,\\
- 9 &=  5\cdot1 +  4,\\
- 5 &=  4\cdot1 +  1,\\
- 4 &=  1\cdot4,
+37 &amp;= 23\cdot1 + 14,\<br>
+23 &amp;= 14\cdot1 +  9,\<br>
+14 &amp;=  9\cdot1 +  5,\<br>
+9 &amp;=  5\cdot1 +  4,\<br>
+5 &amp;=  4\cdot1 +  1,\<br>
+4 &amp;=  1\cdot4,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-1 &= 5 - 4\cdot1\\
-&= 5 - 1\cdot(9\cdot1 - 5) \\
-&= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\
-&= 2\cdot14 - 3\cdot9 \\
-&= 2\cdot14 - 3(23\cdot1 - 14) \\
-&= (-3)\cdot23 + 5\cdot14 \\
-&= (-3)\cdot23 + 5(37 - 23\cdot1) \\
-&= 5\cdot37 - 8\cdot23,
+1 &amp;= 5 - 4\cdot1\<br>
+&amp;= 5 - 1\cdot(9\cdot1 - 5) \<br>
+&amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \<br>
+&amp;= 2\cdot14 - 3\cdot9 \<br>
+&amp;= 2\cdot14 - 3(23\cdot1 - 14) \<br>
+&amp;= (-3)\cdot23 + 5\cdot14 \<br>
+&amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \<br>
+&amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x_0 &= 1000x^{\prime}_0 = 5000,\\
-y_0 &= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;= 1000x^{\prime}_0 = 5000,\<br>
+y_0 &amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 5000 + 23t,\\
-y &= (-8000) - 37t,
+x &amp;= 5000 + 23t,\<br>
+y &amp;= (-8000) - 37t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,</p>
-
-<p><span  class="math">\[
+<p>$$
 5000 + 23t\geq 0\qquad\text{y}\qquad (-8000) - 37t\geq 0,
-\]</span></p>
-
+$$</p>
 <p>esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 -\dfrac{5000}{23}\leq t\leq -\dfrac{8000}{37},
-\]</span></p>
-
+$$</p>
 <p>es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 5000 + 23\cdot(-217) = 9,\\ 
-y &= (-8000) - 37\cdot(-217) = 29,
+x &amp;= 5000 + 23\cdot(-217) = 9,\ 
+y &amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.</p>
 
     </div>
@@ -926,7 +912,7 @@ y &= (-8000) - 37\cdot(-217) = 29,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -993,7 +979,7 @@ y &= (-8000) - 37\cdot(-217) = 29,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1009,7 +995,7 @@ y &= (-8000) - 37\cdot(-217) = 29,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

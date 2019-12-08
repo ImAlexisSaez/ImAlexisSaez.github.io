@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/11/17/buscando-la-ultima-cifra-de-una-torre-de-potencias/featured_hu1d213e08f822561d1d0ea2aa3004300e_234731_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@afs_snapshots" target="_blank">Angel Santos</a>, disponible en <a href="https://unsplash.com/photos/LcCpvQhjJSM" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@afs_snapshots">Angel Santos</a>, disponible en <a href="https://unsplash.com/photos/LcCpvQhjJSM">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,54 +574,38 @@
 
     <div class="article-style">
       <p><strong>Problema 26:</strong> Demuestra que la última cifra decimal de</p>
-
-<p><span  class="math">\[
+<p>$$
 2^{2^n} + 1
-\]</span></p>
-
+$$</p>
 <p>es $7$, para cada $n\in\mathbb{N}$, con $n&gt;1$.</p>
-
 <hr>
-
 <p>Para hallar la cifra de las unidades del número</p>
-
-<p><span  class="math">\[
+<p>$$
 2^{2^n} + 1,
-\]</span></p>
-
+$$</p>
 <p>un posible enfoque es estudiar el valor de la congruencia de dicho número módulo $10$. Ahora bien, como $10$ no es un número primo y $mcd(2, 10)=2$, no estamos en condiciones de aplicar ninguno de los resultados teóricos asociados a <em>Fermat</em>. Analicemos, pues, el comportamiento del valor de las congruencias de las potencias de $2$ módulo $10$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-2^1&\equiv 2\pmod{10},\\
-2^2&\equiv 4\pmod{10},\\
-2^3&\equiv 8\pmod{10},\\
-2^4&\equiv 6\pmod{10}.
+2^1&amp;\equiv 2\pmod{10},\<br>
+2^2&amp;\equiv 4\pmod{10},\<br>
+2^3&amp;\equiv 8\pmod{10},\<br>
+2^4&amp;\equiv 6\pmod{10}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>A la vista de este último valor alcanzado, y teniendo en cuenta el resultado al que pretendemos arribar, bastaría comprobar que, para cada número natural, con $n&gt;1$, $2^n$ es múltiplo de $4$.</p>
-
 <p>Por inducción, para $n=2$, $2^2=4$ que, efectivamente es múltiplo de $4$. Supongamos ahora cierta la afirmación para un número natural dado $n$, con $n\geq 2$, esto es, que existe un número entero $k$ de manera que $2^n=4k$. Sin embargo, $2^{n+1} = 2\cdot 2^n = 2\cdot(4k) = 4\cdot 2k$, es decir, la propiedad asimismo se satisface para $n+1$. El <em>Principio de inducción matemática</em> nos permite concluir que se verifica para cada número natural $n$, con $n\geq 2$.</p>
-
 <p>Por tanto, al ser $2^n\equiv 0\pmod{4}$, entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 2^{2^n}\equiv 6\pmod{10},
-\]</span></p>
-
+$$</p>
 <p>hecho que se traduce en que</p>
-
-<p><span  class="math">\[
+<p>$$
 ( 2^{2^n} + 1 )\equiv 7\pmod{10}
-\]</span></p>
-
+$$</p>
 <p>o, equivalentemente, que, dadas las condiciones impuestas en el enunciado del ejercicio, la cifra de las unidades del número</p>
-
-<p><span  class="math">\[
+<p>$$
 2^{2^n} + 1
-\]</span></p>
-
+$$</p>
 <p>es $7$.</p>
 
     </div>
@@ -887,7 +878,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -954,7 +945,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -970,7 +961,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

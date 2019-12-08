@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/16/mezclando-determinantes-y-numeros-combinatorios/featured_hu0cfed723bbfd2c852c13d574051ad0a6_134887_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dsmacinnes" target="_blank">Danielle MacInnes</a>, disponible en <a href="https://unsplash.com/photos/IuLgi9PWETU" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@dsmacinnes">Danielle MacInnes</a>, disponible en <a href="https://unsplash.com/photos/IuLgi9PWETU">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,246 +574,185 @@
 
     <div class="article-style">
       <p>En esta entrada abordaremos un precioso problema de determinantes, propuesto durante la convocatoria de oposiciones de Aragón de este mismo año 2018, para la especialidad de matemáticas.</p>
-
 <hr>
-
 <p><strong>Problema 2:</strong> Sea $k$ un número natural no nulo y sea $f$ la función real de variable real dada por:</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & x\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & x^2\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & x^3\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\ 
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & x^k\\ 
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & x^{k+1}
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; x\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; x^2\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; x^3\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\ 
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; x^k\ 
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; x^{k+1}
 \end{vmatrix}.
-\]</span></p>
-
+$$</p>
 <p>a) Calcular $f(x + 1) - f(x)$.</p>
-
 <p>b) Expresar la suma $1^k + 2^k + \cdots + n^k$ mediante esta función.</p>
-
 <hr>
-
 <p>En lugar de abordar directamente la resolución del primer apartado, detengámonos por un instante a analizar la expresión del determinante dado por la función $f(x)$. Los números combinatorios que aparecen y, sobre todo, la forma en que lo hacen, seguramente hayan captado nuestra atención. Resulta, cuanto menos, familiar ese patrón, ¿verdad? Parte de él es el que aparece en el famoso <em>triángulo de Pascal</em>, si expresamos sus componentes utilizando números combinatorios.</p>
-
 <p>Ahora bien, de manera automática, y supongo que por deformación matemática, cuando viene a nuestra cabeza el <em>triángulo de Pascal</em>, enseguida pensamos en el <em>teorema del binomio</em>, que recordemos afirma que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(x+y)^n &= \sum_{k=0}^{n}{\binom{n}{k}x^{n-k}y^k}\\
-&= \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y+\cdots+\binom{n}{n-1}xy^{n-1}+\binom{n}{n}y^n.
+(x+y)^n &amp;= \sum_{k=0}^{n}{\binom{n}{k}x^{n-k}y^k}\<br>
+&amp;= \binom{n}{0}x^n + \binom{n}{1}x^{n-1}y+\cdots+\binom{n}{n-1}xy^{n-1}+\binom{n}{n}y^n.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Merece la pena explorar la idea de una posible relación entre el <em>teorema del binomio</em> y la expresión de $f(x)$. Para empezar, en la última columna del determinante encontramos las potencias de $x$, pero no observamos la existencia de más potencias en el resto de los elementos de dicho determinante. Este hecho nos invita a pensar que quizá sea conveniente que particularmente estudiemos el desarrollo del binomio $(1+x)^n$, dado el valor de las potencias de uno. Además, si ahora echamos un vistazo rápido al enunciado del primer apartado, aparece un $(1+x)$, ¡puede que estemos sobre la pista de la senda correcta!</p>
-
 <p>Desarrollemos $(1+x)^n$, para algunos valores concretos de $n$, utilizando para ello el <em>teorema del binomio</em>:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(1+x)^1 &= \dbinom{1}{0} + \dbinom{1}{1}x,\\
-(1+x)^2 &= \dbinom{2}{0} + \dbinom{2}{1}x + \dbinom{2}{2}x^2,\\
-(1+x)^3 &= \dbinom{3}{0} + \dbinom{3}{1}x + \dbinom{3}{2}x^2 + \dbinom{3}{3}x^3,\\ 
-(1+x)^4 &= \dbinom{4}{0} + \dbinom{4}{1}x + \dbinom{4}{2}x^2 + \dbinom{4}{3}x^3 + \dbinom{4}{4}x^4.
+(1+x)^1 &amp;= \dbinom{1}{0} + \dbinom{1}{1}x,\<br>
+(1+x)^2 &amp;= \dbinom{2}{0} + \dbinom{2}{1}x + \dbinom{2}{2}x^2,\<br>
+(1+x)^3 &amp;= \dbinom{3}{0} + \dbinom{3}{1}x + \dbinom{3}{2}x^2 + \dbinom{3}{3}x^3,\ 
+(1+x)^4 &amp;= \dbinom{4}{0} + \dbinom{4}{1}x + \dbinom{4}{2}x^2 + \dbinom{4}{3}x^3 + \dbinom{4}{4}x^4.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Para empezar, enseguida apreciamos que las potencias de $x$ vienen siempre acompañadas por un número combinatorio. No obstante, como dado $n\in\mathbb{N}$, tenemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 \binom{n}{n}=1,
-\]</span></p>
-
+$$</p>
 <p>podemos reescribir la última columna del determinante dado por $f(x)$ de la siguiente manera:</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & \binom{1}{1}x^{\phantom{1}}\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & \binom{2}{2}x^2\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & \binom{3}{3}x^3\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & \binom{k}{k}x^k\\
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & \binom{k+1}{k+1}x^{k+1}
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; \binom{1}{1}x^{\phantom{1}}\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; \binom{2}{2}x^2\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; \binom{3}{3}x^3\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; \binom{k}{k}x^k\<br>
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; \binom{k+1}{k+1}x^{k+1}
 \end{vmatrix}
-\]</span></p>
-
+$$</p>
 <p>Ahora, centremos nuestra atención en la primera fila del determinante. Si sumamos el elemento que figura en la primera columna al que reside en la última, tendríamos</p>
-
-<p><span  class="math">\[
+<p>$$
 \binom{1}{0} + \binom{1}{1}x = (1+x)^1 = 1+x.
-\]</span></p>
-
+$$</p>
 <p>Este hecho nos sugiere que llevemos a cabo la transformación sobre el determinante que consiste en sustituir la última columna por una combinación lineal de esta con la primera columna, que sabemos, por las propiedades de los determinantes, que no altera el valor de $f(x)$. Utilizando la notación habitual de operaciones sobre determinantes, estaríamos proponiendo llevar a cabo la transformación</p>
-
-<p><span  class="math">\[
-C^{\prime}_{k+1}\rightarrow C_1 + C_{k+1}.
-\]</span></p>
-
+<p>$$
+C^{\prime}<em>{k+1}\rightarrow C_1 + C</em>{k+1}.
+$$</p>
 <p>Pasemos, a continuación, a estudiar la segunda fila determinante. Con la idea del párrafo anterior en mente, ¿podemos llegar a conseguir el desarrollo del binomio $(1+x)^2$? En realidad, tenemos casi todos los elementos de dicho desarrollo, a falta de una $x$ que tendría que estar multiplicando al elemento que aparece en la segunda columna. No obstante, recordemos aquí que $x$ no es más que un número real, por lo que podríamos multiplicar toda la segunda columna por $x$ y sumarla, junto con la primera columna, a la última. Es decir, la idea es llevar a cabo la transformación</p>
-
-<p><span  class="math">\[
-C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + C_{k+1},
-\]</span></p>
-
+<p>$$
+C^{\prime}<em>{k+1}\rightarrow C_1 + xC_2 + C</em>{k+1},
+$$</p>
 <p>que permitiría que el elemento de la última columna fuese precisamente $(1+x)^2$.</p>
-
 <p>Empezamos a atisbar un patrón aquí, ¿verdad? Analizando la tercera fila, llegaríamos a proponer la transformación</p>
-
-<p><span  class="math">\[
-C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + C_{k+1},
-\]</span></p>
-
+<p>$$
+C^{\prime}<em>{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + C</em>{k+1},
+$$</p>
 <p>y, siguiendo con el razonamiento, la transformación que al final llevaremos a cabo sobre el determinante será la siguiente:</p>
-
-<p><span  class="math">\[
-C^{\prime}_{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + \cdots + x^{k-1}C_k + C_{k+1},
-\]</span></p>
-
+<p>$$
+C^{\prime}<em>{k+1}\rightarrow C_1 + xC_2 + x^2C_3 + \cdots + x^{k-1}C_k + C</em>{k+1},
+$$</p>
 <p>que hace que los elementos de la última columna sean binomios de la forma $(1+x)^n$, con $0\leq n\leq k+1$.</p>
-
 <p>¡Cuidado! No es cierta la conclusión escrita arriba o, al menos, no lo es para todos los valores indicados de $n$. Si nos fijamos con atención, se cumple para $n=1$, para $n=2$, y así sucesivamente hasta llegar a $n=k$, ¡pero nos faltaría, para $n=k+1$, un término del desarrollo del binomio! Si nos damos cuenta, no aparece en el determinante</p>
-
-<p><span  class="math">\[
+<p>$$
 \binom{k+1}{k}x^k,
-\]</span></p>
-
+$$</p>
 <p>pero como esa expresión no deja de ser un número, podemos sumarlo y restarlo en esa posición para conseguir así el desarrollo del binomio $(1+x)^{k+1}$, quedando entonces la expresión de $f(x)$ como sigue:</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & 1+x\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & (1+x)^2\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & (1+x)^3\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & (1+x)^k\\
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & (1+x)^{k+1} - \binom{k+1}{k}x^k
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; 1+x\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; (1+x)^2\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; (1+x)^3\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; (1+x)^k\<br>
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; (1+x)^{k+1} - \binom{k+1}{k}x^k
 \end{vmatrix}
-\]</span></p>
-
+$$</p>
 <p>Esa resta que aparece en el último elemento de la diagonal principal nos invita a seguir aplicando propiedades de los determinantes y separar en dos el dado en $f(x)$. Así, podemos escribir</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x) = g(x) + h(x),
-\]</span></p>
-
+$$</p>
 <p>donde</p>
-
-<p><span  class="math">\[
+<p>$$
 g(x) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & 1+x\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & (1+x)^2\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & (1+x)^3\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & (1+x)^k\\
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & (1+x)^{k+1}
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; 1+x\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; (1+x)^2\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; (1+x)^3\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; (1+x)^k\<br>
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; (1+x)^{k+1}
 \end{vmatrix},
-\]</span></p>
-
+$$</p>
 <p>y</p>
-
-<p><span  class="math">\[
+<p>$$
 h(x) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & 0\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & 0\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & 0\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & 0\\
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & - \binom{k+1}{k}x^k
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; 0\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; 0\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; 0\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; 0\<br>
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; - \binom{k+1}{k}x^k
 \end{vmatrix}.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, enseguida nos damos cuenta de que la única diferencia entre $f(x)$ y $g(x)$ radica en que allí donde aparece $x$ en $f(x)$, figura ahora $1+x$ en $g(x)$, lo cual nos permite concluir que $g(x) = f(1+x)$.</p>
-
 <p>Por otro lado, en $h(x)$ tenemos una matriz triangular inferior, cuyo determinante sabemos es igual al producto de los elementos que componen su diagonal principal, es decir,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-h(x) &= -\binom{1}{0}\binom{2}{1}\binom{3}{2}\binom{4}{3}\cdots\binom{k+1}{k}x^k\\
-&=-2!\dfrac{3!}{2!}\dfrac{4!}{3!}\cdots\dfrac{(k+1)!}{k!}x^k\\
-&=-(k+1)!x^k.
+h(x) &amp;= -\binom{1}{0}\binom{2}{1}\binom{3}{2}\binom{4}{3}\cdots\binom{k+1}{k}x^k\<br>
+&amp;=-2!\dfrac{3!}{2!}\dfrac{4!}{3!}\cdots\dfrac{(k+1)!}{k!}x^k\<br>
+&amp;=-(k+1)!x^k.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Así, como</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x) = g(x) + h(x) = f(1+x) - (k+1)!x^k,
-\]</span></p>
-
+$$</p>
 <p>la respuesta para el primer apartado de este problema sería:</p>
-
-<p><span  class="math">\[
+<p>$$
 f(x+1) - f(x) = (k+1)!x^k.
-\]</span></p>
-
+$$</p>
 <p>En el segundo apartado nos piden calcular el valor de la suma</p>
-
-<p><span  class="math">\[
+<p>$$
 1^k + 2^k + \cdots + n^k
-\]</span></p>
-
+$$</p>
 <p>utilizado $f(x)$. Enseguida nos damos cuenta de que aparece $x^k$ en la expresión final del apartado anterior, hecho que nos invita a asignarle el valor $n$ a la variable $x$, quedando entonces la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 f(n+1) - f(n) = (k+1)!n^k.
-\]</span></p>
-
+$$</p>
 <p>Siguiendo esta idea, para conseguir que aparezca $(n-1)^k$, asignaríamos el valor $n-1$ a la variable $x$, obteniendo así la ecuación</p>
-
-<p><span  class="math">\[
+<p>$$
 f(n) - f(n-1) = (k+1)!(n-1)^k.
-\]</span></p>
-
+$$</p>
 <p>Iteramos sucesivamente esta manera de proceder, de forma que al final tenemos el siguiente conjunto de ecuaciones:</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-f(n+1) - f(n) &= (k+1)!n^k,\\
-f(n) - f(n-1) &= (k+1)!(n-1)^k,\\
-f(n-1) - f(n-2) &= (k+1)!(n-2)^k,\\
-\vdots & \\
-f(2) - f(1) &= (k+1)!1^k,
+f(n+1) - f(n) &amp;= (k+1)!n^k,\<br>
+f(n) - f(n-1) &amp;= (k+1)!(n-1)^k,\<br>
+f(n-1) - f(n-2) &amp;= (k+1)!(n-2)^k,\<br>
+\vdots &amp; \<br>
+f(2) - f(1) &amp;= (k+1)!1^k,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y sumando todas ellas, llegamos a que</p>
-
-<p><span  class="math">\[
+<p>$$
 f(n+1) - f(1) = (k+1)!(1^k+2^k+\cdots+n^k).
-\]</span></p>
-
+$$</p>
 <p>Ahora bien,
-<span  class="math">\(
+$$
 f(1) = 
 \begin{vmatrix}
-\binom{1}{0} & 0 & 0 &\ldots & 0 & 1\\
-\binom{2}{0} & \binom{2}{1} & 0 &\ldots & 0 & 1\\
-\binom{3}{0} & \binom{3}{1} & \binom{3}{2} & \ldots & 0 & 1\\
-\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
-\binom{k}{0} & \binom{k}{1} & \binom{k}{2} & \ldots & \binom{k}{k-1} & 1\\
-\binom{k+1}{0} & \binom{k+1}{1} & \binom{k+1}{2} &\ldots & \binom{k+1}{k-1} & 1
+\binom{1}{0} &amp; 0 &amp; 0 &amp;\ldots &amp; 0 &amp; 1\<br>
+\binom{2}{0} &amp; \binom{2}{1} &amp; 0 &amp;\ldots &amp; 0 &amp; 1\<br>
+\binom{3}{0} &amp; \binom{3}{1} &amp; \binom{3}{2} &amp; \ldots &amp; 0 &amp; 1\<br>
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots &amp; \vdots\<br>
+\binom{k}{0} &amp; \binom{k}{1} &amp; \binom{k}{2} &amp; \ldots &amp; \binom{k}{k-1} &amp; 1\<br>
+\binom{k+1}{0} &amp; \binom{k+1}{1} &amp; \binom{k+1}{2} &amp;\ldots &amp; \binom{k+1}{k-1} &amp; 1
 \end{vmatrix},
-\)</span></p>
-
+$$</p>
 <p>y si recordamos que, dado $n\in\mathbb{N}$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \binom{n}{0} = 1,
-\]</span></p>
-
+$$</p>
 <p>resulta que la primera columna es igual a la última, provocando ello que $f(1)=0$ y, finalmente, que</p>
-
-<p><span  class="math">\[
+<p>$$
 1^k + 2^k + \cdots + n^k = \dfrac{f(n+1)}{(k+1)!},
-\]</span></p>
-
+$$</p>
 <p>expresión que da respuesta a la cuestión planteada en el segundo apartado del problema.</p>
 
     </div>
@@ -1075,7 +1021,7 @@ f(1) =
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1142,7 +1088,7 @@ f(1) =
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1158,7 +1104,7 @@ f(1) =
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

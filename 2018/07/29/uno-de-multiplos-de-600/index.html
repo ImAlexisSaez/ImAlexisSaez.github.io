@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/29/uno-de-multiplos-de-600/featured_hu93bdd2e6d0c3989e1ee66d10c35d0a2d_356084_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@pirye" target="_blank">Amelie Ohlrogge</a>, disponible en <a href="https://unsplash.com/photos/uu0cOMPdM2g" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@pirye">Amelie Ohlrogge</a>, disponible en <a href="https://unsplash.com/photos/uu0cOMPdM2g">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,104 +574,73 @@
 
     <div class="article-style">
       <p>En el presente artículo abordaremos en detalle un interesante problema propuesto en la convocatoria de oposiciones de Andalucía, de este mismo año 2018, para la especialidad de matemáticas.</p>
-
 <hr>
-
 <p><strong>Problema 3:</strong> Demuestra que todos los términos de la sucesión $\{a_n\}_{n&gt;2}$ son múltiplos de $600$, siendo</p>
-
-<p><span  class="math">\[
+<p>$$
 a_n = (n^2-1)(n^2+1)(n^4-16)n^2.
-\]</span></p>
-
+$$</p>
 <hr>
-
 <p>Es más que razonable que, en una primera aproximación a la resolución de este problema, estemos tentados a probar la afirmación dada en el enunciado utilizando el <em>principio de inducción matemática</em>. Esta senda nos llevaría a definir, seguramente, $P(n)$ de forma similar a la siguiente: existe $k\in\mathbb{Z}$ tal que si $n&gt;2$, entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 a_n = (n^2-1)(n^2+1)(n^4-16)n^2 = 600k.
-\]</span></p>
-
+$$</p>
 <p>El <em>caso base</em>, $P(3)$ en esta ocasión, comprobamos rápidamente que se satisface, ya que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a_3 &= (3^2-1)(3^2+1)(3^4-16)3^2\\
-&= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\\
-&= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\\
-&= 600\cdot(2\cdot 3\cdot 13),
+a_3 &amp;= (3^2-1)(3^2+1)(3^4-16)3^2\<br>
+&amp;= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\<br>
+&amp;= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\<br>
+&amp;= 600\cdot(2\cdot 3\cdot 13),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y bastaría tomar $k = 2\cdot 3\cdot 13 = 78$ para concluir que $a_3$ es un múltiplo de $600$.</p>
-
 <p>Sin embargo, es posible que nuestro barco escore a la hora de abordar el <em>paso inductivo</em>. Recordemos que ahora hemos de mostrar que si $P(n)$ se cumple, para un $n&gt;2$, entonces asimismo se satisface $P(n+1)$, cuya expresión es</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n+1} = ((n+1)^2-1)((n+1)^2+1)((n+1)^4-16)(n+1)^2.
-\]</span></p>
-
+$$</p>
 <p>A primera vista, es ciertamente complejo utilizar la información disponible en la <em>hipótesis de inducción</em>, $P(n)$, para verificar $P(n+1)$.</p>
-
 <p>En este momento, deberíamos descartar por completo la opción de desarrollar ambas expresiones para compararlas, puesto que entre manos tenemos un producto de cuatro polinomios, donde uno de los cuales es de grado considerable. Es más, no quiero siquiera empezar a imaginar la posible cantidad de errores de cálculo en los que podemos caer desarrollando la expresión de $P(n+1)$. Estos problemas están diseñados para resolverse en un período de tiempo razonable, hecho que nos debe invitar a considerar estrategias de resolución alternativas a la propuesta en primer lugar.</p>
-
 <p>Así pues, a continuación, optaremos por llevar a cabo un enfoque diferente. Si estudiamos con detalle la expresión de $a_n$, enseguida apreciaremos que en ella aparecen un par de términos de la forma $a^2 - b^2$, concretamente $n^2 - 1$ y $n^4 - 16$. Esta situación puede hacernos sospechar que la clave pase por factorizar la expresión de $a_n$, utilizando para ello la identidad notable $a^2 - b^2 = (a+b)(a-b)$. Aplicándola, podemos escribir</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-n^2-1&=(n+1)(n-1),\\
-n^4-16&=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
+n^2-1&amp;=(n+1)(n-1),\<br>
+n^4-16&amp;=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>quedando entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 a_n = (n+1)(n-1)(n^2+1)(n^2+4)(n+2)(n-2)n^2.
-\]</span></p>
-
+$$</p>
 <p>No parece que estemos avanzando en la buena dirección. Sin embargo, hay cuatro términos que habrán captado nuestra atención seguramente: $(n+1)$, $(n-1)$, $(n+2)$ y $(n-2)$. Quizá ayude reescribir $a_n$ de la siguiente manera:</p>
-
-<p><span  class="math">\[
+<p>$$
 a_n = (n-2)(n-1)(n+1)(n+2)(n^2+1)(n^2+4)n^2.
-\]</span></p>
-
+$$</p>
 <p>Nos faltaría una $n$ entre los términos $(n-1)$ y $(n+1)$ para tener en la primera parte de la expresión de $a_n$ cinco números naturales consecutivos, ya que, por hipótesis, $n&gt;2$. No obstante, en realidad sí que tenemos a nuestro alcance dicha $n$, pues podemos escribir el término $n^2=n\cdot n$, y nos quedaría entonces que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_n = (n-2)(n-1)n(n+1)(n+2)n(n^2+1)(n^2+4).
-\]</span></p>
-
+$$</p>
 <p>Esta situación nos invita a escribir $a_n = u\cdot v$, con</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-u&=(n-2)(n-1)n(n+1)(n+2),\\
-v&=n(n^2+1)(n^2+4),
+u&amp;=(n-2)(n-1)n(n+1)(n+2),\<br>
+v&amp;=n(n^2+1)(n^2+4),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y estudiar cada una de sus partes por separado</p>
-
 <p>Tal y como hemos indicado arriba, como $n&gt;2$, en $u$ observamos el producto de cinco números naturales consecutivos, por lo que siempre seremos capaces de encontrar entre ellos un múltiplo de $2$, uno de $3$, uno de $4$ y uno de $5$. Es decir, sabemos que existe $k\in\mathbb{N}$ de manera que podemos escribir la factorización en números primos de $u$ como</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-u &= 2\cdot3\cdot4\cdot5\cdot k \\
-&= 2^3\cdot 3\cdot 5\cdot k\\
-&= 120\cdot k,
+u &amp;= 2\cdot3\cdot4\cdot5\cdot k \<br>
+&amp;= 2^3\cdot 3\cdot 5\cdot k\<br>
+&amp;= 120\cdot k,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, por tanto, $u$ es un múltiplo de $120$.</p>
-
 <p>Bastaría ahora que comprobásemos que</p>
-
-<p><span  class="math">\[
+<p>$$
 v=n(n^2+1)(n^2+4)
-\]</span></p>
-
+$$</p>
 <p>es múltiplo de $5$ para que el enunciado del ejercicio propuesto se satisfaga. Llevaremos a cabo tal tarea utilizando restos potenciales módulo 5, de manera que analizaremos, acto seguido, todos y cada uno de los casos posibles que puede presentar $n$:</p>
-
 <ul>
 <li>Si $n\equiv 0\pmod{5}$, trivialmente $v$ es múltiplo de $5$, al ser $n$ uno de sus factores.</li>
 <li>Si $n\equiv 1\pmod{5}$, $(n^2+4)\equiv (1+4)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+4)$ uno de sus factores.</li>
@@ -672,7 +648,6 @@ v=n(n^2+1)(n^2+4)
 <li>Si $n\equiv 3\pmod{5}$, $(n^2+1)\equiv (9+1)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+1)$ uno de sus factores.</li>
 <li>Si $n\equiv 4\pmod{4}$, $(n^2+4)\equiv (16+4)\pmod{5}\equiv 0\pmod{5}$ y, por tanto, $v$ es múltiplo de 5, al ser $(n^2+4)$ uno de sus factores.</li>
 </ul>
-
 <p>Así pues, como $u$ es múltiplo de $120$, $v$ es múltiplo de $5$ y $120\cdot 5=600$, podemos concluir que $a_n$, cuando $n&gt;2$, es múltiplo de $600$.</p>
 
     </div>
@@ -943,7 +918,7 @@ v=n(n^2+1)(n^2+4)
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1010,7 +985,7 @@ v=n(n^2+1)(n^2+4)
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1026,7 +1001,7 @@ v=n(n^2+1)(n^2+4)
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

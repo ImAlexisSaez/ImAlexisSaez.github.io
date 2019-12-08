@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones match() y search() del módulo re. La función match() busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.
-import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quot; nombre3 = &quot;María López&quot; if re.match(&quot;Sandra&quot;, nombre1): print(&quot;Hemos encontrado el nombre.&quot;) else: print(&quot;No hemos encontrado el nombre.">
+import renombre1 = &quot;Sandra López&quot;nombre2 = &quot;Antonio Gómez&quot;nombre3 = &quot;María López&quot;if re.match(&quot;Sandra&quot;, nombre1):print(&quot;Hemos encontrado el nombre.&quot;)else:print(&quot;No hemos encontrado el nombre.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/">
@@ -125,7 +125,7 @@ import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quo
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb72-expresiones-regulares-iv/">
   <meta property="og:title" content="72. Expresiones regulares IV | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones match() y search() del módulo re. La función match() busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.
-import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quot; nombre3 = &quot;María López&quot; if re.match(&quot;Sandra&quot;, nombre1): print(&quot;Hemos encontrado el nombre.&quot;) else: print(&quot;No hemos encontrado el nombre."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+import renombre1 = &quot;Sandra López&quot;nombre2 = &quot;Antonio Gómez&quot;nombre3 = &quot;María López&quot;if re.match(&quot;Sandra&quot;, nombre1):print(&quot;Hemos encontrado el nombre.&quot;)else:print(&quot;No hemos encontrado el nombre."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@ import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quo
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quo
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quo
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@ import re nombre1 = &quot;Sandra López&quot; nombre2 = &quot;Antonio Gómez&quo
           <h1>72. Expresiones regulares IV</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/u3WBRgpxQcc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones <code>match()</code> y <code>search()</code> del módulo <code>re</code>. La función <code>match()</code> busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.</p>
-
 <pre><code class="language-python">import re
 
 nombre1 = &quot;Sandra López&quot;
@@ -774,12 +772,9 @@ if re.match(&quot;Sandra&quot;, nombre1):
 else:
     print(&quot;No hemos encontrado el nombre.&quot;)
 </code></pre>
-
 <pre><code class="language-bash">Hemos encontrado el nombre.
 </code></pre>
-
 <p>Por otro lado, podemos evitar el comportamiento <em>case sensitive</em> de esta función mediante el parámetro <code>re.IGNORECASE</code>. Cambiemos <code>Sandra</code> por <code>sandra</code> y comprobémoslo:</p>
-
 <pre><code class="language-python">import re
 
 nombre1 = &quot;Sandra López&quot;
@@ -791,12 +786,9 @@ if re.match(&quot;sandra&quot;, nombre1, re.IGNORECASE):
 else:
     print(&quot;No hemos encontrado el nombre.&quot;)
 </code></pre>
-
 <pre><code class="language-bash">Hemos encontrado el nombre.
 </code></pre>
-
-<p>Además, tenemos a nuestra disposición el uso de comodines en los patrones de búsqueda. Así, si añadimos dos nuevos nombres &ldquo;parecidos&rdquo;, <code>Lara</code> y <code>Jara</code>, mediante el carácter <code>.</code> (que representa un carácter qualquiera sin determinar) podemos comprobar si ambos pertenecen o no a un listado de nombres:</p>
-
+<p>Además, tenemos a nuestra disposición el uso de comodines en los patrones de búsqueda. Así, si añadimos dos nuevos nombres &lsquo;&lsquo;parecidos&rsquo;', <code>Lara</code> y <code>Jara</code>, mediante el carácter <code>.</code> (que representa un carácter qualquiera sin determinar) podemos comprobar si ambos pertenecen o no a un listado de nombres:</p>
 <pre><code class="language-python">import re
 
 nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María López&quot;,
@@ -804,25 +796,19 @@ nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María L
 
 [print(nombre, end=&quot;\n&quot;) for nombre in nombres if re.match(&quot;.ara&quot;, nombre)]
 </code></pre>
-
 <pre><code class="language-bash">Jara Martín
 Lara Pérez
 </code></pre>
-
 <p>A continuación, veamos cómo emplear el patrón <code>\d</code> para averiguar si una cadena comienza o no por un número:</p>
-
 <pre><code class="language-python">import re
 
 datos = [&quot;Alexis Sáez&quot;, &quot;123456789&quot;, &quot;Number1&quot;]
 
 [print(d) for d in datos if re.match(&quot;\d&quot;, d)]
 </code></pre>
-
 <pre><code class="language-bash">123456789
 </code></pre>
-
 <p>Ahora, cambiemos de tercio y estudiemos la función <code>search()</code> que, a diferencia de <code>match()</code> (que se limita a buscar al comienzo de un texto), examina la cadena de texto completa. Retomemos el ejemplo de los nombres y busquemos la aparición de ciertos apellidos concretos:</p>
-
 <pre><code class="language-python">import re
 
 nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María López&quot;,
@@ -830,13 +816,10 @@ nombres = [&quot;Sandra López&quot;, &quot;Antonio Gómez&quot;, &quot;María L
 
 [print(nombre, end=&quot;\n&quot;) for nombre in nombres if re.search(&quot;López&quot;, nombre)]
 </code></pre>
-
 <pre><code class="language-bash">Sandra López
 María López
 </code></pre>
-
 <p>No obstante, la principal utilidad de <code>search()</code> reside en la búsqueda de determinados patrones dentro de una cadena de caracteres de extensión considerable:</p>
-
 <pre><code class="language-python">import re
 
 codigos = [
@@ -873,7 +856,6 @@ codigos = [
 
 [print(c, end=&quot;\n&quot;) for c in codigos if re.search(&quot;42&quot;, c)]
 </code></pre>
-
 <pre><code class="language-bash">    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
     Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
     Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
@@ -893,10 +875,8 @@ codigos = [
     semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
     placerat id pretium ac, ornare eleifend ante.
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/72/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/72/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -947,7 +927,7 @@ codigos = [
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -995,7 +975,7 @@ codigos = [
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1067,7 +1047,7 @@ codigos = [
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

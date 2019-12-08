@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/11/jugando-con-las-propiedades-del-conjugado/featured_hu8a822743a7b46664ea95a806ba348f97_78205_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía disponible en <a href="https://unsplash.com/" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía disponible en <a href="https://unsplash.com/">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,115 +574,83 @@
 
     <div class="article-style">
       <p><strong>Problema 4:</strong> Dada una constante real positiva, $a$, y el conjunto</p>
-
-<p><span  class="math">\[
-M_a = \left\{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right\},
-\]</span></p>
-
+<p>$$
+M_a = \left{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right},
+$$</p>
 <p>donde $\mathbb{C}^* = \mathbb{C}\backslash{(0,0)}$, encuentre los valores mínimo y máximo de $|z|$ cuando $z\in M_a$.</p>
-
 <hr>
-
 <p>Hemos de ser capaces de extraer información sobre el módulo de $z$, $|z|$, a partir de la expresión de la ecuación que define al conjunto $M_a$. Por las propiedades de la conjugación, sabemos que $z\overline{z} = |z|^2$, de manera que una posible estrategia a seguir sería elevar al cuadrado ambos miembros de la ecuación que define a $M_a$ y desarrollar la expresión resultante mediante las propiedades de la conjugación. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a^2 &= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\\
-&= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
+a^2 &amp;= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\<br>
+&amp;= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>pero recordemos que $z\overline{z} = |z|^2$, por lo que la anterior ecuación quedaría</p>
-
-<p><span  class="math">\[
+<p>$$
 a^2 = |z|^2 + \dfrac{z^2+\overline{z}^2}{|z|^2}+\dfrac{1}{|z|^2},
-\]</span></p>
-
+$$</p>
 <p>y multiplicando ambos miembros por $|z|^2$, número que sabemos es distinto de cero porque $z\in\mathbb{C}^*$, tenemos</p>
-
-<p><span  class="math">\[
+<p>$$
 a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
-\]</span></p>
-
+$$</p>
 <p>Ahora bien, a primera vista, la anterior expresión parece que quiere conducirnos hacia alguna especie de ecuación bicuadrada en $|z|$. Efectivamente, si reordenamos los términos de manera adecuada, llegamos a</p>
-
-<p><span  class="math">\[
+<p>$$
 |z|^4 - a^2|z|^2 + 1 = - (z^2 + \overline{z}^2)
-\]</span></p>
-
+$$</p>
 <p>y si completamos el cuadrado del miembro derecho,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-|z|^4 - a^2|z|^2 + 1 &= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\\
-&= - (z + \overline{z})^2 + 2z\overline{z}\\
-&= - (z + \overline{z})^2 + 2|z|^2, 
+|z|^4 - a^2|z|^2 + 1 &amp;= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\<br>
+&amp;= - (z + \overline{z})^2 + 2z\overline{z}\<br>
+&amp;= - (z + \overline{z})^2 + 2|z|^2, 
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>es decir,</p>
-
-<p><span  class="math">\[
+<p>$$
 |z|^4 - (a^2+2)|z|^2 + 1 = - (z+\overline{z})^2 \leq 0.
-\]</span></p>
-
+$$</p>
 <p>Por lo tanto, tras realizar operaciones algebraicas sobre la ecuación que define al conjunto $M_a$, hemos llegado a que la expresión de cierta ecuación bicuadrada en $|z|$ debe ser menor o igual que cero. Investiguemos si de ella podemos extraer alguna condición sobre el módulo de $z$ que nos permita dar respuesta al problema planteado.</p>
-
 <p>Resolviendo $|z|^4 - (a^2 + 2)|z|^2 + 1 = 0$ y teniendo en cuenta que es positivo el coeficiente asociado a $|z|^4$, tenemos que $|z|^4 - (a^2 + 2)|z|^2 + 1 \leq 0$  si, y solo si,</p>
-
-<p><span  class="math">\[
+<p>$$
 |z|^2\in \left[
 \dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2}, \dfrac{2+a^2 + \sqrt{a^4+4a^2}}{2}
 \right],
-\]</span></p>
-
+$$</p>
 <p>que es equivalente a decir que</p>
-
-<p><span  class="math">\[
+<p>$$
 |z|\in \left[
 \dfrac{-a + \sqrt{a^2+4}}{2}, \dfrac{a + \sqrt{a^2+4}}{2}
 \right].
-\]</span></p>
-
+$$</p>
 <p>Veamos esta última equivalencia en detalle, pues puede no resultarnos trivial a primera vista. La idea aquí es representar ambos extremos del intervalo que hemos obtenido para $|z|^2$ como cuadrados de ciertas expresiones. Si somos capaces de llevar a cabo tal tarea, únicamente bastará aplicar la raíz cuadrada (que, recordemos, es una transformación monótona creciente) para, de esta manera, llegar a la conclusión obtenida para $|z|$.</p>
-
 <p>Centrémonos en la expresión del extremo inferior del intervalo definido para $|z|^2$ (el razonamiento a seguir sería análogo para el superior). Por un lado,</p>
-
-<p><span  class="math">\[
+<p>$$
 2+a^2 - \sqrt{a^4 + 4a^2} = 2+a^2 - a\sqrt{a^2 + 4},
-\]</span></p>
-
+$$</p>
 <p>expresión que nos invita a experimentar con el desarrollo de $(-a + \sqrt{a^2 + 4})^2$. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-(-a + \sqrt{a^2+4})^2 &= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\\
-&= 2a^2+4 - 2a\sqrt{a^2+4}\\
-&= 2(a^2+2-a\sqrt{a^2+4})\\
-&= 2(a^2+2-\sqrt{a^4+4a^2}),
+(-a + \sqrt{a^2+4})^2 &amp;= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\<br>
+&amp;= 2a^2+4 - 2a\sqrt{a^2+4}\<br>
+&amp;= 2(a^2+2-a\sqrt{a^2+4})\<br>
+&amp;= 2(a^2+2-\sqrt{a^4+4a^2}),
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2} = \dfrac{(-a + \sqrt{a^2+4})^2}{2\cdot 2} = \left(\dfrac{-a + \sqrt{a^2+4}}{2}\right)^2.
-\]</span></p>
-
+$$</p>
 <p>Por tanto, hemos llegado a que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\min{|z|} &= \dfrac{-a+\sqrt{a^2+4}}{2},\\\\ \max{|z|} &= \dfrac{a+\sqrt{a^2+4}}{2},
+\min{|z|} &amp;= \dfrac{-a+\sqrt{a^2+4}}{2},\\ \max{|z|} &amp;= \dfrac{a+\sqrt{a^2+4}}{2},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y los valores extremos se alcanzarán cuando se dé la igualdad en la inecuación considerada, es decir, cuando $-(z+\overline{z})^2 = 0$, que equivale a la condición $z=-\overline{z}$. Así pues, los valores extremos se alcanzarán para los números complejos $z\in M_a$ tales que $z=-\overline{z}$.</p>
-
 <p>Referencia:</p>
-
 <ul>
-<li>Andreescu, T., &amp; Andrica, D., (2006), <em>Complex Numbers from A to... Z</em>, Boston: Birkhäuser.</li>
+<li>Andreescu, T., &amp; Andrica, D., (2006), <em>Complex Numbers from A to&hellip; Z</em>, Boston: Birkhäuser.</li>
 </ul>
 
     </div>
@@ -946,7 +921,7 @@ a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1013,7 +988,7 @@ a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1029,7 +1004,7 @@ a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

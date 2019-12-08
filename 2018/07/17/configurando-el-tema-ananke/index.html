@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/17/configurando-el-tema-ananke/featured_hu76901adadd4e0ee71021656cc55d21e1_186671_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@kalenemsley" target="_blank">Kalen Emsley</a>, disponible en <a href="https://unsplash.com/photos/_LuLiJc1cdo" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@kalenemsley">Kalen Emsley</a>, disponible en <a href="https://unsplash.com/photos/_LuLiJc1cdo">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,34 +574,22 @@
 
     <div class="article-style">
       <p>En la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> generamos, ¡solucionando incluso un pequeño <em>bug</em>!, nuestro primer sitio web con <em>Hugo</em>, utilizando para ello el tema <em>Ananke</em>. Veamos qué opciones de configuración nos ofrece dicho tema a continuación.</p>
-
 <p>Así pues, dedicaremos única y exclusivamente este cuarto artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> a examinar con detalle el contenido del archivo <code>config.toml</code>, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.</p>
-
 <p>Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a>, dicho fichero debería figurar en el interior de la ruta <code>C:\Hugo\Sites\prueba</code>. Desde el <em>explorador de archivos</em> de <em>Windows</em>, lo seleccionamos con el botón derecho del ratón y escogemos la opción <code>Open with Sublime Text</code>.</p>
-
 <p>Parte de su contenido nos resultará familiar a estas alturas, pues ya tuvimos que editar el mencionado archivo para solventar el <em>bug</em> que nos impedía tener acceso local al sitio web. Empecemos examinando el primer bloque de código, aquel que comprende las siguientes cinco líneas:</p>
-
 <pre><code class="language-toml">title = &quot;Notre-Dame de Paris&quot;
 baseURL = &quot;https://example.com&quot;
 languageCode = &quot;en-us&quot;
 theme = &quot;gohugo-theme-ananke&quot;
 # themesDir = &quot;../..&quot;
 </code></pre>
-
 <p>Estamos ante una serie de pares <code>variable = valor</code>, en donde hemos de personalizar las cadenas de texto para que se ajusten a las opciones que deseamos de cara a nuestro sitio web.</p>
-
 <p>En el primero de ellos, la variable <code>title</code>, como bien señala de manera descriptiva su nombre, nos permite indicar el título de la página web. En mi caso, me gustaría que fuese <em>Infinitos Contrastes</em>, por lo que no tengo más que modificar esa primera línea y teclear <code>title = &quot;Infinitos Contrastes&quot;</code>.</p>
-
 <p>Ahora, a <code>baseURL</code> hemos de asignarle el enlace que utilizaremos para acceder a nuestro sitio web a través del navegador web. Dado que la idea es que alojemos la página web en <em>GitHub</em>, dicha dirección será del estilo <code>https://&lt;NOMBRE_DE_TU_CUENTA&gt;.github.io</code>. Para ilustrar esto último de manera más concreta, el nombre de mi cuenta en <em>GitHub</em> es <code>ImAlexisSaez</code>, por lo que el enlace que permitirá el acceso remoto a la página web será <code>https://imalexissaez.github.io/</code>, valor que asignaré a la variable <code>baseURL</code> en su correspondiente línea.</p>
-
 <p>A continuación, en <code>languageCode</code> reside el código del lenguaje en el que se generará nuestro sitio web, que, por defecto, es inglés estadounidense (<code>en-us</code>). Si vamos a generar contenido un idioma diferente, conviene que modifiquemos el valor de dicha línea. Para el español, el código asociado es <code>es</code>.</p>
-
 <p>Aunque a primera vista no parezca un detalle relevante, es importante asignar el código adecuado a <code>languageCode</code>, puesto que algunos temas de <em>Hugo</em> incorporan la posibilidad de localización a diferentes lenguajes y la clave pasa, precisamente, por el valor indicado para dicha variable. Para muestra, un botón: el tema actual de este sitio web, <em>Beautiful Hugo</em>, es uno de esos ejemplos y en un futuro veremos cómo lidiar con el asunto de la localización en <em>Hugo</em>.</p>
-
 <p>La siguiente línea, <code>theme = &quot;gohugo-theme-ananke&quot;</code>, le indica a <em>Hugo</em> en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> no nos diésemos cuenta, pero cuando instalamos el tema <em>Ananke</em> automáticamente se generó una carpeta en nuestro disco duro llamada <code>gohugo-theme-ananke</code>, en el interior del directorio <code>themes</code>. La variable <code>theme</code> simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo <code>config.toml</code>.</p>
-
 <p>Por lo que respecta a la última línea de este bloque de código, para solventar el <em>bug</em> que nos impedía revisar localmente el sitio web, usamos el símbolo de comentario (<code>#</code>) para anularla. De esta forma, directamente podemos suprimirla, quedando definitivamente:</p>
-
 <pre><code class="language-toml">#
 # Configuración básica del sitio web
 #
@@ -603,11 +598,8 @@ baseURL      = &quot;https://imalexissaez.github.io/&quot;  # Enlace de entrada
 languageCode = &quot;es&quot;                               # Idioma
 theme        = &quot;gohugo-theme-ananke&quot;              # Ruta al tema
 </code></pre>
-
 <p>Recomiendo encarecidamente ir comentando el código fuente, para que en futuras revisiones sea más fácil encontrar aquello que andemos buscando. En cuanto a que todo quede alineado por el símbolo <code>=</code>, es simplemente una manía mía, no es necesario en absoluto.</p>
-
 <p>Pasemos ahora al siguiente bloque de código, el dado por</p>
-
 <pre><code class="language-toml">MetaDataFormat = &quot;yaml&quot;
 DefaultContentLanguage = &quot;en&quot;
 SectionPagesMenu = &quot;main&quot;
@@ -615,9 +607,7 @@ Paginate = 3 # this is set low for demonstrating with dummy content. Set to a hi
 googleAnalytics = &quot;&quot;
 enableRobotsTXT = true
 </code></pre>
-
 <p>En mi caso, ha quedado como sigue:</p>
-
 <pre><code class="language-toml">#
 # Configuración adicional del sitio web
 #
@@ -628,9 +618,7 @@ Paginate               = 3      # Posts por página en main
 googleAnalytics        = &quot;&quot;     # Código para estadísticas web
 enableRobotsTXT        = true   # Buscadores
 </code></pre>
-
 <p>ya que:</p>
-
 <ul>
 <li>En <code>MetaDataFormat</code> tenemos que indicar qué lenguaje emplearemos para escribir los metadatos de las cabeceras para nuestros artículos del sitio web (hablaremos de ello en detalle cuando, por fin, nos animemos a redactar el primer artículo para nuestra página web). <em>Hugo</em> permite trabajar con <em>TOML</em> (por defecto), <em>YAML</em> y <em>JSON</em>. Los dos primeros son muy similares y, en mi caso, dado que estuve un tiempo generando el sitio web con <em>Jekyll</em>, estoy más acostumbrado al estilo <em>YAML</em> que al <em>TOML</em>. Por otro lado, aunque también es factible generar las mencionadas cabeceras con <em>JSON</em>, es un lenguaje un tanto más tedioso a la hora de declarar los metadatos, por lo que recomendaría evitarlo de momento.</li>
 <li>Para <code>DefaultContentLanguage</code> declaramos el valor del código del idioma en el que tengamos pensado generar el contenido para nuestro sitio web. Para español, recuerdo que dicho código era <code>es</code>.</li>
@@ -639,19 +627,14 @@ enableRobotsTXT        = true   # Buscadores
 <li>Si activamos las estadísticas de <em>Google</em> para nuestro sitio web, tendremos acceso a cierto código, que será el que asignemos como valor en la línea de <code>googleAnalytics</code>.</li>
 <li>Finalmente, con <code>enableRobotsTXT = true</code> damos acceso a la &ldquo;arañas&rdquo; de los buscadores para que exploren todo nuestro sitio web e indexen aquello que estimen conveniente.</li>
 </ul>
-
 <p>El siguiente bloque de código:</p>
-
 <pre><code class="language-toml">[sitemap]
   changefreq = &quot;monthly&quot;
   priority = 0.5
   filename = &quot;sitemap.xml&quot;
 </code></pre>
-
 <p>está dedicado a los parámetros de configuración del mapa del sitio web. Al igual que sucedía con la variable <code>Paginate</code>, configuraremos los valores de estas tres en función de la frecuencia con la que generemos contenido para nuestro sitio web. Seguramente, la única variable que modificaremos será <code>changefreq</code>, cambiando <code>&quot;monthly&quot;</code> por <code>&quot;weekly&quot;</code> o, incluso, <code>&quot;daily&quot;</code>.</p>
-
 <p>Así pues, en mi caso, únicamente he colocado un comentario introductorio al bloque y, por supuesto, he continuado alineando valores por el simbolo <code>=</code>:</p>
-
 <pre><code class="language-toml">#
 # Configuración del mapa de la web
 #
@@ -660,9 +643,7 @@ enableRobotsTXT        = true   # Buscadores
   priority   = 0.5
   filename   = &quot;sitemap.xml&quot;
 </code></pre>
-
 <p>Para finalizar, el último bloque de código:</p>
-
 <pre><code class="language-toml">[params]
   favicon = &quot;&quot;
   description = &quot;The last theme you'll ever need. Maybe.&quot;
@@ -677,9 +658,7 @@ enableRobotsTXT        = true   # Buscadores
   featured_image = &quot;/images/gohugo-default-sample-hero-image.jpg&quot;
   recent_posts_number = 2
 </code></pre>
-
 <p>me ha quedado</p>
-
 <pre><code class="language-toml">#
 # Configuración de parámetros de la web
 #
@@ -696,9 +675,7 @@ enableRobotsTXT        = true   # Buscadores
   featured_image         = &quot;/images/gohugo-default-sample-hero-image.jpg&quot;
   recent_posts_number    = 2
 </code></pre>
-
 <p>Estas líneas facilitan la configuración de algunas características de la web, como pueden ser:</p>
-
 <ul>
 <li><code>favicon</code>: es el icono que aparece, en el navegador, en la parte izquierda de la pestaña correspondiente a nuestro sitio web. El valor que hemos de asignar a esta variable será la ruta de acceso a la imagen que contiene el icono. Entraré en más detalles al respecto de este tema cuando aborde cómo configurar el <em>favicon</em> para el tema <em>Beautiful Hugo</em>.</li>
 <li><code>description</code>: breve subtítulo o eslogan que podemos añadir a la página web.</li>
@@ -706,9 +683,7 @@ enableRobotsTXT        = true   # Buscadores
 <li><code>featured_image</code>: ruta que apunta a la imagen que deseemos ubicar en la cabecera de nuestra página web.</li>
 <li><code>recent_posts_number</code>: cantidad de artículos, de entre los últimos publicados, que aparecerán destacados en la página de entrada a nuestro sitio web.</li>
 </ul>
-
 <p>En esta serie de artículos no entraré en detalle en la modificación de las plantillas del tema <em>Ananke</em>. No obstante, en breve pasaremos a estudiar con profundidad el tema <em>Beautiful Hugo</em> y las ideas que exploremos, de cara a modificar diversos aspectos de un sitio web, se podrán extrapolar a cualquier tema, <em>Ananke</em> incluido.</p>
-
 <p>Así pues, seguramente, en la próxima entrada del <a href="/proyecto/metablog/">Proyecto Metablog</a> instalaremos el tema <em>Beautiful Hugo</em> y echaremos un vistazo por encima a su correspondiente archivo de configuración <code>config.toml</code>.</p>
 
     </div>
@@ -974,7 +949,7 @@ enableRobotsTXT        = true   # Buscadores
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1041,7 +1016,7 @@ enableRobotsTXT        = true   # Buscadores
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1057,7 +1032,7 @@ enableRobotsTXT        = true   # Buscadores
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

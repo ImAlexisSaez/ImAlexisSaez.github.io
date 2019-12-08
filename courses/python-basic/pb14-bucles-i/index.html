@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -191,13 +191,14 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,51 +755,34 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
           <h1>14. Bucles I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/GQGhU1526Oo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los <strong>bucles</strong>.</p>
-
 <p>La utilidad de un <strong>bucle</strong> es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En <em>Python</em> tenemos dos tipos de bucles:</p>
-
 <ul>
 <li><em>determinados</em>: sabemos a priori cuántas veces se repetirá el bloque de código, e</li>
 <li><em>indeterminados</em>: desconocemos a priori el número de repeticiones del bloque de código.</li>
 </ul>
-
 <p>Empecemos viendo el primer tipo, al que pertenece la instrucción <code>for</code>, cuya sintaxis es:</p>
-
 <pre><code class="language-python">for variable in elemento_a_recorrer:
     instrucciones
 </code></pre>
-
 <p>donde el <code>elemento_a_recorrer</code> puede ser una lista, una tupla, una cadena de texto&hellip;</p>
-
 <p>Por ejemplo, para imprimir tres veces una palabra, una posible estrategia sería:</p>
-
 <pre><code class="language-python">for i in [1, 2, 3]:
     print(&quot;Hola&quot;)
 </code></pre>
-
 <p>Aunque hemos utilizado una lista de números, no es imprescindible. El siguiente ejemplo consigue el mismo resultado:</p>
-
 <pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
     print(&quot;Hola&quot;)
 </code></pre>
-
 <p>En ambos casos, el elemento a recorrer es una lista de tres elementos y es por ello que el mensaje <code>&quot;Hola&quot;</code> se repite en tres ocasiones, tantas como el mencionado número de elementos de la correspondiente lista.</p>
-
 <p>Si en lugar de un texto predeterminado optamos por imprimir la propia variable en ambos casos, el resultado es:</p>
-
 <pre><code class="language-python">for i in [1, 2, 3]:
     print(i)
 
@@ -803,7 +790,6 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 # 2
 # 3
 </code></pre>
-
 <pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
     print(i)
 
@@ -811,9 +797,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 # febrero
 # marzo
 </code></pre>
-
 <p>La variable no tiene que denominarse necesariamente <code>i</code>:</p>
-
 <pre><code class="language-python">for meses in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
     print(meses)
 
@@ -821,10 +805,8 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 # febrero
 # marzo
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/14/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/14/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -875,7 +857,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -923,7 +905,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -995,7 +977,7 @@ La utilidad de un bucle es repetir una o varias líneas de código tantas veces 
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

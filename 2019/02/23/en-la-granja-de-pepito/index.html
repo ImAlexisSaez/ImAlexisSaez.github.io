@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/02/23/en-la-granja-de-pepito/featured_hu9d6f461bb5126eaebbf94ac67c0e99cb_137643_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@maksymiv" target="_blank">Maksym Ivashchenko</a>, disponible en <a href="https://unsplash.com/photos/q3-ugNWsBfg" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@maksymiv">Maksym Ivashchenko</a>, disponible en <a href="https://unsplash.com/photos/q3-ugNWsBfg">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,39 +574,29 @@
 
     <div class="article-style">
       <p><strong>Problema 54:</strong> Un granjero compró vacas, cerdos y pollos. En total $100$ animales por $100$ euros. Hay al menos uno de cada. Si una vaca cuesta $10$ euros, un cerdo $3$ euros y un pollo $0.50$ euros, ¿cuántos animales de cada clase compró?</p>
-
 <hr>
-
 <p>Sea $x$ el número de vacas, $y$ el total de cerdos y $z$ la cantidad de pollos adquiridos. Como se compran $100$ animales, tenemos la ecuación lineal $x+y+z=100$, con la restricción de que $x\geq1$, $y\geq1$ y $z\geq1$ ya que nos indican que, al menos, se compra un animal de cada tipo. Finalmente, dados los precios suministrados y el desembolso llevado a cabo, encontramos la ecuación $10x+3y + 0.5z = 100$. Así pues, hemos de resolver el sistema de ecuaciones</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-10x+3y+0.5z &= 100,\\ 
-x+y+z &= 100,
+10x+3y+0.5z &amp;= 100,\ 
+x+y+z &amp;= 100,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con la restricción adicional indicada arriba. Despejando la variable $z$ de la segunda ecuación, $z = 100-x-y$, y sustituyéndola en la primera ecuación del sistema,</p>
-
-<p><span  class="math">\[
+<p>$$
 10x + 3y + 50 - 0.5x - 0.5y = 100,
-\]</span></p>
-
+$$</p>
 <p>esto es, $10x+3y-0.5x-0.5y=50$, o bien $19x+5y=100$, ecuación diofántica que sabemos admite solución entera, puesto que $mcd(5,19)=1$ y, obviamente, $1|100$. Así, despejando la variable $y$, por ser aquella cuyo coeficiente asociado es más reducido,</p>
-
-<p><span  class="math">\[
+<p>$$
 y = \dfrac{100 - 19x}{5},
-\]</span></p>
-
+$$</p>
 <p>por lo que basta probar, para $x$, valores pertenecientes al <em>menor sistema completo de restos módulo</em> $5$. Para $x_0=0$, hallamos que $y_0 = 20$, siendo esta una solución particular de la ecuación diofántica propuesta. Su solución general, por tanto, queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-x &= 5t,\\
-y &= 20-19t,
+x &amp;= 5t,\<br>
+y &amp;= 20-19t,
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $t$ número entero. Como hemos de comprar, al menos, un animal de cada tipo, tanto $x$ como $y$ han de ser positivas. De $5t&gt;0$ concluimos que $t&gt;0$; mientras que de $20-19t&gt;0$ deducimos que $t\leq 1$. Así, como $t$ es un número entero, únicamente puede tomar el valor $t=1$, dejando así $x=5$, $y=1$ y $z = 100-x-y = 100-5-1=94$. Es decir, el granjero compró $5$ vacas, un cerdo y $94$ pollos.</p>
 
     </div>
@@ -872,7 +869,7 @@ y &= 20-19t,
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -939,7 +936,7 @@ y &= 20-19t,
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -955,7 +952,7 @@ y &= 20-19t,
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

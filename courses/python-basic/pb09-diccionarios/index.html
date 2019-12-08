@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@ Su principal característica reside en que cada dato se almacena asociado a una 
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ Su principal característica reside en que cada dato se almacena asociado a una 
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ Su principal característica reside en que cada dato se almacena asociado a una 
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,26 +753,17 @@ Su principal característica reside en que cada dato se almacena asociado a una 
           <h1>9. Diccionarios</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/2OmgHl8lp0I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Un <strong>diccionario</strong> es una estructura de datos que nos permite almacenar valores de diferentes tipos (enteros, cadenas de texto, decimales&hellip;) e incluso listas, tuplas y otros diccionarios.</p>
-
 <p>Su principal característica reside en que cada dato se almacena asociado a una clave única, de tal forma que se crea una relación de tipo <code>clave:valor</code> para cada elemento guardado. Además, los mencionados elementos no están ordenados, es decir, el orden es indiferente (por la presencia las referidas claves únicas) a la hora de guardar información en un diccionario.</p>
-
 <p>Su sintaxis es <code>nombre = {clave:valor}</code>.</p>
-
 <p>Creemos un diccionario que almacene países (clave) y capitales (valor), y veamos cómo se accede a cada uno de sus elementos:</p>
-
 <pre><code class="language-python">mi_dicc = {&quot;Alemania&quot;: &quot;Berlin&quot;,
            &quot;Francia&quot;: &quot;París&quot;,
            &quot;Reino Unido&quot;: &quot;Londres&quot;,
@@ -779,39 +774,29 @@ print(mi_dicc[&quot;España&quot;])  # Madrid
 
 print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid'}
 </code></pre>
-
 <p>Agregamos nuevos elementos al diccionario con el patrón <code>nombre[clave] = valor</code>:</p>
-
 <pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Lisboa&quot;
 
 print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Lisboa'}
 </code></pre>
-
 <p>Modificamos un valor asignado a una clave simplemente sobreescribiéndolo:</p>
-
 <pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Roma&quot;
 
 print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Roma'}
 </code></pre>
-
 <p>Suprimimos elementos con <code>del</code>:</p>
-
 <pre><code class="language-python">del mi_dicc[&quot;Reino Unido&quot;]
 
 print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'España': 'Madrid', 'Italia': 'Roma'}
 </code></pre>
-
 <p>Generemos un diccionario que presente diferentes tipos de datos:</p>
-
 <pre><code class="language-python">mi_dicc = {&quot;Alemania&quot;: &quot;Berlín&quot;,
            23: &quot;Jordan&quot;,
            &quot;Mosqueteros&quot;: 3}
 
 print(mi_dicc)  # {'Alemania': 'Berlín', 23: 'Jordan', 'Mosqueteros': 3}
 </code></pre>
-
 <p>Empleemos una tupla (el procedimiento sería similar si optamos por una lista) para asignar la clave a cada uno de los valores:</p>
-
 <pre><code class="language-python">mi_tupla = (&quot;España&quot;, &quot;Francia&quot;, &quot;Reino Unido&quot;, &quot;Alemania&quot;)
 mi_dicc = {mi_tupla[0]: &quot;Madrid&quot;,
            mi_tupla[1]: &quot;París&quot;,
@@ -823,9 +808,7 @@ print(mi_dicc)  # {'España': 'Madrid', 'Francia': 'París', 'Reino Unido': 'Lon
 print(mi_dicc[&quot;España&quot;])  # Madrid
 print(mi_dicc[mi_tupla[0]])  # Madrid
 </code></pre>
-
 <p>También podemos almacenar tuplas (o listas&hellip;) como valores:</p>
-
 <pre><code class="language-python">mi_dicc = {23: &quot;Jordan&quot;,
            &quot;Nombre&quot;: &quot;Michael&quot;,
            &quot;Equipo&quot;: &quot;Chicago&quot;,
@@ -835,9 +818,7 @@ print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anil
 print(mi_dicc[&quot;Equipo&quot;])  # Chicago
 print(mi_dicc[&quot;Anillos&quot;])  # (1991, 1992, 1993, 1996, 1997, 1998)
 </code></pre>
-
 <p>Asimismo, guardemos un diccionario dentro de otro:</p>
-
 <pre><code class="language-python">mi_dicc = {23: &quot;Jordan&quot;,
            &quot;Nombre&quot;: &quot;Michael&quot;,
            &quot;Equipo&quot;: &quot;Chicago&quot;,
@@ -846,24 +827,18 @@ print(mi_dicc[&quot;Anillos&quot;])  # (1991, 1992, 1993, 1996, 1997, 1998)
 print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}}
 print(mi_dicc[&quot;Anillos&quot;])  # {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}
 </code></pre>
-
 <p>Algunos métodos interesantes a conocer son:</p>
-
 <ul>
 <li><code>.keys()</code>, para acceder a las claves de un diccionario;</li>
 <li><code>.values()</code>, para conocer los valores de un diccionario; y</li>
-
-<li><p><code>len()</code>, para averiguar la longitud de un diccionario:</p>
-
+<li><code>len()</code>, para averiguar la longitud de un diccionario:</li>
+</ul>
 <pre><code class="language-python">print(mi_dicc.keys())  # dict_keys([23, 'Nombre', 'Equipo', 'Anillos'])
 print(mi_dicc.values())  # dict_values(['Jordan', 'Michael', 'Chicago', {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}])
 print(len(mi_dicc))  # 4
-</code></pre></li>
-</ul>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/09/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+</code></pre>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/09/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -914,7 +889,7 @@ print(len(mi_dicc))  # 4
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -962,7 +937,7 @@ print(len(mi_dicc))  # 4
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1034,7 +1009,7 @@ print(len(mi_dicc))  # 4
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

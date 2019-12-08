@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/03/30/un-curioso-multiplo-que-todo-numero-posee/featured_hu6686d416f237ca5b0c57620ec89a3777_270170_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@anniespratt" target="_blank">Annie Spratt</a>, disponible en <a href="https://unsplash.com/photos/vEbdiy3vDPk" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@anniespratt">Annie Spratt</a>, disponible en <a href="https://unsplash.com/photos/vEbdiy3vDPk">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,70 +574,50 @@
 
     <div class="article-style">
       <p><strong>Problema 64:</strong></p>
-
 <ul>
 <li>(a) Demuestra que escogidos siete números enteros al azar, la diferencia entre dos de ellos es múltiplo de seis.</li>
 <li>(b) Demuestra que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y unos.</li>
 </ul>
-
 <hr>
-
 <p>Para el apartado (a), empecemos considerando un ejemplo concreto: sean los números enteros, escogidos al azar, $53$, $75$, $32$, $7$, $83$, $1$ y $10$. Si obtenemos el valor de la congruencia de cada uno de ellos módulo seis, es cierto que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-53&\equiv 5\pmod{6},\\
-75&\equiv 3\pmod{6},\\
-32&\equiv 2\pmod{6},\\
- 7&\equiv 1\pmod{6},\\ 
-83&\equiv 5\pmod{6},\\
- 1&\equiv 1\pmod{6},\\
-10&\equiv 4\pmod{6}.
+53&amp;\equiv 5\pmod{6},\<br>
+75&amp;\equiv 3\pmod{6},\<br>
+32&amp;\equiv 2\pmod{6},\<br>
+7&amp;\equiv 1\pmod{6},\ 
+83&amp;\equiv 5\pmod{6},\<br>
+1&amp;\equiv 1\pmod{6},\<br>
+10&amp;\equiv 4\pmod{6}.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Basta ahora tomar dos cuyo valor de la congruencia módulo seis coincida para encontrar un múltiplo de seis. Efectivamente, por ejemplo,</p>
-
-<p><span  class="math">\[
+<p>$$
 83-53=30 = 6\cdot5.
-\]</span></p>
-
+$$</p>
 <p>En general, como el <em>menor sistema completo de restos módulo</em> $6$ está conformado por seis valores, $\{0,1,2,3,4,5\}$, dados siete números escogidos al azar sabemos, por el <em>Principio del palomar</em>, que al menos dos de ellos poseerán el mismo valor de la congruencia módulo seis. Esto es, existen al menos $x, y\in\mathbb{Z}$ tal que $x\equiv a\pmod{6}$ e $y\equiv a\pmod{6}$, con $a\in\{0,1,2,3,4,5\}$. Por consiguiente,</p>
-
-<p><span  class="math">\[
+<p>$$
 (x-y)\equiv (a-a)\pmod{6}\equiv 0\pmod{6},
-\]</span></p>
-
+$$</p>
 <p>es decir, la diferencia es múltiplo de seis.</p>
-
 <p>Para el apartado (b) utilizaremos la misma estrategia, pero escogiendo los números con cautela, ya que buscamos que el múltiplo que nos interesa únicamente posea en su expresión decimal ceros y unos. Como antes, empecemos considerando un ejemplo concreto: sea $n=6$. Trabajemos pues con el conjunto de siete números</p>
-
-<p><span  class="math">\[
-\{1,11,111,1111,11111,111111,1111111\},
-\]</span></p>
-
+<p>$$
+{1,11,111,1111,11111,111111,1111111},
+$$</p>
 <p>para el que, por el <em>Principio del palomar</em>, sabemos que al menos dos de ellos poseerán el mismo valor de su congruencia módulo seis. Efectivamente,</p>
-
-<p><span  class="math">\[
+<p>$$
 1\equiv 1\pmod{6}\qquad\text{y}\qquad 1111\equiv 1\pmod{6}.
-\]</span></p>
-
+$$</p>
 <p>Así, $(1111 - 1)\equiv 0\pmod{6}$, esto es, $1110 = 6\cdot185$ es múltiplo de $6$ y en su expresión decimal únicamente aparecen ceros y unos.</p>
-
 <p>En general, dado un número natural $n$, consideramos el conjunto</p>
-
-<p><span  class="math">\[
-\{1,11,111,1111,\ldots\}
-\]</span></p>
-
+<p>$$
+{1,11,111,1111,\ldots}
+$$</p>
 <p>de $n+1$ elementos. Por el <em>Principio del palomar</em>, al menos dos de dichos elementos poseerán el mismo valor de su congruencia módulo $n$. Designemos por $a$ y $b$ a tales elementos que verifican $a\equiv x\pmod{n}$ y $b\equiv x\pmod{n}$, entonces $(a-b)\equiv 0\pmod{n}$, esto es, la diferencia entre ellos es múltiplo de $n$, y, por tal y como hemos construido el anterior conjunto, su expresión únicamente poseerá ceros y unos.</p>
-
 <p>A modo anecdótico, si en el problema nos hubiesen solicitado demostrar que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y doses, habría bastado considerar un conjunto del tipo</p>
-
-<p><span  class="math">\[
-\{2,22,222,2222,\ldots\}.
-\]</span></p>
-
+<p>$$
+{2,22,222,2222,\ldots}.
+$$</p>
 <p>Variantes similares del problema únicamente exigen encontrar un conjunto adecuado al que aplicar la estrategia esbozada en párrafos anteriores.</p>
 
     </div>
@@ -905,7 +892,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -972,7 +959,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -988,7 +975,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

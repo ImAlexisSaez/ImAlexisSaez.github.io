@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/06/repasando-ecuaciones-en-diferencias-lineales-v/featured_hu37c4a20fdbadf56ae1187e6b7d107604_235245_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@oplattner" target="_blank">Oliver Plattner</a>, disponible en <a href="https://unsplash.com/photos/Plt0vHDRb9U" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@oplattner">Oliver Plattner</a>, disponible en <a href="https://unsplash.com/photos/Plt0vHDRb9U">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,181 +574,131 @@
 
     <div class="article-style">
       <p><strong>Problema 16:</strong> Resuelve</p>
-
 <ul>
 <li>(a) $a_{n+2}+a_n = \sin{(\pi n)}$.</li>
 <li>(b) $a_{n+2}+a_n = \sin{\left(\dfrac{\pi}{2}n\right)}$.</li>
 </ul>
-
 <hr>
-
 <p>El apartado (a) nos plantea la ecuación en diferencias lineal completa de orden 2,</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n+2}+a_n = \sin{(\pi n)}.
-\]</span></p>
-
+$$</p>
 <p>Esta tiene como ecuación en diferencias lineal homogénea asociada</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n+2}+a_n = 0,
-\]</span></p>
-
+$$</p>
 <p>cuya ecuación característica correspondiente es</p>
-
-<p><span  class="math">\[
+<p>$$
 \lambda^2+1=0.
-\]</span></p>
-
+$$</p>
 <p>Como $\lambda^2+1 = (\lambda - i)(\lambda + i)$, estamos en el caso de raíces complejas conjugadas simples, para las que $\varrho = 1$ y $\theta = \pi/2$, de manera que la solución para la ecuación anterior queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a_h(n) &= 1^n\left(A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}\right)\\
-&= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
+a_h(n) &amp;= 1^n\left(A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}\right)\<br>
+&amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $A,B\in\mathbb{R}$.</p>
-
 <p>Ahora, para hallar una solución particular, $a_p(n)$, como $b(n) = \sin{(\pi n)}$ y $\lambda = \cos{(\pi)} + i\sin{(\pi)} = -1$ no es raíz de la ecuación característica, proponemos $a_p(n) = a\cos{(\pi n)} + b\sin{(\pi n)}$, de manera que, sustituyendo en la ecuación inicial</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a\cos{(\pi(n+2))} + b\sin{(\pi(n+2))} + a\cos{(\pi n)} + b\sin{(\pi n)} &= \sin{(\pi n)},\\
-a\cos{(\pi n+2\pi)} + b\sin{(\pi n+2\pi)} + a\cos{(\pi n)} + b\sin{(\pi n)} &= \sin{(\pi n)},
+a\cos{(\pi(n+2))} + b\sin{(\pi(n+2))} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;= \sin{(\pi n)},\<br>
+a\cos{(\pi n+2\pi)} + b\sin{(\pi n+2\pi)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;= \sin{(\pi n)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y recordando que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\cos{(k_1+k_2)} &= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\\
-\sin{(k_1+k_2)} &= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
+\cos{(k_1+k_2)} &amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\<br>
+\sin{(k_1+k_2)} &amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces $\cos{(\pi n+2\pi)} = \cos{(\pi n)}$ y $\sin{(\pi n+2\pi)} = \sin{(\pi n)}$, con lo que la ecuación anterior queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a\cos{(\pi n)} + b\sin{(\pi n)} + a\cos{(\pi n)} + b\sin{(\pi n)} &= \sin{(\pi n)},\\
-2a\cos{(\pi n)} + 2b\sin{(\pi n)} &= \sin{(\pi n)},
+a\cos{(\pi n)} + b\sin{(\pi n)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;= \sin{(\pi n)},\<br>
+2a\cos{(\pi n)} + 2b\sin{(\pi n)} &amp;= \sin{(\pi n)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>e, igualando coeficientes, llegamos a que $2a=0$, de donde $a=0$, y $2b=1$, con lo que $b=1 / 2$, de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_p(n) = \dfrac{1}{2}\sin{(\pi n)}.
-\]</span></p>
-
+$$</p>
 <p>Finalmente, la solución general de la ecuación inicial la obtenemos haciendo</p>
-
-<p><span  class="math">\[
+<p>$$
 a(n) = a_h(n) + a_p(n) = A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)} + \dfrac{1}{2}\sin{(\pi n)},
-\]</span></p>
-
+$$</p>
 <p>con $A,B\in\mathbb{R}$.</p>
-
 <p>En el apartado (b), tenemos la ecuación en diferencias lineal completa de orden 2,</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n+2}+a_n = \sin{\left(\dfrac{\pi}{2}n\right)},
-\]</span></p>
-
+$$</p>
 <p>cuya correspondiente ecuación lineal homogénea es</p>
-
-<p><span  class="math">\[
+<p>$$
 a_{n+2}+a_n = 0,
-\]</span></p>
-
+$$</p>
 <p>con ecuación característica asociada</p>
-
-<p><span  class="math">\[
+<p>$$
 \lambda^2 + 1=0.
-\]</span></p>
-
+$$</p>
 <p>Como $\lambda^2+1 = (\lambda - i)(\lambda + i)$, estamos en el caso de raíces complejas conjugadas simples, para las que $\varrho = 1$ y $\theta = \pi/2$, de manera que la solución para la ecuación anterior queda</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a_h(n) &= 1^n\left(
+a_h(n) &amp;= 1^n\left(
 A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}
-\right)\\
-&= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
+\right)\<br>
+&amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $A,B\in\mathbb{R}$.</p>
-
 <p>Ahora, para hallar una solución particular, $a_p(n)$, como</p>
-
-<p><span  class="math">\[
+<p>$$
 b(n) = \sin{\left(\dfrac{\pi}{2}n\right)}
-\]</span></p>
-
+$$</p>
 <p>y</p>
-
-<p><span  class="math">\[
+<p>$$
 \lambda = \cos{\left(\dfrac{\pi}{2}\right)} + i\sin{\left(\dfrac{\pi}{2}\right)} = i
-\]</span></p>
-
+$$</p>
 <p>es raíz simple ($m=1$) de la ecuación característica, proponemos</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a_p(n) &= n^1\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right)\\
-&= n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right),
+a_p(n) &amp;= n^1\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right)\<br>
+&amp;= n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right),
 \end{aligned} 
-\]</span></p>
-
+$$</p>
 <p>de manera que, sustituyendo en la ecuación inicial,</p>
-
-<p><span  class="math">\[
+<p>$$
 (n+2)\left(a\cos{\left(\dfrac{\pi}{2}(n+2)\right)} + b\sin{\left(\dfrac{\pi}{2}(n+2)\right)}\right)+n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
-\]</span></p>
-
+$$</p>
 <p>y recordando que</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\cos{(k_1+k_2)} &= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\\
-\sin{(k_1+k_2)} &= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
+\cos{(k_1+k_2)} &amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\<br>
+\sin{(k_1+k_2)} &amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>entonces</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-\cos{\left(\dfrac{\pi}{2}(n+2)\right)} &= \cos{\left(\dfrac{\pi}{2}n+\pi\right)} = -\cos{\left(\dfrac{\pi}{2}n\right)},\\
-\sin{\left(\dfrac{\pi}{2}(n+2)\right)} &= \sin{\left(\dfrac{\pi}{2}n+\pi\right)} = -\sin{\left(\dfrac{\pi}{2}n\right)},
+\cos{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;= \cos{\left(\dfrac{\pi}{2}n+\pi\right)} = -\cos{\left(\dfrac{\pi}{2}n\right)},\<br>
+\sin{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;= \sin{\left(\dfrac{\pi}{2}n+\pi\right)} = -\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con lo que la ecuación anterior queda</p>
-
-<p><span  class="math">\[
+<p>$$
 (n+2)\left(-a\cos{\left(\dfrac{\pi}{2}n\right)} - b\sin{\left(\dfrac{\pi}{2}n\right)}\right)+ n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
-\]</span></p>
-
+$$</p>
 <p>e, igualando coeficientes, llegamos a que $-2a=0$, de donde $a=0$, y $-2b=1$, por lo que $b = -1 / 2$, de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_p(n) = -\dfrac{1}{2}\sin{\left(\dfrac{\pi}{2}n\right)}.
-\]</span></p>
-
+$$</p>
 <p>Finalmente, la solución general de la ecuación inicial la obtenemos haciendo</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a(n) = a_h(n) + a_p(n) &= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)} -\dfrac{1}{2}\sin{\left(\dfrac{\pi}{2}n\right)}\\
-&=A\cos{\left(\dfrac{\pi}{2}n\right)} + \left(B-\dfrac{1}2{}\right)\sin{\left(\dfrac{\pi}{2}n\right)},
+a(n) = a_h(n) + a_p(n) &amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)} -\dfrac{1}{2}\sin{\left(\dfrac{\pi}{2}n\right)}\<br>
+&amp;=A\cos{\left(\dfrac{\pi}{2}n\right)} + \left(B-\dfrac{1}2{}\right)\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>con $A,B\in\mathbb{R}$.</p>
     </div>
 
@@ -1013,7 +970,7 @@ a(n) = a_h(n) + a_p(n) &= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfr
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1080,7 +1037,7 @@ a(n) = a_h(n) + a_p(n) &= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfr
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1096,7 +1053,7 @@ a(n) = a_h(n) + a_p(n) &= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfr
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

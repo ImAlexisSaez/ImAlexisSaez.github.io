@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/10/17/empezando-con-teoria-de-numeros-iv/featured_hu6121944b5108f7a44b3f4ed1cd4e674a_69782_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@chrislawton" target="_blank">Chris Lawton</a>, disponible en <a href="https://unsplash.com/photos/t-EYluv7mW0" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@chrislawton">Chris Lawton</a>, disponible en <a href="https://unsplash.com/photos/t-EYluv7mW0">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,52 +574,35 @@
 
     <div class="article-style">
       <p><strong>Problema 20:</strong> Calcula las reglas de divisibilidad para $3$ y para $9$.</p>
-
 <hr>
-
-<p>Consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el <em>Teorema Fundamental de la Numeración</em>, que podemos expresarlo como</p>
-
-<p><span  class="math">\[
+<p>Consideremos el número de $n$ cifras $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ en base $10$. Sabemos, por el *Teorema Fundamental de la Numeración*, que podemos expresarlo como</p>
+<p>$$
 a_{n-1}a_{n-2}\cdots a_1a_0 = a_0+a_110+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}.
-\]</span></p>
-
+$$</p>
 <p>Para encontrar el criterio de divisibilidad del $3$ utilizaremos las propiedades de las congruencias sobre las potencias de $10$, buscando una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+a_210^2+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{3},
-\]</span></p>
-
+$$</p>
 <p>esto es, dicho número sea múltiplo de $3$.</p>
-
 <p>Así, como $10\equiv 1\pmod{3}$, fácilmente apreciamos que</p>
-
-<p><span  class="math">\[
+<p>$$
 10^2\equiv 1^2\pmod{3}\equiv 1\pmod{3}
-\]</span></p>
-
+$$</p>
 <p>y, en general, $10^i\equiv 1\pmod{3}$, para cada $i\in\mathbb{N}$, por lo que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{3},
-\]</span></p>
-
+$$</p>
 <p>es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ es divisible por $3$ siempre y cuando la suma de sus dígitos sea múltiplo de $3$.</p>
-
 <p>Por lo que respecta al criterio de divisibilidad del $9$, el modo de proceder es muy similar al mostrado arriba. Volvemos a buscar una condición sobre los dígitos del número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ de manera que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+a_210^2+\cdots+a_{n-2}10^{n-2}+a_{n-1}10^{n-1}\equiv 0\pmod{9},
-\]</span></p>
-
+$$</p>
 <p>esto es, dicho número sea múltiplo de $9$. Al igual que antes, como $10\equiv 1\pmod{9}$, se sigue que $10^2\equiv 1^2\pmod{9}\equiv 1\pmod{9}$ y, en general, $10^i\equiv 1\pmod{9}$, para cada $i\in\mathbb{N}$, por lo que</p>
-
-<p><span  class="math">\[
+<p>$$
 a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{9},
-\]</span></p>
-
+$$</p>
 <p>es decir, el número $a_{n-1}a_{n-2}\cdots a_2a_1a_0$ es divisible por $9$ siempre y cuando la suma de sus dígitos sea múltiplo de $9$. Expresado de otra manera, todo número es congruente con la suma de sus cifras módulo $9$. Por ejemplo, $162\equiv 0\pmod{9}$, ya que $1+6+2=9$ y $9\equiv 0\pmod{9}$; mientras que $172\equiv 1\pmod{9}$, puesto que $1+7+2=10$ y $10\equiv 1\pmod{9}$.</p>
-
-<p><em>Nota</em>: es más, el último criterio de divisibilidad hallado se puede generalizar como sigue: ''<em>dado un sistema de numeración cuya base $b$ es mayor que $2$, un número es divisible por $b-1$ siempre que la suma de sus dígitos sea congruente con $0$ módulo $b-1$</em>''.</p>
+<p><em>Nota</em>: es más, el último criterio de divisibilidad hallado se puede generalizar como sigue: &lsquo;'<em>dado un sistema de numeración cuya base $b$ es mayor que $2$, un número es divisible por $b-1$ siempre que la suma de sus dígitos sea congruente con $0$ módulo $b-1$</em>''.</p>
 
     </div>
 
@@ -888,7 +878,7 @@ a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{9},
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -955,7 +945,7 @@ a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{9},
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -971,7 +961,7 @@ a_0+a_110+\cdots+a_{n-1}10^{n-1}\equiv (a_0+a_1+\cdots+a_{n-1})\pmod{9},
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

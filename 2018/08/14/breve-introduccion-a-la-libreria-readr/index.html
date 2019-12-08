@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@danmagatti" target="_blank">Dan Magatti</a>, disponible en <a href="https://unsplash.com/photos/AjAGGScv-nE" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@danmagatti">Dan Magatti</a>, disponible en <a href="https://unsplash.com/photos/AjAGGScv-nE">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -527,60 +534,39 @@
   <div class="article-container">
 
     <div class="article-style">
-      
-
-<p>En este artículo exploraremos las posibilidades que nos ofrece una librería de <em>R</em>, <em>readr</em>, integrante del famoso <em>tidyverso</em>, de cara a la importación y exportación de nuestros conjuntos de datos.</p>
-
-<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma <a href="https://www.datacamp.com/home" target="_blank">DataCamp</a>. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería <a href="https://cran.r-project.org/web/packages/readr/index.html" target="_blank">readr</a>: &ldquo;<em>Reading Data into R with readr</em>&rdquo;, al que podemos acceder a través del <a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ" target="_blank">siguiente enlace</a>.</p>
-
+      <p>En este artículo exploraremos las posibilidades que nos ofrece una librería de <em>R</em>, <em>readr</em>, integrante del famoso <em>tidyverso</em>, de cara a la importación y exportación de nuestros conjuntos de datos.</p>
+<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma <a href="https://www.datacamp.com/home">DataCamp</a>. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería <a href="https://cran.r-project.org/web/packages/readr/index.html">readr</a>: &ldquo;<em>Reading Data into R with readr</em>&quot;, al que podemos acceder a través del <a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ">siguiente enlace</a>.</p>
 <p>El material está desglosado en dos capítulos. En el primero de ellos, aprenderemos diversas funciones, contenidas en este paquete, que facilitarán enormemente la labor de importar datos utilizando el lenguaje de programación <em>R</em>. En el segundo, el objetivo será utilizar las herramientas que la librería pone a nuestra disposición para analizar y convertir las clases que poseen las columnas del conjunto de datos recién importado.</p>
-
 <p><em>readr</em> es una componente del denominado <em>tidyverso</em> (<em>tidyverse</em> en inglés, que parece que siempre suena mejor), un conjunto de librerías que todo usuario de <em>R</em> debería si no dominar, al menos conocer, para así resolver ciertas situaciones de la manera más sencilla posible (basta imaginar tener que hacer a mano algunas de las tareas que paquetes como <em>dplyr</em> o <em>tidyr</em> llevan a cabo para darse cuenta de este hecho).</p>
-
 <h2 id="1-importando-datos-con-readr">1. Importando datos con <em>readr</em></h2>
-
-<h3 id="1-1-archivos-csv">1.1. Archivos <code>.csv</code></h3>
-
+<h3 id="11-archivos-csv">1.1. Archivos <code>.csv</code></h3>
 <p>A la hora de importar conjuntos de datos en <em>R</em>, uno de los formatos más habituales en los que hallamos información es en archivos separados por comas (<em>comma separated values</em>), cuya extensión suele ser <code>.csv</code>. En ellos encontramos múltiples líneas que recogen la tabla de interés, y en las cuales los valores aparecen, de manera consecutiva, separados por el carácter <code>,</code>.</p>
-
 <p>Para importar este tipo de ficheros en nuestra sesión de <em>R</em>, utilizaremos la función <code>read_csv()</code>. Para acceder a su documentación, en primer lugar, cargaremos la librería <em>readr</em> (o la instalaremos si todavía no lo hemos hecho).</p>
-
 <pre><code class="language-r">if(!require(readr)) {install.packages(&quot;readr&quot;)}
 </code></pre>
-
 <pre><code>## Loading required package: readr
 </code></pre>
-
 <pre><code class="language-r">library(readr)
 </code></pre>
-
 <pre><code class="language-r">?read_csv
 </code></pre>
-
 <p>El único argumento que hemos de pasar a esta función, de manera obligatoria, es <code>file</code>, el nombre del archivo que pretendemos importar (o bien la ruta completa donde éste se encuentra). El resto son opcionales, y deberían resultarnos familiares la mayoría de ellos si hemos trabajado alguna vez con funciones del tipo <code>read.table()</code> o <code>read.csv()</code>. Algunas de las ventajas que utilizar <code>read_csv()</code> ofrece son:</p>
-
 <ul>
 <li>No convierte, automáticamente, las columnas con cadenas de caracteres a factores, como sí hacen por defecto las otras funciones referidas en el párrafo anterior.</li>
 <li>Reconoce ocho clases diferentes de datos (<code>integer</code>, <code>logical</code>, etc.), dejando el resto como cadenas de caracteres.</li>
 </ul>
-
 <p>Pongamos a prueba su uso importando un conjunto de datos que contiene tanto los pesos, como el tipo de alimentación, de 71 pollos. El archivo de interés es <code>chickwts.csv</code>, por lo que empezaremos especificando la ruta para acceder a él en el argumento <code>file</code>. Como en el segundo capítulo llevaremos a cabo algunas acciones sobre los conjuntos de datos que aparecerán en esta sección, todos los ficheros que importemos los almacenaremos en objetos dentro de <em>R</em>.</p>
-
 <pre><code class="language-r">cwts &lt;- read_csv(file = &quot;datasets/chickwts.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
-
 <p>Es interesante el mensaje que aparece en la consola al ejecutar la anterior instrucción, ya que nos informa el resultado del análisis, que la función realiza, para inferir las clases de cada una de las columnas que componen la tabla. Echemos un vistazo al contenido del archivo que acabamos de importar.</p>
-
 <pre><code class="language-r">head(cwts)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 2
 ##   weight      feed
 ##    &lt;int&gt;     &lt;chr&gt;
@@ -591,10 +577,8 @@
 ## 5    217 horsebean
 ## 6    168 horsebean
 </code></pre>
-
 <pre><code class="language-r">str(cwts)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    71 obs. of  2 variables:
 ##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
 ##  $ feed  : chr  &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; ...
@@ -608,24 +592,18 @@
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p>A primera vista, la columna <code>feed</code> posiblemente estaría mejor codificada bajo la clase <code>factor</code> (aunque esto siempre va a depender de nuestros intereses y el uso que tengamos en mente para esta variable). No obstante, recordemos que éste no es el comportamiento que por defecto incorpora la función <code>read_csv()</code> (aunque después veremos cómo declarar con antelación las clases para las columnas de un archivo y posibilitar su lectura como factores).</p>
-
 <p>Utilicemos de nuevo esta función con otro conjunto de datos, <code>chickwts2.csv</code> (más información relativa al peso y tipo de alimentación de 18 pollos distintos), que usaremos más adelante en este capítulo, cuando lleguemos al apartado de exportar tablas a ficheros.</p>
-
 <pre><code class="language-r">cwts2 &lt;- read_csv(&quot;datasets/chickwts2.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
-
 <pre><code class="language-r">head(cwts2)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 2
 ##   weight  feed
 ##    &lt;int&gt; &lt;chr&gt;
@@ -636,10 +614,8 @@
 ## 5    244  corn
 ## 6    271  corn
 </code></pre>
-
 <pre><code class="language-r">str(cwts2)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    18 obs. of  2 variables:
 ##  $ weight: int  309 229 213 257 244 271 243 248 257 303 ...
 ##  $ feed  : chr  &quot;corn&quot; &quot;corn&quot; &quot;corn&quot; &quot;corn&quot; ...
@@ -653,27 +629,19 @@
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="1-2-archivos-tsv">1.2. Archivos <code>.tsv</code></h3>
-
+<h3 id="12-archivos-tsv">1.2. Archivos <code>.tsv</code></h3>
 <p>La librería <em>readr</em> posee también una función específica para la lectura de los archivos separados por tabulaciones, cuya extensión suele ser <code>.tsv</code> (aunque personalmente también he visto alguno que utiliza <code>.tab</code>). Se trata de <code>read_tsv()</code> y si accedemos a su documentación comprobaremos que su uso es exactamente idéntico al de la función que exploramos en la sección anterior.</p>
-
 <pre><code class="language-r">?read_tsv
 </code></pre>
-
 <p>Investiguemos alguno de los argumentos que podemos declarar, de manera opcional, en esta función (y, por tanto, lo que aprendamos será de utilidad también de cara al uso de <code>read_csv()</code>). Por ejemplo, para controlar el nombre de las columnas de la tabla que deseamos importar, el argumento <code>col_names</code> es el indicado, y puede tomar los siguientes valores:</p>
-
 <ul>
 <li><code>TRUE</code>: utiliza la información disponible en la primera línea del archivo para declarar los nombres de las columnas, no incluyéndolos por tanto en el interior de la propia tabla.</li>
 <li><code>FALSE</code>: genera, de manera automática, los clásicos nombres <code>X1</code>, <code>X2</code>, <code>X3</code>, etc., para las columnas, y empieza a incluir la información en la tabla desde la primera fila.</li>
 <li>La última opción disponible es utilizar un vector que contenga los nombres de las columnas, y, como antes, desde la primera fila se insertarán los datos en el interior de la tabla.</li>
 </ul>
-
 <p>Por ejemplo, importemos a continuación el fichero <code>salaries.tsv</code>. Si abrimos el archivo con un editor de texto plano cualquiera, comprobaremos que la primera línea no contiene los respectivos nombres para cada una de las columnas, y dado que no conocemos de antemano qué declara cada una, usar el argumento <code>col_names = FALSE</code> parece la opción más adecuada.</p>
-
 <pre><code class="language-r">salaries &lt;- read_tsv(&quot;datasets/Salaries.tsv&quot;, col_names = FALSE)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   X1 = col_character(),
@@ -684,10 +652,8 @@
 ##   X6 = col_integer()
 ## )
 </code></pre>
-
 <pre><code class="language-r">head(salaries)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 6
 ##          X1    X2    X3    X4    X5     X6
 ##       &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;int&gt;
@@ -698,10 +664,8 @@
 ## 5      Prof     B    40    41  Male 141500
 ## 6 AssocProf     B     6     6  Male  97000
 </code></pre>
-
 <pre><code class="language-r">str(salaries)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  6 variables:
 ##  $ X1: chr  &quot;Prof&quot; &quot;Prof&quot; &quot;AsstProf&quot; &quot;Prof&quot; ...
 ##  $ X2: chr  &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; ...
@@ -727,9 +691,7 @@
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p>En la llamada a la función <code>read_tsv()</code>, hemos recibido por consola el siguiente mensaje:</p>
-
 <pre><code>Parsed with column specification:
 cols(
   X1 = col_character(),
@@ -740,13 +702,9 @@ cols(
   X6 = col_integer()
 )
 </code></pre>
-
 <p>Como ya comentábamos en la sección anterior, esta información nos indica la clase que la función <code>read_tsv()</code> ha inferido para todas y cada una de las columnas contenidas en el archivo. De hecho, este comportamiento no se restringe únicamente a las funciones <code>read_csv()</code> y <code>read_tsv()</code>, sino a todas las implementadas en la librería <em>readr</em> cuya empresa es, precisamente, la lectura de ficheros de datos.</p>
-
 <p>A través del argumento <code>col_types</code> tenemos cierto control sobre la declaración de la clase de las columnas, utilizando funciones predefinidas del estilo <code>col_*()</code> (como <code>col_integer()</code>, <code>col_character()</code>, etc.). La forma de usar este argumento es muy sencilla: simplemente tenemos que escribir <code>col_types = cols()</code> e incluir en el interior de <code>cols()</code> los nombres de las columnas y la clase que deseamos posean (siguiendo el estilo de, por ejemplo, el mensaje por consola que mostrábamos arriba).</p>
-
 <p>Una función que nos puede interesar, en este momento, es <code>col_skip()</code>, que le indica a <em>R</em> que omita una determinada columna a la hora de importar la información de un archivo de datos. Veamos su uso con más detalle a través de un ejemplo. Supongamos que sólo estamos interesados en las columnas primera, quinta y sexta del anterior fichero de datos. Así pues, no tendríamos más que escribir:</p>
-
 <pre><code class="language-r">salaries &lt;- read_tsv(&quot;datasets/Salaries.tsv&quot;, col_names = FALSE,
                      col_types = cols(
                          X2 = col_skip(),
@@ -754,10 +712,8 @@ cols(
                          X4 = col_skip()
                      ))
 </code></pre>
-
 <pre><code class="language-r">head(salaries)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 3
 ##          X1    X5     X6
 ##       &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;
@@ -768,10 +724,8 @@ cols(
 ## 5      Prof  Male 141500
 ## 6 AssocProf  Male  97000
 </code></pre>
-
 <pre><code class="language-r">str(salaries)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
 ##  $ X1: chr  &quot;Prof&quot; &quot;Prof&quot; &quot;AsstProf&quot; &quot;Prof&quot; ...
 ##  $ X5: chr  &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; ...
@@ -794,18 +748,12 @@ cols(
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="1-3-archivos-csv-formato-europeo">1.3. Archivos <code>.csv</code> (formato europeo)</h3>
-
+<h3 id="13-archivos-csv-formato-europeo">1.3. Archivos <code>.csv</code> (formato europeo)</h3>
 <p>En muchos países de este continente, usamos la coma como separador decimal, de manera que los archivos separados por comas, en realidad, terminan siendo separados por el símbolo <code>;</code> (punto y coma). Por curiosidad, puedes probar a crear una tabla sencilla en, por ejemplo, <em>Excel</em> y exportarla como archivo separado por comas, para luego abrir el archivo con un editor de texto plano y verificar que, efectivamente, los valores están separados por <code>;</code> (en realidad este comportamiento se puede modificar desde las opciones de formato del sistema operativo, pero no entraremos en ese tipo de detalles).</p>
-
 <p>En previsión de esta particularidad, la librería <em>readr</em> pone a nuestra disposición la función <code>read_csv2()</code>, que identifica el símbolo <code>;</code> como separador de valores, mientras que <code>,</code> queda como separador decimal. Obviando esta salvedad, su uso es idéntico al de las funciones presentadas en los anteriores apartados.</p>
-
 <p>Tomemos ahora el archivo <code>trees.csv</code> (que contiene información sobre la circunferencia, la altura y el volumen de cerezos negros), el cual viene dado en el formato al que nos estamos refiriendo aquí, e importémoslo directamente con la función <code>read_csv()</code>, en lugar de con <code>read_csv2()</code>, para ver qué sucede.</p>
-
 <pre><code class="language-r">trees_wrong &lt;- read_csv(&quot;datasets/trees.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   `Girth&quot;;&quot;Height&quot;;&quot;Volume` = col_character()
@@ -821,18 +769,13 @@ cols(
 ## ... ... ......... .........
 ## See problems(...) for more details.
 </code></pre>
-
 <p>En favor de la función <code>read_csv()</code> hay que decir que, al menos, nos indica la existencia de ciertos problemas, o situaciones inesperadas, durante la importación del archivo. De todas formas, podemos observar cómo ha procedido a generar una tabla con una única columna, en lugar de las correspondientes tres que hubiese sido lo adecuado en esta ocasión. Comprobemos qué contiene el objeto <code>trees_wrong</code>.</p>
-
 <pre><code class="language-r">dim(trees_wrong)
 </code></pre>
-
 <pre><code>## [1] 31  1
 </code></pre>
-
 <pre><code class="language-r">head(trees_wrong)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 1
 ##   `Girth&quot;;&quot;Height&quot;;&quot;Volume`
 ##                       &lt;chr&gt;
@@ -843,10 +786,8 @@ cols(
 ## 5                        10
 ## 6                        10
 </code></pre>
-
 <pre><code class="language-r">str(trees_wrong)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  1 variable:
 ##  $ Girth&quot;;&quot;Height&quot;;&quot;Volume: chr  &quot;8&quot; &quot;8&quot; &quot;8&quot; &quot;10&quot; ...
 ##  - attr(*, &quot;problems&quot;)=Classes 'tbl_df', 'tbl' and 'data.frame': 30 obs. of  4 variables:
@@ -862,12 +803,9 @@ cols(
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p>Veamos ahora el resultado que obtenemos al utilizar la función <code>read_csv2()</code>.</p>
-
 <pre><code class="language-r">trees &lt;- read_csv2(&quot;datasets/trees.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   Girth = col_double(),
@@ -875,16 +813,12 @@ cols(
 ##   Volume = col_double()
 ## )
 </code></pre>
-
 <pre><code class="language-r">dim(trees)
 </code></pre>
-
 <pre><code>## [1] 31  3
 </code></pre>
-
 <pre><code class="language-r">head(trees)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 3
 ##   Girth Height Volume
 ##   &lt;dbl&gt;  &lt;int&gt;  &lt;dbl&gt;
@@ -895,10 +829,8 @@ cols(
 ## 5  10.7     81   18.8
 ## 6  10.8     83   19.7
 </code></pre>
-
 <pre><code class="language-r">str(trees)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
 ##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
 ##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
@@ -915,26 +847,18 @@ cols(
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="1-4-archivos-con-ancho-de-columna-fijo">1.4. Archivos con ancho de columna fijo</h3>
-
+<h3 id="14-archivos-con-ancho-de-columna-fijo">1.4. Archivos con ancho de columna fijo</h3>
 <p>En ocasiones, el formato en el que encontramos los archivos de datos es similar al mostrado en <em>R</em> a la hora de imprimir en consola un <code>data.frame</code>. Es decir, cada columna posee un total de caracteres fijos y éstas se separan usando espacios en blanco (que también se utilizan para rellenar aquellos valores cuya longitud es menor que la correspondiente a su columna).</p>
-
 <p>El archivo <code>names.txt</code> constituye un ejemplo de lo comentado en el párrafo anterior. En su interior encontramos los nombres de ciertos personajes famosos, el estado donde supuestamente residen y, como no podía ser de otra manera, sus falsos números de teléfono.</p>
-
 <p>La función adecuada para lidiar con estos casos es <code>read_table()</code>, cuya documentación ofrece un listado de argumentos bastante familiares a estas alturas.</p>
-
 <pre><code class="language-r">?read_table
 </code></pre>
-
 <p>Importemos pues el fichero <code>names.txt</code>, declarando adecuadamente los nombres para las columnas utilizando el parámetro <code>col_names</code>.</p>
-
 <pre><code class="language-r">names &lt;- read_table(&quot;datasets/names.txt&quot;,
                     col_names = c(&quot;name&quot;, &quot;state&quot;, &quot;phone&quot;))
 
 names                   
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 3
 ##                  name        state        phone
 ##                 &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;
@@ -945,10 +869,8 @@ names
 ## 5 Rutherford B. Hayes         Ohio 220-555-1388
 ## 6   Chester A. Arthur      Vermont 802-555-8383
 </code></pre>
-
 <pre><code class="language-r">str(names)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  3 variables:
 ##  $ name : chr  &quot;Oprah Winfrey&quot; &quot;Walt Disney&quot; &quot;Michael Scott&quot; &quot;Cosmo Kramer&quot; ...
 ##  $ state: chr  &quot;null&quot; &quot;Florida&quot; &quot;Pennsylvania&quot; &quot;New York&quot; ...
@@ -965,17 +887,13 @@ names
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p>Aprovechemos este particular ejemplo para ilustrar el tratamiento de los valores perdidos con las funciones de la librería <em>readr</em> dedicadas a importar archivos de datos. Por defecto, sólo se reconoce <code>NA</code> como valor perdido, pero, en esta ocasión, si nos fijamos en la primera fila de la tabla, han optado por usar <code>null</code> para registrar la ausencia de información para ciertos atributos concretos.</p>
-
 <p>No supone esto demasiado inconveniente, puesto que utilizando el parámetro <code>na</code> podemos declarar, mediante un vector, qué cadenas de texto deben ser consideradas como valores perdidos (y automáticamente pasarán a ser <code>NA</code> en el objeto que creemos en <em>R</em>). Por defecto, <code>na = &quot;NA&quot;</code>, de manera que simplemente tenemos que declarar <code>na = c(&quot;NA&quot;, &quot;null&quot;)</code> en nuestro caso.</p>
-
 <pre><code class="language-r">names2 &lt;- read_table(&quot;datasets/names.txt&quot;, 
                      col_names = c(&quot;name&quot;, &quot;state&quot;, &quot;phone&quot;),
                      na = c(&quot;NA&quot;, &quot;null&quot;))
 head(names2)                     
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 3
 ##                  name        state        phone
 ##                 &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;
@@ -986,29 +904,22 @@ head(names2)
 ## 5 Rutherford B. Hayes         Ohio 220-555-1388
 ## 6   Chester A. Arthur      Vermont 802-555-8383
 </code></pre>
-
-<h3 id="1-5-archivos-de-texto">1.5. Archivos de texto</h3>
-
+<h3 id="15-archivos-de-texto">1.5. Archivos de texto</h3>
 <p>Es posible que nuestro interés no se centre tanto en examinar tablas de datos, como texto propiamente dicho, sobretodo ahora que tan de moda está el análisis de sentimiento (para estudiar opiniones, discursos, etc.). La librería <em>readr</em> pone a nuestra disposición un par de funciones que nos serán útiles en estos casos:</p>
-
 <ul>
-<li><p><code>read_lines()</code>: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.</p>
-
-<pre><code class="language-r">?read_lines
-</code></pre></li>
-
-<li><p><code>read_file()</code>: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando <code>\n</code>.</p>
-
-<pre><code class="language-r">?read_file
-</code></pre></li>
+<li><code>read_lines()</code>: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.</li>
 </ul>
-
+<pre><code class="language-r">?read_lines
+</code></pre>
+<ul>
+<li><code>read_file()</code>: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando <code>\n</code>.</li>
+</ul>
+<pre><code class="language-r">?read_file
+</code></pre>
 <p>En el fichero <code>tweets.txt</code> encontramos algunos <em>tuits</em> correspondientes a la cuenta <code>@RealCarrotFacts</code> (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.</p>
-
 <pre><code class="language-r">tweets &lt;- read_lines(&quot;datasets/tweets.txt&quot;)
 tweets
 </code></pre>
-
 <pre><code>## [1] &quot;carrots  can be eat by most people&quot;                                                                                          
 ## [2] &quot;On predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america's carrot&quot;
 ## [3] &quot;knock knoc who is there? yup: carosot   ( joke )&quot;                                                                            
@@ -1016,57 +927,41 @@ tweets
 ## [5] &quot;when life give you lemnos ,  have a carrot&quot;                                                                                  
 ## [6] &quot;If you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&quot;
 </code></pre>
-
 <pre><code class="language-r">str(tweets)
 </code></pre>
-
 <pre><code>##  chr [1:6] &quot;carrots  can be eat by most people&quot; ...
 </code></pre>
-
 <pre><code class="language-r">tweets_all &lt;- read_file(&quot;datasets/tweets.txt&quot;)
 tweets_all
 </code></pre>
-
 <pre><code>## [1] &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america's carrot\nknock knoc who is there? yup: carosot   ( joke )\nit is 2016 time for a carot emoji   please!\nwhen life give you lemnos ,  have a carrot\nIf you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&quot;
 </code></pre>
-
 <pre><code class="language-r">str(tweets_all)
 </code></pre>
-
 <pre><code>##  chr &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and&quot;| __truncated__
 </code></pre>
-
-<h3 id="1-6-escribiendo-archivos-csv-y-tsv">1.6. Escribiendo archivos <code>.csv</code> y <code>.tsv</code></h3>
-
+<h3 id="16-escribiendo-archivos-csv-y-tsv">1.6. Escribiendo archivos <code>.csv</code> y <code>.tsv</code></h3>
 <p>Una vez hemos importado nuestro conjunto de datos de interés, y realizamos sobre él ciertas manipulaciones, es bastante probable que deseemos almacenar el resultado en un archivo para su posterior uso y disfrute. La librería <em>readr</em> contiene varias funciones del estilo <code>write_*()</code> (por ejemplo, <code>write_csv()</code> o <code>write_tsv()</code>) orientadas a satisfacer esta necesidad, y que se caracterizan por un par de detalles realmente interesantes:</p>
-
 <ul>
 <li>A diferencia de funciones como <code>write.csv()</code>, no añaden por defecto los números (o nombres) de las filas al archivo exportado, lo cual suele ser el comportamiento deseado en la mayoría de ocasiones.</li>
 <li>El parámetro <code>col_names</code> adopta como valor el contrario al que posee <code>append</code>, manera de actuar que tiene todo el sentido del mundo. Si decidimos continuar añadiendo datos a un archivo que previamente hemos exportado, declararemos <code>append = TRUE</code> y, por tanto, no aparecerán de nuevo, y en mitad del fichero, los nombres de las columnas.</li>
 </ul>
-
 <p>Veamos este último punto con mayor detalle a través de un ejemplo. En primer lugar, exportaremos a un archivo separado por comas el objeto <code>cwts</code> que generamos en una sección anterior. A Continuación, añadiremos al mencionado archivo el contenido del objeto <code>cwts2</code>.</p>
-
 <pre><code class="language-r">write_csv(cwts, &quot;chickwts.csv&quot;)
 
 write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
 </code></pre>
-
 <p>Procedamos ahora a importar el fichero recién generado y examinémoslo.</p>
-
 <pre><code class="language-r">cwts3 &lt;- read_csv(&quot;chickwts.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
-
 <pre><code class="language-r">head(cwts3)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 2
 ##   weight      feed
 ##    &lt;int&gt;     &lt;chr&gt;
@@ -1077,10 +972,8 @@ write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
 ## 5    217 horsebean
 ## 6    168 horsebean
 </code></pre>
-
 <pre><code class="language-r">str(cwts3)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    89 obs. of  2 variables:
 ##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
 ##  $ feed  : chr  &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; ...
@@ -1094,39 +987,26 @@ write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="1-7-escribiendo-archivos-rds">1.7. Escribiendo archivos <code>.rds</code></h3>
-
+<h3 id="17-escribiendo-archivos-rds">1.7. Escribiendo archivos <code>.rds</code></h3>
 <p>Es posible que estemos interesados en exportar no solamente los valores de una tabla, sino ciertos <em>metadatos</em> asociados a ella, como pueden ser, por ejemplo, las clases de las diferentes columnas que la compongan. No es fácil incorporar este tipo de información a un archivo separado por comas o tabulaciones, por lo que la librería <em>readr</em> nos ofrece la posibilidad de exportar un objeto completo de <em>R</em> a través de la función <code>write_rds()</code>.</p>
-
 <pre><code class="language-r">?write_rds
 </code></pre>
-
 <p>La mencionada función no es más que un <em>wrapper</em> (desconozco la traducción a español de este término) de la función <code>saveRDS()</code>, con la única particularidad de que, por defecto, no comprime el archivo resultante (aunque este comportamiento se puede definir a través del parámetro <code>compress</code>).</p>
-
 <p>Ilustremos su aplicación mediante un ejemplo. Exportaremos el objeto <code>trees</code> que generamos en una sección anterior utilizando la función <code>write_rds()</code>, para a continuación importarlo inmediatamente con <code>read_rds()</code> y asignarlo a <code>trees2</code>. Finalmente, compararemos si ambos objetos son idénticos, empleando para ello la función <code>identical()</code>.</p>
-
 <pre><code class="language-r">write_rds(trees, &quot;trees.rds&quot;)
 
 trees2 &lt;- read_rds(&quot;trees.rds&quot;)
 
 identical(trees, trees2)
 </code></pre>
-
 <pre><code>## [1] TRUE
 </code></pre>
-
 <h2 id="2-analizando-datos-con-readr">2. Analizando datos con readr</h2>
-
-<h3 id="2-1-modificando-la-clase-de-las-columnas">2.1. Modificando la clase de las columnas</h3>
-
+<h3 id="21-modificando-la-clase-de-las-columnas">2.1. Modificando la clase de las columnas</h3>
 <p>Aunque las funciones para importar archivos de datos que pone a nuestra disposición la librería <em>readr</em>, realizan una labor estupenda a la hora de inferir la clase de cada una de las columnas que componen una tabla, su comportamiento dista de ser perfecto. Esto se traducirá, seguramente, en la necesidad de llevar a cabo ciertas modificaciones, sobre las mencionadas clases, para algunos casos concretos.</p>
-
 <p>Para ello, la función adecuada a utilizar es <code>type_convert()</code>, que incorpora el conocido argumento <code>col_types</code> en su llamada. Ilustremos su uso y aprovechemos, además, para emplear la notación abreviada para los tipos de datos que <strong>readr</strong> ofrece. Tomaremos el objeto <code>trees</code> y declararemos todas sus columnas de tipo <code>numeric</code>.</p>
-
 <pre><code class="language-r">?type_convert
 </code></pre>
-
 <pre><code class="language-r">trees3 &lt;- type_convert(trees, 
                        col_types = cols(
                            Girth  = &quot;d&quot;, 
@@ -1134,14 +1014,11 @@ identical(trees, trees2)
                            Volume = &quot;d&quot;)
                        )
 </code></pre>
-
 <pre><code>## Warning: The following named parsers don't match the column names: Girth,
 ## Height, Volume
 </code></pre>
-
 <pre><code class="language-r">str(trees3)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
 ##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
 ##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
@@ -1158,30 +1035,21 @@ identical(trees, trees2)
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p><em>Nota</em>: aunque la función se utiliza tal y como está descrito (e incluso en el propio curso de <em>DataCamp</em> ésta sería la respuesta adecuada), he encontrado algún tipo de problema al emplear <code>type_convert()</code>, de forma que no reconoce los nombres de las columnas.</p>
-
-<h3 id="2-2-transformando-columnas-de-texto-en-factores">2.2. Transformando columnas de texto en factores</h3>
-
+<h3 id="22-transformando-columnas-de-texto-en-factores">2.2. Transformando columnas de texto en factores</h3>
 <p>Una de las características de las funciones de importación de datos de la librería <em>readr</em> es que no interpretan, de manera automática, las columnas que poseen cadenas de texto como factores. No obstante, en ocasiones nos puede interesar que la clase de algunas columnas sea <code>factor</code>.</p>
-
 <p>En estas situaciones, podemos utilizar la función <code>parse_factor()</code> sobre las columnas del objeto recién importado que buscamos sean factores, especificando, si queremos, los niveles que adoptan.</p>
-
 <pre><code class="language-r">?parse_factor
 </code></pre>
-
 <p>Ilustremos su uso mediante un ejemplo. En el objeto <code>salaries</code>, que generamos en el capítulo anterior, la primera columna, <code>X1</code>, contiene el tipo de profesor universitario; mientras que la segunda, <code>X5</code>, hace referencia al sexo de la persona. Transformemos ambas en factores.</p>
-
 <pre><code class="language-r">salaries$X1 &lt;- parse_factor(salaries$X1,
                             levels = c(&quot;Prof&quot;, &quot;AsstProf&quot;, &quot;AssocProf&quot;))
 
 salaries$X5 &lt;- parse_factor(salaries$X5, 
                             levels = c(&quot;Male&quot;, &quot;Female&quot;))
 </code></pre>
-
 <pre><code class="language-r">head(salaries)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 3
 ##          X1     X5     X6
 ##      &lt;fctr&gt; &lt;fctr&gt;  &lt;int&gt;
@@ -1192,10 +1060,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 5      Prof   Male 141500
 ## 6 AssocProf   Male  97000
 </code></pre>
-
 <pre><code class="language-r">str(salaries)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
 ##  $ X1: Factor w/ 3 levels &quot;Prof&quot;,&quot;AsstProf&quot;,..: 1 1 2 1 1 3 1 1 1 1 ...
 ##  $ X5: Factor w/ 2 levels &quot;Male&quot;,&quot;Female&quot;: 1 1 1 1 1 1 1 1 1 2 ...
@@ -1218,21 +1084,14 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="2-3-trabajando-con-fechas">2.3. Trabajando con fechas</h3>
-
+<h3 id="23-trabajando-con-fechas">2.3. Trabajando con fechas</h3>
 <p>Si una de las columnas del archivo de datos viene dada en la forma <code>YYYY-MM-DD</code>, las funciones de importación de la librería <em>readr</em> la interpretarán automáticamente como de tipo <code>Date</code> (fecha).</p>
-
 <p>No obstante, si en la tabla están presentes algunos valores que son fechas y no se ajustan a la estructura comentada arriba, a través de la función <code>parse_date()</code> (y su argumento <code>format</code>) podemos lidiar con esta situación.</p>
-
 <pre><code class="language-r">?parse_date
 </code></pre>
-
 <p>Consideremos el siguiente ejemplo: en el archivo <code>weather.csv</code>, donde se recogen distintos indicadores relacionados con el clima, la columna <code>date</code> contiene la fecha en el formato &ldquo;mes/día/año&rdquo;. Con esta información, procedamos a transformar la clase de la columna de manera oportuna.</p>
-
 <pre><code class="language-r">weather &lt;- read_csv(&quot;datasets/weather.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   origin = col_character(),
@@ -1249,10 +1108,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   visib = col_double()
 ## )
 </code></pre>
-
 <pre><code class="language-r">head(weather)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 12
 ##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
 ##    &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
@@ -1264,10 +1121,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 6    EWR   5/5/2013    15 57.92 37.04 45.58       NA    4.60312  5.297178
 ## # ... with 3 more variables: precip &lt;dbl&gt;, pressure &lt;dbl&gt;, visib &lt;dbl&gt;
 </code></pre>
-
 <pre><code class="language-r">str(weather)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
 ##  $ origin    : chr  &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; ...
 ##  $ date      : chr  &quot;12/22/2013&quot; &quot;7/23/2013&quot; &quot;10/30/2013&quot; &quot;12/25/2013&quot; ...
@@ -1311,14 +1166,11 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <pre><code class="language-r">weather$date &lt;- parse_date(weather$date, 
                            format = &quot;%m/%d/%Y&quot;)
 </code></pre>
-
 <pre><code class="language-r">head(weather)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 12
 ##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
 ##    &lt;chr&gt;     &lt;date&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
@@ -1330,10 +1182,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 6    EWR 2013-05-05    15 57.92 37.04 45.58       NA    4.60312  5.297178
 ## # ... with 3 more variables: precip &lt;dbl&gt;, pressure &lt;dbl&gt;, visib &lt;dbl&gt;
 </code></pre>
-
 <pre><code class="language-r">str(weather)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
 ##  $ origin    : chr  &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; ...
 ##  $ date      : Date, format: &quot;2013-12-22&quot; &quot;2013-07-23&quot; ...
@@ -1377,31 +1227,22 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="2-4-trabajando-con-números">2.4. Trabajando con números</h3>
-
+<h3 id="24-trabajando-con-nmeros">2.4. Trabajando con números</h3>
 <p>Es posible que la tabla que deseamos importar contenga, entre sus valores, expresiones numéricas asociadas cantidades monetarias, de manera que incluyan caracteres no numéricos (como el símbolo de la moneda o diversos separadores de millares, por ejemplo).</p>
-
 <p>En estos casos, la función a utilizar, de la librería <em>readr</em>, es <code>parse_number()</code>, que omite los mencionados caracteres no numéricos presentes en los valores de una columna.</p>
-
 <pre><code class="language-r">?parse_number
 </code></pre>
-
 <p>En el archivo <code>debt.csv</code> tenemos datos relacionados con la deuda nacional de <em>Estados Unidos</em> para ciertos años. Importemos el archivo y examinemos su contenido.</p>
-
 <pre><code class="language-r">debt &lt;- read_csv(&quot;datasets/national_debt.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   V1 = col_character(),
 ##   V2 = col_character()
 ## )
 </code></pre>
-
 <pre><code class="language-r">head(debt)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 2
 ##        V1                     V2
 ##     &lt;chr&gt;                  &lt;chr&gt;
@@ -1412,10 +1253,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 5 9/30/11 $14,790,340,328,557.10
 ## 6 9/30/10 $13,561,623,030,891.70
 </code></pre>
-
 <pre><code class="language-r">str(debt)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
 ##  $ V1: chr  &quot;9/30/15&quot; &quot;9/30/14&quot; &quot;9/30/13&quot; &quot;9/30/12&quot; ...
 ##  $ V2: chr  &quot;$18,150,617,666,484.30&quot; &quot;$17,824,071,380,733.80&quot; &quot;$16,738,183,526,697.30&quot; &quot;$16,066,241,407,385.80&quot; ...
@@ -1429,13 +1268,10 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
 <p>Apliquemos ahora la función <code>parse_number()</code> a la segunda columna de la tabla.</p>
-
 <pre><code class="language-r">debt$V2 &lt;- parse_number(debt$V2)
 head(debt)
 </code></pre>
-
 <pre><code>## # A tibble: 6 × 2
 ##        V1           V2
 ##     &lt;chr&gt;        &lt;dbl&gt;
@@ -1446,10 +1282,8 @@ head(debt)
 ## 5 9/30/11 1.479034e+13
 ## 6 9/30/10 1.356162e+13
 </code></pre>
-
 <pre><code class="language-r">str(debt)
 </code></pre>
-
 <pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
 ##  $ V1: chr  &quot;9/30/15&quot; &quot;9/30/14&quot; &quot;9/30/13&quot; &quot;9/30/12&quot; ...
 ##  $ V2: num  1.82e+13 1.78e+13 1.67e+13 1.61e+13 1.48e+13 ...
@@ -1463,21 +1297,14 @@ head(debt)
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-
-<h3 id="2-5-accediendo-a-los-metadatos-de-un-archivo">2.5. Accediendo a los metadatos de un archivo</h3>
-
+<h3 id="25-accediendo-a-los-metadatos-de-un-archivo">2.5. Accediendo a los metadatos de un archivo</h3>
 <p>En ocasiones, puede resultar de utilidad tener una idea previa de cómo las funciones de la librería <em>readr</em> van a interpretar las columnas de un conjunto de datos antes de importarlo. De esta forma, en el caso de que las clases inferidas no sean las adecuadas, podemos optar por declarar el tipo de alguna de ellas con antelación.</p>
-
 <p>Con tal fin existen las funciones <code>spec_csv()</code> y <code>spec_tsv()</code>, para los archivos separados por comas y por tabulaciones, respectivamente. En el caso de tener que trabajar con otro tipo de ficheros (por ejemplo, <code>.csv</code> en formato europeo), usaremos <code>spec_delim()</code>, especificando el símbolo que hace las veces de separador de columnas en el archivo de datos.</p>
-
 <pre><code class="language-r">?spec_csv
 </code></pre>
-
 <p>Por ejemplo, retomemos el primer ejemplo de este documento, aquel que trabajaba con el archivo <code>chickwts.csv</code>, que contenía información relativa al peso y tipo de alimentación de ciertos pollos. Veamos cuáles serían las clases que la función <code>read_csv()</code> inferiría para sus columnas a la hora de importarlo.</p>
-
 <pre><code class="language-r">spec_csv(&quot;datasets/chickwts.csv&quot;)
 </code></pre>
-
 <pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
@@ -1747,7 +1574,7 @@ head(debt)
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1814,7 +1641,7 @@ head(debt)
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1830,7 +1657,7 @@ head(debt)
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

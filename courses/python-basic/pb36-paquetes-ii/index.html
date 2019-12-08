@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -189,13 +189,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,31 +753,21 @@
           <h1>36. Paquetes distribuibles</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/Zf9sN-w0BVE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Veamos cómo crear <strong>paquetes distribuibles</strong> para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:</p>
-
 <ol>
 <li>Crear el paquete.</li>
 <li>Instalar el paquete.</li>
 </ol>
-
-<p>En la lección anterior generamos el paquete <code>calculos</code> como una carpeta en el interior del directorio del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a> donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, <code>paquetes_1.py</code>.</p>
-
+<p>En la lección anterior generamos el paquete <code>calculos</code> como una carpeta en el interior del directorio del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a> donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, <code>paquetes_1.py</code>.</p>
 <p>Ahora bien, si movemos este último archivo a otro directorio, <em>Python</em> seguramente no será capaz de encontrar el paquete <code>calculos</code>. Para solventar esta situación, hemos de proceder a su instalación.</p>
-
 <p>En primer lugar, creamos un archivo denominado <code>setup.py</code> en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&hellip;). En su interior, tecleamos:</p>
-
 <pre><code class="language-python">from setuptools import setup
 
 setup(name=&quot;prac35_calculos&quot;,
@@ -784,48 +778,32 @@ setup(name=&quot;prac35_calculos&quot;,
       url=&quot;https://imalexissaez.github.io/&quot;,
       packages=[&quot;prac35_calculos&quot;])
 </code></pre>
-
 <p>A continuación, abrimos la terminal de <em>Windows</em> y nos dirigimos a la carpeta donde hemos almacenado el fichero <code>setup.py</code> (la instrucción <code>cd</code> es clave en este proceso). Escribimos ahora</p>
-
 <pre><code class="language-bash">python setup.py sdist
 </code></pre>
-
 <p>Si todo ha ido bien, habrán aparecido dos nuevas carpetas:</p>
-
 <ul>
 <li><code>calculos.egg-info</code></li>
 <li><code>dist</code></li>
 </ul>
-
 <p>En esta última hallamos el archivo comprimido denominado <code>calculos-1.0.tar.gz</code>. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.</p>
-
 <p>Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de <em>Windows</em> acudimos al directorio donde resida el fichero comprimido y tecleamos:</p>
-
 <pre><code class="language-bash">pip3 install calculos-1.0.tar.gz
 </code></pre>
-
-<p>Recibiremos rápidamente en la consola el mensaje &ldquo;Successfully installed calculos-1.0&rdquo;.</p>
-
+<p>Recibiremos rápidamente en la consola el mensaje &lsquo;&lsquo;Successfully installed calculos-1.0&rsquo;'.</p>
 <p>Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:</p>
-
 <pre><code class="language-python">from calculos.calculos_generales import sumar
 
 sumar(6, 7)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 13
 </code></pre>
-
 <p><em>Nota</em>: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, <code>test_paquete</code>, y allí he ubicado el archivo <code>paquetes.py</code>. De no haber instalado correctamente el paquete, <em>Python</em> habría sido incapaz de encontrar la función <code>sumar()</code> utilizando la instrucción dada arriba.</p>
-
 <p>Finalmente, para desinstalar el paquete, desde la terminal de <em>Windows</em> tecleamos:</p>
-
 <pre><code class="language-bash">pip3 uninstall calculos
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/36/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/36/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -876,7 +854,7 @@ sumar(6, 7)
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -924,7 +902,7 @@ sumar(6, 7)
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -996,7 +974,7 @@ sumar(6, 7)
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

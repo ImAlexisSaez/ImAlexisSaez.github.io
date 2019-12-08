@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -29,7 +29,7 @@
     
   
   <meta name="description" content="Vídeo   Notas personales Veamos algunas opciones de la función print() a la hora de imprimir el valor de variables durante la ejecución de un bucle:
-for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la variable 0 # valor de la variable 1 # valor de la variable 2 # valor de la variable 3 # valor de la variable 4  La f que aparece antes del texto entrecomillado indica el uso de funciones f, que permiten interesantes opciones de cara a la impresión de textos en la consola.">
+for i in range(5):print(f&quot;valor de la variable {i}&quot;)# valor de la variable 0# valor de la variable 1# valor de la variable 2# valor de la variable 3# valor de la variable 4 La f que aparece antes del texto entrecomillado indica el uso de funciones f, que permiten interesantes opciones de cara a la impresión de textos en la consola.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb16-bucles-iii/">
@@ -125,7 +125,7 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
   <meta property="og:url" content="https://imalexissaez.github.io/courses/python-basic/pb16-bucles-iii/">
   <meta property="og:title" content="16. Bucles III | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales Veamos algunas opciones de la función print() a la hora de imprimir el valor de variables durante la ejecución de un bucle:
-for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la variable 0 # valor de la variable 1 # valor de la variable 2 # valor de la variable 3 # valor de la variable 4  La f que aparece antes del texto entrecomillado indica el uso de funciones f, que permiten interesantes opciones de cara a la impresión de textos en la consola."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+for i in range(5):print(f&quot;valor de la variable {i}&quot;)# valor de la variable 0# valor de la variable 1# valor de la variable 2# valor de la variable 3# valor de la variable 4 La f que aparece antes del texto entrecomillado indica el uso de funciones f, que permiten interesantes opciones de cara a la impresión de textos en la consola."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -189,13 +189,14 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -203,6 +204,12 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -727,14 +734,11 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -749,20 +753,14 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
           <h1>16. Bucles III</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/KFz-mXB7qVI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Veamos algunas opciones de la función <code>print()</code> a la hora de imprimir el valor de variables durante la ejecución de un bucle:</p>
-
 <pre><code class="language-python">for i in range(5):
     print(f&quot;valor de la variable {i}&quot;)
 
@@ -772,11 +770,8 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
 # valor de la variable 3
 # valor de la variable 4
 </code></pre>
-
 <p>La <code>f</code> que aparece antes del texto entrecomillado indica el uso de <strong>funciones f</strong>, que permiten interesantes opciones de cara a la impresión de textos en la consola. En esta ocasión, concatena la cadena de caracteres con el valor que toma la variable en cada iteración, indicada por <code>{i}</code>.</p>
-
 <p>El tipo <code>range</code> admite el uso de argumentos adicionales:</p>
-
 <pre><code class="language-python">for i in range(5, 10):
     print(f&quot;valor de la variable {i}&quot;)
 
@@ -786,7 +781,6 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
 # valor de la variable 8
 # valor de la variable 9
 </code></pre>
-
 <pre><code class="language-python">for i in range(5, 50, 5):
     print(f&quot;valor de la variable {i}&quot;)
 
@@ -800,9 +794,7 @@ for i in range(5): print(f&quot;valor de la variable {i}&quot;) # valor de la va
 # valor de la variable 40
 # valor de la variable 45
 </code></pre>
-
 <p>La función <code>len</code> también resulta de utilidad a la hora de emplear bucles <code>for</code>. Veámosla en acción retomando el ejemplo de la validación de una dirección de correo electrónico visto en la lección anterior:</p>
-
 <pre><code class="language-python">valido = False
 
 email = input(&quot;Introduce tu email: &quot;)
@@ -816,15 +808,11 @@ if valido:
 else:
     print(&quot;El email no es correcto.&quot;)
 </code></pre>
-
 <p><strong>Ejercicio 1</strong>: crea un programa que muestre los números impares del 1 al 100. Los números deberán aparecer una al lado del otro sin salto de línea.</p>
-
 <pre><code class="language-python">for i in range(1, 100, 2):
     print(i, end=&quot; &quot;)
 </code></pre>
-
-<p><strong>Ejercicio 2</strong>: crea un programa que pida por teclado introducir una contraseña. La contraseña no podrá tener menos de 8 caracteres ni espacios en blanco. Si la contraseña es correcta, el programa imprime &ldquo;Contraseña OK&rdquo;. En caso contrario imprime &ldquo;Contraseña errónea&rdquo;.</p>
-
+<p><strong>Ejercicio 2</strong>: crea un programa que pida por teclado introducir una contraseña. La contraseña no podrá tener menos de 8 caracteres ni espacios en blanco. Si la contraseña es correcta, el programa imprime &lsquo;&lsquo;Contraseña OK&rsquo;'. En caso contrario imprime &lsquo;&lsquo;Contraseña errónea&rsquo;'.</p>
 <pre><code class="language-python">def evalua_password(password):
     valido = True
     if len(password) &lt; 8 or &quot; &quot; in password:
@@ -839,9 +827,7 @@ if evalua_password(password):
 else:
     print(&quot;Contraseña errónea.&quot;)
 </code></pre>
-
 <p><strong>Ejercicio 3</strong>: crea un programa que evalúe si una dirección de correo electrónico es válida o no en función de si tiene <code>@</code> o <code>.</code> Hay que tener en cuenta que la dirección se considera correcta si solo tiene una <code>@</code> y si tiene uno o más <code>.</code>.</p>
-
 <pre><code class="language-python">def evalua_mail(mail):
     arroba = False
     punto = False
@@ -867,10 +853,8 @@ if evalua_mail(mail):
 else:
     print(&quot;Dirección de correo electrónico INVÁLIDA.&quot;)
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/16/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/16/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -921,7 +905,7 @@ else:
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -969,7 +953,7 @@ else:
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1041,7 +1025,7 @@ else:
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

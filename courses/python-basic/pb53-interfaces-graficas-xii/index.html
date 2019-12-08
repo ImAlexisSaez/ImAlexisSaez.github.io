@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -30,7 +30,7 @@
   
   <meta name="description" content="Vídeo   Notas personales En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.
 Para comenzar, recuperemos el código fuente generado en la lección anterior:
-from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) barra_menu = Menu(raiz) raiz.config(menu=barra_menu, width=300, height=300) archivo_menu = Menu(barra_menu, tearoff=0) archivo_menu.add_command(label=&quot;Nuevo&quot;) archivo_menu.add_command(label=&quot;Abrir&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Guardar&quot;) archivo_menu.add_command(label=&quot;Guardar como...&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Cerrar&quot;) archivo_menu.add_command(label=&quot;Salir&quot;) edicion_menu = Menu(barra_menu, tearoff=0) edicion_menu.">
+from tkinter import Menu, Tkraiz = Tk()raiz.title(&quot;Menús&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)barra_menu = Menu(raiz)raiz.config(menu=barra_menu, width=300, height=300)archivo_menu = Menu(barra_menu, tearoff=0)archivo_menu.add_command(label=&quot;Nuevo&quot;)archivo_menu.add_command(label=&quot;Abrir&quot;)archivo_menu.add_separator()archivo_menu.add_command(label=&quot;Guardar&quot;)archivo_menu.add_command(label=&quot;Guardar como...&quot;)archivo_menu.add_separator()archivo_menu.add_command(label=&quot;Cerrar&quot;)archivo_menu.add_command(label=&quot;Salir&quot;)edicion_menu = Menu(barra_menu, tearoff=0)edicion_menu.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/python-basic/pb53-interfaces-graficas-xii/">
@@ -127,7 +127,7 @@ from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.ico
   <meta property="og:title" content="53. Interfaces gráficas XII | Infinitos Contrastes">
   <meta property="og:description" content="Vídeo   Notas personales En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.
 Para comenzar, recuperemos el código fuente generado en la lección anterior:
-from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.iconbitmap(&quot;icon.ico&quot;) barra_menu = Menu(raiz) raiz.config(menu=barra_menu, width=300, height=300) archivo_menu = Menu(barra_menu, tearoff=0) archivo_menu.add_command(label=&quot;Nuevo&quot;) archivo_menu.add_command(label=&quot;Abrir&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Guardar&quot;) archivo_menu.add_command(label=&quot;Guardar como...&quot;) archivo_menu.add_separator() archivo_menu.add_command(label=&quot;Cerrar&quot;) archivo_menu.add_command(label=&quot;Salir&quot;) edicion_menu = Menu(barra_menu, tearoff=0) edicion_menu."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+from tkinter import Menu, Tkraiz = Tk()raiz.title(&quot;Menús&quot;)raiz.iconbitmap(&quot;icon.ico&quot;)barra_menu = Menu(raiz)raiz.config(menu=barra_menu, width=300, height=300)archivo_menu = Menu(barra_menu, tearoff=0)archivo_menu.add_command(label=&quot;Nuevo&quot;)archivo_menu.add_command(label=&quot;Abrir&quot;)archivo_menu.add_separator()archivo_menu.add_command(label=&quot;Guardar&quot;)archivo_menu.add_command(label=&quot;Guardar como...&quot;)archivo_menu.add_separator()archivo_menu.add_command(label=&quot;Cerrar&quot;)archivo_menu.add_command(label=&quot;Salir&quot;)edicion_menu = Menu(barra_menu, tearoff=0)edicion_menu."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
@@ -191,13 +191,14 @@ from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.ico
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.ico
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.ico
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,22 +755,15 @@ from tkinter import Menu, Tk raiz = Tk() raiz.title(&quot;Menús&quot;) raiz.ico
           <h1>53. Interfaces gráficas XII</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/xUGUglpaTJc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>En esta lección, estudiaremos cómo construir ventanas emergentes, que son ventanas modales para informar, avisar o permitir realizar ciertas tareas al usuario.</p>
-
 <p>Para comenzar, recuperemos el código fuente generado en la lección anterior:</p>
-
 <pre><code class="language-python">from tkinter import Menu, Tk
 
 raiz = Tk()
@@ -806,27 +803,20 @@ barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
 
 raiz.mainloop()
 </code></pre>
-
 <p>A continuación, nuestro objetivo será construir una ventana emergente que aparezca cuando el usuario pulse sobre la opción <em>Acerca de&hellip;</em>, ubicada en el menú <em>Ayuda</em>. Para ello, empecemos creando una función que será la responsable de generar la mencionada ventana emergente:</p>
-
 <pre><code class="language-python">def info_adicional():
     messagebox.showinfo(title=&quot;Acerca de...&quot;,
                         message=&quot;Aplicación creada por Alexis Sáez.&quot;)
 </code></pre>
-
 <p><em>Notas</em>:</p>
-
 <ul>
 <li>Hemos de importar el módulo <code>messagebox</code> al principio de nuestro código.</li>
 <li>El parámetro <code>title</code> gestiona el texto que aparecerá en la barra que figura en la parte superior de la ventana emergente.</li>
 <li>El parámetro <code>text</code> declara el texto que se ubicará en el cuerpo de la ventana emergente.</li>
 </ul>
-
 <p>Acto seguido, modificamos la declaración del submenú <em>Acerca de&hellip;</em> como sigue:</p>
-
 <pre><code class="language-python">ayuda_menu.add_command(label=&quot;Acerca de...&quot;, command=info_adicional)
 </code></pre>
-
 
 
 
@@ -856,21 +846,15 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Estas ventanas emergentes admiten enormes posibilidades de configuración y podemos adaptarlas según nuestra intención sea informar al usuario de algún detalle concreto (como el ejemplo que se muestra en la imagen que figura arriba), avisarle de algún error, etc. Los símbolos y la disposición de los diferentes botones asociados variarían en función de nuestro objetivo.</p>
-
 <p>Por ejemplo, generemos una ventana emergente que nos avise del estado de la licencia de nuestra aplicación. Para ello, creamos la siguiente función:</p>
-
 <pre><code class="language-python">def aviso_licencia():
     messagebox.showwarning(title=&quot;Licencia&quot;,
                            message=&quot;Producto bajo licencia GNU.&quot;)
 </code></pre>
-
 <p>y modificamos la correspondiente opción del menú <em>Ayuda</em>:</p>
-
 <pre><code class="language-python">ayuda_menu.add_command(label=&quot;Licencia&quot;, command=aviso_licencia)
 </code></pre>
-
 
 
 
@@ -900,19 +884,14 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Acto seguido, veamos un nuevo tipo de ventana emergente, que asociaremos al submenú <em>Salir</em> y que nos pedirá confirmación antes de proceder a cerrar la aplicación. Con tal objetivo en mente, empecemos construyendo la función:</p>
-
 <pre><code class="language-python">def salir_aplicacion():
     messagebox.askquestion(title=&quot;Salir&quot;,
                            message=&quot;¿Desear salir de la aplicación?&quot;)
 </code></pre>
-
 <p>para luego modificar la opción del menú <em>Archivo</em> asociada:</p>
-
 <pre><code class="language-python">archivo_menu.add_command(label=&quot;Salir&quot;, command=salir_aplicacion)
 </code></pre>
-
 
 
 
@@ -942,35 +921,25 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Ahora, si pulsamos sobre el botón <em>No</em>, volvemos a la aplicación, como cabría esperar. No obstante, al pulsar sobre el botón <em>Sí</em> debería salir de la aplicación y no sucede tal acción, puesto que hemos de programar todavía dicho comportamiento.</p>
-
 <p>La función <code>askquestion()</code> devuelve una cadena de texto en función del botón pulsado, <code>&quot;yes&quot;</code> o <code>&quot;no&quot;</code>, por lo que basta modificar la función <code>salir_aplicacion()</code> como sigue:</p>
-
 <pre><code class="language-python">def salir_aplicacion():
     respuesta = messagebox.askquestion(
         title=&quot;Salir&quot;, message=&quot;¿Desear salir de la aplicación?&quot;)
     if respuesta == &quot;yes&quot;:
         raiz.destroy()
 </code></pre>
-
 <p>La función <code>destroy()</code> posee un nombre lo suficientemente explicativo para que intuyamos cómo afecta a la <em>raíz</em> de la aplicación.</p>
-
 <p><em>Nota</em>: con la función <code>askokcancel()</code> tenemos una variante de la anterior ventana emergente, cuyos botones son del tipo <em>Aceptar</em> y <em>Cancelar</em>.</p>
-
-<p>A continuación, veamos una ventana emergente de tipo &ldquo;reintentar&rdquo;, asociada a la opción <em>Cerrar</em> del menú <em>Archivo</em>. Para ello, construimos la siguiente función:</p>
-
+<p>A continuación, veamos una ventana emergente de tipo &lsquo;&lsquo;reintentar&rsquo;', asociada a la opción <em>Cerrar</em> del menú <em>Archivo</em>. Para ello, construimos la siguiente función:</p>
 <pre><code class="language-python">def cerrar_documento():
     messagebox.askretrycancel(
         title=&quot;Reintentar&quot;,
         message=&quot;No es posible cerrar. Documento bloqueado.&quot;)
 </code></pre>
-
 <p>y modificamos el correspondiente elemento del menú <em>Archivo</em>:</p>
-
 <pre><code class="language-python">archivo_menu.add_command(label=&quot;Cerrar&quot;, command=cerrar_documento)
 </code></pre>
-
 
 
 
@@ -1000,9 +969,7 @@ raiz.mainloop()
 
 </figure>
 
-
 <p>Finalmente, como viene siendo habitual en este subapartado del curso dedicado a las interfaces gráficas, comparto el código completo de la aplicación generada para así ofrecer una visión global de la misma.</p>
-
 <pre><code class="language-python">from tkinter import Menu, messagebox, Tk
 
 
@@ -1066,10 +1033,8 @@ barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=ayuda_menu)
 
 raiz.mainloop()
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/53/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/53/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -1120,7 +1085,7 @@ raiz.mainloop()
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -1168,7 +1133,7 @@ raiz.mainloop()
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1240,7 +1205,7 @@ raiz.mainloop()
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

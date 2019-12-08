@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -518,7 +525,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/07/10/configurando-sublime-text-para-escribir-en-markdown/featured_hue7394ca53c289cbf6e7d5fb7f997e7ec_242788_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@patrickian4" target="_blank">Patrick Fore</a>, disponible en <a href="https://unsplash.com/photos/0gkw_9fy0eQ" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@patrickian4">Patrick Fore</a>, disponible en <a href="https://unsplash.com/photos/0gkw_9fy0eQ">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -528,13 +535,9 @@
 
     <div class="article-style">
       <p>En una <a href="/2018/07/05/preparando-el-equipo-para-hugo/">entrada publicada</a> hace unos días, comenté que utilizo el editor de texto plano <em>Sublime Text 3</em> como herramienta predeterminada para escribir documentos con <em>Markdown</em>. Veamos cómo configurarlo para abordar tal empresa.</p>
-
 <p>Sinceramente, tal y como por defecto instalamos el mencionado programa, podríamos trabajar sin problema alguno con este lenguaje de marcado ligero, ya que únicamente requiere un editor de texto plano para su elaboración y posteriores modificaciones.</p>
-
 <p>No obstante, existe un paquete que mejora la experiencia de edición de manera considerable: <code>Markdown Editing</code>. Al abrir cualquier fichero redactado utilizando el mencionado lenguaje de marcado, su contenido se centra en pantalla, facilitando así enormemente su lectura. Además, elementos como títulos, cursivas, negritas, enlaces o código quedan resaltados de forma muy agradable.</p>
-
 <p>Para muestra, un botón:</p>
-
 
 
 
@@ -564,22 +567,16 @@
 
 </figure>
 
-
 <p>Si a todo ello le añadimos el modo sin distracciones que incorpora <em>Sublime Text 3</em>, al que se accede mediante la combinación de teclas <code>Shift + F11</code>, el resultado es una cómoda herramienta que permite generar documentos con <em>Markdown</em> eficientemente.</p>
-
 <p>El procedimiento a seguir es el habitual a la hora de incorporar un nuevo paquete a <em>Sublime Text 3</em>:</p>
-
 <ol>
-<li>Si todavía no tenemos el complemento que permite instalar paquetes fácilmente, abrimos <a href="https://packagecontrol.io/installation" target="_blank">este enlace</a> y copiamos el bloque de instrucciones que figura en el cuadro asociado a la versión de <em>Sublime Text</em> que utilicemos (a día de hoy, seguramente, será la 3).</li>
+<li>Si todavía no tenemos el complemento que permite instalar paquetes fácilmente, abrimos <a href="https://packagecontrol.io/installation">este enlace</a> y copiamos el bloque de instrucciones que figura en el cuadro asociado a la versión de <em>Sublime Text</em> que utilicemos (a día de hoy, seguramente, será la 3).</li>
 <li>Abrimos la consola de <em>Sublime Text 3</em>, haciendo clic en el apartado <code>Show Console</code> del menú <code>View</code> (o utilizando su atajo de teclado asociado). En la ventana que aparece dentro del editor, pegamos el texto copiado durante el primer paso y pulsamos enter.</li>
 <li>Hacemos uso ahora del atajo de teclado <code>Ctrl + Shift + P</code> y empezamos a escribir <code>install</code>, hasta que quede resaltada la opción <code>Package Control: Install Package</code> y después pulsamos enter.</li>
 <li>A continuación, comenzamos a escribir <code>markdown</code> y utilizamos los cursores para seleccionar el paquete <code>MarkdownEditing</code>, pulsando de nuevo enter una vez lo hayamos conseguido.</li>
 </ol>
-
 <p>De esta forma, basta ahora con que abramos en <em>Sublime Text 3</em> cualquier archivo escrito con <em>Markdown</em> y experimentaremos los cambios estéticos que comentaba al principio de este artículo.</p>
-
 <p>Personalmente, el esquema de colores que este paquete incorpora por defecto no me hace excesiva ilusión, acostumbrado como estoy a <em>Monokai</em>. Sin embargo, podemos seleccionar un tema oscuro desde el menú <code>Preferences</code>, apartado <code>Package Settings</code>, subapartado <code>Markdown Editing</code>, accediendo a <code>Change color scheme...</code> y escogiendo la opción <code>Dark</code>.</p>
-
 <p>Finalmente, por si fuera de interés, me gustaría destacar que también existen diversos paquetes que ofrecen la opción de previsualizar el documento que estamos redactando y refrescar el resultado cuando llevamos a cabo cualquier tipo de edición en él. No he entrado en detalles sobre ellos en este artículo simplemente porque utilizo un método diferente para llevar a cabo las mencionadas acciones.</p>
 
     </div>
@@ -841,7 +838,7 @@
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -908,7 +905,7 @@
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -924,7 +921,7 @@
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

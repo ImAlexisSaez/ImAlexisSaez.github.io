@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -191,13 +191,14 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -205,6 +206,12 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -729,14 +736,11 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
       </ul>
 
       <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#vídeo">Vídeo</a></li>
-<li><a href="#notas-personales">Notas personales</a></li>
-<li><a href="#código-fuente">Código fuente</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#vdeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#cdigo-fuente">Código fuente</a></li>
+  </ul>
 </nav>
 
       
@@ -751,28 +755,18 @@ Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cá
           <h1>35. Paquetes I</h1>
 
           <div class="article-style">
-            
-
-<h2 id="vídeo">Vídeo</h2>
-
+            <h2 id="vdeo">Vídeo</h2>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe src="https://www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <h2 id="notas-personales">Notas personales</h2>
-
 <p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
-
 <p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
-
-<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
-
+<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 <p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
-
 <p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
-
 <pre><code class="language-python">def sumar(op1, op2):
     print(&quot;El resultado de la suma es:&quot;, op1 + op2)
 
@@ -796,19 +790,14 @@ def potenciar(base, exponente):
 def redondear(numero):
     print(&quot;El resultado del redondeo es:&quot;, round(numero))
 </code></pre>
-
 <p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
-
 <pre><code class="language-python">from calculos.calculos_generales import dividir
 
 dividir(10, 3)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
 </code></pre>
-
 <p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
-
 <pre><code class="language-python">from calculos.calculos_generales import *
 
 dividir(10, 3)
@@ -817,18 +806,13 @@ redondear(4.6)
 
 potenciar(2, 10)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
 El resultado del redondeo es: 5
 El resultado de la potenciación es: 1024
 </code></pre>
-
 <p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
-
 <p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
-
 <p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
-
 <pre><code class="language-python">def sumar(op1, op2):
     print(&quot;El resultado de la suma es:&quot;, op1 + op2)
 
@@ -844,9 +828,7 @@ def multiplicar(op1, op2):
 def dividir(dividendo, divisor):
     print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
 </code></pre>
-
 <p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
-
 <pre><code class="language-python">def potenciar(base, exponente):
     print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
 
@@ -854,23 +836,18 @@ def dividir(dividendo, divisor):
 def redondear(numero):
     print(&quot;El resultado del redondeo es:&quot;, round(numero))
 </code></pre>
-
 <p>Para utilizar estos últimos módulos creados, tecleamos:</p>
-
 <pre><code class="language-python">from calculos.basicos.operaciones_basicas import sumar
 from calculos.redondeo_potencia.redondea_y_potencia import potenciar
 
 sumar(5, 7)
 potenciar(2, 10)
 </code></pre>
-
 <pre><code class="language-bash">El resultado de la suma es: 12
 El resultado de la potenciación es: 1024
 </code></pre>
-
-<h2 id="código-fuente">Código fuente</h2>
-
-<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank">repositorio</a>.</p>
+<h2 id="cdigo-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0">repositorio</a>.</p>
 
           </div>
 
@@ -921,7 +898,7 @@ El resultado de la potenciación es: 1024
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -969,7 +946,7 @@ El resultado de la potenciación es: 1024
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1041,7 +1018,7 @@ El resultado de la potenciación es: 1024
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 

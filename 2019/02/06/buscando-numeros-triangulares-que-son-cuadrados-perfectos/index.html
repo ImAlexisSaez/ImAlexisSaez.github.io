@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2019/02/06/buscando-numeros-triangulares-que-son-cuadrados-perfectos/featured_hue834b414c7ffc97a779b49b060466b16_153241_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@elviravisser" target="_blank">Elvira Visser</a>, disponible en <a href="https://unsplash.com/photos/dZh1irvg978" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@elviravisser">Elvira Visser</a>, disponible en <a href="https://unsplash.com/photos/dZh1irvg978">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,144 +574,115 @@
 
     <div class="article-style">
       <p><strong>Problema 49:</strong> Halla los números naturales $n$ de manera que se cumpla que</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+ \cdots +n = k^2,
-\]</span></p>
-
+$$</p>
 <p>con $k$ número natural.</p>
-
 <hr>
-
 <p>Observamos rápidamente que para $n = 1$ se verifica la propiedad, sin más que tomar asimismo $k = 1$. El enunciado propuesto en el ejercicio es equivalente a hallar los números triangulares que son cuadrados perfectos. La ecuación diofántica $1+2+ \cdots +n = k^2$ podemos escribirla de manera más compacta utilizando la conocida expresión para la suma de los primeros $n$ números naturales. Así,</p>
-
-<p><span  class="math">\[
+<p>$$
 \dfrac{n(n+1)}{2} = k^2,
-\]</span></p>
-
+$$</p>
 <p>o, equivalentemente, $n^2 +n=2k^2$, dando lugar pues a la siguiente ecuación de segundo grado en $n$, $n^2 +n-2k^2 =0$. Por tanto,</p>
-
-<p><span  class="math">\[
+<p>$$
 n = \dfrac{(-1)\pm\sqrt{1+8k^2}}{2}.
-\]</span></p>
-
+$$</p>
 <p>Como buscamos valores naturales para $n$, podemos prescindir del signo $-$ que aparece en el numerador. Además, $1+8k^2$ ha de ser un cuadrado perfecto, que también necesitaremos sea impar, para que el numerador sea par y así $n$, efectivamente, pertenezca al conjunto de los números naturales. De esta manera, como ha de ser $1+8k^2$ un cuadrado perfecto, planteamos la ecuación $1+8k^2 = p^2$, que nos lleva a la <em>ecuación de Pell</em></p>
-
-<p><span  class="math">\[
+<p>$$
 p^2 -8k^2 =1,
-\]</span></p>
-
+$$</p>
 <p>de la cual sabemos posee infinitas soluciones en los enteros, pues $8$ no es un cuadrado perfecto. Por tanteo, una solución particular es $p=3$ y $k=1$, ya que $3^2 - 8\cdot1^2=1$. Expresamos ahora la diferencia de cuadrados como producto de una suma y una diferencia, de forma que</p>
-
-<p><span  class="math">\[
+<p>$$
 3^2 - 8\cdot 1^2 =1\Leftrightarrow (3+\sqrt{8})(3-\sqrt{8})=1.
-\]</span></p>
-
+$$</p>
 <p>De igual manera, la sucesión de soluciones enteras, que denotaremos por $(p_n,k_n)$, debe cumplir que $(p_n + k_n\sqrt{8})(p_n - k_n\sqrt{8})=1$. Obtengamos la solución general utilizando recurrencias, de manera que,</p>
-
-<p><span  class="math">\[
+<p>$$
 p_{n+1} + k_{n+1}\sqrt{8} = (p_n+k_n\sqrt{8})(3+\sqrt{8}) = 3p_n + \sqrt{8}p_n + 3\sqrt{8}k_n + 8k_n,
-\]</span></p>
-
+$$</p>
 <p>luego</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-p_{n+1} &= 3p_n + 8k_n,\\
-k_{n+1} &=  p_n + 3k_n.
+p_{n+1} &amp;= 3p_n + 8k_n,\<br>
+k_{n+1} &amp;=  p_n + 3k_n.
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>Utilizando notación matricial,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{bmatrix}
-p_{n+1}\\
+p_{n+1}\<br>
 k_{n+1}
 \end{bmatrix}
 = \begin{bmatrix}
-3 & 8\\
-1 & 3
+3 &amp; 8\<br>
+1 &amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-p_n\\
+p_n\<br>
 k_n
 \end{bmatrix}.
-\]</span></p>
-
-<p>Ahora, <span  class="math">\(n = \dfrac{(-1) + p}{2},\)</span> por lo que la solución general del ejercicio queda como</p>
-
-<p><span  class="math">\[
+$$</p>
+<p>Ahora, $$n = \dfrac{(-1) + p}{2},$$ por lo que la solución general del ejercicio queda como</p>
+<p>$$
 \begin{bmatrix}
-p_{n+1}\\
+p_{n+1}\<br>
 k_{n+1}
 \end{bmatrix}
 = \begin{bmatrix}
-3 & 8\\
-1 & 3
+3 &amp; 8\<br>
+1 &amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-p_n\\
+p_n\<br>
 k_n
 \end{bmatrix},
-\]</span></p>
-
-<p>con $(p_1,k_1) = (3,1)$ y <span  class="math">\(n = \dfrac{(-1) + p_n}{2}.\)</span></p>
-
+$$</p>
+<p>con $(p_1,k_1) = (3,1)$ y $$n = \dfrac{(-1) + p_n}{2}.$$</p>
 <p>Así, para $p_1 = 3$, tenemos que $n = ((-1)+3) / 2 = 1$. Obtengamos algunas soluciones adicionales,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{bmatrix}
-p_{2}\\
+p_{2}\<br>
 k_{2}
 \end{bmatrix}
 = \begin{bmatrix}
-3 & 8\\
-1 & 3
+3 &amp; 8\<br>
+1 &amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-3\\
+3\<br>
 1
 \end{bmatrix}
 = \begin{bmatrix}
-17 \\
+17 \<br>
 6
 \end{bmatrix},
-\]</span></p>
-
+$$</p>
 <p>y entonces, para $p_2=17$ queda $n = ((-1) + 17) / 2 = 8$, esto es,</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+ \cdots +7+8 = 6^2.
-\]</span></p>
-
+$$</p>
 <p>Ahora,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{bmatrix}
-p_3\\
+p_3\<br>
 k_3
 \end{bmatrix}
 = \begin{bmatrix}
-3 & 8\\
-1 & 3
+3 &amp; 8\<br>
+1 &amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-17\\
+17\<br>
 6
 \end{bmatrix}
 = \begin{bmatrix}
-99\\
+99\<br>
 35
 \end{bmatrix},
-\]</span></p>
-
+$$</p>
 <p>y, por tanto, para $p=99$ queda $n = ((-1) + 99)/2 = 49$, es decir,</p>
-
-<p><span  class="math">\[
+<p>$$
 1+2+ \cdots +48+49 = 35^2,
-\]</span></p>
-
+$$</p>
 <p>bastando aplicar el procedimiento tantas veces como soluciones deseemos encontrar.</p>
 
     </div>
@@ -979,7 +957,7 @@ k_3
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -1046,7 +1024,7 @@ k_3
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -1062,7 +1040,7 @@ k_3
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.6.0">
+  <meta name="generator" content="Source Themes Academic 4.6.3">
 
   
 
@@ -236,13 +236,14 @@
 
 
   
+
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
   <div class="container">
 
     
-    
-    
+    <div class="d-none d-lg-inline-flex">
       <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -250,6 +251,12 @@
             data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
     
 
     
@@ -557,7 +564,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
     <img src="/2018/12/05/sera-multiplo-de-treinta-o-no/featured_hu91395cf51f217f0aec23d6f449a1489a_251880_720x0_resize_q90_lanczos.jpg" alt="" class="featured-image">
-    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nvte" target="_blank">Nathan Duck</a>, disponible en <a href="https://unsplash.com/photos/KnLj3o9A66E" target="_blank">Unsplash</a>.</span>
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@nvte">Nathan Duck</a>, disponible en <a href="https://unsplash.com/photos/KnLj3o9A66E">Unsplash</a>.</span>
   </div>
 </div>
 
@@ -567,52 +574,42 @@
 
     <div class="article-style">
       <p><strong>Problema 31:</strong> Demuestra que $a^{25} - a$ es divisible entre $30$ para cualquier entero $a$.</p>
-
 <hr>
-
 <p>Hemos de ser capaces de probar que $(a^{25} - a)\equiv 0\pmod{30}$ para todo $a\in\mathbb{Z}$. Como $30=2\cdot3\cdot5$, veremos si la expresión es múltiplo de cada uno de los factores primos de $30$ y, en caso afirmativo, por las propiedades de las congruencias, estaremos en condiciones de concluir que asimismo será múltiplo de $30$.</p>
-
 <p>Vamos a apoyarnos en el corolario del <em>Pequeño Teorema de Fermat</em>, que afirma que si $p$ es un número primo y $a\in\mathbb{Z}$, entonces $a^p\equiv a\pmod{p}$. Así, para $p=5$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a^{25} &= (a^5)^5\\
-&\equiv a^5\pmod{5}\\
-&\equiv a\pmod{5},
+a^{25} &amp;= (a^5)^5\<br>
+&amp;\equiv a^5\pmod{5}\<br>
+&amp;\equiv a\pmod{5},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>de manera que $(a^{25} - a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a^{25} &= a\cdot (a^8)^3\\
-&\equiv (a\cdot a^8)\pmod{3}\\
-&\equiv (a^3)^3\pmod{3}\\
-&\equiv a^3\pmod{3}\\
-&\equiv a\pmod{3},
+a^{25} &amp;= a\cdot (a^8)^3\<br>
+&amp;\equiv (a\cdot a^8)\pmod{3}\<br>
+&amp;\equiv (a^3)^3\pmod{3}\<br>
+&amp;\equiv a^3\pmod{3}\<br>
+&amp;\equiv a\pmod{3},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, por tanto, $(a^{25} - a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-a^{25} &= a\cdot(a^{12})^2\\
-&\equiv (a\cdot a^{12})\pmod{2}\\
-&\equiv (a\cdot (a^6)^2)\pmod{2}\\
-&\equiv (a\cdot a^6)\pmod{2}\\
-&\equiv (a\cdot(a^3)^2)\pmod{2}\\
-&\equiv (a\cdot a^3)\pmod{2}\\
-&\equiv a^4\pmod{2}\\
-&\equiv (a^2)^2\pmod{2}\\
-&\equiv a^2\pmod{2}\\
-&\equiv a\pmod{2},
+a^{25} &amp;= a\cdot(a^{12})^2\<br>
+&amp;\equiv (a\cdot a^{12})\pmod{2}\<br>
+&amp;\equiv (a\cdot (a^6)^2)\pmod{2}\<br>
+&amp;\equiv (a\cdot a^6)\pmod{2}\<br>
+&amp;\equiv (a\cdot(a^3)^2)\pmod{2}\<br>
+&amp;\equiv (a\cdot a^3)\pmod{2}\<br>
+&amp;\equiv a^4\pmod{2}\<br>
+&amp;\equiv (a^2)^2\pmod{2}\<br>
+&amp;\equiv a^2\pmod{2}\<br>
+&amp;\equiv a\pmod{2},
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <p>y, por consiguiente, $(a^{25} - a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25} - a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.</p>
-
 <p>A modo de nota final, aunque nos hubiese dado la impresión de que escoger la descomposición $30=5\cdot 6$ habría acelerado la resolución de este ejercicio, hemos de ser cautos, pues $6$ no es un número primo, requisito indispensable para aplicar el resultado que nos ha permitido llevar a buen puerto este problema. En este último caso, habría sido necesario recurrir a otras herramientas para verificar la propiedad propuesta en el enunciado del ejercicio.</p>
 
     </div>
@@ -887,7 +884,7 @@ a^{25} &= a\cdot(a^{12})^2\\
 
     
     
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>const code_highlighting = true;</script>
     
 
     
@@ -954,7 +951,7 @@ a^{25} &= a\cdot(a^{12})^2\\
     
     
     
-    <script src="/js/academic.min.96cf4c3dc37ea60dbbd03c13a455f1f7.js"></script>
+    <script src="/js/academic.min.1626a5b5601639b51debd3991773e48e.js"></script>
 
     
 
@@ -970,7 +967,7 @@ a^{25} &= a\cdot(a^{12})^2\\
   
 
   <p class="powered-by">
-    Alexis Sáez &copy;2019 &middot; 
+    Alexis Sáez ©2019 &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
