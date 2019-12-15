@@ -2301,10 +2301,7 @@ $$&lt;/p&gt;
 &lt;p&gt;El &lt;em&gt;caso base&lt;/em&gt;, $P(3)$ en esta ocasión, comprobamos rápidamente que se satisface, ya que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a_3 &amp;amp;= (3^2-1)(3^2+1)(3^4-16)3^2\&lt;br&gt;
-&amp;amp;= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\&lt;br&gt;
-&amp;amp;= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\&lt;br&gt;
-&amp;amp;= 600\cdot(2\cdot 3\cdot 13),
+a_3 &amp;amp;= (3^2-1)(3^2+1)(3^4-16)3^2\\ &amp;amp;= 2^3\cdot (2\cdot 5)\cdot (5\cdot 13)\cdot 3^2\\ &amp;amp;= 2^3\cdot 3\cdot 5^2\cdot (2\cdot 3\cdot 13)\\ &amp;amp;= 600\cdot(2\cdot 3\cdot 13),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y bastaría tomar $k = 2\cdot 3\cdot 13 = 78$ para concluir que $a_3$ es un múltiplo de $600$.&lt;/p&gt;
@@ -2317,8 +2314,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Así pues, a continuación, optaremos por llevar a cabo un enfoque diferente. Si estudiamos con detalle la expresión de $a_n$, enseguida apreciaremos que en ella aparecen un par de términos de la forma $a^2 - b^2$, concretamente $n^2 - 1$ y $n^4 - 16$. Esta situación puede hacernos sospechar que la clave pase por factorizar la expresión de $a_n$, utilizando para ello la identidad notable $a^2 - b^2 = (a+b)(a-b)$. Aplicándola, podemos escribir&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-n^2-1&amp;amp;=(n+1)(n-1),\&lt;br&gt;
-n^4-16&amp;amp;=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
+n^2-1&amp;amp;=(n+1)(n-1),\\ n^4-16&amp;amp;=(n^2+4)(n^2-4)=(n^2+4)(n+2)(n-2),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;quedando entonces&lt;/p&gt;
@@ -2336,17 +2332,14 @@ $$&lt;/p&gt;
 &lt;p&gt;Esta situación nos invita a escribir $a_n = u\cdot v$, con&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-u&amp;amp;=(n-2)(n-1)n(n+1)(n+2),\&lt;br&gt;
-v&amp;amp;=n(n^2+1)(n^2+4),
+u&amp;amp;=(n-2)(n-1)n(n+1)(n+2),\\ v&amp;amp;=n(n^2+1)(n^2+4),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y estudiar cada una de sus partes por separado&lt;/p&gt;
 &lt;p&gt;Tal y como hemos indicado arriba, como $n&amp;gt;2$, en $u$ observamos el producto de cinco números naturales consecutivos, por lo que siempre seremos capaces de encontrar entre ellos un múltiplo de $2$, uno de $3$, uno de $4$ y uno de $5$. Es decir, sabemos que existe $k\in\mathbb{N}$ de manera que podemos escribir la factorización en números primos de $u$ como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-u &amp;amp;= 2\cdot3\cdot4\cdot5\cdot k \&lt;br&gt;
-&amp;amp;= 2^3\cdot 3\cdot 5\cdot k\&lt;br&gt;
-&amp;amp;= 120\cdot k,
+u &amp;amp;= 2\cdot3\cdot4\cdot5\cdot k \\ &amp;amp;= 2^3\cdot 3\cdot 5\cdot k\\ &amp;amp;= 120\cdot k,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, por tanto, $u$ es un múltiplo de $120$.&lt;/p&gt;
