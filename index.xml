@@ -9668,7 +9668,7 @@ doctest.testmod()
       <description>&lt;p&gt;Por desgracia, en la última versión del tema &lt;em&gt;Academic&lt;/em&gt;, los desarrolladores han decidido cambiar el tipo de Markdown que hasta la fecha venía incorporado en la plantilla.&lt;/p&gt;
 &lt;p&gt;El principal efecto de tal acción para esta página web reside en las expresiones matemáticas, que han dejado de mostrarse adecuadamente en los artículos.&lt;/p&gt;
 &lt;p&gt;Dado que su número es significativo, aprovecharé paulatinamente este período vacacional que se aproxima para ir revisando, uno por uno, la correcta visualización de los artículos afectados.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Actualización&lt;/em&gt;: revisados artículos afectados hasta el 31 de julio de 2018.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Actualización&lt;/em&gt;: revisados artículos afectados hasta el 21 de agosto de 2018.&lt;/p&gt;
 </description>
     </item>
     
@@ -19003,15 +19003,14 @@ head(debt)
       <guid>https://imalexissaez.github.io/2018/08/11/jugando-con-las-propiedades-del-conjugado/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 4:&lt;/strong&gt; Dada una constante real positiva, $a$, y el conjunto&lt;/p&gt;
 &lt;p&gt;$$
-M_a = \left{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right},
+M_a = \left\{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right\},
 $$&lt;/p&gt;
 &lt;p&gt;donde $\mathbb{C}^* = \mathbb{C}\backslash{(0,0)}$, encuentre los valores mínimo y máximo de $|z|$ cuando $z\in M_a$.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Hemos de ser capaces de extraer información sobre el módulo de $z$, $|z|$, a partir de la expresión de la ecuación que define al conjunto $M_a$. Por las propiedades de la conjugación, sabemos que $z\overline{z} = |z|^2$, de manera que una posible estrategia a seguir sería elevar al cuadrado ambos miembros de la ecuación que define a $M_a$ y desarrollar la expresión resultante mediante las propiedades de la conjugación. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a^2 &amp;amp;= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\&lt;br&gt;
-&amp;amp;= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
+a^2 &amp;amp;= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\\ &amp;amp;= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;pero recordemos que $z\overline{z} = |z|^2$, por lo que la anterior ecuación quedaría&lt;/p&gt;
@@ -19029,9 +19028,7 @@ $$&lt;/p&gt;
 &lt;p&gt;y si completamos el cuadrado del miembro derecho,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-|z|^4 - a^2|z|^2 + 1 &amp;amp;= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\&lt;br&gt;
-&amp;amp;= - (z + \overline{z})^2 + 2z\overline{z}\&lt;br&gt;
-&amp;amp;= - (z + \overline{z})^2 + 2|z|^2, 
+|z|^4 - a^2|z|^2 + 1 &amp;amp;= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\\ &amp;amp;= - (z + \overline{z})^2 + 2z\overline{z}\\ &amp;amp;= - (z + \overline{z})^2 + 2|z|^2, 
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir,&lt;/p&gt;
@@ -19059,10 +19056,7 @@ $$&lt;/p&gt;
 &lt;p&gt;expresión que nos invita a experimentar con el desarrollo de $(-a + \sqrt{a^2 + 4})^2$. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(-a + \sqrt{a^2+4})^2 &amp;amp;= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\&lt;br&gt;
-&amp;amp;= 2a^2+4 - 2a\sqrt{a^2+4}\&lt;br&gt;
-&amp;amp;= 2(a^2+2-a\sqrt{a^2+4})\&lt;br&gt;
-&amp;amp;= 2(a^2+2-\sqrt{a^4+4a^2}),
+(-a + \sqrt{a^2+4})^2 &amp;amp;= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2a^2+4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2(a^2+2-a\sqrt{a^2+4})\\ &amp;amp;= 2(a^2+2-\sqrt{a^4+4a^2}),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;de forma que&lt;/p&gt;
