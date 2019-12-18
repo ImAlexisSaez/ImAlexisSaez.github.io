@@ -5164,8 +5164,7 @@ $$&lt;/p&gt;
 \begin{aligned}
 a_h(n) &amp;amp;= 1^n\left(
 (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)}
-\right)\&lt;br&gt;
-&amp;amp;= (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)},
+\right)\\ &amp;amp;= (An+B)cos{\left(\dfrac{\pi}{2}n\right)} + (Cn+D)\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $A,B,C,D\in\mathbb{R}$.&lt;/p&gt;
@@ -5227,10 +5226,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Obtengamos el $mcd(199,98)$ utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-199 &amp;amp;= 98\cdot 2 + 3,\ 
-98 &amp;amp;= 3\cdot 32 + 2,\&lt;br&gt;
-3 &amp;amp;= 2\cdot 1 + 1,\&lt;br&gt;
-2 &amp;amp;= 1\cdot 2,
+199 &amp;amp;= 98\cdot 2 + 3,\\ 98 &amp;amp;= 3\cdot 32 + 2,\\ 3 &amp;amp;= 2\cdot 1 + 1,\\ 2 &amp;amp;= 1\cdot 2,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;luego $mcd(199, 98) = 1$ y como $1|68$ sabemos que la ecuación diofántica admite solución entera.&lt;/p&gt;
@@ -5254,23 +5250,20 @@ $$&lt;/p&gt;
 &lt;p&gt;Podemos así dar valores a $b^{\prime}$, ya que únicamente tendríamos que probar $b^{\prime}=0$, $b^{\prime}=1$ y $b^{\prime}=2$ (que conforma el &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $3$). Para $b^{\prime}=0$, $a\notin\mathbb{Z}$, pero si $b^{\prime}=1$, entonces $a=10$ y, por tanto, $b = 2a+b^{\prime} = 21$, quedando así la solución particular como sigue:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a_0 &amp;amp;= 10,\&lt;br&gt;
-b_0 &amp;amp;= 21,
+a_0 &amp;amp;= 10,\\ b_0 &amp;amp;= 21,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;mientras que la solución general es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= 10 - 98t,\&lt;br&gt;
-b &amp;amp;= 21 - 199t,
+a &amp;amp;= 10 - 98t,\\ b &amp;amp;= 21 - 199t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t\in\mathbb{Z}$.&lt;/p&gt;
 &lt;p&gt;Una vez resuelta la ecuación diofántica, centrémonos de nuevo en aquello que nos pedían en el enunciado: &amp;lsquo;&#39;¿Qué valor mínimo tenía el cheque de viaje?&#39;&#39;. Como hablamos de cantidades monetarias, tanto $a$, como $b$, han de ser mayores o iguales que cero, es decir,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\&lt;br&gt;
-b &amp;amp;= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
+a &amp;amp;= 10 -98t \geq0 \Rightarrow t\leq\dfrac{10}{98},\\ b &amp;amp;= 21 - 199t \geq0 \Rightarrow t\leq\dfrac{21}{199},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y $t\in\mathbb{Z}$. Por consiguiente, el valor mínimo se alcanza cuando $t=0$, donde $a=10$ y $b=21$. Así, el señor Martínez viajó a Estados Unidos con un cheque de viaje cuyo valor ascendía a 10 dólares y 21 centavos.&lt;/p&gt;
@@ -5301,23 +5294,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Así pues, dado que $4\equiv 1 \pmod{3}$ y $5\equiv (-1) \pmod{3}$, entonces, para cada $n\in\mathbb{N}$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-4^{n+1}+5^{2n-1} &amp;amp;\equiv (1^{n+1} + (-1)^{2n-1}) \pmod{3}\&lt;br&gt;
-&amp;amp;\equiv (1-1) \pmod{3}\&lt;br&gt;
-&amp;amp;\equiv 0 \pmod{3},
+4^{n+1}+5^{2n-1} &amp;amp;\equiv (1^{n+1} + (-1)^{2n-1}) \pmod{3}\\ &amp;amp;\equiv (1-1) \pmod{3}\\ &amp;amp;\equiv 0 \pmod{3},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;quedando así una demostrada. Para verificar la restante tengamos en cuenta que $5\equiv (-2) \pmod{7}$ y así, para cada $n\in\mathbb{N}$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-4^{n+1} + 5^{2n-1} &amp;amp;= 2^{2(n+1)} + 5^{2n-1}\&lt;br&gt;
-&amp;amp;= 2^{2n+2} + 5^{2n-1}\&lt;br&gt;
-&amp;amp;= 2^32^{2n-1} + 5^{2n-1}\&lt;br&gt;
-&amp;amp;\equiv (2^32^{2n-1} + (-2)^{2n-1}) \pmod{7}\&lt;br&gt;
-&amp;amp;\equiv (2^32^{2n-1} + (-1)^{2n-1}2^{2n-1}) \pmod{7}\&lt;br&gt;
-&amp;amp;\equiv (2^32^{2n-1} - 2^{2n-1}) \pmod{7}\&lt;br&gt;
-&amp;amp;\equiv ((2^3-1)2^{2n-1}) \pmod{7}\&lt;br&gt;
-&amp;amp;\equiv 7\cdot 2^{2n-1} \pmod{7}\&lt;br&gt;
-&amp;amp;\equiv 0 \pmod{7}.
+4^{n+1} + 5^{2n-1} &amp;amp;= 2^{2(n+1)} + 5^{2n-1}\\ &amp;amp;= 2^{2n+2} + 5^{2n-1}\\ &amp;amp;= 2^32^{2n-1} + 5^{2n-1}\\ &amp;amp;\equiv (2^32^{2n-1} + (-2)^{2n-1}) \pmod{7}\\ &amp;amp;\equiv (2^32^{2n-1} + (-1)^{2n-1}2^{2n-1}) \pmod{7}\\ &amp;amp;\equiv (2^32^{2n-1} - 2^{2n-1}) \pmod{7}\\ &amp;amp;\equiv ((2^3-1)2^{2n-1}) \pmod{7}\\ &amp;amp;\equiv 7\cdot 2^{2n-1} \pmod{7}\\ &amp;amp;\equiv 0 \pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por tanto, podemos concluir que, para cada $n\in\mathbb{N}$, $4^{n+1} + 5^{2n-1}$ es un múltiplo de 21.&lt;/p&gt;</description>
@@ -5356,13 +5339,7 @@ $$&lt;/p&gt;
 &lt;p&gt;y utilizar, acto seguido, la &lt;em&gt;hipótesis de inducción&lt;/em&gt;, que afirma que existe $k\in\mathbb{Z}$ tal que $4^{n+1} + 5^{2n-1}=21k$. La clave reside en despejar adecuadamente el término que nos interesa de dicha hipótesis. Así, como $4^{n+1} + 5^{2n-1}=21k$, entonces $4^{n+1}=21k - 5^{2n-1}$ y, sustituyendo arriba, tenemos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-4\cdot4^{n+1} + 5^{2n+1} &amp;amp;= 4(21k - 5^{2n-1}) + 5^{2n+1}\&lt;br&gt;
-&amp;amp;= 4\cdot 21k - 4\cdot 5^{2n-1} + 5^{2n+1}\&lt;br&gt;
-&amp;amp;= 4\cdot 21k - 4\cdot 5^{2n-1} + 5^2\cdot5^{2n-1}\&lt;br&gt;
-&amp;amp;= 4\cdot 21k + 5^{2n-1}(5^2-4)\&lt;br&gt;
-&amp;amp;= 4\cdot 21k + 21\cdot5^{2n-1}\&lt;br&gt;
-&amp;amp;= 21(4k + 5^{2n-1})\&lt;br&gt;
-&amp;amp;= 21k^\prime,
+4\cdot4^{n+1} + 5^{2n+1} &amp;amp;= 4(21k - 5^{2n-1}) + 5^{2n+1}\\ &amp;amp;= 4\cdot 21k - 4\cdot 5^{2n-1} + 5^{2n+1}\\ &amp;amp;= 4\cdot 21k - 4\cdot 5^{2n-1} + 5^2\cdot5^{2n-1}\\ &amp;amp;= 4\cdot 21k + 5^{2n-1}(5^2-4)\\ &amp;amp;= 4\cdot 21k + 21\cdot5^{2n-1}\\ &amp;amp;= 21(4k + 5^{2n-1})\\ &amp;amp;= 21k^\prime,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $k^\prime=4k + 5^{2n-1}\in\mathbb{Z}$ y, por tanto, la identidad se verifica para $n+1$. El &lt;em&gt;principio de inducción matemática&lt;/em&gt; nos permite concluir que es cierta para cada $n\in\mathbb{N}$.&lt;/p&gt;
@@ -5402,10 +5379,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Apoyándonos en que $n+1\leq n+n = 2n$, para cada $n\in\mathbb{N}$, (siendo una desigualdad estricta cuando $n&amp;gt;1$) y en la &lt;em&gt;hipótesis de inducción&lt;/em&gt;, tenemos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-n+1 &amp;amp;\leq n+n\&lt;br&gt;
-&amp;amp;= 2n\&lt;br&gt;
-&amp;amp;&amp;lt; 2\cdot 2^n\&lt;br&gt;
-&amp;amp;= 2^{n+1},
+n+1 &amp;amp;\leq n+n\\ &amp;amp;= 2n\\ &amp;amp;&amp;lt; 2\cdot 2^n\\ &amp;amp;= 2^{n+1},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, la desigualdad se verifica para $n+1$. El &lt;em&gt;principio de inducción matemática&lt;/em&gt; nos permite concluir que es cierta para cada $n\in\mathbb{N}$.&lt;/p&gt;
