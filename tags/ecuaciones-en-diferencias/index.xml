@@ -38,30 +38,26 @@ $$&lt;/p&gt;
 &lt;p&gt;Como $\lambda^2+1 = (\lambda - i)(\lambda + i)$, estamos en el caso de raíces complejas conjugadas simples, para las que $\varrho = 1$ y $\theta = \pi/2$, de manera que la solución para la ecuación anterior queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a_h(n) &amp;amp;= 1^n\left(A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}\right)\&lt;br&gt;
-&amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
+a_h(n) &amp;amp;= 1^n\left(A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}\right)\\ &amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $A,B\in\mathbb{R}$.&lt;/p&gt;
 &lt;p&gt;Ahora, para hallar una solución particular, $a_p(n)$, como $b(n) = \sin{(\pi n)}$ y $\lambda = \cos{(\pi)} + i\sin{(\pi)} = -1$ no es raíz de la ecuación característica, proponemos $a_p(n) = a\cos{(\pi n)} + b\sin{(\pi n)}$, de manera que, sustituyendo en la ecuación inicial&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a\cos{(\pi(n+2))} + b\sin{(\pi(n+2))} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},\&lt;br&gt;
-a\cos{(\pi n+2\pi)} + b\sin{(\pi n+2\pi)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},
+a\cos{(\pi(n+2))} + b\sin{(\pi(n+2))} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},\\ a\cos{(\pi n+2\pi)} + b\sin{(\pi n+2\pi)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y recordando que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\cos{(k_1+k_2)} &amp;amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\&lt;br&gt;
-\sin{(k_1+k_2)} &amp;amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
+\cos{(k_1+k_2)} &amp;amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\\ \sin{(k_1+k_2)} &amp;amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces $\cos{(\pi n+2\pi)} = \cos{(\pi n)}$ y $\sin{(\pi n+2\pi)} = \sin{(\pi n)}$, con lo que la ecuación anterior queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a\cos{(\pi n)} + b\sin{(\pi n)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},\&lt;br&gt;
-2a\cos{(\pi n)} + 2b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},
+a\cos{(\pi n)} + b\sin{(\pi n)} + a\cos{(\pi n)} + b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},\\ 2a\cos{(\pi n)} + 2b\sin{(\pi n)} &amp;amp;= \sin{(\pi n)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;e, igualando coeficientes, llegamos a que $2a=0$, de donde $a=0$, y $2b=1$, con lo que $b=1 / 2$, de forma que&lt;/p&gt;
@@ -90,8 +86,7 @@ $$&lt;/p&gt;
 \begin{aligned}
 a_h(n) &amp;amp;= 1^n\left(
 A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)}
-\right)\&lt;br&gt;
-&amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
+\right)\\ &amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $A,B\in\mathbb{R}$.&lt;/p&gt;
@@ -106,31 +101,32 @@ $$&lt;/p&gt;
 &lt;p&gt;es raíz simple ($m=1$) de la ecuación característica, proponemos&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a_p(n) &amp;amp;= n^1\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right)\&lt;br&gt;
-&amp;amp;= n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right),
+a_p(n) &amp;amp;= n^1\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right)\\ &amp;amp;= n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right),
 \end{aligned} 
 $$&lt;/p&gt;
 &lt;p&gt;de manera que, sustituyendo en la ecuación inicial,&lt;/p&gt;
 &lt;p&gt;$$
-(n+2)\left(a\cos{\left(\dfrac{\pi}{2}(n+2)\right)} + b\sin{\left(\dfrac{\pi}{2}(n+2)\right)}\right)+n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
+\begin{aligned}
+(n+2)&amp;amp;\left(a\cos{\left(\dfrac{\pi}{2}(n+2)\right)} + b\sin{\left(\dfrac{\pi}{2}(n+2)\right)}\right)\\ &amp;amp;+n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
+\end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y recordando que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\cos{(k_1+k_2)} &amp;amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\&lt;br&gt;
-\sin{(k_1+k_2)} &amp;amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
+\cos{(k_1+k_2)} &amp;amp;= \cos{(k_1)}\cos{(k_2)}-\sin{(k_1)}\sin{(k_2)},\\ \sin{(k_1+k_2)} &amp;amp;= \sin{(k_1)}\cos{(k_2)}+\cos{(k_1)}\sin{(k_2)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\cos{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;amp;= \cos{\left(\dfrac{\pi}{2}n+\pi\right)} = -\cos{\left(\dfrac{\pi}{2}n\right)},\&lt;br&gt;
-\sin{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;amp;= \sin{\left(\dfrac{\pi}{2}n+\pi\right)} = -\sin{\left(\dfrac{\pi}{2}n\right)},
+\cos{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;amp;= \cos{\left(\dfrac{\pi}{2}n+\pi\right)} = -\cos{\left(\dfrac{\pi}{2}n\right)},\\ \sin{\left(\dfrac{\pi}{2}(n+2)\right)} &amp;amp;= \sin{\left(\dfrac{\pi}{2}n+\pi\right)} = -\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con lo que la ecuación anterior queda&lt;/p&gt;
 &lt;p&gt;$$
-(n+2)\left(-a\cos{\left(\dfrac{\pi}{2}n\right)} - b\sin{\left(\dfrac{\pi}{2}n\right)}\right)+ n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
+\begin{aligned}
+(n+2)&amp;amp;\left(-a\cos{\left(\dfrac{\pi}{2}n\right)} - b\sin{\left(\dfrac{\pi}{2}n\right)}\right)\\ &amp;amp;+ n\left(a\cos{\left(\dfrac{\pi}{2}n\right)} + b\sin{\left(\dfrac{\pi}{2}n\right)}\right) = \sin{\left(\dfrac{\pi}{2}n\right)}
+\end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;e, igualando coeficientes, llegamos a que $-2a=0$, de donde $a=0$, y $-2b=1$, por lo que $b = -1 / 2$, de forma que&lt;/p&gt;
 &lt;p&gt;$$
@@ -139,8 +135,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Finalmente, la solución general de la ecuación inicial la obtenemos haciendo&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a(n) = a_h(n) + a_p(n) &amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)} -\dfrac{1}{2}\sin{\left(\dfrac{\pi}{2}n\right)}\&lt;br&gt;
-&amp;amp;=A\cos{\left(\dfrac{\pi}{2}n\right)} + \left(B-\dfrac{1}2{}\right)\sin{\left(\dfrac{\pi}{2}n\right)},
+a(n) = a_h(n) + a_p(n) &amp;amp;= A\cos{\left(\dfrac{\pi}{2}n\right)} + B\sin{\left(\dfrac{\pi}{2}n\right)} -\dfrac{1}{2}\sin{\left(\dfrac{\pi}{2}n\right)}\\ &amp;amp;=A\cos{\left(\dfrac{\pi}{2}n\right)} + \left(B-\dfrac{1}2{}\right)\sin{\left(\dfrac{\pi}{2}n\right)},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $A,B\in\mathbb{R}$.&lt;/p&gt;</description>
@@ -177,9 +172,7 @@ $$&lt;/p&gt;
 &lt;p&gt;A continuación, para encontrar una solución particular, $a_p(n)$, como $b(n) = 3^n$ y $\lambda = 3$ no es raíz de la ecuación característica, proponemos $a_p(n) = k3^n$, de manera que, sustituyendo en la ecuación inicial,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-k3^{n+2} - 3k3^{n+1} + 2k3^n &amp;amp;= 3^n,\ 
-9k - 9k + 2k &amp;amp;= 1,\&lt;br&gt;
-2k &amp;amp;= 1,
+k3^{n+2} - 3k3^{n+1} + 2k3^n &amp;amp;= 3^n,\\ 9k - 9k + 2k &amp;amp;= 1,\\ 2k &amp;amp;= 1,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, $k = 1 / 2$, con lo que&lt;/p&gt;
@@ -211,10 +204,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora, para encontrar una solución particular, $a_p(n)$, como $b(n) = 2^n$ y $\lambda=2$ es una raíz simple ($m=1$) de la ecuación característica, proponemos $a_p(n) = kn^12^n = kn2^n$, de forma que, sustituyendo en la ecuación inicial,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-k(n+2)2^{n+2} - 3k(n+1)2^{n+1}+2kn2^n &amp;amp;= 2^n,\&lt;br&gt;
-4k(n+2) - 6k(n+1) + 2kn &amp;amp;= 1,\&lt;br&gt;
-4kn + 8k - 6kn - 6k + 2kn &amp;amp;=1,\&lt;br&gt;
-2k &amp;amp;= 1,
+k(n+2)2^{n+2} - 3k(n+1)2^{n+1}+2kn2^n &amp;amp;= 2^n,\\ 4k(n+2) - 6k(n+1) + 2kn &amp;amp;= 1,\\ 4kn + 8k - 6kn - 6k + 2kn &amp;amp;=1,\\ 2k &amp;amp;= 1,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, $k=1 / 2$, con lo que&lt;/p&gt;
