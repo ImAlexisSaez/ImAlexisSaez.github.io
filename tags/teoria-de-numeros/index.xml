@@ -1666,10 +1666,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Para el apartado (a), como $19$ es un número primo y $mcd(16,19)=1$, entonces, por el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, $16^{18}\equiv 1\pmod{19}$. Ahora, como $99 = 18\cdot5 + 9$, entonces&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-16^{99} &amp;amp;= 16^9\cdot(16^{18})^5\&lt;br&gt;
-&amp;amp;\equiv (16^9\cdot 1^{18})\pmod{19}\&lt;br&gt;
-&amp;amp;\equiv 16^9\pmod{19}\&lt;br&gt;
-&amp;amp;\equiv 4^{18}\pmod{19},
+16^{99} &amp;amp;= 16^9\cdot(16^{18})^5\\ &amp;amp;\equiv (16^9\cdot 1^{18})\pmod{19}\\ &amp;amp;\equiv 16^9\pmod{19}\\ &amp;amp;\equiv 4^{18}\pmod{19},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;pero como $mcd(4,19)=1$, aplicando de nuevo el resultado anterior, $4^{18}\equiv 1\pmod{19}$, luego&lt;/p&gt;
@@ -1679,10 +1676,7 @@ $$&lt;/p&gt;
 &lt;p&gt;esto es, $16^{99}-1$ es múltiplo de $19$. De manera similar, como $23$ es un número primo y $mcd(16,23)=1$, por el mismo teorema que antes sabemos que $16^{22}\equiv 1\pmod{23}$, y como $99=22\cdot4+11$, tenemos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-16^{99} &amp;amp;= 16^{11}\cdot(16^{22})^4\&lt;br&gt;
-&amp;amp;\equiv (16^{11}\cdot 1^4)\pmod{23}\&lt;br&gt;
-&amp;amp;\equiv 16^{11}\pmod{23}\&lt;br&gt;
-&amp;amp;\equiv 4^{22}\pmod{23},
+16^{99} &amp;amp;= 16^{11}\cdot(16^{22})^4\\ &amp;amp;\equiv (16^{11}\cdot 1^4)\pmod{23}\\ &amp;amp;\equiv 16^{11}\pmod{23}\\ &amp;amp;\equiv 4^{22}\pmod{23},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y utilizando la estrategia previa, como $mcd(4,23)=1$, sabemos que $4^{22}\equiv 1\pmod{23}$. Así,&lt;/p&gt;
@@ -1697,11 +1691,7 @@ $$&lt;/p&gt;
 &lt;p&gt;esto es, $18!+1$ es múltiplo de $19$. Por otro lado, $23$ es asimismo un número primo, de manera que utilizando de nuevo el resultado anterior, $22!\equiv (-1)\pmod{23}$. Ahora bien, $22! = 22\cdot21\cdot20\cdot19\cdot18!$ y como $22\equiv (-1)\pmod{23}$, $21\equiv (-2)\pmod{23}$, $20\equiv (-3)\pmod{23}$ y $19\equiv (-4)\pmod{23}$, llegamos a que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-22! &amp;amp;= (22\cdot21\cdot20\cdot19\cdot18!)\&lt;br&gt;
-&amp;amp;\equiv ((-1)\cdot(-2)\cdot(-3)\cdot(-4)\cdot18!)\pmod{23}\&lt;br&gt;
-&amp;amp;\equiv (24\cdot18!)\pmod{23}\&lt;br&gt;
-&amp;amp;\equiv (1\cdot18!)\pmod{23}\&lt;br&gt;
-&amp;amp;\equiv 18!\pmod{23},
+22! &amp;amp;= (22\cdot21\cdot20\cdot19\cdot18!)\\ &amp;amp;\equiv ((-1)\cdot(-2)\cdot(-3)\cdot(-4)\cdot18!)\pmod{23}\\ &amp;amp;\equiv (24\cdot18!)\pmod{23}\\ &amp;amp;\equiv (1\cdot18!)\pmod{23}\\ &amp;amp;\equiv 18!\pmod{23},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y juntando ambos resultados, concluimos que $18!\equiv (-1)\pmod{23}$, luego&lt;/p&gt;
@@ -1723,9 +1713,7 @@ $$&lt;/p&gt;
 &lt;p&gt;En primer lugar, consideremos que buscamos únicamente tres números compuestos consecutivos, en lugar de los diez que solicita el enunciado, de cara a aliviar un tanto la escritura. Tomemos entonces el factorial de $4$, $4! = 1\cdot2\cdot3\cdot4$, de manera que es cierto que:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-4! + 2 &amp;amp;= 2\cdot(1\cdot3\cdot4 + 1),\&lt;br&gt;
-4! + 3 &amp;amp;= 3\cdot(1\cdot2\cdot4 + 1),\&lt;br&gt;
-4! + 4 &amp;amp;= 4\cdot(1\cdot2\cdot3 + 1),
+4! + 2 &amp;amp;= 2\cdot(1\cdot3\cdot4 + 1),\\ 4! + 3 &amp;amp;= 3\cdot(1\cdot2\cdot4 + 1),\\ 4! + 4 &amp;amp;= 4\cdot(1\cdot2\cdot3 + 1),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;son tres números consecutivos compuestos. En general, dado $n\in\mathbb{N}$, si buscamos $n$ números compuestos consecutivos, una opción es considerar el número $(n+1)!$ y, a partir de él, generar el conjunto de números compuestos consecutivos siguiente:&lt;/p&gt;
@@ -1736,9 +1724,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Alternativamente, si no queremos trabajar con números cuya magnitud es tan severa, podemos optar por construir el producto de los primeros números primos hasta encontrar aquel que supere en valor la cantidad de números compuestos consecutivos que deseamos encontrar. Por ejemplo, para $n=3$, el mencionado producto sería $2\cdot3\cdot5$, que satisface que:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-2\cdot3\cdot5 + 2 &amp;amp;= 2(3\cdot 5 + 1),\&lt;br&gt;
-2\cdot3\cdot5 + 3 &amp;amp;= 3(2\cdot 5 + 1),\&lt;br&gt;
-2\cdot3\cdot5 + 4 &amp;amp;= 2(3\cdot 5 + 2),
+2\cdot3\cdot5 + 2 &amp;amp;= 2(3\cdot 5 + 1),\\ 2\cdot3\cdot5 + 3 &amp;amp;= 3(2\cdot 5 + 1),\\ 2\cdot3\cdot5 + 4 &amp;amp;= 2(3\cdot 5 + 2),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;son tres números consecutivos compuestos. Para $n=10$, consideraríamos entonces el conjunto&lt;/p&gt;
@@ -1767,22 +1753,14 @@ $$&lt;/p&gt;
 &lt;p&gt;y, por tanto, $3^{40}\equiv 1\pmod{100}$. De esta manera, como $1492 = 40\cdot 37 + 12$, podemos escribir&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-3^{1492} &amp;amp;= 3^{12}\cdot(3^{40})^{37}\&lt;br&gt;
-&amp;amp;\equiv (3^{12}\cdot1^{37})\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv 3^{12}\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv 41\pmod{100},
+3^{1492} &amp;amp;= 3^{12}\cdot(3^{40})^{37}\\ &amp;amp;\equiv (3^{12}\cdot1^{37})\pmod{100}\\ &amp;amp;\equiv 3^{12}\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;sin más que hacer uso de la calculadora para obtener el valor de $3^{12}$.&lt;/p&gt;
 &lt;p&gt;Alternativamente, para hallar el valor de esta última congruencia, podemos manipular la potencia, $12$, como sigue:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-3^{12} &amp;amp;= (3^4)^3\&lt;br&gt;
-&amp;amp;= 81^3\&lt;br&gt;
-&amp;amp;\equiv(-19)^3\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv (-6859)\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv(-59)\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv 41\pmod{100},
+3^{12} &amp;amp;= (3^4)^3\\ &amp;amp;= 81^3\\ &amp;amp;\equiv(-19)^3\pmod{100}\\ &amp;amp;\equiv (-6859)\pmod{100}\\ &amp;amp;\equiv(-59)\pmod{100}\\ &amp;amp;\equiv 41\pmod{100},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;como antes, pudiéndose optar también por estrategias similares del tipo $3^{12} = 3^5\cdot 3^5\cdot 3^2$ o $3^{12} = 3^6\cdot 3^6$, entre otras.&lt;/p&gt;
@@ -1808,10 +1786,7 @@ $$&lt;/p&gt;
 &lt;p&gt;un posible enfoque es estudiar el valor de la congruencia de dicho número módulo $10$. Ahora bien, como $10$ no es un número primo y $mcd(2, 10)=2$, no estamos en condiciones de aplicar ninguno de los resultados teóricos asociados a &lt;em&gt;Fermat&lt;/em&gt;. Analicemos, pues, el comportamiento del valor de las congruencias de las potencias de $2$ módulo $10$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-2^1&amp;amp;\equiv 2\pmod{10},\&lt;br&gt;
-2^2&amp;amp;\equiv 4\pmod{10},\&lt;br&gt;
-2^3&amp;amp;\equiv 8\pmod{10},\&lt;br&gt;
-2^4&amp;amp;\equiv 6\pmod{10}.
+2^1&amp;amp;\equiv 2\pmod{10},\\ 2^2&amp;amp;\equiv 4\pmod{10},\\ 2^3&amp;amp;\equiv 8\pmod{10},\\ 2^4&amp;amp;\equiv 6\pmod{10}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;A la vista de este último valor alcanzado, y teniendo en cuenta el resultado al que pretendemos arribar, bastaría comprobar que, para cada número natural, con $n&amp;gt;1$, $2^n$ es múltiplo de $4$.&lt;/p&gt;
@@ -1849,16 +1824,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Para el apartado (a), recordemos que el conjunto finito $\mathbb{Z}_3 = \{\overline{0}, \overline{1}, \overline{2}\}$, que es un cuerpo al ser $3$ un número primo, viene definido como el conjunto cociente de $\mathbb{Z}$ por la relación de equivalencia dada por la congruencia módulo $3$. Así, como $3\equiv 0\pmod{3}$, para cada entero no negativo $n$, $3n^7\equiv 0\pmod{3}$. Por otro lado, al ser $3$ un número primo, sabemos, por el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que $n^3\equiv n\pmod{3}$, para cada entero no negativo $n$, por lo que $7n^3\equiv 7n\pmod{3}\equiv n\pmod{3}$. Por tanto,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(3n^7+7n^3+11n)&amp;amp;\equiv (0+n+11n)\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv 12n\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv 0\pmod{3},
+(3n^7+7n^3+11n)&amp;amp;\equiv (0+n+11n)\pmod{3}\\ &amp;amp;\equiv 12n\pmod{3}\\ &amp;amp;\equiv 0\pmod{3},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;para cada entero no negativo $n$. Alternativamente, en el caso de no recordar el anterior corolario, llegaríamos a que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(3n^7+7n^3+11n)&amp;amp;\equiv (0+7n^3+11n)\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv (n^3-n)\pmod{3},
+(3n^7+7n^3+11n)&amp;amp;\equiv (0+7n^3+11n)\pmod{3}\\ &amp;amp;\equiv (n^3-n)\pmod{3},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;pero&lt;/p&gt;
@@ -1869,8 +1841,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Por lo que respecta al conjunto finito $\mathbb{Z}_7$, cuerpo también al ser $7$ un número primo, que se define siguiendo un procedimiento similar al mostrado para $\mathbb{Z}_3$, la manera de proceder es idéntica. Como $7\equiv 0\pmod{7}$, entonces, para cada entero no negativo $n$, es cierto que $7n^3\equiv 0\pmod{7}$. Además, aplicando el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, como $7$ es un número primo, $n^7\equiv n\pmod{7}$, por lo que $3n^7\equiv 3n\pmod{7}$ para cada entero no negativo $n$. Luego,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(3n^7+7n^3+11n)&amp;amp;\equiv (3n+0+11n)\pmod{7}\&lt;br&gt;
-&amp;amp;\equiv 14n\pmod{7}\ 
+(3n^7+7n^3+11n)&amp;amp;\equiv (3n+0+11n)\pmod{7}\\ &amp;amp;\equiv 14n\pmod{7}\\ 
 &amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
@@ -1908,8 +1879,7 @@ $$&lt;/p&gt;
 &lt;p&gt;entonces se cumple que $t^2\equiv (-1)^2\pmod{1001}\equiv 1\pmod{1001}$ y, en general, $t^n\equiv (-1)^n\pmod{1001}$, para cada $n\in\mathbb{N}$. Este hecho nos permite concluir que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-N &amp;amp;= a_0 + a_1t + \cdots + a_nt^n \&lt;br&gt;
-&amp;amp;\equiv (a_0-a_1+a_2-\cdots+(-1)^na_n)\pmod{1001},
+N &amp;amp;= a_0 + a_1t + \cdots + a_nt^n \\ &amp;amp;\equiv (a_0-a_1+a_2-\cdots+(-1)^na_n)\pmod{1001},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, $N\equiv S\pmod{1001}$, tal y como se nos pedía demostrar.&lt;/p&gt;
@@ -1951,17 +1921,14 @@ $$&lt;/p&gt;
 &lt;p&gt;En cuanto al apartado b), teniendo presente el resultado alcanzado en el apartado anterior, estudiemos qué sucede para tres números consecutivos. Por comodidad de cara a los cálculos, tomaremos $1$, $2$ y $3$ como valores para $n$, y así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-A_1 &amp;amp;= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\&lt;br&gt;
-A_2 &amp;amp;= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\&lt;br&gt;
-A_3 &amp;amp;= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
+A_1 &amp;amp;= 2^1+2^2+2^3 = 14\equiv 0\pmod{7},\\ A_2 &amp;amp;= 2^2+2^4+2^6 = 84\equiv 0\pmod{7},\\ A_3 &amp;amp;= 2^3+2^6+2^9 = 584\equiv 3\pmod{7},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, como $A_{1}$ es múltiplo de $7$ y se satisface la propiedad dada en a), que podemos escribir como $( A_{n + 3} - A_{n} ) \equiv 0 \pmod{7}$, concluimos que $A_{4}$ será múltiplo de $7$ también, así como $A_{7}, A_{10}, A_{13}$ y, en general, los números de la forma $n=3k+1$, con $k\in\mathbb{Z}$, sin más que aplicar reiteradamente la citada propiedad. Un argumento similar se podría esgrimir para los números de la forma $n=3k+2$, con $k\in\mathbb{Z}$, a la vista del resultado alcanzado para $A_2$. De igual manera, este cauce de pensamiento nos llevaría a descartar que cualquier número de la forma $n=3k$, con $k\in\mathbb{Z}$, vaya a ser múltiplo de $7$, ya que $A_3$ no lo es. En conclusión, $A_n$ será múltiplo de $7$ para todos aquellos valores de $n$ que no sean múltiplo de $3$.&lt;/p&gt;
 &lt;p&gt;Finalmente, en el apartado c), por el &lt;em&gt;Teorema Fundamental de la Numeración&lt;/em&gt;, sabemos que podemos escribir&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-1110_{(2} &amp;amp;= 2^1+2^2+2^3 = A_1,\&lt;br&gt;
-1010100_{(2} &amp;amp;= 2^2+2^4+2^6 = A_2,\ 
+1110_{(2} &amp;amp;= 2^1+2^2+2^3 = A_1,\\ 1010100_{(2} &amp;amp;= 2^2+2^4+2^6 = A_2,\\ 
 1001001000_{(2} &amp;amp;= 2^3+2^6+2^9 = A_3,
 \end{aligned}
 $$&lt;/p&gt;
