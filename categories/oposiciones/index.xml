@@ -3913,44 +3913,31 @@ $$&lt;/p&gt;
 &lt;p&gt;Las sucesivas alineaciones de los soldados, las traducimos en el siguiente sistema de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{6},\&lt;br&gt;
-x&amp;amp;\equiv 1\pmod{7},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{11}.
+x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5$, $m_2=6$, $m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\&lt;br&gt;
-M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\&lt;br&gt;
-M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\ M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\&lt;br&gt;
-385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\&lt;br&gt;
-330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\&lt;br&gt;
-210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
+462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\\ &amp;amp;\Leftrightarrow 6x\equiv 3\pmod{5}\\ &amp;amp;\Leftrightarrow x\equiv 3\pmod{5},\\ 385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\\ 330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\\ 210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\&lt;br&gt;
-x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
+x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\&lt;br&gt;
-&amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
+x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\ &amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, asciende a $1023$ el número de soldados que sobrevivieron a la batalla.&lt;/p&gt;
@@ -3969,9 +3956,7 @@ $$&lt;/p&gt;
 &lt;p&gt;En resumen, hemos de resolver el sistema de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{9},\&lt;br&gt;
-x&amp;amp;\equiv 8\pmod{10}.
+x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},\\ x&amp;amp;\equiv 8\pmod{10}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Como $mcd(9,10,11)=1$, esto es, son primos entre sí los tres números, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt; estamos en condiciones de asegurar que existe solución módulo $9\cdot10\cdot11 = 990$. Ahora bien,&lt;/p&gt;
@@ -3981,23 +3966,19 @@ $$&lt;/p&gt;
 &lt;p&gt;por lo que el siguiente paso es resolver las ecuaciones de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\&lt;br&gt;
-110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\&lt;br&gt;
-99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
+90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\ 110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\ 99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\&lt;br&gt;
-x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
+x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\\ x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;la solución al sistema queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\ 
+x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ 
 &amp;amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
 \end{aligned}
 $$&lt;/p&gt;
@@ -4027,10 +4008,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Operando algebraicamente, llegamos a que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-3A\cdot10^{n-1} + 3B &amp;amp;= 20B+2A,\&lt;br&gt;
-17B &amp;amp;= 3A\cdot10^{n-1} - 2A,\&lt;br&gt;
-17B &amp;amp;= A(3\cdot10^{n-1} - 2),\&lt;br&gt;
-B &amp;amp;= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
+3A\cdot10^{n-1} + 3B &amp;amp;= 20B+2A,\\ 17B &amp;amp;= 3A\cdot10^{n-1} - 2A,\\ 17B &amp;amp;= A(3\cdot10^{n-1} - 2),\\ B &amp;amp;= \dfrac{A(3\cdot10^{n-1} - 2)}{17}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, como $A$ es la primera cifra del número buscado, es cierto que $1\leq A\leq 9$, luego no puede ser múltiplo de $17$, hecho que nos permite concluir que $3\cdot10^{n-1} - 2$ es divisible por $17$. Para hallar el valor de $n$, podemos optar por dividir, sucesivamente, números de la forma $30, 300, 3000,\ldots$, entre $17$ hasta dar con el dividendo adecuado que arroja un resto para la división que ascienda a $2$.&lt;/p&gt;
@@ -4071,27 +4049,21 @@ $$&lt;/p&gt;
 &lt;p&gt;Así pues, para $x$ surge el siguiente sistema de congruencias lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x-1&amp;amp;\equiv 0\pmod{2},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{5},
+x-1&amp;amp;\equiv 0\pmod{2},\\ x&amp;amp;\equiv 0\pmod{3},\\ x&amp;amp;\equiv 0\pmod{5},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $3$ y $5$, lo será de $15$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $2$. Son candidatos $15,45,75,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $x=15$.&lt;/p&gt;
 &lt;p&gt;Análogamente, para $y$ aparece el siguiente sistema de congruencias lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-y&amp;amp;\equiv 0\pmod{2},\&lt;br&gt;
-y-1&amp;amp;\equiv 0\pmod{3},\&lt;br&gt;
-y&amp;amp;\equiv 0\pmod{5},
+y&amp;amp;\equiv 0\pmod{2},\\ y-1&amp;amp;\equiv 0\pmod{3},\\ y&amp;amp;\equiv 0\pmod{5},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $2$ y $5$, lo será de $10$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $3$. Son candidatos $10,40,70,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $y=10$.&lt;/p&gt;
 &lt;p&gt;Finalmente, para $z$ encontramos el siguiente sistema de congruencias lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-z&amp;amp;\equiv 0\pmod{2},\&lt;br&gt;
-z&amp;amp;\equiv 0\pmod{3},\&lt;br&gt;
-z-1&amp;amp;\equiv 0\pmod{5},
+z&amp;amp;\equiv 0\pmod{2},\\ z&amp;amp;\equiv 0\pmod{3},\\ z-1&amp;amp;\equiv 0\pmod{5},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;que podemos resolver utilizando el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, aunque por tanteo es sencillo en este caso hallar la solución. Al ser múltiplo de $2$ y $3$, lo será de $6$. Entre los múltiplos de este último, hemos de buscar aquel que al restarle una unidad el resultado sea múltiplo de $5$. Son candidatos $6,36,66,\ldots$, pero como estamos interesados en encontrar el menor natural $n$, escogemos como solución final $z=6$.&lt;/p&gt;
@@ -4137,17 +4109,14 @@ $$&lt;/p&gt;
 &lt;p&gt;Así, aplicando la mencionada fórmula,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-v_5(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\&lt;br&gt;
-&amp;amp;= 200 + 40 + 8 + 1 = 249,
+v_5(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{5}\right\rfloor + \left\lfloor\dfrac{1000}{5^2}\right\rfloor + \left\lfloor\dfrac{1000}{5^3}\right\rfloor + \left\lfloor\dfrac{1000}{5^4}\right\rfloor\\ &amp;amp;= 200 + 40 + 8 + 1 = 249,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, $1000!$ acaba en $249$ ceros.&lt;/p&gt;
 &lt;p&gt;Para el apartado (b), quizá de forma un tanto rebuscada, simplemente nos preguntan por el número de veces que aparece $2$ en la factorización en números primos de $1000!$, puesto que tal valor nos permitirá verificar la propiedad enunciada. Aplicando, de nuevo, la &lt;em&gt;Fórmula de Legendre&lt;/em&gt;, tenemos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-v_2(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\&lt;br&gt;
-&amp;amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \&lt;br&gt;
-&amp;amp;= 994,
+v_2(1000!) &amp;amp;= \left\lfloor\dfrac{1000}{2}\right\rfloor + \left\lfloor\dfrac{1000}{2^2}\right\rfloor + \cdots + \left\lfloor\dfrac{1000}{2^9}\right\rfloor\\ &amp;amp;= 500 + 250 + 125 + 62 + 31 + 15 + 7 + 3 + 1 \\ &amp;amp;= 994,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;luego $2^{994}|1000!$, pero $2^{995}\nmid 1000!$, como queríamos demostrar.&lt;/p&gt;
@@ -4182,19 +4151,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, como el miembro derecho de esta última ecuación es un número par y $13$ es un número impar, necesariamente $n$ ha de ser un número par, es decir, de la forma $n=2x$, para algún $x\in\mathbb{Z}$. Sustituyendo arriba y despejando la variable queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-13(2x) &amp;amp;= 2\cdot10^m - 8,\&lt;br&gt;
-13x &amp;amp;= 10^m - 4,\&lt;br&gt;
-x &amp;amp;= \dfrac{10^m - 4}{13}.
+13(2x) &amp;amp;= 2\cdot10^m - 8,\\ 13x &amp;amp;= 10^m - 4,\\ x &amp;amp;= \dfrac{10^m - 4}{13}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Podemos ahora introducir la expresión en una calculadora científica y generar una tabla de valores para ella en función de $m$, quedándonos con el primero para el cual $x$ sea un número natural. Alternativamente, podemos actuar por tanteo, dividiendo las potencias de $10$ entre $13$ hasta dar con la primera en la que el resto de esta operación matemática sea $4$. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-10 &amp;amp;= 13\cdot 0 + 10,\&lt;br&gt;
-100 &amp;amp;= 13\cdot 7 + 9,\&lt;br&gt;
-1000 &amp;amp;= 13\cdot 76 + 12,\&lt;br&gt;
-10000 &amp;amp;= 13\cdot 769 + 3,\&lt;br&gt;
-100000 &amp;amp;= 13\cdot 7692 + 4,
+10 &amp;amp;= 13\cdot 0 + 10,\\ 100 &amp;amp;= 13\cdot 7 + 9,\\ 1000 &amp;amp;= 13\cdot 76 + 12,\\ 10000 &amp;amp;= 13\cdot 769 + 3,\\ 100000 &amp;amp;= 13\cdot 7692 + 4,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;por tanto $x = 7692$, de manera que $n = 2x = 15384$, es decir, el número que buscamos es, recordando la expresión que generamos al principio de la resolución del ejercicio, $10n + 6 = 153846$ (y es el menor por ser el primero que satisface la ecuación diofántica). Como nota anecdótica, si estuviéramos interesados en hallar el siguiente valor que cumple con los dictados del enunciado, seguiríamos dividiendo potencias de $10$, encontrando que el siguiente que verifica la condición de interés es $x = 76927692$.&lt;/p&gt;
@@ -4206,8 +4169,7 @@ $$&lt;/p&gt;
 &lt;p&gt;y así podemos escribir&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-10^m\equiv 4\pmod{13}&amp;amp;\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\&lt;br&gt;
-&amp;amp;\Leftrightarrow 10^{m - 2}\equiv (-1)\pmod{13}.
+10^m\equiv 4\pmod{13}&amp;amp;\Leftrightarrow 10^2\cdot10^{m-2}\equiv 4\pmod{13}\\ &amp;amp;\Leftrightarrow 10^{m - 2}\equiv (-1)\pmod{13}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Como $13$ es un número primo y $mcd(10, 13) = 1$, el &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt; afirma que $10^{12}\equiv 1\pmod{13}$. La expresión que figura en la ecuación previa no se ajusta exactamente a la anterior estructura, pero si la elevamos al cuadrado queda&lt;/p&gt;
@@ -4230,34 +4192,19 @@ $$&lt;/p&gt;
 &lt;p&gt;Vamos a apoyarnos en el corolario del &lt;em&gt;Pequeño Teorema de Fermat&lt;/em&gt;, que afirma que si $p$ es un número primo y $a\in\mathbb{Z}$, entonces $a^p\equiv a\pmod{p}$. Así, para $p=5$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a^{25} &amp;amp;= (a^5)^5\&lt;br&gt;
-&amp;amp;\equiv a^5\pmod{5}\&lt;br&gt;
-&amp;amp;\equiv a\pmod{5},
+a^{25} &amp;amp;= (a^5)^5\\ &amp;amp;\equiv a^5\pmod{5}\\ &amp;amp;\equiv a\pmod{5},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;de manera que $(a^{25} - a)\equiv 0\pmod{5}$, esto es, la expresión es múltiplo de $5$. Procediendo de manera similar, para $p=3$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot (a^8)^3\&lt;br&gt;
-&amp;amp;\equiv (a\cdot a^8)\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv (a^3)^3\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv a^3\pmod{3}\&lt;br&gt;
-&amp;amp;\equiv a\pmod{3},
+a^{25} &amp;amp;= a\cdot (a^8)^3\\ &amp;amp;\equiv (a\cdot a^8)\pmod{3}\\ &amp;amp;\equiv (a^3)^3\pmod{3}\\ &amp;amp;\equiv a^3\pmod{3}\\ &amp;amp;\equiv a\pmod{3},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, por tanto, $(a^{25} - a)\equiv 0\pmod{3}$, es decir, la expresión es asimismo múltiplo de $3$. Finalmente, para $p=2$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a^{25} &amp;amp;= a\cdot(a^{12})^2\&lt;br&gt;
-&amp;amp;\equiv (a\cdot a^{12})\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv (a\cdot (a^6)^2)\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv (a\cdot a^6)\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv (a\cdot(a^3)^2)\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv (a\cdot a^3)\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv a^4\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv (a^2)^2\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv a^2\pmod{2}\&lt;br&gt;
-&amp;amp;\equiv a\pmod{2},
+a^{25} &amp;amp;= a\cdot(a^{12})^2\\ &amp;amp;\equiv (a\cdot a^{12})\pmod{2}\\ &amp;amp;\equiv (a\cdot (a^6)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^6)\pmod{2}\\ &amp;amp;\equiv (a\cdot(a^3)^2)\pmod{2}\\ &amp;amp;\equiv (a\cdot a^3)\pmod{2}\\ &amp;amp;\equiv a^4\pmod{2}\\ &amp;amp;\equiv (a^2)^2\pmod{2}\\ &amp;amp;\equiv a^2\pmod{2}\\ &amp;amp;\equiv a\pmod{2},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, por consiguiente, $(a^{25} - a)\equiv 0\pmod{2}$, esto es, la expresión también es múltiplo de $2$. Al ser múltiplo de $2$, $3$ y $5$, por las propiedades de las congruencias podemos afirmar que $(a^{25} - a)\equiv 0\pmod{30}$, es decir, la expresión es múltiplo de $30$.&lt;/p&gt;
@@ -4272,17 +4219,17 @@ $$&lt;/p&gt;
       <guid>https://imalexissaez.github.io/2018/12/01/de-fracciones-irreducibles-y-su-suma/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 30:&lt;/strong&gt; Sea $n$ un número natural no nulo. Dado el conjunto de fracciones&lt;/p&gt;
 &lt;p&gt;$$
-A_n = \left{\dfrac{1}{n},\dfrac{2}{n},\dfrac{3}{n},\ldots,\dfrac{n}{n}\right}.
+A_n = \left\{\dfrac{1}{n},\dfrac{2}{n},\dfrac{3}{n},\ldots,\dfrac{n}{n}\right\}.
 $$&lt;/p&gt;
 &lt;p&gt;Calcula el número de fracciones irreducibles y la suma de dichas fracciones.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Acompañemos la resolución de este ejercicio con un caso particular para $n$, con el objetivo de que esta sea así más ilustrativa. Por ejemplo, si $n=8$, el conjunto de fracciones a estudiar es&lt;/p&gt;
 &lt;p&gt;$$
-A_8 = \left{\dfrac{1}{8},\dfrac{2}{8},\dfrac{3}{8},\dfrac{4}{8},\dfrac{5}{8},\dfrac{6}{8},\dfrac{7}{8},\dfrac{8}{8}\right},
+A_8 = \left\{\dfrac{1}{8},\dfrac{2}{8},\dfrac{3}{8},\dfrac{4}{8},\dfrac{5}{8},\dfrac{6}{8},\dfrac{7}{8},\dfrac{8}{8}\right\},
 $$&lt;/p&gt;
 &lt;p&gt;que contiene $4$ fracciones irreducibles,&lt;/p&gt;
 &lt;p&gt;$$
-\left{\dfrac{1}{8},\dfrac{3}{8},\dfrac{5}{8},\dfrac{7}{8}\right}.
+\left\{\dfrac{1}{8},\dfrac{3}{8},\dfrac{5}{8},\dfrac{7}{8}\right\}.
 $$&lt;/p&gt;
 &lt;p&gt;Estas se caracterizan por ser aquellas en las que numerador y denominador son coprimos. Así pues, el problema se reduce a encontrar, dado un número natural $n$ no nulo, la cantidad de enteros positivos menores o iguales a $n$ y coprimos con $n$, esto es, $\varphi(n)$.&lt;/p&gt;
 &lt;p&gt;En nuestro caso concreto, para $n=8=2^3$, efectivamente,&lt;/p&gt;

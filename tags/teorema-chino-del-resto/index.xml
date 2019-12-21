@@ -716,44 +716,31 @@ $$&lt;/p&gt;
 &lt;p&gt;Las sucesivas alineaciones de los soldados, las traducimos en el siguiente sistema de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{6},\&lt;br&gt;
-x&amp;amp;\equiv 1\pmod{7},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{11}.
+x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=5$, $m_2=6$, $m_3=7$ y $m_4=11$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=5\cdot6\cdot7\cdot11 = 2310$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\&lt;br&gt;
-M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\&lt;br&gt;
-M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{2310}{5} = 6\cdot7\cdot11 = 462,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{2310}{6} = 5\cdot7\cdot11 = 385,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{2310}{7} = 5\cdot6\cdot11 = 330,\\ M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{2310}{11} = 5\cdot6\cdot7 = 210,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\Leftrightarrow 6x\equiv 3\pmod{5}\Leftrightarrow x\equiv 3\pmod{5},\&lt;br&gt;
-385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\&lt;br&gt;
-330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\&lt;br&gt;
-210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
+462x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{5}\\ &amp;amp;\Leftrightarrow 6x\equiv 3\pmod{5}\\ &amp;amp;\Leftrightarrow x\equiv 3\pmod{5},\\ 385x\equiv 1\pmod{6}&amp;amp;\Leftrightarrow x\equiv 1\pmod{6},\\ 330x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow x\equiv 1\pmod{7},\\ 210x\equiv 1\pmod{11}&amp;amp;\Leftrightarrow x\equiv 1\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\&lt;br&gt;
-x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
+x&amp;amp;\equiv 3\pmod{5},&amp;amp; 462x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 3\pmod{5},\\ x&amp;amp;\equiv 3\pmod{6},&amp;amp; 385x&amp;amp;\equiv 1\pmod{6},&amp;amp; x&amp;amp;\equiv 1\pmod{6},\\ x&amp;amp;\equiv 1\pmod{7},&amp;amp; 330x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 1\pmod{7},\\ x&amp;amp;\equiv 0\pmod{11},&amp;amp; 210x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 1\pmod{11},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\&lt;br&gt;
-&amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
+x &amp;amp;\equiv (3\cdot462\cdot3 + 3\cdot385\cdot1 + 1\cdot330\cdot1 + 0\cdot210\cdot1)\pmod{2310}\\ &amp;amp;\equiv 5643\pmod{2310}\equiv 1023\pmod{2310},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, asciende a $1023$ el número de soldados que sobrevivieron a la batalla.&lt;/p&gt;
@@ -772,9 +759,7 @@ $$&lt;/p&gt;
 &lt;p&gt;En resumen, hemos de resolver el sistema de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{9},\&lt;br&gt;
-x&amp;amp;\equiv 8\pmod{10}.
+x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},\\ x&amp;amp;\equiv 8\pmod{10}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Como $mcd(9,10,11)=1$, esto es, son primos entre sí los tres números, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt; estamos en condiciones de asegurar que existe solución módulo $9\cdot10\cdot11 = 990$. Ahora bien,&lt;/p&gt;
@@ -784,23 +769,19 @@ $$&lt;/p&gt;
 &lt;p&gt;por lo que el siguiente paso es resolver las ecuaciones de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\&lt;br&gt;
-110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\&lt;br&gt;
-99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
+90x&amp;amp;\equiv 1\pmod{11}\Leftrightarrow 2x\equiv 1\pmod{11}\Leftrightarrow x\equiv 1\pmod{11},\\ 110x&amp;amp;\equiv 1\pmod{9}\Leftrightarrow 2x\equiv 1\pmod{9}\Leftrightarrow x\equiv 5\pmod{11},\\ 99x&amp;amp;\equiv 1\pmod{10}\Leftrightarrow (-x)\equiv 1\pmod{10}\Leftrightarrow x\equiv (-1)\pmod{11}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\&lt;br&gt;
-x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
+x&amp;amp;\equiv 6\pmod{11},&amp;amp; 90x&amp;amp;\equiv 1\pmod{11},&amp;amp; x&amp;amp;\equiv 6\pmod{11},\\ x&amp;amp;\equiv 0\pmod{9},&amp;amp; 110x&amp;amp;\equiv 1\pmod{9},&amp;amp; x&amp;amp;\equiv 5 \pmod{9},\\ x&amp;amp;\equiv 8\pmod{10},&amp;amp; 99x&amp;amp;\equiv 1\pmod{10},&amp;amp; x&amp;amp;\equiv (-1)\pmod{10},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;la solución al sistema queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\ 
+x &amp;amp;\equiv (6\cdot90\cdot6 + 0\cdot110\cdot5 + 8\cdot99\cdot(-1))\pmod{990}\\ 
 &amp;amp;\equiv 2448\pmod{990}\equiv 468\pmod{990}.
 \end{aligned}
 $$&lt;/p&gt;
