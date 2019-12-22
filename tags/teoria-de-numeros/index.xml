@@ -572,8 +572,7 @@ $$&lt;/p&gt;
 &lt;p&gt;esto es, $17^{40} \equiv 1\pmod{100}$. Estudiemos pues el valor de la congruencia módulo $40$ para el exponente, $2018^{2019}$. Por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, la ecuación de congruencia lineal $x\equiv 2018^{2019} \pmod{40}$ es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2018^{2019} \pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 2018^{2019} \pmod{8},
+x&amp;amp;\equiv 2018^{2019} \pmod{5},\\ x&amp;amp;\equiv 2018^{2019} \pmod{8},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;ya que $mcd(5,8)=1$ y $5\cdot8 = 40$. No obstante,&lt;/p&gt;
@@ -587,17 +586,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Por otro lado, $2018 = 2\cdot1009$, por lo que,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \&lt;br&gt;
-&amp;amp;= 2^{2019} \cdot 1009^{2019} \&lt;br&gt;
-&amp;amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \&lt;br&gt;
-&amp;amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
+2018^{2019} &amp;amp;= (2\cdot1009)^{2019} \\ &amp;amp;= 2^{2019} \cdot 1009^{2019} \\ &amp;amp;= 2^3 \cdot 2^{2016} \cdot 1009^{2019} \\ &amp;amp;= 8 \cdot 2^{2016} \cdot 1009^{2019},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y así, podemos concluir que $2018^{2019} \equiv 0\pmod{8}$. Por consiguiente, el sistema de ecuaciones de congruencia lineales planteado arriba es equivalente a&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{8}.
+x&amp;amp;\equiv 2\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, con el procedimiento habitual que nos proporciona el &lt;em&gt;Teorema chino del resto&lt;/em&gt; o razonando sin más. Buscamos aquí un múltiplo de $8$ (menor que $40$) que al dividirlo entre $5$ devuelva un resto de valor $2$. Tras unos rápidos cálculos mentales, encontramos que el número $32$ satisface las restricciones impuestas y, por tanto, la solución al sistema planteado arriba es $x\equiv 32\pmod{40}$. Con todo, hemos llegado a que&lt;/p&gt;
@@ -607,13 +602,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, $17^{32} = ( 17^2 )^{16} = 189^{16} \equiv 89^{16} \pmod{100}$. Aplicando esta forma de proceder de manera recurrente, podemos reducir, en unos pocos pasos, $17^{32}$ a un número para el que el cálculo de su congruencia módulo $100$ sea razonable. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-17^{32} &amp;amp;\equiv 89^{16} \pmod{100} \&lt;br&gt;
-&amp;amp;\equiv (-11)^{16} \pmod{100} \&lt;br&gt;
-&amp;amp;\equiv 11^{16} \pmod{100} \&lt;br&gt;
-&amp;amp;\equiv 21^8 \pmod{100}\&lt;br&gt;
-&amp;amp;\equiv 41^4 \pmod{100} \&lt;br&gt;
-&amp;amp;\equiv 81^2 \pmod{100} \&lt;br&gt;
-&amp;amp;\equiv 61\pmod{100},
+17^{32} &amp;amp;\equiv 89^{16} \pmod{100} \\ &amp;amp;\equiv (-11)^{16} \pmod{100} \\ &amp;amp;\equiv 11^{16} \pmod{100} \\ &amp;amp;\equiv 21^8 \pmod{100}\\ &amp;amp;\equiv 41^4 \pmod{100} \\ &amp;amp;\equiv 81^2 \pmod{100} \\ &amp;amp;\equiv 61\pmod{100},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es,&lt;/p&gt;
@@ -627,8 +616,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{25},
+x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{4},\\ x&amp;amp;\equiv 2018^{2019^{2020}} \pmod{25},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;puesto que $mcd(4,25)=1$ y $4\cdot25=100$. Ahora bien, por lo que respecta a la primera de ellas,&lt;/p&gt;
@@ -650,9 +638,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Por consiguiente, únicamente nos resta explorar el valor de la congruencia módulo $20$ del exponente, $2019^{2020}$. Sin embargo,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-2019^{2020} &amp;amp;\equiv (-1)^{2020} \pmod{20} \&lt;br&gt;
-&amp;amp;\equiv 1^{2020}\pmod{20} \&lt;br&gt;
-&amp;amp;\equiv 1\pmod{20},
+2019^{2020} &amp;amp;\equiv (-1)^{2020} \pmod{20} \\ &amp;amp;\equiv 1^{2020}\pmod{20} \\ &amp;amp;\equiv 1\pmod{20},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y entonces&lt;/p&gt;
@@ -662,8 +648,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Por tanto, el sistema de ecuaciones de congruencia lineales planteado queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 0\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 18\pmod{25}.
+x&amp;amp;\equiv 0\pmod{4},\\ x&amp;amp;\equiv 18\pmod{25}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Este último podemos resolverlo, de forma mecánica, por el clásico procedimiento asociado al &lt;em&gt;Teorema chino del resto&lt;/em&gt; o simplemente razonando sin más. En esta ocasión, buscamos un múltiplo de cuatro (menor que $100$), tal que al dividirlo por $25$ deje un resto que asciende a $18$. Tras unos rápidos cálculos mentales, deducimos que dicho valor es $68$, luego la solución al sistema de ecuaciones planteado es $x\equiv 68\pmod{100}$.&lt;/p&gt;
@@ -678,15 +663,13 @@ $$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencia lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2020^{2021} \pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 2020^{2021} \pmod{8},
+x&amp;amp;\equiv 2020^{2021} \pmod{5},\\ x&amp;amp;\equiv 2020^{2021} \pmod{8},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;pues $mcd(5,8)=1$ y $5\cdot8=40$. Ahora bien, como $2020 = 2^2 \cdot5\cdot101$, el exponente es, directamente, múltiplo de $5$ y, por otra parte, operando adecuadamente con las propiedades de las potencias, deducimos rápidamente que asimismo será múltiplo de $8$, esto es, el sistema de ecuaciones de congruencia lineales queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 0\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{8},
+x&amp;amp;\equiv 0\pmod{5},\\ x&amp;amp;\equiv 0\pmod{8},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y su solución, trivialmente, es $x\equiv 0\pmod{40}$. Por consiguiente,&lt;/p&gt;
@@ -696,16 +679,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Recapitulando,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-2017^{2018^{2019}} &amp;amp;\equiv 61\pmod{100},\&lt;br&gt;
-2018^{2019^{2020}} &amp;amp;\equiv 68\pmod{100},\&lt;br&gt;
-2019^{2020^{2021}} &amp;amp;\equiv  1\pmod{100},
+2017^{2018^{2019}} &amp;amp;\equiv 61\pmod{100},\\ 2018^{2019^{2020}} &amp;amp;\equiv 68\pmod{100},\\ 2019^{2020^{2021}} &amp;amp;\equiv  1\pmod{100},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;luego&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;amp;\equiv (61+68+1)\pmod{100}\&lt;br&gt;
-&amp;amp;\equiv 30\pmod{100},
+\left(2017^{2018^{2019}} + 2018^{2019^{2020}} + 2019^{2020^{2021}} \right)&amp;amp;\equiv (61+68+1)\pmod{100}\\ &amp;amp;\equiv 30\pmod{100},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, las dos últimas cifras de la operación indicada en el enunciado del ejercicio son $30$.&lt;/p&gt;
@@ -726,8 +706,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Para $n=2017$, tenemos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-\left\lfloor\dfrac{2017}{5}\right\rfloor + \left\lfloor\dfrac{2017}{25}\right\rfloor + \left\lfloor\dfrac{2017}{125}\right\rfloor + \left\lfloor\dfrac{2017}{625}\right\rfloor &amp;amp;= 403 + 80 + 16 + 3 \&lt;br&gt;
-&amp;amp;= 502,
+\left\lfloor\dfrac{2017}{5}\right\rfloor + \left\lfloor\dfrac{2017}{25}\right\rfloor + \left\lfloor\dfrac{2017}{125}\right\rfloor + \left\lfloor\dfrac{2017}{625}\right\rfloor &amp;amp;= 403 + 80 + 16 + 3 \\ &amp;amp;= 502,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es $2017!$ acaba en $502$ ceros, situación que nos obliga a encontrar entonces el valor de la congruencia&lt;/p&gt;
@@ -748,16 +727,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, resulta que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(5k+1)(5k+2)(5k+3)(5k+4)&amp;amp;= 625k^4 + 1250k^3 + 875k^2 + 250k + 24\&lt;br&gt;
-&amp;amp;\equiv (-1)\pmod{25},
+(5k+1)(5k+2)(5k+3)(5k+4)&amp;amp;= 625k^4 + 1250k^3 + 875k^2 + 250k + 24\\ &amp;amp;\equiv (-1)\pmod{25},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;hecho que nos permite escribir&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-f(2017)&amp;amp;=\dfrac{2017!}{5^{502}}\pmod{25}\&lt;br&gt;
-&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot403\cdot(16\cdot17)}{5^{99}}\pmod{25}\&lt;br&gt;
-&amp;amp;=(-1)^{403}\cdot22\cdot f(403)\pmod{25}.
+f(2017)&amp;amp;=\dfrac{2017!}{5^{502}}\pmod{25}\\ &amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot403\cdot(16\cdot17)}{5^{99}}\pmod{25}\\ &amp;amp;=(-1)^{403}\cdot22\cdot f(403)\pmod{25}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Veamos en detalle la anterior cadena de igualdades:&lt;/p&gt;
@@ -771,23 +747,13 @@ $$&lt;/p&gt;
 &lt;p&gt;Razonando de manera similar,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-f(403)&amp;amp;=\dfrac{403!}{5^{99}}\pmod{25}\&lt;br&gt;
-&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot80\cdot(1\cdot2\cdot3)}{5^{19}}\pmod{25}\&lt;br&gt;
-&amp;amp;=(-1)^{80}\cdot6\cdot f(80)\pmod{25},\&lt;br&gt;
-f(80)&amp;amp;=\dfrac{80!}{5^{19}}\pmod{25}\&lt;br&gt;
-&amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot16}{5^{3}}\pmod{25}\&lt;br&gt;
-&amp;amp;=(-1)^{16}\cdot f(16)\pmod{25},\&lt;br&gt;
-f(16)&amp;amp;=\dfrac{16!}{5^{3}}\pmod{25}\&lt;br&gt;
-&amp;amp;=((1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdot(1\cdot2\cdot3\cdot4)\cdot3\cdot16)\pmod{25}\&lt;br&gt;
-&amp;amp;=(-1)^{3}\cdot16\cdot 3!\pmod{25},
+f(403)&amp;amp;=\dfrac{403!}{5^{99}}\pmod{25}\\ &amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot80\cdot(1\cdot2\cdot3)}{5^{19}}\pmod{25}\\ &amp;amp;=(-1)^{80}\cdot6\cdot f(80)\pmod{25},\\ f(80)&amp;amp;=\dfrac{80!}{5^{19}}\pmod{25}\\ &amp;amp;=\dfrac{(1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdots(1\cdot2\cdot3\cdot4)\cdot16}{5^{3}}\pmod{25}\\ &amp;amp;=(-1)^{16}\cdot f(16)\pmod{25},\\ f(16)&amp;amp;=\dfrac{16!}{5^{3}}\pmod{25}\\ &amp;amp;=((1\cdot2\cdot3\cdot4)\cdot1\cdot(1\cdot2\cdot3\cdot4)\cdot2\cdot(1\cdot2\cdot3\cdot4)\cdot3\cdot16)\pmod{25}\\ &amp;amp;=(-1)^{3}\cdot16\cdot 3!\pmod{25},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y realizando ahorra las correspondientes sustituciones,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-f(2017) &amp;amp;= (-1)^{502}\cdot22\cdot6\cdot16\cdot6\pmod{25}\&lt;br&gt;
-&amp;amp;\equiv 12672\pmod{25}\&lt;br&gt;
-&amp;amp;\equiv 22\pmod{25},
+f(2017) &amp;amp;= (-1)^{502}\cdot22\cdot6\cdot16\cdot6\pmod{25}\\ &amp;amp;\equiv 12672\pmod{25}\\ &amp;amp;\equiv 22\pmod{25},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es,&lt;/p&gt;
@@ -813,9 +779,7 @@ $$&lt;/p&gt;
 &lt;p&gt;entre $25$ asciende a $22$. Como el número que nos interesa, en términos del resto, es $4$ veces el anterior, esto es, $4a$, para hallar el resto al dividir por $25$ planteamos la ecuación de congruencia lineal,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-4a\equiv 22\pmod{25}&amp;amp;\Leftrightarrow 24a\equiv 132\pmod{25}\&lt;br&gt;
-&amp;amp;\Leftrightarrow (-a)\equiv 7\pmod{25}\&lt;br&gt;
-&amp;amp;\Leftrightarrow a\equiv 18\pmod{25},
+4a\equiv 22\pmod{25}&amp;amp;\Leftrightarrow 24a\equiv 132\pmod{25}\\ &amp;amp;\Leftrightarrow (-a)\equiv 7\pmod{25}\\ &amp;amp;\Leftrightarrow a\equiv 18\pmod{25},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, finalmente hemos llegado a que&lt;/p&gt;
@@ -829,8 +793,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es equivalente al sistema de ecuaciones de congruencias lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 0\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 18\pmod{25}.
+x&amp;amp;\equiv 0\pmod{4},\\ x&amp;amp;\equiv 18\pmod{25}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=4$ y $m_2=25$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=4\cdot25 = 100$. Podemos hallar esta vía el procedimiento habitual; sin embargo, dado que la primera ecuación indica que la solución es múltiplo de $4$ y la segunda ecuación se traduce en que al dividir dicho múltiplo por $25$ ha de dejar un resto igual a $18$, llegamos, por tanteo, a que $x\equiv 68\pmod{100}$. Es decir, $68$ son los dos últimos dígitos no nulos de $2017!$.&lt;/p&gt;
