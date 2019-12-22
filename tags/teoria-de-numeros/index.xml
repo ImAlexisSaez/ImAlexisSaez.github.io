@@ -850,24 +850,19 @@ $$&lt;/p&gt;
 &lt;p&gt;Como estamos interesados en encontrar los tres últimos dígitos del producto de números dado, un posible enfoque de cara a la resolución de este ejercicio es encontrar el valor de la congruencia de dicho producto módulo $1000$, esto es, resolver $x\equiv N\pmod{1000}$. Ahora bien, como $1000 = 2^3 \cdot 5^3 = 8\cdot 125$ y $mcd(8,125)=1$ sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que la anterior ecuación de congruencia lineal es equivalente al siguiente sistema de ecuaciones de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv N\pmod{8},\&lt;br&gt;
-x&amp;amp;\equiv N\pmod{125}.
+x&amp;amp;\equiv N\pmod{8},\\ x&amp;amp;\equiv N\pmod{125}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Sin embargo, dado que en el producto $N$ aparecen, por ejemplo, los números $15 = 3\cdot5$, $35 = 5\cdot7$ y $55 = 5\cdot11$, resulta que encontraríamos $5^3$ en dicho producto, provocando que $N\equiv 0\pmod{125}$, esto es, $N$ es múltiplo de $125$. Por otro lado,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-3&amp;amp;\equiv 3\pmod{8},\&lt;br&gt;
-7&amp;amp;\equiv (-1)\pmod{8},\&lt;br&gt;
-11&amp;amp;\equiv 3\pmod{8},\&lt;br&gt;
-15&amp;amp;\equiv (-1)\pmod{8},
+3&amp;amp;\equiv 3\pmod{8},\\ 7&amp;amp;\equiv (-1)\pmod{8},\\ 11&amp;amp;\equiv 3\pmod{8},\\ 15&amp;amp;\equiv (-1)\pmod{8},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;por tanto&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(3\cdot7\cdot11\cdot15)&amp;amp;\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\&lt;br&gt;
-&amp;amp;\equiv 9\pmod{8}\equiv 1\pmod{8}.
+(3\cdot7\cdot11\cdot15)&amp;amp;\equiv (3\cdot(-1)\cdot3\cdot(-1))\pmod{8}\\ &amp;amp;\equiv 9\pmod{8}\equiv 1\pmod{8}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Al ser los términos del producto $N$ de la forma $3+4t$, con $t$ número entero mayor o igual que cero, la anterior situación se reproduce cada cuatro términos del mencionado producto. Así, como $3+4t=2019$ implica que $t=504$ y empezamos la sucesión en $t=0$, $N$ está compuesto por $505$ términos, de forma que podemos conseguir $126$ grupos de $4$ elementos, quedando sin agrupar el último término, $2019$, que sabemos cumple $2019\equiv 3\pmod{8}$, por lo que&lt;/p&gt;
@@ -877,50 +872,38 @@ $$&lt;/p&gt;
 &lt;p&gt;Recapitulando, buscamos un múltiplo de $125$ que sea congruente con $3$ módulo $8$, es decir, hemos de resolver la ecuación, $125x\equiv 3\pmod{8}$. No obstante,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-125x\equiv 3\pmod{8}&amp;amp;\Leftrightarrow 5x\equiv 3\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow 15x\equiv 9\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 7\pmod{8},
+125x\equiv 3\pmod{8}&amp;amp;\Leftrightarrow 5x\equiv 3\pmod{8}\\ &amp;amp;\Leftrightarrow 15x\equiv 9\pmod{8}\\ &amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\\ &amp;amp;\Leftrightarrow x\equiv 7\pmod{8},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, $125\cdot7=875$ son las tres últimas cifras de $N$.&lt;/p&gt;
 &lt;p&gt;De manera más clásica, una vez hallado el valor de las anteriores dos congruencias, el sistema de ecuaciones de congruencias lineales propuesto es equivalente a&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{8},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{125}.
+x&amp;amp;\equiv 3\pmod{8},\\ x&amp;amp;\equiv 0\pmod{125}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=8$ y $m_2=125$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=8\cdot125 = 1000$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{1000}{8} = 125,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{1000}{125} = 4,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-125x\equiv 1\pmod{8}&amp;amp;\Leftrightarrow 5x\equiv 1\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow 25x\equiv 5\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 5\pmod{8},\&lt;br&gt;
-4x\equiv 1\pmod{125}&amp;amp;\Leftrightarrow 376x\equiv 94\pmod{125}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 94\pmod{125}.
+125x\equiv 1\pmod{8}&amp;amp;\Leftrightarrow 5x\equiv 1\pmod{8}\\ &amp;amp;\Leftrightarrow 25x\equiv 5\pmod{8}\\ &amp;amp;\Leftrightarrow x\equiv 5\pmod{8},\\ 4x\equiv 1\pmod{125}&amp;amp;\Leftrightarrow 376x\equiv 94\pmod{125}\\ &amp;amp;\Leftrightarrow x\equiv 94\pmod{125}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 3\pmod{8},&amp;amp; 125x&amp;amp;\equiv 1\pmod{8},&amp;amp; x&amp;amp;\equiv 5\pmod{8},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{125},&amp;amp; 4x&amp;amp;\equiv 1\pmod{125},&amp;amp; x&amp;amp;\equiv 94\pmod{125},
+x&amp;amp;\equiv 3\pmod{8},&amp;amp; 125x&amp;amp;\equiv 1\pmod{8},&amp;amp; x&amp;amp;\equiv 5\pmod{8},\\ x&amp;amp;\equiv 0\pmod{125},&amp;amp; 4x&amp;amp;\equiv 1\pmod{125},&amp;amp; x&amp;amp;\equiv 94\pmod{125},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\&lt;br&gt;
-&amp;amp;\equiv 1875\pmod{1000}\&lt;br&gt;
-&amp;amp;\equiv 875\pmod{1000},
+x &amp;amp;\equiv (3\cdot125\cdot5 + 0\cdot4\cdot94)\pmod{1000}\\ &amp;amp;\equiv 1875\pmod{1000}\\ &amp;amp;\equiv 875\pmod{1000},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, $875$ son los tres últimos dígitos de $N$.&lt;/p&gt;
@@ -938,44 +921,31 @@ $$&lt;/p&gt;
 &lt;p&gt;Así pues, hemos de resolver el siguiente sistema de ecuaciones de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2017\pmod{3}\equiv 1\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 2014\pmod{8}\equiv 6\pmod{8}\&lt;br&gt;
-x&amp;amp;\equiv 2008\pmod{13}\equiv 6\pmod{13}.
+x&amp;amp;\equiv 2017\pmod{3}\equiv 1\pmod{3},\\ x&amp;amp;\equiv 2014\pmod{8}\equiv 6\pmod{8}\\ x&amp;amp;\equiv 2008\pmod{13}\equiv 6\pmod{13}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=3$, $m_2=8$ y $m_3=13$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=3\cdot8\cdot13 = 312$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{312}{3} = 8\cdot13 = 104,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{312}{8} = 3\cdot13 = 39,\&lt;br&gt;
-M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{312}{13} = 3\cdot8 = 24,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{312}{3} = 8\cdot13 = 104,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{312}{8} = 3\cdot13 = 39,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{312}{13} = 3\cdot8 = 24,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-104x\equiv 1\pmod{3}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{3}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 2\pmod{3},\&lt;br&gt;
-39x\equiv 1\pmod{8}&amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv (-1)\pmod{8},\&lt;br&gt;
-24x\equiv 1\pmod{13}&amp;amp;\Leftrightarrow (-2x)\equiv 1\pmod{13}\&lt;br&gt;
-&amp;amp;\Leftrightarrow (-12x)\equiv 6\pmod{13}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 6\pmod{13}.
+104x\equiv 1\pmod{3}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{3}\\ &amp;amp;\Leftrightarrow x\equiv 2\pmod{3},\\ 39x\equiv 1\pmod{8}&amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{8}\\ &amp;amp;\Leftrightarrow x\equiv (-1)\pmod{8},\\ 24x\equiv 1\pmod{13}&amp;amp;\Leftrightarrow (-2x)\equiv 1\pmod{13}\\ &amp;amp;\Leftrightarrow (-12x)\equiv 6\pmod{13}\\ &amp;amp;\Leftrightarrow x\equiv 6\pmod{13}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 1\pmod{3},&amp;amp; 104x&amp;amp;\equiv 1\pmod{3},&amp;amp; x&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 6\pmod{8},&amp;amp; 39x&amp;amp;\equiv 1\pmod{8},&amp;amp; x&amp;amp;\equiv (-1)\pmod{8},\&lt;br&gt;
-x&amp;amp;\equiv 6\pmod{13},&amp;amp; 24x&amp;amp;\equiv 1\pmod{13},&amp;amp; x&amp;amp;\equiv 6\pmod{13},
+x&amp;amp;\equiv 1\pmod{3},&amp;amp; 104x&amp;amp;\equiv 1\pmod{3},&amp;amp; x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 6\pmod{8},&amp;amp; 39x&amp;amp;\equiv 1\pmod{8},&amp;amp; x&amp;amp;\equiv (-1)\pmod{8},\\ x&amp;amp;\equiv 6\pmod{13},&amp;amp; 24x&amp;amp;\equiv 1\pmod{13},&amp;amp; x&amp;amp;\equiv 6\pmod{13},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\&lt;br&gt;
-&amp;amp;\equiv 838\pmod{312}\equiv 214\pmod{312},
+x &amp;amp;\equiv (1\cdot104\cdot2 + 6\cdot39\cdot(-1) + 6\cdot24\cdot1)\pmod{312}\\ &amp;amp;\equiv 838\pmod{312}\equiv 214\pmod{312},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, en los años de la forma $214+316w$, con $w$ número entero, coinciden los tres perihelios. Para $w=5$, encontramos que el año $1794$ fue el último en el que coincidieron, mientras que si $w=6$, hallamos que $2086$ será el próximo año en el que coincidan.&lt;/p&gt;
@@ -992,86 +962,55 @@ $$&lt;/p&gt;
 &lt;p&gt;Consideremos $x$ el número de huevos que se encuentran en la cesta de Brahmagupta. Los distintos modos de extracción dan lugar al siguiente sistema de ecuaciones de congruencias lineales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 1\pmod{2},\&lt;br&gt;
-x&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 4\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 5\pmod{6},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{7}.
+x&amp;amp;\equiv 1\pmod{2},\\ x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 3\pmod{4},\\ x&amp;amp;\equiv 4\pmod{5},\\ x&amp;amp;\equiv 5\pmod{6},\\ x&amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por desgracia, no podemos aplicar directamente el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, pues algunos módulos no son primos entre sí. No obstante, como estamos en las condiciones de la proposición que generaliza este resultado teórico (las comprobaciones sobre los pares de congruencias se pueden llevar a cabo mentalmente de forma sencilla), sabemos que el sistema de ecuaciones de congruencias lineales posee solución. Para hallarla, desdoblando la ecuación de congruencia lineal $x\equiv 5\pmod{6}$, queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 1\pmod{2},\&lt;br&gt;
-x&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 4\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 5\pmod{2}\equiv 1\pmod{2},\&lt;br&gt;
-x&amp;amp;\equiv 5\pmod{3}\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{7}.
+x&amp;amp;\equiv 1\pmod{2},\\ x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 3\pmod{4},\\ x&amp;amp;\equiv 4\pmod{5},\\ x&amp;amp;\equiv 5\pmod{2}\equiv 1\pmod{2},\\ x&amp;amp;\equiv 5\pmod{3}\equiv 2\pmod{3},\\ x&amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Encontramos dos ecuaciones de congruencias lineales repetidas, cuya escritura podemos ahorrarnos, de manera que llegamos a que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 1\pmod{2},\&lt;br&gt;
-x&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 4\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{7}.
+x&amp;amp;\equiv 1\pmod{2},\\ x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 3\pmod{4},\\ x&amp;amp;\equiv 4\pmod{5},\\ x&amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Llegados a este punto, la primera y la tercera ecuación involucran módulos de manera que uno es un factor del otro $4=2^2$. Por tanto, tenemos entre manos una posible contradicción aquí que hemos de investigar para hallar si existe o no dicha contradicción. No obstante, para cierto número entero $t$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x\equiv 3\pmod{4}&amp;amp;\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\&lt;br&gt;
-&amp;amp;\Rightarrow x\equiv 1\pmod{2},
+x\equiv 3\pmod{4}&amp;amp;\Rightarrow x = 3+4t\Rightarrow x = 1 + 2(1+2t)\\ &amp;amp;\Rightarrow x\equiv 1\pmod{2},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;luego la primera ecuación de congruencia lineal es redundante y la podremos suprimir del sistema, quedando pues&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2\pmod{3},\ 
-x&amp;amp;\equiv 3\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 4\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{7}.
+x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 3\pmod{4},\\ x&amp;amp;\equiv 4\pmod{5},\\ x&amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=3$, $m_2=4$, $m_3=5$ y $m_4=7$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=3\cdot4\cdot5\cdot7 = 420$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\&lt;br&gt;
-M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\&lt;br&gt;
-M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{420}{3} = 4\cdot5\cdot7 = 140,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{420}{4} = 3\cdot5\cdot7 = 105,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{420}{5} = 3\cdot4\cdot7 = 84,\\ M_4 &amp;amp;= \dfrac{M}{m_4} = \dfrac{420}{7} = 3\cdot4\cdot5 = 60,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-140x\equiv 1\pmod{3}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 2\pmod{3},\&lt;br&gt;
-105x\equiv 1\pmod{4}&amp;amp;\Leftrightarrow x\equiv 1\pmod{4},\&lt;br&gt;
-84x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\&lt;br&gt;
-60x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\&lt;br&gt;
-&amp;amp;\Leftrightarrow x\equiv 2\pmod{7}.
+140x\equiv 1\pmod{3}&amp;amp;\Leftrightarrow 2x\equiv 1\pmod{3}\Leftrightarrow 4x\equiv 2\pmod{3}\\ &amp;amp;\Leftrightarrow x\equiv 2\pmod{3},\\ 105x\equiv 1\pmod{4}&amp;amp;\Leftrightarrow x\equiv 1\pmod{4},\\ 84x\equiv 1\pmod{5}&amp;amp;\Leftrightarrow (-x)\equiv 1\pmod{5}\Leftrightarrow x\equiv 4\pmod{5},\\ 60x\equiv 1\pmod{7}&amp;amp;\Leftrightarrow 4x\equiv 1\pmod{7}\Leftrightarrow 8x\equiv 2\pmod{7}\\ &amp;amp;\Leftrightarrow x\equiv 2\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x&amp;amp;\equiv 2\pmod{3},&amp;amp; 140x&amp;amp;\equiv 1\pmod{3},&amp;amp; x&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-x&amp;amp;\equiv 3\pmod{4},&amp;amp; 105x&amp;amp;\equiv 1\pmod{4},&amp;amp; x&amp;amp;\equiv 1\pmod{4},\&lt;br&gt;
-x&amp;amp;\equiv 4\pmod{5},&amp;amp; 84x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 4\pmod{5},\&lt;br&gt;
-x&amp;amp;\equiv 0\pmod{7},&amp;amp; 60x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 2\pmod{7},
+x&amp;amp;\equiv 2\pmod{3},&amp;amp; 140x&amp;amp;\equiv 1\pmod{3},&amp;amp; x&amp;amp;\equiv 2\pmod{3},\\ x&amp;amp;\equiv 3\pmod{4},&amp;amp; 105x&amp;amp;\equiv 1\pmod{4},&amp;amp; x&amp;amp;\equiv 1\pmod{4},\\ x&amp;amp;\equiv 4\pmod{5},&amp;amp; 84x&amp;amp;\equiv 1\pmod{5},&amp;amp; x&amp;amp;\equiv 4\pmod{5},\\ x&amp;amp;\equiv 0\pmod{7},&amp;amp; 60x&amp;amp;\equiv 1\pmod{7},&amp;amp; x&amp;amp;\equiv 2\pmod{7},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\&lt;br&gt;
-&amp;amp;\equiv 2219\pmod{420}\equiv 119\pmod{420},
+x &amp;amp;\equiv (2\cdot140\cdot2 + 3\cdot105\cdot1 + 4\cdot84\cdot4 + 0\cdot60\cdot1)\pmod{420}\\ &amp;amp;\equiv 2219\pmod{420}\equiv 119\pmod{420},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, la cesta de Brahmagupta contaba con $119$ huevos.&lt;/p&gt;
@@ -1095,109 +1034,80 @@ $$&lt;/p&gt;
 &lt;p&gt;Por comodidad en la escritura, denotemos el dinero que posee cada uno, en euros, de los cuatro protagonistas del enunciado del ejercicio por sus iniciales en minúscula, esto es, $a$, $b$, $c$ y $d$. Sabemos, dado que no pueden comprar las cuatro entradas para disfrutar del concierto, que $a+b+c+d&amp;lt;4\cdot50=200$. Hallemos cuánto dinero lleva encima cada uno de ellos haciendo uso de las condiciones que aparecen, que, matemáticamente, podemos expresar como sigue:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b+1 &amp;amp;= \dfrac{2}{3}(a-1),\&lt;br&gt;
-c+2 &amp;amp;= \dfrac{3}{5}(b-2),\&lt;br&gt;
-d+3 &amp;amp;= \dfrac{5}{7}(c-3).
+b+1 &amp;amp;= \dfrac{2}{3}(a-1),\\ c+2 &amp;amp;= \dfrac{3}{5}(b-2),\\ d+3 &amp;amp;= \dfrac{5}{7}(c-3).
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Despejando $b$, $c$ y $d$, encontramos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b&amp;amp;=\dfrac{2a-5}{3},\&lt;br&gt;
-c&amp;amp;=\dfrac{3b-16}{5},\&lt;br&gt;
-d&amp;amp;=\dfrac{5c-36}{7},
+b&amp;amp;=\dfrac{2a-5}{3},\\ c&amp;amp;=\dfrac{3b-16}{5},\\ d&amp;amp;=\dfrac{5c-36}{7},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;que, expresadas todas ellas en función del valor de $a$, equivalen a&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b&amp;amp;=\dfrac{2a-5}{3},\&lt;br&gt;
-c&amp;amp;=\dfrac{3b-16}{5} = \dfrac{3\cdot\dfrac{2a-5}{3} - 16}{5}=\dfrac{2a-21}{5},\&lt;br&gt;
-d&amp;amp;=\dfrac{5c-36}{7} = \dfrac{5\cdot\dfrac{2a-21}{5} - 36}{7} = \dfrac{2a-57}{7}.
+b&amp;amp;=\dfrac{2a-5}{3},\\ c&amp;amp;=\dfrac{3b-16}{5} = \dfrac{3\cdot\dfrac{2a-5}{3} - 16}{5}=\dfrac{2a-21}{5},\\ d&amp;amp;=\dfrac{5c-36}{7} = \dfrac{5\cdot\dfrac{2a-21}{5} - 36}{7} = \dfrac{2a-57}{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Recordemos ahora que $b$, $c$ y $d$ llevan encima una cantidad entera mayor o igual que cero de euros, hecho que se traduce en que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(2a-5)&amp;amp;\equiv 0\pmod{3},\&lt;br&gt;
-(2a-21)&amp;amp;\equiv 0\pmod{5},\&lt;br&gt;
-(2a-57)&amp;amp;\equiv 0\pmod{7}.
+(2a-5)&amp;amp;\equiv 0\pmod{3},\\ (2a-21)&amp;amp;\equiv 0\pmod{5},\\ (2a-57)&amp;amp;\equiv 0\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Llegados a este momento, comenzamos a sospechar que el camino nos lleva, irremediablemente, a buscar el valor de $a$ vía el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, por lo que, previamente, vamos a adaptar la forma del sistema de ecuaciones de congruencias lineales a la que figura en el resultado teórico. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(2a-5)\equiv 0\pmod{3}&amp;amp;\Leftrightarrow 2a\equiv 5\pmod{3}\Leftrightarrow 4a\equiv 10\pmod{3}\&lt;br&gt;
-&amp;amp;\Leftrightarrow a\equiv 1\pmod{3},\&lt;br&gt;
-(2a-21)\equiv 0\pmod{5}&amp;amp;\Leftrightarrow 2a\equiv 1\pmod{5}\Leftrightarrow 6a\equiv 3\pmod{5}\&lt;br&gt;
-&amp;amp;\Leftrightarrow a\equiv 3\pmod{5},\&lt;br&gt;
-(2a-57)\equiv 0\pmod{7}&amp;amp;\Leftrightarrow 2a\equiv 1\pmod{7}\Leftrightarrow 8a\equiv 4\pmod{7}\&lt;br&gt;
-&amp;amp;\Leftrightarrow a\equiv 4\pmod{7}.
+(2a-5)\equiv 0\pmod{3}&amp;amp;\Leftrightarrow 2a\equiv 5\pmod{3}\Leftrightarrow 4a\equiv 10\pmod{3}\\ &amp;amp;\Leftrightarrow a\equiv 1\pmod{3},\\ (2a-21)\equiv 0\pmod{5}&amp;amp;\Leftrightarrow 2a\equiv 1\pmod{5}\Leftrightarrow 6a\equiv 3\pmod{5}\\ &amp;amp;\Leftrightarrow a\equiv 3\pmod{5},\\ (2a-57)\equiv 0\pmod{7}&amp;amp;\Leftrightarrow 2a\equiv 1\pmod{7}\Leftrightarrow 8a\equiv 4\pmod{7}\\ &amp;amp;\Leftrightarrow a\equiv 4\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Esto es, recapitulando, la cantidad total de euros que lleva encima Ana (es decir, el valor de $a$), resulta ser la solución del siguiente sistema de ecuaciones de congruencias lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a&amp;amp;\equiv 1\pmod{3},\&lt;br&gt;
-a&amp;amp;\equiv 3\pmod{5},\&lt;br&gt;
-a&amp;amp;\equiv 4\pmod{7}.
+a&amp;amp;\equiv 1\pmod{3},\\ a&amp;amp;\equiv 3\pmod{5},\\ a&amp;amp;\equiv 4\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Por la estructura que presenta el anterior sistema y dado que $m_1=3, m_2=5$ y $m_3=7$ son primos entre sí, sabemos, por el &lt;em&gt;Teorema chino del resto&lt;/em&gt;, que dicho sistema admite solución módulo $M=3\cdot5\cdot7 = 105$. Procedamos entonces al cálculo de las soluciones utilizando el método habitual. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{105}{3} = 5\cdot7 = 35,\&lt;br&gt;
-M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{105}{5} = 3\cdot7 = 21,\&lt;br&gt;
-M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{105}{7} = 3\cdot5 = 15,
+M_1 &amp;amp;= \dfrac{M}{m_1} = \dfrac{105}{3} = 5\cdot7 = 35,\\ M_2 &amp;amp;= \dfrac{M}{m_2} = \dfrac{105}{5} = 3\cdot7 = 21,\\ M_3 &amp;amp;= \dfrac{M}{m_3} = \dfrac{105}{7} = 3\cdot5 = 15,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y, a continuación, resolvemos las siguientes ecuaciones de congruencia lineales:&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-35a\equiv 1\pmod{3}&amp;amp;\Leftrightarrow (-a)\equiv 1\pmod{3}\Leftrightarrow a\equiv 2\pmod{3},\&lt;br&gt;
-21a\equiv 1\pmod{5}&amp;amp;\Leftrightarrow a\equiv 1\pmod{5},\&lt;br&gt;
-15a\equiv 1\pmod{7}&amp;amp;\Leftrightarrow a\equiv 1\pmod{7}.
+35a\equiv 1\pmod{3}&amp;amp;\Leftrightarrow (-a)\equiv 1\pmod{3}\Leftrightarrow a\equiv 2\pmod{3},\\ 21a\equiv 1\pmod{5}&amp;amp;\Leftrightarrow a\equiv 1\pmod{5},\\ 15a\equiv 1\pmod{7}&amp;amp;\Leftrightarrow a\equiv 1\pmod{7}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Agrupando ahora toda la información adecuadamente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a&amp;amp;\equiv 1\pmod{3},&amp;amp; 35a&amp;amp;\equiv 1\pmod{3},&amp;amp; a&amp;amp;\equiv 2\pmod{3},\&lt;br&gt;
-a&amp;amp;\equiv 3\pmod{5},&amp;amp; 21a&amp;amp;\equiv 1\pmod{5},&amp;amp; a&amp;amp;\equiv 1\pmod{5},\&lt;br&gt;
-a&amp;amp;\equiv 4\pmod{7},&amp;amp; 15a&amp;amp;\equiv 1\pmod{7},&amp;amp; a&amp;amp;\equiv 1\pmod{7},
+a&amp;amp;\equiv 1\pmod{3},&amp;amp; 35a&amp;amp;\equiv 1\pmod{3},&amp;amp; a&amp;amp;\equiv 2\pmod{3},\\ a&amp;amp;\equiv 3\pmod{5},&amp;amp; 21a&amp;amp;\equiv 1\pmod{5},&amp;amp; a&amp;amp;\equiv 1\pmod{5},\\ a&amp;amp;\equiv 4\pmod{7},&amp;amp; 15a&amp;amp;\equiv 1\pmod{7},&amp;amp; a&amp;amp;\equiv 1\pmod{7},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces la solución es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;\equiv (1\cdot35\cdot2 + 3\cdot21\cdot1 + 4\cdot15\cdot1)\pmod{105}\&lt;br&gt;
-&amp;amp;\equiv 193\pmod{105}\&lt;br&gt;
-&amp;amp;\equiv 88\pmod{105},
+a &amp;amp;\equiv (1\cdot35\cdot2 + 3\cdot21\cdot1 + 4\cdot15\cdot1)\pmod{105}\\ &amp;amp;\equiv 193\pmod{105}\\ &amp;amp;\equiv 88\pmod{105},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, Ana lleva encima $88$ euros. Como $a=88$, entonces&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b&amp;amp;=\dfrac{2\cdot88-5}{3} = 57,\&lt;br&gt;
-c&amp;amp;=\dfrac{2\cdot88-21}{5} = 31,\&lt;br&gt;
-d&amp;amp;=\dfrac{2\cdot88-57}{7} = 17,
+b&amp;amp;=\dfrac{2\cdot88-5}{3} = 57,\\ c&amp;amp;=\dfrac{2\cdot88-21}{5} = 31,\\ d&amp;amp;=\dfrac{2\cdot88-57}{7} = 17,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es decir, Belén, Carlos y David llevan encima, respectivamente, $57$, $31$ y $17$ euros. En total suman $88+57+31+17=193$ euros, por lo que les faltan $200-193=7$ euros para poder comprar las cuatro entradas y así disfrutar del concierto.&lt;/p&gt;
 &lt;p&gt;Alternativamente, volvamos al momento del ejercicio en el que declaramos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b+1 &amp;amp;= \dfrac{2}{3}(a-1),\&lt;br&gt;
-c+2 &amp;amp;= \dfrac{3}{5}(b-2),\&lt;br&gt;
-d+3 &amp;amp;= \dfrac{5}{7}(c-3).
+b+1 &amp;amp;= \dfrac{2}{3}(a-1),\\ c+2 &amp;amp;= \dfrac{3}{5}(b-2),\\ d+3 &amp;amp;= \dfrac{5}{7}(c-3).
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Si operamos algebraicamente las ecuaciones&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-3b+3 &amp;amp;= 2a-2 \Rightarrow 3b-2a = -5,\&lt;br&gt;
-5c+10 &amp;amp;= 3b-6 \Rightarrow 5c-3b=-16,\&lt;br&gt;
-7d+21 &amp;amp;= 5c-15 \Rightarrow 7d-5c=-36,
+3b+3 &amp;amp;= 2a-2 \Rightarrow 3b-2a = -5,\\ 5c+10 &amp;amp;= 3b-6 \Rightarrow 5c-3b=-16,\\ 7d+21 &amp;amp;= 5c-15 \Rightarrow 7d-5c=-36,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y sumamos ahora las tres, llegamos a la ecuación diofántica $7d-2a=-57$, que, despejando la variable $a$ por ser aquella cuyo coeficiente asociado es más reducido, se tiene que&lt;/p&gt;
@@ -1207,32 +1117,25 @@ $$&lt;/p&gt;
 &lt;p&gt;Para $d=1$, encontramos que $a=32$, arribando así a la solución particular de dicha ecuación diofántica. Su solución general es pues&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= 32 + 7t,\&lt;br&gt;
-d &amp;amp;= 1 + 2t,
+a &amp;amp;= 32 + 7t,\\ d &amp;amp;= 1 + 2t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero. Sustituyendo estos resultados alcanzados en las ecuaciones de arriba, estamos en condiciones de encontrar las expresiones para $b$ y $c$. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-b &amp;amp;= \dfrac{-5 + 2(32+7t)}{3},\&lt;br&gt;
-c &amp;amp;= \dfrac{36 + 7(1+2t)}{5}.
+b &amp;amp;= \dfrac{-5 + 2(32+7t)}{3},\\ c &amp;amp;= \dfrac{36 + 7(1+2t)}{5}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, estamos interesados en el valor entero de $t$ que nos proporciona la mínima cantidad de euros que necesitarían entre todos para poder así permitirse la adquisición de las cuatro entradas (y con la restricción añadida implícita de que las soluciones han de ser enteras). Como inicialmente no disponen de la cantidad necesaria, ello implica que $a+b+c+d&amp;lt;200$, y, sustituyendo las anteriores expresiones alcanzadas para cada una de las cuatro variables, generamos la inecuación&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-32+7t+1+2t+\dfrac{-5 + 2(32+7t)}{3}+\dfrac{36 + 7(1+2t)}{5}&amp;amp;&amp;lt;200\&lt;br&gt;
-480+105t+15+30t-25+320+70t+108+21+42t&amp;amp;&amp;lt;3000,\&lt;br&gt;
-247t&amp;amp;&amp;lt;2081,
+32+7t+1+2t+\dfrac{-5 + 2(32+7t)}{3}+\dfrac{36 + 7(1+2t)}{5}&amp;amp;&amp;lt;200\\ 480+105t+15+30t-25+320+70t+108+21+42t&amp;amp;&amp;lt;3000,\\ 247t&amp;amp;&amp;lt;2081,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, $t&amp;lt;8.43$. Así pues, empezando por $t=8$ (y continuando con $t=7$, $t=6$, etc.), sustituiremos arriba, hasta dar con el primer valor que genere cifras enteras para $a$, $b$, $c$ y $d$. Por tanto, si $t=8$,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= 32+7\cdot8 = 88,\&lt;br&gt;
-b &amp;amp;= \dfrac{-5 + 2(32+7\cdot8)}{3} = 57,\&lt;br&gt;
-c &amp;amp;= \dfrac{36 + 7(1+2\cdot8)}{5} = 31,\&lt;br&gt;
-d &amp;amp;= 1+2\cdot8 = 17,
+a &amp;amp;= 32+7\cdot8 = 88,\\ b &amp;amp;= \dfrac{-5 + 2(32+7\cdot8)}{3} = 57,\\ c &amp;amp;= \dfrac{36 + 7(1+2\cdot8)}{5} = 31,\\ d &amp;amp;= 1+2\cdot8 = 17,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;llegando, afortunadamente, en el primer intento a la solución alcanzada por el método de las congruencias.&lt;/p&gt;
