@@ -20,7 +20,7 @@
       <description>&lt;p&gt;Por desgracia, en la última versión del tema &lt;em&gt;Academic&lt;/em&gt;, los desarrolladores han decidido cambiar el tipo de Markdown que hasta la fecha venía incorporado en la plantilla.&lt;/p&gt;
 &lt;p&gt;El principal efecto de tal acción para esta página web reside en las expresiones matemáticas, que han dejado de mostrarse adecuadamente en los artículos.&lt;/p&gt;
 &lt;p&gt;Dado que su número es significativo, aprovecharé paulatinamente este período vacacional que se aproxima para ir revisando, uno por uno, la correcta visualización de los artículos afectados.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Actualización&lt;/em&gt;: revisados artículos afectados hasta el 12 de enero de 2019.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Actualización&lt;/em&gt;: revisados artículos afectados hasta el 27 de febrero de 2019.&lt;/p&gt;
 </description>
     </item>
     
@@ -2568,49 +2568,40 @@ $$&lt;/p&gt;
 &lt;p&gt;Análogamente, la sucesión de soluciones enteras, que denotaremos por $(x_n,y_n)$, debe cumplir que $(x_n+y_n\sqrt{5})(x_n-y_n\sqrt{5})=1$. Expresamos la solución general utilizando recurrencias, de manera que,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_{n+1} + y_{n+1}\sqrt{5} &amp;amp;= (x_n + y_n\sqrt{5})(9+4\sqrt{5})\&lt;br&gt;
-&amp;amp;= 9x_n + 4\sqrt{5}x_n + 9\sqrt{5}y_n + 20y_n,
+x_{n+1} + y_{n+1}\sqrt{5} &amp;amp;= (x_n + y_n\sqrt{5})(9+4\sqrt{5})\\ &amp;amp;= 9x_n + 4\sqrt{5}x_n + 9\sqrt{5}y_n + 20y_n,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;luego&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_{n+1} &amp;amp;= 9x_n + 20y_n,\ 
-y_{n+1} &amp;amp;= 4x_n + 9y_n.
+x_{n+1} &amp;amp;= 9x_n + 20y_n,\\ y_{n+1} &amp;amp;= 4x_n + 9y_n.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Utilizando notación matricial,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-x_{n+1}\&lt;br&gt;
-y_{n+1}
+x_{n+1}\\ y_{n+1}
 \end{bmatrix}
 = \begin{bmatrix}
-9 &amp;amp; 20\&lt;br&gt;
-4 &amp;amp; 9
+9 &amp;amp; 20\\ 4 &amp;amp; 9
 \end{bmatrix}
 \begin{bmatrix}
-x_n\ 
-y_n
+x_n\\ y_n
 \end{bmatrix},
 $$&lt;/p&gt;
 &lt;p&gt;con $(x_1,y_1) = (9,4)$. La solución particular hallada no cumple los requisitos impuestos en el enunciado del ejercicio, por lo que procederemos a obtener la siguiente.&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-x_2\&lt;br&gt;
-y_2
+x_2\\ y_2
 \end{bmatrix}
 = \begin{bmatrix}
-9 &amp;amp; 20\&lt;br&gt;
-4 &amp;amp; 9
+9 &amp;amp; 20\\ 4 &amp;amp; 9
 \end{bmatrix}
 \begin{bmatrix}
-9\&lt;br&gt;
-4
+9\\ 4
 \end{bmatrix}
 = \begin{bmatrix}
-161\&lt;br&gt;
-72
+161\\ 72
 \end{bmatrix},
 $$&lt;/p&gt;
 &lt;p&gt;que es la solución que estamos persiguiendo, pues $161^2 = 25921 = 5\cdot72^2+1$.&lt;/p&gt;
@@ -2627,8 +2618,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Sea $x$ el número de vacas, $y$ el total de cerdos y $z$ la cantidad de pollos adquiridos. Como se compran $100$ animales, tenemos la ecuación lineal $x+y+z=100$, con la restricción de que $x\geq1$, $y\geq1$ y $z\geq1$ ya que nos indican que, al menos, se compra un animal de cada tipo. Finalmente, dados los precios suministrados y el desembolso llevado a cabo, encontramos la ecuación $10x+3y + 0.5z = 100$. Así pues, hemos de resolver el sistema de ecuaciones&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-10x+3y+0.5z &amp;amp;= 100,\ 
-x+y+z &amp;amp;= 100,
+10x+3y+0.5z &amp;amp;= 100,\\ x+y+z &amp;amp;= 100,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con la restricción adicional indicada arriba. Despejando la variable $z$ de la segunda ecuación, $z = 100-x-y$, y sustituyéndola en la primera ecuación del sistema,&lt;/p&gt;
@@ -2642,8 +2632,7 @@ $$&lt;/p&gt;
 &lt;p&gt;por lo que basta probar, para $x$, valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $5$. Para $x_0=0$, hallamos que $y_0 = 20$, siendo esta una solución particular de la ecuación diofántica propuesta. Su solución general, por tanto, queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 5t,\&lt;br&gt;
-y &amp;amp;= 20-19t,
+x &amp;amp;= 5t,\\ y &amp;amp;= 20-19t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero. Como hemos de comprar, al menos, un animal de cada tipo, tanto $x$ como $y$ han de ser positivas. De $5t&amp;gt;0$ concluimos que $t&amp;gt;0$; mientras que de $20-19t&amp;gt;0$ deducimos que $t\leq 1$. Así, como $t$ es un número entero, únicamente puede tomar el valor $t=1$, dejando así $x=5$, $y=1$ y $z = 100-x-y = 100-5-1=94$. Es decir, el granjero compró $5$ vacas, un cerdo y $94$ pollos.&lt;/p&gt;
@@ -2665,8 +2654,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora bien, como $70 = 2\cdot5\cdot7$ y $180 = 2^2 \cdot 3^2 \cdot5$, $mcd(70, 180) = 10$. Dado que, trivialmente, $10|1840$, la ecuación diofántica propuesta admite solución entera. Simplificando dicha ecuación por $10$, tenemos que $18x + 7y = 184$, expresión que nos invita, para empezar, a llevar a cabo el cambio de variable&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 184x^{\prime},\&lt;br&gt;
-y &amp;amp;= 184y^{\prime}
+x &amp;amp;= 184x^{\prime},\\ y &amp;amp;= 184y^{\prime}
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;que la transforma en $18x^{\prime} +7y^{\prime} =1$. Ahora, despejando la variable $y^{\prime}$, por ser aquella cuyo coeficiente asociado es más reducido, hallamos que&lt;/p&gt;
@@ -2676,15 +2664,13 @@ $$&lt;/p&gt;
 &lt;p&gt;por lo que basta probar, para $x^{\prime}$, valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $7$. Para $x^{\prime}_0 = 2$, resulta que $y^{\prime}_0 = (-5)$, y deshaciendo el anterior cambio de variable,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_0 &amp;amp;= 184x^{\prime} = 184\cdot2 = 368,\&lt;br&gt;
-y_0 &amp;amp;= 184y^{\prime} = 184\cdot(-5) = (-920),
+x_0 &amp;amp;= 184x^{\prime} = 184\cdot2 = 368,\\ y_0 &amp;amp;= 184y^{\prime} = 184\cdot(-5) = (-920),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es una solución particular para la ecuación diofántica planteada. Su solución genera queda, entonces,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 368 + 7t,\ 
-y &amp;amp;= (-920) - 18t,
+x &amp;amp;= 368 + 7t,\\ y &amp;amp;= (-920) - 18t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
@@ -2695,8 +2681,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es decir, $6624 + 126t \geq 184$. Por tanto, $126t \geq (-6498)$, luego $t\geq (-51.6)$ y como $t$ ha de ser entero, la inecuación entonces queda $t\geq (-51)$. Como buscamos el menor valor para el que satisface la inecuación, este será, evidentemente, $t=(-51)$, resultando entonces&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 368 + 7\cdot(-51) = 11,\&lt;br&gt;
-y &amp;amp;= (-920) - 18\cdot(-51) = -2,
+x &amp;amp;= 368 + 7\cdot(-51) = 11,\\ y &amp;amp;= (-920) - 18\cdot(-51) = -2,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, abonaremos la factura con $11$ libras esterlinas y nos devolverán $2$ marcos.&lt;/p&gt;
@@ -2716,10 +2701,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-30 &amp;amp;= 2\cdot3\cdot5,\&lt;br&gt;
-42 &amp;amp;= 2\cdot3\cdot7,\&lt;br&gt;
-70 &amp;amp;= 2\cdot5\cdot7,\&lt;br&gt;
-105 &amp;amp;= 3\cdot5\cdot7,
+30 &amp;amp;= 2\cdot3\cdot5,\\ 42 &amp;amp;= 2\cdot3\cdot7,\\ 70 &amp;amp;= 2\cdot5\cdot7,\\ 105 &amp;amp;= 3\cdot5\cdot7,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;entonces $mcd(30,42,70,105)=1$, por lo que estamos en condiciones de asegurar que la ecuación diofántica propuesta admite solución entera. A diferencia del &lt;a href=&#34;https://imalexissaez.github.io/2019/02/13/un-primer-contacto-con-ecuaciones-diofanticas-iv/&#34;&gt;problema anterior&lt;/a&gt;, en esta ocasión ningún par de coeficientes está conformado por números primos entre sí. El procedimiento que seguiremos será entonces:&lt;/p&gt;
@@ -2743,8 +2725,7 @@ $$&lt;/p&gt;
 &lt;p&gt;hallando que para $y^{\prime}_0 = (-2)$, entonces $x^{\prime}_0 = 3$. Deshaciendo el cambio de variable efectuado, $x_0 = 3v$ e $y_0 = -2v$ es una solución particular para la ecuación diofántica planteada unas líneas arriba, por lo que su solución general queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 3v + 7t,\&lt;br&gt;
-y &amp;amp;= -2v - 5t,
+x &amp;amp;= 3v + 7t,\\ y &amp;amp;= -2v - 5t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero.&lt;/p&gt;
@@ -2763,25 +2744,20 @@ $$&lt;/p&gt;
 &lt;p&gt;Luego, para $u^{\prime}_0 =(-1)$ hallamos que $z^{\prime}_0 =(-2)$, y deshaciendo el cambio de variable efectuado, $u_0 = -w$ y $z_0 = -2w$ es una solución particular de esta ecuación diofántica, por lo que su solución general queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-u &amp;amp;= -w+2t^{\prime},\ 
-z &amp;amp;= -2w+3t^{\prime},
+u &amp;amp;= -w+2t^{\prime},\\ z &amp;amp;= -2w+3t^{\prime},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t^{\prime}$ número entero.&lt;/p&gt;
 &lt;p&gt;Finalmente, como definimos antes $$w = \dfrac{3+6v}{35},$$ generamos al ecuación diofántica $35w-6v=3$, que sabemos admite solución entera pues $mcd(6,35) = 1$. Así, despejando ahora la variable $w$, $$w=\dfrac{3+6v}{35},$$ y entonces $v_0 = (-18)$ y $w_0=3$ es una solución particular para ella. De esta manera, su solución general es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-v &amp;amp;= (-18)+35t^{\prime\prime},\&lt;br&gt;
-w &amp;amp;= 3+6t^{\prime\prime}
+v &amp;amp;= (-18)+35t^{\prime\prime},\\ w &amp;amp;= 3+6t^{\prime\prime}
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t^{\prime\prime}$ número entero. Únicamente nos resta reemplazar adecuadamente los resultados alcanzados para que así la solución quede expresada en función de valores enteros. Así,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\&lt;br&gt;
-y &amp;amp;= -2v-5t = 36 - 5t - 70t^{\prime\prime},\&lt;br&gt;
-z &amp;amp;= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\ 
-u &amp;amp;= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
+x &amp;amp;= 3v+7t = (-54) + 7t + 105t^{\prime\prime},\\ y &amp;amp;= -2v-5t = 36 - 5t - 70t^{\prime\prime},\\ z &amp;amp;= -2w + 3t^{\prime} = (-6) + 3t^{\prime} - 12t^{\prime\prime},\\ u &amp;amp;= -w+2t^{\prime} = (-3) + 2t^{\prime} - 6t^{\prime\prime},
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$, $t^{\prime}$ y $t^{\prime\prime}$ números enteros.&lt;/p&gt;
@@ -2806,15 +2782,13 @@ $$&lt;/p&gt;
 &lt;p&gt;por lo que basta probar, para $x$, valores pertenecientes al &lt;em&gt;menor sistema completo de restos módulo&lt;/em&gt; $2$. Así, para $x=1$ es cierto que $y = (-1)$, y entonces la solución particular a la ecuación diofántica propuesta arriba queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_0 &amp;amp;= 1\cdot(12-9z) = 12-9z,\&lt;br&gt;
-y_0 &amp;amp;= (-1)\cdot(12-9z) = (-12) + 9z,
+x_0 &amp;amp;= 1\cdot(12-9z) = 12-9z,\\ y_0 &amp;amp;= (-1)\cdot(12-9z) = (-12) + 9z,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;por lo que su solución general es&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 12 - 9z + 2t,\ 
-y &amp;amp;= (-12) + 9z - 3t,
+x &amp;amp;= 12 - 9z + 2t,\\ y &amp;amp;= (-12) + 9z - 3t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ y $z$ números enteros.&lt;/p&gt;
@@ -2917,58 +2891,50 @@ $$&lt;/p&gt;
 &lt;p&gt;luego&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-p_{n+1} &amp;amp;= 3p_n + 8k_n,\&lt;br&gt;
-k_{n+1} &amp;amp;=  p_n + 3k_n.
+p_{n+1} &amp;amp;= 3p_n + 8k_n,\\ k_{n+1} &amp;amp;=  p_n + 3k_n.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Utilizando notación matricial,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-p_{n+1}\&lt;br&gt;
-k_{n+1}
+p_{n+1}\\ k_{n+1}
 \end{bmatrix}
 = \begin{bmatrix}
-3 &amp;amp; 8\&lt;br&gt;
-1 &amp;amp; 3
+3 &amp;amp; 8\\ 1 &amp;amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-p_n\&lt;br&gt;
-k_n
+p_n\\ k_n
 \end{bmatrix}.
 $$&lt;/p&gt;
 &lt;p&gt;Ahora, $$n = \dfrac{(-1) + p}{2},$$ por lo que la solución general del ejercicio queda como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-p_{n+1}\&lt;br&gt;
-k_{n+1}
+p_{n+1}\\ k_{n+1}
 \end{bmatrix}
 = \begin{bmatrix}
-3 &amp;amp; 8\&lt;br&gt;
-1 &amp;amp; 3
+3 &amp;amp; 8\\ 1 &amp;amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-p_n\&lt;br&gt;
-k_n
+p_n\\ k_n
 \end{bmatrix},
 $$&lt;/p&gt;
-&lt;p&gt;con $(p_1,k_1) = (3,1)$ y $$n = \dfrac{(-1) + p_n}{2}.$$&lt;/p&gt;
+&lt;p&gt;con $(p_1,k_1) = (3,1)$ y&lt;/p&gt;
+&lt;p&gt;$$
+n = \dfrac{(-1) + p_n}{2}.
+$$&lt;/p&gt;
 &lt;p&gt;Así, para $p_1 = 3$, tenemos que $n = ((-1)+3) / 2 = 1$. Obtengamos algunas soluciones adicionales,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-p_{2}\&lt;br&gt;
-k_{2}
+p_{2}\\ k_{2}
 \end{bmatrix}
 = \begin{bmatrix}
-3 &amp;amp; 8\&lt;br&gt;
-1 &amp;amp; 3
+3 &amp;amp; 8\\ 1 &amp;amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-3\&lt;br&gt;
-1
+3\\ 1
 \end{bmatrix}
 = \begin{bmatrix}
-17 \&lt;br&gt;
-6
+17 \\ 6
 \end{bmatrix},
 $$&lt;/p&gt;
 &lt;p&gt;y entonces, para $p_2=17$ queda $n = ((-1) + 17) / 2 = 8$, esto es,&lt;/p&gt;
@@ -2978,20 +2944,16 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{bmatrix}
-p_3\&lt;br&gt;
-k_3
+p_3\\ k_3
 \end{bmatrix}
 = \begin{bmatrix}
-3 &amp;amp; 8\&lt;br&gt;
-1 &amp;amp; 3
+3 &amp;amp; 8\\ 1 &amp;amp; 3
 \end{bmatrix}
 \begin{bmatrix}
-17\&lt;br&gt;
-6
+17\\ 6
 \end{bmatrix}
 = \begin{bmatrix}
-99\&lt;br&gt;
-35
+99\\ 35
 \end{bmatrix},
 $$&lt;/p&gt;
 &lt;p&gt;y, por tanto, para $p=99$ queda $n = ((-1) + 99)/2 = 49$, es decir,&lt;/p&gt;
@@ -3007,44 +2969,33 @@ $$&lt;/p&gt;
       <link>https://imalexissaez.github.io/2019/02/02/un-primer-contacto-con-ecuaciones-diofanticas-iii/</link>
       <pubDate>Sat, 02 Feb 2019 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2019/02/02/un-primer-contacto-con-ecuaciones-diofanticas-iii/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 48:&lt;/strong&gt; Halla las soluciones enteras de la ecuación $x^2 - y^2=36$.&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Problema 48:&lt;/strong&gt; Halla las soluciones enteras de la ecuación $x^2 - y^2 = 36$.&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Al ser $36$ par y múltiplo de $4$, $36 = 2^2 \cdot 3^2$, estamos en condiciones de asegurar que la ecuación diofántica planteada admite solución entera. Escribimos $x^2 - y^2=36$ como $(x+y)(x-y)=36$, y consideramos&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-36 &amp;amp;= 36\cdot1 \&lt;br&gt;
-&amp;amp;= 18\cdot2 \&lt;br&gt;
-&amp;amp;= 12\cdot3 \&lt;br&gt;
-&amp;amp;= 9\cdot4 \&lt;br&gt;
-&amp;amp;= 6\cdot6 \&lt;br&gt;
-&amp;amp;= 4\cdot9 \&lt;br&gt;
-&amp;amp;= 3\cdot12 \&lt;br&gt;
-&amp;amp;= 2\cdot18 \&lt;br&gt;
-&amp;amp;= 1\cdot36,
+36 &amp;amp;= 36\cdot1 \\ &amp;amp;= 18\cdot2 \\ &amp;amp;= 12\cdot3 \\ &amp;amp;= 9\cdot4 \\ &amp;amp;= 6\cdot6 \\ &amp;amp;= 4\cdot9 \\ &amp;amp;= 3\cdot12 \\ &amp;amp;= 2\cdot18 \\ &amp;amp;= 1\cdot36,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;descartando automáticamente aquellos casos en los que la paridad de ambos términos no coincide.&lt;/p&gt;
 &lt;p&gt;Así, para $36 = 18\cdot2$, tenemos el sistema de ecuaciones lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x+y &amp;amp;= 18,\&lt;br&gt;
-x-y &amp;amp;=  2,
+x+y &amp;amp;= 18,\\ x-y &amp;amp;=  2,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con solución $x = 10$ e $y = 8$. Para la descomposición $36 = (-18)\cdot(-2)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-10)$ e $y = (-8)$.&lt;/p&gt;
 &lt;p&gt;A continuación, si $36 = 6\cdot6$, tenemos el sistema de ecuaciones lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x+y &amp;amp;= 6,\&lt;br&gt;
-x-y &amp;amp;= 6,
+x+y &amp;amp;= 6,\\ x-y &amp;amp;= 6,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con solución $x = 6$ e $y = 0$. Para la descomposición $36 = (-6)\cdot(-6)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-6)$ e $y = 0$.&lt;/p&gt;
 &lt;p&gt;Acto seguido, si $36 = 2\cdot18$, tenemos el sistema de ecuaciones lineales&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x+y &amp;amp;=  2,\&lt;br&gt;
-x-y &amp;amp;= 18,
+x+y &amp;amp;=  2,\\ x-y &amp;amp;= 18,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con solución $x = 10$ e $y = (-8)$. Para la descomposición $36 = (-2)\cdot(-18)$ el sistema de ecuaciones lineales que conformaríamos posee como solución $x = (-10)$ e $y = 8$.&lt;/p&gt;
