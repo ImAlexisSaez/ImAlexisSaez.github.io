@@ -259,8 +259,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Dado que un palmo equivale a $20$ centímetros, es cierto que $x = 20a$ e $y = 20b$, y despejando $a$ y $b$, hallamos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= \dfrac{x}{20},\&lt;br&gt;
-b &amp;amp;= \dfrac{y}{20}.
+a &amp;amp;= \dfrac{x}{20},\\ b &amp;amp;= \dfrac{y}{20}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Sustituyendo los resultados alcanzados, tenemos que&lt;/p&gt;
@@ -284,9 +283,23 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 (1+2+2^2 +\cdots+2^6 )\cdot(1+5+5^2 ),
 $$&lt;/p&gt;
-&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores&lt;/p&gt;
 &lt;p&gt;$$
-{1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600}.
+\{1,2,4,8,16,32,64\}.
+$$&lt;/p&gt;
+&lt;p&gt;Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores&lt;/p&gt;
+&lt;p&gt;$$
+\{5,10,20,40,80,160,320\}.
+$$&lt;/p&gt;
+&lt;p&gt;Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores&lt;/p&gt;
+&lt;p&gt;$$
+\{25,50,100,200,400,800,1600\}.
+$$&lt;/p&gt;
+&lt;p&gt;En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\{&amp;amp;1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50,\\ &amp;amp;64, 80, 100, 160, 200, 320, 400, 800, 1600\}.
+\end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;A continuación, vemos que algunos casos los podemos descartar rápidamente. ¿Es válida la solución $y-40=20$? No, ya que implicaría $y=60 = 3\cdot20$, es decir, $y$ sería entonces un múltiplo entero de palmos, longitud no permitida por las restricciones que impone el enunciado del ejercicio. El mismo razonamiento es válido para los valores $40$, $80$, $160$, $320$, $100$, $200$, $400$, $800$ y $1600$.&lt;/p&gt;
 &lt;p&gt;Para el resto de casos, conformamos la siguiente tabla&lt;/p&gt;
@@ -375,46 +388,31 @@ $$&lt;/p&gt;
 &lt;p&gt;Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 1000x^{\prime},\&lt;br&gt;
-y &amp;amp;= 1000y^{\prime}
+x &amp;amp;= 1000x^{\prime},\\ y &amp;amp;= 1000y^{\prime}
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;, como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-37 &amp;amp;= 23\cdot1 + 14,\&lt;br&gt;
-23 &amp;amp;= 14\cdot1 +  9,\&lt;br&gt;
-14 &amp;amp;=  9\cdot1 +  5,\&lt;br&gt;
-9 &amp;amp;=  5\cdot1 +  4,\&lt;br&gt;
-5 &amp;amp;=  4\cdot1 +  1,\&lt;br&gt;
-4 &amp;amp;=  1\cdot4,
+37 &amp;amp;= 23\cdot1 + 14,\\ 23 &amp;amp;= 14\cdot1 +  9,\\ 14 &amp;amp;=  9\cdot1 +  5,\\  9 &amp;amp;=  5\cdot1 +  4,\\  5 &amp;amp;=  4\cdot1 +  1,\\  4 &amp;amp;=  1\cdot4,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-1 &amp;amp;= 5 - 4\cdot1\&lt;br&gt;
-&amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \&lt;br&gt;
-&amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \&lt;br&gt;
-&amp;amp;= 2\cdot14 - 3\cdot9 \&lt;br&gt;
-&amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \&lt;br&gt;
-&amp;amp;= (-3)\cdot23 + 5\cdot14 \&lt;br&gt;
-&amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \&lt;br&gt;
-&amp;amp;= 5\cdot37 - 8\cdot23,
+1 &amp;amp;= 5 - 4\cdot1\\ &amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \\ &amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\ &amp;amp;= 2\cdot14 - 3\cdot9 \\ &amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \\ &amp;amp;= (-3)\cdot23 + 5\cdot14 \\ &amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\ &amp;amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\&lt;br&gt;
-y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\\ y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 5000 + 23t,\&lt;br&gt;
-y &amp;amp;= (-8000) - 37t,
+x &amp;amp;= 5000 + 23t,\\ y &amp;amp;= (-8000) - 37t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,&lt;/p&gt;
@@ -428,8 +426,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 5000 + 23\cdot(-217) = 9,\ 
-y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
+x &amp;amp;= 5000 + 23\cdot(-217) = 9,\\ y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.&lt;/p&gt;

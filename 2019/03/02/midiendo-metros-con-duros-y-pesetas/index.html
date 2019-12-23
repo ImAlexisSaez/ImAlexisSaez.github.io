@@ -129,7 +129,7 @@
     
       <meta property="article:published_time" content="2019-03-02T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-08-04T00:00:01&#43;02:00">
+    <meta property="article:modified_time" content="2019-03-02T05:59:39&#43;02:00">
   
 
   
@@ -164,7 +164,7 @@
   ],
   
   "datePublished": "2019-03-02T05:59:39+02:00",
-  "dateModified": "2019-08-04T00:00:01+02:00",
+  "dateModified": "2019-03-02T05:59:39+02:00",
   
   "author": {
     "@type": "Person",
@@ -472,10 +472,8 @@
     
     
       
-          Última actualización el
-      
     
-    2019-08-04
+    2019-03-02
   </span>
   
 
@@ -583,46 +581,31 @@ $$</p>
 <p>Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable</p>
 <p>$$
 \begin{aligned}
-x &amp;= 1000x^{\prime},\<br>
-y &amp;= 1000y^{\prime}
+x &amp;= 1000x^{\prime},\\ y &amp;= 1000y^{\prime}
 \end{aligned}
 $$</p>
 <p>de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el <em>Algoritmo de Euclides</em>, como</p>
 <p>$$
 \begin{aligned}
-37 &amp;= 23\cdot1 + 14,\<br>
-23 &amp;= 14\cdot1 +  9,\<br>
-14 &amp;=  9\cdot1 +  5,\<br>
-9 &amp;=  5\cdot1 +  4,\<br>
-5 &amp;=  4\cdot1 +  1,\<br>
-4 &amp;=  1\cdot4,
+37 &amp;= 23\cdot1 + 14,\\ 23 &amp;= 14\cdot1 +  9,\\ 14 &amp;=  9\cdot1 +  5,\\  9 &amp;=  5\cdot1 +  4,\\  5 &amp;=  4\cdot1 +  1,\\  4 &amp;=  1\cdot4,
 \end{aligned}
 $$</p>
 <p>además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,</p>
 <p>$$
 \begin{aligned}
-1 &amp;= 5 - 4\cdot1\<br>
-&amp;= 5 - 1\cdot(9\cdot1 - 5) \<br>
-&amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \<br>
-&amp;= 2\cdot14 - 3\cdot9 \<br>
-&amp;= 2\cdot14 - 3(23\cdot1 - 14) \<br>
-&amp;= (-3)\cdot23 + 5\cdot14 \<br>
-&amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \<br>
-&amp;= 5\cdot37 - 8\cdot23,
+1 &amp;= 5 - 4\cdot1\\ &amp;= 5 - 1\cdot(9\cdot1 - 5) \\ &amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\ &amp;= 2\cdot14 - 3\cdot9 \\ &amp;= 2\cdot14 - 3(23\cdot1 - 14) \\ &amp;= (-3)\cdot23 + 5\cdot14 \\ &amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\ &amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
 $$</p>
 <p>y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,</p>
 <p>$$
 \begin{aligned}
-x_0 &amp;= 1000x^{\prime}_0 = 5000,\<br>
-y_0 &amp;= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;= 1000x^{\prime}_0 = 5000,\\ y_0 &amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
 $$</p>
 <p>es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda</p>
 <p>$$
 \begin{aligned}
-x &amp;= 5000 + 23t,\<br>
-y &amp;= (-8000) - 37t,
+x &amp;= 5000 + 23t,\\ y &amp;= (-8000) - 37t,
 \end{aligned}
 $$</p>
 <p>con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,</p>
@@ -636,8 +619,7 @@ $$</p>
 <p>es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,</p>
 <p>$$
 \begin{aligned}
-x &amp;= 5000 + 23\cdot(-217) = 9,\ 
-y &amp;= (-8000) - 37\cdot(-217) = 29,
+x &amp;= 5000 + 23\cdot(-217) = 9,\\ y &amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
 $$</p>
 <p>esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.</p>

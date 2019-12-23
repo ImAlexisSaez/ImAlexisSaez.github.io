@@ -1744,13 +1744,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Para el apartado (a), empecemos considerando un ejemplo concreto: sean los números enteros, escogidos al azar, $53$, $75$, $32$, $7$, $83$, $1$ y $10$. Si obtenemos el valor de la congruencia de cada uno de ellos módulo seis, es cierto que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-53&amp;amp;\equiv 5\pmod{6},\&lt;br&gt;
-75&amp;amp;\equiv 3\pmod{6},\&lt;br&gt;
-32&amp;amp;\equiv 2\pmod{6},\&lt;br&gt;
-7&amp;amp;\equiv 1\pmod{6},\ 
-83&amp;amp;\equiv 5\pmod{6},\&lt;br&gt;
-1&amp;amp;\equiv 1\pmod{6},\&lt;br&gt;
-10&amp;amp;\equiv 4\pmod{6}.
+53&amp;amp;\equiv 5\pmod{6},\\ 75&amp;amp;\equiv 3\pmod{6},\\ 32&amp;amp;\equiv 2\pmod{6},\\  7&amp;amp;\equiv 1\pmod{6},\\ 83&amp;amp;\equiv 5\pmod{6},\\ 1&amp;amp;\equiv 1\pmod{6},\\ 10&amp;amp;\equiv 4\pmod{6}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Basta ahora tomar dos cuyo valor de la congruencia módulo seis coincida para encontrar un múltiplo de seis. Efectivamente, por ejemplo,&lt;/p&gt;
@@ -1764,7 +1758,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es decir, la diferencia es múltiplo de seis.&lt;/p&gt;
 &lt;p&gt;Para el apartado (b) utilizaremos la misma estrategia, pero escogiendo los números con cautela, ya que buscamos que el múltiplo que nos interesa únicamente posea en su expresión decimal ceros y unos. Como antes, empecemos considerando un ejemplo concreto: sea $n=6$. Trabajemos pues con el conjunto de siete números&lt;/p&gt;
 &lt;p&gt;$$
-{1,11,111,1111,11111,111111,1111111},
+\{1,11,111,1111,11111,111111,1111111\},
 $$&lt;/p&gt;
 &lt;p&gt;para el que, por el &lt;em&gt;Principio del palomar&lt;/em&gt;, sabemos que al menos dos de ellos poseerán el mismo valor de su congruencia módulo seis. Efectivamente,&lt;/p&gt;
 &lt;p&gt;$$
@@ -1773,12 +1767,12 @@ $$&lt;/p&gt;
 &lt;p&gt;Así, $(1111 - 1)\equiv 0\pmod{6}$, esto es, $1110 = 6\cdot185$ es múltiplo de $6$ y en su expresión decimal únicamente aparecen ceros y unos.&lt;/p&gt;
 &lt;p&gt;En general, dado un número natural $n$, consideramos el conjunto&lt;/p&gt;
 &lt;p&gt;$$
-{1,11,111,1111,\ldots}
+\{1,11,111,1111,\ldots\}
 $$&lt;/p&gt;
 &lt;p&gt;de $n+1$ elementos. Por el &lt;em&gt;Principio del palomar&lt;/em&gt;, al menos dos de dichos elementos poseerán el mismo valor de su congruencia módulo $n$. Designemos por $a$ y $b$ a tales elementos que verifican $a\equiv x\pmod{n}$ y $b\equiv x\pmod{n}$, entonces $(a-b)\equiv 0\pmod{n}$, esto es, la diferencia entre ellos es múltiplo de $n$, y, por tal y como hemos construido el anterior conjunto, su expresión únicamente poseerá ceros y unos.&lt;/p&gt;
 &lt;p&gt;A modo anecdótico, si en el problema nos hubiesen solicitado demostrar que todo número entero $n$ tiene un múltiplo cuya expresión decimal está compuesta por ceros y doses, habría bastado considerar un conjunto del tipo&lt;/p&gt;
 &lt;p&gt;$$
-{2,22,222,2222,\ldots}.
+\{2,22,222,2222,\ldots\}.
 $$&lt;/p&gt;
 &lt;p&gt;Variantes similares del problema únicamente exigen encontrar un conjunto adecuado al que aplicar la estrategia esbozada en párrafos anteriores.&lt;/p&gt;
 </description>
@@ -1808,9 +1802,7 @@ $$&lt;/p&gt;
 &lt;p&gt;A continuación, por el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt;,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-card(3\cup 5\cup 7) &amp;amp;= card(3) + card(5) + card(7)\&lt;br&gt;
-&amp;amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\&lt;br&gt;
-&amp;amp;\quad +card(3\cap 5\cap 7),
+card(3\cup 5\cup 7) &amp;amp;= card(3) + card(5) + card(7)\\ &amp;amp;\quad -card(3\cap 5) - card(3\cap 7) - card(5\cap 7)\\ &amp;amp;\quad +card(3\cap 5\cap 7),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;donde&lt;/p&gt;
@@ -1915,11 +1907,11 @@ $$&lt;/p&gt;
 $$&lt;/p&gt;
 &lt;p&gt;esto es, como si pusiéramos seis rayas sobre la recta real y representamos las bolas como $*$, una posible configuración sería&lt;/p&gt;
 &lt;p&gt;$$
-(\ \ |&lt;em&gt;|\ \ |&lt;/em&gt;|\ \ |\ \ |\ \ ).
+(\ \ | * |\ \ | * |\ \ |\ \ |\ \ ).
 $$&lt;/p&gt;
 &lt;p&gt;No obstante, si ahora movemos la última raya al principio, la anterior configuración se convierte en&lt;/p&gt;
 &lt;p&gt;$$
-(\ \ |\ \ |&lt;em&gt;|\ \ |&lt;/em&gt;|\ \ |\ \ ).
+(\ \ |\ \ | * |\ \ | * |\ \ |\ \ ).
 $$&lt;/p&gt;
 &lt;p&gt;Así pues, observamos que, de cara a contar posibilidades en este apartado, es como si tuviéramos ocho elementos (las dos bolas, $*$, y las seis rayas, $|$) de dos tipos. Uno de ellos se repite dos veces (las bolas), mientras que el otro se repite en seis ocasiones (las rayas). Por tanto, hay&lt;/p&gt;
 &lt;p&gt;$$
@@ -2016,7 +2008,11 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;Para el apartado (a), dado que el orden importa y utilizamos todos los elementos, sin que ninguno de ellos se repita, buscamos la cantidad de permutaciones de ocho elementos. Así, $P_8 = 8! = 40320$ es el número de formas en que se pueden sentar ocho personas en una fila de ocho asientos.&lt;/p&gt;
-&lt;p&gt;En el apartado (b), el orden vuelve a importar y, obviamente, hemos de permitir la repetición de las letras para conformar las palabras, por lo que ahora la herramienta adecuada para contar será el total de variaciones de cuatro elementos tomadas de diez en diez. Por tanto, hay $VR_{4,10} = 4^{10} = 1048576$ palabras distintas de diez letras conformadas a partir de las letras $A$, $B$, $C$ y $D$.&lt;/p&gt;
+&lt;p&gt;En el apartado (b), el orden vuelve a importar y, obviamente, hemos de permitir la repetición de las letras para conformar las palabras, por lo que ahora la herramienta adecuada para contar será el total de variaciones de cuatro elementos tomadas de diez en diez. Por tanto, hay&lt;/p&gt;
+&lt;p&gt;$$
+VR_{4,10} = 4^{10} = 1048576
+$$&lt;/p&gt;
+&lt;p&gt;palabras distintas de diez letras conformadas a partir de las letras $A$, $B$, $C$ y $D$.&lt;/p&gt;
 &lt;p&gt;En cuanto al apartado (c), hemos de ser cautos a la hora de escoger quién juega el papel de los &amp;lsquo;&amp;lsquo;elementos&amp;rsquo;&amp;rsquo; para contabilizar el total de maneras en que realizar la acción. En esta ocasión, son las calles. Si consideramos un cruce estándar de cuatro de ellas (y las denotamos por $a$, $b$, $c$ y $d$), una posible forma de escapar de la policía consistiría en que todos los niños optasen por la calle $a$, generando así el valor $(a,a,\ldots,a)$. Si el primer niño escogiese la calle $b$ y el resto la $a$, tendríamos el valor $(b,a,a,\ldots,a)$, y así sucesivamente. Por tanto, como importa el orden y alguna de las calles estará repetida dentro de las opciones de la huida, buscamos el número de variaciones con repetición de cuatro elementos tomados de diez en diez. Como antes, $VR_{4,10} = 4^{10}$ es el número de formas en que pueden huir diez niños de la policía en un cruce de calles.&lt;/p&gt;
 &lt;p&gt;Para el apartado (d), un tanto ambiguo, asumiremos que están interesados en conocer el número de secuencias de caras y cruces que se pueden encontrar lanzando diez monedas. Con esta reformulación, es claro que son dos los elementos protagonistas, cara y cruz, y consideraremos que el orden importa porque, suponemos, las monedas son distinguibles. Por tanto, buscamos el número de variaciones con repetición de dos elementos tomados de diez en diez, esto es, hay $VR_{2,10} = 2^{10} = 1024$ posibles secuencias de caras y cruces cuando se lanzan diez monedas.&lt;/p&gt;
 &lt;p&gt;A continuación, en el apartado (e), como el orden continúa siendo importante y cada elemento se repite un número fijo de veces, estamos interesados en la cantidad de permutaciones con repetición de diez elementos, donde tanto un elemento, como el otro, se repite en cinco ocasiones. Es decir, hay&lt;/p&gt;
@@ -2043,8 +2039,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Dado que un palmo equivale a $20$ centímetros, es cierto que $x = 20a$ e $y = 20b$, y despejando $a$ y $b$, hallamos que&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-a &amp;amp;= \dfrac{x}{20},\&lt;br&gt;
-b &amp;amp;= \dfrac{y}{20}.
+a &amp;amp;= \dfrac{x}{20},\\ b &amp;amp;= \dfrac{y}{20}.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Sustituyendo los resultados alcanzados, tenemos que&lt;/p&gt;
@@ -2068,9 +2063,23 @@ $$&lt;/p&gt;
 &lt;p&gt;$$
 (1+2+2^2 +\cdots+2^6 )\cdot(1+5+5^2 ),
 $$&lt;/p&gt;
-&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores $\{1,2,4,8,16,32,64\}$. Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores $\{5,10,20,40,80,160,320\}$. Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores $\{25,50,100,200,400,800,1600\}$. En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;de manera que si prescindimos de la operación suma, cada uno de los productos resulta ser un divisor de $1600$. Por ejemplo, multiplicando $1$ por $1,2,2^2,\ldots, 2^6$ aparecen los divisores&lt;/p&gt;
 &lt;p&gt;$$
-{1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50, 64, 80, 100, 160, 200, 320, 400, 800, 1600}.
+\{1,2,4,8,16,32,64\}.
+$$&lt;/p&gt;
+&lt;p&gt;Multiplicando ahora $5$ por $1,2,2^2,\ldots, 2^6$, obtenemos los divisores&lt;/p&gt;
+&lt;p&gt;$$
+\{5,10,20,40,80,160,320\}.
+$$&lt;/p&gt;
+&lt;p&gt;Finalmente, multiplicando $5^2$ por $1,2,2^2 ,\ldots,2^6$, encontramos los divisores&lt;/p&gt;
+&lt;p&gt;$$
+\{25,50,100,200,400,800,1600\}.
+$$&lt;/p&gt;
+&lt;p&gt;En definitiva, el conjunto de divisores de $1600$ es&lt;/p&gt;
+&lt;p&gt;$$
+\begin{aligned}
+\{&amp;amp;1, 2, 4, 5, 8, 10, 16, 20, 25, 32, 40, 50,\\ &amp;amp;64, 80, 100, 160, 200, 320, 400, 800, 1600\}.
+\end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;A continuación, vemos que algunos casos los podemos descartar rápidamente. ¿Es válida la solución $y-40=20$? No, ya que implicaría $y=60 = 3\cdot20$, es decir, $y$ sería entonces un múltiplo entero de palmos, longitud no permitida por las restricciones que impone el enunciado del ejercicio. El mismo razonamiento es válido para los valores $40$, $80$, $160$, $320$, $100$, $200$, $400$, $800$ y $1600$.&lt;/p&gt;
 &lt;p&gt;Para el resto de casos, conformamos la siguiente tabla&lt;/p&gt;
@@ -2241,46 +2250,31 @@ $$&lt;/p&gt;
 &lt;p&gt;Como $23$ y $37$ son números primos, tenemos que $mcd(23,37)=1$, y dado que, trivialmente, $1|1000$, estamos en condiciones de asegurar que la anterior ecuación diofántica planteada admite solución entera. De cara a su resolución, para empezar, llevemos a cabo el cambio de variable&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 1000x^{\prime},\&lt;br&gt;
-y &amp;amp;= 1000y^{\prime}
+x &amp;amp;= 1000x^{\prime},\\ y &amp;amp;= 1000y^{\prime}
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;de manera que la ecuación diofántica se transforma en $37x^{\prime} + 23y^{\prime} = 1$. Utilizando el &lt;em&gt;Algoritmo de Euclides&lt;/em&gt;, como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-37 &amp;amp;= 23\cdot1 + 14,\&lt;br&gt;
-23 &amp;amp;= 14\cdot1 +  9,\&lt;br&gt;
-14 &amp;amp;=  9\cdot1 +  5,\&lt;br&gt;
-9 &amp;amp;=  5\cdot1 +  4,\&lt;br&gt;
-5 &amp;amp;=  4\cdot1 +  1,\&lt;br&gt;
-4 &amp;amp;=  1\cdot4,
+37 &amp;amp;= 23\cdot1 + 14,\\ 23 &amp;amp;= 14\cdot1 +  9,\\ 14 &amp;amp;=  9\cdot1 +  5,\\  9 &amp;amp;=  5\cdot1 +  4,\\  5 &amp;amp;=  4\cdot1 +  1,\\  4 &amp;amp;=  1\cdot4,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;además de haber comprobado que $mcd(23,37)=1$, podemos encontrar una solución particular a la ecuación diofántica sin más que expresar dicho máximo común divisor como combinación lineal de $23$ y $37$. Para ello,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-1 &amp;amp;= 5 - 4\cdot1\&lt;br&gt;
-&amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \&lt;br&gt;
-&amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \&lt;br&gt;
-&amp;amp;= 2\cdot14 - 3\cdot9 \&lt;br&gt;
-&amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \&lt;br&gt;
-&amp;amp;= (-3)\cdot23 + 5\cdot14 \&lt;br&gt;
-&amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \&lt;br&gt;
-&amp;amp;= 5\cdot37 - 8\cdot23,
+1 &amp;amp;= 5 - 4\cdot1\\ &amp;amp;= 5 - 1\cdot(9\cdot1 - 5) \\ &amp;amp;= (-9) + 2\cdot5 = (-9) + 2(14\cdot1 - 9) \\ &amp;amp;= 2\cdot14 - 3\cdot9 \\ &amp;amp;= 2\cdot14 - 3(23\cdot1 - 14) \\ &amp;amp;= (-3)\cdot23 + 5\cdot14 \\ &amp;amp;= (-3)\cdot23 + 5(37 - 23\cdot1) \\ &amp;amp;= 5\cdot37 - 8\cdot23,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;y dado que, recordemos, la ecuación diofántica es $37x^{\prime} +23y^{\prime} =1$, igualando, arribamos a que $x^{\prime}_0=5$ e $y^{\prime}_0=(-8)$. Deshaciendo ahora el cambio de variable realizado,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\&lt;br&gt;
-y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
+x_0 &amp;amp;= 1000x^{\prime}_0 = 5000,\\ y_0 &amp;amp;= 1000y^{\prime}_0 = (-8000),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;es una solución particular para la ecuación diofántica $37x+23y=1000$. Por tanto, su solución general queda&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 5000 + 23t,\&lt;br&gt;
-y &amp;amp;= (-8000) - 37t,
+x &amp;amp;= 5000 + 23t,\\ y &amp;amp;= (-8000) - 37t,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;con $t$ número entero. Dado que el número de monedas que alineamos ha de ser mayor o igual que cero, planteamos las inecuaciones,&lt;/p&gt;
@@ -2294,8 +2288,7 @@ $$&lt;/p&gt;
 &lt;p&gt;es decir, $(-217.4)\leq t\leq (-216.2)$ y como $t$ ha de ser un número entero, únicamente deja como solución $t=(-217)$. Por tanto,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-x &amp;amp;= 5000 + 23\cdot(-217) = 9,\ 
-y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
+x &amp;amp;= 5000 + 23\cdot(-217) = 9,\\ y &amp;amp;= (-8000) - 37\cdot(-217) = 29,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;esto es, solamente podemos obtener un metro alineando las monedas indicadas de una manera y es utilizando $9$ monedas de $5$ pesetas y $29$ monedas de $1$ peseta.&lt;/p&gt;
