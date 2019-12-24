@@ -1446,11 +1446,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Por consiguiente, aplicando el &lt;em&gt;Principio de inclusión-exclusión&lt;/em&gt;,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-D_n &amp;amp;= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\&lt;br&gt;
-&amp;amp;= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1} \dbinom{n}{n}\right)\&lt;br&gt;
-&amp;amp;= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1} \cdot 1\right)\&lt;br&gt;
-&amp;amp;= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1} \dfrac{n!}{n!}\right)\&lt;br&gt;
-&amp;amp;= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n \dfrac{1}{n!}\right),
+D_n &amp;amp;= n! - card(A_1\cup A_2\cup\cdots\cup A_n)\\ &amp;amp;= n!-\left(\dbinom{n}{1}(n-1)! - \dbinom{n}{2}(n-2)! + \cdots + (-1)^{n+1} \dbinom{n}{n}\right)\\ &amp;amp;= n! - \left(\dfrac{n}{1}\cdot(n-1)! - \dfrac{n(n-1)}{2}\cdot(n-2)! + \cdots + (-1)^{n+1} \cdot 1\right)\\ &amp;amp;= n! - \left(\dfrac{n!}{1} - \dfrac{n!}{2} + \cdots + (-1)^{n+1} \dfrac{n!}{n!}\right)\\ &amp;amp;= n!\left(1 - \dfrac{1}{1!} + \dfrac{1}{2!} - \cdots + (-1)^n \dfrac{1}{n!}\right),
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;tal y como queríamos demostrar.&lt;/p&gt;
@@ -1679,8 +1675,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Rápidamente observamos que cada uno de los sumandos del anterior desarrollo posee una peculiar característica: la suma de las potencias de $x$ e $y$ asciende a $n$, el grado del binomio. Esto es cierto asimismo para los dos primeros ejemplos que consideramos arriba, sin más que escribirlos de la siguiente manera para que quede patente,&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(x+y)^2 &amp;amp;= x^2 y^0 + y^2 x^0 + x^1 y^1,\&lt;br&gt;
-(x+y)^3 &amp;amp;= x^3 y^0 + 3x^2 y^1 + 3x^1 y^2 + y^3 x^0.
+(x+y)^2 &amp;amp;= x^2 y^0 + y^2 x^0 + x^1 y^1,\\ (x+y)^3 &amp;amp;= x^3 y^0 + 3x^2 y^1 + 3x^1 y^2 + y^3 x^0.
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;Así pues, estamos interesados en saber de cuántas maneras podemos repartir el grado entre las variables involucradas en el desarrollo. En los ejemplos anteriores, $x$ e $y$ jugarían el papel de dos urnas indistinguibles, mientras que el grado $n$ adoptaría el rol de las $n$ bolas idénticas. Utilizando la estrategia de &lt;em&gt;barras y estrellas&lt;/em&gt;, necesitamos una &lt;em&gt;barra&lt;/em&gt; para representar sobre la recta real las dos urnas y buscamos ubicar luego $n$ &lt;em&gt;estrellas&lt;/em&gt; en los huecos que dicha configuración produce. Por consiguiente, el número de términos en la expansión de un binomio de grado $n$, equivale a la cantidad de permutaciones con repetición de $n+1$ elementos, donde uno de ellos se repite una vez, mientras que el otro lo hace en $n$ ocasiones. Así, hay&lt;/p&gt;
@@ -1695,8 +1690,7 @@ $$&lt;/p&gt;
 &lt;p&gt;esto es, el desarrollo de $(x+y+z)^2$ posee seis términos. Si lo escribimos como&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-(x+y+z)^2 &amp;amp;= x^2 y^0 z^0 + x^0 y^2 z^0 + x^0 y^0 z^2\&lt;br&gt;
-&amp;amp;\quad + 2x^1 y^1 z^0 + 2x^1 y^0 z^1 + 2x^0 y^1 z^1,
+(x+y+z)^2 &amp;amp;= x^2 y^0 z^0 + x^0 y^2 z^0 + x^0 y^0 z^2\\ &amp;amp;\quad + 2x^1 y^1 z^0 + 2x^1 y^0 z^1 + 2x^0 y^1 z^1,
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;rápidamente apreciamos que estamos repartiendo el grado, $2$, en tres urnas indistinguibles, $x$, $y$ y $z$. Aplicando, como antes, la estrategia de &lt;em&gt;barras y estrellas&lt;/em&gt;, dicha acción la podemos llevar a cabo de&lt;/p&gt;
