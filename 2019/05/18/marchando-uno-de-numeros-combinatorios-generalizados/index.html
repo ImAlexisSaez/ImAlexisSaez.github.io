@@ -45,6 +45,12 @@
   
   
   
+  <script src="/js/mathjax-config.js"></script>
+  
+
+  
+  
+  
   
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
@@ -68,6 +74,111 @@
 
     
 
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
     
 
   
@@ -129,7 +240,7 @@
     
       <meta property="article:published_time" content="2019-05-18T05:59:39&#43;02:00">
     
-    <meta property="article:modified_time" content="2019-08-06T00:00:01&#43;02:00">
+    <meta property="article:modified_time" content="2019-05-18T05:59:39&#43;02:00">
   
 
   
@@ -164,7 +275,7 @@
   ],
   
   "datePublished": "2019-05-18T05:59:39+02:00",
-  "dateModified": "2019-08-06T00:00:01+02:00",
+  "dateModified": "2019-05-18T05:59:39+02:00",
   
   "author": {
     "@type": "Person",
@@ -472,10 +583,8 @@
     
     
       
-          Última actualización el
-      
     
-    2019-08-06
+    2019-05-18
   </span>
   
 
@@ -581,8 +690,7 @@ $$</p>
 <p>Utilizando la definición,</p>
 <p>$$
 \begin{aligned}
-\dbinom{-1 / 2}{n} &amp;= \dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{1}{2}-1\right)\left(-\dfrac{1}{2}-2\right)\cdots\left(-\dfrac{1}{2} - (n-1)\right)}{n!}\<br>
-&amp;= \dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{3}{2}\right)\left(-\dfrac{5}{2}\right)\cdots\left(\dfrac{1-2n}{2}\right)}{n!}.
+\dbinom{-1 / 2}{n} &amp;= \dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{1}{2}-1\right)\left(-\dfrac{1}{2}-2\right)\cdots\left(-\dfrac{1}{2} - (n-1)\right)}{n!}\\ &amp;= \dfrac{\left(-\dfrac{1}{2}\right)\left(-\dfrac{3}{2}\right)\left(-\dfrac{5}{2}\right)\cdots\left(\dfrac{1-2n}{2}\right)}{n!}.
 \end{aligned}
 $$</p>
 <p>En el numerador encontramos $n$ factores, por lo que podremos extraer esa misma cantidad de signos negativos, quedando entonces $(-1)^n$ (atención a cómo quedaría el último factor tras esta acción). Además, hay $n$ doses en los denominadores de las fracciones que aparecen en el numerador, quedando su producto entonces $2^n$, valor que podemos trasladar al denominador de la expresión. Por consiguiente,</p>
@@ -591,7 +699,9 @@ $$</p>
 $$</p>
 <p>Ahora, multipliquemos y dividamos por el producto de números pares $2\cdot4\cdot6\cdots 2n$ (llegamos a $2n$ y no hasta $2n-2$ por la expresión a la que buscamos arribar), provocando así que en el numerador aparezca el factorial de $2n$,</p>
 <p>$$
-\dbinom{-1 / 2}{n} = (-1)^n\dfrac{1\cdot2\cdot3\cdot4\cdot5\cdots (2n-1)\cdot 2n}{(2\cdot4\cdot6\cdots 2n) 2^n n!} = (-1)^n\dfrac{(2n)!}{(2\cdot4\cdot6\cdots 2n) 2^n n!}.
+\begin{aligned}
+\dbinom{-1 / 2}{n} &amp;= (-1)^n\dfrac{1\cdot2\cdot3\cdot4\cdot5\cdots (2n-1)\cdot 2n}{(2\cdot4\cdot6\cdots 2n) 2^n n!}\\ &amp;= (-1)^n\dfrac{(2n)!}{(2\cdot4\cdot6\cdots 2n) 2^n n!}.
+\end{aligned}
 $$</p>
 <p>Además, sacando un dos de cada factor, y teniendo en cuenta que hay $n$ de ellos, es cierto que,</p>
 <p>$$
@@ -845,12 +955,6 @@ $$</p>
     
     
     
-    <script src="/js/mathjax-config.js"></script>
-    
-
-    
-    
-    
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
@@ -866,10 +970,6 @@ $$</p>
         
       
 
-      
-      
-      <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-      
     
 
     

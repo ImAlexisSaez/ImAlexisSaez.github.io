@@ -19,9 +19,17 @@
       <guid>https://imalexissaez.github.io/2019/05/15/refinando-el-ejercicio-del-ultimo-dia/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Problema 77:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;(a) Calcula el número de soluciones enteras no negativas de $$x_1+x_2+x_3+x_4+x_5+x_6=10.$$&lt;/li&gt;
-&lt;li&gt;(b) ¿Cuántas soluciones enteras no negativas posee la inecuación $$x_1+x_2+x_3+x_4+x_5+x_6 &amp;lt; 10 ?$$&lt;/li&gt;
+&lt;li&gt;(a) Calcula el número de soluciones enteras no negativas de&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;$$
+x_1+x_2+x_3+x_4+x_5+x_6=10.
+$$&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(b) ¿Cuántas soluciones enteras no negativas posee la inecuación&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$
+x_1+x_2+x_3+x_4+x_5+x_6 &amp;lt; 10 ?
+$$&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;Para el apartado (a), razonaremos, como viene siendo ya habitual, en términos de urnas indistinguibles y bolas idénticas. Consideraremos que tenemos en nuestro haber seis de dichas urnas, en las que deseamos colocar diez de las mencionadas bolas. Aplicando la técnica de &lt;em&gt;barras y estrellas&lt;/em&gt; necesitamos cinco &lt;em&gt;barras&lt;/em&gt; para representar sobre la recta real las seis urnas y buscamos ubicar luego diez &lt;em&gt;estrellas&lt;/em&gt; en los huecos que dicha configuración produce. Por consiguiente, el número de formas en que el valor de la suma de seis variables puede ascender a diez, equivale a la cantidad de permutaciones con repetición de $15$ elementos, donde uno de ellos se repite cinco veces, mientras que el otro lo hace en diez ocasiones. Así, hay&lt;/p&gt;
 &lt;p&gt;$$
@@ -62,10 +70,7 @@ $$&lt;/p&gt;
 &lt;p&gt;Ahora ya estamos en condiciones de volver a utilizar las estrategias vistas en ejercicios previos. Aplicando la técnica de &lt;em&gt;barras y estrellas&lt;/em&gt;, necesitamos cuatro &lt;em&gt;barras&lt;/em&gt; para representar sobre la recta real las cinco urnas y buscamos ubicar luego $2001$ &lt;em&gt;estrellas&lt;/em&gt; en los huecos que dicha configuración produce. Por consiguiente, el número de formas en que el valor de la suma de cinco variables puede ascender a $2001$, equivale a la cantidad de permutaciones con repetición de $2005$ elementos, donde uno de ellos se repite cuatro veces, mientras que el otro lo hace en $2001$ ocasiones. Así, hay&lt;/p&gt;
 &lt;p&gt;$$
 \begin{aligned}
-PR_{2005}^{4, 2001} &amp;amp;= CR_{5, 2001}\&lt;br&gt;
-&amp;amp;= \dbinom{2005}{2001}\&lt;br&gt;
-&amp;amp;= \dfrac{2005\cdot2004\cdot2003\cdot2002}{4!}\&lt;br&gt;
-&amp;amp;= 671345179505
+PR_{2005}^{4, 2001} &amp;amp;= CR_{5, 2001}\\ &amp;amp;= \dbinom{2005}{2001}\\ &amp;amp;= \dfrac{2005\cdot2004\cdot2003\cdot2002}{4!}\\ &amp;amp;= 671345179505
 \end{aligned}
 $$&lt;/p&gt;
 &lt;p&gt;soluciones enteras no negativas para la ecuación propuesta y, por tanto, asimismo para la inecuación planteada en el enunciado del ejercicio.&lt;/p&gt;
