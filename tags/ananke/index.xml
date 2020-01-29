@@ -17,9 +17,15 @@
       <link>https://imalexissaez.github.io/2018/07/17/configurando-el-tema-ananke/</link>
       <pubDate>Tue, 17 Jul 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/07/17/configurando-el-tema-ananke/</guid>
-      <description>&lt;p&gt;En la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt; generamos, ¡solucionando incluso un pequeño &lt;em&gt;bug&lt;/em&gt;!, nuestro primer sitio web con &lt;em&gt;Hugo&lt;/em&gt;, utilizando para ello el tema &lt;em&gt;Ananke&lt;/em&gt;. Veamos qué opciones de configuración nos ofrece dicho tema a continuación.&lt;/p&gt;
-&lt;p&gt;Así pues, dedicaremos única y exclusivamente este cuarto artículo del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; a examinar con detalle el contenido del archivo &lt;code&gt;config.toml&lt;/code&gt;, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.&lt;/p&gt;
-&lt;p&gt;Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt;, dicho fichero debería figurar en el interior de la ruta &lt;code&gt;C:\Hugo\Sites\prueba&lt;/code&gt;. Desde el &lt;em&gt;explorador de archivos&lt;/em&gt; de &lt;em&gt;Windows&lt;/em&gt;, lo seleccionamos con el botón derecho del ratón y escogemos la opción &lt;code&gt;Open with Sublime Text&lt;/code&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;En la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt;
+ generamos, ¡solucionando incluso un pequeño &lt;em&gt;bug&lt;/em&gt;!, nuestro primer sitio web con &lt;em&gt;Hugo&lt;/em&gt;, utilizando para ello el tema &lt;em&gt;Ananke&lt;/em&gt;. Veamos qué opciones de configuración nos ofrece dicho tema a continuación.&lt;/p&gt;
+&lt;p&gt;Así pues, dedicaremos única y exclusivamente este cuarto artículo del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
+ a examinar con detalle el contenido del archivo &lt;code&gt;config.toml&lt;/code&gt;, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.&lt;/p&gt;
+&lt;p&gt;Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt;
+, dicho fichero debería figurar en el interior de la ruta &lt;code&gt;C:\Hugo\Sites\prueba&lt;/code&gt;. Desde el &lt;em&gt;explorador de archivos&lt;/em&gt; de &lt;em&gt;Windows&lt;/em&gt;, lo seleccionamos con el botón derecho del ratón y escogemos la opción &lt;code&gt;Open with Sublime Text&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Parte de su contenido nos resultará familiar a estas alturas, pues ya tuvimos que editar el mencionado archivo para solventar el &lt;em&gt;bug&lt;/em&gt; que nos impedía tener acceso local al sitio web. Empecemos examinando el primer bloque de código, aquel que comprende las siguientes cinco líneas:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;title = &amp;quot;Notre-Dame de Paris&amp;quot;
 baseURL = &amp;quot;https://example.com&amp;quot;
@@ -32,7 +38,9 @@ theme = &amp;quot;gohugo-theme-ananke&amp;quot;
 &lt;p&gt;Ahora, a &lt;code&gt;baseURL&lt;/code&gt; hemos de asignarle el enlace que utilizaremos para acceder a nuestro sitio web a través del navegador web. Dado que la idea es que alojemos la página web en &lt;em&gt;GitHub&lt;/em&gt;, dicha dirección será del estilo &lt;code&gt;https://&amp;lt;NOMBRE_DE_TU_CUENTA&amp;gt;.github.io&lt;/code&gt;. Para ilustrar esto último de manera más concreta, el nombre de mi cuenta en &lt;em&gt;GitHub&lt;/em&gt; es &lt;code&gt;ImAlexisSaez&lt;/code&gt;, por lo que el enlace que permitirá el acceso remoto a la página web será &lt;code&gt;https://imalexissaez.github.io/&lt;/code&gt;, valor que asignaré a la variable &lt;code&gt;baseURL&lt;/code&gt; en su correspondiente línea.&lt;/p&gt;
 &lt;p&gt;A continuación, en &lt;code&gt;languageCode&lt;/code&gt; reside el código del lenguaje en el que se generará nuestro sitio web, que, por defecto, es inglés estadounidense (&lt;code&gt;en-us&lt;/code&gt;). Si vamos a generar contenido un idioma diferente, conviene que modifiquemos el valor de dicha línea. Para el español, el código asociado es &lt;code&gt;es&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Aunque a primera vista no parezca un detalle relevante, es importante asignar el código adecuado a &lt;code&gt;languageCode&lt;/code&gt;, puesto que algunos temas de &lt;em&gt;Hugo&lt;/em&gt; incorporan la posibilidad de localización a diferentes lenguajes y la clave pasa, precisamente, por el valor indicado para dicha variable. Para muestra, un botón: el tema actual de este sitio web, &lt;em&gt;Beautiful Hugo&lt;/em&gt;, es uno de esos ejemplos y en un futuro veremos cómo lidiar con el asunto de la localización en &lt;em&gt;Hugo&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;La siguiente línea, &lt;code&gt;theme = &amp;quot;gohugo-theme-ananke&amp;quot;&lt;/code&gt;, le indica a &lt;em&gt;Hugo&lt;/em&gt; en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt; no nos diésemos cuenta, pero cuando instalamos el tema &lt;em&gt;Ananke&lt;/em&gt; automáticamente se generó una carpeta en nuestro disco duro llamada &lt;code&gt;gohugo-theme-ananke&lt;/code&gt;, en el interior del directorio &lt;code&gt;themes&lt;/code&gt;. La variable &lt;code&gt;theme&lt;/code&gt; simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La siguiente línea, &lt;code&gt;theme = &amp;quot;gohugo-theme-ananke&amp;quot;&lt;/code&gt;, le indica a &lt;em&gt;Hugo&lt;/em&gt; en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt;
+ no nos diésemos cuenta, pero cuando instalamos el tema &lt;em&gt;Ananke&lt;/em&gt; automáticamente se generó una carpeta en nuestro disco duro llamada &lt;code&gt;gohugo-theme-ananke&lt;/code&gt;, en el interior del directorio &lt;code&gt;themes&lt;/code&gt;. La variable &lt;code&gt;theme&lt;/code&gt; simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Por lo que respecta a la última línea de este bloque de código, para solventar el &lt;em&gt;bug&lt;/em&gt; que nos impedía revisar localmente el sitio web, usamos el símbolo de comentario (&lt;code&gt;#&lt;/code&gt;) para anularla. De esta forma, directamente podemos suprimirla, quedando definitivamente:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
 # Configuración básica del sitio web
@@ -128,7 +136,9 @@ enableRobotsTXT        = true   # Buscadores
 &lt;li&gt;&lt;code&gt;recent_posts_number&lt;/code&gt;: cantidad de artículos, de entre los últimos publicados, que aparecerán destacados en la página de entrada a nuestro sitio web.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;En esta serie de artículos no entraré en detalle en la modificación de las plantillas del tema &lt;em&gt;Ananke&lt;/em&gt;. No obstante, en breve pasaremos a estudiar con profundidad el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; y las ideas que exploremos, de cara a modificar diversos aspectos de un sitio web, se podrán extrapolar a cualquier tema, &lt;em&gt;Ananke&lt;/em&gt; incluido.&lt;/p&gt;
-&lt;p&gt;Así pues, seguramente, en la próxima entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; instalaremos el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; y echaremos un vistazo por encima a su correspondiente archivo de configuración &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, seguramente, en la próxima entrada del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
+ instalaremos el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; y echaremos un vistazo por encima a su correspondiente archivo de configuración &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -138,16 +148,26 @@ enableRobotsTXT        = true   # Buscadores
       <pubDate>Wed, 11 Jul 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/</guid>
       <description>&lt;p&gt;¡Ha llegado el momento que todos estábamos esperando! Tras un par de artículos en los que hemos preparado nuestros equipos instalando las herramientas necesarias, hoy veremos cómo generar nuestro primer sitio web con &lt;em&gt;Hugo&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Esta tercera entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; se va a apoyar en la guía de inicio recogida en la documentación oficial de &lt;em&gt;Hugo&lt;/em&gt;, a la que podemos acceder a través de &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;En primer lugar, abrimos la terminal &lt;em&gt;Git Bash&lt;/em&gt; y nos dirigimos al directorio de nuestro disco duro donde tengamos pensado almacenar localmente el sitio web. En la mencionada guía recomiendan ubicar las páginas en la ruta &lt;code&gt;C:\Hugo\Sites\&lt;/code&gt;, aunque ya comenté en la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;anterior entrada&lt;/a&gt; que no era estrictamente necesario proceder de tal forma.&lt;/p&gt;
+&lt;p&gt;Esta tercera entrada del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
+ se va a apoyar en la guía de inicio recogida en la documentación oficial de &lt;em&gt;Hugo&lt;/em&gt;, a la que podemos acceder a través de 
+&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;En primer lugar, abrimos la terminal &lt;em&gt;Git Bash&lt;/em&gt; y nos dirigimos al directorio de nuestro disco duro donde tengamos pensado almacenar localmente el sitio web. En la mencionada guía recomiendan ubicar las páginas en la ruta &lt;code&gt;C:\Hugo\Sites\&lt;/code&gt;, aunque ya comenté en la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;anterior entrada&lt;/a&gt;
+ que no era estrictamente necesario proceder de tal forma.&lt;/p&gt;
 &lt;p&gt;Dicho esto, en este artículo seguiremos al dedillo las indicaciones dadas en la guía, de manera que en la terminal tecleamos:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd c:/Hugo/Sites/
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;El comando para generar un nuevo sitio web es &lt;code&gt;hugo new site [path] [flags]&lt;/code&gt;, donde sustituiremos &lt;code&gt;[path]&lt;/code&gt; por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las &lt;code&gt;[flags]&lt;/code&gt;, en el apartado de la documentación oficial dedicado a &lt;a href=&#34;https://gohugo.io/commands/hugo_new_site/&#34;&gt;hugo new site&lt;/a&gt; tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.&lt;/p&gt;
+&lt;p&gt;El comando para generar un nuevo sitio web es &lt;code&gt;hugo new site [path] [flags]&lt;/code&gt;, donde sustituiremos &lt;code&gt;[path]&lt;/code&gt; por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las &lt;code&gt;[flags]&lt;/code&gt;, en el apartado de la documentación oficial dedicado a 
+&lt;a href=&#34;https://gohugo.io/commands/hugo_new_site/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hugo new site&lt;/a&gt;
+ tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.&lt;/p&gt;
 &lt;p&gt;Así pues, generemos un primer sitio de prueba y, en un alarde de extrema originalidad, ubiquémoslo en el directorio &lt;code&gt;\prueba\&lt;/code&gt;. Para ello, escribimos en la terminal:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new site prueba
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de &lt;em&gt;Hugo&lt;/em&gt; siguiendo las indicaciones de &lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;esta entrada&lt;/a&gt;) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.&lt;/p&gt;
+&lt;p&gt;Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de &lt;em&gt;Hugo&lt;/em&gt; siguiendo las indicaciones de 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;esta entrada&lt;/a&gt;
+) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Hugo&lt;/em&gt; ha creado el directorio &lt;code&gt;\prueba\&lt;/code&gt; en el interior de la ruta donde hemos ejecutado el comando &lt;code&gt;hugo new site&lt;/code&gt;. Además, ha poblado el mismo con algunas carpetas (vacías en su mayor parte), quedando una estructura como la que figura en la siguiente imagen:&lt;/p&gt;
 
 
@@ -192,7 +212,9 @@ enableRobotsTXT        = true   # Buscadores
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;En el siguiente paso de la guía nos invitan a instalar un tema para la web, &lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34;&gt;Ananke&lt;/a&gt;, utilizando &lt;code&gt;submodule&lt;/code&gt; (un comando de &lt;em&gt;Git&lt;/em&gt;). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta &lt;code&gt;\themes\&lt;/code&gt; y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:&lt;/p&gt;
+&lt;p&gt;En el siguiente paso de la guía nos invitan a instalar un tema para la web, 
+&lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ananke&lt;/a&gt;
+, utilizando &lt;code&gt;submodule&lt;/code&gt; (un comando de &lt;em&gt;Git&lt;/em&gt;). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta &lt;code&gt;\themes\&lt;/code&gt; y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd themes
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/budparr/gohugo-theme-ananke.git
@@ -294,7 +316,9 @@ enableRobotsTXT        = true   # Buscadores
 &lt;/figure&gt;
 
 &lt;p&gt;Es el momento de navegar por la página, estudiar si nos complace estéticamente y comprobar si la manera en la que se organizan los contenidos es la apropiada para el sitio web que teníamos en mente. Cuando hayamos terminado el paseo, volvemos a la terminal y cerramos el servidor local utilizando la combinación de teclas &lt;code&gt;Ctrl + C&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;En el próximo artículo del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; exploraremos, ahora sí y con mucho más detalle, la configuración básica del sitio web, que reside en el fichero &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En el próximo artículo del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
+ exploraremos, ahora sí y con mucho más detalle, la configuración básica del sitio web, que reside en el fichero &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 </description>
     </item>
     

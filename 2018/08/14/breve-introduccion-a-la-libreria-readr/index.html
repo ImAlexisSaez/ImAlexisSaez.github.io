@@ -655,7 +655,13 @@
 
     <div class="article-style">
       <p>En este artículo exploraremos las posibilidades que nos ofrece una librería de <em>R</em>, <em>readr</em>, integrante del famoso <em>tidyverso</em>, de cara a la importación y exportación de nuestros conjuntos de datos.</p>
-<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma <a href="https://www.datacamp.com/home">DataCamp</a>. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería <a href="https://cran.r-project.org/web/packages/readr/index.html">readr</a>: &ldquo;<em>Reading Data into R with readr</em>&quot;, al que podemos acceder a través del <a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ">siguiente enlace</a>.</p>
+<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma 
+<a href="https://www.datacamp.com/home" target="_blank" rel="noopener">DataCamp</a>
+. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería 
+<a href="https://cran.r-project.org/web/packages/readr/index.html" target="_blank" rel="noopener">readr</a>
+: &ldquo;<em>Reading Data into R with readr</em>&quot;, al que podemos acceder a través del 
+<a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ" target="_blank" rel="noopener">siguiente enlace</a>
+.</p>
 <p>El material está desglosado en dos capítulos. En el primero de ellos, aprenderemos diversas funciones, contenidas en este paquete, que facilitarán enormemente la labor de importar datos utilizando el lenguaje de programación <em>R</em>. En el segundo, el objetivo será utilizar las herramientas que la librería pone a nuestra disposición para analizar y convertir las clases que poseen las columnas del conjunto de datos recién importado.</p>
 <p><em>readr</em> es una componente del denominado <em>tidyverso</em> (<em>tidyverse</em> en inglés, que parece que siempre suena mejor), un conjunto de librerías que todo usuario de <em>R</em> debería si no dominar, al menos conocer, para así resolver ciertas situaciones de la manera más sencilla posible (basta imaginar tener que hacer a mano algunas de las tareas que paquetes como <em>dplyr</em> o <em>tidyr</em> llevan a cabo para darse cuenta de este hecho).</p>
 <h2 id="1-importando-datos-con-readr">1. Importando datos con <em>readr</em></h2>
@@ -1347,7 +1353,7 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-<h3 id="24-trabajando-con-nmeros">2.4. Trabajando con números</h3>
+<h3 id="24-trabajando-con-números">2.4. Trabajando con números</h3>
 <p>Es posible que la tabla que deseamos importar contenga, entre sus valores, expresiones numéricas asociadas cantidades monetarias, de manera que incluyan caracteres no numéricos (como el símbolo de la moneda o diversos separadores de millares, por ejemplo).</p>
 <p>En estos casos, la función a utilizar, de la librería <em>readr</em>, es <code>parse_number()</code>, que omite los mencionados caracteres no numéricos presentes en los valores de una columna.</p>
 <pre><code class="language-r">?parse_number

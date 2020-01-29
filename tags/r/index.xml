@@ -17,11 +17,19 @@
       <link>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</link>
       <pubDate>Sat, 25 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/</guid>
-      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34;&gt;enlace&lt;/a&gt;), &lt;em&gt;Daniël Lakens&lt;/em&gt; (&lt;a href=&#34;https://twitter.com/lakens&#34;&gt;@lakens&lt;/a&gt;), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
+      <description>&lt;p&gt;En mi reciente vuelta a &lt;em&gt;Twitter&lt;/em&gt;, he empezado a seguir al profesor responsable del excelente &lt;em&gt;MOOC&lt;/em&gt; &amp;ldquo;&lt;em&gt;Improving your statistical inferences&lt;/em&gt;&amp;rdquo; (
+&lt;a href=&#34;https://www.coursera.org/learn/statistical-inferences&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;enlace&lt;/a&gt;
+), &lt;em&gt;Daniël Lakens&lt;/em&gt; (
+&lt;a href=&#34;https://twitter.com/lakens&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@lakens&lt;/a&gt;
+), que comparte más que interesantes perlas relacionadas con el campo de la estadística.&lt;/p&gt;
 &lt;p&gt;Hace unos días anunciaba que había actualizado un &lt;em&gt;script&lt;/em&gt; para &lt;em&gt;R&lt;/em&gt; cuyo nombre no tiene desperdicio: &amp;ldquo;&lt;em&gt;Perfect t-test&lt;/em&gt;&amp;quot;. Las principales referencias que tenemos que consultar son:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34;&gt;The perfect t-test&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34;&gt;Repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://daniellakens.blogspot.com.es/2015/05/the-perfect-t-test.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The perfect t-test&lt;/a&gt;
+.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://github.com/Lakens/Perfect-t-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Repositorio&lt;/a&gt;
+ en &lt;em&gt;GitHub&lt;/em&gt; con el código asociado al anterior artículo.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Como no podía ser de otra manera, un recurso así despierta enormemente tanto mi curiosidad, como las ganas de echar un rato explorando las posibilidades que ofrece.&lt;/p&gt;
 &lt;p&gt;Ahora bien, ¿de qué trata todo el asunto? Estamos ante un documento escrito con &lt;em&gt;R Markdown&lt;/em&gt; cuyo objetivo es automatizar el proceso de comparación de medias para dos muestras, tanto independientes como dependientes (cada caso tiene su archivo asociado). No obstante, cuando la mayoría de programas informáticos orientados al análisis de datos ya incorporan este tipo de herramienta, ¿qué justifica la existencia de este recurso?&lt;/p&gt;
@@ -370,7 +378,13 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
       <pubDate>Tue, 14 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/</guid>
       <description>&lt;p&gt;En este artículo exploraremos las posibilidades que nos ofrece una librería de &lt;em&gt;R&lt;/em&gt;, &lt;em&gt;readr&lt;/em&gt;, integrante del famoso &lt;em&gt;tidyverso&lt;/em&gt;, de cara a la importación y exportación de nuestros conjuntos de datos.&lt;/p&gt;
-&lt;p&gt;No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma &lt;a href=&#34;https://www.datacamp.com/home&#34;&gt;DataCamp&lt;/a&gt;. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería &lt;a href=&#34;https://cran.r-project.org/web/packages/readr/index.html&#34;&gt;readr&lt;/a&gt;: &amp;ldquo;&lt;em&gt;Reading Data into R with readr&lt;/em&gt;&amp;quot;, al que podemos acceder a través del &lt;a href=&#34;https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ&#34;&gt;siguiente enlace&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma 
+&lt;a href=&#34;https://www.datacamp.com/home&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DataCamp&lt;/a&gt;
+. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/readr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;readr&lt;/a&gt;
+: &amp;ldquo;&lt;em&gt;Reading Data into R with readr&lt;/em&gt;&amp;quot;, al que podemos acceder a través del 
+&lt;a href=&#34;https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;siguiente enlace&lt;/a&gt;
+.&lt;/p&gt;
 &lt;p&gt;El material está desglosado en dos capítulos. En el primero de ellos, aprenderemos diversas funciones, contenidas en este paquete, que facilitarán enormemente la labor de importar datos utilizando el lenguaje de programación &lt;em&gt;R&lt;/em&gt;. En el segundo, el objetivo será utilizar las herramientas que la librería pone a nuestra disposición para analizar y convertir las clases que poseen las columnas del conjunto de datos recién importado.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;readr&lt;/em&gt; es una componente del denominado &lt;em&gt;tidyverso&lt;/em&gt; (&lt;em&gt;tidyverse&lt;/em&gt; en inglés, que parece que siempre suena mejor), un conjunto de librerías que todo usuario de &lt;em&gt;R&lt;/em&gt; debería si no dominar, al menos conocer, para así resolver ciertas situaciones de la manera más sencilla posible (basta imaginar tener que hacer a mano algunas de las tareas que paquetes como &lt;em&gt;dplyr&lt;/em&gt; o &lt;em&gt;tidyr&lt;/em&gt; llevan a cabo para darse cuenta de este hecho).&lt;/p&gt;
 &lt;h2 id=&#34;1-importando-datos-con-readr&#34;&gt;1. Importando datos con &lt;em&gt;readr&lt;/em&gt;&lt;/h2&gt;
@@ -1062,7 +1076,7 @@ salaries$X5 &amp;lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &amp;quot;class&amp;quot;)= chr  &amp;quot;collector_guess&amp;quot; &amp;quot;collector&amp;quot;
 ##   ..- attr(*, &amp;quot;class&amp;quot;)= chr &amp;quot;col_spec&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;24-trabajando-con-nmeros&#34;&gt;2.4. Trabajando con números&lt;/h3&gt;
+&lt;h3 id=&#34;24-trabajando-con-números&#34;&gt;2.4. Trabajando con números&lt;/h3&gt;
 &lt;p&gt;Es posible que la tabla que deseamos importar contenga, entre sus valores, expresiones numéricas asociadas cantidades monetarias, de manera que incluyan caracteres no numéricos (como el símbolo de la moneda o diversos separadores de millares, por ejemplo).&lt;/p&gt;
 &lt;p&gt;En estos casos, la función a utilizar, de la librería &lt;em&gt;readr&lt;/em&gt;, es &lt;code&gt;parse_number()&lt;/code&gt;, que omite los mencionados caracteres no numéricos presentes en los valores de una columna.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;?parse_number
@@ -1160,7 +1174,9 @@ head(debt)
       <pubDate>Sat, 04 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/04/como-actualizar-facilmente-r-en-windows/</guid>
       <description>&lt;p&gt;El proceso de actualización de la versión del lenguaje de programación &lt;em&gt;R&lt;/em&gt; puede resultar un tanto tedioso si lo llevamos a cabo de forma manual. Veamos cómo hacer más liviana esta pesada carga.&lt;/p&gt;
-&lt;p&gt;Por fortuna, tenemos a nuestra disposición el paquete &lt;a href=&#34;https://cran.r-project.org/web/packages/installr/index.html&#34;&gt;installr&lt;/a&gt;, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función &lt;code&gt;updateR()&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Por fortuna, tenemos a nuestra disposición el paquete 
+&lt;a href=&#34;https://cran.r-project.org/web/packages/installr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installr&lt;/a&gt;
+, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función &lt;code&gt;updateR()&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;De esta forma, basta con que tengamos a mano un &lt;em&gt;script&lt;/em&gt; similar al que se muestra a continuación, y procedamos a ejecutarlo cuando se anuncie una nueva versión de &lt;em&gt;R&lt;/em&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instala el paquete
 install.packages(&amp;quot;installr&amp;quot;)

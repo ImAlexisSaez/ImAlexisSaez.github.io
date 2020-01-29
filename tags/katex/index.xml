@@ -17,8 +17,12 @@
       <link>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</link>
       <pubDate>Tue, 18 Sep 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</guid>
-      <description>&lt;p&gt;El tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando &lt;a href=&#34;https://khan.github.io/KaTeX/&#34;&gt;KaTeX&lt;/a&gt;. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?&lt;/p&gt;
-&lt;p&gt;Para empezar, recomiendo encarecidamente que acudamos a la página de &lt;a href=&#34;https://github.com/Khan/KaTeX/releases&#34;&gt;versiones&lt;/a&gt; de &lt;em&gt;KaTeX&lt;/em&gt; y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como &lt;code&gt;v0.10.0-rc.1&lt;/code&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;El tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando 
+&lt;a href=&#34;https://khan.github.io/KaTeX/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KaTeX&lt;/a&gt;
+. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?&lt;/p&gt;
+&lt;p&gt;Para empezar, recomiendo encarecidamente que acudamos a la página de 
+&lt;a href=&#34;https://github.com/Khan/KaTeX/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;versiones&lt;/a&gt;
+ de &lt;em&gt;KaTeX&lt;/em&gt; y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como &lt;code&gt;v0.10.0-rc.1&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Para ello, hacemos clic sobre el enlace denominado &lt;code&gt;katex.zip&lt;/code&gt; y así iniciaremos la descarga de un archivo comprimido, del cual nos interesan especialmente dos archivos contenidos en su interior:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;katex.min.css&lt;/code&gt; y&lt;/li&gt;
@@ -48,7 +52,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Modificación para hacer que el tamaño de letra de KaTeX sea similar al de la web */
 .katex { font-size: 1.1em !important; }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;En los próximos artículos del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
+&lt;p&gt;En los próximos artículos del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
+ continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
 </description>
     </item>
     
@@ -95,7 +101,9 @@ $$&lt;/p&gt;
 &lt;p&gt;completando así el &lt;em&gt;paso inductivo&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Así pues, por el &lt;em&gt;principio de inducción matemática&lt;/em&gt;, podemos concluir que $P(n)$ se verifica para cada $n\in\mathbb{N}$, con $n\geq 1$.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Podría decir que la experiencia de usar &lt;em&gt;KaTeX&lt;/em&gt; ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en &lt;em&gt;TeX&lt;/em&gt; y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por &lt;em&gt;KaTeX&lt;/em&gt;, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la &lt;a href=&#34;https://khan.github.io/KaTeX/function-support.html&#34;&gt;web oficial&lt;/a&gt;, están disponibles, como por ejemplo &lt;code&gt;aligned&lt;/code&gt; o &lt;code&gt;pmatrix&lt;/code&gt;. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.&lt;/p&gt;
+&lt;p&gt;Podría decir que la experiencia de usar &lt;em&gt;KaTeX&lt;/em&gt; ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en &lt;em&gt;TeX&lt;/em&gt; y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por &lt;em&gt;KaTeX&lt;/em&gt;, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la 
+&lt;a href=&#34;https://khan.github.io/KaTeX/function-support.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;web oficial&lt;/a&gt;
+, están disponibles, como por ejemplo &lt;code&gt;aligned&lt;/code&gt; o &lt;code&gt;pmatrix&lt;/code&gt;. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.&lt;/p&gt;
 &lt;p&gt;Seguiré investigando, ya que me gustaría ir publicando habitualmente problemas matemáticos sin tener que recurrir a la clásica solución de compartirlos en formato &lt;code&gt;PDF&lt;/code&gt; vía algún servicio de alojamiento de ficheros.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Actualización:&lt;/em&gt; tras un descanso para aclarar ideas, ¡por fin he dado con la solución al problema de los entornos! Si escribimos&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$
