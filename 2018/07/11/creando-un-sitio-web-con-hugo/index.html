@@ -263,8 +263,6 @@
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,7 +290,7 @@
     "name": "Infinitos Contrastes",
     "logo": {
       "@type": "ImageObject",
-      "url": "img/https://imalexissaez.github.io/"
+      "url": "https://imalexissaez.github.io/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Lección 3: damos a luz un sitio web de prueba y lo revisamos localmente."
@@ -687,25 +685,20 @@
     <div class="article-style">
       <p>¡Ha llegado el momento que todos estábamos esperando! Tras un par de artículos en los que hemos preparado nuestros equipos instalando las herramientas necesarias, hoy veremos cómo generar nuestro primer sitio web con <em>Hugo</em>.</p>
 <p>Esta tercera entrada del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
- se va a apoyar en la guía de inicio recogida en la documentación oficial de <em>Hugo</em>, a la que podemos acceder a través de 
-<a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener">este enlace</a>
-.</p>
+<a href="/proyecto/metablog/">Proyecto Metablog</a> se va a apoyar en la guía de inicio recogida en la documentación oficial de <em>Hugo</em>, a la que podemos acceder a través de 
+<a href="https://gohugo.io/getting-started/quick-start/" target="_blank" rel="noopener">este enlace</a>.</p>
 <p>En primer lugar, abrimos la terminal <em>Git Bash</em> y nos dirigimos al directorio de nuestro disco duro donde tengamos pensado almacenar localmente el sitio web. En la mencionada guía recomiendan ubicar las páginas en la ruta <code>C:\Hugo\Sites\</code>, aunque ya comenté en la 
-<a href="/2018/07/08/instalando-hugo-en-windows/">anterior entrada</a>
- que no era estrictamente necesario proceder de tal forma.</p>
+<a href="/2018/07/08/instalando-hugo-en-windows/">anterior entrada</a> que no era estrictamente necesario proceder de tal forma.</p>
 <p>Dicho esto, en este artículo seguiremos al dedillo las indicaciones dadas en la guía, de manera que en la terminal tecleamos:</p>
 <pre><code class="language-bash">cd c:/Hugo/Sites/
 </code></pre>
 <p>El comando para generar un nuevo sitio web es <code>hugo new site [path] [flags]</code>, donde sustituiremos <code>[path]</code> por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las <code>[flags]</code>, en el apartado de la documentación oficial dedicado a 
-<a href="https://gohugo.io/commands/hugo_new_site/" target="_blank" rel="noopener">hugo new site</a>
- tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.</p>
+<a href="https://gohugo.io/commands/hugo_new_site/" target="_blank" rel="noopener">hugo new site</a> tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.</p>
 <p>Así pues, generemos un primer sitio de prueba y, en un alarde de extrema originalidad, ubiquémoslo en el directorio <code>\prueba\</code>. Para ello, escribimos en la terminal:</p>
 <pre><code class="language-bash">hugo new site prueba
 </code></pre>
 <p>Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de <em>Hugo</em> siguiendo las indicaciones de 
-<a href="/2018/07/08/instalando-hugo-en-windows/">esta entrada</a>
-) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.</p>
+<a href="/2018/07/08/instalando-hugo-en-windows/">esta entrada</a>) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.</p>
 <p><em>Hugo</em> ha creado el directorio <code>\prueba\</code> en el interior de la ruta donde hemos ejecutado el comando <code>hugo new site</code>. Además, ha poblado el mismo con algunas carpetas (vacías en su mayor parte), quedando una estructura como la que figura en la siguiente imagen:</p>
 
 
@@ -751,8 +744,7 @@
 <pre><code class="language-bash">git init
 </code></pre>
 <p>En el siguiente paso de la guía nos invitan a instalar un tema para la web, 
-<a href="https://themes.gohugo.io/gohugo-theme-ananke/" target="_blank" rel="noopener">Ananke</a>
-, utilizando <code>submodule</code> (un comando de <em>Git</em>). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta <code>\themes\</code> y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:</p>
+<a href="https://themes.gohugo.io/gohugo-theme-ananke/" target="_blank" rel="noopener">Ananke</a>, utilizando <code>submodule</code> (un comando de <em>Git</em>). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta <code>\themes\</code> y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:</p>
 <pre><code class="language-bash">cd themes
 </code></pre>
 <pre><code class="language-bash">git clone https://github.com/budparr/gohugo-theme-ananke.git
@@ -855,8 +847,7 @@
 
 <p>Es el momento de navegar por la página, estudiar si nos complace estéticamente y comprobar si la manera en la que se organizan los contenidos es la apropiada para el sitio web que teníamos en mente. Cuando hayamos terminado el paseo, volvemos a la terminal y cerramos el servidor local utilizando la combinación de teclas <code>Ctrl + C</code>.</p>
 <p>En el próximo artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
- exploraremos, ahora sí y con mucho más detalle, la configuración básica del sitio web, que reside en el fichero <code>config.toml</code>.</p>
+<a href="/proyecto/metablog/">Proyecto Metablog</a> exploraremos, ahora sí y con mucho más detalle, la configuración básica del sitio web, que reside en el fichero <code>config.toml</code>.</p>
 
     </div>
 
@@ -1118,6 +1109,11 @@
 
     
     
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
     
     
     
@@ -1178,7 +1174,7 @@
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     
 

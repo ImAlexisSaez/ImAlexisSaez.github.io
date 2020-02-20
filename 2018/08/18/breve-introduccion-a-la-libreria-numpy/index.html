@@ -266,8 +266,6 @@
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -295,7 +293,7 @@
     "name": "Infinitos Contrastes",
     "logo": {
       "@type": "ImageObject",
-      "url": "img/https://imalexissaez.github.io/"
+      "url": "https://imalexissaez.github.io/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Tras la buena experiencia vivida después de la sesión dedicada a Machine learning, de la convención SciPy 2017, me he animado a seguir explorando la lista de reproducción del canal de Youtube asociado a la cuenta de Enthought."
@@ -650,14 +648,11 @@
 
     <div class="article-style">
       <p>Tras la buena experiencia vivida después de la sesión dedicada a <em>machine learning</em>, de la convención <em>SciPy 2017</em>, me he animado a seguir explorando la 
-<a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf" target="_blank" rel="noopener">lista de reproducción</a>
- del canal de <em>Youtube</em> asociado a la cuenta de <em>Enthought</em>.</p>
+<a href="https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf" target="_blank" rel="noopener">lista de reproducción</a> del canal de <em>Youtube</em> asociado a la cuenta de <em>Enthought</em>.</p>
 <p>Varios títulos han captado poderosamente mi atención (a la hora de escribir estas líneas, la mencionada lista de reproducción sobrepasa los noventa vídeos), pero teniendo en cuenta que todo el ecosistema de <em>SciPy</em> se asienta sobre la librería <em>NumPy</em>, he terminado considerando que la elección más sensata era optar por <em>&ldquo;Introduction to Numerical Computing with NumPy&rdquo;</em>, que viene de la mano de Dillon Niederhut.</p>
 <p>Este artículo recoge las notas personales tomadas durante la visualización de dicho tutorial, al cual podemos acceder a través del siguiente 
-<a href="https://youtu.be/lKcwuPnSHIQ" target="_blank" rel="noopener">enlace</a>
-, y que posee asociado un 
-<a href="https://github.com/enthought/Numpy-Tutorial-SciPyConf-2017" target="_blank" rel="noopener">repositorio</a>
- en <em>GitHub</em> que, principalmente, conviene tener a mano para seguir algunos de los ejercicios planteados durante la sesión.</p>
+<a href="https://youtu.be/lKcwuPnSHIQ" target="_blank" rel="noopener">enlace</a>, y que posee asociado un 
+<a href="https://github.com/enthought/Numpy-Tutorial-SciPyConf-2017" target="_blank" rel="noopener">repositorio</a> en <em>GitHub</em> que, principalmente, conviene tener a mano para seguir algunos de los ejercicios planteados durante la sesión.</p>
 <p>Antes de empezar, me gustaría destacar que el material está enfocado a principiantes, por lo que el ritmo es bastante más sosegado que el llevado por aquel de <em>machine learning</em> que mencionaba en el primer párrafo. Además, me ha parecido ciertamente curiosa la manera de tratar a los participantes, intentando en todo momento que se sientan en un entorno de aprendizaje bastante confortable.</p>
 <h2 id="1-por-qué-aprender-a-utilizar-la-librería-numpy">1. ¿Por qué aprender a utilizar la librería <em>NumPy</em>?</h2>
 <p>Qué mejor manera de empezar esta entrada que justificando la necesidad de aprender a utilizar la librería <em>NumPy</em>. Introducirse al manejo de un nuevo módulo (y no digamos ya dominarlo) es una tarea que normalmente requiere una buena inversión de horas de estudio y experimentación, y <em>NumPy</em>, por desgracia, no es la excepción que rompe la mencionada regla. Así pues, ¿por qué aprender a utilizar la librería <em>NumPy</em>?</p>
@@ -709,8 +704,7 @@ test_array = np.arange(n)   # NumPy
 <p>Para empezar, al utilizar los <em>arrays</em> de <em>NumPy</em>, vamos a perder ciertas características deseables que poseen las estructuras de datos básicas de <em>Python</em>. Por ejemplo, los elementos de una lista en <em>Python</em> pueden ser heterogéneos, es decir, de diversos tipos. En una misma lista podemos almacenar números enteros, cadenas de texto, números decimales y valores lógicos sin problema alguno. No obstante, todos los elementos de un <em>array</em> de <em>NumPy</em>, obligatoriamente, deben pertenecer al mismo tipo. Por otro lado, estamos acostumbrados a ampliar o reducir el tamaño de una lista en <em>Python</em> de manera dinámica, mientras que en <em>NumPy</em> tendremos que trabajar con <em>arrays</em> de dimensión fija preestablecida. Esto último no es del todo cierto, pero reajustar el tamaño de un <em>array</em> en <em>NumPy</em> no es una operación eficiente, por lo que no se suele realizar salvo contadas excepciones.</p>
 <p>Sin embargo, aquello esbozado en el párrafo anterior palidece ante la pérdida de esas &ldquo;redes de seguridad&rdquo; a las que <em>Python</em> nos tiene acostumbrados. Ilustremos la situación mediante algunos ejemplos: crearemos un <em>array</em> en <em>NumPy</em> a través de la función <code>array()</code>, pasándole una lista con los elementos que queremos pertenezcan al mencionado <em>array</em>. Además, impondremos que dichos elementos sean del tipo <code>int8</code>, utilizando para ello el argumento <code>dtype</code>.</p>
 <p><em>Nota</em>: para conocer más detalles sobre los distintos tipos disponibles para los elementos de <em>array</em>, podemos echar un vistazo a la 
-<a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html" target="_blank" rel="noopener">página</a>
- de la documentación oficial asociada al tema.</p>
+<a href="https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html" target="_blank" rel="noopener">página</a> de la documentación oficial asociada al tema.</p>
 <pre><code class="language-python">a = np.array([-1, 0, 1, 100], dtype='int8')
 
 a
@@ -773,8 +767,7 @@ array([1, 1, 1, 1], dtype=int8)
 <pre><code>array([ 1,  0,  1, 16], dtype=int8)
 </code></pre>
 <p>Todo parece correcto hasta que llegamos a un más que sorprendente $100^2 = 16$. ¿Qué acaba de suceder aquí? 
-<a href="https://en.wikipedia.org/wiki/Integer_overflow" target="_blank" rel="noopener">Integer overflow</a>
-. Al declarar que el tipo de los elementos de nuestro <em>array</em> <code>a</code> sería <code>int8</code>, nos es imposible representar un número tan grande como <code>100 ** 2</code>. En esta ocasión, ni siquiera recibimos un <em>warning</em> que nos advierta de que se ha producido tal situación.</p>
+<a href="https://en.wikipedia.org/wiki/Integer_overflow" target="_blank" rel="noopener">Integer overflow</a>. Al declarar que el tipo de los elementos de nuestro <em>array</em> <code>a</code> sería <code>int8</code>, nos es imposible representar un número tan grande como <code>100 ** 2</code>. En esta ocasión, ni siquiera recibimos un <em>warning</em> que nos advierta de que se ha producido tal situación.</p>
 <p>Recuperemos ahora el tema de los <code>nan</code> que brevemente ha aparecido anteriormente al llevar a cabo una división por cero.</p>
 <pre><code class="language-python">a / 0
 </code></pre>
@@ -1419,8 +1412,7 @@ ValueError                                Traceback (most recent call last)
 ValueError: operands could not be broadcast together with shapes (5,5) (7,) 
 </code></pre>
 <p>Estaremos en condiciones de llevar a cabo operaciones entre <em>arrays</em> de distintas dimensiones siempre y cuando verifique las reglas de <em>broadcasting</em>, que podemos consultar en la siguiente 
-<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html" target="_blank" rel="noopener">página</a>
- de la documentación oficial. <em>Grosso modo</em>, dos dimensiones son compatibles bien cuando son iguales, bien cuando una de ellas es <code>1</code>, y el proceso de comparación se lleva a cabo de atrás hacia delante.</p>
+<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html" target="_blank" rel="noopener">página</a> de la documentación oficial. <em>Grosso modo</em>, dos dimensiones son compatibles bien cuando son iguales, bien cuando una de ellas es <code>1</code>, y el proceso de comparación se lleva a cabo de atrás hacia delante.</p>
 <pre><code class="language-python">a + np.arange(5)
 </code></pre>
 <pre><code>array([[ 0,  2,  4,  6,  8],
@@ -1817,6 +1809,11 @@ a
 
     
     
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
     
     
     
@@ -1877,7 +1874,7 @@ a
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     
 

@@ -18,8 +18,7 @@
       <pubDate>Wed, 07 Nov 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/</guid>
       <description>&lt;p&gt;La 
-&lt;a href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/&#34;&gt;semana anterior&lt;/a&gt;
- analizamos el paquete &lt;code&gt;polynom&lt;/code&gt;, que nos permite fácilmente llevar a cabo la transcripción de divisiones de polinomios con &lt;em&gt;LaTeX&lt;/em&gt;. A continuación, estudiaremos una manera alternativa para lidiar con este asunto que, además, nos permitirá operar en conjuntos finitos.&lt;/p&gt;
+&lt;a href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/&#34;&gt;semana anterior&lt;/a&gt; analizamos el paquete &lt;code&gt;polynom&lt;/code&gt;, que nos permite fácilmente llevar a cabo la transcripción de divisiones de polinomios con &lt;em&gt;LaTeX&lt;/em&gt;. A continuación, estudiaremos una manera alternativa para lidiar con este asunto que, además, nos permitirá operar en conjuntos finitos.&lt;/p&gt;
 &lt;p&gt;Supongamos, sin pérdida de generalidad, que nuestro objetivo es dividir los polinomios&lt;/p&gt;
 &lt;p&gt;$$
 5x^5 - 2x^4 + 2x^3 - 5x^2 + 2x + 1
@@ -213,8 +212,7 @@ Q = x^2 + x - 1
 $$&lt;/p&gt;
 &lt;p&gt;los polinomios implicados en la división, siendo nuestro objetivo mostrar la mencionada operación paso por paso (y no simplemente ofrecer el resultado final, acción que no entraña misterio a la hora de llevarla a cabo con &lt;em&gt;LaTeX&lt;/em&gt;).&lt;/p&gt;
 &lt;p&gt;Como suele ser habitual, tras una rápida búsqueda con &lt;em&gt;Google&lt;/em&gt;, no soy la primera persona que se ha encontrado en esta encrucijada. En los foros que consulté, la recomendación estándar era emplear el paquete 
-&lt;a href=&#34;https://ctan.org/pkg/polynom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;polynom&lt;/a&gt;
-, que a través del comando &lt;code&gt;\polylongdiv&lt;/code&gt; nos facilita enormemente la tarea. De forma automática, se ocupa de realizar y organizar (con &lt;em&gt;LaTeX&lt;/em&gt;) todos los pasos involucrados en una división de polinomios.&lt;/p&gt;
+&lt;a href=&#34;https://ctan.org/pkg/polynom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;polynom&lt;/a&gt;, que a través del comando &lt;code&gt;\polylongdiv&lt;/code&gt; nos facilita enormemente la tarea. De forma automática, se ocupa de realizar y organizar (con &lt;em&gt;LaTeX&lt;/em&gt;) todos los pasos involucrados en una división de polinomios.&lt;/p&gt;
 &lt;p&gt;Así pues, empecemos ubicando en el preámbulo de nuestro documento la siguiente instrucción:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\usepackage{polynom}
 &lt;/code&gt;&lt;/pre&gt;
@@ -440,8 +438,7 @@ $$&lt;/p&gt;
 &lt;p&gt;He definido el conjunto de aristas del grafo casi en el borde del margen y &lt;em&gt;LaTeX&lt;/em&gt;, en lugar de romper la expresión matemática como en otras ocasiones hace de manera automática, ha decidido rebasar el margen derecho. El resultado, estéticamente, es horroroso, por mucho que el mencionado conjunto este bien agrupado y su lectura resulte cómoda.&lt;/p&gt;
 &lt;p&gt;Generalmente, cuando me encuentro en este tipo de situaciones, opto por reescribir la oración, de manera que añado o suprimo texto y, al final, se produce un buen encaje del contenido matemático en los márgenes.&lt;/p&gt;
 &lt;p&gt;No obstante, quizá buscando pretextos absurdos para descansar un rato de la transcripción de apuntes, me he decantado esta mañana por investigar las posibilidades que ofrece &lt;em&gt;LaTeX&lt;/em&gt; para evitar que este comportamiento tenga lugar. Tras una rápida búsqueda en &lt;em&gt;Google&lt;/em&gt;, he dado con 
-&lt;a href=&#34;https://tex.stackexchange.com/questions/28818/how-can-i-prevent-inline-math-formulas-from-overflowing-into-the-margin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta entrada&lt;/a&gt;
-, cuya lectura es más que recomendable.&lt;/p&gt;
+&lt;a href=&#34;https://tex.stackexchange.com/questions/28818/how-can-i-prevent-inline-math-formulas-from-overflowing-into-the-margin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta entrada&lt;/a&gt;, cuya lectura es más que recomendable.&lt;/p&gt;
 &lt;p&gt;Una de las primeras opciones que tenemos a nuestra disposición, lógicamente, es escribir la problemática expresión matemática en una línea independiente. En mi caso, el resultado sería el siguiente:&lt;/p&gt;
 
 
@@ -652,8 +649,7 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Referencia&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;http://tex.stackexchange.com/questions/148438/putting-two-images-beside-each-other&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Putting two images beside each other&lt;/a&gt;
-.&lt;/li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/148438/putting-two-images-beside-each-other&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Putting two images beside each other&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -729,11 +725,9 @@ Totales &amp;amp; $C_1$ &amp;amp; $C_2$ &amp;amp; $T$ \\
 &lt;p&gt;&lt;em&gt;Referencias&lt;/em&gt;:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;http://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX table cell with a diagonal line and 2 sub cells [duplicate]&lt;/a&gt;
-.&lt;/li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX table cell with a diagonal line and 2 sub cells [duplicate]&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;http://tex.stackexchange.com/questions/7262/diagonally-divided-table-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Diagonally divided table cell [duplicate]&lt;/a&gt;
-.&lt;/li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/7262/diagonally-divided-table-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Diagonally divided table cell [duplicate]&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

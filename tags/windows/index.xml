@@ -19,8 +19,7 @@
       <guid>https://imalexissaez.github.io/2018/08/04/como-actualizar-facilmente-r-en-windows/</guid>
       <description>&lt;p&gt;El proceso de actualización de la versión del lenguaje de programación &lt;em&gt;R&lt;/em&gt; puede resultar un tanto tedioso si lo llevamos a cabo de forma manual. Veamos cómo hacer más liviana esta pesada carga.&lt;/p&gt;
 &lt;p&gt;Por fortuna, tenemos a nuestra disposición el paquete 
-&lt;a href=&#34;https://cran.r-project.org/web/packages/installr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installr&lt;/a&gt;
-, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función &lt;code&gt;updateR()&lt;/code&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://cran.r-project.org/web/packages/installr/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installr&lt;/a&gt;, que se encarga de todo el anterior procedimiento automáticamente, a través de la llamada a la función &lt;code&gt;updateR()&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;De esta forma, basta con que tengamos a mano un &lt;em&gt;script&lt;/em&gt; similar al que se muestra a continuación, y procedamos a ejecutarlo cuando se anuncie una nueva versión de &lt;em&gt;R&lt;/em&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Instala el paquete
 install.packages(&amp;quot;installr&amp;quot;)
@@ -52,13 +51,10 @@ updateR(F, T, T, F, T, F, T)
       <guid>https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/</guid>
       <description>&lt;p&gt;Llevar a cabo la instalación de &lt;em&gt;Hugo&lt;/em&gt; en &lt;em&gt;Windows&lt;/em&gt; es extremadamente fácil, hecho que nos permite empezar a experimentar con esta tecnología en apenas unos minutos. Veamos, sin más dilación, todo el proceso en detalle.&lt;/p&gt;
 &lt;p&gt;Así pues, en este segundo artículo del 
-&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
-, retomaremos la senda en el lugar que nos quedamos al finalizar la 
-&lt;a href=&#34;https://imalexissaez.github.io/2018/07/05/preparando-el-equipo-para-hugo/&#34;&gt;primera entrada&lt;/a&gt;
-. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (&lt;em&gt;git&lt;/em&gt; y &lt;em&gt;Sublime Text 3&lt;/em&gt;) y nos creamos una cuenta en el portal &lt;em&gt;GitHub&lt;/em&gt;, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.&lt;/p&gt;
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, retomaremos la senda en el lugar que nos quedamos al finalizar la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/05/preparando-el-equipo-para-hugo/&#34;&gt;primera entrada&lt;/a&gt;. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (&lt;em&gt;git&lt;/em&gt; y &lt;em&gt;Sublime Text 3&lt;/em&gt;) y nos creamos una cuenta en el portal &lt;em&gt;GitHub&lt;/em&gt;, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.&lt;/p&gt;
 &lt;p&gt;En la documentación oficial de &lt;em&gt;Hugo&lt;/em&gt;, existe una extensa página dedicada a su instalación, con una sección que orienta específicamente a los usuarios de &lt;em&gt;Windows&lt;/em&gt; y a la que podemos acceder directamente a través de 
-&lt;a href=&#34;https://gohugo.io/getting-started/installing#windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;
-.&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io/getting-started/installing#windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Los desarrolladores han intentado que la experiencia de instalación sea muy intuitiva, pero, en mi opinión, alguna de las indicaciones puede no ser coherente con la estructura de archivos y carpetas que hayamos decidido implementar en nuestros equipos. ¿A qué se debe esta afirmación? Por ejemplo:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;Hugo&lt;/em&gt; no deja de ser simplemente un programa, por lo que en lugar de instalarlo donde indica la guía, quizá sería mejor opción ubicarlo en la carpeta &lt;code&gt;Archivos de programa&lt;/code&gt;.&lt;/li&gt;
@@ -80,8 +76,7 @@ updateR(F, T, T, F, T, F, T)
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir bin Sites
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;A continuación, abrimos la página de descarga de &lt;em&gt;Hugo&lt;/em&gt; siguiendo 
-&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;
-. A la hora de escribir estas líneas, la versión más reciente es la etiquetada como &lt;code&gt;v0.42.2&lt;/code&gt;. Ahora, desplazamos con cuidado hacia abajo el extenso listado de ficheros, hasta dar con el adecuado para nuestro sistema operativo (en mi caso es &lt;code&gt;hugo_0.42.2_Windows-64bit.zip&lt;/code&gt;). Hacemos clic sobre él e inmediatamente comenzará la descarga a nuestro disco duro de un archivo comprimido.&lt;/p&gt;
+&lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;. A la hora de escribir estas líneas, la versión más reciente es la etiquetada como &lt;code&gt;v0.42.2&lt;/code&gt;. Ahora, desplazamos con cuidado hacia abajo el extenso listado de ficheros, hasta dar con el adecuado para nuestro sistema operativo (en mi caso es &lt;code&gt;hugo_0.42.2_Windows-64bit.zip&lt;/code&gt;). Hacemos clic sobre él e inmediatamente comenzará la descarga a nuestro disco duro de un archivo comprimido.&lt;/p&gt;
 &lt;p&gt;Acto seguido, descomprimimos el contenido de dicho archivo en la ruta &lt;code&gt;C:\Hugo\bin\&lt;/code&gt; (o donde hayamos decidido que sería un buen sitio para almacenar la aplicación) y borramos el fichero que hemos descargado, pues no vamos a necesitarlo en un futuro próximo.&lt;/p&gt;
 &lt;p&gt;De esta manera, si desde la terminal nos desplazamos hasta la anterior ruta y escribimos &lt;code&gt;hugo version&lt;/code&gt;, recibiremos el siguiente mensaje &lt;code&gt;Hugo Static Site Generator v0.42.2 windows/amd64 BuildDate: 2018-06-28T12:36:53Z&lt;/code&gt;, que indica que hemos llevado a cabo la instalación con éxito.&lt;/p&gt;
 &lt;p&gt;No obstante, rápidamente vamos a encontrar un pequeño inconveniente a la hora de empezar a experimentar con &lt;em&gt;Hugo&lt;/em&gt;. Si escribimos &lt;code&gt;hugo version&lt;/code&gt; en cualquier otra ruta distinta a la indicada arriba, recibiremos en la terminal un mensaje de error como este: &lt;code&gt;bash: hugo: command not found&lt;/code&gt;. Dado que nuestra intención es poder utilizar la aplicación en cualquier ruta de nuestro disco duro, tenemos que añadir la ubicación de &lt;em&gt;Hugo&lt;/em&gt; al &lt;code&gt;PATH&lt;/code&gt; de &lt;em&gt;Windows&lt;/em&gt;.&lt;/p&gt;
@@ -240,8 +235,7 @@ updateR(F, T, T, F, T, F, T)
 &lt;p&gt;Surge, cual capricho de un diabólico destino que parece que quiere poner nuestro temple a prueba, otra nueva ventana (ya por fin la última), donde tenemos que hacer clic sobre el botón &lt;em&gt;Nuevo&lt;/em&gt; y escribir &lt;code&gt;C:\Hugo\bin\&lt;/code&gt;. Finalmente, solo nos resta ir pulsando sobre el botón &lt;em&gt;Aceptar&lt;/em&gt; sucesivas veces, hasta cerrar por completo la ristra de ventanas precedentes que en unos segundos hemos acumulado.&lt;/p&gt;
 &lt;p&gt;Así, si en cualquier ruta del sistema ahora tecleamos en la terminal &lt;code&gt;hugo version&lt;/code&gt;, no aparecerá el anterior mensaje de comando desconocido, sino la versión de la aplicación instalada, tal y como pretendíamos.&lt;/p&gt;
 &lt;p&gt;En el próximo artículo del 
-&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;
- exploraremos el proceso de creación de un sitio web utilizando &lt;em&gt;Hugo&lt;/em&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; exploraremos el proceso de creación de un sitio web utilizando &lt;em&gt;Hugo&lt;/em&gt;.&lt;/p&gt;
 </description>
     </item>
     

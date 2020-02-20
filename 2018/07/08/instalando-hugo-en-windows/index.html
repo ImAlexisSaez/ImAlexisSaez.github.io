@@ -263,8 +263,6 @@
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,7 +290,7 @@
     "name": "Infinitos Contrastes",
     "logo": {
       "@type": "ImageObject",
-      "url": "img/https://imalexissaez.github.io/"
+      "url": "https://imalexissaez.github.io/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Lección 2: cómo instalar Hugo en Windows sin morir en el intento."
@@ -687,13 +685,10 @@
     <div class="article-style">
       <p>Llevar a cabo la instalación de <em>Hugo</em> en <em>Windows</em> es extremadamente fácil, hecho que nos permite empezar a experimentar con esta tecnología en apenas unos minutos. Veamos, sin más dilación, todo el proceso en detalle.</p>
 <p>Así pues, en este segundo artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
-, retomaremos la senda en el lugar que nos quedamos al finalizar la 
-<a href="/2018/07/05/preparando-el-equipo-para-hugo/">primera entrada</a>
-. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (<em>git</em> y <em>Sublime Text 3</em>) y nos creamos una cuenta en el portal <em>GitHub</em>, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.</p>
+<a href="/proyecto/metablog/">Proyecto Metablog</a>, retomaremos la senda en el lugar que nos quedamos al finalizar la 
+<a href="/2018/07/05/preparando-el-equipo-para-hugo/">primera entrada</a>. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (<em>git</em> y <em>Sublime Text 3</em>) y nos creamos una cuenta en el portal <em>GitHub</em>, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.</p>
 <p>En la documentación oficial de <em>Hugo</em>, existe una extensa página dedicada a su instalación, con una sección que orienta específicamente a los usuarios de <em>Windows</em> y a la que podemos acceder directamente a través de 
-<a href="https://gohugo.io/getting-started/installing#windows" target="_blank" rel="noopener">este enlace</a>
-.</p>
+<a href="https://gohugo.io/getting-started/installing#windows" target="_blank" rel="noopener">este enlace</a>.</p>
 <p>Los desarrolladores han intentado que la experiencia de instalación sea muy intuitiva, pero, en mi opinión, alguna de las indicaciones puede no ser coherente con la estructura de archivos y carpetas que hayamos decidido implementar en nuestros equipos. ¿A qué se debe esta afirmación? Por ejemplo:</p>
 <ul>
 <li><em>Hugo</em> no deja de ser simplemente un programa, por lo que en lugar de instalarlo donde indica la guía, quizá sería mejor opción ubicarlo en la carpeta <code>Archivos de programa</code>.</li>
@@ -715,8 +710,7 @@
 <pre><code class="language-bash">mkdir bin Sites
 </code></pre>
 <p>A continuación, abrimos la página de descarga de <em>Hugo</em> siguiendo 
-<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">este enlace</a>
-. A la hora de escribir estas líneas, la versión más reciente es la etiquetada como <code>v0.42.2</code>. Ahora, desplazamos con cuidado hacia abajo el extenso listado de ficheros, hasta dar con el adecuado para nuestro sistema operativo (en mi caso es <code>hugo_0.42.2_Windows-64bit.zip</code>). Hacemos clic sobre él e inmediatamente comenzará la descarga a nuestro disco duro de un archivo comprimido.</p>
+<a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">este enlace</a>. A la hora de escribir estas líneas, la versión más reciente es la etiquetada como <code>v0.42.2</code>. Ahora, desplazamos con cuidado hacia abajo el extenso listado de ficheros, hasta dar con el adecuado para nuestro sistema operativo (en mi caso es <code>hugo_0.42.2_Windows-64bit.zip</code>). Hacemos clic sobre él e inmediatamente comenzará la descarga a nuestro disco duro de un archivo comprimido.</p>
 <p>Acto seguido, descomprimimos el contenido de dicho archivo en la ruta <code>C:\Hugo\bin\</code> (o donde hayamos decidido que sería un buen sitio para almacenar la aplicación) y borramos el fichero que hemos descargado, pues no vamos a necesitarlo en un futuro próximo.</p>
 <p>De esta manera, si desde la terminal nos desplazamos hasta la anterior ruta y escribimos <code>hugo version</code>, recibiremos el siguiente mensaje <code>Hugo Static Site Generator v0.42.2 windows/amd64 BuildDate: 2018-06-28T12:36:53Z</code>, que indica que hemos llevado a cabo la instalación con éxito.</p>
 <p>No obstante, rápidamente vamos a encontrar un pequeño inconveniente a la hora de empezar a experimentar con <em>Hugo</em>. Si escribimos <code>hugo version</code> en cualquier otra ruta distinta a la indicada arriba, recibiremos en la terminal un mensaje de error como este: <code>bash: hugo: command not found</code>. Dado que nuestra intención es poder utilizar la aplicación en cualquier ruta de nuestro disco duro, tenemos que añadir la ubicación de <em>Hugo</em> al <code>PATH</code> de <em>Windows</em>.</p>
@@ -875,8 +869,7 @@
 <p>Surge, cual capricho de un diabólico destino que parece que quiere poner nuestro temple a prueba, otra nueva ventana (ya por fin la última), donde tenemos que hacer clic sobre el botón <em>Nuevo</em> y escribir <code>C:\Hugo\bin\</code>. Finalmente, solo nos resta ir pulsando sobre el botón <em>Aceptar</em> sucesivas veces, hasta cerrar por completo la ristra de ventanas precedentes que en unos segundos hemos acumulado.</p>
 <p>Así, si en cualquier ruta del sistema ahora tecleamos en la terminal <code>hugo version</code>, no aparecerá el anterior mensaje de comando desconocido, sino la versión de la aplicación instalada, tal y como pretendíamos.</p>
 <p>En el próximo artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
- exploraremos el proceso de creación de un sitio web utilizando <em>Hugo</em>.</p>
+<a href="/proyecto/metablog/">Proyecto Metablog</a> exploraremos el proceso de creación de un sitio web utilizando <em>Hugo</em>.</p>
 
     </div>
 
@@ -1136,6 +1129,11 @@
 
     
     
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
     
     
     
@@ -1196,7 +1194,7 @@
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     
 

@@ -18,14 +18,11 @@
       <pubDate>Sat, 18 Aug 2018 05:59:39 +0200</pubDate>
       <guid>https://imalexissaez.github.io/2018/08/18/breve-introduccion-a-la-libreria-numpy/</guid>
       <description>&lt;p&gt;Tras la buena experiencia vivida después de la sesión dedicada a &lt;em&gt;machine learning&lt;/em&gt;, de la convención &lt;em&gt;SciPy 2017&lt;/em&gt;, me he animado a seguir explorando la 
-&lt;a href=&#34;https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lista de reproducción&lt;/a&gt;
- del canal de &lt;em&gt;Youtube&lt;/em&gt; asociado a la cuenta de &lt;em&gt;Enthought&lt;/em&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://www.youtube.com/playlist?list=PLYx7XA2nY5GfdAFycPLBdUDOUtdQIVoMf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;lista de reproducción&lt;/a&gt; del canal de &lt;em&gt;Youtube&lt;/em&gt; asociado a la cuenta de &lt;em&gt;Enthought&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Varios títulos han captado poderosamente mi atención (a la hora de escribir estas líneas, la mencionada lista de reproducción sobrepasa los noventa vídeos), pero teniendo en cuenta que todo el ecosistema de &lt;em&gt;SciPy&lt;/em&gt; se asienta sobre la librería &lt;em&gt;NumPy&lt;/em&gt;, he terminado considerando que la elección más sensata era optar por &lt;em&gt;&amp;ldquo;Introduction to Numerical Computing with NumPy&amp;rdquo;&lt;/em&gt;, que viene de la mano de Dillon Niederhut.&lt;/p&gt;
 &lt;p&gt;Este artículo recoge las notas personales tomadas durante la visualización de dicho tutorial, al cual podemos acceder a través del siguiente 
-&lt;a href=&#34;https://youtu.be/lKcwuPnSHIQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;enlace&lt;/a&gt;
-, y que posee asociado un 
-&lt;a href=&#34;https://github.com/enthought/Numpy-Tutorial-SciPyConf-2017&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio&lt;/a&gt;
- en &lt;em&gt;GitHub&lt;/em&gt; que, principalmente, conviene tener a mano para seguir algunos de los ejercicios planteados durante la sesión.&lt;/p&gt;
+&lt;a href=&#34;https://youtu.be/lKcwuPnSHIQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;enlace&lt;/a&gt;, y que posee asociado un 
+&lt;a href=&#34;https://github.com/enthought/Numpy-Tutorial-SciPyConf-2017&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio&lt;/a&gt; en &lt;em&gt;GitHub&lt;/em&gt; que, principalmente, conviene tener a mano para seguir algunos de los ejercicios planteados durante la sesión.&lt;/p&gt;
 &lt;p&gt;Antes de empezar, me gustaría destacar que el material está enfocado a principiantes, por lo que el ritmo es bastante más sosegado que el llevado por aquel de &lt;em&gt;machine learning&lt;/em&gt; que mencionaba en el primer párrafo. Además, me ha parecido ciertamente curiosa la manera de tratar a los participantes, intentando en todo momento que se sientan en un entorno de aprendizaje bastante confortable.&lt;/p&gt;
 &lt;h2 id=&#34;1-por-qué-aprender-a-utilizar-la-librería-numpy&#34;&gt;1. ¿Por qué aprender a utilizar la librería &lt;em&gt;NumPy&lt;/em&gt;?&lt;/h2&gt;
 &lt;p&gt;Qué mejor manera de empezar esta entrada que justificando la necesidad de aprender a utilizar la librería &lt;em&gt;NumPy&lt;/em&gt;. Introducirse al manejo de un nuevo módulo (y no digamos ya dominarlo) es una tarea que normalmente requiere una buena inversión de horas de estudio y experimentación, y &lt;em&gt;NumPy&lt;/em&gt;, por desgracia, no es la excepción que rompe la mencionada regla. Así pues, ¿por qué aprender a utilizar la librería &lt;em&gt;NumPy&lt;/em&gt;?&lt;/p&gt;
@@ -77,8 +74,7 @@ test_array = np.arange(n)   # NumPy
 &lt;p&gt;Para empezar, al utilizar los &lt;em&gt;arrays&lt;/em&gt; de &lt;em&gt;NumPy&lt;/em&gt;, vamos a perder ciertas características deseables que poseen las estructuras de datos básicas de &lt;em&gt;Python&lt;/em&gt;. Por ejemplo, los elementos de una lista en &lt;em&gt;Python&lt;/em&gt; pueden ser heterogéneos, es decir, de diversos tipos. En una misma lista podemos almacenar números enteros, cadenas de texto, números decimales y valores lógicos sin problema alguno. No obstante, todos los elementos de un &lt;em&gt;array&lt;/em&gt; de &lt;em&gt;NumPy&lt;/em&gt;, obligatoriamente, deben pertenecer al mismo tipo. Por otro lado, estamos acostumbrados a ampliar o reducir el tamaño de una lista en &lt;em&gt;Python&lt;/em&gt; de manera dinámica, mientras que en &lt;em&gt;NumPy&lt;/em&gt; tendremos que trabajar con &lt;em&gt;arrays&lt;/em&gt; de dimensión fija preestablecida. Esto último no es del todo cierto, pero reajustar el tamaño de un &lt;em&gt;array&lt;/em&gt; en &lt;em&gt;NumPy&lt;/em&gt; no es una operación eficiente, por lo que no se suele realizar salvo contadas excepciones.&lt;/p&gt;
 &lt;p&gt;Sin embargo, aquello esbozado en el párrafo anterior palidece ante la pérdida de esas &amp;ldquo;redes de seguridad&amp;rdquo; a las que &lt;em&gt;Python&lt;/em&gt; nos tiene acostumbrados. Ilustremos la situación mediante algunos ejemplos: crearemos un &lt;em&gt;array&lt;/em&gt; en &lt;em&gt;NumPy&lt;/em&gt; a través de la función &lt;code&gt;array()&lt;/code&gt;, pasándole una lista con los elementos que queremos pertenezcan al mencionado &lt;em&gt;array&lt;/em&gt;. Además, impondremos que dichos elementos sean del tipo &lt;code&gt;int8&lt;/code&gt;, utilizando para ello el argumento &lt;code&gt;dtype&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para conocer más detalles sobre los distintos tipos disponibles para los elementos de &lt;em&gt;array&lt;/em&gt;, podemos echar un vistazo a la 
-&lt;a href=&#34;https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;página&lt;/a&gt;
- de la documentación oficial asociada al tema.&lt;/p&gt;
+&lt;a href=&#34;https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;página&lt;/a&gt; de la documentación oficial asociada al tema.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = np.array([-1, 0, 1, 100], dtype=&#39;int8&#39;)
 
 a
@@ -141,8 +137,7 @@ array([1, 1, 1, 1], dtype=int8)
 &lt;pre&gt;&lt;code&gt;array([ 1,  0,  1, 16], dtype=int8)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Todo parece correcto hasta que llegamos a un más que sorprendente $100^2 = 16$. ¿Qué acaba de suceder aquí? 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Integer_overflow&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Integer overflow&lt;/a&gt;
-. Al declarar que el tipo de los elementos de nuestro &lt;em&gt;array&lt;/em&gt; &lt;code&gt;a&lt;/code&gt; sería &lt;code&gt;int8&lt;/code&gt;, nos es imposible representar un número tan grande como &lt;code&gt;100 ** 2&lt;/code&gt;. En esta ocasión, ni siquiera recibimos un &lt;em&gt;warning&lt;/em&gt; que nos advierta de que se ha producido tal situación.&lt;/p&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Integer_overflow&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Integer overflow&lt;/a&gt;. Al declarar que el tipo de los elementos de nuestro &lt;em&gt;array&lt;/em&gt; &lt;code&gt;a&lt;/code&gt; sería &lt;code&gt;int8&lt;/code&gt;, nos es imposible representar un número tan grande como &lt;code&gt;100 ** 2&lt;/code&gt;. En esta ocasión, ni siquiera recibimos un &lt;em&gt;warning&lt;/em&gt; que nos advierta de que se ha producido tal situación.&lt;/p&gt;
 &lt;p&gt;Recuperemos ahora el tema de los &lt;code&gt;nan&lt;/code&gt; que brevemente ha aparecido anteriormente al llevar a cabo una división por cero.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a / 0
 &lt;/code&gt;&lt;/pre&gt;
@@ -787,8 +782,7 @@ ValueError                                Traceback (most recent call last)
 ValueError: operands could not be broadcast together with shapes (5,5) (7,) 
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Estaremos en condiciones de llevar a cabo operaciones entre &lt;em&gt;arrays&lt;/em&gt; de distintas dimensiones siempre y cuando verifique las reglas de &lt;em&gt;broadcasting&lt;/em&gt;, que podemos consultar en la siguiente 
-&lt;a href=&#34;https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;página&lt;/a&gt;
- de la documentación oficial. &lt;em&gt;Grosso modo&lt;/em&gt;, dos dimensiones son compatibles bien cuando son iguales, bien cuando una de ellas es &lt;code&gt;1&lt;/code&gt;, y el proceso de comparación se lleva a cabo de atrás hacia delante.&lt;/p&gt;
+&lt;a href=&#34;https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;página&lt;/a&gt; de la documentación oficial. &lt;em&gt;Grosso modo&lt;/em&gt;, dos dimensiones son compatibles bien cuando son iguales, bien cuando una de ellas es &lt;code&gt;1&lt;/code&gt;, y el proceso de comparación se lleva a cabo de atrás hacia delante.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a + np.arange(5)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;array([[ 0,  2,  4,  6,  8],

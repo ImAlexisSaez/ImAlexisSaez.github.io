@@ -263,8 +263,6 @@
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -292,7 +290,7 @@
     "name": "Infinitos Contrastes",
     "logo": {
       "@type": "ImageObject",
-      "url": "img/https://imalexissaez.github.io/"
+      "url": "https://imalexissaez.github.io/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Lección 6: finalizamos la edición del archivo de configuración del tema Beautiful Hugo."
@@ -686,10 +684,8 @@
 
     <div class="article-style">
       <p>Nos quedamos, en la 
-<a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">anterior entrada</a>
- del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
-, a falta de revisar la parte final del archivo de configuración <code>config.toml</code>. Terminemos pues de echarle un vistazo a dicho fichero en este artículo.</p>
+<a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">anterior entrada</a> del 
+<a href="/proyecto/metablog/">Proyecto Metablog</a>, a falta de revisar la parte final del archivo de configuración <code>config.toml</code>. Terminemos pues de echarle un vistazo a dicho fichero en este artículo.</p>
 <p>Al finalizar la personalización de los parámetros básicos del sitio web, se asomaba ante nosotros el siguiente, y muy extraño, bloque de código:</p>
 <pre><code class="language-toml">#[[Params.bigimg]]
 #  src = &quot;img/triangle.jpg&quot;
@@ -710,8 +706,7 @@
 <li><code>desc</code>: parámetro opcional que nos permite incorporar un pequeño texto sobre la imagen, a modo de pie de figura.</li>
 </ul>
 <p>En mi caso, tras navegar un rato por 
-<a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>
-, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:</p>
+<a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:</p>
 <pre><code class="language-toml">#
 # Configuración del carrusel de imágenes de la página de inicio
 #
@@ -818,12 +813,10 @@
   etiqueta = &quot;etiquetas&quot;
 </code></pre>
 <p>Recomiendo seguir la estructura <code>singular = plural</code> marcada en la 
-<a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">guía oficial</a>
- de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
+<a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">guía oficial</a> de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
 <p>¿Por qué debemos cuidar tanto el detalle a la hora de declarar taxonomías? Es posible que en un futuro nos adentremos en la personalización de las plantillas del tema y <em>Hugo</em> incorpora útiles funciones para recorrer bucles apoyándose en esta curiosa relación singular-plural. Es por ello que no vamos a pegarnos un tiro en los pies declarando parejas de variables y valores que luego nos impidan aprovecharnos de las mencionadas herramientas.</p>
 <p>Por último, para finalizar este artículo, echaremos un vistazo a la configuración del 
-<a href="https://gohugo.io/content-management/urls/" target="_blank" rel="noopener">permalink</a>
- de las entradas del sitio web. Por defecto, <em>Hugo</em> utiliza el directorio donde se encuentre el contenido (generalmente es <code>\post\</code>) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.</p>
+<a href="https://gohugo.io/content-management/urls/" target="_blank" rel="noopener">permalink</a> de las entradas del sitio web. Por defecto, <em>Hugo</em> utiliza el directorio donde se encuentre el contenido (generalmente es <code>\post\</code>) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.</p>
 <p>Para empezar, me gustaría que apareciese el día de publicación del artículo en el <em>permalink</em>, siguiendo el formato <code>/año/mes/día</code>. Por otro lado, como soy consciente de que utilizar caracteres extraños a ojos del alfabeto inglés (tildes, eñes, etc.), en ocasiones, es fuente de problemas, en cada entrada definiré manualmente mi propio <em>slug</em>, para evitar que la traducción automática del título hacia su correspondiente parte del <em>permalink</em> dé lugar a resultados no deseados.</p>
 <p>Así pues, mi archivo <code>config.toml</code> finaliza con el siguiente bloque código:</p>
 <pre><code class="language-toml">#
@@ -833,8 +826,7 @@
   post = &quot;/:year/:month/:day/:slug/&quot;
 </code></pre>
 <p>En el siguiente artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>
- dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.</p>
+<a href="/proyecto/metablog/">Proyecto Metablog</a> dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.</p>
 
     </div>
 
@@ -1102,6 +1094,11 @@
 
     
     
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
     
     
     
@@ -1162,7 +1159,7 @@
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/academic.min.a8d7005002cb4a052fd6d721e83df9ba.js"></script>
 
     
 
