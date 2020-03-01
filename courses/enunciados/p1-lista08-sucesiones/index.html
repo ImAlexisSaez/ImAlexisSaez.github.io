@@ -28,7 +28,17 @@
   
     
   
-  <meta name="description" content="I. Progresiones aritméticas  Ejercicio 1.1: (Comunidad Valenciana (2016)) Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (Discusión)">
+  <meta name="description" content="I. Límites  Ejercicio 1.1: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{\ln{(8n^4 &#43; 3n^2 &#43; 5)}}{\ln{(5n^3 &#43; n^2 &#43; n - 4)}}}. $$
+ Ejercicio 1.2: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{2^n &#43; 5}{5^n &#43; 5}}. $$
+ Ejercicio 1.3: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{(3n^4 &#43; n^2 - 3)(\cos{\left(\frac{1}{n}\right)} - 1)}{2n^2}}. $$
+ Ejercicio 1.4: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{n}{3}\ln{((n&#43;a)(n&#43;b)(n&#43;c))} - \ln{(n^n)}}. $$
+ Ejercicio 1.5: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{2n &#43; (-1)^n(n&#43;2)}{7n&#43;3}}. $$
+ II. Progresiones aritméticas  Ejercicio 2.1: (Comunidad Valenciana (2016)) Con un solo corte recto puedes dividir un pastel circular en dos partes.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/courses/enunciados/p1-lista08-sucesiones/">
@@ -242,13 +252,23 @@
   <meta property="og:site_name" content="Infinitos Contrastes">
   <meta property="og:url" content="https://imalexissaez.github.io/courses/enunciados/p1-lista08-sucesiones/">
   <meta property="og:title" content="Sucesiones | Infinitos Contrastes">
-  <meta property="og:description" content="I. Progresiones aritméticas  Ejercicio 1.1: (Comunidad Valenciana (2016)) Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (Discusión)"><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
+  <meta property="og:description" content="I. Límites  Ejercicio 1.1: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{\ln{(8n^4 &#43; 3n^2 &#43; 5)}}{\ln{(5n^3 &#43; n^2 &#43; n - 4)}}}. $$
+ Ejercicio 1.2: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{2^n &#43; 5}{5^n &#43; 5}}. $$
+ Ejercicio 1.3: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{(3n^4 &#43; n^2 - 3)(\cos{\left(\frac{1}{n}\right)} - 1)}{2n^2}}. $$
+ Ejercicio 1.4: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{n}{3}\ln{((n&#43;a)(n&#43;b)(n&#43;c))} - \ln{(n^n)}}. $$
+ Ejercicio 1.5: Calcula
+$$ \lim_{n\rightarrow\infty}{\frac{2n &#43; (-1)^n(n&#43;2)}{7n&#43;3}}. $$
+ II. Progresiones aritméticas  Ejercicio 2.1: (Comunidad Valenciana (2016)) Con un solo corte recto puedes dividir un pastel circular en dos partes."><meta property="og:image" content="https://imalexissaez.github.io/img/sharing.jpg">
   <meta property="twitter:image" content="https://imalexissaez.github.io/img/sharing.jpg"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2019-10-14T00:00:01&#43;01:00">
     
-    <meta property="article:modified_time" content="2020-02-26T00:00:01&#43;01:00">
+    <meta property="article:modified_time" content="2020-03-01T00:00:01&#43;01:00">
   
 
   
@@ -592,7 +612,8 @@
 
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#i-progresiones-aritméticas">I. Progresiones aritméticas</a></li>
+    <li><a href="#i-límites">I. Límites</a></li>
+    <li><a href="#ii-progresiones-aritméticas">II. Progresiones aritméticas</a></li>
   </ul>
 </nav>
 
@@ -608,12 +629,39 @@
           <h1>Sucesiones</h1>
 
           <div class="article-style">
-            <h2 id="i-progresiones-aritméticas">I. Progresiones aritméticas</h2>
+            <h2 id="i-límites">I. Límites</h2>
 <hr>
-<p><strong>Ejercicio 1.1:</strong> <em>(Comunidad Valenciana (2016))</em> Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (
+<p><strong>Ejercicio 1.1:</strong> Calcula</p>
+<p>$$
+\lim_{n\rightarrow\infty}{\frac{\ln{(8n^4 + 3n^2 + 5)}}{\ln{(5n^3 + n^2 + n - 4)}}}.
+$$</p>
+<hr>
+<p><strong>Ejercicio 1.2:</strong> Calcula</p>
+<p>$$
+\lim_{n\rightarrow\infty}{\frac{2^n + 5}{5^n + 5}}.
+$$</p>
+<hr>
+<p><strong>Ejercicio 1.3:</strong> Calcula</p>
+<p>$$
+\lim_{n\rightarrow\infty}{\frac{(3n^4 + n^2 - 3)(\cos{\left(\frac{1}{n}\right)} - 1)}{2n^2}}.
+$$</p>
+<hr>
+<p><strong>Ejercicio 1.4:</strong> Calcula</p>
+<p>$$
+\lim_{n\rightarrow\infty}{\frac{n}{3}\ln{((n+a)(n+b)(n+c))} - \ln{(n^n)}}.
+$$</p>
+<hr>
+<p><strong>Ejercicio 1.5:</strong> Calcula</p>
+<p>$$
+\lim_{n\rightarrow\infty}{\frac{2n + (-1)^n(n+2)}{7n+3}}.
+$$</p>
+<hr>
+<h2 id="ii-progresiones-aritméticas">II. Progresiones aritméticas</h2>
+<hr>
+<p><strong>Ejercicio 2.1:</strong> <em>(Comunidad Valenciana (2016))</em> Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (
 <a href="/2019/10/14/enunciados-propuestos-x/">Discusión</a>)</p>
 <hr>
-<p><strong>Ejercicio 1.2:</strong> Halla la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre $3$ y $6$. Generaliza el resultado para la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre los enteros $m$ y $n$, con $m &lt; n$. (
+<p><strong>Ejercicio 2.2:</strong> Halla la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre $3$ y $6$. Generaliza el resultado para la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre los enteros $m$ y $n$, con $m &lt; n$. (
 <a href="/2019/11/18/enunciados-propuestos-xxv/">Discusión</a>)</p>
 <hr>
 
@@ -649,7 +697,7 @@
         </div>
 
         <div class="body-footer">
-          <p>Última actualización el 2020-02-26</p>
+          <p>Última actualización el 2020-03-01</p>
 
           
 

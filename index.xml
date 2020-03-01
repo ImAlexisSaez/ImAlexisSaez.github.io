@@ -5,7 +5,7 @@
     <link>https://imalexissaez.github.io/</link>
       <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Infinitos Contrastes</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Alexis Sáez ©2020</copyright><lastBuildDate>Wed, 26 Feb 2020 00:00:01 +0200</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Alexis Sáez ©2020</copyright><lastBuildDate>Sun, 01 Mar 2020 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/img/sharing.jpg</url>
       <title>Infinitos Contrastes</title>
@@ -394,6 +394,20 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Ejercicio 6.9:&lt;/strong&gt; Un avión, de una determinada compañía, debe realizar un viaje entre dos ciudades, con un total de $m+n$ escalas, donde $m$ y $n$ son números naturales. En cada escala el avión ha de cargar o descargar una tonelada de cierta mercancía, realizando cargas en $m$ de las escalas y descargas en las $n$ restantes.&lt;/p&gt;
 &lt;p&gt;No obstante, en la compañía nadie ha reparado en que el avión no soporta una carga mayor de $k$ toneladas, con $k$ número natural entre $n$ y $m+n$, y las escalas de carga y descarga se reparten al azar.&lt;/p&gt;
 &lt;p&gt;Si el avión sale con $n$ toneladas de mercancía, calcula la probabilidad de que llegue a su destino.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 6.9:&lt;/strong&gt; La Rana Gustavo, &amp;lsquo;&amp;lsquo;el reportero más dicharachero&amp;rsquo;&#39;, se encuentra en su hogar (muy coqueto este y ubicado, por cierto, en el origen de coordenadas, $(0,0)$, de una cuadrícula plana) disfrutando de su serie favorita. De repente, recibe una notificación en su móvil: ha de acudir, ipso facto, a cubrir una importante noticia que ha tenido lugar en la panadería de Barrio Sésamo, que se halla, según el GPS, en el punto de la cuadrícula de coordenadas $(5,5)$.&lt;/p&gt;
+&lt;p&gt;Por ciertos problemas acotencidos durante la última retransmisión, la Rana Gustavo únicamente puede desplazarse mediante saltos de longitud unitaria bien hacia la derecha, bien hacia arriba.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(a) Calcula el número total de rutas existentes entre su casa y la panadería de Barrio Sésamo.&lt;/li&gt;
+&lt;li&gt;(b) En el punto de la cuadrícula de coordenadas $(2,2)$, está plácidamente Espinete tomando el sol. La Rana Gustavo no quiere entretenerse hablando con él, pues tiene mucha prisa por cubrir la noticia, ¿de cuántas maneras puede llegar a la panadería sin pasar por donde está Espinete?&lt;/li&gt;
+&lt;li&gt;(c) Resulta, además, que Coco está esperando, en el punto de la cuadrícula de coordenadas $(3,3)$, a la primera persona que pase por allí para jugar una partida de ajedrez. Como la Rana Gustavo no está por la labor de tales entretenimientos, ¿de cuántas formas puede llegar a la panadería sin pasar por donde está Espinete ni por donde está Coco?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 6.10:&lt;/strong&gt; Un jugador lanza una moneda. Si sale cara obtiene un punto positivo y si saca cruz un punto negativo. Supuesto que de entrada se le da un punto positivo y perderá cuando alcance una puntuación nula, calcula la probabilidad de perder:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(a) antes del lanzamiento $12$.&lt;/li&gt;
+&lt;li&gt;(b) en el lanzamiento $17$.&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 </description>
     </item>
@@ -890,12 +904,39 @@ Los números son diferentes.
       <link>https://imalexissaez.github.io/courses/enunciados/p1-lista08-sucesiones/</link>
       <pubDate>Mon, 14 Oct 2019 00:00:01 +0100</pubDate>
       <guid>https://imalexissaez.github.io/courses/enunciados/p1-lista08-sucesiones/</guid>
-      <description>&lt;h2 id=&#34;i-progresiones-aritméticas&#34;&gt;I. Progresiones aritméticas&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;i-límites&#34;&gt;I. Límites&lt;/h2&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.1:&lt;/strong&gt; &lt;em&gt;(Comunidad Valenciana (2016))&lt;/em&gt; Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.1:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{\ln{(8n^4 + 3n^2 + 5)}}{\ln{(5n^3 + n^2 + n - 4)}}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.2:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{2^n + 5}{5^n + 5}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.3:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{(3n^4 + n^2 - 3)(\cos{\left(\frac{1}{n}\right)} - 1)}{2n^2}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.4:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{n}{3}\ln{((n+a)(n+b)(n+c))} - \ln{(n^n)}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.5:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{2n + (-1)^n(n+2)}{7n+3}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;ii-progresiones-aritméticas&#34;&gt;II. Progresiones aritméticas&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 2.1:&lt;/strong&gt; &lt;em&gt;(Comunidad Valenciana (2016))&lt;/em&gt; Con un solo corte recto puedes dividir un pastel circular en dos partes. Un segundo corte, que atraviese al primero, producirá probablemente cuatro partes, y un tercer corte puede llegar a producir siete partes. ¿Cuál es el mayor número de trozos que puedes lograr con seis cortes rectos? ¿Y, en general, cuántos pedazos de tarta se obtienen con $n$ cortes? (
 &lt;a href=&#34;https://imalexissaez.github.io/2019/10/14/enunciados-propuestos-x/&#34;&gt;Discusión&lt;/a&gt;)&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.2:&lt;/strong&gt; Halla la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre $3$ y $6$. Generaliza el resultado para la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre los enteros $m$ y $n$, con $m &amp;lt; n$. (
+&lt;p&gt;&lt;strong&gt;Ejercicio 2.2:&lt;/strong&gt; Halla la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre $3$ y $6$. Generaliza el resultado para la suma de todas las fracciones irreducibles de denominador $3$ comprendidas entre los enteros $m$ y $n$, con $m &amp;lt; n$. (
 &lt;a href=&#34;https://imalexissaez.github.io/2019/11/18/enunciados-propuestos-xxv/&#34;&gt;Discusión&lt;/a&gt;)&lt;/p&gt;
 &lt;hr&gt;
 </description>
@@ -1104,47 +1145,53 @@ print(actualiza_resultado)  # 13 + 8 = 21
 \frac{a}{13} + \frac{b}{19} = \frac{230}{247}.
 $$&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.11:&lt;/strong&gt; Encuentra el inverso de $46$ en $\mathbb{Z}_{53}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.11:&lt;/strong&gt; Encuentra el inverso de $7$ en $\mathbb{Z}_{31}$.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.12:&lt;/strong&gt; Encuentra el inverso de $37$ en $\mathbb{Z}_{62}$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.12:&lt;/strong&gt; Encuentra el inverso de $46$ en $\mathbb{Z}_{53}$.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.13:&lt;/strong&gt; Sea $c$ un número entero positivo tal que $10\leq c\leq 100$. ¿Cuál es el valor mínimo de $c$ para el cual la ecuación $84x + 990y = c$ admite soluciones enteras?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.13:&lt;/strong&gt; Encuentra el inverso de $37$ en $\mathbb{Z}_{62}$.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.14:&lt;/strong&gt; Halla el menor número natural $m$ de manera que la ecuación $533x + 299y = 20000 + m$ tenga soluciones enteras y calcúlalas.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.14:&lt;/strong&gt; Sea $c$ un número entero positivo tal que $10\leq c\leq 100$. ¿Cuál es el valor mínimo de $c$ para el cual la ecuación $84x + 990y = c$ admite soluciones enteras?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.15:&lt;/strong&gt; Halla&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.15:&lt;/strong&gt; Halla el menor número natural $m$ de manera que la ecuación $533x + 299y = 20000 + m$ tenga soluciones enteras y calcúlalas.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.16:&lt;/strong&gt; Halla&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;(a) el menor entero positivo $a$ tal que la ecuación $1001x + 770y = 10^6 + a$ admite soluciones naturales.&lt;/li&gt;
 &lt;li&gt;(b) para dicho valor de $a$, determina las soluciones naturales de dicha ecuación.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.16:&lt;/strong&gt; Se dispone de un gran suministro de agua, un gran cubo con desagüe y dos garrafas que contienen $7$ y $9$ litros. ¿Cómo podría ponerse un litro de agua en el cubo?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.17:&lt;/strong&gt; Se dispone de un gran suministro de agua, un gran cubo con desagüe y dos garrafas que contienen $7$ y $9$ litros. ¿Cómo podría ponerse un litro de agua en el cubo?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.17:&lt;/strong&gt; Los precios de dos productos son $18$ y $33$ euros por unidad. ¿Cuál es el número mínimo y máximo de unidades que se pueden haber vendido si se han cobrado $639$ euros?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.18:&lt;/strong&gt; Los precios de dos productos son $18$ y $33$ euros por unidad. ¿Cuál es el número mínimo y máximo de unidades que se pueden haber vendido si se han cobrado $639$ euros?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.18:&lt;/strong&gt; Un sastre invierte $13$ horas en diseñar un pantalón y $37$ horas en diseñar un modelo de camisa. Si trabaja $2000$ horas, ¿cuántas camisas y pantalones debería diseñar para conseguir la mejor combinación entre pantalones y camisas?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.19:&lt;/strong&gt; Un sastre invierte $13$ horas en diseñar un pantalón y $37$ horas en diseñar un modelo de camisa. Si trabaja $2000$ horas, ¿cuántas camisas y pantalones debería diseñar para conseguir la mejor combinación entre pantalones y camisas?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.19:&lt;/strong&gt; Un hombre compra caballos y vacas, pagando $1770$ euros. Una vaca cuesta $21$ euros y un caballo $31$ euros, ¿cuántos caballos y vacas ha comprado?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.20:&lt;/strong&gt; Un hombre compra caballos y vacas, pagando $1770$ euros. Una vaca cuesta $21$ euros y un caballo $31$ euros, ¿cuántos caballos y vacas ha comprado?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.20:&lt;/strong&gt; Para abonar una factura de $1840$ pesetas, se entregan libras esterlinas y dan la vuelta en marcos. Calcula las libras esterlinas entregadas y los marcos devueltos, suponiendo que se ha entregado la cantidad mínima de libras necesarias para pagar y que la devolución sea en marcos ($1$ marco $=70$ pesetas, $1$ libra esterlina $=180$ pesetas).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.21:&lt;/strong&gt; Para abonar una factura de $1840$ pesetas, se entregan libras esterlinas y dan la vuelta en marcos. Calcula las libras esterlinas entregadas y los marcos devueltos, suponiendo que se ha entregado la cantidad mínima de libras necesarias para pagar y que la devolución sea en marcos ($1$ marco $=70$ pesetas, $1$ libra esterlina $=180$ pesetas).&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.21:&lt;/strong&gt; Se compran manzanas y naranjas. En total, $12$ piezas de fruta, que cuestan $1.32$ euros. Si una manzana vale $3$ céntimos más que una naranja y hay más manzanas que naranjas, ¿cuántas piezas de cada fruta se han comprado?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.22:&lt;/strong&gt; Se compran manzanas y naranjas. En total, $12$ piezas de fruta, que cuestan $1.32$ euros. Si una manzana vale $3$ céntimos más que una naranja y hay más manzanas que naranjas, ¿cuántas piezas de cada fruta se han comprado?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.22:&lt;/strong&gt; Una persona va a un supermercado y compra $12$ litros de leche, unos de leche entera y otros de desnatada, por $1200$ pesetas. Si la leche entera vale $30$ pesetas más por litro que la desnatada y ha comprado el mínimo posible de leche desnatada, ¿cuántos litros habrá comprado de cada una?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.23:&lt;/strong&gt; Una persona va a un supermercado y compra $12$ litros de leche, unos de leche entera y otros de desnatada, por $1200$ pesetas. Si la leche entera vale $30$ pesetas más por litro que la desnatada y ha comprado el mínimo posible de leche desnatada, ¿cuántos litros habrá comprado de cada una?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.23:&lt;/strong&gt; Los lados de un rectángulo vienen dados por números naturales. ¿Cuál será la longitud de dichos lados para que el perímetro y la superficie de dicha figura se expresen con el mismo número?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.24:&lt;/strong&gt; Una mujer compra $12$ vestidos, unos rojos y otros blancos, gastándose $1200$ euros. Si los trajes rojos valen $30$ euros más que los blancos, ¿cuántos vestidos ha comprado de cada color?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.24:&lt;/strong&gt; Determina las dimensiones de un rectángulo sabiendo que sus lados miden un número entero de centímetros, pero no un número entero de palmos; y que su área, expresada en palmos cuadrados, es igual a su perímetro, expresado en palmos lineales. Considera que un palmo equivale a $20$ centímetros.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.25:&lt;/strong&gt; En un corral hay conejos y gallinas, contándose $22$ patas. ¿Cuántas gallinas y conejos hay?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.25:&lt;/strong&gt; &lt;em&gt;(Extremadura (2018))&lt;/em&gt; En su último viaje a Estados Unidos, el señor Martínez cambió un cheque de viaje. El cajero, al pagarle, confundió el número de dólares con el de centavos y viceversa. El señor Martínez gastó $68$ centavos en sellos y comprobó que el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado. ¿Qué valor mínimo tenía el cheque de viaje?&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.26:&lt;/strong&gt; Los lados de un rectángulo vienen dados por números naturales. ¿Cuál será la longitud de dichos lados para que el perímetro y la superficie de dicha figura se expresen con el mismo número?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.26:&lt;/strong&gt; &lt;em&gt;(Galicia (2018))&lt;/em&gt; Una persona ha comprado entradas para el cine para personas adultas por un precio de $640$ u. m. cada una y para menores de edad a $330$ u. m. Sabiendo que invirtió $7140$ u. m. y que compró menos entradas de adultos que de menores, halla el número de entradas que adquirió.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.27:&lt;/strong&gt; Determina las dimensiones de un rectángulo sabiendo que sus lados miden un número entero de centímetros, pero no un número entero de palmos; y que su área, expresada en palmos cuadrados, es igual a su perímetro, expresado en palmos lineales. Considera que un palmo equivale a $20$ centímetros.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.27:&lt;/strong&gt; Halla todos los números naturales menores que $1000$ que sean múltiplos de $28$ y que, divididos por $15$, den de resto $9$.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.28:&lt;/strong&gt; &lt;em&gt;(Extremadura (2018))&lt;/em&gt; En su último viaje a Estados Unidos, el señor Martínez cambió un cheque de viaje. El cajero, al pagarle, confundió el número de dólares con el de centavos y viceversa. El señor Martínez gastó $68$ centavos en sellos y comprobó que el dinero que le quedaba era el doble del importe del cheque de viaje que había cambiado. ¿Qué valor mínimo tenía el cheque de viaje?&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.28:&lt;/strong&gt; Halla un número de seis cifras que es igual a las seis últimas cifras de su cuadrado.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.29:&lt;/strong&gt; &lt;em&gt;(Galicia (2018))&lt;/em&gt; Una persona ha comprado entradas para el cine para personas adultas por un precio de $640$ u. m. cada una y para menores de edad a $330$ u. m. Sabiendo que invirtió $7140$ u. m. y que compró menos entradas de adultos que de menores, halla el número de entradas que adquirió.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;Ejercicio 1.29:&lt;/strong&gt; Halla las soluciones enteras de la ecuación&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.30:&lt;/strong&gt; Halla todos los números naturales menores que $1000$ que sean múltiplos de $28$ y que, divididos por $15$, den de resto $9$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.31:&lt;/strong&gt; Halla un número de seis cifras que es igual a las seis últimas cifras de su cuadrado.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1.32:&lt;/strong&gt; Halla las soluciones enteras de la ecuación&lt;/p&gt;
 &lt;p&gt;$$
 \sqrt{(x+y)(x-y) + (2x+2y-3)y - 2(x-7)} = x+y+3.
 $$&lt;/p&gt;
@@ -10273,6 +10320,62 @@ doctest.testmod()
 &lt;h2 id=&#34;código-fuente&#34;&gt;Código fuente&lt;/h2&gt;
 &lt;p&gt;El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta &lt;code&gt;/lecciones/78/&lt;/code&gt; del 
 &lt;a href=&#34;https://github.com/ImAlexisSaez/curso-python-desde-0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repositorio&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Enunciados propuestos (XXXVIII)</title>
+      <link>https://imalexissaez.github.io/2020/03/01/enunciados-propuestos-xxxviii/</link>
+      <pubDate>Sun, 01 Mar 2020 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2020/03/01/enunciados-propuestos-xxxviii/</guid>
+      <description>&lt;p&gt;Nueva entrega de enunciados propuestos de cara a la preparación de oposiciones para la especialidad de matemáticas. La colección completa está disponible 
+&lt;a href=&#34;https://imalexissaez.github.io/courses/enunciados/&#34;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 1:&lt;/strong&gt; La Rana Gustavo, &amp;lsquo;&amp;lsquo;el reportero más dicharachero&amp;rsquo;&#39;, se encuentra en su hogar (muy coqueto este y ubicado, por cierto, en el origen de coordenadas, $(0,0)$, de una cuadrícula plana) disfrutando de su serie favorita. De repente, recibe una notificación en su móvil: ha de acudir, ipso facto, a cubrir una importante noticia que ha tenido lugar en la panadería de Barrio Sésamo, que se halla, según el GPS, en el punto de la cuadrícula de coordenadas $(5,5)$.&lt;/p&gt;
+&lt;p&gt;Por ciertos problemas acotencidos durante la última retransmisión, la Rana Gustavo únicamente puede desplazarse mediante saltos de longitud unitaria bien hacia la derecha, bien hacia arriba.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(a) Calcula el número total de rutas existentes entre su casa y la panadería de Barrio Sésamo.&lt;/li&gt;
+&lt;li&gt;(b) En el punto de la cuadrícula de coordenadas $(2,2)$, está plácidamente Espinete tomando el sol. La Rana Gustavo no quiere entretenerse hablando con él, pues tiene mucha prisa por cubrir la noticia, ¿de cuántas maneras puede llegar a la panadería sin pasar por donde está Espinete?&lt;/li&gt;
+&lt;li&gt;(c) Resulta, además, que Coco está esperando, en el punto de la cuadrícula de coordenadas $(3,3)$, a la primera persona que pase por allí para jugar una partida de ajedrez. Como la Rana Gustavo no está por la labor de tales entretenimientos, ¿de cuántas formas puede llegar a la panadería sin pasar por donde está Espinete ni por donde está Coco?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 2:&lt;/strong&gt; Encuentra el inverso de $7$ en $\mathbb{Z}_{31}$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 3:&lt;/strong&gt; Una mujer compra $12$ vestidos, unos rojos y otros blancos, gastándose $1200$ euros. Si los trajes rojos valen $30$ euros más que los blancos, ¿cuántos vestidos ha comprado de cada color?&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 4:&lt;/strong&gt; En un corral hay conejos y gallinas, contándose $22$ patas. ¿Cuántas gallinas y conejos hay?&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 5:&lt;/strong&gt; Un jugador lanza una moneda. Si sale cara obtiene un punto positivo y si saca cruz un punto negativo. Supuesto que de entrada se le da un punto positivo y perderá cuando alcance una puntuación nula, calcula la probabilidad de perder:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;(a) antes del lanzamiento $12$.&lt;/li&gt;
+&lt;li&gt;(b) en el lanzamiento $17$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 6:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{\ln{(8n^4 + 3n^2 + 5)}}{\ln{(5n^3 + n^2 + n - 4)}}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 7:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{2^n + 5}{5^n + 5}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 8:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{(3n^4 + n^2 - 3)(\cos{\left(\frac{1}{n}\right)} - 1)}{2n^2}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 9:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{n}{3}\ln{((n+a)(n+b)(n+c))} - \ln{(n^n)}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Ejercicio 10:&lt;/strong&gt; Calcula&lt;/p&gt;
+&lt;p&gt;$$
+\lim_{n\rightarrow\infty}{\frac{2n + (-1)^n(n+2)}{7n+3}}.
+$$&lt;/p&gt;
+&lt;hr&gt;
 </description>
     </item>
     
