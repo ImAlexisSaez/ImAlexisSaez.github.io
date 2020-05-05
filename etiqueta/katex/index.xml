@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>KaTeX | Infinitos Contrastes</title>
+    <link>https://imalexissaez.github.io/etiqueta/katex/</link>
+      <atom:link href="https://imalexissaez.github.io/etiqueta/katex/index.xml" rel="self" type="application/rss+xml" />
+    <description>KaTeX</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Alexis Sáez ©2020</copyright><lastBuildDate>Tue, 18 Sep 2018 05:59:39 +0200</lastBuildDate>
+    <image>
+      <url>https://imalexissaez.github.io/img/sharing.jpg</url>
+      <title>KaTeX</title>
+      <link>https://imalexissaez.github.io/etiqueta/katex/</link>
+    </image>
+    
+    <item>
+      <title>Configurando el comportamiento de KaTeX</title>
+      <link>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</link>
+      <pubDate>Tue, 18 Sep 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</guid>
+      <description>&lt;p&gt;El tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando 
+&lt;a href=&#34;https://khan.github.io/KaTeX/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KaTeX&lt;/a&gt;. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?&lt;/p&gt;
+&lt;p&gt;Para empezar, recomiendo encarecidamente que acudamos a la página de 
+&lt;a href=&#34;https://github.com/Khan/KaTeX/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;versiones&lt;/a&gt; de &lt;em&gt;KaTeX&lt;/em&gt; y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como &lt;code&gt;v0.10.0-rc.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para ello, hacemos clic sobre el enlace denominado &lt;code&gt;katex.zip&lt;/code&gt; y así iniciaremos la descarga de un archivo comprimido, del cual nos interesan especialmente dos archivos contenidos en su interior:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;katex.min.css&lt;/code&gt; y&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;katex.min.js&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El primero de ellos lo ubicaremos, dentro del directorio donde hayamos decidido almacenar localmente el sitio web, en la ruta &lt;code&gt;\static\css\&lt;/code&gt;, mientras que el segundo en &lt;code&gt;\static\js\&lt;/code&gt;, sobrescribiendo en ambos casos las antiguas versiones que existiesen en dichas carpetas.&lt;/p&gt;
+&lt;p&gt;Una vez al día, la siguiente tarea implica la modificación de una de las plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, concretamente la denominada como &lt;code&gt;footer.html&lt;/code&gt;, ubicada en la ruta &lt;code&gt;\layouts\partials\&lt;/code&gt;. Editamos el mencionado fichero con &lt;em&gt;Sublime Text 3&lt;/em&gt; y buscamos la siguiente línea:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt; renderMathInElement(document.body); &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos a configurar &lt;em&gt;KaTeX&lt;/em&gt; de manera que reconozca las expresiones encerradas entre &lt;code&gt;$&lt;/code&gt; o &lt;code&gt;\\(&lt;/code&gt; como ecuaciones en línea, mientras que las delimitadas por &lt;code&gt;$$&lt;/code&gt; o &lt;code&gt;\\[&lt;/code&gt; como ecuaciones centradas en sus propias líneas. Para ello, tecleamos en el lugar de la anterior instrucción el siguiente bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: &amp;quot;$$&amp;quot;, right: &amp;quot;$$&amp;quot;, display: true},
+        {left: &amp;quot;\\[&amp;quot;, right: &amp;quot;\\]&amp;quot;, display: true},
+        {left: &amp;quot;$&amp;quot;, right: &amp;quot;$&amp;quot;, display: false},
+        {left: &amp;quot;\\(&amp;quot;, right: &amp;quot;\\)&amp;quot;, display: false}
+      ]
+    }
+  );
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Una vez habilitada la opción de escribir ecuaciones en línea, un hecho salta a la vista de inmediato: ¿no parece que el tamaño de letra para las expresiones matemáticas es mayor que el declarado para el texto estándar? Efectivamente, peculiaridad que, en mi opinión, desluce bastante el aspecto (e incluso diría que dificulta la lectura) de los artículos.&lt;/p&gt;
+&lt;p&gt;La solución pasa por modificar la hoja de estilos del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, almacenada en el archivo &lt;code&gt;main.css&lt;/code&gt;, que está ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;. Tras experimentar con cierto rango de valores para el tamaño de fuente de los objetos de la clase &lt;code&gt;.katex&lt;/code&gt;, al final me he decantado por la siguiente solución, que he colocado al principio del fichero &lt;code&gt;main.css&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Modificación para hacer que el tamaño de letra de KaTeX sea similar al de la web */
+.katex { font-size: 1.1em !important; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En los próximos artículos del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Probando KaTeX con un problema de inducción clásico</title>
+      <link>https://imalexissaez.github.io/2018/07/12/probando-katex-con-un-problema-de-induccion-clasico/</link>
+      <pubDate>Thu, 12 Jul 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/07/12/probando-katex-con-un-problema-de-induccion-clasico/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problema 1:&lt;/strong&gt; Demuestra que, para cada $n\in\mathbb{N}$, con $n\geq 1$,&lt;/p&gt;
+&lt;p&gt;$$
+1 + 2 + \cdots + n = \dfrac{n(n+1)}{2}.
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Generalmente, cuando abordamos problemas en los que tenemos que demostrar que cierta fórmula o afirmación se satisface, para un conjunto de índices de cardinal infinito (en esta ocasión hablaríamos del conjunto $n\geq1$, con $n\in\mathbb{N}$), es recomendable que llevemos a cabo una primera aproximación a su resolución empleando el &lt;em&gt;principio de inducción matemática&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, vamos a considerar la propiedad, que denotaremos por $P(n)$, dada en el enunciado del problema,&lt;/p&gt;
+&lt;p&gt;$$
+1+2+\cdots+n = \dfrac{n(n+1)}{2}.
+$$&lt;/p&gt;
+&lt;p&gt;Por lo que respecta al &lt;em&gt;caso base&lt;/em&gt;, $P(1)$, rápidamente comprobamos que se verifica de manera trivial, ya que&lt;/p&gt;
+&lt;p&gt;$$
+1 = \dfrac{1\cdot2}{2} = 1.
+$$&lt;/p&gt;
+&lt;p&gt;Abordemos ahora el &lt;em&gt;paso inductivo&lt;/em&gt;, para lo cual hemos de mostrar que si $P(n)$ se cumple, para un $n\geq1$, entonces asimismo se satisface $P(n+1)$, cuya expresión es&lt;/p&gt;
+&lt;p&gt;$$
+1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2}.
+$$&lt;/p&gt;
+&lt;p&gt;La clave en este tipo de situaciones consiste en encontrar una manera acertada de manipular la conocida como &lt;em&gt;hipótesis de inducción&lt;/em&gt;, $P(n)$, que nos ayude a verificar el resultado que estamos buscando comprobar.&lt;/p&gt;
+&lt;p&gt;Por fortuna para nosotros, si nos fijamos en el miembro izquierdo de la ecuación de $P(n+1)$, apreciamos que directamente aparece la suma de los $n$ primeros números naturales, cuyo valor, por la &lt;em&gt;hipótesis de inducción&lt;/em&gt;, es&lt;/p&gt;
+&lt;p&gt;$$
+\dfrac{n(n+1)}{2}.
+$$&lt;/p&gt;
+&lt;p&gt;Este hecho nos permite afirmar que&lt;/p&gt;
+&lt;p&gt;$$
+1+2+\cdots+n+(n+1) = \dfrac{n(n+1)}{2} + (n+1).
+$$&lt;/p&gt;
+&lt;p&gt;Ahora, sumando algebraicamente ambos términos,&lt;/p&gt;
+&lt;p&gt;$$
+\dfrac{n(n+1)}{2} + (n+1)= \dfrac{n(n+1) + 2(n+1)}{2}= \dfrac{(n+1)(n+2)}{2},
+$$&lt;/p&gt;
+&lt;p&gt;es decir, hemos llegado a mostrar que&lt;/p&gt;
+&lt;p&gt;$$
+1+2+\cdots+n+(n+1)=\dfrac{(n+1)(n+2)}{2},
+$$&lt;/p&gt;
+&lt;p&gt;completando así el &lt;em&gt;paso inductivo&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, por el &lt;em&gt;principio de inducción matemática&lt;/em&gt;, podemos concluir que $P(n)$ se verifica para cada $n\in\mathbb{N}$, con $n\geq 1$.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Podría decir que la experiencia de usar &lt;em&gt;KaTeX&lt;/em&gt; ha sido un tanto agridulce. La mayor parte del artículo procede de código fuente escrito en &lt;em&gt;TeX&lt;/em&gt; y apenas he tenido que llevar cambio alguno en el código para que fuera interpretado correctamente por &lt;em&gt;KaTeX&lt;/em&gt;, hecho ciertamente positivo. No obstante, no he sido capaz de trabajar con los entornos que, según la 
+&lt;a href=&#34;https://khan.github.io/KaTeX/function-support.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;web oficial&lt;/a&gt;, están disponibles, como por ejemplo &lt;code&gt;aligned&lt;/code&gt; o &lt;code&gt;pmatrix&lt;/code&gt;. Esto, en ocasiones, temo que vaya a dificultar la narrativa o incluso a impedir la publicación de ejemplos que requieran estructuras matriciales.&lt;/p&gt;
+&lt;p&gt;Seguiré investigando, ya que me gustaría ir publicando habitualmente problemas matemáticos sin tener que recurrir a la clásica solución de compartirlos en formato &lt;code&gt;PDF&lt;/code&gt; vía algún servicio de alojamiento de ficheros.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Actualización:&lt;/em&gt; tras un descanso para aclarar ideas, ¡por fin he dado con la solución al problema de los entornos! Si escribimos&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$
+x = 
+\begin{cases}
+  a &amp;amp;\text{if } b\\
+  c &amp;amp;\text{if } d
+\end{cases}
+$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;el resultado no se visualiza correctamente, y así sucede para cualquier entorno que requiera cambios de línea, como &lt;code&gt;aligned&lt;/code&gt;, &lt;code&gt;pmatrix&lt;/code&gt;, etc. La clave reside en el tratamiento que recibe en &lt;em&gt;Markdown&lt;/em&gt; el carácter &lt;code&gt;\&lt;/code&gt;, que interfiere con el funcionamiento adecuado de &lt;em&gt;KaTeX&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;La solución pasa por &amp;ldquo;escapar&amp;rdquo; el mencionado carácter, de manera que, si habitualmente necesitamos dos para comenzar una nueva línea, ahora tendríamos que teclear cuatro. Además, en ocasiones, según el entorno que vayamos a emplear, es posible que debamos sacrificar las sangrías y escribir todo medianamente seguido.&lt;/p&gt;
+&lt;p&gt;Es decir, el siguiente bloque de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$
+x = 
+\begin{cases}
+  a &amp;amp;\text{if } b\\\\ c &amp;amp;\text{if } d
+\end{cases}
+$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;funciona a la perfección, como podemos comprobar a continuación&lt;/p&gt;
+&lt;p&gt;$$
+x = 
+\begin{cases}
+a &amp;amp;\text{if } b\\ c &amp;amp;\text{if } d
+\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;Esto va a requerir cierto tiempo adicional para que edite algunas de las expresiones escritas con &lt;em&gt;TeX&lt;/em&gt;, pero me alegro de poder tener a mi disposición la posibilidad de utilizar algunos entornos matemáticos básicos.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

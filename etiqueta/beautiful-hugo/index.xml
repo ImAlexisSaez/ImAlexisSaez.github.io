@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Beautiful Hugo | Infinitos Contrastes</title>
+    <link>https://imalexissaez.github.io/etiqueta/beautiful-hugo/</link>
+      <atom:link href="https://imalexissaez.github.io/etiqueta/beautiful-hugo/index.xml" rel="self" type="application/rss+xml" />
+    <description>Beautiful Hugo</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Alexis Sáez ©2020</copyright><lastBuildDate>Sat, 01 Jun 2019 05:59:39 +0200</lastBuildDate>
+    <image>
+      <url>https://imalexissaez.github.io/img/sharing.jpg</url>
+      <title>Beautiful Hugo</title>
+      <link>https://imalexissaez.github.io/etiqueta/beautiful-hugo/</link>
+    </image>
+    
+    <item>
+      <title>Unos cambios rápidos a las plantillas</title>
+      <link>https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/</link>
+      <pubDate>Sat, 01 Jun 2019 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/</guid>
+      <description>&lt;p&gt;En esta entrada recojo el código necesario para localizar a español ciertas secciones de la página web, incluyendo un experimento que al final no terminó de convencerme, pero que comparto por si sirviera de inspiración a la creatividad ajena.&lt;/p&gt;
+&lt;p&gt;Al final de cada una de las entradas del blog aparece un apartado de &lt;em&gt;etiquetas&lt;/em&gt;, que permite agrupar fácilmente contenidos relacionados. Cambiemos la cabecera de esta sección de &lt;code&gt;Tags:&lt;/code&gt; a &lt;code&gt;Etiquetas:&lt;/code&gt;. Para ello, editamos con &lt;em&gt;Sublime Text 3&lt;/em&gt; el archivo &lt;code&gt;main.css&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;) y buscamos el siguiente bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags:before {
+  content: &amp;quot;Tags: &amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Acto seguido, modificamos el valor del atributo &lt;code&gt;content&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags:before {
+  content: &amp;quot;Etiquetas: &amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;y guardamos los cambios realizados.&lt;/p&gt;
+&lt;p&gt;Siguiendo con esta misma filosofía, traduzcamos ese &lt;code&gt;View all&lt;/code&gt; que aparece en las páginas de índice que agrupan contenidos por taxonomías. Para ello, editamos el archivo &lt;code&gt;terms.html&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\layouts\_default\&lt;/code&gt;) y, utilizando el buscador de &lt;em&gt;Sublime Text 3&lt;/em&gt;, nos situamos donde aparece la mencionada cadena de caracteres y la sustituimos, por ejemplo, por &lt;code&gt;Ver todos&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Todavía podemos mejorar un tanto la localización a español del tema a través de las taxonomías. Con tal objetivo en mente, modifiquemos el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) como sigue, de&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &amp;quot;categories&amp;quot;
+  tag      = &amp;quot;tags&amp;quot;
+  project  = &amp;quot;projects&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;a&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &amp;quot;categories&amp;quot;
+  tag      = &amp;quot;tags&amp;quot;
+  apartado = &amp;quot;apartados&amp;quot;
+  proyecto = &amp;quot;proyectos&amp;quot;
+  etiqueta = &amp;quot;etiquetas&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ahora, editamos la plantilla &lt;code&gt;single.html&lt;/code&gt; (ubicada en la ruta &lt;code&gt;\layouts\_default\&lt;/code&gt;) y sustituimos el bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.tags }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.tags }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;por&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Si queremos que aparezca en las entradas del blog información sobre el apartado o proyecto al que pertenecen, no tendríamos más que incorporar dos nuevos bloques a continuación, utilizando el anterior como guía y llevando a cabo las adaptaciones pertinentes. Por otro lado, sería más que recomendable crear en el archivo de estilos &lt;em&gt;css&lt;/em&gt; las clases &lt;code&gt;blog-etiquetas&lt;/code&gt;, &lt;code&gt;blog-apartados&lt;/code&gt; y &lt;code&gt;blog-proyectos&lt;/code&gt;, para mejorar el mantenimiento de la localización del tema en un futuro.&lt;/p&gt;
+&lt;p&gt;A continuación, hemos de editar las plantillas &lt;code&gt;list.html&lt;/code&gt; e &lt;code&gt;index.html&lt;/code&gt; (ubicadas ambas en la ruta &lt;code&gt;\layouts\_default&lt;/code&gt;), substituyendo los bloques de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.tags }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.tags }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;por&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-tags&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Añadiendo, acto seguido, bloques análogos para &lt;code&gt;apartados&lt;/code&gt; y &lt;code&gt;proyectos&lt;/code&gt; si lo hemos considerado oportuno.&lt;/p&gt;
+&lt;p&gt;Este cambio nos obliga a actualizar la ruta de acceso a la página de etiquetas, por lo que debemos editar el archivo &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) de manera que el bloque de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Etiquetas&amp;quot;
+    url = &amp;quot;tags&amp;quot;
+    weight = 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;pase a ser&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Etiquetas&amp;quot;
+    url = &amp;quot;etiquetas&amp;quot;
+    weight = 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finalmente, nos queda modificar el estilo de la cabecera de la página de etiquetas. Para ello editamos el archivo &lt;code&gt;main.css&lt;/code&gt; (ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;) buscando el término &lt;code&gt;header&lt;/code&gt; y añadiendo la cadena correspondiente a etiquetas. Por ejemplo, para el bloque de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;la modificación quedaría como sigue&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .etiquetas-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En total, hemos de proceder de esta manera en tres ocasiones.&lt;/p&gt;
+&lt;p&gt;Y ya que estamos con las manos en la masa, creemos las clases de estilos para &lt;code&gt;etiquetas&lt;/code&gt;, &lt;code&gt;apartados&lt;/code&gt; y &lt;code&gt;proyectos&lt;/code&gt; trabajando sobre los bloques de código originales que aparecen tras el comentario &lt;code&gt;/* --- Tags --- */&lt;/code&gt; (recordemos que cualquier modificación puede implicar después que hayamos de editar la cabeceras de las páginas tal y como hicimos hace un instante). Así pues, nos van a quedar bloques como el que aparece a continuación:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.blog-tags,
+.blog-apartados,
+.blog-etiquetas,
+.blog-proyectos {
+  font-family: &#39;Open Sans&#39;, &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;
+  color: #999;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Aquellos en los que aparece el atributo &lt;code&gt;before&lt;/code&gt; no los podemos agrupar tan fácilmente. No obstante, no deja de ser trabajo de &lt;em&gt;copy&amp;amp;paste&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Como he comentado arriba, no debemos olvidar añadir a las clases de las cabeceras las líneas correspondientes, de forma que nos aparezcan bloques como el que figura acto seguido:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.intro-header .page-heading,
+.intro-header .tags-heading,
+.intro-header .apartados-heading,
+.intro-header .etiquetas-heading,
+.intro-header .proyectos-heading {
+  text-align: center;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;A continuación, hacemos una nueva modificación sobre el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) y cambiamos el nombre del menú principal &lt;em&gt;Blog&lt;/em&gt; por &lt;em&gt;Inicio&lt;/em&gt;. Así, el bloque de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Blog&amp;quot;
+    url = &amp;quot;&amp;quot;
+    weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;pasa a ser&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Inicio&amp;quot;
+    url = &amp;quot;&amp;quot;
+    weight = 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Acto seguido, en la plantilla &lt;code&gt;single.html&lt;/code&gt; (ubicada en la ruta &lt;code&gt;\layouts\_default&lt;/code&gt;) añado, en la ubicación donde aparecen las etiquetas, información sobre el apartado y el proyecto al que pertenece una entrada en particular. Por tanto, el bloque de código&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-etiquetas&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;a&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;{{ if .Params.apartados }}
+  &amp;lt;div class=&amp;quot;blog-apartados&amp;quot;&amp;gt;
+    {{ range .Params.apartados }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/apartados/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+
+{{ if .Params.etiquetas }}
+  &amp;lt;div class=&amp;quot;blog-etiquetas&amp;quot;&amp;gt;
+    {{ range .Params.etiquetas }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+
+{{ if .Params.proyectos }}
+  &amp;lt;div class=&amp;quot;blog-proyectos&amp;quot;&amp;gt;
+    {{ range .Params.proyectos }}
+      &amp;lt;a href=&amp;quot;{{ $.Site.LanguagePrefix | absURL }}/proyectos/{{ . | urlize }}/&amp;quot;&amp;gt;{{ . }}&amp;lt;/a&amp;gt;&amp;amp;nbsp;
+    {{ end }}
+  &amp;lt;/div&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Sin embargo, aunque es una opción razonable, no me convence cómo queda, por lo que, en mi caso, voy a dejarlo como estaba. No obstante, comparto el código fuente por si alguien tiene interés en realizar esta modificación.&lt;/p&gt;
+&lt;p&gt;Por último, quizá quede todo un poco mejor si damos acceso a las diferentes secciones desde el menú superior derecho, con un desplegable. Para ello, modificamos el fichero &lt;code&gt;config.toml&lt;/code&gt; (ubicado en el directorio raíz de la página web) y dejamos la sección dedicada al menú como figura a continuación:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración del menú superior derecho
+#
+[[menu.main]]
+    identifier = &amp;quot;menu&amp;quot;
+    name       = &amp;quot;Menú&amp;quot;
+    weight     = 1
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Apartados&amp;quot;
+    url    = &amp;quot;apartados/&amp;quot;
+    weight = 1
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Etiquetas&amp;quot;
+    url    = &amp;quot;etiquetas/&amp;quot;
+    weight = 2
+
+[[menu.main]]
+    parent = &amp;quot;menu&amp;quot;
+    name   = &amp;quot;Proyectos&amp;quot;
+    url    = &amp;quot;proyectos/&amp;quot;
+    weight = 3
+
+[[menu.main]]
+    name   = &amp;quot;Acerca de&amp;quot;
+    url    = &amp;quot;page/about/&amp;quot;
+    weight = 2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Concluyo aquí esta extensa entrada, dejando el 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto MetaBlog&lt;/a&gt; en espera, pues en estos momentos estoy más centrado en la generación de contenido para la página web, que en la edición de la misma.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Mejorando la estética de los bloques de código</title>
+      <link>https://imalexissaez.github.io/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/</link>
+      <pubDate>Thu, 20 Sep 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/09/20/mejorando-la-estetica-de-los-bloques-de-codigo/</guid>
+      <description>&lt;p&gt;Por uno de esos casuales de la vida, me ha dado por revisar el sitio web con el móvil y ha sido entonces cuando he presenciado un horror sin parangón: ¿por qué se ven así mis bloques de código?&lt;/p&gt;
+&lt;p&gt;Al parecer, me caracterizo por ser un animal de costumbres y cualquier desviación que me lleve mucho más allá de mi zona de confort me produce hasta angustia. Habitualmente, con los temas para páginas web con los que he trabajado, los bloques de código tienen habilitada la aparición de una barra de desplazamiento horizontal cuando figuran instrucciones de longitud considerable.&lt;/p&gt;
+&lt;p&gt;Este es un comportamiento que me parece adecuado, ya que incrementa, en mi opinión, la legibilidad de los mencionados bloques de código. Por desgracia, en el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; no viene configurado así por defecto, de manera que una instrucción de longitud considerable se llega a dividir en varias líneas, dificultando en exceso la lectura.&lt;/p&gt;
+&lt;p&gt;Las opciones de estilo para los bloques de código, curiosamente, no están declaradas en el archivo &lt;code&gt;main.css&lt;/code&gt;, como sería de esperar, sino en un fichero denominado &lt;code&gt;codeblock.css&lt;/code&gt;, que se encuentra en la ruta &lt;code&gt;\static\css\&lt;/code&gt; del directorio donde hayamos decidido almacenar localmente nuestro sitio web. Su contenido original es&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* --- Code blocks --- */
+
+.chroma .ln { 
+  margin-right: 0.8em; 
+  padding: 0 0.4em 0 0.4em; 
+}
+pre code.hljs {
+  padding: 9.5px;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Tras investigar un rato, he conseguido que aparezca la deseada barra de desplazamiento horizontal añadiendo unas cuantas líneas al anterior archivo, de forma que ahora presenta el siguiente aspecto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* --- Code blocks --- */
+
+.chroma .ln { 
+  margin-right: 0.8em; 
+  padding: 0 0.4em 0 0.4em; 
+}
+pre code.hljs {
+  padding: 9.5px;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+pre code {
+    word-wrap: normal;
+    white-space: pre;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;El único inconveniente de este enfoque es que solo afecta a los bloques de código escritos usando &lt;em&gt;fences&lt;/em&gt; y no a los que generamos mediante el &lt;em&gt;shortcode&lt;/em&gt; &lt;code&gt;highlight&lt;/code&gt; de &lt;em&gt;Hugo&lt;/em&gt;. No obstante, como habitualmente no recurro a este último, no he decido indagar más al respecto.&lt;/p&gt;
+&lt;p&gt;En los próximos artículos del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configurando el comportamiento de KaTeX</title>
+      <link>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</link>
+      <pubDate>Tue, 18 Sep 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/09/18/configurando-el-comportamiento-de-katex/</guid>
+      <description>&lt;p&gt;El tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; viene, por defecto, configurado para que podamos escribir expresiones matemáticas utilizando 
+&lt;a href=&#34;https://khan.github.io/KaTeX/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;KaTeX&lt;/a&gt;. Tras unos minutos experimentando con esta tecnología surge enseguida la primera duda: ¿cómo puedo escribir ecuaciones en línea?&lt;/p&gt;
+&lt;p&gt;Para empezar, recomiendo encarecidamente que acudamos a la página de 
+&lt;a href=&#34;https://github.com/Khan/KaTeX/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;versiones&lt;/a&gt; de &lt;em&gt;KaTeX&lt;/em&gt; y nos hagamos con la última de ellas, para estar al día en las opciones que ofrece esta herramienta. A la hora de escribir estas líneas, dicha versión venía etiquetada como &lt;code&gt;v0.10.0-rc.1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para ello, hacemos clic sobre el enlace denominado &lt;code&gt;katex.zip&lt;/code&gt; y así iniciaremos la descarga de un archivo comprimido, del cual nos interesan especialmente dos archivos contenidos en su interior:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;katex.min.css&lt;/code&gt; y&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;katex.min.js&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;El primero de ellos lo ubicaremos, dentro del directorio donde hayamos decidido almacenar localmente el sitio web, en la ruta &lt;code&gt;\static\css\&lt;/code&gt;, mientras que el segundo en &lt;code&gt;\static\js\&lt;/code&gt;, sobrescribiendo en ambos casos las antiguas versiones que existiesen en dichas carpetas.&lt;/p&gt;
+&lt;p&gt;Una vez al día, la siguiente tarea implica la modificación de una de las plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, concretamente la denominada como &lt;code&gt;footer.html&lt;/code&gt;, ubicada en la ruta &lt;code&gt;\layouts\partials\&lt;/code&gt;. Editamos el mencionado fichero con &lt;em&gt;Sublime Text 3&lt;/em&gt; y buscamos la siguiente línea:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt; renderMathInElement(document.body); &amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos a configurar &lt;em&gt;KaTeX&lt;/em&gt; de manera que reconozca las expresiones encerradas entre &lt;code&gt;$&lt;/code&gt; o &lt;code&gt;\\(&lt;/code&gt; como ecuaciones en línea, mientras que las delimitadas por &lt;code&gt;$$&lt;/code&gt; o &lt;code&gt;\\[&lt;/code&gt; como ecuaciones centradas en sus propias líneas. Para ello, tecleamos en el lugar de la anterior instrucción el siguiente bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;script&amp;gt;
+  renderMathInElement(
+    document.body,
+    {
+      delimiters: [
+        {left: &amp;quot;$$&amp;quot;, right: &amp;quot;$$&amp;quot;, display: true},
+        {left: &amp;quot;\\[&amp;quot;, right: &amp;quot;\\]&amp;quot;, display: true},
+        {left: &amp;quot;$&amp;quot;, right: &amp;quot;$&amp;quot;, display: false},
+        {left: &amp;quot;\\(&amp;quot;, right: &amp;quot;\\)&amp;quot;, display: false}
+      ]
+    }
+  );
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Una vez habilitada la opción de escribir ecuaciones en línea, un hecho salta a la vista de inmediato: ¿no parece que el tamaño de letra para las expresiones matemáticas es mayor que el declarado para el texto estándar? Efectivamente, peculiaridad que, en mi opinión, desluce bastante el aspecto (e incluso diría que dificulta la lectura) de los artículos.&lt;/p&gt;
+&lt;p&gt;La solución pasa por modificar la hoja de estilos del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, almacenada en el archivo &lt;code&gt;main.css&lt;/code&gt;, que está ubicado en la ruta &lt;code&gt;\static\css\&lt;/code&gt;. Tras experimentar con cierto rango de valores para el tamaño de fuente de los objetos de la clase &lt;code&gt;.katex&lt;/code&gt;, al final me he decantado por la siguiente solución, que he colocado al principio del fichero &lt;code&gt;main.css&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* Modificación para hacer que el tamaño de letra de KaTeX sea similar al de la web */
+.katex { font-size: 1.1em !important; }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En los próximos artículos del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; continuaremos con la edición de diversas plantillas del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, para terminar de aprender cómo adaptarlo a nuestro gusto.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Publicando la primera entrada en nuestro sitio web</title>
+      <link>https://imalexissaez.github.io/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/</link>
+      <pubDate>Thu, 30 Aug 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/</guid>
+      <description>&lt;p&gt;Tras haber recorrido, en el 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, las seis estaciones del vía crucis asociado al calvario de la instalación de &lt;em&gt;Hugo&lt;/em&gt; y la personalización del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, llega el momento más anhelado por todos: generar contenido para el sitio web.&lt;/p&gt;
+&lt;p&gt;A continuación, examinaremos, con sumo detalle, todo el proceso de elaboración y revisión local de artículos para nuestra página web. Para empezar, me gustaría comentar que, en el apartado de la 
+&lt;a href=&#34;https://gohugo.io/getting-started/quick-start/#step-4-add-some-content&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;guía oficial&lt;/a&gt; asociado a este asunto, se utiliza la combinación de la terminal del sistema y el comando &lt;code&gt;hugo new&lt;/code&gt; para dar a luz, de manera automática, una nueva entrada en el sitio web.&lt;/p&gt;
+&lt;p&gt;No obstante, como no podía ser de otra manera y en un acto de la más absurda rebeldía, prefiero llevar a cabo este proceso de forma manual (qué obsesión con el control tengo, ¿verdad?). Si nos fijamos, desde el &lt;em&gt;explorador de archivos&lt;/em&gt; de &lt;em&gt;Windows&lt;/em&gt;, en la estructura de nuestra página web (heredada del sitio de ejemplo del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;), en el interior del directorio raíz existe una carpeta denominada &lt;code&gt;\content\&lt;/code&gt;, dentro de la cual residen anidadas otras dos: &lt;code&gt;\page\&lt;/code&gt; y &lt;code&gt;\post\&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para respetar este esquema, he decidido ubicar todos los artículos del sitio web que se organicen por alguna taxonomía (recordemos que, en 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&#34;&gt;esta entrada&lt;/a&gt;, incluso añadimos alguna adicional a las que vienen dadas por defecto con &lt;em&gt;Hugo&lt;/em&gt;) en la carpeta &lt;code&gt;\post\&lt;/code&gt;, mientras que el resto irá al directorio &lt;code&gt;\page\&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Siguiendo esta lógica, como seguramente la primera entrada que vayamos a publicar en nuestro sitio web será una especie de presentación en su blog, generaremos, utilizando &lt;em&gt;Sublime Text 3&lt;/em&gt;, un nuevo fichero en la carpeta &lt;code&gt;\post\&lt;/code&gt;. Este poseerá la extensión &lt;code&gt;.md&lt;/code&gt;, pues vamos a escribir todos y cada uno de nuestros artículos utilizando el lenguaje de marcado &lt;em&gt;Markdown&lt;/em&gt;. Para aquellas personas que escuchan por primera vez hablar de él, recomiendo encarecidamente que dediquen unos minutos a completar 
+&lt;a href=&#34;https://www.markdowntutorial.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este tutorial&lt;/a&gt; sobre el mismo.&lt;/p&gt;
+&lt;p&gt;La estructura de todo artículo será la que figura acto seguido:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
+Metadatos del artículo.
+---
+
+Párrafo (o párrafos) de introducción al artículo.
+
+Cuerpo del artículo.
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Al comienzo de cada entrada ubicaremos, delimitada por los caracteres &lt;code&gt;---&lt;/code&gt;, cierta información relevante (metadatos) acerca de la misma, que suministraremos en la forma de pares &lt;code&gt;variable: valor&lt;/code&gt;. Las variables disponibles a nuestro alcance vendrán determinadas por el tema que hayamos escogido finalmente para nuestro sitio web, aunque sí que es cierto que algunas de ellas son comunes a la mayoría de los temas (como, por ejemplo, &lt;code&gt;title&lt;/code&gt;, &lt;code&gt;date&lt;/code&gt; o &lt;code&gt;draft&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Teniendo en cuenta que nuestra página web hace uso del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, y considerando la definición de taxonomías y la personalización del &lt;em&gt;permalink&lt;/em&gt; que llevamos a cabo en 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&#34;&gt;esta entrada&lt;/a&gt;, utilizo siempre el mismo esquema para la cabecera de mis artículos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
+title:
+slug:
+date:
+draft:
+bigimg:
+apartados:
+etiquetas:
+proyectos:
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En el caso particular de esta entrada, la anterior cabecera ha quedado como sigue:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-yaml&#34;&gt;---
+title:  &amp;quot;Publicando la primera entrada en nuestro sitio web&amp;quot;
+slug:   &amp;quot;publicando-la-primera-entrada-en-nuestro-sitio-web&amp;quot;
+date:   &amp;quot;2018-08-30T05:59:39+02:00&amp;quot;
+draft:  false
+bigimg: [{src: &amp;quot;img/blog/20180830-cabecera.jpg&amp;quot;}]
+apartados: [&amp;quot;Blog&amp;quot;]
+etiquetas: [&amp;quot;Hugo&amp;quot;]
+proyectos: [&amp;quot;MetaBlog&amp;quot;]
+---
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Veamos a continuación el cometido de cada una de las variables que figuran en la cabecera:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: contiene el título del artículo. A diferencia de otros temas, por desgracia &lt;em&gt;Beautiful Hugo&lt;/em&gt; no admite la posibilidad de emplear &lt;em&gt;Markdown&lt;/em&gt; o &lt;em&gt;LaTeX&lt;/em&gt; en ciertas partes del título, hecho que debemos tener en consideración.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slug&lt;/code&gt;: tal y como comentamos en 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&#34;&gt;esta entrada&lt;/a&gt;, vamos a configurar manualmente el &lt;em&gt;permalink&lt;/em&gt; de cada entrada. Una de sus partes será, precisamente, la asociada a esta variable. Para generar su valor, sustituyo a mano los espacios por guiones y suprimo cualquier acento, eñe o carácter extraño a los ojos del alfabeto inglés que pudiese figurar en el título del artículo. En particular, para esta entrada, el &lt;em&gt;permalink&lt;/em&gt; será &lt;code&gt;/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/&lt;/code&gt;, es decir, la fecha de publicación junto al valor que hemos asignado a la variable &lt;code&gt;slug&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: fecha y hora de publicación del artículo. Me gustaría comentar aquí que nada nos impide generar contenido para fechas futuras, aunque cuando escribamos en la terminal del sistema &lt;code&gt;hugo server&lt;/code&gt;, no tendremos acceso a su revisión. Para solventar esta situación, tenemos que añadir la etiqueta &lt;code&gt;-F&lt;/code&gt;, es decir, teclear &lt;code&gt;hugo server -F&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;draft&lt;/code&gt;: variable que nos permite indicar si la entrada en concreto tiene carácter de borrador (utilizando el valor &lt;code&gt;true&lt;/code&gt;) o si ya está lista para su publicación en nuestro sitio web (empleando el valor &lt;code&gt;false&lt;/code&gt;). Para revisar localmente una página web que contenga artículos en forma de borrador, hemos de escribir en la terminal del sistema &lt;code&gt;hugo server -D&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigimg&lt;/code&gt;: esta variable nos permite insertar la ruta hacia una imagen de cabecera para nuestros artículos. En 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&#34;&gt;esta entrada&lt;/a&gt; está explicado en detalle el funcionamiento de esta característica particular del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;apartados&lt;/code&gt;: primera taxonomía que utilizaremos para agrupar contenido según la categoría a la que pertenezca el artículo. No es más que la localización al español de la habitual &lt;code&gt;categories&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;etiquetas&lt;/code&gt;: segunda taxonomía que utilizaremos para agrupar contenido según las palabras clave que caractericen a la entrada. No es más que la localización al español de la habitual &lt;code&gt;tags&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;proyectos&lt;/code&gt;: tercera taxonomía (generalmente opcional) que nos permitirá agrupar contenido que pertenezca a distintos apartados y posea diferentes etiquetas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tras declarar la cabecera, redactaremos un párrafo (o varios) de introducción al artículo, tras los cuales escribiremos la instrucción &lt;code&gt;more&lt;/code&gt;, precedida de los símbolos &lt;code&gt;&amp;lt;!--&lt;/code&gt; y seguida de &lt;code&gt;--&amp;gt;&lt;/code&gt;. Dichos párrafos, además de ser aquellos que den comienzo a nuestra entrada, serán los que figuren en las páginas de listado de nuestro sitio web. ¿A qué me refiero con las páginas de listado? Serían, por ejemplo, la principal de acceso al sitio web y todas aquellas que ofrecen un índice que contiene los artículos asociados a una taxonomía en particular.&lt;/p&gt;
+&lt;p&gt;Tras dicha instrucción, finalmente, ya solo nos restará explayarnos tanto como deseemos en el cuerpo de la entrada. &lt;em&gt;The sky is the limit!&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;En el próximo artículo del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; estudiaremos cómo utilizar &lt;em&gt;GitHub&lt;/em&gt; para alojar nuestra página web en &lt;em&gt;Internet&lt;/em&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configurando el tema Beautiful Hugo (II)</title>
+      <link>https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/</link>
+      <pubDate>Thu, 09 Aug 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/</guid>
+      <description>&lt;p&gt;Nos quedamos, en la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/&#34;&gt;anterior entrada&lt;/a&gt; del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, a falta de revisar la parte final del archivo de configuración &lt;code&gt;config.toml&lt;/code&gt;. Terminemos pues de echarle un vistazo a dicho fichero en este artículo.&lt;/p&gt;
+&lt;p&gt;Al finalizar la personalización de los parámetros básicos del sitio web, se asomaba ante nosotros el siguiente, y muy extraño, bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#[[Params.bigimg]]
+#  src = &amp;quot;img/triangle.jpg&amp;quot;
+#  desc = &amp;quot;Triangle&amp;quot;
+#[[Params.bigimg]]
+#  src = &amp;quot;img/sphere.jpg&amp;quot;
+#  desc = &amp;quot;Sphere&amp;quot;
+#  # position: see values of CSS background-position.
+#  position = &amp;quot;center top&amp;quot;
+#[[Params.bigimg]]
+#  src = &amp;quot;img/hexagon.jpg&amp;quot;
+#  desc = &amp;quot;Hexagon&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nada intuitivo su contenido y carente por completo de comentarios, hecho nada halagüeño. Sin embargo, basta que experimentemos un poco con la anteriores líneas para comprobar que esta sección del archivo &lt;code&gt;config.toml&lt;/code&gt; es la dedicada a gestionar la aparición de un carrusel de imágenes en la página web de acceso, situándolo justo detrás del título.&lt;/p&gt;
+&lt;p&gt;Conviene que le echemos un vistazo a la entrada que aparece en el propio blog de ejemplo del tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; hablando de la gestión de imágenes de cabecera. En el caso de haber varias declaradas, estas rotan cada diez segundos. Por otro lado, tenemos a nuestra disposición los siguientes parámetros de configuración:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;src&lt;/code&gt;: ruta que apunta a la ubicación de la imagen de cabecera.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;desc&lt;/code&gt;: parámetro opcional que nos permite incorporar un pequeño texto sobre la imagen, a modo de pie de figura.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En mi caso, tras navegar un rato por 
+&lt;a href=&#34;https://unsplash.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Unsplash&lt;/a&gt;, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración del carrusel de imágenes de la página de inicio
+#
+[[Params.bigimg]]
+  src = &amp;quot;img/homepage-cabecera-01.jpg&amp;quot;
+[[Params.bigimg]]
+  src = &amp;quot;img/homepage-cabecera-02.jpg&amp;quot;
+[[Params.bigimg]]
+  src = &amp;quot;img/homepage-cabecera-03.jpg&amp;quot;
+[[Params.bigimg]]
+  src = &amp;quot;img/homepage-cabecera-04.jpg&amp;quot;
+[[Params.bigimg]]
+  src = &amp;quot;img/homepage-cabecera-05.jpg&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Desvelado el anterior misterio, continuemos con la revisión del archivo &lt;code&gt;config.toml&lt;/code&gt;. El siguiente bloque de instrucciones hace referencia a los datos sobre el autor del sitio web (nombre, correo electrónico, etc.). Nos permite, además, configurar una amplia gama de enlaces a nuestras cuentas de redes sociales para así facilitar la conexión entre personas. Originalmente, dicho bloque presenta el siguiente aspecto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[Author]
+  name = &amp;quot;Some Person&amp;quot;
+  website = &amp;quot;yourwebsite.com&amp;quot;
+  email = &amp;quot;youremail@domain.com&amp;quot;
+  facebook = &amp;quot;username&amp;quot;
+  googleplus = &amp;quot;+username&amp;quot; # or xxxxxxxxxxxxxxxxxxxxx
+  github = &amp;quot;username&amp;quot;
+  gitlab = &amp;quot;username&amp;quot;
+  bitbucket = &amp;quot;username&amp;quot;
+  twitter = &amp;quot;username&amp;quot;
+  reddit = &amp;quot;username&amp;quot;
+  linkedin = &amp;quot;username&amp;quot;
+  xing = &amp;quot;username&amp;quot;
+  stackoverflow = &amp;quot;users/XXXXXXX/username&amp;quot;
+  snapchat = &amp;quot;username&amp;quot;
+  instagram = &amp;quot;username&amp;quot;
+  youtube = &amp;quot;user/username&amp;quot; # or channel/channelname
+  soundcloud = &amp;quot;username&amp;quot;
+  spotify = &amp;quot;username&amp;quot;
+  bandcamp = &amp;quot;username&amp;quot;
+  itchio = &amp;quot;username&amp;quot;
+  vk = &amp;quot;username&amp;quot;
+  paypal = &amp;quot;username&amp;quot;
+  telegram = &amp;quot;username&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Personalmente, no utilizo apenas las redes sociales y confieso que, del anterior listado, ni siquiera conozco algunas de ellas. Así pues, como no podía ser de otra manera, en mi caso el anterior bloque de código ha quedado ciertamente reducido:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración del autor
+#
+[Author]
+  name    = &amp;quot;Alexis Sáez&amp;quot;
+  website = &amp;quot;https://imalexissaez.github.io/&amp;quot;
+  email   = &amp;quot;imalexissaez@gmail.com&amp;quot;
+  github  = &amp;quot;ImAlexisSaez&amp;quot;
+  twitter = &amp;quot;imalexissaez&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;El último bloque de instrucciones que se presenta ante nosotros nos ofrece la posibilidad de configurar el menú que aparece en la parte superior derecha y presenta el siguiente aspecto:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[[menu.main]]
+    name = &amp;quot;Blog&amp;quot;
+    url = &amp;quot;&amp;quot;
+    weight = 1
+
+[[menu.main]]
+    name = &amp;quot;About&amp;quot;
+    url = &amp;quot;page/about/&amp;quot;
+    weight = 3
+
+[[menu.main]]
+    identifier = &amp;quot;samples&amp;quot;
+    name = &amp;quot;Samples&amp;quot;
+    weight = 2
+
+[[menu.main]]
+    parent = &amp;quot;samples&amp;quot;
+    name = &amp;quot;Big Image Sample&amp;quot;
+    url = &amp;quot;post/2017-03-07-bigimg-sample&amp;quot;
+    weight = 1
+
+[[menu.main]]
+    parent = &amp;quot;samples&amp;quot;
+    name = &amp;quot;Math Sample&amp;quot;
+    url = &amp;quot;post/2017-03-05-math-sample&amp;quot;
+    weight = 2
+
+[[menu.main]]
+    parent = &amp;quot;samples&amp;quot;
+    name = &amp;quot;Code Sample&amp;quot;
+    url = &amp;quot;post/2016-03-08-code-sample&amp;quot;
+    weight = 3
+
+[[menu.main]]
+    name = &amp;quot;Tags&amp;quot;
+    url = &amp;quot;tags&amp;quot;
+    weight = 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;No obstante, de momento, dejaremos el anterior bloque tal cual figura arriba y ya procederemos en un futuro a su modificación, cuando incorporemos algunos cambios adicionales al sitio web.&lt;/p&gt;
+&lt;p&gt;Fin del archivo &lt;code&gt;config.toml&lt;/code&gt;, fin de la entrada, ¿verdad? Todavía no. Nos quedan un par de detalles a los que echarles un vistazo.&lt;/p&gt;
+&lt;p&gt;Para empezar, a continuación, configuraremos las taxonomías de nuestro sitio web. ¿Qué es una taxonomía? Sin pretender entrar en detalles técnicos aquí, para que nos hagamos una idea, una taxonomía es un instrumento que nos permite agrupar contenido relacionado. Los ejemplos más habituales a los que estamos acostumbrados son &lt;em&gt;categorías&lt;/em&gt; y &lt;em&gt;etiquetas&lt;/em&gt; (que aquí se llamarán &lt;em&gt;categories&lt;/em&gt; y &lt;em&gt;tags&lt;/em&gt;), que facilitan al lector encontrar artículos que comparten cierta temática.&lt;/p&gt;
+&lt;p&gt;En mi caso, para &lt;em&gt;Infinitos Contrastes&lt;/em&gt;, conservaré ambas, aunque renombrando su versión inglesa al castellano, para facilitar después la configuración de la localización de la plantilla. Así, &lt;code&gt;categories&lt;/code&gt; pasará a ser &lt;code&gt;apartados&lt;/code&gt;, mientras que &lt;code&gt;tags&lt;/code&gt; se convertirá en &lt;code&gt;etiquetas&lt;/code&gt;. Además, declararé una nueva taxonomía denominada &lt;code&gt;proyectos&lt;/code&gt;, que me facilitará agrupar fácilmente contenido, llegado el caso, de distintos apartados o etiquetas.&lt;/p&gt;
+&lt;p&gt;Todo ello se traduce en incluir el siguiente bloque de código en el fichero &lt;code&gt;config.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de taxonomías
+#
+[taxonomies]
+  category = &amp;quot;categories&amp;quot;
+  tag      = &amp;quot;tags&amp;quot;
+  apartado = &amp;quot;apartados&amp;quot;
+  proyecto = &amp;quot;proyectos&amp;quot;
+  etiqueta = &amp;quot;etiquetas&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Recomiendo seguir la estructura &lt;code&gt;singular = plural&lt;/code&gt; marcada en la 
+&lt;a href=&#34;https://gohugo.io/content-management/taxonomies/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;guía oficial&lt;/a&gt; de taxonomías de &lt;em&gt;Hugo&lt;/em&gt;. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter &lt;code&gt;s&lt;/code&gt; final.&lt;/p&gt;
+&lt;p&gt;¿Por qué debemos cuidar tanto el detalle a la hora de declarar taxonomías? Es posible que en un futuro nos adentremos en la personalización de las plantillas del tema y &lt;em&gt;Hugo&lt;/em&gt; incorpora útiles funciones para recorrer bucles apoyándose en esta curiosa relación singular-plural. Es por ello que no vamos a pegarnos un tiro en los pies declarando parejas de variables y valores que luego nos impidan aprovecharnos de las mencionadas herramientas.&lt;/p&gt;
+&lt;p&gt;Por último, para finalizar este artículo, echaremos un vistazo a la configuración del 
+&lt;a href=&#34;https://gohugo.io/content-management/urls/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;permalink&lt;/a&gt; de las entradas del sitio web. Por defecto, &lt;em&gt;Hugo&lt;/em&gt; utiliza el directorio donde se encuentre el contenido (generalmente es &lt;code&gt;\post\&lt;/code&gt;) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.&lt;/p&gt;
+&lt;p&gt;Para empezar, me gustaría que apareciese el día de publicación del artículo en el &lt;em&gt;permalink&lt;/em&gt;, siguiendo el formato &lt;code&gt;/año/mes/día&lt;/code&gt;. Por otro lado, como soy consciente de que utilizar caracteres extraños a ojos del alfabeto inglés (tildes, eñes, etc.), en ocasiones, es fuente de problemas, en cada entrada definiré manualmente mi propio &lt;em&gt;slug&lt;/em&gt;, para evitar que la traducción automática del título hacia su correspondiente parte del &lt;em&gt;permalink&lt;/em&gt; dé lugar a resultados no deseados.&lt;/p&gt;
+&lt;p&gt;Así pues, mi archivo &lt;code&gt;config.toml&lt;/code&gt; finaliza con el siguiente bloque código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración del permalink
+#
+[permalinks]
+  post = &amp;quot;/:year/:month/:day/:slug/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;En el siguiente artículo del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Configurando el tema Beautiful Hugo (I)</title>
+      <link>https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/</link>
+      <pubDate>Tue, 07 Aug 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/</guid>
+      <description>&lt;p&gt;Continuemos esta serie de artículos, pertenecientes al 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt;, donde examinamos con detalle la creación de sitios web utilizando &lt;em&gt;Hugo&lt;/em&gt;. Hoy veremos cómo instalar y configurar el tema 
+&lt;a href=&#34;https://themes.gohugo.io/beautifulhugo/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Beautiful Hugo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;En la 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/07/17/configurando-el-tema-ananke/&#34;&gt;anterior entrada&lt;/a&gt; vimos el proceso a seguir para el tema &lt;em&gt;Anake&lt;/em&gt;. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para &lt;em&gt;Infinitos Contrastes&lt;/em&gt;. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la 
+&lt;a href=&#34;https://themes.gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;sección de temas&lt;/a&gt; de la web oficial de &lt;em&gt;Hugo&lt;/em&gt;, encontré, para mi fortuna, el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;, una adaptación del tema &lt;em&gt;Beautiful Jekyll&lt;/em&gt; que ya utilicé en su momento como plantilla para mi sitio web.&lt;/p&gt;
+&lt;p&gt;Me encanta este tema por el protagonismo que ofrece al contenido, evitando toda esa miríada de elementos que algunas plantillas incorporan y que distraen enormemente la atención a la hora de consultar la información contenida en los artículos. Además, viene con el interesante añadido para un matemático de incorporar, de serie, la configuración adecuada para escribir fórmulas vía &lt;em&gt;KaTeX&lt;/em&gt; (es un detalle con cierta trampa, ya que buenas batallas estoy lidiando, en ocasiones, para que las expresiones matemáticas se visualicen como deberían).&lt;/p&gt;
+&lt;p&gt;Así pues, procedamos a su instalación. Para ello, en la terminal, desde el directorio raíz donde hayamos escogido alojar localmente nuestro sitio web, tecleamos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd themes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;y clonamos, en esta carpeta, el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt; escribiendo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/halogenica/beautifulhugo.git beautifulhugo
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Al igual que el tema &lt;em&gt;Anake&lt;/em&gt;, &lt;em&gt;Beautiful Hugo&lt;/em&gt; viene acompañado, para nuestro gozo y disfrute, con un pequeño sitio web de muestra, ubicado en la carpeta &lt;code&gt;exampleSite&lt;/code&gt; (siendo la ruta completa &lt;code&gt;\themes\beautifulhugo\exampleSite&lt;/code&gt;). A través del &lt;em&gt;Explorador de archivos&lt;/em&gt; de &lt;em&gt;Windows&lt;/em&gt; podemos comprobar que su contenido es el que se muestra en la siguiente imagen:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-contenido-del-sitio-web-de-ejemplo&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/20180807-img01_hu4ce66409e8b1ed97e8056bfee71b847c_1870_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Contenido del sitio web de ejemplo&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/08/07/configurando-el-tema-beautiful-hugo-i/20180807-img01_hu4ce66409e8b1ed97e8056bfee71b847c_1870_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;91&#34; height=&#34;90&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Contenido del sitio web de ejemplo
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Procedemos entonces a copiar las carpetas &lt;code&gt;contents&lt;/code&gt;, &lt;code&gt;layouts&lt;/code&gt; y &lt;code&gt;static&lt;/code&gt;, así como el archivo &lt;code&gt;config.toml&lt;/code&gt; y las pegamos en el directorio raíz de nuestro sitio web. A estas alturas de la película, dependiendo de la intensidad con la que hayamos estado experimentando con diversas plantillas, recomendaría incluso eliminar previamente las mencionadas carpetas y el citado fichero antes de proceder a la acción de pegar, para así evitar la aparición de extraños conflictos en un futuro próximo.&lt;/p&gt;
+&lt;p&gt;Ahora, editamos el archivo &lt;code&gt;config.toml&lt;/code&gt;, utilizando &lt;em&gt;Sublime Text 3&lt;/em&gt; para ello, con el objetivo de empezar a personalizar la configuración de esta plantilla. Algunos de los detalles que a continuación veremos son muy similares a los que discutimos durante el artículo dedicado al tema &lt;em&gt;Anake&lt;/em&gt;, por lo que en esta ocasión el ritmo de exposición será más ligero.&lt;/p&gt;
+&lt;p&gt;El primer bloque de código que encontramos es:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;baseurl = &amp;quot;https://username.github.io&amp;quot;
+DefaultContentLanguage = &amp;quot;en&amp;quot;
+#DefaultContentLanguage = &amp;quot;ja&amp;quot;
+title = &amp;quot;Beautiful Hugo&amp;quot;
+theme = &amp;quot;beautifulhugo&amp;quot;
+metaDataFormat = &amp;quot;yaml&amp;quot;
+pygmentsStyle = &amp;quot;trac&amp;quot;
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#pygmentsUseClassic = true
+#pygmentOptions = &amp;quot;linenos=inline&amp;quot;
+#disqusShortname = &amp;quot;XXX&amp;quot;
+#googleAnalytics = &amp;quot;XXX&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Algunas variables nos resultarán familiares, por lo que seremos capaces inmediatamente de asignarles sus correspondientes valores. Por ejemplo, las primeras líneas, en mi caso, han quedado como sigue:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración básica del sitio
+#
+title   = &amp;quot;Infinitos Contrastes&amp;quot;            # Título de la web
+theme   = &amp;quot;beautifulhugo&amp;quot;                   # Tema 
+baseurl = &amp;quot;https://imalexissaez.github.io/&amp;quot; # URL base
+metaDataFormat         = &amp;quot;yaml&amp;quot;             # Formato de las cabeceras de las entradas
+DefaultContentLanguage = &amp;quot;es&amp;quot;               # Lenguaje de la web (activa localización)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ninguna sorpresa aquí. Entre los descriptivos nombres que poseen las variables y los comentarios que he añadido, no es descabellado suponer que todos configuraremos de manera adecuada el anterior bloque.&lt;/p&gt;
+&lt;p&gt;Ahora bien, el siguiente apartado sí que merece explicación por mi parte:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de los bloques de código fuente
+# Guía en: https://gohugo.io/content-management/syntax-highlighting/
+#
+pygmentsStyle                 = &amp;quot;trac&amp;quot;
+pygmentsUseClasses            = true
+pygmentsCodeFences            = true
+pygmentsCodefencesGuessSyntax = true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;He dejado en los comentarios un enlace a la guía oficial para la configuración del 
+&lt;a href=&#34;https://gohugo.io/content-management/syntax-highlighting/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;resaltado de código&lt;/a&gt; a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos &lt;em&gt;CSS&lt;/em&gt; que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor &lt;code&gt;&amp;quot;trac&amp;quot;&lt;/code&gt;, en mi opinión, es el que más a juego va con &lt;em&gt;Beautiful Hugo&lt;/em&gt;. Por otro lado, como este tema utiliza la librería 
+&lt;a href=&#34;https://highlightjs.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;highlight.js&lt;/a&gt; (en lugar de la que &lt;em&gt;Hugo&lt;/em&gt; incorpora por defecto) para el mencionado resaltado, hemos de asignar &lt;code&gt;true&lt;/code&gt; a la variable &lt;code&gt;pygmentsUseClasses&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación, habilitamos la posibilidad de escribir código fuente en &amp;ldquo;&lt;em&gt;fences&lt;/em&gt;&amp;quot;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la 
+&lt;a href=&#34;https://kramdown.gettalong.org/quickref.html#code-blocks&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;guía oficial&lt;/a&gt; de &lt;em&gt;Kramdown&lt;/em&gt; sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el &lt;em&gt;shortcode&lt;/em&gt; &lt;code&gt;highlight&lt;/code&gt; se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.&lt;/p&gt;
+&lt;p&gt;Además, aunque hemos activado la opción de adivinar el lenguaje de programación por su sintaxis, recomendaría aquí que ayudásemos en lo posible a la librería y le indicáramos cuál estamos empleando, para que así aplique la configuración adecuada para él. Actuar así es crítico cuando, como en este artículo, compartimos pequeños bloques de código, de forma que es bastante complicado acertar con el lenguaje de programación dada la escasa información que suministramos.&lt;/p&gt;
+&lt;p&gt;Finalmente, nos limitaremos a introducir los valores correspondientes a las cuentas que habremos creado para &lt;em&gt;Disqus&lt;/em&gt; y para las estadísticas de &lt;em&gt;Google&lt;/em&gt; en el siguiente bloque de código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de los comentarios (Disqus)
+#
+disqusShortname = &amp;quot;&amp;quot;
+
+#
+# Configuración de las estadísticas (Google Analytics)
+#
+googleAnalytics = &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Nuestra siguiente parada será en la sección dedicada a la configuración de los parámetros del sitio web, que originalmente presenta el aspecto que se muestra a continuación:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[Params]
+#  homeTitle = &amp;quot;Beautiful Hugo Theme&amp;quot; # Set a different text for the header on the home page
+  subtitle = &amp;quot;Build a beautiful and simple website in minutes&amp;quot;
+  logo = &amp;quot;img/avatar-icon.png&amp;quot;
+  favicon = &amp;quot;img/favicon.ico&amp;quot;
+  dateFormat = &amp;quot;January 2, 2006&amp;quot;
+  commit = false
+  rss = true
+  comments = true
+  readingTime = true
+  useHLJS = true
+  socialShare = true
+#  gcse = &amp;quot;012345678901234567890:abcdefghijk&amp;quot; # Get your code from google.com/cse. Make sure to go to &amp;quot;Look and Feel&amp;quot; and change Layout to &amp;quot;Full Width&amp;quot; and Theme to &amp;quot;Classic&amp;quot;
+
+#[[Params.bigimg]]
+#  src = &amp;quot;img/triangle.jpg&amp;quot;
+#  desc = &amp;quot;Triangle&amp;quot;
+#[[Params.bigimg]]
+#  src = &amp;quot;img/sphere.jpg&amp;quot;
+#  desc = &amp;quot;Sphere&amp;quot;
+#  # position: see values of CSS background-position.
+#  position = &amp;quot;center top&amp;quot;
+#[[Params.bigimg]]
+#  src = &amp;quot;img/hexagon.jpg&amp;quot;
+#  desc = &amp;quot;Hexagon&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Empecemos analizando la primera parte que, en mi caso, ha quedado como sigue:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
+# Configuración de parámetros del sitio web
+#
+[Params]
+  subtitle    = &amp;quot;Laboratorio de experimentos de un matemático&amp;quot; # Subtítulo
+  logo        = &amp;quot;img/avatar.jpg&amp;quot;                               # Logo
+  favicon     = &amp;quot;img/favicon.ico&amp;quot;                              # Favicon
+  dateFormat  = &amp;quot;02-01-2006&amp;quot;                                   # Formato de la fecha
+  commit      = false                                          # commit en footer
+  rss         = true                                           # Sindicación
+  comments    = true                                           # Comentarios activados por defecto
+  readingTime = true                                           # Estimación del tiempo de lectura
+  useHLJS     = true                                           # Highlight.js para resaltado
+  socialShare = true                                           # Compartir entradas en redes sociales
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;ya que:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;No he visto la necesidad de utilizar la variable &lt;code&gt;homeTitle&lt;/code&gt; para modificar el texto que aparece al acceder al sitio web. Me parece adecuado que sea el nombre de la página web: &lt;em&gt;Infinitos Contrastes&lt;/em&gt;, pero, como siempre, &amp;ldquo;para gustos, los colores&amp;rdquo;. La variable &lt;code&gt;subtitle&lt;/code&gt; sí que me resulta interesante para ofrecer una breve descripción o eslogan de nuestra página web.&lt;/li&gt;
+&lt;li&gt;Los valores para las variables &lt;code&gt;logo&lt;/code&gt; y &lt;code&gt;favicon&lt;/code&gt; deben apuntar a las rutas donde ubiquemos las respectivas imágenes. Por defecto, las hojas de estilo &lt;em&gt;CSS&lt;/em&gt;, las librerías escritas con &lt;em&gt;JavaScript&lt;/em&gt; y las imágenes las almacenaremos en el interior del directorio &lt;code&gt;static&lt;/code&gt;. Como &lt;em&gt;Hugo&lt;/em&gt; supone este hecho, no es necesario que antecedamos cada ruta con &lt;code&gt;static&lt;/code&gt;, pero debemos ubicar cada recurso adecuadamente.&lt;/li&gt;
+&lt;li&gt;La localización de &lt;em&gt;Hugo&lt;/em&gt; a idiomas diferentes al inglés es todavía un aspecto que admite gran margen de mejora. Aunque &lt;em&gt;Beautiful Hugo&lt;/em&gt; incorpora la posibilidad de declarar ciertos textos para distintos idiomas, el tratamiento de las fechas no es todavía el adecuado para las opciones disponibles. Con el objeto de evitar entrar en agotadoras batallas, me he decantado finalmente por un formato &amp;ldquo;neutro&amp;rdquo; para expresar la fecha, en el sentido de que únicamente incluye números, evitando así que en la página aparezcan los nombres de los días de la semana o los de los meses en inglés.&lt;/li&gt;
+&lt;li&gt;La variable &lt;code&gt;commit&lt;/code&gt; nos permite insertar el código SHA correspondiente al &lt;em&gt;commit&lt;/em&gt; que generó la última versión del sitio web. No he considerado que dicha información fuera a proporcionar demasiada utilidad para una página como la mía, así que he declarado su valor como &lt;code&gt;false&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;El resto de las variables activan, pues su valor es &lt;code&gt;true&lt;/code&gt;, respectivamente, la sindicación vía &lt;em&gt;RSS&lt;/em&gt;, la posibilidad de realizar comentarios en los distintos artículos de la web (vía &lt;em&gt;Disqus&lt;/em&gt;), una estimación del tiempo de lectura para cada entrada (utilizando como referencia 200 palabras por minuto), el uso de la librería &lt;em&gt;highlight.js&lt;/em&gt; para resaltar código y el acceso a compartir nuestro contenido en distintas redes sociales.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Como la entrada está empezando a adquirir una extensión considerable. Vamos a poner aquí un punto y seguido, dejando para el próximo artículo del 
+&lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; el análisis del resto de la configuración del archivo &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

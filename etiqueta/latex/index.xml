@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX | Infinitos Contrastes</title>
+    <link>https://imalexissaez.github.io/etiqueta/latex/</link>
+      <atom:link href="https://imalexissaez.github.io/etiqueta/latex/index.xml" rel="self" type="application/rss+xml" />
+    <description>LaTeX</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Alexis Sáez ©2020</copyright><lastBuildDate>Wed, 07 Nov 2018 05:59:39 +0200</lastBuildDate>
+    <image>
+      <url>https://imalexissaez.github.io/img/sharing.jpg</url>
+      <title>LaTeX</title>
+      <link>https://imalexissaez.github.io/etiqueta/latex/</link>
+    </image>
+    
+    <item>
+      <title>¿Cómo dividir polinomios con LaTeX en conjuntos finitos?</title>
+      <link>https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/</link>
+      <pubDate>Wed, 07 Nov 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/</guid>
+      <description>&lt;p&gt;La 
+&lt;a href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/&#34;&gt;semana anterior&lt;/a&gt; analizamos el paquete &lt;code&gt;polynom&lt;/code&gt;, que nos permite fácilmente llevar a cabo la transcripción de divisiones de polinomios con &lt;em&gt;LaTeX&lt;/em&gt;. A continuación, estudiaremos una manera alternativa para lidiar con este asunto que, además, nos permitirá operar en conjuntos finitos.&lt;/p&gt;
+&lt;p&gt;Supongamos, sin pérdida de generalidad, que nuestro objetivo es dividir los polinomios&lt;/p&gt;
+&lt;p&gt;$$
+5x^5 - 2x^4 + 2x^3 - 5x^2 + 2x + 1
+$$&lt;/p&gt;
+&lt;p&gt;y&lt;/p&gt;
+&lt;p&gt;$$
+3x^3 + x^2 - 5x + 2
+$$&lt;/p&gt;
+&lt;p&gt;en $\mathbb{Z}_7$. Para ello, &amp;lsquo;&amp;lsquo;dibujaremos&amp;rsquo;&amp;rsquo; la operación matemática en una matriz, método que nos permitirá organizar fácilmente los pasos y, de paso, imprimir algunas rayas horizontales cuando proceda.&lt;/p&gt;
+&lt;p&gt;Para empezar, en el preámbulo del documento, insertamos las dos siguientes líneas:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\usepackage{tikz}
+\usetikzlibrary{matrix}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Ahora, donde deseemos ubicar la división de los anteriores polinomios, tecleamos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\begin{center}
+\begin{tikzpicture}
+\matrix (a) [matrix of math nodes, column sep=0pt]
+{
+5x^5 &amp;amp; -2x^4 &amp;amp; +2x^3 &amp;amp; -5x^2 &amp;amp; +2x &amp;amp; +1 &amp;amp;  &amp;amp; 3x^3+x^2-5x+2 \\
+};
+\draw (a-1-8.north west) |- (a-1-8.south east);
+\end{tikzpicture}
+\end{center}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;dando el resultado que figura en la siguiente imagen:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-primer-resultado-parcial&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Primer resultado parcial.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;925&#34; height=&#34;65&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Primer resultado parcial.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Organizar los monomios del dividendo como elementos individuales de una matriz nos facilitará la empresa de &amp;lsquo;&amp;lsquo;alinear&amp;rsquo;&amp;rsquo; las posteriores operaciones de la división. Por otro lado, el comando &lt;code&gt;draw&lt;/code&gt; es el que dibuja la &amp;lsquo;&amp;lsquo;caja&amp;rsquo;&amp;rsquo; de esta operación matemática, tomando como referencia las posiciones de los elementos de la matriz.&lt;/p&gt;
+&lt;p&gt;Continuemos la división, siempre teniendo en cuenta que trabajamos en $\mathbb{Z}_7$. Así, para la primera etapa, teclearíamos acto seguido:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\begin{center}
+\begin{tikzpicture}
+\matrix (a) [matrix of math nodes, column sep=0pt]
+{
+ 5x^5 &amp;amp; -2x^4 &amp;amp; +2x^3 &amp;amp; -5x^2 &amp;amp; +2x &amp;amp; +1 &amp;amp;  &amp;amp; 3x^3+x^2-5x+2 \\
+-5x^2 &amp;amp; +3x^4 &amp;amp;  -x^3 &amp;amp;  -x^2 &amp;amp;     &amp;amp;    &amp;amp;  &amp;amp; 4x^2\\
+      &amp;amp;  +x^4 &amp;amp;  +x^3 &amp;amp;  +x^2 &amp;amp; +2x &amp;amp;    &amp;amp;  &amp;amp; \\
+};
+\draw (a-1-8.north west) |- (a-1-8.south east);
+\draw (a-2-1.south west) -- (a-2-4.south east);
+\end{tikzpicture}
+\end{center}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cuyo resultado se recoge en la siguiente figura:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-segundo-resultado-parcial&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Segundo resultado parcial.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;921&#34; height=&#34;149&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Segundo resultado parcial.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Efectivamente, no queda tan estético como el que conseguíamos la semana pasada con el paquete &lt;code&gt;polynom&lt;/code&gt;. No obstante, funcionalmente hablando, los pequeños desajustes horizontales de signos no molestan en exceso.&lt;/p&gt;
+&lt;p&gt;Una vez asimilada la idea del procedimiento a seguir, únicamente nos resta continuar con la división, escribiendo ahora:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\begin{center}
+\begin{tikzpicture}
+\matrix (a) [matrix of math nodes, column sep=0pt]
+{
+ 5x^5 &amp;amp; -2x^4 &amp;amp; +2x^3 &amp;amp; -5x^2 &amp;amp; +2x &amp;amp; +1 &amp;amp;  &amp;amp; 3x^3+x^2-5x+2 \\
+-5x^2 &amp;amp; +3x^4 &amp;amp;  -x^3 &amp;amp;  -x^2 &amp;amp;     &amp;amp;    &amp;amp;  &amp;amp; 4x^2 + 5x + 1\\
+      &amp;amp;  +x^4 &amp;amp;  +x^3 &amp;amp;  +x^2 &amp;amp; +2x &amp;amp;    &amp;amp;  &amp;amp; \\
+      &amp;amp;  -x^4 &amp;amp; +2x^3 &amp;amp; -3x^2 &amp;amp; -3x &amp;amp;    &amp;amp;  &amp;amp; \\
+      &amp;amp;       &amp;amp; +3x^3 &amp;amp; -2x^2 &amp;amp;  -x &amp;amp; +1 &amp;amp;  &amp;amp; \\
+      &amp;amp;       &amp;amp; -3x^3 &amp;amp;  -x^2 &amp;amp; -2x &amp;amp; -2 &amp;amp;  &amp;amp; \\
+      &amp;amp;       &amp;amp;       &amp;amp; -3x^2 &amp;amp; -3x &amp;amp; -1 &amp;amp;  &amp;amp; \\
+};
+\draw (a-1-8.north west) |- (a-1-8.south east);
+\draw (a-2-1.south west) -- (a-2-4.south east);
+\draw (a-4-2.south west) -- (a-4-5.south east);
+\draw (a-6-3.south west) -- (a-6-6.south east);
+\end{tikzpicture}
+\end{center}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Obteniendo como resultado el que aparece en la siguiente imagen:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-resultado-final&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Resultado final.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;924&#34; height=&#34;275&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Resultado final.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>¿Cómo dividir polinomios con LaTeX?</title>
+      <link>https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/</link>
+      <pubDate>Wed, 31 Oct 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/</guid>
+      <description>&lt;p&gt;Escribiendo unos apuntes sobre polinomios, llegó el momento de mostrar un ejemplo de la división de un par de ellos. La clásica pregunta no se hizo esperar, ¿cómo transcribo en &lt;em&gt;LaTeX&lt;/em&gt; esa operación matemática?&lt;/p&gt;
+&lt;p&gt;Acompañemos este artículo con un ejemplo concreto. Sean&lt;/p&gt;
+&lt;p&gt;$$
+P = x^4 + 3x^3 - 2x^2 + x - 1
+$$&lt;/p&gt;
+&lt;p&gt;y&lt;/p&gt;
+&lt;p&gt;$$
+Q = x^2 + x - 1
+$$&lt;/p&gt;
+&lt;p&gt;los polinomios implicados en la división, siendo nuestro objetivo mostrar la mencionada operación paso por paso (y no simplemente ofrecer el resultado final, acción que no entraña misterio a la hora de llevarla a cabo con &lt;em&gt;LaTeX&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Como suele ser habitual, tras una rápida búsqueda con &lt;em&gt;Google&lt;/em&gt;, no soy la primera persona que se ha encontrado en esta encrucijada. En los foros que consulté, la recomendación estándar era emplear el paquete 
+&lt;a href=&#34;https://ctan.org/pkg/polynom&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;polynom&lt;/a&gt;, que a través del comando &lt;code&gt;\polylongdiv&lt;/code&gt; nos facilita enormemente la tarea. De forma automática, se ocupa de realizar y organizar (con &lt;em&gt;LaTeX&lt;/em&gt;) todos los pasos involucrados en una división de polinomios.&lt;/p&gt;
+&lt;p&gt;Así pues, empecemos ubicando en el preámbulo de nuestro documento la siguiente instrucción:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\usepackage{polynom}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Antes de proceder a realizar división alguna, conviene que declaremos personalmente el valor de ciertos argumentos opcionales:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\polyset{style=C, div=:, vars=x}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;donde:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;style&lt;/code&gt;: declara el estilo con el que efectuará la división de polinomios, pudiendo escoger entre los valores &lt;code&gt;A&lt;/code&gt;, &lt;code&gt;B&lt;/code&gt; y &lt;code&gt;C&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;div&lt;/code&gt;: señala el símbolo con el que se expresará la división (dependiendo del estilo escogido, la asignación de este parámetro es importante).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;vars&lt;/code&gt;: indica el valor de la variable del polinomio. Generalmente utilizamos &lt;code&gt;x&lt;/code&gt;, pero no es descabellado emplear &lt;code&gt;n&lt;/code&gt; cuando estamos lidiando con temas asociados a números enteros.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ahora, allí donde deseemos ubicar la división de los polinomios $P$ y $Q$ definidos arriba, tecleamos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;$$\polylongdiv{x^4+3x^3-2x^2+x-1}{x^2+x-1}$$
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Obteniendo como resultado:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-resultado-de-la-división-de-polinomios&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img01_hu4ed5e3cadd45482e5954bf1bfc35f6e7_16055_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Resultado de la división de polinomios.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img01_hu4ed5e3cadd45482e5954bf1bfc35f6e7_16055_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;868&#34; height=&#34;225&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Resultado de la división de polinomios.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Estudiemos el resultado visual de la operación bajo los distintos estilos que nos ofrece el paquete &lt;code&gt;polynom&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Estilo A&lt;/strong&gt;:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-estilo-para-la-división-a&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img02_hu45e502d2adb3c30f6906d7f8851c5bfe_16070_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estilo para la división A.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img02_hu45e502d2adb3c30f6906d7f8851c5bfe_16070_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;897&#34; height=&#34;262&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Estilo para la división A.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Estilo B&lt;/strong&gt;:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-estilo-para-la-división-b&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img03_hu529b17bc64435037944144961dea1dd7_15704_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estilo para la división B.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img03_hu529b17bc64435037944144961dea1dd7_15704_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;904&#34; height=&#34;220&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Estilo para la división B.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Estilo C&lt;/strong&gt;:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-estilo-para-la-división-c&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img01_hu4ed5e3cadd45482e5954bf1bfc35f6e7_16055_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Estilo para la división C.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/10/31/como-dividir-polinomios-con-latex/20181031-img01_hu4ed5e3cadd45482e5954bf1bfc35f6e7_16055_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;868&#34; height=&#34;225&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Estilo para la división C.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Personalmente, el último de los mostrados es el estilo que me resulta más atractivo para mostrar cómo realizar paso a paso una división de polinomios con &lt;em&gt;LaTeX&lt;/em&gt;. No obstante, como siempre, &amp;lsquo;&amp;lsquo;para gustos, los colores&amp;rsquo;&#39;.&lt;/p&gt;
+&lt;p&gt;Para finalizar, me gustaría comentar que:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Aun siendo bastante satisfactoria esta solución, ninguno de los estilos que ofrece el paquete &lt;code&gt;polynom&lt;/code&gt; se ajusta exactamente a como habitualmente organizamos la división por estos lares.&lt;/li&gt;
+&lt;li&gt;Por limitaciones de &lt;em&gt;TeX&lt;/em&gt;, no podemos llevar a cabo la división de polinomios en conjuntos finitos como, por ejemplo, $\mathbb{Z}_4$ o en el cuerpo $\mathbb{Z}_7$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En ambos casos, una posible vía de escape que he encontrado es recurrir al paquete &lt;code&gt;tikz&lt;/code&gt; y, manualmente, &amp;lsquo;&amp;lsquo;dibujar&amp;rsquo;&amp;rsquo; la propia división de polinomios. No es un proceso demasiado complejo y quizá lo ilustre en una futura entrada.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>¿Cómo evitar que las ecuaciones en línea superen los márgenes?</title>
+      <link>https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/</link>
+      <pubDate>Tue, 25 Sep 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/</guid>
+      <description>&lt;p&gt;Cierto es que &lt;em&gt;LaTeX&lt;/em&gt; genera unos documentos matemáticos realmente vistosos. No menos cierto es que el comportamiento de &lt;em&gt;LaTeX&lt;/em&gt;, en ocasiones, es un tanto peculiar, ofreciendo duras batallas para solventar ciertos problemas.&lt;/p&gt;
+&lt;p&gt;En esta ocasión, me encontraba esta misma mañana redactando unos apuntes de teoría de grafos cuando, en un ejemplo trivial donde los haya, he hallado este desbarajuste:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-la-definición-del-conjunto-excede-el-margen-ampliamente&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img01_hu12a02a6ea6dbd94b021f27d50b096615_52265_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;La definición del conjunto excede el margen ampliamente.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img01_hu12a02a6ea6dbd94b021f27d50b096615_52265_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;1059&#34; height=&#34;240&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    La definición del conjunto excede el margen ampliamente.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;He definido el conjunto de aristas del grafo casi en el borde del margen y &lt;em&gt;LaTeX&lt;/em&gt;, en lugar de romper la expresión matemática como en otras ocasiones hace de manera automática, ha decidido rebasar el margen derecho. El resultado, estéticamente, es horroroso, por mucho que el mencionado conjunto este bien agrupado y su lectura resulte cómoda.&lt;/p&gt;
+&lt;p&gt;Generalmente, cuando me encuentro en este tipo de situaciones, opto por reescribir la oración, de manera que añado o suprimo texto y, al final, se produce un buen encaje del contenido matemático en los márgenes.&lt;/p&gt;
+&lt;p&gt;No obstante, quizá buscando pretextos absurdos para descansar un rato de la transcripción de apuntes, me he decantado esta mañana por investigar las posibilidades que ofrece &lt;em&gt;LaTeX&lt;/em&gt; para evitar que este comportamiento tenga lugar. Tras una rápida búsqueda en &lt;em&gt;Google&lt;/em&gt;, he dado con 
+&lt;a href=&#34;https://tex.stackexchange.com/questions/28818/how-can-i-prevent-inline-math-formulas-from-overflowing-into-the-margin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esta entrada&lt;/a&gt;, cuya lectura es más que recomendable.&lt;/p&gt;
+&lt;p&gt;Una de las primeras opciones que tenemos a nuestra disposición, lógicamente, es escribir la problemática expresión matemática en una línea independiente. En mi caso, el resultado sería el siguiente:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-definición-del-conjunto-en-su-propia-línea&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img02_hu6c5af0d4f60e81f486f9aa951d617f64_53598_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Definición del conjunto en su propia línea.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img02_hu6c5af0d4f60e81f486f9aa951d617f64_53598_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;964&#34; height=&#34;313&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Definición del conjunto en su propia línea.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Sin embargo, ¿no adquiere así un protagonismo inmerecido el conjunto de aristas del grafo? No termina de convencerme, para esta situación particular, la solución propuesta.&lt;/p&gt;
+&lt;p&gt;Una alternativa es emplear el comando &lt;code&gt;\sloppy&lt;/code&gt; antecediendo el párrafo donde reside la expresión matemática que ha decidido realizar una excursión por los márgenes del documento. Esta instrucción juega con el espaciado entre las palabras, siendo su resultado el que muestro a continuación:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-definición-del-conjunto-utilizando-sloppy&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img03_hu9eb492ddaaada54fef802ca5891577d4_51266_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Definición del conjunto utilizando \sloppy.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img03_hu9eb492ddaaada54fef802ca5891577d4_51266_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;965&#34; height=&#34;242&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Definición del conjunto utilizando &lt;code&gt;\sloppy&lt;/code&gt;.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Sinceramente, tampoco resulta de mi agrado. ¿Qué más opciones tenemos? Utilizar el comando &lt;code&gt;\allowbreak&lt;/code&gt; allá donde queramos se produzca la separación en nuestra expresión matemática. Volviendo a la situación original, parece que sería adecuado cortar la declaración del conjunto de aristas del grafo tras el elemento $(2, 3)$ y el resultado ahora es&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-definición-del-conjunto-utilizando-allowbreak&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img04_hucfffc5f7bbcccbe6f9587ee487e4d411_50736_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Definición del conjunto utilizando \allowbreak.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/09/25/como-evitar-que-las-ecuaciones-en-linea-superen-los-margenes/20180925-img04_hucfffc5f7bbcccbe6f9587ee487e4d411_50736_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;963&#34; height=&#34;239&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Definición del conjunto utilizando &lt;code&gt;\allowbreak&lt;/code&gt;.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;Esta solución, en mi opinión, es la más agradable visualmente hablando. No obstante:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Insertar el comando &lt;code&gt;\allowbreak&lt;/code&gt; resta bastante legibilidad al código fuente del documento.&lt;/li&gt;
+&lt;li&gt;Si &lt;em&gt;LaTeX&lt;/em&gt; no ha decido &amp;ldquo;romper&amp;rdquo; automáticamente la declaración de un conjunto, debemos sospechar que algún buen motivo tendrá. Efectivamente, con este enfoque, resulta un tanto más complicado seguir la definición del conjunto de aristas del grafo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En conclusión, arriba tenemos tres estrategias que resuelven el problema planteado de mejor o peor manera. No obstante, es posible que al final me decante por la reescritura de la línea y evite recurrir a alguna de ellas.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>¿Cómo incluir varias imágenes en la misma figura con LaTeX?</title>
+      <link>https://imalexissaez.github.io/2018/07/22/como-incluir-varias-imagenes-en-la-misma-figura-con-latex/</link>
+      <pubDate>Sun, 22 Jul 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/07/22/como-incluir-varias-imagenes-en-la-misma-figura-con-latex/</guid>
+      <description>&lt;p&gt;Es muy útil poder incluir varias imágenes en la misma figura, bien sea porque están relacionadas de alguna manera, bien debido a que resulta mucho más sencillo hacer una comparación si se colocan juntas.&lt;/p&gt;
+&lt;p&gt;Lidiar con elementos flotantes en &lt;em&gt;LaTeX&lt;/em&gt; no siempre es una tarea agradecida, pero, en esta ocasión, y sin que sirva de precedente, crear composiciones de múltiples imágenes dentro de una figura es bastante sencillo.&lt;/p&gt;
+&lt;p&gt;A continuación, muestro los pasos que podemos seguir para ello:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Dentro del entorno &lt;code&gt;figure&lt;/code&gt;, crearemos tantos entornos &lt;code&gt;subfigure&lt;/code&gt; como imágenes queramos incluir en la composición.&lt;/li&gt;
+&lt;li&gt;El parámetro opcional del entorno &lt;code&gt;subfigure&lt;/code&gt;, &lt;code&gt;[b]&lt;/code&gt; en el ejemplo que aparece abajo, sigue las clásicas pautas de los elementos flotantes en &lt;em&gt;LaTeX&lt;/em&gt;, y será de suma utilidad que lo definamos con precisión si las imágenes poseen diferentes alturas.&lt;/li&gt;
+&lt;li&gt;Con &lt;code&gt;textwidth&lt;/code&gt; controlaremos la anchura de las imágenes. Por ejemplo, para que aparezcan dos imágenes, una al lado de otra, y que ocupen la mayor parte del espacio horizontal del documento con el que estemos trabajando, &lt;code&gt;0.49&lt;/code&gt; será un valor adecuado, pues deja un leve espacio blanco entre ellas. Si no queremos que aparezcan tan juntas, simplemente tendremos que reducir la anterior cantidad. Para tres imágenes, &lt;code&gt;0.33&lt;/code&gt; es el valor que consigue que éstas aparezcan una a continuación de la otra, dejando leves espacios blancos entre ellas.&lt;/li&gt;
+&lt;li&gt;Una vez declarados tanto el parámetro opcional como el obligatorio, incluiremos la imagen dentro del entorno &lt;code&gt;subfigure&lt;/code&gt; utilizando las instrucciones habituales. Como hemos cargado en el preámbulo los paquetes &lt;em&gt;caption&lt;/em&gt; y &lt;em&gt;subcaption&lt;/em&gt;, podremos incluir los comandos &lt;code&gt;caption&lt;/code&gt; y &lt;code&gt;label&lt;/code&gt; en cada una de las imágenes, por si luego queremos hacer referencia a alguna de ellas.&lt;/li&gt;
+&lt;li&gt;Utilizar &lt;code&gt;hfill&lt;/code&gt; entre los distintos entornos &lt;code&gt;subfigure&lt;/code&gt; provoca que las imágenes queden empujadas hacia los márgenes del documento. Este efecto nos puede resultar de interés si no estamos trabajando con esos valores límites (como &lt;code&gt;0.49&lt;/code&gt;) para la anchura de las imágenes.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Con un ejemplo quedará más claro el procedimiento que hemos de seguir:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\documentclass{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+ 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+ 
+\begin{document}
+ 
+\begin{figure}[!tbp]
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth, height=\textwidth]{img1.jpg}
+    \caption{Primera imagen.}
+    \label{fig:f1}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=\textwidth, height=\textwidth]{img2.jpg}
+    \caption{Segunda imagen.}
+    \label{fig:f2}
+  \end{subfigure}
+  \caption{Dos imágenes en la misma figura.}
+\end{figure}
+ 
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Podemos apreciar el resultado en la siguiente imagen:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-resultado-del-bloque-de-código-anterior&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/07/22/como-incluir-varias-imagenes-en-la-misma-figura-con-latex/20180722-img01_hua06c49c4f559026e7ed15f76e3054f5b_326068_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Resultado del bloque de código anterior.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/07/22/como-incluir-varias-imagenes-en-la-misma-figura-con-latex/20180722-img01_hua06c49c4f559026e7ed15f76e3054f5b_326068_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;768&#34; height=&#34;464&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Resultado del bloque de código anterior.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: no es recomendable que forcemos el parámetro &lt;code&gt;height&lt;/code&gt; para que se ajuste al &lt;code&gt;textwidth&lt;/code&gt; definido, pues generalmente provocará distorsiones no deseadas en nuestras imágenes. Si aparece en el ejemplo anterior no es más que por descuido, ya que de las distintas configuraciones con las que he estado experimentando, esa ha sido precisamente la última y no he caído en cambiar ese detalle antes de publicar el código.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Referencia&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/148438/putting-two-images-beside-each-other&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Putting two images beside each other&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>¿Cómo dividir diagonalmente una celda de una tabla con LaTeX?</title>
+      <link>https://imalexissaez.github.io/2018/07/20/como-dividir-diagonalmente-una-celda-de-una-tabla-con-latex/</link>
+      <pubDate>Fri, 20 Jul 2018 05:59:39 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2018/07/20/como-dividir-diagonalmente-una-celda-de-una-tabla-con-latex/</guid>
+      <description>&lt;p&gt;Reconozco que la edición de tablas, junto con la gestión de figuras, a veces se convierte en una pequeña pesadilla para mí cuando estoy generando documentos con &lt;em&gt;LaTeX&lt;/em&gt;. Veamos cómo he dado respuesta a la cuestión que aparece en el título de esta entrada.&lt;/p&gt;
+&lt;p&gt;Es habitual en estadística que trabajemos con tablas de contingencia, sobre todo en su versión $2\times 2$. Estas se suelen caracterizar por tener la celda que ocupa la esquina superior izquierda dividida diagonalmente, de manera que el texto inferior de dicha celda hace referencia al contenido de las filas (por ejemplo, si se posee o no cierta enfermedad), mientras que el texto superior hace lo propio para las columnas (por ejemplo, si se está expuesto a un factor de riesgo o no).&lt;/p&gt;
+&lt;p&gt;Ahora bien, enseguida aparece la pregunta del millón: ¿cómo conseguimos ese efecto con &lt;em&gt;LaTeX&lt;/em&gt;? La respuesta viene de la mano del paquete &lt;code&gt;slashbox&lt;/code&gt;, cuyo uso es realmente sencillo. Veamos un ejemplo de aplicación:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-tex&#34;&gt;\documentclass{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[english, spanish]{babel}
+ 
+\usepackage{slashbox}
+ 
+\begin{document}
+ 
+\begin{tabular}{|l|c|c|c|}
+\hline
+\backslashbox{Enfermedad}{Factor de riesgo} &amp;amp; SÍ $\equiv FR$ &amp;amp; NO $\equiv \overline{FR}$ &amp;amp; Totales\\
+\hline
+SÍ $\equiv E$ &amp;amp; $O_{11}$ &amp;amp; $O_{12}$ &amp;amp; $F_1$ \\
+NO $\equiv \overline{E}$ &amp;amp; $O_{21}$ &amp;amp; $O_{22}$ &amp;amp; $F_2$ \\
+\hline
+Totales &amp;amp; $C_1$ &amp;amp; $C_2$ &amp;amp; $T$ \\
+\hline
+\end{tabular}
+ 
+\end{document}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Podemos apreciar el resultado en la siguiente imagen:&lt;/p&gt;
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure id=&#34;figure-tabla-de-contingencia-en-latex&#34;&gt;
+
+
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://imalexissaez.github.io/2018/07/20/como-dividir-diagonalmente-una-celda-de-una-tabla-con-latex/20180720-img01_hu5fc3f03628c455358bbad8695ab24536_9241_2000x2000_fit_lanczos_2.png&#34; data-caption=&#34;Tabla de contingencia en LaTeX.&#34;&gt;
+
+
+  &lt;img data-src=&#34;https://imalexissaez.github.io/2018/07/20/como-dividir-diagonalmente-una-celda-de-una-tabla-con-latex/20180720-img01_hu5fc3f03628c455358bbad8695ab24536_9241_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;714&#34; height=&#34;159&#34;&gt;
+&lt;/a&gt;
+
+
+  
+  
+  &lt;figcaption data-pre=&#34;Figura &#34; data-post=&#34;:&#34; class=&#34;numbered&#34;&gt;
+    Tabla de contingencia en &lt;em&gt;LaTeX&lt;/em&gt;.
+  &lt;/figcaption&gt;
+
+
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;em&gt;Referencias&lt;/em&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/27193/latex-table-cell-with-a-diagonal-line-and-2-sub-cells&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX table cell with a diagonal line and 2 sub cells [duplicate]&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://tex.stackexchange.com/questions/7262/diagonally-divided-table-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Diagonally divided table cell [duplicate]&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
