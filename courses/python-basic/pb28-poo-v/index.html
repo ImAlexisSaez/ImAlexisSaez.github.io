@@ -983,7 +983,7 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 El coche está parado.
 El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 </code></pre>
-<p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &lsquo;&lsquo;protegerlo&rsquo;'.</p>
+<p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &lsquo;&lsquo;protegerlo&rsquo;&rsquo;.</p>
 <pre><code class="language-python">mi_coche2 = Coche()
 
 print(mi_coche2.arrancar(False))
@@ -1048,7 +1048,7 @@ Traceback (most recent call last):
 AttributeError: 'Coche' object has no attribute '__chequeo_interno'
 </code></pre>
 <p>Es decir, <em>Python</em> arroja un error. No nos deja llamar al método <code>__chequeo_interno()</code> desde fuera de la propia clase <code>Coche</code> porque está encapsulado.</p>
-<p>¿Cuándo encapsular una variable o un método? No existe una &lsquo;&lsquo;regla de oro&rsquo;', esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.</p>
+<p>¿Cuándo encapsular una variable o un método? No existe una &lsquo;&lsquo;regla de oro&rsquo;&rsquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.</p>
 <h2 id="código-fuente">Código fuente</h2>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/28/</code> del 
 <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
