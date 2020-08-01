@@ -1,0 +1,1215 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.8.0">
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Vídeo   Notas personales A continuación, veremos el uso de los operadores lógicos and y or, y del operador in. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/pb13-condicionales-iv/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#2962ff">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        
+      
+    
+
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+
+  
+  
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/pb13-condicionales-iv/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="twitter:site" content="@imalexissaez">
+  <meta property="twitter:creator" content="@imalexissaez">
+  
+  <meta property="og:site_name" content="Infinitos Contrastes">
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/pb13-condicionales-iv/">
+  <meta property="og:title" content="13. Condicionales IV | Infinitos Contrastes">
+  <meta property="og:description" content="Vídeo   Notas personales A continuación, veremos el uso de los operadores lógicos and y or, y del operador in. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de"><meta property="og:image" content="https://imalexissaez.github.io/media/sharing.jpg">
+  <meta property="twitter:image" content="https://imalexissaez.github.io/media/sharing.jpg"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2019-05-01T00:02:01&#43;01:00">
+    
+    <meta property="article:modified_time" content="2019-05-01T00:02:01&#43;01:00">
+  
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>13. Condicionales IV | Infinitos Contrastes</title>
+
+</head>
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Artículos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-palette" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <span><i class="fas fa-bars"></i></span>
+  </button>
+
+  
+  <input name="q" type="search" class="form-control" placeholder="Buscar..." autocomplete="off">
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+
+  
+
+
+  
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación</a></li>
+    
+      
+
+
+  <li class=""><a href="/python-basic/pb01-presentacion-del-curso/">1. Presentación del curso</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb02-introduccion/">2. Introducción a Python</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb03-sintaxis-basica/">3. Sintaxis básica</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb04-tipos-y-variables/">4. Tipos y variables</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb05-funciones-i/">5. Funciones I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb06-funciones-ii/">6. Funciones II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb07-listas/">7. Listas</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb08-tuplas/">8. Tuplas</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb09-diccionarios/">9. Diccionarios</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb10-condicionales-i/">10. Condicionales I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb11-condicionales-ii/">11. Condicionales II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb12-condicionales-iii/">12. Condicionales III</a></li>
+
+
+
+  <li class="active"><a href="/python-basic/pb13-condicionales-iv/">13. Condicionales IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb14-bucles-i/">14. Bucles I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb15-bucles-ii/">15. Bucles II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb16-bucles-iii/">16. Bucles III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb17-bucles-iv/">17. Bucles IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb18-bucles-v/">18. Bucles V</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb19-generadores-i/">19. Generadores I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb20-generadores-ii/">20. Generadores II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb21-excepciones-i/">21. Excepciones I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb22-excepciones-ii/">22. Excepciones II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb23-excepciones-iii/">23. Excepciones III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb24-poo-i/">24. POO I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb25-poo-ii/">25. POO II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb26-poo-iii/">26. POO III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb27-poo-iv/">27. POO IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb28-poo-v/">28. POO V</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb29-poo-vi/">29. POO VI</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb30-poo-vii/">30. POO VII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb31-poo-viii/">31. POO VIII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb32-poo-ix/">32. POO IX</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb33-cadenas/">33. Cadenas</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb34-modulos/">34. Módulos</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb35-paquetes-i/">35. Paquetes I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb36-paquetes-ii/">36. Paquetes II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb37-archivos-i/">37. Archivos I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb38-archivos-ii/">38. Archivos II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb39-serializacion-i/">39. Serialización I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb40-serializacion-ii/">40. Serialización II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb41-guardado-permanente/">41. Guardado</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb42-interfaces-graficas-i/">42. Interfaces I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb43-interfaces-graficas-ii/">43. Interfaces II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb44-interfaces-graficas-iii/">44. Interfaces III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb45-interfaces-graficas-iv/">45. Interfaces IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb46-interfaces-graficas-v/">46. Interfaces V</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb47-interfaces-graficas-vi/">47. Interfaces VI</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb48-interfaces-graficas-vii/">48. Interfaces VII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb49-interfaces-graficas-viii/">49. Interfaces VIII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb50-interfaces-graficas-ix/">50. Interfaces IX</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb51-interfaces-graficas-x/">51. Interfaces X</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb52-interfaces-graficas-xi/">52. Interfaces XI</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb53-interfaces-graficas-xii/">53. Interfaces XII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb54-interfaces-graficas-xiii/">54. Interfaces XIII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb55-bases-de-datos-i/">55. BBDD I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb56-bases-de-datos-ii/">56. BBDD II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb57-bases-de-datos-iii/">57. BBDD III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb58-bases-de-datos-iv/">58. BBDD IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb59-practica-guiada-i/">59. Práctica I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb60-practica-guiada-ii/">60. Práctica II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb61-practica-guiada-iii/">61. Práctica III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb62-practica-guiada-iv/">62. Práctica IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb63-practica-guiada-v/">63. Práctica V</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb64-practica-guiada-vi/">64. Práctica VI</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb65-practica-guiada-vii/">65. Práctica VII</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb66-funciones-lambda/">66. Lambdas</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb67-filter/">67. Filter</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb68-map/">68. Map</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb69-expresiones-regulares-i/">69. RegExp I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb70-expresiones-regulares-ii/">70. RegExp II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb71-expresiones-regulares-iii/">71. RegExp III</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb72-expresiones-regulares-iv/">72. RegExp IV</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb73-decoradoras-i/">73. Decoradoras I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb74-decoradoras-ii/">74. Decoradoras II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb75-documentacion/">75. Documentación</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb76-pruebas-i/">76. Pruebas I</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb77-pruebas-ii/">77. Pruebas II</a></li>
+
+
+
+  <li class=""><a href="/python-basic/pb78-ejecutables/">78. Ejecutables</a></li>
+
+      
+    
+
+    
+      </ul>
+    
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#vídeo">Vídeo</a></li>
+    <li><a href="#notas-personales">Notas personales</a></li>
+    <li><a href="#código-fuente">Código fuente</a></li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          <h1>13. Condicionales IV</h1>
+
+          <div class="article-style">
+            <h2 id="vídeo">Vídeo</h2>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/rDGsWYnQEJY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="notas-personales">Notas personales</h2>
+<p>A continuación, veremos el uso de los operadores lógicos <code>and</code> y <code>or</code>, y del operador <code>in</code>. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de</p>
+<ul>
+<li>la distancia a la que vive del centro,</li>
+<li>el número de hermanos, y</li>
+<li>el salario familiar.</li>
+</ul>
+<pre><code class="language-python">print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;)
+
+dist_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;))
+print(&quot;Distancia a la escuela: &quot; + str(dist_escuela))
+
+num_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;))
+print(&quot;Número de hermanos: &quot; + str(num_hermanos))
+
+sal_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;))
+print(&quot;Salario anual bruto: &quot; + str(sal_familiar))
+
+if dist_escuela &gt; 40 and num_hermanos &gt; 2 and sal_familiar &lt;= 20000:
+    print(&quot;Tienes derecho a beca&quot;)
+else:
+    print(&quot;No tienes derecho a beca&quot;)
+</code></pre>
+<p>Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:</p>
+<pre><code class="language-python">print(&quot;Programa de evaluación de becas - Curso 2018/19&quot;)
+
+distancia_escuela = int(input(&quot;Introduce la distancia a la escuela (en km): &quot;))
+print(&quot;Distancia a la escuela: &quot; + str(distancia_escuela))
+
+numero_hermanos = int(input(&quot;Introduce el número de hermanos en el centro: &quot;))
+print(&quot;Número de hermanos: &quot; + str(numero_hermanos))
+
+salario_familiar = int(input(&quot;Introduce el salario anual bruto: &quot;))
+print(&quot;Salario anual bruto: &quot; + str(salario_familiar))
+
+if distancia_escuela &gt; 40 or numero_hermanos &gt; 2 or salario_familiar &lt;= 20000:
+    print(&quot;Tienes derecho a beca&quot;)
+else:
+    print(&quot;No tienes derecho a beca&quot;)
+</code></pre>
+<p>Estudiemos ahora el uso del operador <code>in</code>. Crearemos un programa donde un alumno debe escoger una asignatura opcional de entre un listado predeterminado:</p>
+<pre><code class="language-python">print(&quot;Asignaturas optativas - Curso 2018/19&quot;)
+
+print(&quot;- Informática gráfica&quot;)
+print(&quot;- Pruebas de software&quot;)
+print(&quot;- Usabilidad y accesibilidad&quot;)
+
+asignatura = input(&quot;Escoge la asignatura optativa: &quot;)
+
+if asignatura in (&quot;Informática gráfica&quot;, &quot;Pruebas de software&quot;,
+                  &quot;Usabilidad y accesibilidad&quot;):
+    print(&quot;Asignatura elegida: &quot; + asignatura)
+else:
+    print(&quot;La asignatura escogida no está contemplada.&quot;)
+</code></pre>
+<p><em>Python</em> es <strong>case sensitive</strong> (distingue entre mayúsculas y minúsculas). Para solucionar esta situación, utilizamos las funciones <code>lower()</code> y <code>upper()</code>, funciones que escriben, respectivamente, una cadena de caracteres toda en minúsculas o mayúsculas.</p>
+<pre><code class="language-python">print(&quot;Asignaturas optativas - Curso 2018/19&quot;)
+
+print(&quot;- Informática gráfica&quot;)
+print(&quot;- Pruebas de software&quot;)
+print(&quot;- Usabilidad y accesibilidad&quot;)
+
+opcion = input(&quot;Escoge la asignatura optativa: &quot;)
+
+asignatura = opcion.lower()
+
+if asignatura in (&quot;informática gráfica&quot;, &quot;pruebas de software&quot;,
+                  &quot;usabilidad y accesibilidad&quot;):
+    print(&quot;Asignatura elegida: &quot; + asignatura)
+else:
+    print(&quot;La asignatura escogida no está contemplada.&quot;)
+</code></pre>
+<h2 id="código-fuente">Código fuente</h2>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/13/</code> del 
+<a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Anterior</div>
+    <a href="/python-basic/pb12-condicionales-iii/" rel="next">12. Condicionales III</a>
+  </div>
+  
+  
+  
+  <div class="post-nav-item">
+    <div class="meta-nav">Siguiente</div>
+    <a href="/python-basic/pb14-bucles-i/" rel="prev">14. Bucles I</a>
+  </div>
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-05-01</p>
+
+          
+
+
+
+
+
+          
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    Alexis Sáez ©2020
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    Published with
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic Website Builder</a>
+    
+
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js" integrity="sha256-eOgo0OtLL4cdq7RdwRUiGKLX9XsIJ7nGhWEKbohmVAQ=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+    
+    
+    
+    
+    
+    <script>
+      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
+      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
+      const content_type = {
+        'post': "Artículos",
+        'project': "Proyectos",
+        'publication' : "Publicaciones",
+        'talk' : "Charlas",
+        'slides' : "Slides"
+        };
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.1/anchor.min.js" integrity="sha256-pB/deHc9CGfFpJRjC43imB29Rse8tak+5eXqntO94ck=" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    
+    
+    
+    <script src="/js/academic.min.66c553246b0f279a03be6e5597f72b52.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
