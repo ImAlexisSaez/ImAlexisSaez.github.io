@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
 
   
 
@@ -80,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -175,7 +179,7 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -232,7 +236,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -361,7 +365,7 @@
   
   
   
-    <script>window.staDarkLightChooser = true;</script>
+    <script>window.wcDarkLightEnabled = true;</script>
   
   
     <script>const isSiteThemeDark = false;</script>
@@ -600,15 +604,17 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
+      
       <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item js-set-theme-light">
@@ -783,15 +789,11 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Tras haber recorrido, en el 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>, las seis estaciones del vía crucis asociado al calvario de la instalación de <em>Hugo</em> y la personalización del tema <em>Beautiful Hugo</em>, llega el momento más anhelado por todos: generar contenido para el sitio web.</p>
-<p>A continuación, examinaremos, con sumo detalle, todo el proceso de elaboración y revisión local de artículos para nuestra página web. Para empezar, me gustaría comentar que, en el apartado de la 
-<a href="https://gohugo.io/getting-started/quick-start/#step-4-add-some-content" target="_blank" rel="noopener">guía oficial</a> asociado a este asunto, se utiliza la combinación de la terminal del sistema y el comando <code>hugo new</code> para dar a luz, de manera automática, una nueva entrada en el sitio web.</p>
+      <p>Tras haber recorrido, en el <a href="/proyecto/metablog/">Proyecto Metablog</a>, las seis estaciones del vía crucis asociado al calvario de la instalación de <em>Hugo</em> y la personalización del tema <em>Beautiful Hugo</em>, llega el momento más anhelado por todos: generar contenido para el sitio web.</p>
+<p>A continuación, examinaremos, con sumo detalle, todo el proceso de elaboración y revisión local de artículos para nuestra página web. Para empezar, me gustaría comentar que, en el apartado de la <a href="https://gohugo.io/getting-started/quick-start/#step-4-add-some-content" target="_blank" rel="noopener">guía oficial</a> asociado a este asunto, se utiliza la combinación de la terminal del sistema y el comando <code>hugo new</code> para dar a luz, de manera automática, una nueva entrada en el sitio web.</p>
 <p>No obstante, como no podía ser de otra manera y en un acto de la más absurda rebeldía, prefiero llevar a cabo este proceso de forma manual (qué obsesión con el control tengo, ¿verdad?). Si nos fijamos, desde el <em>explorador de archivos</em> de <em>Windows</em>, en la estructura de nuestra página web (heredada del sitio de ejemplo del tema <em>Beautiful Hugo</em>), en el interior del directorio raíz existe una carpeta denominada <code>\content\</code>, dentro de la cual residen anidadas otras dos: <code>\page\</code> y <code>\post\</code>.</p>
-<p>Para respetar este esquema, he decidido ubicar todos los artículos del sitio web que se organicen por alguna taxonomía (recordemos que, en 
-<a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, incluso añadimos alguna adicional a las que vienen dadas por defecto con <em>Hugo</em>) en la carpeta <code>\post\</code>, mientras que el resto irá al directorio <code>\page\</code>.</p>
-<p>Siguiendo esta lógica, como seguramente la primera entrada que vayamos a publicar en nuestro sitio web será una especie de presentación en su blog, generaremos, utilizando <em>Sublime Text 3</em>, un nuevo fichero en la carpeta <code>\post\</code>. Este poseerá la extensión <code>.md</code>, pues vamos a escribir todos y cada uno de nuestros artículos utilizando el lenguaje de marcado <em>Markdown</em>. Para aquellas personas que escuchan por primera vez hablar de él, recomiendo encarecidamente que dediquen unos minutos a completar 
-<a href="https://www.markdowntutorial.com/" target="_blank" rel="noopener">este tutorial</a> sobre el mismo.</p>
+<p>Para respetar este esquema, he decidido ubicar todos los artículos del sitio web que se organicen por alguna taxonomía (recordemos que, en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, incluso añadimos alguna adicional a las que vienen dadas por defecto con <em>Hugo</em>) en la carpeta <code>\post\</code>, mientras que el resto irá al directorio <code>\page\</code>.</p>
+<p>Siguiendo esta lógica, como seguramente la primera entrada que vayamos a publicar en nuestro sitio web será una especie de presentación en su blog, generaremos, utilizando <em>Sublime Text 3</em>, un nuevo fichero en la carpeta <code>\post\</code>. Este poseerá la extensión <code>.md</code>, pues vamos a escribir todos y cada uno de nuestros artículos utilizando el lenguaje de marcado <em>Markdown</em>. Para aquellas personas que escuchan por primera vez hablar de él, recomiendo encarecidamente que dediquen unos minutos a completar <a href="https://www.markdowntutorial.com/" target="_blank" rel="noopener">este tutorial</a> sobre el mismo.</p>
 <p>La estructura de todo artículo será la que figura acto seguido:</p>
 <pre><code class="language-yaml">---
 Metadatos del artículo.
@@ -803,8 +805,7 @@ Cuerpo del artículo.
 
 </code></pre>
 <p>Al comienzo de cada entrada ubicaremos, delimitada por los caracteres <code>---</code>, cierta información relevante (metadatos) acerca de la misma, que suministraremos en la forma de pares <code>variable: valor</code>. Las variables disponibles a nuestro alcance vendrán determinadas por el tema que hayamos escogido finalmente para nuestro sitio web, aunque sí que es cierto que algunas de ellas son comunes a la mayoría de los temas (como, por ejemplo, <code>title</code>, <code>date</code> o <code>draft</code>).</p>
-<p>Teniendo en cuenta que nuestra página web hace uso del tema <em>Beautiful Hugo</em>, y considerando la definición de taxonomías y la personalización del <em>permalink</em> que llevamos a cabo en 
-<a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, utilizo siempre el mismo esquema para la cabecera de mis artículos:</p>
+<p>Teniendo en cuenta que nuestra página web hace uso del tema <em>Beautiful Hugo</em>, y considerando la definición de taxonomías y la personalización del <em>permalink</em> que llevamos a cabo en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, utilizo siempre el mismo esquema para la cabecera de mis artículos:</p>
 <pre><code class="language-yaml">---
 title:
 slug:
@@ -831,20 +832,17 @@ proyectos: [&quot;MetaBlog&quot;]
 <p>Veamos a continuación el cometido de cada una de las variables que figuran en la cabecera:</p>
 <ul>
 <li><code>title</code>: contiene el título del artículo. A diferencia de otros temas, por desgracia <em>Beautiful Hugo</em> no admite la posibilidad de emplear <em>Markdown</em> o <em>LaTeX</em> en ciertas partes del título, hecho que debemos tener en consideración.</li>
-<li><code>slug</code>: tal y como comentamos en 
-<a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, vamos a configurar manualmente el <em>permalink</em> de cada entrada. Una de sus partes será, precisamente, la asociada a esta variable. Para generar su valor, sustituyo a mano los espacios por guiones y suprimo cualquier acento, eñe o carácter extraño a los ojos del alfabeto inglés que pudiese figurar en el título del artículo. En particular, para esta entrada, el <em>permalink</em> será <code>/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/</code>, es decir, la fecha de publicación junto al valor que hemos asignado a la variable <code>slug</code>.</li>
+<li><code>slug</code>: tal y como comentamos en <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a>, vamos a configurar manualmente el <em>permalink</em> de cada entrada. Una de sus partes será, precisamente, la asociada a esta variable. Para generar su valor, sustituyo a mano los espacios por guiones y suprimo cualquier acento, eñe o carácter extraño a los ojos del alfabeto inglés que pudiese figurar en el título del artículo. En particular, para esta entrada, el <em>permalink</em> será <code>/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/</code>, es decir, la fecha de publicación junto al valor que hemos asignado a la variable <code>slug</code>.</li>
 <li><code>date</code>: fecha y hora de publicación del artículo. Me gustaría comentar aquí que nada nos impide generar contenido para fechas futuras, aunque cuando escribamos en la terminal del sistema <code>hugo server</code>, no tendremos acceso a su revisión. Para solventar esta situación, tenemos que añadir la etiqueta <code>-F</code>, es decir, teclear <code>hugo server -F</code>.</li>
 <li><code>draft</code>: variable que nos permite indicar si la entrada en concreto tiene carácter de borrador (utilizando el valor <code>true</code>) o si ya está lista para su publicación en nuestro sitio web (empleando el valor <code>false</code>). Para revisar localmente una página web que contenga artículos en forma de borrador, hemos de escribir en la terminal del sistema <code>hugo server -D</code>.</li>
-<li><code>bigimg</code>: esta variable nos permite insertar la ruta hacia una imagen de cabecera para nuestros artículos. En 
-<a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a> está explicado en detalle el funcionamiento de esta característica particular del tema <em>Beautiful Hugo</em>.</li>
+<li><code>bigimg</code>: esta variable nos permite insertar la ruta hacia una imagen de cabecera para nuestros artículos. En <a href="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/">esta entrada</a> está explicado en detalle el funcionamiento de esta característica particular del tema <em>Beautiful Hugo</em>.</li>
 <li><code>apartados</code>: primera taxonomía que utilizaremos para agrupar contenido según la categoría a la que pertenezca el artículo. No es más que la localización al español de la habitual <code>categories</code>.</li>
 <li><code>etiquetas</code>: segunda taxonomía que utilizaremos para agrupar contenido según las palabras clave que caractericen a la entrada. No es más que la localización al español de la habitual <code>tags</code>.</li>
 <li><code>proyectos</code>: tercera taxonomía (generalmente opcional) que nos permitirá agrupar contenido que pertenezca a distintos apartados y posea diferentes etiquetas.</li>
 </ul>
 <p>Tras declarar la cabecera, redactaremos un párrafo (o varios) de introducción al artículo, tras los cuales escribiremos la instrucción <code>more</code>, precedida de los símbolos <code>&lt;!--</code> y seguida de <code>--&gt;</code>. Dichos párrafos, además de ser aquellos que den comienzo a nuestra entrada, serán los que figuren en las páginas de listado de nuestro sitio web. ¿A qué me refiero con las páginas de listado? Serían, por ejemplo, la principal de acceso al sitio web y todas aquellas que ofrecen un índice que contiene los artículos asociados a una taxonomía en particular.</p>
 <p>Tras dicha instrucción, finalmente, ya solo nos restará explayarnos tanto como deseemos en el cuerpo de la entrada. <em>The sky is the limit!</em></p>
-<p>En el próximo artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a> estudiaremos cómo utilizar <em>GitHub</em> para alojar nuestra página web en <em>Internet</em>.</p>
+<p>En el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> estudiaremos cómo utilizar <em>GitHub</em> para alojar nuestra página web en <em>Internet</em>.</p>
 
     </div>
 
@@ -933,34 +931,30 @@ proyectos: [&quot;MetaBlog&quot;]
 
 
 
-
+  
   
     
-    
-
-
 
 
 
   
+  
+  
     
-    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
     
       
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez"></a>
     
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez">
-      
 
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
-        <h6 class="card-subtitle">Profesor de matemáticas</h6>
-        <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
-        <ul class="network-icon" aria-hidden="true">
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -1015,9 +1009,8 @@ proyectos: [&quot;MetaBlog&quot;]
   
 </ul>
 
-      </div>
     </div>
-  
+  </div>
 
 
   
@@ -1031,7 +1024,7 @@ proyectos: [&quot;MetaBlog&quot;]
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1103,9 +1096,9 @@ proyectos: [&quot;MetaBlog&quot;]
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
         
       
 
@@ -1188,7 +1181,7 @@ proyectos: [&quot;MetaBlog&quot;]
     
     
     
-    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
 
     
 
@@ -1218,7 +1211,9 @@ proyectos: [&quot;MetaBlog&quot;]
   <p class="powered-by">
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
 
     

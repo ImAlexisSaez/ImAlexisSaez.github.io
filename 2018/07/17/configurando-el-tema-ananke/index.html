@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
 
   
 
@@ -80,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -175,7 +179,7 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -232,7 +236,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -361,7 +365,7 @@
   
   
   
-    <script>window.staDarkLightChooser = true;</script>
+    <script>window.wcDarkLightEnabled = true;</script>
   
   
     <script>const isSiteThemeDark = false;</script>
@@ -600,15 +604,17 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
+      
       <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item js-set-theme-light">
@@ -783,12 +789,9 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>En la 
-<a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> generamos, ¡solucionando incluso un pequeño <em>bug</em>!, nuestro primer sitio web con <em>Hugo</em>, utilizando para ello el tema <em>Ananke</em>. Veamos qué opciones de configuración nos ofrece dicho tema a continuación.</p>
-<p>Así pues, dedicaremos única y exclusivamente este cuarto artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a> a examinar con detalle el contenido del archivo <code>config.toml</code>, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.</p>
-<p>Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la 
-<a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a>, dicho fichero debería figurar en el interior de la ruta <code>C:\Hugo\Sites\prueba</code>. Desde el <em>explorador de archivos</em> de <em>Windows</em>, lo seleccionamos con el botón derecho del ratón y escogemos la opción <code>Open with Sublime Text</code>.</p>
+      <p>En la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> generamos, ¡solucionando incluso un pequeño <em>bug</em>!, nuestro primer sitio web con <em>Hugo</em>, utilizando para ello el tema <em>Ananke</em>. Veamos qué opciones de configuración nos ofrece dicho tema a continuación.</p>
+<p>Así pues, dedicaremos única y exclusivamente este cuarto artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> a examinar con detalle el contenido del archivo <code>config.toml</code>, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.</p>
+<p>Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a>, dicho fichero debería figurar en el interior de la ruta <code>C:\Hugo\Sites\prueba</code>. Desde el <em>explorador de archivos</em> de <em>Windows</em>, lo seleccionamos con el botón derecho del ratón y escogemos la opción <code>Open with Sublime Text</code>.</p>
 <p>Parte de su contenido nos resultará familiar a estas alturas, pues ya tuvimos que editar el mencionado archivo para solventar el <em>bug</em> que nos impedía tener acceso local al sitio web. Empecemos examinando el primer bloque de código, aquel que comprende las siguientes cinco líneas:</p>
 <pre><code class="language-toml">title = &quot;Notre-Dame de Paris&quot;
 baseURL = &quot;https://example.com&quot;
@@ -801,8 +804,7 @@ theme = &quot;gohugo-theme-ananke&quot;
 <p>Ahora, a <code>baseURL</code> hemos de asignarle el enlace que utilizaremos para acceder a nuestro sitio web a través del navegador web. Dado que la idea es que alojemos la página web en <em>GitHub</em>, dicha dirección será del estilo <code>https://&lt;NOMBRE_DE_TU_CUENTA&gt;.github.io</code>. Para ilustrar esto último de manera más concreta, el nombre de mi cuenta en <em>GitHub</em> es <code>ImAlexisSaez</code>, por lo que el enlace que permitirá el acceso remoto a la página web será <code>https://imalexissaez.github.io/</code>, valor que asignaré a la variable <code>baseURL</code> en su correspondiente línea.</p>
 <p>A continuación, en <code>languageCode</code> reside el código del lenguaje en el que se generará nuestro sitio web, que, por defecto, es inglés estadounidense (<code>en-us</code>). Si vamos a generar contenido un idioma diferente, conviene que modifiquemos el valor de dicha línea. Para el español, el código asociado es <code>es</code>.</p>
 <p>Aunque a primera vista no parezca un detalle relevante, es importante asignar el código adecuado a <code>languageCode</code>, puesto que algunos temas de <em>Hugo</em> incorporan la posibilidad de localización a diferentes lenguajes y la clave pasa, precisamente, por el valor indicado para dicha variable. Para muestra, un botón: el tema actual de este sitio web, <em>Beautiful Hugo</em>, es uno de esos ejemplos y en un futuro veremos cómo lidiar con el asunto de la localización en <em>Hugo</em>.</p>
-<p>La siguiente línea, <code>theme = &quot;gohugo-theme-ananke&quot;</code>, le indica a <em>Hugo</em> en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la 
-<a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> no nos diésemos cuenta, pero cuando instalamos el tema <em>Ananke</em> automáticamente se generó una carpeta en nuestro disco duro llamada <code>gohugo-theme-ananke</code>, en el interior del directorio <code>themes</code>. La variable <code>theme</code> simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo <code>config.toml</code>.</p>
+<p>La siguiente línea, <code>theme = &quot;gohugo-theme-ananke&quot;</code>, le indica a <em>Hugo</em> en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">anterior entrada</a> no nos diésemos cuenta, pero cuando instalamos el tema <em>Ananke</em> automáticamente se generó una carpeta en nuestro disco duro llamada <code>gohugo-theme-ananke</code>, en el interior del directorio <code>themes</code>. La variable <code>theme</code> simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo <code>config.toml</code>.</p>
 <p>Por lo que respecta a la última línea de este bloque de código, para solventar el <em>bug</em> que nos impedía revisar localmente el sitio web, usamos el símbolo de comentario (<code>#</code>) para anularla. De esta forma, directamente podemos suprimirla, quedando definitivamente:</p>
 <pre><code class="language-toml">#
 # Configuración básica del sitio web
@@ -898,8 +900,7 @@ enableRobotsTXT        = true   # Buscadores
 <li><code>recent_posts_number</code>: cantidad de artículos, de entre los últimos publicados, que aparecerán destacados en la página de entrada a nuestro sitio web.</li>
 </ul>
 <p>En esta serie de artículos no entraré en detalle en la modificación de las plantillas del tema <em>Ananke</em>. No obstante, en breve pasaremos a estudiar con profundidad el tema <em>Beautiful Hugo</em> y las ideas que exploremos, de cara a modificar diversos aspectos de un sitio web, se podrán extrapolar a cualquier tema, <em>Ananke</em> incluido.</p>
-<p>Así pues, seguramente, en la próxima entrada del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a> instalaremos el tema <em>Beautiful Hugo</em> y echaremos un vistazo por encima a su correspondiente archivo de configuración <code>config.toml</code>.</p>
+<p>Así pues, seguramente, en la próxima entrada del <a href="/proyecto/metablog/">Proyecto Metablog</a> instalaremos el tema <em>Beautiful Hugo</em> y echaremos un vistazo por encima a su correspondiente archivo de configuración <code>config.toml</code>.</p>
 
     </div>
 
@@ -988,34 +989,30 @@ enableRobotsTXT        = true   # Buscadores
 
 
 
-
+  
   
     
-    
-
-
 
 
 
   
+  
+  
     
-    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
     
       
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez"></a>
     
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez">
-      
 
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
-        <h6 class="card-subtitle">Profesor de matemáticas</h6>
-        <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
-        <ul class="network-icon" aria-hidden="true">
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -1070,9 +1067,8 @@ enableRobotsTXT        = true   # Buscadores
   
 </ul>
 
-      </div>
     </div>
-  
+  </div>
 
 
   
@@ -1086,7 +1082,7 @@ enableRobotsTXT        = true   # Buscadores
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1158,9 +1154,9 @@ enableRobotsTXT        = true   # Buscadores
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
         
       
 
@@ -1243,7 +1239,7 @@ enableRobotsTXT        = true   # Buscadores
     
     
     
-    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
 
     
 
@@ -1273,7 +1269,9 @@ enableRobotsTXT        = true   # Buscadores
   <p class="powered-by">
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
 
     

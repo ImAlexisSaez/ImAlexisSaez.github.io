@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
 
   
 
@@ -83,8 +87,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -178,7 +182,7 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -235,7 +239,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -364,7 +368,7 @@
   
   
   
-    <script>window.staDarkLightChooser = true;</script>
+    <script>window.wcDarkLightEnabled = true;</script>
   
   
     <script>const isSiteThemeDark = false;</script>
@@ -603,15 +607,17 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
+      
       <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item js-set-theme-light">
@@ -789,8 +795,7 @@
       <p><strong>Problema 74:</strong> En el lanzamiento simultáneo de tres dados distintos, ¿de cuántas maneras la suma de las puntuaciones puede ascender a diez?</p>
 <hr>
 <p>Si asumimos que trabajamos con tres dados estándar y representamos por $x_i$ la puntuación obtenida en el lanzamiento del $i$-ésimo dado, con $1\leq i\leq 3$, buscamos encontrar el número de soluciones enteras de la ecuación $x_1+x_2+x_3 = 10$, donde $1\leq x_i\leq 6$, para $1\leq i\leq 3$.</p>
-<p>Seguiremos, a continuación, el mismo esquema que figura en el 
-<a href="/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/">ejercicio anterior</a>, esto es, utilizaremos el <em>Principio de complementación</em>, de forma que calcularemos el número de soluciones enteras no negativas (que satisfagan las restricciones de mayor o igual para las variables involucradas) de la ecuación propuesta y, después, haciendo uso del <em>Principio de inclusión-exclusión</em>, descontaremos aquellas que no satisfagan las restricciones impuestas.</p>
+<p>Seguiremos, a continuación, el mismo esquema que figura en el <a href="/2019/05/01/una-vuelta-de-tuerca-para-la-estrategia-de-barras-y-estrellas/">ejercicio anterior</a>, esto es, utilizaremos el <em>Principio de complementación</em>, de forma que calcularemos el número de soluciones enteras no negativas (que satisfagan las restricciones de mayor o igual para las variables involucradas) de la ecuación propuesta y, después, haciendo uso del <em>Principio de inclusión-exclusión</em>, descontaremos aquellas que no satisfagan las restricciones impuestas.</p>
 <p>Así pues, empecemos planteando la ecuación $x_1+x_2+x_3=10$, con $x_i\geq 1$ para todo $1\leq i\leq 3$. Pensando en términos de urnas y bolas, hemos de almacenar una bola en cada urna y pasar a encontrar entonces el número de soluciones enteras no negativas de la ecuación $x_1+x_2+x_3=7$, ahora con $x_i\geq 0$, para $1\leq i\leq 3$. Aplicando la técnica de <em>barras y estrellas</em>, como en ejercicios previos, sabemos que dicho número equivale al total de permutaciones con repetición de nueve elementos, donde uno de ellos se repite dos veces, mientras que el otro lo hace en siete ocasiones, esto es,</p>
 <p>$$
 PR_{9}^{2,7} = CR_{3,7} = \dbinom{9}{7} = \dfrac{9\cdot8}{2!} = 36.
@@ -907,34 +912,30 @@ $$</p>
 
 
 
-
+  
   
     
-    
-
-
 
 
 
   
+  
+  
     
-    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
     
       
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez"></a>
     
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez">
-      
 
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
-        <h6 class="card-subtitle">Profesor de matemáticas</h6>
-        <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
-        <ul class="network-icon" aria-hidden="true">
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -989,9 +990,8 @@ $$</p>
   
 </ul>
 
-      </div>
     </div>
-  
+  </div>
 
 
   
@@ -1005,7 +1005,7 @@ $$</p>
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1077,9 +1077,9 @@ $$</p>
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
         
       
 
@@ -1162,7 +1162,7 @@ $$</p>
     
     
     
-    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
 
     
 
@@ -1192,7 +1192,9 @@ $$</p>
   <p class="powered-by">
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
 
     

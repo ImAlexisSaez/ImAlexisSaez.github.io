@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
 
   
 
@@ -80,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -175,7 +179,7 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -232,7 +236,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -361,7 +365,7 @@
   
   
   
-    <script>window.staDarkLightChooser = true;</script>
+    <script>window.wcDarkLightEnabled = true;</script>
   
   
     <script>const isSiteThemeDark = false;</script>
@@ -600,15 +604,17 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
+      
       <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item js-set-theme-light">
@@ -745,10 +751,7 @@
 
     <div class="article-style">
       <p>En este artículo exploraremos las posibilidades que nos ofrece una librería de <em>R</em>, <em>readr</em>, integrante del famoso <em>tidyverso</em>, de cara a la importación y exportación de nuestros conjuntos de datos.</p>
-<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma 
-<a href="https://www.datacamp.com/home" target="_blank" rel="noopener">DataCamp</a>. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería 
-<a href="https://cran.r-project.org/web/packages/readr/index.html" target="_blank" rel="noopener">readr</a>: &ldquo;<em>Reading Data into R with readr</em>&rdquo;, al que podemos acceder a través del 
-<a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ" target="_blank" rel="noopener">siguiente enlace</a>.</p>
+<p>No me ha disgustado, en absoluto, el sistema que caracteriza los cursos de la plataforma <a href="https://www.datacamp.com/home" target="_blank" rel="noopener">DataCamp</a>. Píldoras condensadas de teoría acompañadas, de inmediato, por ejercicios para su aplicación directa, ofreciendo así un enfoque para el aprendizaje bastante práctico y ameno. He tomado algunas notas personales para el curso abierto, que en el portal aparece, relativo a la librería <a href="https://cran.r-project.org/web/packages/readr/index.html" target="_blank" rel="noopener">readr</a>: &ldquo;<em>Reading Data into R with readr</em>&rdquo;, al que podemos acceder a través del <a href="https://www.datacamp.com/community/open-courses/reading-data-into-r-with-readr#gs.tdqZLKQ" target="_blank" rel="noopener">siguiente enlace</a>.</p>
 <p>El material está desglosado en dos capítulos. En el primero de ellos, aprenderemos diversas funciones, contenidas en este paquete, que facilitarán enormemente la labor de importar datos utilizando el lenguaje de programación <em>R</em>. En el segundo, el objetivo será utilizar las herramientas que la librería pone a nuestra disposición para analizar y convertir las clases que poseen las columnas del conjunto de datos recién importado.</p>
 <p><em>readr</em> es una componente del denominado <em>tidyverso</em> (<em>tidyverse</em> en inglés, que parece que siempre suena mejor), un conjunto de librerías que todo usuario de <em>R</em> debería si no dominar, al menos conocer, para así resolver ciertas situaciones de la manera más sencilla posible (basta imaginar tener que hacer a mano algunas de las tareas que paquetes como <em>dplyr</em> o <em>tidyr</em> llevan a cabo para darse cuenta de este hecho).</p>
 <h2 id="1-importando-datos-con-readr">1. Importando datos con <em>readr</em></h2>
@@ -1617,34 +1620,30 @@ head(debt)
 
 
 
-
+  
   
     
-    
-
-
 
 
 
   
+  
+  
     
-    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
     
       
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez"></a>
     
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez">
-      
 
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
-        <h6 class="card-subtitle">Profesor de matemáticas</h6>
-        <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
-        <ul class="network-icon" aria-hidden="true">
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -1699,9 +1698,8 @@ head(debt)
   
 </ul>
 
-      </div>
     </div>
-  
+  </div>
 
 
   
@@ -1715,7 +1713,7 @@ head(debt)
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1787,9 +1785,9 @@ head(debt)
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
         
       
 
@@ -1872,7 +1870,7 @@ head(debt)
     
     
     
-    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
 
     
 
@@ -1902,7 +1900,9 @@ head(debt)
   <p class="powered-by">
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
 
     

@@ -5,7 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.8.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 4.8.0 for Hugo">
+  
 
   
 
@@ -80,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
         
       
     
@@ -175,7 +179,7 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -232,7 +236,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -361,7 +365,7 @@
   
   
   
-    <script>window.staDarkLightChooser = true;</script>
+    <script>window.wcDarkLightEnabled = true;</script>
   
   
     <script>const isSiteThemeDark = false;</script>
@@ -600,15 +604,17 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
         <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
+      
       <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link js-theme-selector" data-toggle="dropdown" aria-haspopup="true">
-          <i class="fas fa-palette" aria-hidden="true"></i>
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true">
+          <i class="fas fa-moon" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item js-set-theme-light">
@@ -783,12 +789,8 @@
   <div class="article-container">
 
     <div class="article-style">
-      <p>Continuemos esta serie de artículos, pertenecientes al 
-<a href="/proyecto/metablog/">Proyecto Metablog</a>, donde examinamos con detalle la creación de sitios web utilizando <em>Hugo</em>. Hoy veremos cómo instalar y configurar el tema 
-<a href="https://themes.gohugo.io/beautifulhugo/" target="_blank" rel="noopener">Beautiful Hugo</a>.</p>
-<p>En la 
-<a href="/2018/07/17/configurando-el-tema-ananke/">anterior entrada</a> vimos el proceso a seguir para el tema <em>Anake</em>. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para <em>Infinitos Contrastes</em>. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la 
-<a href="https://themes.gohugo.io/" target="_blank" rel="noopener">sección de temas</a> de la web oficial de <em>Hugo</em>, encontré, para mi fortuna, el tema <em>Beautiful Hugo</em>, una adaptación del tema <em>Beautiful Jekyll</em> que ya utilicé en su momento como plantilla para mi sitio web.</p>
+      <p>Continuemos esta serie de artículos, pertenecientes al <a href="/proyecto/metablog/">Proyecto Metablog</a>, donde examinamos con detalle la creación de sitios web utilizando <em>Hugo</em>. Hoy veremos cómo instalar y configurar el tema <a href="https://themes.gohugo.io/beautifulhugo/" target="_blank" rel="noopener">Beautiful Hugo</a>.</p>
+<p>En la <a href="/2018/07/17/configurando-el-tema-ananke/">anterior entrada</a> vimos el proceso a seguir para el tema <em>Anake</em>. No obstante, como ya comenté entonces, algunos detalles de dicha plantilla no terminaban de convencerme para la idea que tenía en mente para <em>Infinitos Contrastes</em>. Así pues, tras invertir una considerable cantidad de tiempo en navegar por la <a href="https://themes.gohugo.io/" target="_blank" rel="noopener">sección de temas</a> de la web oficial de <em>Hugo</em>, encontré, para mi fortuna, el tema <em>Beautiful Hugo</em>, una adaptación del tema <em>Beautiful Jekyll</em> que ya utilicé en su momento como plantilla para mi sitio web.</p>
 <p>Me encanta este tema por el protagonismo que ofrece al contenido, evitando toda esa miríada de elementos que algunas plantillas incorporan y que distraen enormemente la atención a la hora de consultar la información contenida en los artículos. Además, viene con el interesante añadido para un matemático de incorporar, de serie, la configuración adecuada para escribir fórmulas vía <em>KaTeX</em> (es un detalle con cierta trampa, ya que buenas batallas estoy lidiando, en ocasiones, para que las expresiones matemáticas se visualicen como deberían).</p>
 <p>Así pues, procedamos a su instalación. Para ello, en la terminal, desde el directorio raíz donde hayamos escogido alojar localmente nuestro sitio web, tecleamos:</p>
 <pre><code class="language-bash">cd themes
@@ -878,11 +880,8 @@ pygmentsUseClasses            = true
 pygmentsCodeFences            = true
 pygmentsCodefencesGuessSyntax = true
 </code></pre>
-<p>He dejado en los comentarios un enlace a la guía oficial para la configuración del 
-<a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank" rel="noopener">resaltado de código</a> a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos <em>CSS</em> que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor <code>&quot;trac&quot;</code>, en mi opinión, es el que más a juego va con <em>Beautiful Hugo</em>. Por otro lado, como este tema utiliza la librería 
-<a href="https://highlightjs.org/" target="_blank" rel="noopener">highlight.js</a> (en lugar de la que <em>Hugo</em> incorpora por defecto) para el mencionado resaltado, hemos de asignar <code>true</code> a la variable <code>pygmentsUseClasses</code>.</p>
-<p>A continuación, habilitamos la posibilidad de escribir código fuente en &ldquo;<em>fences</em>&rdquo;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la 
-<a href="https://kramdown.gettalong.org/quickref.html#code-blocks" target="_blank" rel="noopener">guía oficial</a> de <em>Kramdown</em> sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el <em>shortcode</em> <code>highlight</code> se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.</p>
+<p>He dejado en los comentarios un enlace a la guía oficial para la configuración del <a href="https://gohugo.io/content-management/syntax-highlighting/" target="_blank" rel="noopener">resaltado de código</a> a la que convendría que echásemos un vistazo. Para empezar, existen diferentes estilos <em>CSS</em> que, principalmente, afectan a los colores en los que se resaltan las palabras clave de los lenguajes de programación, así como al fondo en el que el código aparece. Tras revisar las opciones disponibles, el valor <code>&quot;trac&quot;</code>, en mi opinión, es el que más a juego va con <em>Beautiful Hugo</em>. Por otro lado, como este tema utiliza la librería <a href="https://highlightjs.org/" target="_blank" rel="noopener">highlight.js</a> (en lugar de la que <em>Hugo</em> incorpora por defecto) para el mencionado resaltado, hemos de asignar <code>true</code> a la variable <code>pygmentsUseClasses</code>.</p>
+<p>A continuación, habilitamos la posibilidad de escribir código fuente en &ldquo;<em>fences</em>&rdquo;, es decir, delimitándolo entre los caracteres habituales para ello (echa un vistazo a la <a href="https://kramdown.gettalong.org/quickref.html#code-blocks" target="_blank" rel="noopener">guía oficial</a> de <em>Kramdown</em> sobre bloques de código para una rápida referencia). Recomiendo actuar así porque, en ocasiones, el <em>shortcode</em> <code>highlight</code> se comporta de manera extraña, sobre todo en lo que respecta al interlineado cuando incluimos comentarios.</p>
 <p>Además, aunque hemos activado la opción de adivinar el lenguaje de programación por su sintaxis, recomendaría aquí que ayudásemos en lo posible a la librería y le indicáramos cuál estamos empleando, para que así aplique la configuración adecuada para él. Actuar así es crítico cuando, como en este artículo, compartimos pequeños bloques de código, de forma que es bastante complicado acertar con el lenguaje de programación dada la escasa información que suministramos.</p>
 <p>Finalmente, nos limitaremos a introducir los valores correspondientes a las cuentas que habremos creado para <em>Disqus</em> y para las estadísticas de <em>Google</em> en el siguiente bloque de código:</p>
 <pre><code class="language-toml">#
@@ -946,8 +945,7 @@ googleAnalytics = &quot;&quot;
 <li>La variable <code>commit</code> nos permite insertar el código SHA correspondiente al <em>commit</em> que generó la última versión del sitio web. No he considerado que dicha información fuera a proporcionar demasiada utilidad para una página como la mía, así que he declarado su valor como <code>false</code>.</li>
 <li>El resto de las variables activan, pues su valor es <code>true</code>, respectivamente, la sindicación vía <em>RSS</em>, la posibilidad de realizar comentarios en los distintos artículos de la web (vía <em>Disqus</em>), una estimación del tiempo de lectura para cada entrada (utilizando como referencia 200 palabras por minuto), el uso de la librería <em>highlight.js</em> para resaltar código y el acceso a compartir nuestro contenido en distintas redes sociales.</li>
 </ul>
-<p>Como la entrada está empezando a adquirir una extensión considerable. Vamos a poner aquí un punto y seguido, dejando para el próximo artículo del 
-<a href="/proyecto/metablog/">Proyecto Metablog</a> el análisis del resto de la configuración del archivo <code>config.toml</code>.</p>
+<p>Como la entrada está empezando a adquirir una extensión considerable. Vamos a poner aquí un punto y seguido, dejando para el próximo artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> el análisis del resto de la configuración del archivo <code>config.toml</code>.</p>
 
     </div>
 
@@ -1036,34 +1034,30 @@ googleAnalytics = &quot;&quot;
 
 
 
-
+  
   
     
-    
-
-
 
 
 
   
+  
+  
     
-    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
     
       
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez"></a>
     
-    
-    
-    <div class="media author-card content-widget-hr">
-      
-        
-        <img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q90_lanczos_center.jpg" alt="Alexis Sáez">
-      
 
-      <div class="media-body">
-        <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
-        <h6 class="card-subtitle">Profesor de matemáticas</h6>
-        <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
-        <ul class="network-icon" aria-hidden="true">
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
   
     
     
@@ -1118,9 +1112,8 @@ googleAnalytics = &quot;&quot;
   
 </ul>
 
-      </div>
     </div>
-  
+  </div>
 
 
   
@@ -1134,7 +1127,7 @@ googleAnalytics = &quot;&quot;
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1206,9 +1199,9 @@ googleAnalytics = &quot;&quot;
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/highlight.min.js" integrity="sha512-7t8APmYpzEsZP7CYoA7RfMPV9Bb+PJHa9x2WiUnDXZx3XHveuyWUtvNOexhkierl5flZ3tr92dP1mMS+SGlD+A==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/languages/r.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
         
       
 
@@ -1291,7 +1284,7 @@ googleAnalytics = &quot;&quot;
     
     
     
-    <script src="/js/academic.min.3b2b658c61ebd725bd5fc606c89fe44c.js"></script>
+    <script src="/js/wowchemy.min.4c2bca31150ce93c5a5e43b8a50f22fd.js"></script>
 
     
 
@@ -1321,7 +1314,9 @@ googleAnalytics = &quot;&quot;
   <p class="powered-by">
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy Website Builder</a>
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
     
 
     
