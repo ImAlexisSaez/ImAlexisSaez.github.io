@@ -8,7 +8,7 @@
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
   
 
   
@@ -60,7 +60,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#1565c0">
   
 
   
@@ -73,7 +73,7 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -84,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
@@ -227,8 +227,8 @@
   
     
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -236,7 +236,8 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.min.18a81fcba9746c6a8230584f1af667d5.css">
+  
+  <link rel="stylesheet" href="/css/wowchemy.43d3c96e828e85b0b0be4980653cbf43.css">
 
   
 
@@ -261,9 +262,12 @@
 
   
 
+  
   <link rel="manifest" href="/index.webmanifest">
+  
+
   <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://imalexissaez.github.io/proyecto/enunciados-de-oposicion/">
 
@@ -367,9 +371,14 @@
   
   
   
-  <script src="/js/wowchemy-init.js"></script>
+  
+  
+  
+  <script src="/js/wowchemy-init.min.d876f1a6b98701f9238f2313b512a26f.js"></script>
 
-  <aside class="search-results" id="search">
+  
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -378,16 +387,22 @@
           <h1>Buscar</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -399,6 +414,7 @@
     </section>
   </div>
 </aside>
+
 
 
   <div class="page-header">
@@ -416,7 +432,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
+  <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
@@ -716,15 +732,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 <div class="btn-links mb-3">
   
   <a class="btn btn-outline-primary my-1" href="/enunciados-19/" target="_blank" rel="noopener">Ir al sitio del proyecto</a>
@@ -984,15 +991,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/04/12/enunciados-propuestos-xlv/" >Enunciados propuestos (XLV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/04/12/enunciados-propuestos-xlv/"  class="summary-link">
@@ -1058,6 +1066,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1089,15 +1135,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/04/05/enunciados-propuestos-xliv/" >Enunciados propuestos (XLIV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/04/05/enunciados-propuestos-xliv/"  class="summary-link">
@@ -1163,6 +1210,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1194,15 +1279,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/31/enunciados-propuestos-xliii/" >Enunciados propuestos (XLIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/31/enunciados-propuestos-xliii/"  class="summary-link">
@@ -1268,6 +1354,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1299,15 +1423,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/23/enunciados-propuestos-xlii/" >Enunciados propuestos (XLII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/23/enunciados-propuestos-xlii/"  class="summary-link">
@@ -1373,6 +1498,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1404,15 +1567,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/18/enunciados-propuestos-xli/" >Enunciados propuestos (XLI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/18/enunciados-propuestos-xli/"  class="summary-link">
@@ -1478,6 +1642,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1509,15 +1711,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/11/enunciados-propuestos-xl/" >Enunciados propuestos (XL)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/11/enunciados-propuestos-xl/"  class="summary-link">
@@ -1583,6 +1786,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1614,15 +1855,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/04/enunciados-propuestos-xxxix/" >Enunciados propuestos (XXXIX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/04/enunciados-propuestos-xxxix/"  class="summary-link">
@@ -1688,6 +1930,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1719,15 +1999,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/01/enunciados-propuestos-xxxviii/" >Enunciados propuestos (XXXVIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/01/enunciados-propuestos-xxxviii/"  class="summary-link">
@@ -1793,6 +2074,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1824,15 +2143,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/02/26/enunciados-propuestos-xxxvii/" >Enunciados propuestos (XXXVII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/02/26/enunciados-propuestos-xxxvii/"  class="summary-link">
@@ -1898,6 +2218,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1929,15 +2287,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/02/20/enunciados-propuestos-xxxvi/" >Enunciados propuestos (XXXVI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/02/20/enunciados-propuestos-xxxvi/"  class="summary-link">
@@ -2003,6 +2362,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2034,15 +2431,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/02/09/enunciados-propuestos-xxxv/" >Enunciados propuestos (XXXV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/02/09/enunciados-propuestos-xxxv/"  class="summary-link">
@@ -2108,6 +2506,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2139,15 +2575,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/22/enunciados-propuestos-xxxiv/" >Enunciados propuestos (XXXIV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/22/enunciados-propuestos-xxxiv/"  class="summary-link">
@@ -2213,6 +2650,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2244,15 +2719,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/18/enunciados-propuestos-xxxiii/" >Enunciados propuestos (XXXIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/18/enunciados-propuestos-xxxiii/"  class="summary-link">
@@ -2318,6 +2794,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2349,15 +2863,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/14/enunciados-propuestos-xxxii/" >Enunciados propuestos (XXXII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/14/enunciados-propuestos-xxxii/"  class="summary-link">
@@ -2423,6 +2938,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2454,15 +3007,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/09/enunciados-propuestos-xxxi/" >Enunciados propuestos (XXXI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/09/enunciados-propuestos-xxxi/"  class="summary-link">
@@ -2528,6 +3082,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2559,15 +3151,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/05/enunciados-propuestos-xxx/" >Enunciados propuestos (XXX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/05/enunciados-propuestos-xxx/"  class="summary-link">
@@ -2633,6 +3226,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2664,15 +3295,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/01/02/enunciados-propuestos-xxix/" >Enunciados propuestos (XXIX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/01/02/enunciados-propuestos-xxix/"  class="summary-link">
@@ -2738,6 +3370,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2769,15 +3439,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/12/31/enunciados-propuestos-xxviii/" >Enunciados propuestos (XXVIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/12/31/enunciados-propuestos-xxviii/"  class="summary-link">
@@ -2843,6 +3514,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2874,15 +3583,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/12/28/enunciados-propuestos-xxvii/" >Enunciados propuestos (XXVII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/12/28/enunciados-propuestos-xxvii/"  class="summary-link">
@@ -2948,6 +3658,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2979,15 +3727,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/12/06/enunciados-propuestos-xxvi/" >Enunciados propuestos (XXVI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/12/06/enunciados-propuestos-xxvi/"  class="summary-link">
@@ -3053,6 +3802,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3084,15 +3871,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/18/enunciados-propuestos-xxv/" >Enunciados propuestos (XXV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/18/enunciados-propuestos-xxv/"  class="summary-link">
@@ -3158,6 +3946,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3189,15 +4015,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/16/enunciados-propuestos-xxiv/" >Enunciados propuestos (XXIV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/16/enunciados-propuestos-xxiv/"  class="summary-link">
@@ -3263,6 +4090,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3294,15 +4159,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/13/enunciados-propuestos-xxiii/" >Enunciados propuestos (XXIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/13/enunciados-propuestos-xxiii/"  class="summary-link">
@@ -3368,6 +4234,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3399,15 +4303,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/11/enunciados-propuestos-xxii/" >Enunciados propuestos (XXII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/11/enunciados-propuestos-xxii/"  class="summary-link">
@@ -3473,6 +4378,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3504,15 +4447,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/08/enunciados-propuestos-xxi/" >Enunciados propuestos (XXI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/08/enunciados-propuestos-xxi/"  class="summary-link">
@@ -3578,6 +4522,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3609,15 +4591,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/06/enunciados-propuestos-xx/" >Enunciados propuestos (XX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/06/enunciados-propuestos-xx/"  class="summary-link">
@@ -3683,6 +4666,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3714,15 +4735,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/04/enunciados-propuestos-xix/" >Enunciados propuestos (XIX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/04/enunciados-propuestos-xix/"  class="summary-link">
@@ -3788,6 +4810,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3819,15 +4879,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/11/01/enunciados-propuestos-xviii/" >Enunciados propuestos (XVIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/11/01/enunciados-propuestos-xviii/"  class="summary-link">
@@ -3893,6 +4954,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -3924,15 +5023,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/30/enunciados-propuestos-xvii/" >Enunciados propuestos (XVII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/30/enunciados-propuestos-xvii/"  class="summary-link">
@@ -3998,6 +5098,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4029,15 +5167,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/28/enunciados-propuestos-xvi/" >Enunciados propuestos (XVI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/28/enunciados-propuestos-xvi/"  class="summary-link">
@@ -4103,6 +5242,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4134,15 +5311,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/25/enunciados-propuestos-xv/" >Enunciados propuestos (XV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/25/enunciados-propuestos-xv/"  class="summary-link">
@@ -4208,6 +5386,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4239,15 +5455,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/23/enunciados-propuestos-xiv/" >Enunciados propuestos (XIV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/23/enunciados-propuestos-xiv/"  class="summary-link">
@@ -4313,6 +5530,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4344,15 +5599,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/21/enunciados-propuestos-xiii/" >Enunciados propuestos (XIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/21/enunciados-propuestos-xiii/"  class="summary-link">
@@ -4418,6 +5674,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4449,15 +5743,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/18/enunciados-propuestos-xii/" >Enunciados propuestos (XII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/18/enunciados-propuestos-xii/"  class="summary-link">
@@ -4523,6 +5818,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4554,15 +5887,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/16/enunciados-propuestos-xi/" >Enunciados propuestos (XI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/16/enunciados-propuestos-xi/"  class="summary-link">
@@ -4628,6 +5962,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4659,15 +6031,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/14/enunciados-propuestos-x/" >Enunciados propuestos (X)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/14/enunciados-propuestos-x/"  class="summary-link">
@@ -4733,6 +6106,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4764,15 +6175,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/12/enunciados-propuestos-ix/" >Enunciados propuestos (IX)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/12/enunciados-propuestos-ix/"  class="summary-link">
@@ -4838,6 +6250,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4869,15 +6319,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/10/enunciados-propuestos-viii/" >Enunciados propuestos (VIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/10/enunciados-propuestos-viii/"  class="summary-link">
@@ -4943,6 +6394,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -4974,15 +6463,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/08/enunciados-propuestos-vii/" >Enunciados propuestos (VII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/08/enunciados-propuestos-vii/"  class="summary-link">
@@ -5048,6 +6538,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5079,15 +6607,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/05/enunciados-propuestos-vi/" >Enunciados propuestos (VI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/05/enunciados-propuestos-vi/"  class="summary-link">
@@ -5153,6 +6682,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5184,15 +6751,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/02/enunciados-propuestos-v/" >Enunciados propuestos (V)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/02/enunciados-propuestos-v/"  class="summary-link">
@@ -5258,6 +6826,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5289,15 +6895,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/10/01/enunciados-propuestos-iv/" >Enunciados propuestos (IV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/10/01/enunciados-propuestos-iv/"  class="summary-link">
@@ -5363,6 +6970,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5394,15 +7039,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/09/25/enunciados-propuestos-iii/" >Enunciados propuestos (III)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/09/25/enunciados-propuestos-iii/"  class="summary-link">
@@ -5468,6 +7114,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5499,15 +7183,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/09/24/enunciados-propuestos-ii/" >Enunciados propuestos (II)</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/09/24/enunciados-propuestos-ii/"  class="summary-link">
@@ -5573,6 +7258,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -5604,15 +7327,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2019/09/23/comenzamos-nuevo-proyecto-de-problemas-de-oposicion/" >Comenzamos nuevo proyecto de problemas de oposición</a>
-    </h3>
+    </div>
 
     
     <a href="/2019/09/23/comenzamos-nuevo-proyecto-de-problemas-de-oposicion/"  class="summary-link">
@@ -5677,6 +7401,44 @@
       
     </div>
 
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
     
 
   </div>
@@ -5803,42 +7565,18 @@
 
     
     
-    <script>const code_highlighting = true;</script>
-    
-
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
-      const content_type = {
-        'post': "Artículos",
-        'project': "Proyectos",
-        'publication' : "Publicaciones",
-        'talk' : "Charlas",
-        'slides' : "Slides"
-        };
-    </script>
-    
-
-    
-    
 
     
     
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
         </div>
-      </div>
       </div>
     </script>
     
@@ -5851,15 +7589,27 @@
 
     
     
-
-    
-    
     
 
     
     
+    
 
     
+    
+
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
     
 
     
@@ -5873,11 +7623,10 @@
     
     
       
+      
     
     
-    
-    
-    <script src="/js/wowchemy.min.abf79d5abd9391a904c9b122bfe98c04.js"></script>
+    <script src="/en/js/wowchemy.min.704ee2a3c8ec154b6c43217300ecff02.js"></script>
 
     
 

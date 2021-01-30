@@ -8,7 +8,7 @@
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
   
 
   
@@ -60,7 +60,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#1565c0">
   
 
   
@@ -73,7 +73,7 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -84,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
@@ -227,8 +227,8 @@
   
     
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -236,7 +236,8 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.min.18a81fcba9746c6a8230584f1af667d5.css">
+  
+  <link rel="stylesheet" href="/css/wowchemy.43d3c96e828e85b0b0be4980653cbf43.css">
 
   
 
@@ -263,9 +264,12 @@
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
   
 
+  
   <link rel="manifest" href="/index.webmanifest">
+  
+
   <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://imalexissaez.github.io/">
 
@@ -333,9 +337,14 @@
   
   
   
-  <script src="/js/wowchemy-init.js"></script>
+  
+  
+  
+  <script src="/js/wowchemy-init.min.d876f1a6b98701f9238f2313b512a26f.js"></script>
 
-  <aside class="search-results" id="search">
+  
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -344,16 +353,22 @@
           <h1>Buscar</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -365,6 +380,7 @@
     </section>
   </div>
 </aside>
+
 
 
   <div class="page-header">
@@ -382,7 +398,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
+  <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
@@ -651,6 +667,8 @@
   
 
   
+
+  
   
 
   
@@ -790,7 +808,7 @@
 
       
       <div class="col-md-5">
-        <h3>Intereses</h3>
+        <div class="section-subheading">Intereses</div>
         <ul class="ul-interests">
           
           <li>Problemas de matemáticas</li>
@@ -807,7 +825,7 @@
 
       
       <div class="col-md-7">
-        <h3>Educación</h3>
+        <div class="section-subheading">Educación</div>
         <ul class="ul-edu fa-ul">
           
           <li>
@@ -862,6 +880,8 @@
   
 
   
+
+  
   
 
   
@@ -899,8 +919,8 @@
       <div class="row  ">
       
         
-          <div class="col-12 col-lg-4 section-heading">
-            <h1>Experiencia laboral</h1>
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Experiencia laboral</h1>
             
           </div>
         
@@ -937,8 +957,8 @@
     <div class="col py-2">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</h4>
-          <h4 class="card-title exp-company text-muted my-0"><a href="https://mestreacasa.gva.es/web/ieslatorreta" target="_blank" rel="noopener">IES La Torreta</a></h4>
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://mestreacasa.gva.es/web/ieslatorreta" target="_blank" rel="noopener">IES La Torreta</a></div>
           <div class="text-muted exp-meta">
             2020-09-01 –
             
@@ -980,8 +1000,8 @@
     <div class="col py-2">
       <div class="card">
         <div class="card-body">
-          <h4 class="card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</h4>
-          <h4 class="card-title exp-company text-muted my-0"><a href="http://www.iesmontserratroig.es/" target="_blank" rel="noopener">IES Montserrat Roig</a></h4>
+          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</div>
+          <div class="section-subheading card-title exp-company text-muted my-0"><a href="http://www.iesmontserratroig.es/" target="_blank" rel="noopener">IES Montserrat Roig</a></div>
           <div class="text-muted exp-meta">
             2019-11-20 –
             
@@ -1017,6 +1037,8 @@
   
   
   
+  
+
   
 
   
@@ -1065,9 +1087,9 @@
       <div class="row  ">
       
         
-          <div class="col-12 col-lg-4 section-heading">
-            <h1>Logros</h1>
-            <p>Pequeñas gestas superadas por el camino</p>
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Logros</h1>
+            <p class="mt-1">Pequeñas gestas superadas por el camino</p>
           </div>
         
       
@@ -1084,7 +1106,7 @@
   
   
     <div class="card experience course">
-      <div class="card-body"><h4 class="card-title exp-title text-muted my-0">Certificat de Capacitació per a l&rsquo;Ensenyament en Valencià</h4><div class="card-subtitle my-0 article-metadata"><a href="http://www.ceice.gva.es/va/web/formacion-profesorado/inicio" target="_blank" rel="noopener">Servei de Formació del Professorat</a><span class="middot-divider"></span>
+      <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Certificat de Capacitació per a l&rsquo;Ensenyament en Valencià</div><div class="card-subtitle my-0 article-metadata"><a href="http://www.ceice.gva.es/va/web/formacion-profesorado/inicio" target="_blank" rel="noopener">Servei de Formació del Professorat</a><span class="middot-divider"></span>
 
           2019
           
@@ -1097,7 +1119,7 @@
     </div>
   
     <div class="card experience course">
-      <div class="card-body"><h4 class="card-title exp-title text-muted my-0">Certificat de nivell C1</h4><div class="card-subtitle my-0 article-metadata"><a href="http://cieacova.com/" target="_blank" rel="noopener">cieaCOVA</a><span class="middot-divider"></span>
+      <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Certificat de nivell C1</div><div class="card-subtitle my-0 article-metadata"><a href="http://cieacova.com/" target="_blank" rel="noopener">cieaCOVA</a><span class="middot-divider"></span>
 
           2019
           
@@ -1110,7 +1132,7 @@
     </div>
   
     <div class="card experience course">
-      <div class="card-body"><h4 class="card-title exp-title text-muted my-0">Preliminary English Test</h4><div class="card-subtitle my-0 article-metadata"><a href="https://www.cambridgeenglish.org/" target="_blank" rel="noopener">Cambridge English</a><span class="middot-divider"></span>
+      <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Preliminary English Test</div><div class="card-subtitle my-0 article-metadata"><a href="https://www.cambridgeenglish.org/" target="_blank" rel="noopener">Cambridge English</a><span class="middot-divider"></span>
 
           2017
           
@@ -1136,6 +1158,8 @@
   
   
   
+  
+
   
 
   
@@ -1184,9 +1208,9 @@
       <div class="row  ">
       
         
-          <div class="col-12 col-lg-4 section-heading">
-            <h1>Proyectos</h1>
-            <p>A la búsqueda del conocimiento</p>
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Proyectos</h1>
+            <p class="mt-1">A la búsqueda del conocimiento</p>
           </div>
         
       
@@ -1298,10 +1322,13 @@
     
     <div class="card-text">
       <h4><a href="/enunciados-19/" >Enunciados de Oposición</a></h4>
+
       
       <div class="article-style">
         <p>Problemas matemáticos propuestos para la preparación de las Oposiciones de 2020.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1346,10 +1373,13 @@
     
     <div class="card-text">
       <h4><a href="/python-basic/" >Curso Python (Nivel básico)</a></h4>
+
       
       <div class="article-style">
         <p>Notas personales del curso &lsquo;Python desde 0&rsquo; ofrecido en YouTube por &lsquo;Píldoras Informáticas&rsquo;.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1391,10 +1421,13 @@
     
     <div class="card-text">
       <h4><a href="/proyecto/capacitacion/" >Capacitació en valencià</a></h4>
+
       
       <div class="article-style">
         <p>Informació i recursos d&rsquo;interés relacionats amb el Certificat de Capacitació en valencià.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1436,10 +1469,13 @@
     
     <div class="card-text">
       <h4><a href="/proyecto/valenciano-c1/" >Valencià (nivell C1)</a></h4>
+
       
       <div class="article-style">
         <p>Recursos útils a l’hora d’estudiar per superar les proves de nivell C1.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1481,10 +1517,13 @@
     
     <div class="card-text">
       <h4><a href="/proyecto/problemas/" >Problemas (Oposición)</a></h4>
+
       
       <div class="article-style">
         <p>Problemas matemáticos resueltos enfocados para la preparación de oposiciones.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1526,10 +1565,13 @@
     
     <div class="card-text">
       <h4><a href="/proyecto/metablog/" >Metablog (Hugo)</a></h4>
+
       
       <div class="article-style">
         <p>Entradas del blog que ilustran cómo generar una página web como Infinitos Contrastes.</p>
       </div>
+      
+
       
     </div>
   </div>
@@ -1551,6 +1593,8 @@
   
   
   
+  
+
   
 
   
@@ -1599,9 +1643,9 @@
       <div class="row  ">
       
         
-          <div class="col-12 col-lg-4 section-heading">
-            <h1>Artículos</h1>
-            <p>Pensando para escribir, escribiendo para pensar</p>
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Artículos</h1>
+            <p class="mt-1">Pensando para escribir, escribiendo para pensar</p>
           </div>
         
       
@@ -1671,15 +1715,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/" >Vídeos del XXI ENEM en Valladolid (2020)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/"  class="summary-link">
@@ -1776,15 +1821,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/" >Vídeos de los talleres de GeoGebra 2020 de la SEMCV</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/"  class="summary-link">
@@ -1881,15 +1927,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/04/12/enunciados-propuestos-xlv/" >Enunciados propuestos (XLV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/04/12/enunciados-propuestos-xlv/"  class="summary-link">
@@ -1955,6 +2002,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1986,15 +2071,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/04/05/enunciados-propuestos-xliv/" >Enunciados propuestos (XLIV)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/04/05/enunciados-propuestos-xliv/"  class="summary-link">
@@ -2060,6 +2146,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2091,15 +2215,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/03/31/enunciados-propuestos-xliii/" >Enunciados propuestos (XLIII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/03/31/enunciados-propuestos-xliii/"  class="summary-link">
@@ -2165,6 +2290,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/enunciados-de-oposicion/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -2226,6 +2389,8 @@
   
 
   
+
+  
   
 
   
@@ -2263,9 +2428,9 @@
       <div class="row  ">
       
         
-          <div class="col-12 col-lg-4 section-heading">
-            <h1>Populares</h1>
-            <p>Temas recurrentes</p>
+          <div class="section-heading col-12 col-lg-4 mb-3 mb-lg-0 d-flex flex-column align-items-center align-items-lg-start">
+            <h1 class="mb-0">Populares</h1>
+            <p class="mt-1">Temas recurrentes</p>
           </div>
         
       
@@ -2514,42 +2679,18 @@
 
     
     
-    <script>const code_highlighting = true;</script>
-    
-
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
-      const content_type = {
-        'post': "Artículos",
-        'project': "Proyectos",
-        'publication' : "Publicaciones",
-        'talk' : "Charlas",
-        'slides' : "Slides"
-        };
-    </script>
-    
-
-    
-    
 
     
     
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
         </div>
-      </div>
       </div>
     </script>
     
@@ -2562,15 +2703,27 @@
 
     
     
-
-    
-    
     
 
     
     
+    
 
     
+    
+
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
     
 
     
@@ -2584,11 +2737,10 @@
     
     
       
+      
     
     
-    
-    
-    <script src="/js/wowchemy.min.abf79d5abd9391a904c9b122bfe98c04.js"></script>
+    <script src="/en/js/wowchemy.min.704ee2a3c8ec154b6c43217300ecff02.js"></script>
 
     
 

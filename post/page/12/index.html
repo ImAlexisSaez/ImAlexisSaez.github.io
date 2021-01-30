@@ -8,7 +8,7 @@
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
   
 
   
@@ -60,7 +60,7 @@
   
   
   
-  <meta name="theme-color" content="#2962ff">
+  <meta name="theme-color" content="#1565c0">
   
 
   
@@ -73,7 +73,7 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -84,8 +84,8 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
@@ -227,8 +227,8 @@
   
     
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -236,7 +236,8 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.min.18a81fcba9746c6a8230584f1af667d5.css">
+  
+  <link rel="stylesheet" href="/css/wowchemy.43d3c96e828e85b0b0be4980653cbf43.css">
 
   
 
@@ -263,9 +264,12 @@
   <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
   
 
+  
   <link rel="manifest" href="/index.webmanifest">
+  
+
   <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="https://imalexissaez.github.io/post/">
 
@@ -319,9 +323,14 @@
   
   
   
-  <script src="/js/wowchemy-init.js"></script>
+  
+  
+  
+  <script src="/js/wowchemy-init.min.d876f1a6b98701f9238f2313b512a26f.js"></script>
 
-  <aside class="search-results" id="search">
+  
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -330,16 +339,22 @@
           <h1>Buscar</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -351,6 +366,7 @@
     </section>
   </div>
 </aside>
+
 
 
   <div class="page-header">
@@ -368,7 +384,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
+  <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
@@ -646,15 +662,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/24/buscando-numeros-compuestos/" >Buscando números compuestos</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/24/buscando-numeros-compuestos/"  class="summary-link">
@@ -720,6 +737,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -751,15 +806,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/21/una-aplicacion-rapida-del-teorema-de-euler-fermat/" >Una aplicación rápida del Teorema de Euler-Fermat</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/21/una-aplicacion-rapida-del-teorema-de-euler-fermat/"  class="summary-link">
@@ -825,6 +881,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -856,15 +950,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/17/buscando-la-ultima-cifra-de-una-torre-de-potencias/" >Buscando la última cifra de una torre de potencias</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/17/buscando-la-ultima-cifra-de-una-torre-de-potencias/"  class="summary-link">
@@ -930,6 +1025,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -961,15 +1094,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/14/un-polinomio-que-solo-toma-valores-enteros/" >Un polinomio que solo toma valores enteros</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/14/un-polinomio-que-solo-toma-valores-enteros/"  class="summary-link">
@@ -1035,6 +1169,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1066,15 +1238,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/10/un-curioso-criterio-de-divisibilidad/" >Un curioso criterio de divisibilidad</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/10/un-curioso-criterio-de-divisibilidad/"  class="summary-link">
@@ -1140,6 +1313,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1171,15 +1382,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/" >¿Cómo dividir polinomios con LaTeX en conjuntos finitos?</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/"  class="summary-link">
@@ -1276,15 +1488,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/11/03/empezando-con-teoria-de-numeros-vii/" >Empezando con teoría de números (VII)</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/11/03/empezando-con-teoria-de-numeros-vii/"  class="summary-link">
@@ -1350,6 +1563,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1381,15 +1632,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/10/31/como-dividir-polinomios-con-latex/" >¿Cómo dividir polinomios con LaTeX?</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/10/31/como-dividir-polinomios-con-latex/"  class="summary-link">
@@ -1486,15 +1738,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/10/27/empezando-con-teoria-de-numeros-vi/" >Empezando con teoría de números (VI)</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/10/27/empezando-con-teoria-de-numeros-vi/"  class="summary-link">
@@ -1560,6 +1813,44 @@
     </div>
 
     
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
 
   </div>
   <div class="ml-3">
@@ -1591,15 +1882,16 @@
 
 
 
+
   
 
 
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2018/10/24/empezando-con-teoria-de-numeros-v/" >Empezando con teoría de números (V)</a>
-    </h3>
+    </div>
 
     
     <a href="/2018/10/24/empezando-con-teoria-de-numeros-v/"  class="summary-link">
@@ -1664,6 +1956,44 @@
       
     </div>
 
+    
+    <div class="btn-links">
+      
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary btn-page-header btn-sm" href="/proyecto/problemas/">
+    Proyecto
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+    </div>
     
 
   </div>
@@ -1794,42 +2124,18 @@
 
     
     
-    <script>const code_highlighting = true;</script>
-    
-
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No se encontraron resultados","placeholder":"Buscar...","results":"resultados encontrados"};
-      const content_type = {
-        'post': "Artículos",
-        'project': "Proyectos",
-        'publication' : "Publicaciones",
-        'talk' : "Charlas",
-        'slides' : "Slides"
-        };
-    </script>
-    
-
-    
-    
 
     
     
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
         </div>
-      </div>
       </div>
     </script>
     
@@ -1842,15 +2148,27 @@
 
     
     
-
-    
-    
     
 
     
     
+    
 
     
+    
+
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
     
 
     
@@ -1864,11 +2182,10 @@
     
     
       
+      
     
     
-    
-    
-    <script src="/js/wowchemy.min.abf79d5abd9391a904c9b122bfe98c04.js"></script>
+    <script src="/en/js/wowchemy.min.704ee2a3c8ec154b6c43217300ecff02.js"></script>
 
     
 
