@@ -1,19 +1,15 @@
 <!DOCTYPE html><html lang="en-us" >
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
-  
-
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
   
 
-  
   
 
   
@@ -27,40 +23,40 @@
   
   
 
-  <meta name="author" content="Alexis Sáez">
+  <meta name="author" content="Alexis Sáez" />
 
   
   
   
     
   
-  <meta name="description" content="Vídeo   Notas personales En esta lección, tras haber estudiado en la anterior el widget Label, abordaremos el uso del widget Entry, cuyo funcionamento es realmente similar a nivel de sintaxis.">
+  <meta name="description" content="Vídeo   Notas personales En esta lección, tras haber estudiado en la anterior el widget Label, abordaremos el uso del widget Entry, cuyo funcionamento es realmente similar a nivel de sintaxis." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/">
-
-  
-
-
-
-
-
-
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/" />
 
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
 
   
   
   
-  <meta name="theme-color" content="#1565c0">
+    <meta name="theme-color" content="#1565c0" />
   
 
   
@@ -73,7 +69,9 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
 
     
     
@@ -91,18 +89,14 @@
     
 
     
+    
+    
 
     
 
     
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -111,12 +105,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -125,12 +113,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -139,12 +121,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -153,12 +129,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -167,21 +137,6 @@
       
     
       
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
-      
-    
       
 
       
@@ -190,12 +145,62 @@
       
     
       
+      
 
       
       
 
       
     
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
       
 
       
@@ -206,12 +211,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -219,7 +218,14 @@
 
       
     
+      
+      
 
+      
+      
+
+      
+    
   
 
   
@@ -237,11 +243,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.ce0aa78140cf8d50b7914f980d563ebd.css">
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
 
   
 
 
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -256,21 +300,27 @@
 
   
 
+  
+
+
+
 
   
   
-
   
 
   
-  <link rel="manifest" href="/index.webmanifest">
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
 
-  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/">
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/" />
 
+  
   
   
   
@@ -279,21 +329,25 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary" />
   
-  <meta property="twitter:site" content="@imalexissaez">
-  <meta property="twitter:creator" content="@imalexissaez">
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
-  <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/">
-  <meta property="og:title" content="45. Interfaces gráficas IV | Infinitos Contrastes">
-  <meta property="og:description" content="Vídeo   Notas personales En esta lección, tras haber estudiado en la anterior el widget Label, abordaremos el uso del widget Entry, cuyo funcionamento es realmente similar a nivel de sintaxis."><meta property="og:image" content="https://imalexissaez.github.io/media/sharing.jpg">
-  <meta property="twitter:image" content="https://imalexissaez.github.io/media/sharing.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/pb45-interfaces-graficas-iv/" />
+  <meta property="og:title" content="45. Interfaces gráficas IV | Infinitos Contrastes" />
+  <meta property="og:description" content="Vídeo   Notas personales En esta lección, tras haber estudiado en la anterior el widget Label, abordaremos el uso del widget Entry, cuyo funcionamento es realmente similar a nivel de sintaxis." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="article:published_time" content="2019-05-22T00:00:01&#43;01:00">
+      <meta
+        property="article:published_time"
+        content="2019-05-22T00:00:01&#43;01:00"
+      />
     
     <meta property="article:modified_time" content="2019-05-22T00:00:01&#43;01:00">
   
@@ -304,9 +358,7 @@
 
   
 
-
   
-
 
   
 
@@ -315,11 +367,10 @@
 
 
   <title>45. Interfaces gráficas IV | Infinitos Contrastes</title>
-
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="3420664b8ec06cb293d79812ff7d8768" >
 
   
   
@@ -329,46 +380,11 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8446300de3057dfecd2dbb1103d0e171.js"></script>
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
 
   
 
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Buscar</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Buscar...">
-        
-      </div>
-
-      
-      
-
-      
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
 
 
 
@@ -397,7 +413,7 @@
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
@@ -527,43 +543,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
-        </li>
-
-        
-        
-
       
 
         
@@ -578,10 +557,6 @@
       
 
       
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -604,6 +579,7 @@
       </li>
       
 
+      
       
 
     </ul>
@@ -637,12 +613,6 @@
   </button>
 
   
-  <button class="form-control sidebar-search js-search d-none d-md-flex">
-    <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Buscar...</span>
-    <span class="sidebar-search-shortcut">/</span>
-  </button>
-  
 </form>
 
 <nav class="collapse docs-links" id="docs-nav">
@@ -660,8 +630,6 @@
     
       
 
-      
-      
       
 
 
@@ -1006,6 +974,8 @@
     
     
     <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
       <ul class="nav toc-top">
         <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
       </ul>
@@ -1068,29 +1038,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-primer-contacto-con-la-clase-entry">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img01.png" data-caption="Primer contacto con la clase &lt;code&gt;Entry&lt;/code&gt;.">
-
-
-  <img src="/courses/python-basic/img/pb45-img01.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    Primer contacto con la clase <code>Entry</code>.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-primer-contacto-con-la-clase-entry">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img01.png" alt="Primer contacto con la clase `Entry`." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      Primer contacto con la clase <code>Entry</code>.
+    </figcaption></figure>
 <p>A partir de ahora, podemos reutilizar los conceptos y propiedades aprendidas hasta el momento:</p>
 <pre><code class="language-python">from tkinter import Tk, Frame, Entry
 
@@ -1123,29 +1076,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-insertando-el-widget-en-un-frame">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img02.png" data-caption="Insertando el &lt;em&gt;widget&lt;/em&gt; en un &lt;em&gt;frame&lt;/em&gt;.">
-
-
-  <img src="/courses/python-basic/img/pb45-img02.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    Insertando el <em>widget</em> en un <em>frame</em>.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-insertando-el-widget-en-un-frame">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img02.png" alt="Insertando el *widget* en un *frame*." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      Insertando el <em>widget</em> en un <em>frame</em>.
+    </figcaption></figure>
 <p>Empecemos a combinar <em>widgets</em> añadiendo al lado del cuadro de texto una etiqueta que rece &lsquo;&lsquo;Nombre:'&rsquo;, como si quisiéramos elaborar un formulario de registro de datos personales. Utilizando la función <code>place()</code> es posible, pero resulta muy complicado cuadrar adecuadamente todos los espacios de la ventana de la aplicación.</p>
 <p>Existen dos alternativas a la hora de abordar esta situación:</p>
 <ul>
@@ -1199,29 +1135,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-probando-el-método-grid">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img03.png" data-caption="Probando el método &lt;code&gt;grid()&lt;/code&gt;.">
-
-
-  <img src="/courses/python-basic/img/pb45-img03.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    Probando el método <code>grid()</code>.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-probando-el-método-grid">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img03.png" alt="Probando el método `grid()`." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      Probando el método <code>grid()</code>.
+    </figcaption></figure>
 <p>Por defecto, los elementos se alinean centrados dentro de su correspondiente casilla de la rejilla. Con el parámetro <code>sticky</code> y los cuatro puntos cardinales (<code>n</code>, <code>e</code>, <code>s</code>, <code>w</code> y sus combinaciones por parejas) podemos modificar dicho comportamiento.</p>
 <pre><code class="language-python">from tkinter import Tk, Frame, Entry, Label
 
@@ -1281,29 +1200,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-el-parámetro-sticky-en-acción">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img04.png" data-caption="El parámetro &lt;code&gt;sticky&lt;/code&gt; en acción.">
-
-
-  <img src="/courses/python-basic/img/pb45-img04.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    El parámetro <code>sticky</code> en acción.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-el-parámetro-sticky-en-acción">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img04.png" alt="El parámetro `sticky` en acción." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      El parámetro <code>sticky</code> en acción.
+    </figcaption></figure>
 <p>Para evitar que los elementos aparezcan tan juntos, los parámetros <code>padx</code> y <code>pady</code> pueden resultarnos de utilidad, ya que nos permiten configurar la distancia del elemento al límite del contenedor donde se haya ubicado.</p>
 <pre><code class="language-python">from tkinter import Tk, Frame, Entry, Label
 
@@ -1363,29 +1265,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-separando-elementos-con-padx-y-pady">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img05.png" data-caption="Separando elementos con &lt;code&gt;padx&lt;/code&gt; y &lt;code&gt;pady&lt;/code&gt;.">
-
-
-  <img src="/courses/python-basic/img/pb45-img05.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    Separando elementos con <code>padx</code> y <code>pady</code>.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-separando-elementos-con-padx-y-pady">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img05.png" alt="Separando elementos con `padx` y `pady`." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      Separando elementos con <code>padx</code> y <code>pady</code>.
+    </figcaption></figure>
 <p>Ahora, ya únicamente nos resta experimentar con la configuración de los distintos <em>widgets</em> estudiados, empleando para ello principalmente la función <code>config()</code> asociada a cada <em>widget</em>.</p>
 <p>Finalmente, veamos cómo añadir un cuadro de texto que nos permita introducir contraseñas. Buscamos que al suministrar la información, esta aparezca &lsquo;&lsquo;oculta&rsquo;&rsquo; tras asteriscos. El parámetro <code>show</code> de la función <code>config()</code> cumple dicho cometido:</p>
 <pre><code class="language-python">from tkinter import Tk, Frame, Entry, Label
@@ -1453,29 +1338,12 @@ root.mainloop()
 
 
 
-
-
-
-
-<figure id="figure-una-contraseña-más-segura-con-show">
-
-
-  <a data-fancybox="" href="/courses/python-basic/img/pb45-img06.png" data-caption="Una contraseña más segura con &lt;code&gt;show&lt;/code&gt;.">
-
-
-  <img src="/courses/python-basic/img/pb45-img06.png" alt=""  >
-</a>
-
-
-  
-  
-  <figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
-    Una contraseña más segura con <code>show</code>.
-  </figcaption>
-
-
-</figure>
-
+<figure  id="figure-una-contraseña-más-segura-con-show">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/courses/python-basic/img/pb45-img06.png" alt="Una contraseña más segura con `show`." loading="lazy" data-zoomable /></div>
+  </div><figcaption data-pre="Figura&nbsp;" data-post=":&nbsp;" class="numbered">
+      Una contraseña más segura con <code>show</code>.
+    </figcaption></figure>
 <h2 id="código-fuente">Código fuente</h2>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/45/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 
@@ -1535,11 +1403,16 @@ root.mainloop()
       </article>
 
       <footer class="site-footer">
+
   
 
+  
+
+  
   <p class="powered-by">
     Alexis Sáez ©2021
   </p>
+  
 
   
   
@@ -1553,10 +1426,13 @@ root.mainloop()
     
     
     
-    Published with
-    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
-    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
-    open source</a> website builder that empowers creators.
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1605,6 +1481,7 @@ root.mainloop()
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
       
@@ -1612,8 +1489,8 @@ root.mainloop()
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+      
+      
 
       
 
@@ -1629,6 +1506,7 @@ root.mainloop()
 
     
     
+    
 
     
     
@@ -1640,31 +1518,6 @@ root.mainloop()
 
     
     
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-        <div class="search-hit-content">
-          <div class="search-hit-name">
-            <a href="{{relpermalink}}">{{title}}</a>
-            <div class="article-metadata search-hit-type">{{type}}</div>
-            <p class="search-hit-description">{{snippet}}</p>
-          </div>
-        </div>
-      </div>
-    </script>
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-
-    
-    
-    
-
-    
-    
     
 
     
@@ -1672,19 +1525,15 @@ root.mainloop()
 
     
     
-
     
-    
-      
-      
-      
-      
-      
-      
-      
     
 
     
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
     
     
     
@@ -1694,11 +1543,7 @@ root.mainloop()
     
     
     
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.317c3c80f2d00be271636f5f55f64542.js"></script>
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
 
     
 

@@ -1,19 +1,15 @@
 <!DOCTYPE html><html lang="en-us" >
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
-  
-
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
   
 
-  
   
 
   
@@ -27,40 +23,40 @@
   
   
 
-  <meta name="author" content="Alexis Sáez">
+  <meta name="author" content="Alexis Sáez" />
 
   
   
   
     
   
-  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático.">
+  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/">
-
-  
-
-
-
-
-
-
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/" />
 
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
 
   
   
   
-  <meta name="theme-color" content="#1565c0">
+    <meta name="theme-color" content="#1565c0" />
   
 
   
@@ -73,7 +69,11 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
 
     
     
@@ -91,18 +91,14 @@
     
 
     
+    
+    
 
     
 
     
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -111,12 +107,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -125,12 +115,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -139,12 +123,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -153,12 +131,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -167,21 +139,6 @@
       
     
       
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
-      
-    
       
 
       
@@ -190,12 +147,62 @@
       
     
       
+      
 
       
       
 
       
     
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
       
 
       
@@ -206,12 +213,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -219,7 +220,14 @@
 
       
     
+      
+      
 
+      
+      
+
+      
+    
   
 
   
@@ -237,11 +245,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.ce0aa78140cf8d50b7914f980d563ebd.css">
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
 
   
 
 
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -256,23 +302,29 @@
 
   
 
+  
+
+
+
 
   
   
-
-  
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
   
 
   
-  <link rel="manifest" href="/index.webmanifest">
+    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
   
 
-  <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
 
-  <link rel="canonical" href="https://imalexissaez.github.io/">
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
 
+  <link rel="canonical" href="https://imalexissaez.github.io/" />
+
+  
   
   
   
@@ -281,20 +333,23 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary" />
   
-  <meta property="twitter:site" content="@imalexissaez">
-  <meta property="twitter:creator" content="@imalexissaez">
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
-  <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/">
-  <meta property="og:title" content="Infinitos Contrastes">
-  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático."><meta property="og:image" content="https://imalexissaez.github.io/media/sharing.jpg">
-  <meta property="twitter:image" content="https://imalexissaez.github.io/media/sharing.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/" />
+  <meta property="og:title" content="Infinitos Contrastes" />
+  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
-    <meta property="og:updated_time" content="2020-08-02T00:00:01&#43;02:00">
+    
+      <meta property="og:updated_time" content="2020-08-02T00:00:01&#43;02:00" />
+    
   
 
   
@@ -302,22 +357,14 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://imalexissaez.github.io/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "url": "https://imalexissaez.github.io/"
+  "@type": "WebSite","url": "https://imalexissaez.github.io/"
 }
 </script>
 
 
   
 
-
   
-
 
   
 
@@ -326,11 +373,10 @@
 
 
   <title>Infinitos Contrastes</title>
-
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper  ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper   "  >
 
   
   
@@ -340,46 +386,11 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8446300de3057dfecd2dbb1103d0e171.js"></script>
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
 
   
 
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Buscar</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Buscar...">
-        
-      </div>
-
-      
-      
-
-      
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
 
 
 
@@ -408,7 +419,7 @@
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
@@ -538,43 +549,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact" data-target="#contact"><span>Contacto</span></a>
-        </li>
-
-        
-        
-
       
 
         
@@ -589,10 +563,6 @@
       
 
       
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -615,6 +585,7 @@
       </li>
       
 
+      
       
 
     </ul>
@@ -809,7 +780,7 @@
       
       <div class="col-md-5">
         <div class="section-subheading">Intereses</div>
-        <ul class="ul-interests">
+        <ul class="ul-interests mb-0">
           
           <li>Problemas de matemáticas</li>
           
@@ -826,7 +797,7 @@
       
       <div class="col-md-7">
         <div class="section-subheading">Educación</div>
-        <ul class="ul-edu fa-ul">
+        <ul class="ul-edu fa-ul mb-0">
           
           <li>
             <i class="fa-li fas fa-graduation-cap"></i>
@@ -937,6 +908,8 @@
 
   
   
+
+  
   
   <div class="row experience">
     
@@ -957,18 +930,20 @@
     <div class="col py-2">
       <div class="card">
         <div class="card-body">
-          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</div>
-          <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://mestreacasa.gva.es/web/ieslatorreta" target="_blank" rel="noopener">IES La Torreta</a></div>
-          <div class="text-muted exp-meta">
-            2020-09-01 –
-            
-              Actualmente
-            
-            
-              <span class="middot-divider"></span>
-              <span>Elda</span>
-            
-          </div>
+
+              <div class="section-subheading card-title exp-title text-muted my-0">Profesor de matemáticas</div>
+              <div class="section-subheading card-title exp-company text-muted my-0"><a href="https://mestreacasa.gva.es/web/ieslatorreta" target="_blank" rel="noopener">IES La Torreta</a></div>
+              <div class="text-muted exp-meta">
+                2020-09-01 –
+                
+                  Actualmente
+                
+                
+                  <span class="middot-divider"></span>
+                  <span>Elda</span>
+                
+              </div>
+
           <div class="card-text"><p>Cursos impartidos:</p>
 <ul>
 <li>2º de ESO: grupos F y G.</li>
@@ -1000,18 +975,20 @@
     <div class="col py-2">
       <div class="card">
         <div class="card-body">
-          <div class="section-subheading card-title exp-title text-muted mt-0 mb-1">Profesor de matemáticas</div>
-          <div class="section-subheading card-title exp-company text-muted my-0"><a href="http://www.iesmontserratroig.es/" target="_blank" rel="noopener">IES Montserrat Roig</a></div>
-          <div class="text-muted exp-meta">
-            2019-11-20 –
-            
-              2020-08-31
-            
-            
-              <span class="middot-divider"></span>
-              <span>Elche</span>
-            
-          </div>
+
+              <div class="section-subheading card-title exp-title text-muted my-0">Profesor de matemáticas</div>
+              <div class="section-subheading card-title exp-company text-muted my-0"><a href="http://www.iesmontserratroig.es/" target="_blank" rel="noopener">IES Montserrat Roig</a></div>
+              <div class="text-muted exp-meta">
+                2019-11-20 –
+                
+                  2020-08-31
+                
+                
+                  <span class="middot-divider"></span>
+                  <span>Elche</span>
+                
+              </div>
+
           <div class="card-text"><p>Cursos impartidos:</p>
 <ul>
 <li>1º de ESO: grupos A, D, E y F.</li>
@@ -1108,9 +1085,9 @@
     <div class="card experience course">
       <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Certificat de Capacitació per a l&rsquo;Ensenyament en Valencià</div><div class="card-subtitle my-0 article-metadata"><a href="http://www.ceice.gva.es/va/web/formacion-profesorado/inicio" target="_blank" rel="noopener">Servei de Formació del Professorat</a><span class="middot-divider"></span>
 
-          2019
-          
-        </div>
+              2019
+              
+            </div>
 
         
 
@@ -1121,9 +1098,9 @@
     <div class="card experience course">
       <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Certificat de nivell C1</div><div class="card-subtitle my-0 article-metadata"><a href="http://cieacova.com/" target="_blank" rel="noopener">cieaCOVA</a><span class="middot-divider"></span>
 
-          2019
-          
-        </div>
+              2019
+              
+            </div>
 
         
 
@@ -1134,9 +1111,9 @@
     <div class="card experience course">
       <div class="card-body"><div class="section-subheading card-title exp-title text-muted my-0">Preliminary English Test</div><div class="card-subtitle my-0 article-metadata"><a href="https://www.cambridgeenglish.org/" target="_blank" rel="noopener">Cambridge English</a><span class="middot-divider"></span>
 
-          2017
-          
-        </div>
+              2017
+              
+            </div>
 
         
 
@@ -1314,10 +1291,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/enunciados-19/"  class="card-image hover-overlay">
-      <img src="/proyecto/enunciados-de-oposicion/featured_hu5fd939bf7d5868ccdbb2f4689a7ac382_40981_3b2dbcf6f3cf57e7b165308969c217b4.jpg" data-src="/proyecto/enunciados-de-oposicion/featured_hu5fd939bf7d5868ccdbb2f4689a7ac382_40981_550x0_resize_q90_lanczos.jpg" alt="Enunciados de Oposición" class="img-responsive lazyload">
+      <img src="/proyecto/enunciados-de-oposicion/featured_hu5fd939bf7d5868ccdbb2f4689a7ac382_40981_550x0_resize_q90_lanczos.jpg" alt="Enunciados de Oposición" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1365,10 +1340,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/python-basic/"  class="card-image hover-overlay">
-      <img src="/proyecto/python-basic/featured_hue76e31e8914481d829c487a2bdb2b30c_212420_4099e18464c8c4a60a7b47bebbca5f1b.jpg" data-src="/proyecto/python-basic/featured_hue76e31e8914481d829c487a2bdb2b30c_212420_550x0_resize_q90_lanczos.jpg" alt="Curso Python (Nivel básico)" class="img-responsive lazyload">
+      <img src="/proyecto/python-basic/featured_hue76e31e8914481d829c487a2bdb2b30c_212420_550x0_resize_q90_lanczos.jpg" alt="Curso Python (Nivel básico)" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1413,10 +1386,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/proyecto/capacitacion/"  class="card-image hover-overlay">
-      <img src="/proyecto/capacitacion/featured_hu251c0348e623742afac920e1d263faf5_79397_495970c1b7b238a05a2a39f990cbd384.jpg" data-src="/proyecto/capacitacion/featured_hu251c0348e623742afac920e1d263faf5_79397_550x0_resize_q90_lanczos.jpg" alt="Capacitació en valencià" class="img-responsive lazyload">
+      <img src="/proyecto/capacitacion/featured_hu251c0348e623742afac920e1d263faf5_79397_550x0_resize_q90_lanczos.jpg" alt="Capacitació en valencià" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1461,10 +1432,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/proyecto/valenciano-c1/"  class="card-image hover-overlay">
-      <img src="/proyecto/valenciano-c1/featured_huf8a620f6dae1be134a6701bf0df91754_174061_1ee7cce45af3e881fbc17eb3ca381b54.jpg" data-src="/proyecto/valenciano-c1/featured_huf8a620f6dae1be134a6701bf0df91754_174061_550x0_resize_q90_lanczos.jpg" alt="Valencià (nivell C1)" class="img-responsive lazyload">
+      <img src="/proyecto/valenciano-c1/featured_huf8a620f6dae1be134a6701bf0df91754_174061_550x0_resize_q90_lanczos.jpg" alt="Valencià (nivell C1)" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1509,10 +1478,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/proyecto/problemas/"  class="card-image hover-overlay">
-      <img src="/proyecto/problemas/featured_hu71612a18f7ee6fcc3144b60dc179b8c7_37335_c9d03f4a7a6b1babe0e0a19ad04f4e59.jpg" data-src="/proyecto/problemas/featured_hu71612a18f7ee6fcc3144b60dc179b8c7_37335_550x0_resize_q90_lanczos.jpg" alt="Problemas (Oposición)" class="img-responsive lazyload">
+      <img src="/proyecto/problemas/featured_hu71612a18f7ee6fcc3144b60dc179b8c7_37335_550x0_resize_q90_lanczos.jpg" alt="Problemas (Oposición)" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1557,10 +1524,8 @@
   <div class="card">
     
     
-    
-    
     <a href="/proyecto/metablog/"  class="card-image hover-overlay">
-      <img src="/proyecto/metablog/featured_hu31aee7314c2f343f02287939232d0ed5_93781_1ab34dd410e6b6e7b6ba532c8fd315ed.jpg" data-src="/proyecto/metablog/featured_hu31aee7314c2f343f02287939232d0ed5_93781_550x0_resize_q90_lanczos.jpg" alt="Metablog (Hugo)" class="img-responsive lazyload">
+      <img src="/proyecto/metablog/featured_hu31aee7314c2f343f02287939232d0ed5_93781_550x0_resize_q90_lanczos.jpg" alt="Metablog (Hugo)" class="img-responsive" loading="lazy">
     </a>
     
     <div class="card-text">
@@ -1776,6 +1741,7 @@
   
   
   
+  
 
   
   
@@ -1796,10 +1762,8 @@
     
     
     
-    
-    
     <a href="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/" >
-      <img src="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/featured_hu8be027e9b9707b8503e6c50a660854c3_133152_7ddef53587b1a154c3a1973c0c47b12c.jpg" data-src="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/featured_hu8be027e9b9707b8503e6c50a660854c3_133152_150x0_resize_q90_lanczos.jpg" alt="Vídeos del XXI ENEM en Valladolid (2020)" class="lazyload">
+      <img src="/2020/08/02/videos-del-xxi-enem-en-valladolid-2020/featured_hu8be027e9b9707b8503e6c50a660854c3_133152_150x0_resize_q90_lanczos.jpg" alt="Vídeos del XXI ENEM en Valladolid (2020)" loading="lazy">
     </a>
     
   </div>
@@ -1882,6 +1846,7 @@
   
   
   
+  
 
   
   
@@ -1902,10 +1867,8 @@
     
     
     
-    
-    
     <a href="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/" >
-      <img src="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/featured_huc32668fe8db0d659e43f7a4e5cc55128_149004_cffc95a9e70b7f1eb4bac1786caf6633.jpg" data-src="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/featured_huc32668fe8db0d659e43f7a4e5cc55128_149004_150x0_resize_q90_lanczos.jpg" alt="Vídeos de los talleres de GeoGebra 2020 de la SEMCV" class="lazyload">
+      <img src="/2020/07/29/videos-de-los-talleres-de-geogebra-2020-de-la-semcv/featured_huc32668fe8db0d659e43f7a4e5cc55128_149004_150x0_resize_q90_lanczos.jpg" alt="Vídeos de los talleres de GeoGebra 2020 de la SEMCV" loading="lazy">
     </a>
     
   </div>
@@ -1988,6 +1951,7 @@
   
   
   
+  
 
   
   
@@ -2046,10 +2010,8 @@
     
     
     
-    
-    
     <a href="/2020/04/12/enunciados-propuestos-xlv/" >
-      <img src="/2020/04/12/enunciados-propuestos-xlv/featured_hu08a3b2ca1e3377bdcdc07de8b90499a2_116677_d5c8ff353187ca2a0f0f70c71ffe1142.jpg" data-src="/2020/04/12/enunciados-propuestos-xlv/featured_hu08a3b2ca1e3377bdcdc07de8b90499a2_116677_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLV)" class="lazyload">
+      <img src="/2020/04/12/enunciados-propuestos-xlv/featured_hu08a3b2ca1e3377bdcdc07de8b90499a2_116677_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLV)" loading="lazy">
     </a>
     
   </div>
@@ -2132,6 +2094,7 @@
   
   
   
+  
 
   
   
@@ -2190,10 +2153,8 @@
     
     
     
-    
-    
     <a href="/2020/04/05/enunciados-propuestos-xliv/" >
-      <img src="/2020/04/05/enunciados-propuestos-xliv/featured_hu93f3b6a08798c60782b82dfb3bed91b0_196120_408ef57d2a6c3d3685c0eb0f9eacd667.jpg" data-src="/2020/04/05/enunciados-propuestos-xliv/featured_hu93f3b6a08798c60782b82dfb3bed91b0_196120_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLIV)" class="lazyload">
+      <img src="/2020/04/05/enunciados-propuestos-xliv/featured_hu93f3b6a08798c60782b82dfb3bed91b0_196120_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLIV)" loading="lazy">
     </a>
     
   </div>
@@ -2276,6 +2237,7 @@
   
   
   
+  
 
   
   
@@ -2334,10 +2296,8 @@
     
     
     
-    
-    
     <a href="/2020/03/31/enunciados-propuestos-xliii/" >
-      <img src="/2020/03/31/enunciados-propuestos-xliii/featured_hua28a88cd41cb1d8cf424eba3764cdde2_136028_da8015bc9600a2a9aa1437b09ef1cd0c.jpg" data-src="/2020/03/31/enunciados-propuestos-xliii/featured_hua28a88cd41cb1d8cf424eba3764cdde2_136028_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLIII)" class="lazyload">
+      <img src="/2020/03/31/enunciados-propuestos-xliii/featured_hua28a88cd41cb1d8cf424eba3764cdde2_136028_150x0_resize_q90_lanczos.jpg" alt="Enunciados propuestos (XLIII)" loading="lazy">
     </a>
     
   </div>
@@ -2590,11 +2550,16 @@
     
     <div class="container">
       <footer class="site-footer">
+
   
 
+  
+
+  
   <p class="powered-by">
     Alexis Sáez ©2021
   </p>
+  
 
   
   
@@ -2608,10 +2573,13 @@
     
     
     
-    Published with
-    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
-    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
-    open source</a> website builder that empowers creators.
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -2652,6 +2620,7 @@
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
       
@@ -2659,8 +2628,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      
 
       
 
@@ -2676,32 +2647,8 @@
 
     
     
-
-    
     
 
-    
-    
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-        <div class="search-hit-content">
-          <div class="search-hit-name">
-            <a href="{{relpermalink}}">{{title}}</a>
-            <div class="article-metadata search-hit-type">{{type}}</div>
-            <p class="search-hit-description">{{snippet}}</p>
-          </div>
-        </div>
-      </div>
-    </script>
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-
-    
     
     
 
@@ -2714,19 +2661,15 @@
 
     
     
-
     
-    
-      
-      
-      
-      
-      
-      
-      
     
 
     
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
     
     
     
@@ -2736,11 +2679,7 @@
     
     
     
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.317c3c80f2d00be271636f5f55f64542.js"></script>
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
 
     
 

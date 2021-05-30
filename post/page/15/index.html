@@ -1,19 +1,15 @@
 <!DOCTYPE html><html lang="en-us" >
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
-  
-
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
   
 
-  
   
 
   
@@ -27,40 +23,40 @@
   
   
 
-  <meta name="author" content="Alexis Sáez">
+  <meta name="author" content="Alexis Sáez" />
 
   
   
   
     
   
-  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático.">
+  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/post/">
-
-  
-
-
-
-
-
-
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/post/" />
 
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
 
   
   
   
-  <meta name="theme-color" content="#1565c0">
+    <meta name="theme-color" content="#1565c0" />
   
 
   
@@ -73,7 +69,9 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
 
     
     
@@ -91,18 +89,14 @@
     
 
     
+    
+    
 
     
 
     
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -111,12 +105,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -125,12 +113,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -139,12 +121,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -153,12 +129,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -167,21 +137,6 @@
       
     
       
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
-      
-    
       
 
       
@@ -190,12 +145,62 @@
       
     
       
+      
 
       
       
 
       
     
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
       
 
       
@@ -206,12 +211,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -219,7 +218,14 @@
 
       
     
+      
+      
 
+      
+      
+
+      
+    
   
 
   
@@ -237,11 +243,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.ce0aa78140cf8d50b7914f980d563ebd.css">
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
 
   
 
 
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -256,23 +300,29 @@
 
   
 
+  
+
+
+
 
   
   
-
-  
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
   
 
   
-  <link rel="manifest" href="/index.webmanifest">
+    <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
   
 
-  <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
 
-  <link rel="canonical" href="https://imalexissaez.github.io/post/">
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
 
+  <link rel="canonical" href="https://imalexissaez.github.io/post/" />
+
+  
   
   
   
@@ -281,29 +331,30 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary" />
   
-  <meta property="twitter:site" content="@imalexissaez">
-  <meta property="twitter:creator" content="@imalexissaez">
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
-  <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/post/">
-  <meta property="og:title" content="Artículos | Infinitos Contrastes">
-  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático."><meta property="og:image" content="https://imalexissaez.github.io/media/sharing.jpg">
-  <meta property="twitter:image" content="https://imalexissaez.github.io/media/sharing.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/post/" />
+  <meta property="og:title" content="Artículos | Infinitos Contrastes" />
+  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
-    <meta property="og:updated_time" content="2020-08-02T00:00:01&#43;02:00">
+    
+      <meta property="og:updated_time" content="2020-08-02T00:00:01&#43;02:00" />
+    
   
-
-  
-
-
-
 
   
 
+
+
+  
 
   
 
@@ -312,11 +363,10 @@
 
 
   <title>Artículos | Infinitos Contrastes</title>
-
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="6370009740e1eb2ee0b7974f10ecc91f" >
 
   
   
@@ -326,46 +376,11 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8446300de3057dfecd2dbb1103d0e171.js"></script>
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
 
   
 
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Buscar</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Buscar...">
-        
-      </div>
-
-      
-      
-
-      
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
 
 
 
@@ -394,7 +409,7 @@
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
@@ -524,43 +539,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
-        </li>
-
-        
-        
-
       
 
         
@@ -575,10 +553,6 @@
       
 
       
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -601,6 +575,7 @@
       </li>
       
 
+      
       
 
     </ul>
@@ -723,6 +698,7 @@
   
   
   
+  
 
   
   
@@ -781,10 +757,8 @@
     
     
     
-    
-    
     <a href="/2018/09/01/alojando-nuestro-sitio-web-en-github/" >
-      <img src="/2018/09/01/alojando-nuestro-sitio-web-en-github/featured_hue23d6638d086f2adc68d1a31b97f6309_112427_497ee2618cd01f0969f066256d5dbfdd.jpg" data-src="/2018/09/01/alojando-nuestro-sitio-web-en-github/featured_hue23d6638d086f2adc68d1a31b97f6309_112427_150x0_resize_q90_lanczos.jpg" alt="Alojando nuestro sitio web en GitHub" class="lazyload">
+      <img src="/2018/09/01/alojando-nuestro-sitio-web-en-github/featured_hue23d6638d086f2adc68d1a31b97f6309_112427_150x0_resize_q90_lanczos.jpg" alt="Alojando nuestro sitio web en GitHub" loading="lazy">
     </a>
     
   </div>
@@ -867,6 +841,7 @@
   
   
   
+  
 
   
   
@@ -925,10 +900,8 @@
     
     
     
-    
-    
     <a href="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/" >
-      <img src="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/featured_hu4630d5ee2e2552da97cd069d65fcd850_152728_3c0a1b20a4efba7b879054a3000d754d.jpg" data-src="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/featured_hu4630d5ee2e2552da97cd069d65fcd850_152728_150x0_resize_q90_lanczos.jpg" alt="Publicando la primera entrada en nuestro sitio web" class="lazyload">
+      <img src="/2018/08/30/publicando-la-primera-entrada-en-nuestro-sitio-web/featured_hu4630d5ee2e2552da97cd069d65fcd850_152728_150x0_resize_q90_lanczos.jpg" alt="Publicando la primera entrada en nuestro sitio web" loading="lazy">
     </a>
     
   </div>
@@ -1011,6 +984,7 @@
   
   
   
+  
 
   
   
@@ -1031,10 +1005,8 @@
     
     
     
-    
-    
     <a href="/2018/08/28/criterios-de-evaluacion-de-oposicion-para-la-especialidad-de-matematicas/" >
-      <img src="/2018/08/28/criterios-de-evaluacion-de-oposicion-para-la-especialidad-de-matematicas/featured_hu62e85bcd525d474b9f33221a510a4357_131626_5bc6fb3b153dfdd4708427769260deb4.jpg" data-src="/2018/08/28/criterios-de-evaluacion-de-oposicion-para-la-especialidad-de-matematicas/featured_hu62e85bcd525d474b9f33221a510a4357_131626_150x0_resize_q90_lanczos.jpg" alt="Criterios de evaluación de oposición para la especialidad de matemáticas" class="lazyload">
+      <img src="/2018/08/28/criterios-de-evaluacion-de-oposicion-para-la-especialidad-de-matematicas/featured_hu62e85bcd525d474b9f33221a510a4357_131626_150x0_resize_q90_lanczos.jpg" alt="Criterios de evaluación de oposición para la especialidad de matemáticas" loading="lazy">
     </a>
     
   </div>
@@ -1117,6 +1089,7 @@
   
   
   
+  
 
   
   
@@ -1137,10 +1110,8 @@
     
     
     
-    
-    
     <a href="/2018/08/25/anatomia-de-una-prueba-t-perfecta/" >
-      <img src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_7da01cc1e157450ed7130ef22a64894c.jpg" data-src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_150x0_resize_q90_lanczos.jpg" alt="Anatomía de una prueba t perfecta" class="lazyload">
+      <img src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_150x0_resize_q90_lanczos.jpg" alt="Anatomía de una prueba t perfecta" loading="lazy">
     </a>
     
   </div>
@@ -1223,6 +1194,7 @@
   
   
   
+  
 
   
   
@@ -1243,10 +1215,8 @@
     
     
     
-    
-    
     <a href="/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/" >
-      <img src="/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/featured_hu8556ae66cc65fcca5d45f0319f961dcd_511904_6d2c0e61ca13adff075b0eb6a1385ceb.jpg" data-src="/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/featured_hu8556ae66cc65fcca5d45f0319f961dcd_511904_150x0_resize_q90_lanczos.jpg" alt="Porqué la mayoría de los resultados en investigación son falsos" class="lazyload">
+      <img src="/2018/08/23/porque-la-mayoria-de-los-resultados-en-investigacion-son-falsos/featured_hu8556ae66cc65fcca5d45f0319f961dcd_511904_150x0_resize_q90_lanczos.jpg" alt="Porqué la mayoría de los resultados en investigación son falsos" loading="lazy">
     </a>
     
   </div>
@@ -1329,6 +1299,7 @@
   
   
   
+  
 
   
   
@@ -1349,10 +1320,8 @@
     
     
     
-    
-    
     <a href="/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/" >
-      <img src="/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/featured_hua2b56aeb2e80bb31dac91df2cbce07ff_336254_a67439228116410b87cbff20b71f250e.jpg" data-src="/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/featured_hua2b56aeb2e80bb31dac91df2cbce07ff_336254_150x0_resize_q90_lanczos.jpg" alt="Aprendiendo de la experiencia de Jacob Cohen" class="lazyload">
+      <img src="/2018/08/21/aprendiendo-de-la-experiencia-de-jacob-cohen/featured_hua2b56aeb2e80bb31dac91df2cbce07ff_336254_150x0_resize_q90_lanczos.jpg" alt="Aprendiendo de la experiencia de Jacob Cohen" loading="lazy">
     </a>
     
   </div>
@@ -1435,6 +1404,7 @@
   
   
   
+  
 
   
   
@@ -1455,10 +1425,8 @@
     
     
     
-    
-    
     <a href="/2018/08/18/breve-introduccion-a-la-libreria-numpy/" >
-      <img src="/2018/08/18/breve-introduccion-a-la-libreria-numpy/featured_huf2066753870144dd2259810549b1ae2a_121871_db6aa978bf0614c0da62239038e6a17d.jpg" data-src="/2018/08/18/breve-introduccion-a-la-libreria-numpy/featured_huf2066753870144dd2259810549b1ae2a_121871_150x0_resize_q90_lanczos.jpg" alt="Breve introducción a la librería NumPy" class="lazyload">
+      <img src="/2018/08/18/breve-introduccion-a-la-libreria-numpy/featured_huf2066753870144dd2259810549b1ae2a_121871_150x0_resize_q90_lanczos.jpg" alt="Breve introducción a la librería NumPy" loading="lazy">
     </a>
     
   </div>
@@ -1541,6 +1509,7 @@
   
   
   
+  
 
   
   
@@ -1561,10 +1530,8 @@
     
     
     
-    
-    
     <a href="/2018/08/16/tutorial-sobre-machine-learning-con-python/" >
-      <img src="/2018/08/16/tutorial-sobre-machine-learning-con-python/featured_hu8867c585abbcaa06452b97e0e07617ea_128185_51b6e6ffe1d38ec0795758e5c78706dc.jpg" data-src="/2018/08/16/tutorial-sobre-machine-learning-con-python/featured_hu8867c585abbcaa06452b97e0e07617ea_128185_150x0_resize_q90_lanczos.jpg" alt="Tutorial sobre Machine Learning con Python" class="lazyload">
+      <img src="/2018/08/16/tutorial-sobre-machine-learning-con-python/featured_hu8867c585abbcaa06452b97e0e07617ea_128185_150x0_resize_q90_lanczos.jpg" alt="Tutorial sobre Machine Learning con Python" loading="lazy">
     </a>
     
   </div>
@@ -1647,6 +1614,7 @@
   
   
   
+  
 
   
   
@@ -1667,10 +1635,8 @@
     
     
     
-    
-    
     <a href="/2018/08/14/breve-introduccion-a-la-libreria-readr/" >
-      <img src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_d4184a0585ac9e20304eebe6ad47a0c5.jpg" data-src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_150x0_resize_q90_lanczos.jpg" alt="Breve introducción a la librería readr" class="lazyload">
+      <img src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_150x0_resize_q90_lanczos.jpg" alt="Breve introducción a la librería readr" loading="lazy">
     </a>
     
   </div>
@@ -1753,6 +1719,7 @@
   
   
   
+  
 
   
   
@@ -1811,10 +1778,8 @@
     
     
     
-    
-    
     <a href="/2018/08/11/jugando-con-las-propiedades-del-conjugado/" >
-      <img src="/2018/08/11/jugando-con-las-propiedades-del-conjugado/featured_hu8a822743a7b46664ea95a806ba348f97_78205_54301d351dd839c870e75288ba099b56.jpg" data-src="/2018/08/11/jugando-con-las-propiedades-del-conjugado/featured_hu8a822743a7b46664ea95a806ba348f97_78205_150x0_resize_q90_lanczos.jpg" alt="Jugando con las propiedades del conjugado" class="lazyload">
+      <img src="/2018/08/11/jugando-con-las-propiedades-del-conjugado/featured_hu8a822743a7b46664ea95a806ba348f97_78205_150x0_resize_q90_lanczos.jpg" alt="Jugando con las propiedades del conjugado" loading="lazy">
     </a>
     
   </div>
@@ -1845,11 +1810,16 @@
     
     <div class="container">
       <footer class="site-footer">
+
   
 
+  
+
+  
   <p class="powered-by">
     Alexis Sáez ©2021
   </p>
+  
 
   
   
@@ -1863,10 +1833,13 @@
     
     
     
-    Published with
-    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
-    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
-    open source</a> website builder that empowers creators.
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1907,6 +1880,7 @@
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
       
@@ -1914,8 +1888,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+      
+      
 
       
 
@@ -1931,32 +1905,8 @@
 
     
     
-
-    
     
 
-    
-    
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-        <div class="search-hit-content">
-          <div class="search-hit-name">
-            <a href="{{relpermalink}}">{{title}}</a>
-            <div class="article-metadata search-hit-type">{{type}}</div>
-            <p class="search-hit-description">{{snippet}}</p>
-          </div>
-        </div>
-      </div>
-    </script>
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-
-    
     
     
 
@@ -1969,19 +1919,15 @@
 
     
     
-
     
-    
-      
-      
-      
-      
-      
-      
-      
     
 
     
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
     
     
     
@@ -1991,11 +1937,7 @@
     
     
     
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.317c3c80f2d00be271636f5f55f64542.js"></script>
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
 
     
 

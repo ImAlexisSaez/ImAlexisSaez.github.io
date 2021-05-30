@@ -1,19 +1,15 @@
 <!DOCTYPE html><html lang="en-us" >
 
 <head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
   
   
-  <meta name="generator" content="Wowchemy 5.0.0-beta.2 for Hugo">
-  
-
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
   
 
-  
   
 
   
@@ -27,40 +23,40 @@
   
   
 
-  <meta name="author" content="Alexis Sáez">
+  <meta name="author" content="Alexis Sáez" />
 
   
   
   
     
   
-  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático.">
+  <meta name="description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/etiqueta/lecturas/">
-
-  
-
-
-
-
-
-
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/etiqueta/lecturas/" />
 
   
 
 
 
 
+
+
+
+  
+
+
+
+
   
   
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   
 
   
   
   
-  <meta name="theme-color" content="#1565c0">
+    <meta name="theme-color" content="#1565c0" />
   
 
   
@@ -73,7 +69,9 @@
     
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
 
     
     
@@ -91,18 +89,14 @@
     
 
     
+    
+    
 
     
 
     
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -111,12 +105,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -125,12 +113,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -139,12 +121,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -153,12 +129,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -167,21 +137,6 @@
       
     
       
-
-      
-      
-
-      
-    
-      
-
-      
-      
-
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
-      
-    
       
 
       
@@ -190,12 +145,62 @@
       
     
       
+      
 
       
       
 
       
     
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
       
 
       
@@ -206,12 +211,6 @@
       
     
       
-
-      
-      
-
-      
-    
       
 
       
@@ -219,7 +218,14 @@
 
       
     
+      
+      
 
+      
+      
+
+      
+    
   
 
   
@@ -237,11 +243,49 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.ce0aa78140cf8d50b7914f980d563ebd.css">
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
 
   
 
 
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
 
 
   
@@ -256,23 +300,29 @@
 
   
 
+  
+
+
+
 
   
   
-
-  
-  <link rel="alternate" href="/etiqueta/lecturas/index.xml" type="application/rss+xml" title="Infinitos Contrastes">
   
 
   
-  <link rel="manifest" href="/index.webmanifest">
+    <link rel="alternate" href="/etiqueta/lecturas/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
   
 
-  <link rel="icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png">
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
 
-  <link rel="canonical" href="https://imalexissaez.github.io/etiqueta/lecturas/">
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_2.png" />
 
+  <link rel="canonical" href="https://imalexissaez.github.io/etiqueta/lecturas/" />
+
+  
   
   
   
@@ -281,29 +331,30 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary" />
   
-  <meta property="twitter:site" content="@imalexissaez">
-  <meta property="twitter:creator" content="@imalexissaez">
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
-  <meta property="og:site_name" content="Infinitos Contrastes">
-  <meta property="og:url" content="https://imalexissaez.github.io/etiqueta/lecturas/">
-  <meta property="og:title" content="Lecturas | Infinitos Contrastes">
-  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático."><meta property="og:image" content="https://imalexissaez.github.io/media/sharing.jpg">
-  <meta property="twitter:image" content="https://imalexissaez.github.io/media/sharing.jpg"><meta property="og:locale" content="en-us">
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/etiqueta/lecturas/" />
+  <meta property="og:title" content="Lecturas | Infinitos Contrastes" />
+  <meta property="og:description" content="Infinitos Contrastes: laboratorio de experimentos de un matemático." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
   
-    <meta property="og:updated_time" content="2018-07-23T05:59:39&#43;02:00">
+    
+      <meta property="og:updated_time" content="2018-07-23T05:59:39&#43;02:00" />
+    
   
-
-  
-
-
-
 
   
 
+
+
+  
 
   
 
@@ -312,11 +363,10 @@
 
 
   <title>Lecturas | Infinitos Contrastes</title>
-
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   "  >
 
   
   
@@ -326,46 +376,11 @@
   
   
   
-  <script src="/js/wowchemy-init.min.8446300de3057dfecd2dbb1103d0e171.js"></script>
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
 
   
 
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Buscar</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Buscar...">
-        
-      </div>
-
-      
-      
-
-      
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
 
 
 
@@ -394,7 +409,7 @@
 
     
     <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Barra de navegación">
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
     <span><i class="fas fa-bars"></i></span>
     </button>
     
@@ -524,43 +539,6 @@
         
         
 
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#contact"><span>Contacto</span></a>
-        </li>
-
-        
-        
-
       
 
         
@@ -575,10 +553,6 @@
       
 
       
-      
-      <li class="nav-item">
-        <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
-      </li>
       
 
       
@@ -601,6 +575,7 @@
       </li>
       
 
+      
       
 
     </ul>
@@ -670,11 +645,16 @@
     
     <div class="container">
       <footer class="site-footer">
+
   
 
+  
+
+  
   <p class="powered-by">
     Alexis Sáez ©2021
   </p>
+  
 
   
   
@@ -688,10 +668,13 @@
     
     
     
-    Published with
-    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
-    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
-    open source</a> website builder that empowers creators.
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -732,6 +715,7 @@
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
       
@@ -739,8 +723,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
       
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+      
+      
 
       
 
@@ -756,32 +740,8 @@
 
     
     
-
-    
     
 
-    
-    
-    <script id="search-hit-fuse-template" type="text/x-template">
-      <div class="search-hit" id="summary-{{key}}">
-        <div class="search-hit-content">
-          <div class="search-hit-name">
-            <a href="{{relpermalink}}">{{title}}</a>
-            <div class="article-metadata search-hit-type">{{type}}</div>
-            <p class="search-hit-description">{{snippet}}</p>
-          </div>
-        </div>
-      </div>
-    </script>
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-    
-
-    
     
     
 
@@ -794,19 +754,15 @@
 
     
     
-
     
-    
-      
-      
-      
-      
-      
-      
-      
     
 
     
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
     
     
     
@@ -816,11 +772,7 @@
     
     
     
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.317c3c80f2d00be271636f5f55f64542.js"></script>
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
 
     
 
