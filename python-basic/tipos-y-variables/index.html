@@ -1,0 +1,1658 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introducción al estudio de los tipos, los operadores y las variables en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/tipos-y-variables/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/tipos-y-variables/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/tipos-y-variables/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/tipos-y-variables/" />
+  <meta property="og:title" content="Tipos, operadores y variables | Infinitos Contrastes" />
+  <meta property="og:description" content="Introducción al estudio de los tipos, los operadores y las variables en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-04-29T00:01:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Tipos, operadores y variables | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="fa10c96487115c2f9897fa5e231fe6da" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#tipos-operadores-y-variables">Tipos, operadores y variables</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+      </ul>
+    </li>
+    <li><a href="#funciones-i">Funciones I</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#funciones-ii">Funciones II</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#listas">Listas</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#tuplas">Tuplas</a>
+      <ul>
+        <li><a href="#vídeo-4">Vídeo</a></li>
+        <li><a href="#notas-personales-4">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#diccionarios">Diccionarios</a>
+      <ul>
+        <li><a href="#vídeo-5">Vídeo</a></li>
+        <li><a href="#notas-personales-5">Notas personales</a></li>
+        <li><a href="#código-fuente-4">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Tipos, operadores y variables</h1>
+
+          <div class="article-style">
+            <h2 id="tipos-operadores-y-variables">Tipos, operadores y variables</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/u4I9PqhqCo8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>Los <strong>tipos de datos</strong> disponibles en <em>Python</em> son:</p>
+<ul>
+<li>Numéricos
+<ul>
+<li>Enteros (<code>int</code>)</li>
+<li>Coma flotante (<code>float</code>)</li>
+<li>Complejos</li>
+</ul>
+</li>
+<li>Textos</li>
+<li>Booleanos
+<ul>
+<li><code>True</code></li>
+<li><code>False</code></li>
+</ul>
+</li>
+</ul>
+<p>Los principales <strong>operadores</strong> en <em>Python</em> son:</p>
+<ul>
+<li>Aritméticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code> y <code>//</code>.</li>
+<li>Comparación: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> y <code>&lt;=</code>.</li>
+<li>Lógicos: <code>AND</code>, <code>OR</code> y <code>NOT</code>.</li>
+<li>Asignación: <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code> y <code>//=</code>.</li>
+<li>Especiales: <code>is</code>, <code>is not</code>, <code>in</code> y <code>not in</code>.</li>
+</ul>
+<p>Los operadores aritméticos nos permiten utilizar <em>Python</em> a modo de calculadora.</p>
+<pre><code class="language-python">&gt;&gt;&gt; 5 + 6 # Suma
+11
+&gt;&gt;&gt; 11 - 8 # Resta
+3
+&gt;&gt;&gt; 2 * 6 # Multiplicación
+12
+&gt;&gt;&gt; 7 / 2 # División
+3.5
+&gt;&gt;&gt; 10 % 3 # Módulo
+1
+&gt;&gt;&gt; 5 ** 2 # Exponenciación
+25
+&gt;&gt;&gt; 7 // 2 # División entera
+3
+</code></pre>
+<p>Una <strong>variable</strong> es un espacio en la memoria del ordenador donde se almacenará un valor que podrá cambiar durante la ejecución del programa. Para declararla, utilizamos el patrón <code>nombre = valor</code> y su tipo lo establece el contenido, no el contenedor.</p>
+<p><em>Nota</em>: en <em>Python</em> todo son objetos (variables, números&hellip;).</p>
+<pre><code class="language-python">&gt;&gt;&gt; nombre = 5
+&gt;&gt;&gt; type(nombre)
+&lt;class 'int'&gt;
+&gt;&gt;&gt; nombre = &quot;Alexis&quot;
+&gt;&gt;&gt; type(nombre)
+&lt;class 'str'&gt;
+&gt;&gt;&gt; nombre = 5.2
+&gt;&gt;&gt; type(nombre)
+&lt;class 'float'&gt;
+</code></pre>
+<p>Definimos cadenas de texto mediante los símbolos <code>'</code>, <code>&quot;</code> y <code>'''</code>, permitiendo esta última opción saltos de líneas.</p>
+<pre><code class="language-python">&gt;&gt;&gt; mensaje = 'Esto es un mensaje.'
+&gt;&gt;&gt; print(mensaje)
+Esto es un mensaje.
+&gt;&gt;&gt; mensaje = &quot;Esto es un mensaje.&quot;
+&gt;&gt;&gt; print(mensaje)
+Esto es un mensaje.
+&gt;&gt;&gt; mensaje = '''Esto es un mensaje
+... con tres saltos
+... de línea.'''
+&gt;&gt;&gt; print(mensaje)
+Esto es un mensaje
+con tres saltos
+de línea.
+</code></pre>
+<p>Los operadores de comparación suelen aparecer en bloques condicionales.</p>
+<pre><code class="language-python">&gt;&gt;&gt; numero1 = 5
+&gt;&gt;&gt; numero2 = 7
+&gt;&gt;&gt; if numero1 &gt; numero2:
+...     print(&quot;El número 1 es mayor.&quot;)
+... else:
+...     print(&quot;El número 2 es mayor.&quot;)
+... 
+El número 2 es mayor.
+</code></pre>
+<p><em>Nota</em>: no confundir el operador de asignación <code>=</code> con el operador de comparación <code>==</code>.</p>
+<pre><code class="language-python">&gt;&gt;&gt; numero1 = 2
+&gt;&gt;&gt; numero2 = 3
+&gt;&gt;&gt; if numero1 == numero2:
+...     print(&quot;Los números son iguales.&quot;)
+... else:
+...     print(&quot;Los números son diferentes.&quot;)
+... 
+Los números son diferentes.
+</code></pre>
+<h2 id="funciones-i">Funciones I</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/VY448UWAQ_0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>Una <strong>función</strong> es un conjunto de líneas de código agrupadas, que funcionan como una unidad realizando una tarea específica. Puede devolver valores, tener parámetros o argumentos y recibe el nombre de <strong>método</strong> cuando está definida dentro de una clase.</p>
+<p>En <em>Python</em> existen funciones predifinidas, como por ejemplo <code>print()</code>. Su principal utilidad es la reutilización de código y su sintaxis es:</p>
+<pre><code class="language-python">def nombre(parámetros):
+    instrucciones de la función
+    return(opcional)
+</code></pre>
+<p>Ejecutamos (o llamamos) una función tecleando <code>nombre_función(parámetros)</code>.</p>
+<p>A continuación, dejamos de lado el IDLE de <em>Sublime Text 3</em> y pasamos a compilar directamente ficheros desde el propio editor. Para ello, desplegamos el menú <code>Tools</code> y en el apartado <code>Build System</code> escogemos la opción <code>Python</code>. Acto seguido, creamos el fichero <code>funciones.py</code>, que contendrá la instrucción</p>
+<pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
+</code></pre>
+<p>y utilizamos la combinación de teclas <code>ctrl + b</code> para compilar. En la parte inferior de la ventana aparecerá el resultado de la ejecución y el tiempo invertido.</p>
+<p>Ampliemos el anterior fichero a</p>
+<pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+</code></pre>
+<p>e imaginemos que necesitamos que las anteriores tres líneas se impriman cinco veces. Podemos, simplemente, copiar y pegar el anterior bloque de código reiteradamente:</p>
+<pre><code class="language-python">print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+
+print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+
+print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+
+print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+
+print(&quot;Estamos aprendiendo Python.&quot;)
+print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+print(&quot;Poco a poco iremos avanzando.&quot;)
+</code></pre>
+<p>Las funciones nos permiten reutilizar código para, precisamente, evitar que actuemos como arriba. Definamos una función llamada <code>mensaje()</code> y ejecutémosla tantas veces como deseemos.</p>
+<pre><code class="language-python">def mensaje():
+    print(&quot;Estamos aprendiendo Python.&quot;)
+    print(&quot;Estamos aprendiendo instrucciones básicas.&quot;)
+    print(&quot;Poco a poco iremos avanzando.&quot;)
+</code></pre>
+<p>Ahora, la tarea que buscábamos realizar quedaría como:</p>
+<pre><code class="language-python">mensaje()
+mensaje()
+mensaje()
+mensaje()
+mensaje()
+</code></pre>
+<p>Entre distintas llamadas a una función puede haber cualquier otro tipo de instrucción:</p>
+<pre><code class="language-python">mensaje()
+
+print(&quot;Ejecutando código fuera de función&quot;)
+
+mensaje()
+</code></pre>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/05/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="funciones-ii">Funciones II</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vawEHhV_HFA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>Comencemos definiendo una función que suma dos números dados (5 y 7), mediante el mecanismo aprendido en la lección anterior:</p>
+<pre><code class="language-python">def suma():
+    num1 = 5
+    num2 = 7
+    print(num1 + num2)
+
+
+suma()
+</code></pre>
+<p>Podemos reutilizar tantas veces como queramos la función <code>suma()</code>. No obstante, su utilidad así declarada es bastante limitada. Nos gustaría que no siempre sumara los dos mismos valores, sino aquellos que nos interesen en cada llamada. Para ello emplearemos los <strong>parámetros</strong> o <strong>argumentos</strong>.</p>
+<p><em>Nota</em>: aunque el autor del curso se refiere a los términos &lsquo;&lsquo;parámetros&rsquo;&rsquo; y &lsquo;&lsquo;argumentos&rsquo;&rsquo; casi como si fueran sinónimos, en realidad hay un sutil matiz que los diferencia: los <strong>parámetros</strong> son las variables que aparecen en la definición de una función o método; cuando se produce la llamada a dicha función, los <strong>argumentos</strong> son los datos que pasamos a los parámetros de la mencionada función.</p>
+<p>Definamos de nuevo la función <code>suma()</code>, ahora con dos parámetros, con el objetivo de que realice la suma de dos números que pasaremos como argumentos:</p>
+<pre><code class="language-python">def suma(num1, num2):
+    print(num1 + num2)
+
+
+suma(5, 7)  # 12
+suma(2, 3)  # 5
+suma(35, 358)  # 393
+</code></pre>
+<p>Tal y como está declarada la nueva función de suma, <strong>obligatoriamente</strong> hemos de pasarle dos argumentos o sino aparecerán errores.</p>
+<pre><code class="language-python">suma(7)
+# TypeError: suma() missing 1 required positional argument: 'num2'
+</code></pre>
+<pre><code class="language-python">suma(1, 2, 3)
+# TypeError: suma() takes 2 positional arguments but 3 were given
+</code></pre>
+<p>Puede resultar conveniente, por legibilidad, pasar los argumentos a una función utilizando el esquema <code>parámetro=valor</code>.</p>
+<pre><code class="language-python">suma(num1=5, num2=7)  # 12
+</code></pre>
+<p>Además, las funciones</p>
+<ul>
+<li>pueden poseer parámetros de diferentes tipos y</li>
+<li>devuelven valores siempre y cuando empleemos la instrucción <code>return</code>.</li>
+</ul>
+<pre><code class="language-python">def suma(num1, num2):
+    resultado = num1 + num2
+    return resultado
+
+
+suma(5, 7)
+</code></pre>
+<p>La ejecución del anterior bloque de código no muestra resultado alguno en la consola. La función devuelve el resultado, pero no lo hemos imprimido. Así,</p>
+<pre><code class="language-python">print(suma(5, 7))  # 12
+</code></pre>
+<p>Una ventaja de utilizar la instrucción <code>return</code> reside en que podemos almacenar los valores que devuelve una función en variables y trabajar posteriormente con ellas.</p>
+<pre><code class="language-python">almacena_resultado = suma(5, 8)
+print(almacena_resultado)  # 13
+
+actualiza_resultado = suma(almacena_resultado, 8)
+print(actualiza_resultado)  # 13 + 8 = 21
+</code></pre>
+<p><em>Nota técnica</em>: <em>Python</em> pasa siempre los valores por referencia, no por valor.</p>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/06/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="listas">Listas</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Q8hugySbLQQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>Una <strong>lista</strong> es una estructura de datos que nos permite almacenar gran cantidad de valores. En <em>Python</em>, estos pueden añadirse de manera dinámica y ser de diferentes tipos.</p>
+<p>Su sintaxis es <code>nombre = [elem1, elem2, elem3...]</code> y los elementos están localizados mediante un índice, que en <em>Python</em> comienza por 0.</p>
+<p>A continuación, creemos una lista con cuatro elementos de tipo texto y veamos cómo imprimirla y acceder a elementos concretos de ella:</p>
+<pre><code class="language-python">mi_lista = [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
+
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
+print(mi_lista[:])  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;]
+
+print(mi_lista[2])  # Marta
+print(mi_lista[0])  # María
+</code></pre>
+<p>Si empleamos índices que superan el rango de elementos de una lista, <em>Python</em> nos arroja un error:</p>
+<pre><code class="language-python">print(mi_lista[4])
+# IndexError: list index out of range
+</code></pre>
+<p>No obstante, sí es posible utilizar índices con valor negativo, que nos permiten acceder (empezando por <code>-1</code>) a los elementos de una lista desde la derecha:</p>
+<pre><code class="language-python">print(mi_lista[-1]) # Antonio
+print(mi_lista[-3]) # Pepe
+</code></pre>
+<p>Obviamente, esta estrategia también está limitada por el número de elementos de la lista y no podemos pasar índices negativos fuera de su correspondiente rango:</p>
+<pre><code class="language-python">print(mi_lista[-5])
+# IndexError: list index out of range
+</code></pre>
+<p>Además, podemos acceder a porciones de una lista, mediante la sintaxis <code>nombre[a:b]</code>, que extrae todos los elementos comprendidos entre los índices <code>a</code> y el anterior a <code>b</code>. Por ejemplo:</p>
+<pre><code class="language-python">print(mi_lista[0:2])  # [&quot;María&quot;, &quot;Pepe&quot;]
+print(mi_lista[0:1])  # [&quot;María&quot;]
+print(mi_lista[-3:-1])  # [&quot;Pepe&quot;, &quot;Marta&quot;]
+</code></pre>
+<p>Se pueden omitir algunos de los anteriores índices indicados y <em>Python</em> sobreentiende que comienza o acaba en el extremo correspondiente:</p>
+<pre><code class="language-python">print(mi_lista[:2])  # [&quot;María&quot;, &quot;Pepe&quot;]
+print(mi_lista[2:])  # [&quot;Marta&quot;, &quot;Antonio&quot;]
+print(mi_lista[-2:])  # [&quot;Marta&quot;, &quot;Antonio&quot;]
+</code></pre>
+<p><em>Nota técnica</em>: cuando accedemos a una porción, se conserva el tipo lista, pero no así si se extrae un único elemento en particular.</p>
+<pre><code class="language-python">print(type(mi_lista[2]))  # &lt;class 'str'&gt;
+print(type(mi_lista[2:3]))  # &lt;class 'list'&gt;
+</code></pre>
+<p>Agregamos elementos al final de la lista utilizando <code>.append()</code>:</p>
+<pre><code class="language-python">mi_lista.append(&quot;Sandra&quot;)
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
+</code></pre>
+<p>Usaremos <code>.insert(posición, elemento)</code>, si buscamos añadir un elemento en un punto intermedio:</p>
+<pre><code class="language-python">mi_lista.insert(2, &quot;Paco&quot;)
+print(mi_lista)  # [&quot;María&quot;, &quot;Pepe&quot;, &quot;Paco&quot;, &quot;Marta&quot;, &quot;Antonio&quot;, &quot;Sandra&quot;]
+</code></pre>
+<p>Es posible agregar varios elementos al final de una lista utilizando <code>.extend()</code> y pasando como argumento otra lista:</p>
+<pre><code class="language-python">mi_compra = [&quot;Manzanas&quot;]
+print(mi_compra)  # [&quot;Manzanas&quot;]
+
+mi_compra.extend([&quot;Aguacates&quot;, &quot;Sandía&quot;])
+print(mi_compra)  # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
+</code></pre>
+<p>Para acceder al índice de un elemento, empleamos <code>.index(elemento)</code>:</p>
+<pre><code class="language-python">print(mi_lista.index(&quot;Antonio&quot;))  # 4
+print(mi_compra.index(&quot;Sandía&quot;))  # 2
+</code></pre>
+<p>Si intentamos acceder al índice de elementos que no están incluidos en la lista, <em>Python</em> arroja un error:</p>
+<pre><code class="language-python">print(mi_compra.index(&quot;Melón&quot;))
+# ValueError: 'Melón' is not in list
+</code></pre>
+<p>En una lista, puede haber elementos iguales en posiciones distintas. La función <code>.index()</code> nos devolverá el valor del índice del primer elemento repetido:</p>
+<pre><code class="language-python">mi_compra.extend(mi_compra)
+print(mi_compra)  # [&quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;, &quot;Manzanas&quot;, &quot;Aguacates&quot;, &quot;Sandía&quot;]
+print(mi_compra.index(&quot;Manzanas&quot;))  # 0
+</code></pre>
+<p>Para comprobar si un elemento se encuentra o no en una lista, utilizamos <code>in</code>:</p>
+<pre><code class="language-python">print(&quot;Pepe&quot; in mi_lista)  # True
+print(&quot;Ana&quot; in mi_lista)  # False
+</code></pre>
+<p>Tal y como mencionamos arriba, una lista puede almacenar sin problemas elementos de diferentes tipos:</p>
+<pre><code class="language-python">mezcla = [&quot;Alexis&quot;, True, 10, 3.14]
+print(mezcla)  # [&quot;Alexis&quot;, True, 10, 3.14]
+</code></pre>
+<p>Para eliminar elementos, usamos <code>.remove()</code>:</p>
+<pre><code class="language-python">mezcla.remove(True)
+print(mezcla)  # [&quot;Alexis&quot;, 10, 3.14]
+</code></pre>
+<p>En particular, podemos suprimir el último elemento de una lista mediante <code>.pop()</code>:</p>
+<pre><code class="language-python">mezcla.pop()
+print(mezcla)  # [&quot;Alexis&quot;, 10]
+</code></pre>
+<p>El operador <code>+</code> concatena listas:</p>
+<pre><code class="language-python">lista1 = [&quot;Ana&quot;, 5]
+lista2 = [True, 2.1]
+lista3 = lista1 + lista2
+print(lista3)  # [&quot;Ana&quot;, 5, True, 2.1]
+</code></pre>
+<p>El operador <code>*</code> repite la lista un número determinado de veces.</p>
+<pre><code class="language-python">print(lista1 * 2)  # [&quot;Ana&quot;, 5, &quot;Ana&quot;, 5]
+</code></pre>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/07/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="tuplas">Tuplas</h2>
+<h3 id="vídeo-4">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Ufqh8aoR9hE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-4">Notas personales</h3>
+<p>Una <strong>tupla</strong> es una lista inmutable que</p>
+<ul>
+<li>no permite añadir, eliminar, mover elementos&hellip;</li>
+<li>permite la extracción de porciones, que continuan siendo tuplas, y</li>
+<li>posibilita búsquedas de índice (<code>.index()</code>) y comprobaciones de si un elemento pertenece o no a ella (<code>in</code>).</li>
+</ul>
+<p>Son útiles porque</p>
+<ul>
+<li>son más rápidas en cuanto a ejecución se refiere,</li>
+<li>requieren menos espacio (mayor optimización),</li>
+<li>formatean cadenas de texto, y</li>
+<li>pueden utilizarse como claves en un diccionario, a diferencia de las listas.</li>
+</ul>
+<p>Su sintaxis es <code>nombre = (elem1, elem2, elem3...)</code>, siendo el uso de los paréntesis opcional aunque recomendable. El acceso a los elementos funciona como en las listas.</p>
+<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 10, 1, 1995)
+
+print(mi_tupla)  # (&quot;Alexis&quot;, 10, 1, 1995)
+print(mi_tupla[1])  # 10
+print(mi_tupla[-1])  # 1995
+</code></pre>
+<p>Existen funciones que nos permiten convertir tuplas en listas (<code>list()</code>) y viceversa (<code>tuple()</code>):</p>
+<pre><code class="language-python">mi_lista = list(mi_tupla)
+print(mi_lista)  # [&quot;Alexis&quot;, 10, 1, 1995]
+
+mi_tupla = tuple(mi_lista)
+print(mi_tupla)  # (&quot;Alexis&quot;, 10, 1, 1995)
+</code></pre>
+<p>Comprobamos la pertenencia de un elemento a la tupla mediante <code>in</code>:</p>
+<pre><code class="language-python">print(&quot;Alexis&quot; in mi_tupla)  # True
+print(3.14 in mi_tupla)  # False
+</code></pre>
+<p>Con <code>.count()</code> obtenemos el número de elementos que se encuentran dentro de una tupla:</p>
+<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 1, 2, 2, True, 2, &quot;Alexis&quot;)
+
+print(mi_tupla.count(&quot;Alexis&quot;))  # 2
+print(mi_tupla.count(1))  # 2 (True cuenta como 1)
+print(mi_tupla.count(2))  # 3
+</code></pre>
+<p>El método <code>len</code> nos permite hallar la longitud de una tupla, siendo el índice del último elemento igual a <code>len - 1</code>:</p>
+<pre><code class="language-python">print(len(mi_tupla))  # 7
+print(mi_tupla[len(mi_tupla) - 1])  # &quot;Alexis&quot;
+</code></pre>
+<p>Podemos crear tuplas unitarias siguiendo el patrón <code>nombre = (elem,)</code>:</p>
+<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;,)
+
+print(type(mi_tupla))  # &lt;class 'tuple'&gt;
+print(len(mi_tupla))  # 1
+</code></pre>
+<p>Como mencionamos, los paréntesis son opcionales:</p>
+<pre><code class="language-python">mi_tupla = &quot;Alexis&quot;, 3.14, True, 10
+
+print(type(mi_tupla))  # &lt;class 'tuple'&gt;
+print(mi_tupla)  # (&quot;Alexis&quot;, 3.14, True, 10)
+</code></pre>
+<p>Esta sintaxis se conoce como <strong>empaquetado de tupla</strong> y hemos de ser cautos, pues en un futuro, al combinarla con el uso de funciones, puede dar lugar a confusiones.</p>
+<p>El proceso inverso, <strong>desempaquetado de tuplas</strong>, nos permite asignar los elementos de una tupla a diferentes variables:</p>
+<pre><code class="language-python">mi_tupla = (&quot;Alexis&quot;, 3.14, True, 10)
+
+nombre, pi, alto, mes = mi_tupla
+
+print(nombre)  # Alexis
+print(pi)  # 3.14
+print(alto)  # True
+print(mes)  # 10
+</code></pre>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/08/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="diccionarios">Diccionarios</h2>
+<h3 id="vídeo-5">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2OmgHl8lp0I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-5">Notas personales</h3>
+<p>Un <strong>diccionario</strong> es una estructura de datos que nos permite almacenar valores de diferentes tipos (enteros, cadenas de texto, decimales&hellip;) e incluso listas, tuplas y otros diccionarios.</p>
+<p>Su principal característica reside en que cada dato se almacena asociado a una clave única, de tal forma que se crea una relación de tipo <code>clave:valor</code> para cada elemento guardado. Además, los mencionados elementos no están ordenados, es decir, el orden es indiferente (por la presencia las referidas claves únicas) a la hora de guardar información en un diccionario.</p>
+<p>Su sintaxis es <code>nombre = {clave:valor}</code>.</p>
+<p>Creemos un diccionario que almacene países (clave) y capitales (valor), y veamos cómo se accede a cada uno de sus elementos:</p>
+<pre><code class="language-python">mi_dicc = {&quot;Alemania&quot;: &quot;Berlin&quot;,
+           &quot;Francia&quot;: &quot;París&quot;,
+           &quot;Reino Unido&quot;: &quot;Londres&quot;,
+           &quot;España&quot;: &quot;Madrid&quot;}
+
+print(mi_dicc[&quot;Francia&quot;])  # París
+print(mi_dicc[&quot;España&quot;])  # Madrid
+
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid'}
+</code></pre>
+<p>Agregamos nuevos elementos al diccionario con el patrón <code>nombre[clave] = valor</code>:</p>
+<pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Lisboa&quot;
+
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Lisboa'}
+</code></pre>
+<p>Modificamos un valor asignado a una clave simplemente sobreescribiéndolo:</p>
+<pre><code class="language-python">mi_dicc[&quot;Italia&quot;] = &quot;Roma&quot;
+
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'Reino Unido': 'Londres', 'España': 'Madrid', 'Italia': 'Roma'}
+</code></pre>
+<p>Suprimimos elementos con <code>del</code>:</p>
+<pre><code class="language-python">del mi_dicc[&quot;Reino Unido&quot;]
+
+print(mi_dicc)  # {'Alemania': 'Berlin', 'Francia': 'París', 'España': 'Madrid', 'Italia': 'Roma'}
+</code></pre>
+<p>Generemos un diccionario que presente diferentes tipos de datos:</p>
+<pre><code class="language-python">mi_dicc = {&quot;Alemania&quot;: &quot;Berlín&quot;,
+           23: &quot;Jordan&quot;,
+           &quot;Mosqueteros&quot;: 3}
+
+print(mi_dicc)  # {'Alemania': 'Berlín', 23: 'Jordan', 'Mosqueteros': 3}
+</code></pre>
+<p>Empleemos una tupla (el procedimiento sería similar si optamos por una lista) para asignar la clave a cada uno de los valores:</p>
+<pre><code class="language-python">mi_tupla = (&quot;España&quot;, &quot;Francia&quot;, &quot;Reino Unido&quot;, &quot;Alemania&quot;)
+mi_dicc = {mi_tupla[0]: &quot;Madrid&quot;,
+           mi_tupla[1]: &quot;París&quot;,
+           mi_tupla[2]: &quot;Londres&quot;,
+           mi_tupla[3]: &quot;Berlín&quot;}
+
+print(mi_dicc)  # {'España': 'Madrid', 'Francia': 'París', 'Reino Unido': 'Londres', 'Alemania': 'Berlín'}
+
+print(mi_dicc[&quot;España&quot;])  # Madrid
+print(mi_dicc[mi_tupla[0]])  # Madrid
+</code></pre>
+<p>También podemos almacenar tuplas (o listas&hellip;) como valores:</p>
+<pre><code class="language-python">mi_dicc = {23: &quot;Jordan&quot;,
+           &quot;Nombre&quot;: &quot;Michael&quot;,
+           &quot;Equipo&quot;: &quot;Chicago&quot;,
+           &quot;Anillos&quot;: (1991, 1992, 1993, 1996, 1997, 1998)}
+
+print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': (1991, 1992, 1993, 1996, 1997, 1998)}
+print(mi_dicc[&quot;Equipo&quot;])  # Chicago
+print(mi_dicc[&quot;Anillos&quot;])  # (1991, 1992, 1993, 1996, 1997, 1998)
+</code></pre>
+<p>Asimismo, guardemos un diccionario dentro de otro:</p>
+<pre><code class="language-python">mi_dicc = {23: &quot;Jordan&quot;,
+           &quot;Nombre&quot;: &quot;Michael&quot;,
+           &quot;Equipo&quot;: &quot;Chicago&quot;,
+           &quot;Anillos&quot;: {&quot;Temporadas&quot;: (1991, 1992, 1993, 1996, 1997, 1998)}}
+
+print(mi_dicc)  # {23: 'Jordan', 'Nombre': 'Michael', 'Equipo': 'Chicago', 'Anillos': {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}}
+print(mi_dicc[&quot;Anillos&quot;])  # {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}
+</code></pre>
+<p>Algunos métodos interesantes a conocer son:</p>
+<ul>
+<li><code>.keys()</code>, para acceder a las claves de un diccionario;</li>
+<li><code>.values()</code>, para conocer los valores de un diccionario; y</li>
+<li><code>len()</code>, para averiguar la longitud de un diccionario:</li>
+</ul>
+<pre><code class="language-python">print(mi_dicc.keys())  # dict_keys([23, 'Nombre', 'Equipo', 'Anillos'])
+print(mi_dicc.values())  # dict_values(['Jordan', 'Michael', 'Chicago', {'Temporadas': (1991, 1992, 1993, 1996, 1997, 1998)}])
+print(len(mi_dicc))  # 4
+</code></pre>
+<h3 id="código-fuente-4">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/09/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-04-29</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

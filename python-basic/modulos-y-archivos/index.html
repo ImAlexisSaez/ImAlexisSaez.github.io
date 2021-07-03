@@ -1,0 +1,2149 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introducción al estudio de los métodos y la gestión de archivos en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/modulos-y-archivos/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/modulos-y-archivos/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/modulos-y-archivos/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/modulos-y-archivos/" />
+  <meta property="og:title" content="Métodos y archivos | Infinitos Contrastes" />
+  <meta property="og:description" content="Introducción al estudio de los métodos y la gestión de archivos en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-05-11T00:01:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Métodos y archivos | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="e466542faa90cb52295fbe40465a328b" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cadenas">Cadenas</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#módulos">Módulos</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#paquetes-i">Paquetes I</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#paquetes-ii">Paquetes II</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#archivos-i">Archivos I</a>
+      <ul>
+        <li><a href="#vídeo-4">Vídeo</a></li>
+        <li><a href="#notas-personales-4">Notas personales</a></li>
+        <li><a href="#código-fuente-4">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#archivos-ii">Archivos II</a>
+      <ul>
+        <li><a href="#vídeo-5">Vídeo</a></li>
+        <li><a href="#notas-personales-5">Notas personales</a></li>
+        <li><a href="#código-fuente-5">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#serialización-i">Serialización I</a>
+      <ul>
+        <li><a href="#vídeo-6">Vídeo</a></li>
+        <li><a href="#notas-personales-6">Notas personales</a></li>
+        <li><a href="#código-fuente-6">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#serialización-ii">Serialización II</a>
+      <ul>
+        <li><a href="#vídeo-7">Vídeo</a></li>
+        <li><a href="#notas-personales-7">Notas personales</a></li>
+        <li><a href="#código-fuente-7">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#guardado-permanente">Guardado permanente</a>
+      <ul>
+        <li><a href="#vídeo-8">Vídeo</a></li>
+        <li><a href="#notas-personales-8">Notas personales</a></li>
+        <li><a href="#código-fuente-8">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Métodos y archivos</h1>
+
+          <div class="article-style">
+            <h2 id="cadenas">Cadenas</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/zH0VsRuD2ok" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>Examinemos algunos de los métodos disponibles en <em>Python</em> a la hora de trabajar con cadenas de texto, que son objetos de tipo <code>String</code>. Entre los más habituales encontramos:</p>
+<ul>
+<li><code>upper()</code></li>
+<li><code>lower()</code></li>
+<li><code>capitalize()</code></li>
+<li><code>count()</code></li>
+<li><code>find()</code></li>
+<li><code>isdigit()</code></li>
+<li><code>isalum()</code></li>
+<li><code>isalpha()</code></li>
+<li><code>split()</code></li>
+<li><code>strip()</code></li>
+<li><code>replace()</code></li>
+<li><code>rfind()</code></li>
+</ul>
+<p>Para obtener más información sobre su utilización, conviene que visitemos <a href="http://pyspanishdoc.sourceforge.net/lib/string-methods.html" target="_blank" rel="noopener">esta página</a>.</p>
+<p>Veamos algunos ejemplos sencillos que ilustren el uso de algunos de los anteriores métodos:</p>
+<pre><code class="language-python">nombre_usuario = input(&quot;Introduce tu nombre de usuario: &quot;)
+
+print(&quot;El nombre es:&quot;, nombre_usuario)
+print(&quot;El nombre es:&quot;, nombre_usuario.upper())
+print(&quot;El nombre es:&quot;, nombre_usuario.lower())
+print(&quot;El nombre es:&quot;, nombre_usuario.capitalize())
+</code></pre>
+<pre><code class="language-bash">Introduce tu nombre de usuario: Alexis Sáez
+El nombre es: Alexis Sáez
+El nombre es: ALEXIS SÁEZ
+El nombre es: alexis sáez
+El nombre es: Alexis sáez
+</code></pre>
+<p>Algunas de estas funciones resultan útiles a la hora de validar los datos que un usuario proporciona a nuestros programas:</p>
+<pre><code class="language-python">edad = input(&quot;Introduce la edad: &quot;)
+
+while not edad.isdigit():
+    print(&quot;Por favor, introduce un valor numérico.&quot;)
+    edad = input(&quot;Introduce la edad: &quot;)
+
+if int(edad) &lt; 18:
+    print(&quot;No puede pasar.&quot;)
+else:
+    print(&quot;Puede pasar.&quot;)
+</code></pre>
+<pre><code class="language-bash">Introduce la edad: 8iu9
+Por favor, introduce un valor numérico.
+Introduce la edad: o9098
+Por favor, introduce un valor numérico.
+Introduce la edad: 99
+Puede pasar.
+</code></pre>
+<p><strong>Ejercicio</strong>: crea un programa que pida introducir una dirección de email por teclado. El programa debe imprimir en consola si la dirección de email es correcta o no en función de si esta tiene el símbolo <code>@</code>. Si tiene una <code>@</code> la dirección será correcta. Si tiene más de una o ninguna <code>@</code> la dirección será errónea. Si la <code>@</code> está al comienzo de la dirección de email o al final, la dirección también será errónea</p>
+<pre><code class="language-python">email = input(&quot;Introduce email: &quot;)
+
+if email.count(&quot;@&quot;) == 1 and email.count(&quot;@&quot;, 1, len(email) - 1) == 1:
+    print(&quot;La dirección de correo es correcta.&quot;)
+else:
+    print(&quot;La dirección de correo es incorrecta.&quot;)
+</code></pre>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/33/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="módulos">Módulos</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/t93x-vnFvP4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>Un <strong>módulo</strong> es un archivo con extensión <code>.py</code>, <code>.pyc</code> (Python compilado) o fichero escrito en <em>C</em> para <em>CPython</em>, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.</p>
+<p>Sirve para organizar y reutilizar el código (<strong>modularización</strong> y <strong>reutilización</strong>). Se genera uno creando un archivo con extensión <code>.py</code> (o <code>.pyc</code> o archivo en C) y guardándolo donde nos interese.</p>
+<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
+<pre><code class="language-python">def sumar(op1, op2):
+    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
+
+
+def restar(op1, op2):
+    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+</code></pre>
+<p>Ahora, generamos otro archivo, <code>script_1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
+<pre><code class="language-python">import modulo_matematicas as modulo
+
+modulo.sumar(5, 7)
+
+modulo.restar(9, 5)
+
+modulo.multiplicar(4, 9)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 12
+El resultado de la resta es: 4
+El resultado de la multiplicación es: 36
+</code></pre>
+<p>Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción <code>as</code>, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.</p>
+<p>Una alternativa a esta estrategia la encontramos en el fichero <code>script_2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
+<pre><code class="language-python">from modulo_matematicas import sumar
+
+sumar(5, 7)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 12
+</code></pre>
+<p>En el bloque de código anterior, únicamente hemos importado la función <code>sumar()</code> de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<pre><code class="language-python">from modulo_matematicas import sumar, restar
+
+sumar(5, 7)
+
+restar(12, 6)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 12
+El resultado de la resta es: 6
+</code></pre>
+<pre><code class="language-python">from modulo_matematicas import *
+
+sumar(5, 7)
+
+restar(12, 6)
+
+multiplicar(12, 12)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 12
+El resultado de la resta es: 6
+El resultado de la multiplicación es: 144
+</code></pre>
+<p>No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter <code>*</code> provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.</p>
+<p>Creemos un módulo, <code>modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+
+
+class VehiculoElec(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+</code></pre>
+<p>Y ahora, en el fichero <code>script_5.py</code> tecleamos:</p>
+<pre><code class="language-python">from modulo_vehiculos import *
+
+mi_coche = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
+mi_coche.estado()
+</code></pre>
+<pre><code class="language-bash">Marca: Mazda 
+Modelo: MX5 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<p><em>Python</em> busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el <code>syspath</code> (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de <em>Python</em>).</p>
+<p>Si no tenemos los módulos en ninguna de ambas ubicaciones, <em>Python</em> arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de <strong>paquetes</strong> en la próxima lección.</p>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="paquetes-i">Paquetes I</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
+<p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
+<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
+<p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
+<pre><code class="language-python">def sumar(op1, op2):
+    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
+
+
+def restar(op1, op2):
+    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+
+
+def dividir(dividendo, divisor):
+    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
+
+
+def potenciar(base, exponente):
+    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
+
+
+def redondear(numero):
+    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+</code></pre>
+<p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
+<pre><code class="language-python">from calculos.calculos_generales import dividir
+
+dividir(10, 3)
+</code></pre>
+<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+</code></pre>
+<p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<pre><code class="language-python">from calculos.calculos_generales import *
+
+dividir(10, 3)
+
+redondear(4.6)
+
+potenciar(2, 10)
+</code></pre>
+<pre><code class="language-bash">El resultado de la división es: 3.3333333333333335
+El resultado del redondeo es: 5
+El resultado de la potenciación es: 1024
+</code></pre>
+<p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
+<p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
+<p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
+<pre><code class="language-python">def sumar(op1, op2):
+    print(&quot;El resultado de la suma es:&quot;, op1 + op2)
+
+
+def restar(op1, op2):
+    print(&quot;El resultado de la resta es:&quot;, op1 - op2)
+
+
+def multiplicar(op1, op2):
+    print(&quot;El resultado de la multiplicación es:&quot;, op1 * op2)
+
+
+def dividir(dividendo, divisor):
+    print(&quot;El resultado de la división es:&quot;, dividendo / divisor)
+</code></pre>
+<p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
+<pre><code class="language-python">def potenciar(base, exponente):
+    print(&quot;El resultado de la potenciación es:&quot;, base**exponente)
+
+
+def redondear(numero):
+    print(&quot;El resultado del redondeo es:&quot;, round(numero))
+</code></pre>
+<p>Para utilizar estos últimos módulos creados, tecleamos:</p>
+<pre><code class="language-python">from calculos.basicos.operaciones_basicas import sumar
+from calculos.redondeo_potencia.redondea_y_potencia import potenciar
+
+sumar(5, 7)
+potenciar(2, 10)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 12
+El resultado de la potenciación es: 1024
+</code></pre>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="paquetes-ii">Paquetes II</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Zf9sN-w0BVE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>Veamos cómo crear <strong>paquetes distribuibles</strong> para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:</p>
+<ol>
+<li>Crear el paquete.</li>
+<li>Instalar el paquete.</li>
+</ol>
+<p>En la lección anterior generamos el paquete <code>calculos</code> como una carpeta en el interior del directorio del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, <code>paquetes_1.py</code>.</p>
+<p>Ahora bien, si movemos este último archivo a otro directorio, <em>Python</em> seguramente no será capaz de encontrar el paquete <code>calculos</code>. Para solventar esta situación, hemos de proceder a su instalación.</p>
+<p>En primer lugar, creamos un archivo denominado <code>setup.py</code> en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&hellip;). En su interior, tecleamos:</p>
+<pre><code class="language-python">from setuptools import setup
+
+setup(name=&quot;prac35_calculos&quot;,
+      version=&quot;1.0&quot;,
+      description=&quot;Paquete de cálculos matemáticos&quot;,
+      author=&quot;Alexis Sáez&quot;,
+      author_email=&quot;cucoalexis@hotmail.com&quot;,
+      url=&quot;https://imalexissaez.github.io/&quot;,
+      packages=[&quot;prac35_calculos&quot;])
+</code></pre>
+<p>A continuación, abrimos la terminal de <em>Windows</em> y nos dirigimos a la carpeta donde hemos almacenado el fichero <code>setup.py</code> (la instrucción <code>cd</code> es clave en este proceso). Escribimos ahora</p>
+<pre><code class="language-bash">python setup.py sdist
+</code></pre>
+<p>Si todo ha ido bien, habrán aparecido dos nuevas carpetas:</p>
+<ul>
+<li><code>calculos.egg-info</code></li>
+<li><code>dist</code></li>
+</ul>
+<p>En esta última hallamos el archivo comprimido denominado <code>calculos-1.0.tar.gz</code>. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.</p>
+<p>Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de <em>Windows</em> acudimos al directorio donde resida el fichero comprimido y tecleamos:</p>
+<pre><code class="language-bash">pip3 install calculos-1.0.tar.gz
+</code></pre>
+<p>Recibiremos rápidamente en la consola el mensaje &lsquo;&lsquo;Successfully installed calculos-1.0&rsquo;&rsquo;.</p>
+<p>Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:</p>
+<pre><code class="language-python">from calculos.calculos_generales import sumar
+
+sumar(6, 7)
+</code></pre>
+<pre><code class="language-bash">El resultado de la suma es: 13
+</code></pre>
+<p><em>Nota</em>: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, <code>test_paquete</code>, y allí he ubicado el archivo <code>paquetes.py</code>. De no haber instalado correctamente el paquete, <em>Python</em> habría sido incapaz de encontrar la función <code>sumar()</code> utilizando la instrucción dada arriba.</p>
+<p>Finalmente, para desinstalar el paquete, desde la terminal de <em>Windows</em> tecleamos:</p>
+<pre><code class="language-bash">pip3 uninstall calculos
+</code></pre>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/36/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="archivos-i">Archivos I</h2>
+<h3 id="vídeo-4">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/V87m9SltcI8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-4">Notas personales</h3>
+<p>En esta lección abordaremos cómo trabajar con ficheros externos de texto, utilizando para tal empresa el módulo <code>io</code>. Nuestro objetivo será conseguir la <strong>persistencia de datos</strong>, es decir, salvaguardar los datos que estamos manipulando para que no se pierdan al finalizar una sesión de <em>Python</em>.</p>
+<p>Existen dos alternativas para conseguir el mencionado objetivo:</p>
+<ul>
+<li>Manejar archivos externos.</li>
+<li>Trabajar con bases de datos (BBDD).</li>
+</ul>
+<p>Las fases necesarias para guardar cierta información en archivos externos son:</p>
+<ol>
+<li>Creación del archivo externo.</li>
+<li>Apertura del archivo externo.</li>
+<li>Manipulación del archivo externo.</li>
+<li>Cierre del archivo externo.</li>
+</ol>
+<p>La documentación del módulo <code>io</code> la podemos encontrar en <a href="https://docs.python.org/3/library/io.html" target="_blank" rel="noopener">este enlace</a>.</p>
+<p>Veamos un ejemplo sencillo en el que crearemos un archivo donde almacenar una frase. Empecemos tecleando:</p>
+<pre><code class="language-python">from io import open
+
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;w&quot;)
+</code></pre>
+<p><em>Nota</em>: un archivo lo podemos abrir en modo lectura (<code>r</code>), escritura (<code>w</code>), agregar (<code>a</code>)&hellip;</p>
+<p>Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> mantenga una estructura coherente.</p>
+<p>A continuación, veamos cómo incluir información (texto) en dicho archivo:</p>
+<pre><code class="language-python">from io import open
+
+# Creación + Apertura
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;w&quot;)
+
+frase = &quot;Es un estupendo día para estudiar Python\nen Youtube.&quot;
+
+# Manipulación
+archivo_texto.write(frase)
+
+# Cierre
+archivo_texto.close()
+</code></pre>
+<p>De esta manera, hemos incluido el texto declarado en la variable <code>frase</code> en el fichero <code>archivo.txt</code>.</p>
+<p>Acto seguido, estudiemos cómo abrir un archivo en modo lectura y acceder a su contenido:</p>
+<pre><code class="language-python">from io import open
+
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
+
+texto = archivo_texto.read()
+
+archivo_texto.close()
+
+print(texto)
+</code></pre>
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+en Youtube.
+</code></pre>
+<p>Otro método que nos puede resultar de utilidad a la hora de leer un archivo es <code>readlines()</code>, que accede a la información almacenada línea a línea y la guarda en una lista:</p>
+<pre><code class="language-python">from io import open
+
+archivo_texto = open(&quot;archivo.txt&quot;, &quot;r&quot;)
+
+lineas_texto = archivo_texto.readlines()
+
+archivo_texto.close()
+
+print(lineas_texto)
+</code></pre>
+<pre><code class="language-bash">['Es un estupendo día para estudiar Python\n', 'en Youtube.']
+</code></pre>
+<p>Al ser una lista, podemos utilizar ahora todo lo que hemos aprendido sobre ellas:</p>
+<pre><code class="language-python">print(lineas_texto[0])
+</code></pre>
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+</code></pre>
+<p>Finalmente, veamos cómo abrir un archivo para agregar información. Para no alterar el contenido de <code>archivo.txt</code>, almacenaremos sus frases en una variable, las escribiremos en un nuevo fichero, <code>archivo2.txt</code>, y sobre este último será donde agreguemos contenido adicional:</p>
+<pre><code class="language-python">from io import open
+
+archivo1 = open(&quot;archivo.txt&quot;, &quot;r&quot;)
+texto = archivo1.read()
+archivo1.close()
+
+archivo2 = open(&quot;archivo2.txt&quot;, &quot;w&quot;)
+archivo2.write(texto)
+archivo2.close()
+
+archivo2 = open(&quot;archivo2.txt&quot;, &quot;a&quot;)
+archivo2.write(&quot;\n¡Mañana más!&quot;)
+archivo2.close()
+</code></pre>
+<p>Si acudimos a la carpeta, comprobaremos la existencia de un fichero denominado <code>archivo2.txt</code>, que contiene tres líneas.</p>
+<h3 id="código-fuente-4">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/37/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="archivos-ii">Archivos II</h2>
+<h3 id="vídeo-5">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/0dEYVSRYl_s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-5">Notas personales</h3>
+<p>Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo <code>io</code>, analizando en esta ocasión cómo manejar punteros en texto.</p>
+<p>Para ello, movamos el último archivo de texto generado en la lección anterior (<code>archivo2.txt</code>) a la carpeta, para así mantener la coherencia de la estructura de ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>. Tras ello, tecleemos:</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>Si no indicamos lo contrario, la función <code>.read()</code> sitúa el puntero al inicio del archivo y comienza entonces su lectura. Cuando finaliza esta, la posición del puntero se ubica tras el último carácter. Esto implica que si ahora escribimos de nuevo la instrucción <code>print(archivo.read())</code>, nada se mostraría en la consola, puesto que tras la posición que ha quedado el puntero no existe información alguna.</p>
+<p>Se puede inicializar la posición del puntero utilizando la función <code>.seek()</code>, que como argumento recibe el carácter desde el que deseamos comenzar la lectura del archivo.</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read())
+
+archivo.seek(0)  # Reinicio posición puntero
+
+print(archivo.read())
+
+archivo.seek(10)  # Establezco posición puntero en carácter 10
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+Es un estupendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+pendo día para estudiar Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>Con el método <code>.read()</code> también podemos modificar la función del puntero, aunque de manera algo diferente a cómo se lleva a cabo el proceso con <code>.seek()</code>. La primera lee hasta la posición del puntero que le indiquemos como argumento, mientras que la segunda posiciona el puntero en una posición y la lectura se efectúa a partir de dicha posición.</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo2.txt&quot;, &quot;r&quot;)
+
+print(archivo.read(11))
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">Es un estup
+endo día para estudiar Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>Para situar el puntero justo en medio de un archivo de texto podemos emplear la siguiente estrategia:</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo2.txt&quot;, &quot;r&quot;)
+
+archivo.seek(len(archivo.read()) / 2)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">r Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>¿Y si queremos situar el puntero al final de la primera línea?</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo2.txt&quot;, &quot;r&quot;)
+
+archivo.seek(len(archivo.readline()))
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>Un archivo lo podemos abrir, simultáneamente, en modo lectura y escritura (<code>&quot;r+&quot;</code>), para realizar ambas acciones a la vez si nos es preciso. Generemos un fichero denominado <code>archivo3.txt</code>, con el mismo contenido que aquel con el que llevamos trabajando a lo largo de toda esta lección. Después, tecleamos:</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo3.txt&quot;, &quot;r+&quot;)  # lectura y escritura
+
+archivo.write(&quot;Comienzo del texto: &quot;)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">Comienzo del texto: para estudiar Python
+en Youtube.
+¡Mañana más!
+</code></pre>
+<p>Al abrir el archivo, el puntero se posiciona al principio del mismo. Así, cuando usamos el método <code>.write()</code>, efectivamente sobreescribimos el contenido que originalmente hubiera (en tantas posiciones como longitud posea la nueva cadena de texto).</p>
+<p>Así, para incluir una línea en mitad del documento (la segunda en este caso particular), un posible enfoque sería:</p>
+<pre><code class="language-python">from io import open
+
+archivo = open(&quot;archivo3.txt&quot;, &quot;r+&quot;)  # lectura y escritura
+
+lineas = archivo.readlines()
+
+lineas[1] = &quot;Esta línea ha sido incluida desde el exterior.\n&quot;
+
+archivo.seek(0)
+
+archivo.writelines(lineas)
+
+archivo.seek(0)
+
+print(archivo.read())
+
+archivo.close()
+</code></pre>
+<pre><code class="language-bash">Comienzo del texto: para estudiar Python
+Esta línea ha sido incluida desde el exterior.
+¡Mañana más!
+</code></pre>
+<h3 id="código-fuente-5">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/38/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="serialización-i">Serialización I</h2>
+<h3 id="vídeo-6">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/SOimkkfQIOM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-6">Notas personales</h3>
+<p>En esta lección estudiaremos cómo serializar colecciones de ciertos objetos. La <strong>serialización</strong> consiste en guardar en un fichero externo una lista, un diccionario o, incluso, un objeto; con la particularidad de que la codificación de dicho fichero es binaria.</p>
+<p>Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet, ya que su distribución es más sencilla, o bien si deseamos guardarlo en un dispositivo de almacenamiento externo o en una base de datos.</p>
+<p>Para tal empresa utilizaremos la biblioteca de <em>Python</em> <code>pickle</code>, para aprovechar los métodos:</p>
+<ul>
+<li><code>dump()</code>: vuelca datos en un fichero binario externo, y</li>
+<li><code>load()</code>: carga datos de un fichero binario externo.</li>
+</ul>
+<p>Veamos un ejemplo sencillo de aplicación de ambas funciones. Almacenaremos en un archivo binario externo una lista de nombres y, posteriormente, la rescataremos:</p>
+<pre><code class="language-python">import pickle
+
+nombres = [&quot;Pedro&quot;, &quot;Ana&quot;, &quot;María&quot;, &quot;Isabel&quot;]
+
+fichero = open(&quot;lista_nombres&quot;, &quot;wb&quot;)
+
+pickle.dump(nombres, fichero)
+
+fichero.close()
+
+del fichero
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>A la hora de crear el fichero externo en modo escritura, con el método <code>open()</code>, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento <code>&quot;wb&quot;</code>.</li>
+<li>La instrucción <code>del</code> borra el puntero de la memoria hacia la variable <code>fichero</code>, dejando de estar disponible su acceso a partir de ese momento.</li>
+<li>Al ejecutar el anterior bloque de código, en la carpeta correspondiente del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
+</ul>
+<p>A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.</p>
+<pre><code class="language-python">import pickle
+
+fichero = open(&quot;lista_nombres&quot;, &quot;rb&quot;)
+
+lista = pickle.load(fichero)
+
+fichero.close()
+
+print(lista)
+</code></pre>
+<pre><code class="language-bash">['Pedro', 'Ana', 'María', 'Isabel']
+</code></pre>
+<p><em>Nota</em>: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función <code>open()</code> ha de tomar el valor de argumento <code>&quot;rb&quot;</code>.</p>
+<h3 id="código-fuente-6">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/39/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="serialización-ii">Serialización II</h2>
+<h3 id="vídeo-7">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/CkfDnMC79b4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-7">Notas personales</h3>
+<p>En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.</p>
+<p>Aprovechemos la clase <code>Vehiculo</code> que generamos anteriormente y cuyo código fuente recordemos era:</p>
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+</code></pre>
+<p>A continuación, importemos la librería <code>pickle</code> y creemos una lista con algunas instancias de la clase <code>Vehiculo</code>:</p>
+<pre><code class="language-python">import pickle
+
+coche1 = Vehiculo(&quot;Mazda&quot;, &quot;MX5&quot;)
+coche2 = Vehiculo(&quot;Seat&quot;, &quot;León&quot;)
+coche3 = Vehiculo(&quot;Renault&quot;, &quot;Megane&quot;)
+
+coches = [coche1, coche2, coche3]
+
+fichero = open(&quot;coches&quot;, &quot;wb&quot;)
+
+pickle.dump(coches, fichero)
+
+fichero.close()
+
+del fichero
+</code></pre>
+<p><em>Notas:</em></p>
+<ul>
+<li>Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función <code>open()</code> es <code>&quot;wb&quot;</code>.</li>
+<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>) el fichero <code>coches</code>.</li>
+</ul>
+<p>Para rescatar la información de este archivo que acabamos de generar, tecleamos:</p>
+<pre><code class="language-python">import pickle
+
+
+class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+fichero = open(&quot;coches&quot;, &quot;rb&quot;)
+
+coches = pickle.load(fichero)
+
+print(coches)
+</code></pre>
+<pre><code class="language-bash">[&lt;__main__.Vehiculo object at 0x00000259428D65C0&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F28&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F98&gt;]
+</code></pre>
+<p>Efectivamente, disponemos ahora de una lista con tres objetos. No obstante, recordemos que tenemos el método <code>estado</code> para acceder a información de interés sobre dichos objetos. Así, si escribimos:</p>
+<pre><code class="language-python">for coche in coches:
+    print(coche.estado())
+</code></pre>
+<pre><code class="language-bash">Marca: Mazda 
+Modelo: MX5 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+Marca: Seat 
+Modelo: León 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+Marca: Renault 
+Modelo: Megane 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+None
+</code></pre>
+<p><em>Nota</em>: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase <code>Vehiculo</code> es necesario que figure asimismo (en caso contrario arroja <em>Python</em> un error). El problema radica en que el nuevo archivo no tiene información sobre la clase <code>Vehiculo</code> ni, por supuesto, del método <code>estado()</code>.</p>
+<h3 id="código-fuente-7">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/40/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="guardado-permanente">Guardado permanente</h2>
+<h3 id="vídeo-8">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/J3qvf1fTCsU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-8">Notas personales</h3>
+<p>En esta lección, continuaremos estudiando cómo guardar datos de forma permanente en ficheros externos, reforzando así los contenidos aprendidos hasta el momento.</p>
+<p>Empecemos importando la librería <code>pickle</code> y creando una clase sencilla: <code>Persona</code>.</p>
+<pre><code class="language-python">import pickle
+
+
+class Persona:
+    def __init__(self, nombre, genero, edad):
+        self.nombre = nombre
+        self.genero = genero
+        self.edad = edad
+        print(&quot;Se ha creado una persona nueva con el nombre de&quot;, self.nombre)
+
+    def __str__(self):
+        return &quot;{} {} {}&quot;.format(self.nombre, self.genero, self.edad)
+</code></pre>
+<p><em>Nota</em>: el método <code>__str__()</code> convierte en cadena de texto la información de un objeto.</p>
+<p>Así, si ahora tecleamos:</p>
+<pre><code class="language-python">sandra = Persona(&quot;Sandra&quot;, &quot;Femenino&quot;, &quot;29&quot;)
+</code></pre>
+<pre><code class="language-bash">Se ha creado una persona nueva con el nombre de Sandra
+</code></pre>
+<p>El objetivo será crear algunos objetos de dicha clase, almacenarlos en una lista (empresa que realizaremos a través de otra clase, <code>ListaPersonas</code>) y después volcar la información en un fichero externo, al cual podamos acceder en cualquier instante.</p>
+<pre><code class="language-python">import pickle
+
+
+class Persona:
+    def __init__(self, nombre, genero, edad):
+        self.nombre = nombre
+        self.genero = genero
+        self.edad = edad
+        print(&quot;Se ha creado una persona nueva con el nombre de&quot;, self.nombre)
+
+    def __str__(self):
+        return &quot;{} {} {}&quot;.format(self.nombre, self.genero, self.edad)
+
+
+class ListaPersonas:
+    personas = []
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+
+lista_personas = ListaPersonas()
+
+sandra = Persona(&quot;Sandra&quot;, &quot;Femenino&quot;, &quot;29&quot;)
+lista_personas.agregar_personas(sandra)
+
+antonio = Persona(&quot;Antonio&quot;, &quot;Masculino&quot;, &quot;39&quot;)
+lista_personas.agregar_personas(antonio)
+
+ana = Persona(&quot;Ana&quot;, &quot;Femenino&quot;, &quot;20&quot;)
+lista_personas.agregar_personas(ana)
+
+lista_personas.mostrar_personas()
+</code></pre>
+<pre><code class="language-bash">Se ha creado una persona nueva con el nombre de Sandra
+Se ha creado una persona nueva con el nombre de Antonio
+Se ha creado una persona nueva con el nombre de Ana
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+</code></pre>
+<p>Almacenemos ahora la lista de personas que hemos generado en un fichero externo. Para ello, incluiremos los pasos necesarios del mencionado proceso en el constructor de la clase <code>ListaPersonas</code>:</p>
+<pre><code class="language-python">class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&quot;lista_de_personas&quot;, &quot;ab+&quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&quot;Se cargaron {} personas.&quot;.format(len(self.personas)))
+        except EOFError:
+            print(&quot;El fichero está vacío.&quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+
+lista_personas = ListaPersonas()
+</code></pre>
+<pre><code class="language-bash">El fichero está vacío.
+</code></pre>
+<p><em>Nota</em>: en la función <code>open()</code>, el valor del argumento <code>&quot;ab+&quot;</code> nos permite agregar información a un fichero de codificación binaria.</p>
+<p>A continuación, modifiquemos el método <code>agregar_personas()</code> para que una vez añadida a la lista la nueva información, la almacene en el fichero externo.</p>
+<pre><code class="language-python">class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&quot;lista_de_personas&quot;, &quot;ab+&quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&quot;Se cargaron {} personas.&quot;.format(len(self.personas)))
+        except EOFError:
+            print(&quot;El fichero está vacío.&quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+        self.guardar_personas()
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+    def guardar_personas(self):
+        fichero = open(&quot;lista_de_personas&quot;, &quot;wb&quot;)
+        pickle.dump(self.personas, fichero)
+        fichero.close()
+        del fichero
+</code></pre>
+<p>Así, si ejecutamos ahora el siguiente bloque de código:</p>
+<pre><code class="language-python">lista_personas = ListaPersonas()
+
+sandra = Persona(&quot;Sandra&quot;, &quot;Femenino&quot;, &quot;29&quot;)
+lista_personas.agregar_personas(sandra)
+
+antonio = Persona(&quot;Antonio&quot;, &quot;Masculino&quot;, &quot;39&quot;)
+lista_personas.agregar_personas(antonio)
+
+ana = Persona(&quot;Ana&quot;, &quot;Femenino&quot;, &quot;20&quot;)
+lista_personas.agregar_personas(ana)
+</code></pre>
+<pre><code class="language-bash">El fichero está vacío.
+Se ha creado una persona nueva con el nombre de Sandra
+Se ha creado una persona nueva con el nombre de Antonio
+Se ha creado una persona nueva con el nombre de Ana
+</code></pre>
+<p>Recuperemos la información guardada en el fichero externo, utilizando para ello un método que añadiremos a la clase <code>ListaPersonas</code>, <code>mostrar_informacion</code>:</p>
+<pre><code class="language-python">class ListaPersonas:
+    personas = []
+
+    def __init__(self):
+        fichero = open(&quot;lista_de_personas&quot;, &quot;ab+&quot;)
+        fichero.seek(0)  # Desplazamos cursor al principio
+
+        try:
+            self.personas = pickle.load(fichero)  # Cargamos información
+            print(&quot;Se cargaron {} personas.&quot;.format(len(self.personas)))
+        except EOFError:
+            print(&quot;El fichero está vacío.&quot;)  # Para la primera vez que abrimos
+        finally:
+            fichero.close()
+            del fichero
+
+    def agregar_personas(self, persona):
+        self.personas.append(persona)
+        self.guardar_personas()
+
+    def mostrar_personas(self):
+        for persona in self.personas:
+            print(persona.__str__())
+
+    def guardar_personas(self):
+        fichero = open(&quot;lista_de_personas&quot;, &quot;wb&quot;)
+        pickle.dump(self.personas, fichero)
+        fichero.close()
+        del fichero
+
+    def mostrar_informacion(self):
+        print(&quot;La información del fichero externo es la siguiente:&quot;)
+        for persona in self.personas:
+            print(persona.__str__())
+</code></pre>
+<p>Así,</p>
+<pre><code class="language-python">lista_personas.mostrar_informacion()
+</code></pre>
+<pre><code class="language-bash">La información del fichero externo es la siguiente:
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+</code></pre>
+<p>Agreguemos una nueva persona. Para ello, tecleamos por ejemplo:</p>
+<pre><code class="language-python">juan = Persona(&quot;Juan&quot;, &quot;Masculino&quot;, &quot;47&quot;)
+lista_personas.agregar_personas(juan)
+
+lista_personas.mostrar_informacion()
+</code></pre>
+<pre><code class="language-bash">Se ha creado una persona nueva con el nombre de Juan
+La información del fichero externo es la siguiente:
+Sandra Femenino 29
+Antonio Masculino 39
+Ana Femenino 20
+Juan Masculino 47
+</code></pre>
+<h3 id="código-fuente-8">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/41/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-05-11</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

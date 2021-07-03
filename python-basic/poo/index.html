@@ -1,0 +1,2207 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introducción al estudio de la programación orientada a objetos en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/poo/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/poo/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/poo/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/poo/" />
+  <meta property="og:title" content="Programación orientada a objetos | Infinitos Contrastes" />
+  <meta property="og:description" content="Introducción al estudio de la programación orientada a objetos en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-05-08T00:01:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Programación orientada a objetos | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="7c7bfe8c38c6d5fdc61af1b3fd7d17bd" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#programación-oo-i">Programación OO I</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+        <li><a href="#programación-op">Programación OP</a></li>
+        <li><a href="#programación-oo">Programación OO</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-ii">Programación OO II</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-iii">Programación OO III</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-iv">Programación OO IV</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-v">Programación OO V</a>
+      <ul>
+        <li><a href="#vídeo-4">Vídeo</a></li>
+        <li><a href="#notas-personales-4">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-vi">Programación OO VI</a>
+      <ul>
+        <li><a href="#vídeo-5">Vídeo</a></li>
+        <li><a href="#notas-personales-5">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-vii">Programación OO VII</a>
+      <ul>
+        <li><a href="#vídeo-6">Vídeo</a></li>
+        <li><a href="#notas-personales-6">Notas personales</a></li>
+        <li><a href="#código-fuente-4">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-viii">Programación OO VIII</a>
+      <ul>
+        <li><a href="#vídeo-7">Vídeo</a></li>
+        <li><a href="#notas-personales-7">Notas personales</a></li>
+        <li><a href="#código-fuente-5">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#programación-oo-ix">Programación OO IX</a>
+      <ul>
+        <li><a href="#vídeo-8">Vídeo</a></li>
+        <li><a href="#notas-personales-8">Notas personales</a></li>
+        <li><a href="#código-fuente-6">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Programación orientada a objetos</h1>
+
+          <div class="article-style">
+            <h2 id="programación-oo-i">Programación OO I</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/5Ohme4A2Weg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p><em>Python</em> es un lenguaje de programación orientado a objetos (POO). Existen, principalemente, dos paradigmas de programación:</p>
+<ol>
+<li>Programación orientada a procedimientos.</li>
+<li>Programación orientada a objetos.</li>
+</ol>
+<h3 id="programación-op">Programación OP</h3>
+<p>Algunos ejemplos de lenguajes de programación que siguen este paradigma son: Fortan, Cobol, Basic&hellip;</p>
+<p>Entre sus principales desventajas encontramos:</p>
+<ul>
+<li>Las unidades de código son muy grandes en aplicaciones complejas (resultando en un número de líneas significativamente elevado).</li>
+<li>En aplicaciones complejas, el código resulta difícil de descifrar.</li>
+<li>Las aplicaciones generadas suelen ser poco reutilizables.</li>
+<li>Si existen fallos en alguna línea del código, es muy probable que el programa caiga en su totalidad.</li>
+<li>Aparición frecuente de <strong>código espaguetti</strong> (saltos en el flujo de ejecución del programa).</li>
+<li>Es difícil de depurar el código por otros programadores en caso de necesidad o error.</li>
+</ul>
+<h3 id="programación-oo">Programación OO</h3>
+<p>La programación orientada a objetos consiste en trasladar el comportamiento que tienen los objetos en la vida real al código de programación. Los objetos tienen un estado, un comportamiento (¿qué puede hacer?) y unas propiedades.</p>
+<p>Por ejemplo, pensemos en el objeto &lsquo;&lsquo;coche&rsquo;':</p>
+<ul>
+<li>¿Cuál es el estado de un coche? Puede estar parado, circulando, aparcado&hellip;</li>
+<li>¿Qué propiedades tiene un coche? Tiene un color, un peso, un tamaño&hellip;</li>
+<li>¿Qué comportamiento tiene un coche? Puede arrancar, frenar, acelerar, girar&hellip;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Objeto</th>
+<th>Coche</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Propiedades (atributos)</td>
+<td>Color, peso, alto, largo&hellip;</td>
+</tr>
+<tr>
+<td>Comportamiento</td>
+<td>Arrancar, frenar, girar, acelerar&hellip;</td>
+</tr>
+</tbody>
+</table>
+<p>Algunos ejemplos de lenguajes de programación que emplean este paradigma son: C++, Java, VisualNet&hellip;</p>
+<p>Entre las principales ventajas encontramos:</p>
+<ul>
+<li>Los programas están divididos en &lsquo;&lsquo;trozos&rsquo;&rsquo;, &lsquo;&lsquo;partes&rsquo;&rsquo;, &lsquo;&lsquo;módulos&rsquo;&rsquo; o &lsquo;&lsquo;clases&rsquo;&rsquo;, es decir, existe <strong>modularización</strong>.</li>
+<li>El código es muy reutilizable. Aparece en el concepto de <strong>herencia</strong>.</li>
+<li>Si existen fallos en alguna línea del código, el programa es posible que continue con su funcionamiento, debido al <strong>control de excepciones</strong>.</li>
+<li>Surge el concepto de <strong>encapsulamiento</strong>.</li>
+</ul>
+<p>El vocabulario más frecuente de este paradigma de programación incluye palabras o expresiones como:</p>
+<ul>
+<li>Clase.</li>
+<li>Objeto.</li>
+<li>Ejemplar de clase. Instancia de clase. Ejemplarizar una clase. Instanciar una clase.</li>
+<li>Modularización.</li>
+<li>Encapsulamiento / encapsulación.</li>
+<li>Herencia.</li>
+<li>Polimorfismo.</li>
+</ul>
+<h2 id="programación-oo-ii">Programación OO II</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2UNrSiKEI8w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>Una <strong>clase</strong> es un modelo donde se redactan las características comunes de un grupo de objetos.</p>
+<p>Una <strong>instancia</strong> (o <strong>ejemplar</strong> u <strong>objeto</strong>) es un miembro concreto de una clase.</p>
+<p>La <strong>modularización</strong> surge cuando un programa está compuesto de diversas clases. Cada una de ellas funciona de manera independiente (facilitando así enormemente su mantenimiento y control de excepciones) y es posible su reutilización en otros programas.</p>
+<p>La <strong>encapsulación</strong> nos permite proteger el funcionamiento interno de cierto bloque de código, para que no pueda accederse o alterarse desde el exterior de manera inadecuada. No obstante, todas las clases de un programa estarán &lsquo;&lsquo;conectadas&rsquo;&rsquo; entre sí de cierta manera (mediante <strong>métodos de acceso</strong> a ciertas características de cada una de las clases).</p>
+<p>El mencionado acceso se llevará a cabo empleando la <strong>nomenclatura del punto</strong>. Por ejemplo, supongamos que hemos creado un objeto, de la clase <code>coche</code>, llamado <code>miCoche</code>. Para acceder a sus propiedades, utilizaremos la sintaxis:</p>
+<ul>
+<li><code>miCoche.color = ''rojo''</code></li>
+<li><code>miCoche.peso = 1500</code></li>
+<li><code>miCoche.ancho = 2000</code></li>
+<li><code>miCoche.alto = 900</code></li>
+</ul>
+<p>De forma similar, el acceso al comportamiento de este objeto se realizará mediante la mencionada nomenclatura:</p>
+<ul>
+<li><code>miCoche.arranca()</code></li>
+<li><code>miCoche.frena()</code></li>
+<li><code>miCoche.gira()</code></li>
+<li><code>miCoche.acelera()</code></li>
+</ul>
+<h2 id="programación-oo-iii">Programación OO III</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Y_SiIgxc-xI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>Traslademos a código fuente algunos de los conceptos examinados en las dos lecciones anteriores. La sintaxis para crear la clase <code>Coche</code> sería:</p>
+<pre><code class="language-python">class Coche():
+    instrucciones
+</code></pre>
+<p>Empecemos declarando las <strong>propiedades</strong> de la clase <code>Coche</code>:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+</code></pre>
+<p>Definamos <strong>comportamientos</strong> para los futuros objetos que pertenezcan a esta clase, que vienen determinados por distintos métodos:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def function(self):
+        pass
+</code></pre>
+<p>En <em>Sublime Text 3</em> cuando empezamos a escribir <code>def</code> nos ofrece dos opciones, crear una <strong>función</strong> o un <strong>método</strong>. La principal diferencia radica en que la primera no pertenece a ninguna clase, al contrario que la segunda. Podemos, a través de los cursores, escoger en el editor la opción que apunta a un método y se nos proporciona la sintaxis de uno por defecto, como el que se muestra arriba.</p>
+<p>Una vez editado, el código queda:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        pass
+</code></pre>
+<p><em>Nota</em>: <code>self</code> hace referencia al propio objeto perteneciente a la clase, es decir, a la instancia perteneciente a la clase.</p>
+<p>Construyamos un objeto de la clase <code>Coche</code> y veamos cómo acceder a sus propiedades:</p>
+<pre><code class="language-python">mi_coche = Coche()  # Instanciación de una clase
+
+print(&quot;Largo del coche: &quot;, mi_coche.largo_chasis)  # Largo del coche:  250
+print(&quot;Número de ruedas: &quot;, mi_coche.ruedas)  # Número de ruedas:  4
+</code></pre>
+<p>Trabajemos en el método declarado, para ello, escribimos:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+</code></pre>
+<p>Así, ahora:</p>
+<pre><code class="language-python">print(&quot;En marcha: &quot;, mi_coche.en_marcha)  # En marcha:  False
+mi_coche.arrancar()
+print(&quot;En marcha: &quot;, mi_coche.en_marcha)  # En marcha:  True
+</code></pre>
+<p>Esta última acción la podríamos haber llevado a cabo a través de otro comportamiento, <code>estado</code>:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+
+    def estado(self):
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+
+print(mi_coche.estado())  # El coche está parado.
+mi_coche.arrancar()
+print(mi_coche.estado())  # El coche está en marcha.
+</code></pre>
+<p>En resumen, hemos creado la clase <code>Coche</code>, que se caracteriza por poseer cuatro propiedades y dos comportamientos.</p>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/26/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-iv">Programación OO IV</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/x5CY8fVyYLo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>Partamos del código del último ejemplo de la lección anterior:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self):
+        self.en_marcha = True
+
+    def estado(self):
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+</code></pre>
+<p>Generemos dos objetos y comparémoslos:</p>
+<pre><code class="language-python">mi_coche1 = Coche()
+mi_coche2 = Coche()
+
+print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis)  # Largo mi_coche1:  250
+print(&quot;Largo mi_coche2: &quot;, mi_coche2.largo_chasis)  # Largo mi_coche2:  250
+
+mi_coche1.arrancar()
+print(mi_coche1.estado())  # El coche está en marcha.
+print(mi_coche2.estado())  # El coche está parado.
+</code></pre>
+<p>Sería buena idea que el método <code>arrancar()</code>, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método <code>estado()</code> para que nos ofrezca información del coche:</p>
+<pre><code class="language-python">class Coche():
+    largo_chasis = 250
+    ancho_chasis = 120
+    ruedas = 4
+    en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+
+
+mi_coche1 = Coche()
+mi_coche2 = Coche()
+
+print(mi_coche1.arrancar(True))  # El coche está en marcha.
+print(mi_coche2.arrancar(False))  # # El coche está parado.
+mi_coche1.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+mi_coche2.estado()
+# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+<p>En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como <strong>estado inicial</strong>. Para especificar dicho estado utilizaremos un <strong>constructor</strong>, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por</p>
+<pre><code class="language-python">def __init__(self):
+    propiedades
+</code></pre>
+<p>Así, el código de la clase quedaría:</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+</code></pre>
+<p>¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?</p>
+<pre><code class="language-python">mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.ruedas = 5
+
+mi_coche2.estado()
+</code></pre>
+<pre><code class="language-bash">El coche está parado.
+El coche tiene 5 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+<p>Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de <strong>encapsulación</strong>, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con <code>__</code> el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.largo_chasis = 250
+        self.ancho_chasis = 120
+        self.__ruedas = 4
+        self.en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.en_marcha = arrancamos
+        if self.en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
+</code></pre>
+<pre><code class="language-python">mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.__ruedas = 5
+
+mi_coche2.estado()
+</code></pre>
+<pre><code class="language-bash">El coche está parado.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+<p>En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso <code>en_marcha</code>, ya que queremos modificarla únicamente desde el interior de la clase.</p>
+<p>La clase entonces quedaría:</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+        if self.__en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
+              &quot;cm.&quot;)
+</code></pre>
+<p>De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.</p>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/27/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-v">Programación OO V</h2>
+<h3 id="vídeo-4">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/OU-e2uhoGxE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-4">Notas personales</h3>
+<p>A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+        if self.__en_marcha:
+            return &quot;El coche está en marcha.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
+              &quot;cm.&quot;)
+</code></pre>
+<p>Encapsular un método es hacer que sea únicamente accesible desde la propia clase, no desde fuera.</p>
+<p>Como aplicación práctica de este procedimiento, generemos un método que compruebe que todo está en orden antes de arrancar, <code>chequeo_interno(self)</code>, que llamaremos desde <code>arrancar()</code>.</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+
+        if self.__en_marcha:
+            chequeo = self.chequeo_interno()
+
+        if self.__en_marcha and chequeo:
+            return &quot;El coche está en marcha.&quot;
+        elif self.__en_marcha and not chequeo:
+            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
+              &quot;cm.&quot;)
+
+    def chequeo_interno(self):
+        print(&quot;Realizando chequeo interno.&quot;)
+
+        self.gas = &quot;Ok&quot;
+        self.aceite = &quot;Ok&quot;
+        self.puertas = &quot;Ok&quot;
+
+        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
+            return True
+        else:
+            return False
+</code></pre>
+<p>Así, si ahora tecleamos:</p>
+<pre><code class="language-python">mi_coche1 = Coche()
+
+print(mi_coche1.arrancar(True))
+
+mi_coche1.estado()
+
+print(&quot;---- Segundo vehículo ----&quot;)
+
+mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+
+mi_coche2.estado()
+</code></pre>
+<p>El resultado será:</p>
+<pre><code class="language-bash">Realizando chequeo interno.
+El coche está en marcha.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+---- Segundo vehículo ----
+El coche está parado.
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+<p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &lsquo;&lsquo;protegerlo&rsquo;&rsquo;.</p>
+<pre><code class="language-python">mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+print(mi_coche2.chequeo_interno())  # Absurdo en este caso
+mi_coche2.estado()
+</code></pre>
+<pre><code class="language-bash">El coche está parado.
+Realizando chequeo interno.
+True
+El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
+</code></pre>
+<p>Para encapsular el mencionado método, utilizamos la estrategia de <code>__</code>:</p>
+<pre><code class="language-python">class Coche():
+    def __init__(self):
+        self.__largo_chasis = 250
+        self.__ancho_chasis = 120
+        self.__ruedas = 4
+        self.__en_marcha = False
+
+    def arrancar(self, arrancamos):
+        self.__en_marcha = arrancamos
+
+        if self.__en_marcha:
+            chequeo = self.__chequeo_interno()
+
+        if self.__en_marcha and chequeo:
+            return &quot;El coche está en marcha.&quot;
+        elif self.__en_marcha and not chequeo:
+            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
+        else:
+            return &quot;El coche está parado.&quot;
+
+    def estado(self):
+        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
+              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
+              &quot;cm.&quot;)
+
+    def __chequeo_interno(self):
+        print(&quot;Realizando chequeo interno.&quot;)
+
+        self.gas = &quot;Ok&quot;
+        self.aceite = &quot;Ok&quot;
+        self.puertas = &quot;Ok&quot;
+
+        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
+            return True
+        else:
+            return False
+</code></pre>
+<p>De forma que si ahora escribimos:</p>
+<pre><code class="language-python">mi_coche2 = Coche()
+
+print(mi_coche2.arrancar(False))
+print(mi_coche2.__chequeo_interno())
+mi_coche2.estado()
+</code></pre>
+<p>El resultado es:</p>
+<pre><code class="language-bash">El coche está parado.
+Traceback (most recent call last):
+  File &quot;prac28_poo5_1.py&quot;, line 50, in &lt;module&gt;
+    print(mi_coche2.__chequeo_interno())
+AttributeError: 'Coche' object has no attribute '__chequeo_interno'
+</code></pre>
+<p>Es decir, <em>Python</em> arroja un error. No nos deja llamar al método <code>__chequeo_interno()</code> desde fuera de la propia clase <code>Coche</code> porque está encapsulado.</p>
+<p>¿Cuándo encapsular una variable o un método? No existe una &lsquo;&lsquo;regla de oro&rsquo;&rsquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.</p>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/28/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-vi">Programación OO VI</h2>
+<h3 id="vídeo-5">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/u_VbLsIyzRk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-5">Notas personales</h3>
+<p>En programación orientada a objetos, el concepto de <strong>herencia</strong> intenta dar una réplica aproximada de su contrapartida en la vida real. De una clase, denominada en ocasiones <strong>clase padre</strong> o <strong>superclase</strong>, heredarán otras clases atributos, métodos&hellip; Se conocen estas últimas como <strong>subclases</strong> de la anterior (y también como <strong>superclases</strong> si de ellas también heredan otras).</p>
+<p>La principal utilidad de la herencia es la reutilización de código cuando se generan clases &lsquo;&lsquo;similares&rsquo;&rsquo;. Hemos de estudiar las características y comportamientos que poseen en común todos los objetos con los que deseamos trabajar. Todo ello lo englobaremos en una <strong>superclase</strong>, de la cual luego heredarán otras clases, que aun teniendo características en común, también es cierto que existen otras peculiaridades que las diferencian.</p>
+<p>Veamos un ejemplo práctico:</p>
+<pre><code class="language-python"># Clase Padre
+class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+# Clase hija
+class Moto(Vehiculo):
+    pass
+
+
+mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
+
+mi_moto.estado()
+</code></pre>
+<pre><code class="language-bash">Marca: Honda 
+Modelo: CBR 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<p>Estamos utilizando métodos de la clase <code>Vehiculo</code> a través de la clase <code>Moto</code> gracias a la herencia.</p>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/29/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-vii">Programación OO VII</h2>
+<h3 id="vídeo-6">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/jMQQN9OxwVc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-6">Notas personales</h3>
+<p>Continuemos con el ejemplo de la lección anterior:</p>
+<pre><code class="language-python"># Clase Padre
+class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+# Clase hija
+class Moto(Vehiculo):
+    pass
+</code></pre>
+<p>Construyamos la clase <code>Moto</code>, añadiendo un comportamiento nuevo, <code>caballito</code>, que se va a sumar a los cuatro heredados de la clase <code>Vehiculo</code>:</p>
+<pre><code class="language-python">class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        hcaballito = &quot;Voy haciendo el caballito.&quot;
+</code></pre>
+<p>Ahora podríamos teclear:</p>
+<pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
+
+mi_moto.caballito()
+
+mi_moto.estado()
+</code></pre>
+<pre><code class="language-bash">Marca: Honda 
+Modelo: CBR 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<p>El programa &lsquo;&lsquo;funciona&rsquo;&rsquo; (al menos no arroja errores), pero no nos está informando si estamos haciendo el caballito o no.</p>
+<p>Abordemos esta situación sobreescribiendo el método <code>estado</code> heredado de la clase <code>Vehiculo</code>, para así incorporar la información sobre el nuevo comportamiento de la clase <code>Moto</code>.</p>
+<p>Para sobreescribir un método de la clase padre definimos uno en la clase hija que se caracterice por tener el mismo nombre y número de parámetros:</p>
+<pre><code class="language-python">class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+</code></pre>
+<p>De esta manera, la ejecución del siguiente bloque de código:</p>
+<pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
+
+mi_moto.caballito()
+
+mi_moto.estado()
+</code></pre>
+<p>Produce como resultado ahora:</p>
+<pre><code class="language-bash">Marca: Honda 
+Modelo: CBR 
+En marcha: False 
+Acelerando: False 
+Frenando: False 
+ Voy haciendo el caballito.
+</code></pre>
+<p>Modifiquemos el código para albergar la posibilidad de trabajar con furgonetas:</p>
+<pre><code class="language-python">class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+</code></pre>
+<p>Así,</p>
+<pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
+
+mi_furgo.arrancar()
+
+mi_furgo.estado()
+
+mi_furgo.carga(True)
+</code></pre>
+<pre><code class="language-bash">Marca: Renault 
+Modelo: Kangoo 
+En marcha: True 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<p>Todo funciona de manera adecuada, con la salvedad de que no estamos viendo que la furgoneta está cargada. Como el método <code>carga()</code> devuelve una cadena de texto, añadiendo una función <code>print()</code> solucionamos el entuerto:</p>
+<pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
+
+mi_furgo.arrancar()
+
+mi_furgo.estado()
+
+print(mi_furgo.carga(True))
+</code></pre>
+<pre><code class="language-bash">Marca: Renault 
+Modelo: Kangoo 
+En marcha: True 
+Acelerando: False 
+Frenando: False
+La furgoneta está cargada.
+</code></pre>
+<p>Obviamente, una instrucción del tipo <code>mi_moto.carga()</code> arroja un error, ya que no hereda de <code>Furgoneta</code> la clase <code>Moto</code>, sino de <code>Vehiculo</code>.</p>
+<p>Añademos soporte para vehículos electrónicos:</p>
+<pre><code class="language-python">class VehiculoElec():
+    def __init__(self):
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+</code></pre>
+<p>Y, a continuación, generemos una clase para trabajar con biciletas eléctricas. Estas tienen marca, modelo, pueden arrancar, frenar&hellip; y a la vez también poseen autonomia y la posibilidad de cargar energía. <em>Python</em> nos permite heredar de dos o más clases, que se conoce como <strong>herencia múltiple</strong>:</p>
+<pre><code class="language-python">class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+</code></pre>
+<p>Hemos de tener en cuenta que cuando se da herencia múltiple, a la hora de tomar el constructor o los diferentes métodos, se da la preferencia según hayamos ordenado las clases padres de las que hereda. En este caso, no podemos iniciar una bicicleta eléctrica con marca y modelo, aprovechando así el constructor de la clase <code>Vehiculo</code>, ya que la clase <code>VehiculoElec</code> posee su propio constructor y este último tiene preferencia por haber colocado esta clase primero en la definición de <code>BicicletaElec</code>.</p>
+<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
+</code></pre>
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;prac30_poo7_3.py&quot;, line 58, in &lt;module&gt;
+    mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
+TypeError: __init__() takes 1 positional argument but 3 were given
+</code></pre>
+<p>No obstante, si intercambiamos el orden de las clases padre en la definición de <code>BicicletaElec</code>:</p>
+<pre><code class="language-python">class BicicletaElec(Vehiculo, VehiculoElec):
+    pass
+
+
+mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
+
+mi_bici.estado()
+</code></pre>
+<p>La ejecución ya no arroja errores, mostrando el siguiente resultado:</p>
+<pre><code class="language-bash">Marca: Orbea 
+Modelo: HCI30 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<h3 id="código-fuente-4">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/30/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-viii">Programación OO VIII</h2>
+<h3 id="vídeo-7">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/oe04X1B14YY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-7">Notas personales</h3>
+<p>En esta lección estudiaremos el uso de las funciones</p>
+<ul>
+<li><code>super()</code> e</li>
+<li><code>isinstance()</code>.</li>
+</ul>
+<p>Partimos del último ejemplo de la lección anterior:</p>
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+
+
+class VehiculoElec():
+    def __init__(self):
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+</code></pre>
+<p>Si queremos crear un objeto de la clase <code>BicicletaElec</code> que posea una marca y un modelo, tenemos dos opciones disponibles:</p>
+<ul>
+<li>Acudir al método <code>__init__()</code> de la clase <code>VehiculoElec</code> y copiar las líneas que nos interesen del método homónimo de la clase <code>Vehiculo</code>. No obstante, este enfoque es, cuanto menos, poco elegante.</li>
+<li>Utilizar la función <code>super()</code>, cuya utilidad reside en que procede a llamar al método de la clase padre.</li>
+</ul>
+<p>Veamos esta segunda aproximación con un ejemplo un tanto más sencillo:</p>
+<pre><code class="language-python">class Persona():
+    def __init__(self, nombre, edad, residencia):
+        self.nombre = nombre
+        self.edad = edad
+        self.residencia = residencia
+
+    def describir(self):
+        print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
+              self.residencia)
+
+
+class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        self.salario = salario
+        self.antiguedad = antiguedad
+</code></pre>
+<p>Ahora podríamos comenzar a construir objetos de ambas clases:</p>
+<pre><code class="language-python">antonio = Persona(&quot;Antonio&quot;, 55, &quot;España&quot;)
+
+antonio.describir()
+</code></pre>
+<pre><code class="language-bash">Nombre: Antonio 
+Edad: 55 
+Residencia: España
+</code></pre>
+<p>Para constuir un objeto de la clase <code>Empleado</code>, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de <code>Persona</code>. No obstante, a la hora de emplear el método <code>describir()</code> encontraremos problemas tal y como están programadas ambas clases:</p>
+<pre><code class="language-python">juan = Empleado(1500, 15)
+
+juan.describir()
+</code></pre>
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;prac31_poo8_2.py&quot;, line 24, in &lt;module&gt;
+    juan.describir()
+  File &quot;prac31_poo8_2.py&quot;, line 8, in describir
+    print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
+AttributeError: 'Empleado' object has no attribute 'nombre'
+</code></pre>
+<p>Podemos reescribir el constructor de la clase <code>Empleado</code>, haciendo uso de la función <code>super()</code>, como sigue:</p>
+<pre><code class="language-python">class Empleado(Persona):
+    def __init__(self, salario, antiguedad):
+        super().__init__(&quot;Juan&quot;, 33, &quot;Italia&quot;)
+        self.salario = salario
+        self.antiguedad = antiguedad
+</code></pre>
+<p>De manera que ahora el código no arrojará error alguno:</p>
+<pre><code class="language-python">juan = Empleado(1500, 15)
+
+juan.describir()
+</code></pre>
+<pre><code class="language-bash">Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+</code></pre>
+<p>No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:</p>
+<pre><code class="language-python">class Empleado(Persona):
+    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado,
+                 residencia_empleado):
+        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
+        self.salario = salario
+        self.antiguedad = antiguedad
+
+    def describir(self):
+        super().describir()
+        print(&quot;Salario:&quot;, self.salario, &quot;\nAntigüedad:&quot;, self.antiguedad)
+</code></pre>
+<p>De paso, hemos mejorado también el método <code>describir()</code>, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,</p>
+<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
+
+juan.describir()
+</code></pre>
+<pre><code class="language-bash">Nombre: Juan 
+Edad: 33 
+Residencia: Italia
+Salario: 1500 
+Antigüedad: 15
+</code></pre>
+<p>La función <code>isinstance()</code> nos informa si un objeto es instancia de una clase determinada:</p>
+<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
+
+juan.describir()
+
+print(isinstance(juan, Persona))  # True
+print(isinstance(juan, Empleado))  # True
+
+marco = Persona(&quot;Marco&quot;, 51, &quot;Francia&quot;)
+
+print(isinstance(marco, Persona))  # True
+print(isinstance(marco, Empleado))  # False
+</code></pre>
+<p>Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.</p>
+<pre><code class="language-python">class Vehiculo():
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+        self.enmarcha = False
+        self.acelera = False
+        self.frena = False
+
+    def arrancar(self):
+        self.enmarcha = True
+
+    def acelerar(self):
+        self.acelera = True
+
+    def frenar(self):
+        self.frena = True
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena)
+
+
+class Furgoneta(Vehiculo):
+    def carga(self, cargar):
+        self.cargado = cargar
+        if self.cargado:
+            return &quot;La furgoneta está cargada.&quot;
+        else:
+            return &quot;La furgoneta no está cargada.&quot;
+
+
+class Moto(Vehiculo):
+    hcaballito = &quot;&quot;
+
+    def caballito(self):
+        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
+
+    def estado(self):
+        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
+              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
+              self.frena, &quot;\n&quot;, self.hcaballito)
+
+
+class VehiculoElec(Vehiculo):
+    def __init__(self, marca, modelo):
+        super().__init__(marca, modelo)
+        self.autonomia = 100
+
+    def cargar_energia(self):
+        self.cargando = True
+
+
+class BicicletaElec(VehiculoElec, Vehiculo):
+    pass
+</code></pre>
+<p>Notemos que:</p>
+<ul>
+<li>Hemos utilizado la función <code>super()</code> en el método <code>__init__()</code> de <code>VehiculoElec</code>.</li>
+<li>Hemos declarado que la clase <code>VehiculoElec</code> hereda de <code>Vehiculo</code>.</li>
+</ul>
+<p>Así,</p>
+<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
+
+mi_bici.estado()
+</code></pre>
+<pre><code class="language-bash">Marca: Orbea 
+Modelo: HCI30 
+En marcha: False 
+Acelerando: False 
+Frenando: False
+</code></pre>
+<h3 id="código-fuente-5">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/31/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="programación-oo-ix">Programación OO IX</h2>
+<h3 id="vídeo-8">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/kV1cN_bqcSw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-8">Notas personales</h3>
+<p>En esta lección, abordaremos el concepto de <strong>polimorfismo</strong>. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.</p>
+<p>Como <em>Python</em> es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.</p>
+<p>Veamos un ejemplo:</p>
+<pre><code class="language-python">class Coche():
+    def desplazamiento(self):
+        print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)
+
+
+class Moto():
+    def desplazamiento(self):
+        print(&quot;Me desplazo utilizando dos ruedas.&quot;)
+
+
+class Camion():
+    def desplazamiento(self):
+        print(&quot;Me desplazo utilizando seis ruedas.&quot;)
+</code></pre>
+<p>Así, si ahora tecleamos:</p>
+<pre><code class="language-python">mi_vehiculo = Moto()
+
+mi_vehiculo.desplazamiento()
+
+mi_vehiculo2 = Coche()
+
+mi_vehiculo2.desplazamiento()
+
+mi_vehiculo3 = Camion()
+
+mi_vehiculo3.desplazamiento()
+</code></pre>
+<pre><code class="language-bash">Me desplazo utilizando dos ruedas.
+Me desplazo utilizando cuatro ruedas.
+Me desplazo utilizando seis ruedas.
+</code></pre>
+<p>Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.</p>
+<p>No obstante, nos podemos aprovechar de la magia del polimorfismo creando una función como se muestra a continuación:</p>
+<pre><code class="language-python">def desplazamiento_vehiculo(vehiculo):
+    vehiculo.desplazamiento()
+</code></pre>
+<p>Y como el objeto <code>vehiculo</code> posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), <em>Python</em> en todo momento sabrá a qué método <code>desplazamiento()</code> acudir en cada instante.</p>
+<p>Así, si escribimos:</p>
+<pre><code class="language-python">mi_vehiculo = Camion()
+
+desplazamiento_vehiculo(mi_vehiculo)
+
+mi_vehiculo = Coche()
+
+desplazamiento_vehiculo(mi_vehiculo)
+
+mi_vehiculo = Moto()
+
+desplazamiento_vehiculo(mi_vehiculo)
+</code></pre>
+<pre><code class="language-bash">Me desplazo utilizando seis ruedas.
+Me desplazo utilizando cuatro ruedas.
+Me desplazo utilizando dos ruedas.
+</code></pre>
+<h3 id="código-fuente-6">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/32/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-05-08</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

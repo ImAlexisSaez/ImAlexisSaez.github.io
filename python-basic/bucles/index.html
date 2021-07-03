@@ -1,0 +1,1593 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introducción al estudio de las estructuras de repetición en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/bucles/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/bucles/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/bucles/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/bucles/" />
+  <meta property="og:title" content="Bucles | Infinitos Contrastes" />
+  <meta property="og:description" content="Introducción al estudio de las estructuras de repetición en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-05-01T00:02:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Bucles | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="3348dffc20c81e1eb0439c0b58e025b4" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bucles-i">Bucles I</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bucles-ii">Bucles II</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bucles-iii">Bucles III</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bucles-iv">Bucles IV</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bucles-v">Bucles V</a>
+      <ul>
+        <li><a href="#vídeo-4">Vídeo</a></li>
+        <li><a href="#notas-personales-4">Notas personales</a></li>
+        <li><a href="#código-fuente-4">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Bucles</h1>
+
+          <div class="article-style">
+            <h2 id="bucles-i">Bucles I</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/GQGhU1526Oo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los <strong>bucles</strong>.</p>
+<p>La utilidad de un <strong>bucle</strong> es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En <em>Python</em> tenemos dos tipos de bucles:</p>
+<ul>
+<li><em>determinados</em>: sabemos a priori cuántas veces se repetirá el bloque de código, e</li>
+<li><em>indeterminados</em>: desconocemos a priori el número de repeticiones del bloque de código.</li>
+</ul>
+<p>Empecemos viendo el primer tipo, al que pertenece la instrucción <code>for</code>, cuya sintaxis es:</p>
+<pre><code class="language-python">for variable in elemento_a_recorrer:
+    instrucciones
+</code></pre>
+<p>donde el <code>elemento_a_recorrer</code> puede ser una lista, una tupla, una cadena de texto&hellip;</p>
+<p>Por ejemplo, para imprimir tres veces una palabra, una posible estrategia sería:</p>
+<pre><code class="language-python">for i in [1, 2, 3]:
+    print(&quot;Hola&quot;)
+</code></pre>
+<p>Aunque hemos utilizado una lista de números, no es imprescindible. El siguiente ejemplo consigue el mismo resultado:</p>
+<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
+    print(&quot;Hola&quot;)
+</code></pre>
+<p>En ambos casos, el elemento a recorrer es una lista de tres elementos y es por ello que el mensaje <code>&quot;Hola&quot;</code> se repite en tres ocasiones, tantas como el mencionado número de elementos de la correspondiente lista.</p>
+<p>Si en lugar de un texto predeterminado optamos por imprimir la propia variable en ambos casos, el resultado es:</p>
+<pre><code class="language-python">for i in [1, 2, 3]:
+    print(i)
+
+# 1
+# 2
+# 3
+</code></pre>
+<pre><code class="language-python">for i in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
+    print(i)
+
+# enero
+# febrero
+# marzo
+</code></pre>
+<p>La variable no tiene que denominarse necesariamente <code>i</code>:</p>
+<pre><code class="language-python">for meses in [&quot;enero&quot;, &quot;febrero&quot;, &quot;marzo&quot;]:
+    print(meses)
+
+# enero
+# febrero
+# marzo
+</code></pre>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/14/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bucles-ii">Bucles II</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/D416qOEDrhI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>Las instrucciones <code>print()</code> que aparecen en los bucles de tipo <code>for</code> insertan un salto de línea en cada iteración:</p>
+<pre><code class="language-python">for i in [&quot;Píldoras&quot;, &quot;Informáticas&quot;, 3]:
+    print(&quot;Hola&quot;)
+
+# Hola
+# Hola
+# Hola
+</code></pre>
+<p>Si deseamos que la impresión se produzca en la misma línea, hemos de declarar adecuadamente el argumento <code>end</code> de la función <code>print()</code>:</p>
+<pre><code class="language-python">for i in [&quot;Píldoras&quot;, &quot;Informáticas&quot;, 3]:
+    print(&quot;Hola&quot;, end=&quot; &quot;)
+
+# Hola Hola Hola
+</code></pre>
+<p>Si el elemento a recorrer es una cadena de texto, el bucle <code>for</code> ejecutará tantas iteraciones como letras tenga esta:</p>
+<pre><code class="language-python">for i in &quot;Alexis&quot;:
+    print(i, end=&quot;-&quot;)
+
+# A-l-e-x-i-s-
+</code></pre>
+<p>Esta característica nos permite, por ejemplo, programar una primera aproximación a un verificador de direcciones de correo electrónico, que nos indique que una es correcta si alberga una arroba en su declaración:</p>
+<pre><code class="language-python">email = False
+
+for i in &quot;direccion@dominio.com&quot;:
+    if i == &quot;@&quot;:
+        email = True
+
+if email == True:
+    print(&quot;El email es correcto.&quot;)
+else:
+    print(&quot;El email no es correcto.&quot;)
+
+# El email es correcto.
+</code></pre>
+<p>El anterior bloque de código se puede simplificar un tanto:</p>
+<pre><code class="language-python">for i in &quot;direccion@dominio.com&quot;:
+    if i == &quot;@&quot;:
+        email = True
+
+if email:
+    print(&quot;El email es correcto.&quot;)
+else:
+    print(&quot;El email no es correcto.&quot;)
+
+# El email es correcto.
+</code></pre>
+<p>Generemos una versión interactiva de este programa:</p>
+<pre><code class="language-python">def evalua_email(direcc):
+    email = False
+
+    for i in direcc:
+        if i == &quot;@&quot;:
+            email = True
+    if email:
+        print(&quot;El email es correcto.&quot;)
+    else:
+        print(&quot;El email no es correcto.&quot;)
+
+
+direcc = input(&quot;Introduce tu dirección de correo electrónico: &quot;)
+
+evalua_email(direcc)
+</code></pre>
+<p>Podemos ampliar la función de verificación de correos electrónicos para que compruebe si también hay un carácter <code>.</code> en la cadena de texto:</p>
+<pre><code class="language-python">def evalua_email(direcc):
+    arroba = False
+    punto = False
+
+    for i in direcc:
+        if i == &quot;@&quot;:
+            arroba = True
+        if i == &quot;.&quot;:
+            punto = True
+    if arroba and punto:
+        print(&quot;El email es correcto.&quot;)
+    else:
+        print(&quot;El email no es correcto.&quot;)
+
+
+direcc = input(&quot;Introduce tu dirección de correo electrónico: &quot;)
+
+evalua_email(direcc)
+</code></pre>
+<p>Veamos el uso del tipo <code>range</code> en combinación con el bucle <code>for</code>:</p>
+<pre><code class="language-python">for i in range(5):
+    print(i)
+
+# 0
+# 1
+# 2
+# 3
+# 4
+</code></pre>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/15/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bucles-iii">Bucles III</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/KFz-mXB7qVI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>Veamos algunas opciones de la función <code>print()</code> a la hora de imprimir el valor de variables durante la ejecución de un bucle:</p>
+<pre><code class="language-python">for i in range(5):
+    print(f&quot;valor de la variable {i}&quot;)
+
+# valor de la variable 0
+# valor de la variable 1
+# valor de la variable 2
+# valor de la variable 3
+# valor de la variable 4
+</code></pre>
+<p>La <code>f</code> que aparece antes del texto entrecomillado indica el uso de <strong>funciones f</strong>, que permiten interesantes opciones de cara a la impresión de textos en la consola. En esta ocasión, concatena la cadena de caracteres con el valor que toma la variable en cada iteración, indicada por <code>{i}</code>.</p>
+<p>El tipo <code>range</code> admite el uso de argumentos adicionales:</p>
+<pre><code class="language-python">for i in range(5, 10):
+    print(f&quot;valor de la variable {i}&quot;)
+
+# valor de la variable 5
+# valor de la variable 6
+# valor de la variable 7
+# valor de la variable 8
+# valor de la variable 9
+</code></pre>
+<pre><code class="language-python">for i in range(5, 50, 5):
+    print(f&quot;valor de la variable {i}&quot;)
+
+# valor de la variable 5
+# valor de la variable 10
+# valor de la variable 15
+# valor de la variable 20
+# valor de la variable 25
+# valor de la variable 30
+# valor de la variable 35
+# valor de la variable 40
+# valor de la variable 45
+</code></pre>
+<p>La función <code>len</code> también resulta de utilidad a la hora de emplear bucles <code>for</code>. Veámosla en acción retomando el ejemplo de la validación de una dirección de correo electrónico visto en la lección anterior:</p>
+<pre><code class="language-python">valido = False
+
+email = input(&quot;Introduce tu email: &quot;)
+
+for i in range(len(email)):
+    if email[i] == &quot;@&quot;:
+        valido = True
+
+if valido:
+    print(&quot;El email es correcto.&quot;)
+else:
+    print(&quot;El email no es correcto.&quot;)
+</code></pre>
+<p><strong>Ejercicio 1</strong>: crea un programa que muestre los números impares del 1 al 100. Los números deberán aparecer una al lado del otro sin salto de línea.</p>
+<pre><code class="language-python">for i in range(1, 100, 2):
+    print(i, end=&quot; &quot;)
+</code></pre>
+<p><strong>Ejercicio 2</strong>: crea un programa que pida por teclado introducir una contraseña. La contraseña no podrá tener menos de 8 caracteres ni espacios en blanco. Si la contraseña es correcta, el programa imprime &lsquo;&lsquo;Contraseña OK&rsquo;&rsquo;. En caso contrario imprime &lsquo;&lsquo;Contraseña errónea&rsquo;&rsquo;.</p>
+<pre><code class="language-python">def evalua_password(password):
+    valido = True
+    if len(password) &lt; 8 or &quot; &quot; in password:
+        valido = False
+    return valido
+
+
+password = input(&quot;Introduce contraseña: &quot;)
+
+if evalua_password(password):
+    print(&quot;Constraseña OK.&quot;)
+else:
+    print(&quot;Contraseña errónea.&quot;)
+</code></pre>
+<p><strong>Ejercicio 3</strong>: crea un programa que evalúe si una dirección de correo electrónico es válida o no en función de si tiene <code>@</code> o <code>.</code> Hay que tener en cuenta que la dirección se considera correcta si solo tiene una <code>@</code> y si tiene uno o más <code>.</code>.</p>
+<pre><code class="language-python">def evalua_mail(mail):
+    arroba = False
+    punto = False
+
+    if &quot;.&quot; in mail:
+        punto = True
+
+    contador = 0
+    for i in mail:
+        if i == &quot;@&quot;:
+            contador += 1
+
+    if contador == 1:
+        arroba = True
+
+    return punto and arroba
+
+
+mail = input(&quot;Introduce dirección de correo electrónico: &quot;)
+
+if evalua_mail(mail):
+    print(&quot;Dirección de correo electrónico VÁLIDA.&quot;)
+else:
+    print(&quot;Dirección de correo electrónico INVÁLIDA.&quot;)
+</code></pre>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/16/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bucles-iv">Bucles IV</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/UfUM6uzl5SM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>Estudiemos el bucle <strong>while</strong>, que es tipo <em>indeterminado</em> porque no sabemos a priori cuántas veces ejecutará el bloque de código contenido en su interior. Su sintaxis es:</p>
+<pre><code class="language-python">while condición:
+    instrucciones
+</code></pre>
+<p>En el siguiente ejemplo, no obstante, vemos cómo programar un bucle <code>while</code> para que funcione como uno de tipo <em>determinado</em>:</p>
+<pre><code class="language-python">i = 1
+
+while i &lt;= 10:
+    print(f&quot;Iteración: {i}.&quot;)
+    i += 1
+
+print(&quot;Fin de ejecución del bucle while.&quot;)
+
+# Iteración: 1.
+# Iteración: 2.
+# Iteración: 3.
+# Iteración: 4.
+# Iteración: 5.
+# Iteración: 6.
+# Iteración: 7.
+# Iteración: 8.
+# Iteración: 9.
+# Iteración: 10.
+# Fin de ejecución del bucle while.
+</code></pre>
+<p>Generemos ahora un programa que nos solicite la edad y, en caso de ser el dato introducido un número negativo, vuelva a preguntarnos de nuevo (siendo así un ejemplo de bucle <code>while</code> de tipo <em>indeterminado</em>):</p>
+<pre><code class="language-python">edad = int(input(&quot;Introduce tu edad: &quot;))
+
+while edad &lt; 0 or edad &gt; 110:
+    print(&quot;Has introducido una edad incorrecta. Vuelve a intentarlo.&quot;)
+    edad = int(input(&quot;Introduce tu edad: &quot;))
+
+print(f&quot;Tienes {edad} años. Gracias por colaborar.&quot;)
+</code></pre>
+<p>Si un usuario se empeña en introducir datos negativos o muy elevados, puede dar lugar a la aparición de un bucle &lsquo;&lsquo;infinito&rsquo;&rsquo;. Veamos una estrategia para evitar este tipo de situaciones con un programa que nos permita hallar la raíz cuadrada de un número:</p>
+<pre><code class="language-python">import math
+
+print(&quot;Programa de cálculo de raíces cuadradas&quot;)
+
+numero = int(input(&quot;Introduce un número: &quot;))
+
+intentos = 0  # Para ejecutar el bucle while un número de veces determinado
+
+while numero &lt; 0:
+    print(&quot;No se puede hallar la raíz de un número negativo.&quot;)
+    if intentos == 2:
+        print(&quot;Has consumido demasiados intentos.&quot;)
+        print(&quot;El programa ha finalizado&quot;)
+        break
+    numero = int(input(&quot;Introduce un número: &quot;))
+    if numero &lt; 0:
+        intentos += 1
+
+if intentos &lt; 2:
+    solucion = math.sqrt(numero)
+    print(f&quot;La raíz cuadrada de {numero} es {solucion}.&quot;)
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>La instrucción <code>break</code> detiene la ejecución del bucle. Es decir, si durante el transcurso de la ejecución de un bucle llegamos a una situación donde se lee una instrucción <code>break</code>, en ese instante, el flujo del programa deja el bucle y salta a la primera línea de código que se encuentra a continuación del mencionado bucle.</li>
+<li>En la línea <code>solucion = math.sqrt(numero)</code> introducimos el uso de la clase <code>math</code>, que hemos importado en la primera línea de código (<code>import math</code>). Es un concepto que se estudiará posteriormente en el curso, pero dicha instrucción sirve para encontrar la raíz cuadrada de un número. La utilidad de importar clases reside en que podemos aprovechar funciones ya programadas y no hemos de &lsquo;&lsquo;reinventar la rueda&rsquo;&rsquo;.</li>
+</ul>
+<p><strong>Ejercicio 1</strong>: crea un programa que pida números infinitamente. Los números introducidos deben ser cada vez mayores. El programa finalizará cuando se introduce un número menor que el anterior.</p>
+<pre><code class="language-python">numero = int(input(&quot;Introduce un número entero: &quot;))
+
+condicion = True
+
+while condicion:
+    num1 = numero
+    numero = int(input(&quot;Introduce un número entero mayor que el anterior: &quot;))
+    if num1 &gt; numero:
+        print(f&quot;Valor incorrecto: {num1} no es mayor que {numero}.&quot;)
+        condicion = False
+    else:
+        print(f&quot;Valor correcto: {numero} es mayor que {num1}&quot;)
+</code></pre>
+<p><strong>Ejercicio 2</strong>: crea un programa que pida números positivos indefinidamente. El programa termina cuando se introduce un número negativo. Finalmente el programa muestras la suma de todos los números introducidos.</p>
+<pre><code class="language-python">print(&quot;Cálculo de la suma de una serie de números positivos.&quot;)
+print(&quot;Instrucciones: &quot;)
+print(&quot;- Introduce tantos números positivos como desees sumar.&quot;)
+print(&quot;- Introduce un número negativo para calcular la suma.&quot;)
+
+suma = 0
+num = int(input(&quot;Introduce un número positivo: &quot;))
+
+while num &gt; 0:
+    suma += num
+    num = int(input(&quot;Introduce un número positivo: &quot;))
+
+print(f&quot;La suma de los valores positivos introducios es {suma}.&quot;)
+</code></pre>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/17/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bucles-v">Bucles V</h2>
+<h3 id="vídeo-4">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/c8WCRTU4udo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-4">Notas personales</h3>
+<p>En esta lección, abordaremos el uso de las instrucciones:</p>
+<ul>
+<li><code>continue</code>: provoca que el flujo de ejecución de un programa, dentro de un bucle, salte a la siguiente iteración de este.</li>
+<li><code>pass</code>: en cuanto se lee en el interior de un bucle, devuelve <code>null</code> (es como si no ejecutara el bucle). Su uso es reducido, salvo en definición de clases o casos muy concretos (dejar bucles vacíos, que sabemos serán precisos, para programar en un futuro próximo).</li>
+<li><code>else</code>: cuando un bucle finaliza todas sus iteraciones, entonces comienza a leer las contenidas en el bloque de código asociado a esta instrucción.</li>
+</ul>
+<p>Veamos algunos ejemplos:</p>
+<pre><code class="language-python">for letra in &quot;Python&quot;:
+    print(f&quot;Viendo la letra {letra}.&quot;)
+
+# Viendo la letra P.
+# Viendo la letra y.
+# Viendo la letra t.
+# Viendo la letra h.
+# Viendo la letra o.
+# Viendo la letra n.
+</code></pre>
+<pre><code class="language-python">for letra in &quot;Python&quot;:
+    if letra == &quot;h&quot;:
+        continue
+    print(f&quot;Viendo la letra {letra}.&quot;)
+
+# Viendo la letra P.
+# Viendo la letra y.
+# Viendo la letra t.
+# Viendo la letra o.
+# Viendo la letra n.
+</code></pre>
+<p>Elaboremos, a continuación, un programa que cuente el número de caracteres de una cadena de texto, ignorando los espacios en blanco:</p>
+<pre><code class="language-python">nombre = &quot;Píldoras Informáticas&quot;
+
+print(len(nombre))  # 21 (considera espacio en blanco como carácter)
+
+contador = 0
+
+for i in nombre:
+    if i == &quot; &quot;:
+        continue
+    contador += 1
+
+print(contador)  # 20
+</code></pre>
+<p>Cuando queremos crear una clase (o función), tan pequeña como sea posible, pero que seguramente en un futuro ampliemos, la instrucción <code>pass</code> es de suma utilidad:</p>
+<pre><code class="language-python">class mi_clase:
+    pass  # A implementar más tarde
+</code></pre>
+<p>Por lo que respecta a la instrucción <code>else</code>, veamos un código para comprobar si una dirección de correo electrónico posee o no una arroba:</p>
+<pre><code class="language-python">email = input(&quot;Introduce tu email: &quot;)
+
+for i in email:
+    if i == &quot;@&quot;:
+        arroba = True
+        break
+else:
+    arroba = False
+
+print(arroba)
+</code></pre>
+<p>Hemos de ser cautos, pues generalmente asociamos la instrucción <code>else</code> a estructuras condicionales y no a bucles. Fijarse en la identación del programa es clave.</p>
+<h3 id="código-fuente-4">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/18/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-05-01</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

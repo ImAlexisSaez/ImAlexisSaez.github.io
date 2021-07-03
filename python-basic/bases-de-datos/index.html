@@ -1,0 +1,1514 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Introducción al estudio de las bases de datos en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/bases-de-datos/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/bases-de-datos/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/bases-de-datos/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/bases-de-datos/" />
+  <meta property="og:title" content="Bases de datos | Infinitos Contrastes" />
+  <meta property="og:description" content="Introducción al estudio de las bases de datos en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-05-29T00:01:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Bases de datos | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="b233d951cf3928b6a8a8dfea77a7a248" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#bases-de-datos-i">Bases de datos I</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bases-de-datos-ii">Bases de datos II</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bases-de-datos-iii">Bases de datos III</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#bases-de-datos-iv">Bases de datos IV</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Bases de datos</h1>
+
+          <div class="article-style">
+            <h2 id="bases-de-datos-i">Bases de datos I</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/ZJuVQ9jUg-A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>En esta lección, cambiamos de tercio y abordamos el tratamiento de las bases de datos (BBDD) en <em>Python</em>. Estudiaremos cómo crearlas, conectar con ellas e insertar registros en su interior.</p>
+<p><em>Python</em> es capaz de gestionar la información que se encuentra almacenada en diferentes gestores de bases de datos, como, por ejemplo:</p>
+<ul>
+<li><em>SQL Server</em></li>
+<li><em>Oracle</em></li>
+<li><em>MySQL</em></li>
+<li><em>SQLite</em></li>
+<li><em>PostgreSQL</em></li>
+</ul>
+<p>En este curso trabajaremos, principalmente, con <em>MySQL</em> y <em>SQLite</em> debido a su popularidad. No obstante, ello requiere que tengamos unos mínimos conocimientos del lenguaje utilizado para realizar consultas en bases de datos: <strong>SQL</strong> (<em>Structured Query Language</em>).</p>
+<p>Por lo que respecta a <em>SQLite</em>:</p>
+<ul>
+<li>Es un sistema de gestión de BBDD relacional.</li>
+<li>Está escrito en <em>C</em>, siendo de código abierto.</li>
+<li>La BBDD forma parte integral del programa y se guarda como un único fichero en <em>host</em>.</li>
+</ul>
+<p>Así, entre sus ventajas, encontramos que ocupa muy poco espacio en disco y memoria, es muy eficiente y rápido, es multiplataforma, no requiere configuración o administración y es de dominio público, esto es, sin costo alguno añadido. Sin embargo, también posee asociadas una serie de desventajas, como que no admite cláusulas anidadas (de tipo <code>where</code>), no existen usuarios (no permite acceso simultáneo por parte de varios usuarios) y carece de clave foránea cuando se crea en modo consola.</p>
+<p>A continuación, los pasos a seguir para conectar con una BBDD son:</p>
+<ol>
+<li>Abrir (o crear) una conexión.</li>
+<li>Crear un puntero (o cursor).</li>
+<li>Ejecutar una consulta (<em>query</em>) <em>SQL</em>.</li>
+<li>Manejar los resultados de la consulta.
+<ul>
+<li>Insertar, leer, actualizar, borrar (<em>Create</em>, <em>Read</em>, <em>Update</em>, <em>Delete</em>).</li>
+</ul>
+</li>
+<li>Cerrar puntero.</li>
+<li>Cerrar conexión.</li>
+</ol>
+<p>En <em>Python</em>, comenzamos importando la librería <code>sqlite3</code> para luego crear la conexión con la BBDD. La primera vez que realizamos este proceso, al no haber disponible ninguna, procederemos a su creación.</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_conexion.close()
+</code></pre>
+<p>Al ejecutar el anterior bloque de código, aparece en el correspondiente directorio una BBDD de datos vacía, de nombre <code>base-de-datos</code>. Veamos, acto seguido, cómo crear nuestra primera tabla:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;CREATE TABLE PRODUCTOS (NOMBRE_ARTICULO VARCHAR(50), PRECIO INTEGER, SECCION VARCHAR(20))&quot;)
+
+mi_conexion.close()
+</code></pre>
+<p>Tras crear el puntero o cursor, <code>mi_cursor</code>, lanzamos, a través de la función <code>execute()</code>, el comando <em>SQL</em> correspondiente a la creación de una tabla que poseerá tres columnas. Si ejecutamos el anterior bloque de código, observaremos que el tamaño del fichero <code>base-de-datos</code> se incrementa y deja de estar vacío.</p>
+<p><em>Nota</em>: podemos investigar qué contiene el archivo <code>base-de-datos</code>, de manera visual, mediante la herramienta <a href="https://sqlitebrowser.org/" target="_blank" rel="noopener">DB Browser for SQLite</a>.</p>
+<p>A continuación, analicemos cómo insertar información en la tabla que acabamos de crear. Para ello, comentamos la anterior línea de código, que precisamente generaba la tabla (porque ya existe y entonces <em>Python</em> arrojaría un error llegado a ese momento), y ejecutamos, a través del cursor, la instrucción de <em>SQL</em> apropiada. Tras ello, verificamos que deseamos realizar el cambio en la tabla, utiliando el método <code>commit()</code> asociado a la conexión:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES('BALÓN', 15, 'DEPORTES')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p><em>Nota técnica</em>: cuando trabajamos con cadenas de caracteres que poseen comillas anidadas, hemos de alternar los simbolos <code>'</code> y <code>&quot;</code>.</p>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/55/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bases-de-datos-ii">Bases de datos II</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/eM0MkDc34qo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>En esta lección, aprenderemos cómo insertar varios registros simultáneamente en nuestra base de datos (BBDD), así como después estudiaremos cómo recuperar información de la BBDD.</p>
+<p>En primer lugar, importemos la librería <code>sqlite3</code> y construyamos, tanto la conexión a la BBDD, como un cursor. Con tal objetivo en mente, tecleamos:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+</code></pre>
+<p>A continuación, mediante una lista de tuplas, establecemos los productos que nos interese insertar en la BBDD:</p>
+<pre><code class="language-python">productos = [(&quot;Camiseta&quot;, 10, &quot;Deportes&quot;), (&quot;Jarrón&quot;, 90, &quot;Cerámica&quot;),
+             (&quot;Camión&quot;, 20, &quot;Juguetería&quot;)]
+</code></pre>
+<p>y con el método <code>executemany()</code> ejecutamos la instrucción <em>SQL</em> adecuada:</p>
+<pre><code class="language-python">mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (?, ?, ?)&quot;, productos)
+</code></pre>
+<p><em>Nota técnica</em>: en las instrucciones de <em>SQL</em> parametrizadas, hemos de insertar tantos interrogantes, <code>?</code>, como campos posee cada registro.</p>
+<p>Finalmente, confirmamos los cambios y cerramos la conexión abierta:</p>
+<pre><code class="language-python">mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p>Acto seguido, veamos cómo accedemos a la información registrada en la BBDD. Para ello, simplemente hemos de ejecutar, desde el cursor, una instrucción de <em>SQL</em> de tipo <code>SELECT</code>, para luego almacenar en una variable la información utilizando el método <code>fetchall()</code>:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS&quot;)
+
+productos = mi_cursor.fetchall()
+
+print(productos)
+
+mi_conexion.close()
+</code></pre>
+<pre><code class="language-bash">[('BALÓN', 15, 'DEPORTES'), ('Camiseta', 10, 'Deportes'), ('Jarrón', 90, 'Cerámica'), ('Camión', 20, 'Juguetería')]
+</code></pre>
+<p>Ahora, aplicando aquello que conocemos sobre listas, podemos mostrar la información de manera más cómoda para el usuario:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;base-de-datos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS&quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.close()
+</code></pre>
+<pre><code class="language-bash">('BALÓN', 15, 'DEPORTES')
+('Camiseta', 10, 'Deportes')
+('Jarrón', 90, 'Cerámica')
+('Camión', 20, 'Juguetería')
+</code></pre>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/56/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bases-de-datos-iii">Bases de datos III</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/HVd6mPiD3pc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>En esta lección, estudiaremos cómo gestionar las claves principales de nuestras bases de datos (BBDD). Los registros de una BBDD relacional han de estar identificados de manera única mediante un <strong>campo clave</strong>.</p>
+<p>Hasta el momento, hemos creado una tabla en nuestra BBDD e insertado algunos registros, pero carece de dicho campo clave. Analicemos cómo añadir esta característica a las tablas de una BBDD. Para ello, partamos del siguiente bloque de código:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p>En primer lugar, generemos una tabla, denominada <code>PRODUCTOS</code>, cuyos registros se van a caracterizar por poseer cuatro campos, uno de ellos clave. Así, tras la declaración del cursor, tecleamos:</p>
+<pre><code class="language-python">mi_cursor.execute('''
+    CREATE TABLE PRODUCTOS (
+    CODIGO_ARTICULO VARCHAR(4) PRIMARY KEY,
+    NOMBRE_ARTICULO VARCHAR(50),
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    ''')
+</code></pre>
+<p>Como apreciamos, la única novedad, con respecto a lecciones anteriores, es la aparición de la instrucción <code>PRIMARY KEY</code>, que convierte en clave el respectivo campo declarado, <code>CODIGO_ARTICULO</code> en este caso concreto. Por otro lado, el número que figura en el tipo de campo <code>VARCHAR</code> indica su longitud máxima.</p>
+<p>Acto seguido, insertamos algunos registros en la tabla <code>PRODUCTOS</code>:</p>
+<pre><code class="language-python">productos = [(&quot;AR01&quot;, &quot;Pelota&quot;, 20, &quot;Juguetería&quot;),
+             (&quot;AR02&quot;, &quot;Pantalón&quot;, 15, &quot;Confección&quot;),
+             (&quot;AR03&quot;, &quot;Destornillador&quot;, 25, &quot;Ferretería&quot;),
+             (&quot;AR04&quot;, &quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)]
+
+mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (?, ?, ?, ?)&quot;, productos)
+</code></pre>
+<p>Al ejecutar el programa, observamos que en el directorio donde hemos almacenado el código aparece un archivo denominado <code>gestion-productos</code>, que contiene la BBDD recién generada.</p>
+<p>A continuación, insertemos un nuevo registro en la BBDD:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES ('AR05', 'Tren', 15, 'Juguetería')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p>Si ahora intentamos añadir un nuevo artículo a la BBDD cuyo código coincida con uno de los asignados a los cuatro productos existentes, <em>Python</em> nos arrojará un error:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES ('AR03', 'Portátil', 750, 'Informática')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;bbdd_3.py&quot;, line 7, in &lt;module&gt;
+    mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES ('AR03', 'Portátil', 750, 'Informática')&quot;)
+sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.CODIGO_ARTICULO
+</code></pre>
+<p>En la práctica, por comodidad, la construcción e inserción del campo clave se suele automatizar. Para ello, la estrategia consiste en crear un campo clave de tipo entero que sea autoincrementable.</p>
+<p>Retomemos el primer ejemplo examinado en esta lección (modificando el fichero que contiene la BBDD) y estudiemos cómo implementar la funcionalidad comentada:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos-2&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute('''
+    CREATE TABLE PRODUCTOS (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOMBRE_ARTICULO VARCHAR(50),
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    ''')
+
+productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;),
+             (&quot;Pantalón&quot;, 15, &quot;Confección&quot;),
+             (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;),
+             (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)]
+
+mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&quot;, productos)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>Por convención, los campos de una tabla que van a ser automatizados reciben el nombre de <code>ID</code>.</li>
+<li>Con la instrucción <code>AUTOINCREMENT</code> conseguimos la mencionada gestión automática del campo entero que ahora hemos declarado como clave.</li>
+<li>La instrucción donde realizamos la llamada a la función <code>executemany()</code> hemos de modificarla, con respecto a lo programado anteriormente, ya que las tuplas de <code>productos</code> poseen tres elementos, mientras que figuran cuatro símbolos <code>?</code> en el comando <em>SQL</em> <code>INSERT INTO</code>. Para solucionar este escollo, sustituimos el primer <code>?</code> por la instrucción <code>NULL</code>, acción que permitirá a <em>Python</em> gestionar el campo clave de forma automática.</li>
+</ul>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/57/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="bases-de-datos-iv">Bases de datos IV</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/m_FzVf9JTV8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>En esta lección, abordaremos la cláusula <code>UNIQUE</code> y operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Para ello, partamos de un código ciertamente similar a los examinados en anteriores ocasiones:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute('''
+    CREATE TABLE PRODUCTOS (
+    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    NOMBRE_ARTICULO VARCHAR(50) UNIQUE,
+    PRECIO INTEGER,
+    SECCION VARCHAR(20))
+    ''')
+
+productos = [(&quot;Pelota&quot;, 20, &quot;Juguetería&quot;),
+             (&quot;Pantalón&quot;, 15, &quot;Confección&quot;),
+             (&quot;Destornillador&quot;, 25, &quot;Ferretería&quot;),
+             (&quot;Jarrón&quot;, 45, &quot;Cerámica&quot;)]
+
+mi_cursor.executemany(&quot;INSERT INTO PRODUCTOS VALUES (NULL, ?, ?, ?)&quot;,
+                      productos)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>Recordemos que al incorporar <code>PRIMARY KEY</code> en el campo <code>ID</code> (nuestro anterior campo <code>CODIGO_ARTICULO</code>) lo convertimos en clave y, de manera implícita, estamos forzando que la infomación registrada en él no pueda repetirse.</li>
+<li>Añadiendo <code>UNIQUE</code> al campo <code>NOMBRE_ARTICULO</code> impedimos la posibilidad de que dos artículos posean el mismo nombre. Esta cláusula la podemos ubicar en tantos campos como deseemos.</li>
+</ul>
+<p>¿Qué sucede ahora si intentamos insertar un registro cuyo para <code>NOMBRE_ARTICULO</code> ya figura en la base de datos (BBDD)?</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<pre><code class="language-bash">Traceback (most recent call last):
+  File &quot;bbdd_2.py&quot;, line 7, in &lt;module&gt;
+    mi_cursor.execute(&quot;INSERT INTO PRODUCTOS VALUES (NULL, 'Pelota', 57, 'Deportes')&quot;)
+sqlite3.IntegrityError: UNIQUE constraint failed: PRODUCTOS.NOMBRE_ARTICULO
+</code></pre>
+<p>Esto es, <em>Python</em> arroja un error de integridad por violarse la restricción de unicidad para el campo <code>NOMBRE_ARTICULO</code>.</p>
+<p>A continuación, abordemos las operaciones de tipo operaciones <em>CRUD</em> (<em>Create, Read, Update, Delete</em>). Aunque las dos primeras ya las hemos analizado en lecciones anteriores, recordemos brevemente cómo realizar una de tipo <em>Read</em>:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;SELECT * FROM PRODUCTOS WHERE SECCION='Confección'&quot;)
+
+productos = mi_cursor.fetchall()
+
+for producto in productos:
+    print(producto)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<pre><code class="language-bash">(2, 'Pantalón', 15, 'Confección')
+</code></pre>
+<p><em>Nota</em>: las instrucciones suministradas a la BBDD son <em>case sensitive</em>, es decir, hemos de proceder con cautela a la hora de introducir los datos y utilizar adecuadamente las mayúsculas y las minúsculas (además de los acentos y otros posibles caracteres conflictivos).</p>
+<p>Para realizar una actualización de registro (operación de tipo <em>Update</em>), simplemente hemos de modificar la instrucción <em>SQL</em> de manera acertada:</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;UPDATE PRODUCTOS SET PRECIO=35 WHERE NOMBRE_ARTICULO='Pelota'&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p>Finalmente, para borrar registros (operación de tipo <em>Delete</em>), la manera de proceder es similar a la vista antes, ya que únicamente hemos de emplear la instrucción <em>SQL</em> adecuada (y borrar por un criterio que no ocasione conflictos con otros registros almacenados en la BBDD):</p>
+<pre><code class="language-python">import sqlite3
+
+mi_conexion = sqlite3.connect(&quot;gestion-productos&quot;)
+
+mi_cursor = mi_conexion.cursor()
+
+mi_cursor.execute(&quot;DELETE FROM PRODUCTOS WHERE ID=1&quot;)
+
+mi_conexion.commit()
+
+mi_conexion.close()
+</code></pre>
+<p><em>Nota</em>: cuando utilicemos una cláusula <code>DELETE</code>, no hemos de olvidar jamás añadir otra de tipo <code>WHERE</code> o terminaremos suprimiendo la tabla completa en lugar de uno o varios registros.</p>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/58/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-05-29</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>

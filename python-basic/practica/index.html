@@ -1,0 +1,1556 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.2.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Práctica guiada en Python." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://imalexissaez.github.io/python-basic/practica/" />
+
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.7145a9a307b7b6e0cf40149bdecd66b5.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MV828K8');
+</script>
+
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+    <link rel="alternate" href="/python-basic/practica/index.xml" type="application/rss+xml" title="Infinitos Contrastes" />
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/python-basic/practica/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/python-basic/practica/" />
+  <meta property="og:title" content="Práctica guiada | Infinitos Contrastes" />
+  <meta property="og:description" content="Práctica guiada en Python." /><meta property="og:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta property="og:updated_time" content="2019-06-01T00:01:01&#43;01:00" />
+    
+  
+
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <title>Práctica guiada | Infinitos Contrastes</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="eebc9a06c08e5b2789cb4d90ab80cd64" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.b8153d4570dcbb34350a2a846dba8c03.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Blog</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Claro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Oscuro</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automático</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    
+
+
+
+
+
+<div class="container-fluid docs">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+      <form class="docs-search d-flex align-items-center">
+  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    <div class="d-flex">
+      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
+        
+          Presentación del proyecto
+        
+      </span>
+      <span><i class="fas fa-chevron-down"></i></span>
+    </div>
+  </button>
+
+  
+</form>
+
+<nav class="collapse docs-links" id="docs-nav">
+  
+  
+  
+  
+  
+  
+
+  
+  
+    
+
+    
+      
+
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <ul class="nav docs-sidenav">
+        <li class=""><a href="/python-basic/">Presentación del proyecto</a></li>
+    
+      
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/introduccion/">Introducción</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/tipos-y-variables/">Tipos y variables</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/condicionales/">Condicionales</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bucles/">Bucles</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/generadores/">Generadores</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/excepciones/">Excepciones</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/poo/">Programación OO</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/modulos-y-archivos/">Métodos y archivos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/interfaces/">Interfaces</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/bases-de-datos/">Bases de datos</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link  active" href="/python-basic/practica/">Práctica guiada</a>
+    
+
+    
+      </div>
+    
+
+
+
+  
+    
+    
+    
+    
+      
+    
+    
+
+    
+      <div class="docs-toc-item">
+        <a class="docs-toc-link " href="/python-basic/temas-avanzados/">Temas avanzados</a>
+    
+
+    
+      </div>
+    
+
+      
+    
+
+    
+      </ul>
+    
+
+  
+</nav>
+
+    </div>
+
+    
+    
+    <div class="d-none d-xl-block col-xl-2 docs-toc">
+      
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">En esta página</a></li>
+      </ul>
+
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#práctica-guiada-i">Práctica guiada I</a>
+      <ul>
+        <li><a href="#vídeo">Vídeo</a></li>
+        <li><a href="#notas-personales">Notas personales</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-ii">Práctica guiada II</a>
+      <ul>
+        <li><a href="#vídeo-1">Vídeo</a></li>
+        <li><a href="#notas-personales-1">Notas personales</a></li>
+        <li><a href="#código-fuente">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-iii">Práctica guiada III</a>
+      <ul>
+        <li><a href="#vídeo-2">Vídeo</a></li>
+        <li><a href="#notas-personales-2">Notas personales</a></li>
+        <li><a href="#código-fuente-1">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-iv">Práctica guiada IV</a>
+      <ul>
+        <li><a href="#vídeo-3">Vídeo</a></li>
+        <li><a href="#notas-personales-3">Notas personales</a></li>
+        <li><a href="#código-fuente-2">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-v">Práctica guiada V</a>
+      <ul>
+        <li><a href="#vídeo-4">Vídeo</a></li>
+        <li><a href="#notas-personales-4">Notas personales</a></li>
+        <li><a href="#código-fuente-3">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-vi">Práctica guiada VI</a>
+      <ul>
+        <li><a href="#vídeo-5">Vídeo</a></li>
+        <li><a href="#notas-personales-5">Notas personales</a></li>
+        <li><a href="#código-fuente-4">Código fuente</a></li>
+      </ul>
+    </li>
+    <li><a href="#práctica-guiada-vii">Práctica guiada VII</a>
+      <ul>
+        <li><a href="#vídeo-6">Vídeo</a></li>
+        <li><a href="#notas-personales-6">Notas personales</a></li>
+        <li><a href="#código-fuente-5">Código fuente</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+      
+    </div>
+    
+
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
+
+      <article class="article">
+
+        <div class="docs-article-container">
+          
+
+          <h1>Práctica guiada</h1>
+
+          <div class="article-style">
+            <h2 id="práctica-guiada-i">Práctica guiada I</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/E0OqddzjFUY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>En esta lección, y con el objetivo de reforzar los contenidos vistos hasta la fecha, comenzaremos a esbozar una aplicación gráfica de tipo <em>CRUD</em>. Mediante ella, conectaremos con una base de datos (BBDD) y podremos realizar las operaciones básicas: <em>Create</em>, <em>Read</em>, <em>Update</em> y <em>Delete</em>.</p>
+<p>En el vídeo se explican los diferentes elementos y funcionalidades que caracterizan a la aplicación propuesta, por si queremos lanzarnos a su elaboración de antemano. No obstante, se procederá a su implementación en posteriores lecciones.</p>
+<h2 id="práctica-guiada-ii">Práctica guiada II</h2>
+<h3 id="vídeo-1">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/o8E869dmK3U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-1">Notas personales</h3>
+<p>En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación <em>CRUD</em>. Para ello, empezamos tecleando:</p>
+<pre><code class="language-python">from tkinter import Tk
+
+# Raíz de la aplicación
+root = Tk()
+root.title(&quot;Aplicación CRUD&quot;)
+root.iconbitmap(&quot;icon.ico&quot;)
+
+# Ejecución de la aplicación
+root.mainloop()
+</code></pre>
+<p>A continuación, generamos la barra de menú superior:</p>
+<pre><code class="language-python"># Menú superior de la aplicación
+barra_menu = Menu(root)
+root.config(menu=barra_menu)
+
+bbdd_menu = Menu(barra_menu, tearoff=0)
+bbdd_menu.add_command(label=&quot;Conectar&quot;)
+bbdd_menu.add_separator()
+bbdd_menu.add_command(label=&quot;Salir&quot;)
+
+borrar_menu = Menu(barra_menu, tearoff=0)
+borrar_menu.add_command(label=&quot;Borrar campos&quot;)
+
+crud_menu = Menu(barra_menu, tearoff=0)
+crud_menu.add_command(label=&quot;Crear&quot;)
+crud_menu.add_command(label=&quot;Leer&quot;)
+crud_menu.add_command(label=&quot;Actualizar&quot;)
+crud_menu.add_command(label=&quot;Borrar&quot;)
+
+help_menu = Menu(barra_menu, tearoff=0)
+help_menu.add_command(label=&quot;Licencia&quot;)
+help_menu.add_separator()
+help_menu.add_command(label=&quot;Acerca de...&quot;)
+
+barra_menu.add_cascade(label=&quot;BBDD&quot;, menu=bbdd_menu)
+barra_menu.add_cascade(label=&quot;Borrar&quot;, menu=borrar_menu)
+barra_menu.add_cascade(label=&quot;CRUD&quot;, menu=crud_menu)
+barra_menu.add_cascade(label=&quot;Ayuda&quot;, menu=help_menu)
+</code></pre>
+<p>Por lo que respecta al cuerpo de la aplicación, lo dividiremos en dos <em>frames</em>: uno superior para organizar los campos de introducción de datos y otro inferior para distribuir los cuatro botones que nos permitirán llevar a cabo acciones de tipo <em>CRUD</em>.</p>
+<p>Así pues, si, por ejemplo, optamos por construir los diferentes campos de entrada que poseerá la aplicación, el bloque de código a escribir será:</p>
+<pre><code class="language-python"># Frame superior
+campos_frame = Frame(root)
+campos_frame.pack()
+
+id_entry = Entry(campos_frame)
+id_entry.grid(row=0, column=1, padx=2, pady=2)
+
+name_entry = Entry(campos_frame)
+name_entry.grid(row=1, column=1, padx=2, pady=2)
+
+lastname_entry = Entry(campos_frame)
+lastname_entry.grid(row=2, column=1, padx=2, pady=2)
+
+address_entry = Entry(campos_frame)
+address_entry.grid(row=3, column=1, padx=2, pady=2)
+
+password_entry = Entry(campos_frame)
+password_entry.grid(row=4, column=1, padx=2, pady=2)
+password_entry.config(show=&quot;*&quot;)
+
+comment_text = Text(campos_frame, width=15, height=5)
+comment_text.grid(row=5, column=1, padx=2, pady=2)
+comment_text_scrollvert = Scrollbar(campos_frame, command=comment_text.yview)
+comment_text_scrollvert.grid(row=5, column=2, sticky=&quot;nsew&quot;)
+comment_text.config(yscrollcommand=comment_text_scrollvert)
+</code></pre>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/60/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="práctica-guiada-iii">Práctica guiada III</h2>
+<h3 id="vídeo-2">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/OJzFGgOSpvI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-2">Notas personales</h3>
+<p>En esta lección, una vez declarados los campos de introducción de datos en la anterior, nos centraremos en ubicar las etiquetas en la aplicación:</p>
+<pre><code class="language-python">id_label = Label(campos_frame, text=&quot;ID:&quot;)
+id_label.grid(row=0, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+name_label = Label(campos_frame, text=&quot;Nombre:&quot;)
+name_label.grid(row=1, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+lastname_label = Label(campos_frame, text=&quot;Apellido:&quot;)
+lastname_label.grid(row=2, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+address_label = Label(campos_frame, text=&quot;Dirección:&quot;)
+address_label.grid(row=3, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+password_label = Label(campos_frame, text=&quot;Contraseña:&quot;)
+password_label.grid(row=4, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+comment_label = Label(campos_frame, text=&quot;Comentarios:&quot;)
+comment_label.grid(row=5, column=0, sticky=&quot;ne&quot;, padx=2, pady=2)
+</code></pre>
+<p>A continuación, ocupémonos de construir un <em>frame</em> en la parte inferior del ya disponible y disponer cuatro botones:</p>
+<pre><code class="language-python"># Frame inferior
+botones_frame = Frame(root)
+botones_frame.pack(expand=True)
+
+crear_button = Button(botones_frame, text=&quot;Create&quot;)
+crear_button.grid(row=0, column=0, sticky=&quot;e&quot;, padx=2, pady=2)
+
+read_button = Button(botones_frame, text=&quot;Read&quot;)
+read_button.grid(row=0, column=1, sticky=&quot;e&quot;, padx=2, pady=2)
+
+update_button = Button(botones_frame, text=&quot;Update&quot;)
+update_button.grid(row=0, column=2, sticky=&quot;e&quot;, padx=2, pady=2)
+
+delete_button = Button(botones_frame, text=&quot;Delete&quot;)
+delete_button.grid(row=0, column=3, sticky=&quot;e&quot;, padx=2, pady=2)
+</code></pre>
+<p>Así, ya únicamente nos resta programar la funcionalidad de la aplicación, tanto para el menú, como para los botones recién creados.</p>
+<h3 id="código-fuente-1">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/61/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="práctica-guiada-iv">Práctica guiada IV</h2>
+<h3 id="vídeo-3">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/5XPLCDp7nDk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-3">Notas personales</h3>
+<p>En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú <em>BBDD</em>. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.</p>
+<p>Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada.</p>
+<pre><code class="language-python"># Función para conectar a la BBDD
+def conecta_bbdd():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    try:
+        cursor.execute('''
+            CREATE TABLE DATOS_USUARIOS (
+            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            NOMBRE_USUARIO VARCHAR(50),
+            APELLIDO VARCHAR(50),
+            DIRECCION VARCHAR(50),
+            PASSWORD VARCHAR(50),
+            COMENTARIOS VARCHAR(250))
+            ''')
+    except sqlite3.OperationalError:
+        pass
+    finally:
+        messagebox.showinfo(
+            title=&quot;Conexión a la base de datos&quot;,
+            message=&quot;La conexión a la base de datos se ha realizado con éxito.&quot;
+        )
+</code></pre>
+<p>Acto seguido, acudimos a la instrucción que gestiona el elemento del menú <em>BBDD</em> correspondiente y la modificamos como sigue:</p>
+<pre><code class="language-python">bbdd_menu.add_command(label=&quot;Conectar&quot;, command=conecta_bbdd)
+</code></pre>
+<p>Finalmente, implementemos la función que gestiona la salida de la aplicación. El código es idéntico al visto en lecciones anteriores:</p>
+<pre><code class="language-python"># Función para salir de la aplicación
+def sale_aplicacion():
+    valor = messagebox.askquestion(
+        title=&quot;Salir&quot;,
+        message=&quot;¿Deseas realmente salir de la aplicación?&quot;)
+    if valor == &quot;yes&quot;:
+        root.destroy()
+</code></pre>
+<p>Y añadimos la funcionalidad al correspondiente elemento del menú <em>BBDD</em>:</p>
+<pre><code class="language-python">bbdd_menu.add_command(label=&quot;Salir&quot;, command=sale_aplicacion)
+</code></pre>
+<h3 id="código-fuente-2">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/62/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="práctica-guiada-v">Práctica guiada V</h2>
+<h3 id="vídeo-4">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/mNzHPglBuUk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-4">Notas personales</h3>
+<p>En esta lección, analizaremos cómo limpiar los campos de registros (por si el usuario comete algún error al transcribir los datos) e insertar datos en la base de datos (BBDD), es decir, ejecutar la operación de tipo <em>Create</em>.</p>
+<p>Para empezar, de cara a poder realizar manipulaciones sobre el texto que un usuario escriba en los campos de registros, hemos de emplear variables de tipo <code>StringVar</code>:</p>
+<pre><code class="language-python">id_data = StringVar()
+name_data = StringVar()
+lastname_data = StringVar()
+address_data = StringVar()
+password_data = StringVar()
+</code></pre>
+<p>A continuación, las asignamos a sus correspondientes <code>Entry</code>:</p>
+<pre><code class="language-python">id_entry = Entry(campos_frame, width=40, textvariable=id_data)
+name_entry = Entry(campos_frame, width=40, textvariable=name_data)
+lastname_entry = Entry(campos_frame, width=40, textvariable=lastname_data)
+address_entry = Entry(campos_frame, width=40, textvariable=address_data)
+password_entry = Entry(campos_frame, width=40, textvariable=password_data)
+</code></pre>
+<p>Después, construimos la función que limpia los campos de registros:</p>
+<pre><code class="language-python"># Función que limpia los registros de la aplicación
+def limpia_registros():
+    id_data.set(&quot;&quot;)
+    name_data.set(&quot;&quot;)
+    lastname_data.set(&quot;&quot;)
+    address_data.set(&quot;&quot;)
+    password_data.set(&quot;&quot;)
+    comment_text.delete(1.0, END)
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>Notemos cómo se limpia un cuadro de comentario, ya que el procedimiento a seguir es un tanto diferente. Hemos de utilizar la función <code>delete()</code>, indicándole el punto de partida (<code>1.0</code>) y el de finalización (<code>END</code>).</li>
+<li>Al hilo de lo anterior, <code>END</code> es asimismo una instrucción de la librería <code>tkinter</code>, de manera que hemos de importarla si estamos siguiendo la estrategia de <code>from tkinter import ...</code>. De hecho, en mi código dicha instrucción comienza a adquirir una longitud considerable, siendo en la actualidad:</li>
+</ul>
+<pre><code class="language-python">from tkinter import Button, END, Entry, Frame, Label, Menu, messagebox, Scrollbar, StringVar, Text, Tk
+</code></pre>
+<p>Ahora, asignamos esta funcionalidad al elemento correspondiente el menú:</p>
+<pre><code class="language-python">borrar_menu.add_command(label=&quot;Borrar campos&quot;, command=limpia_registros)
+</code></pre>
+<p>Acto seguido, abordemos la primera operación <em>CRUD</em>, <em>Create</em>, que nos permitirá añadir registros a la BBDD.</p>
+<pre><code class="language-python"># Función que inserta registros en la BBDD
+def crud_create():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&quot;INSERT INTO DATOS_USUARIOS VALUES (NULL, '&quot; +
+                   name_data.get() + &quot;', '&quot; + lastname_data.get() + &quot;','&quot; +
+                   address_data.get() + &quot;','&quot; + password_data.get() + &quot;','&quot; +
+                   comment_text.get(&quot;1.0&quot;, END) + &quot;')&quot;)
+    conexion.commit()
+    messagebox.showinfo(
+        title=&quot;Crear registro&quot;,
+        message=&quot;Registro insertado con éxito en la base de datos.&quot;)
+    conexion.close()
+</code></pre>
+<p><em>Notas</em>:</p>
+<ul>
+<li>No recogemos aquello que el usuario escribe en el campo <em>ID</em>, ya que lo hemos declarado en la tabla como clave primaria autoincrementable (de ahí el <code>NULL</code> en la instrucción <em>SQL</em> de arriba). Este proceder puede resultar un tanto confuso para el usuario y admite margen de mejora.</li>
+<li>Es muy sencillo equivocarse a la hora de escribir la anterior instrucción <em>SQL</em> por el elevado número de concatenaciones. Un enfoque alternativo consiste en escribir primero una serie de datos concretos de ejemplo y, después, poco a poco sustituir dichos datos por las correspondientes variables con sus métodos <code>get()</code> asociados.</li>
+</ul>
+<p>Finalmente, añadimos la funcionalidad, tanto al elemento de menú correspondiente, como al botón que figura en la parte inferior de la aplicación:</p>
+<pre><code class="language-python">crud_menu.add_command(label=&quot;Crear&quot;, command=crud_create)
+
+crear_button = Button(botones_frame, text=&quot;Create&quot;, command=crud_create)
+</code></pre>
+<h3 id="código-fuente-3">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/63/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="práctica-guiada-vi">Práctica guiada VI</h2>
+<h3 id="vídeo-5">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nx3OE31y0IY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-5">Notas personales</h3>
+<p>En esta lección, abordaremos la implementación de las operaciones de tipo <em>Read</em> y <em>Update</em>. El criterio para posibilitar la lectura de registros será que el usuario introduzca en el formulario la <em>ID</em> de la cual desea consultar la información pertinente.</p>
+<p>En primer lugar, implementemos la función de lectura, apoyándonos en cómo procedimos en anteriores lecciones:</p>
+<pre><code class="language-python"># Función que lee registros de la BBDD
+def crud_read():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&quot;SELECT * FROM DATOS_USUARIOS WHERE ID=&quot; + id_data.get())
+    usuario = cursor.fetchall()
+    for u in usuario:
+        id_data.set(u[0])
+        name_data.set(u[1])
+        lastname_data.set(u[2])
+        address_data.set(u[3])
+        password_data.set(u[4])
+        comment_text.insert(1.0, u[5])
+    conexion.commit()
+    conexion.close()
+</code></pre>
+<p>Luego, añadimos la funcionalidad, tanto al elemento del menú correspondiente, como al botón asociado:</p>
+<pre><code class="language-python">crud_menu.add_command(label=&quot;Leer&quot;, command=crud_read)
+
+read_button = Button(botones_frame, text=&quot;Read&quot;, command=crud_read)
+</code></pre>
+<p><em>Nota</em>: así programa la funcionalidad, la aplicación no responde cuando se inserta un <em>ID</em> que no figura en la base de datos. Habría de mostrar un mensaje de advertencia mediante la clase <code>messagebox</code>.</p>
+<p>Acto seguido, ocupémonos de la función de tipo <em>Update</em>, que será muy similar a la programada para <em>Create</em>:</p>
+<pre><code class="language-python"># Función que actualiza registros de la BBDD
+def crud_update():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&quot;UPDATE DATOS_USUARIOS SET NOMBRE_USUARIO='&quot; +
+                   name_data.get() + &quot;', APELLIDO='&quot; + lastname_data.get() +
+                   &quot;', DIRECCION='&quot; + address_data.get() + &quot;', PASSWORD='&quot; +
+                   password_data.get() + &quot;', COMENTARIOS='&quot; +
+                   comment_text.get(&quot;1.0&quot;, END) + &quot;'&quot;)
+    conexion.commit()
+    messagebox.showinfo(
+        title=&quot;Actualizar registro&quot;,
+        message=&quot;Registro actualizado con éxito en la base de datos.&quot;)
+    conexion.close()
+</code></pre>
+<p>Después, añadimos el comportamiento, tanto al elemento del menú asociado, como al botón correspondiente:</p>
+<pre><code class="language-python">crud_menu.add_command(label=&quot;Actualizar&quot;, command=crud_update)
+
+update_button = Button(botones_frame, text=&quot;Update&quot;, command=crud_update)
+</code></pre>
+<h3 id="código-fuente-4">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/64/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="práctica-guiada-vii">Práctica guiada VII</h2>
+<h3 id="vídeo-6">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nj-alxd7YvM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales-6">Notas personales</h3>
+<p>En esta lección, abordaremos cómo borrar registros (operación de tipo <em>Delete</em>) y la creación de consultas parametrizadas.</p>
+<p>En cuanto a la primera tarea, empecemos construyendo la correspondiente función:</p>
+<pre><code class="language-python"># Función que borra registros de la BBDD
+def crud_delete():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    cursor.execute(&quot;DELETE FROM DATOS_USUARIOS WHERE ID=&quot; + id_data.get())
+    conexion.commit()
+    conexion.close()
+    messagebox.showinfo(
+        title=&quot;Borrar registro&quot;,
+        message=&quot;Registro borrado con éxito en la base de datos.&quot;)
+</code></pre>
+<p>Acto seguido, añadimos la funcionalidad, tanto al elemento del menú asociado, como al botón correspondiente:</p>
+<pre><code class="language-python">crud_menu.add_command(label=&quot;Borrar&quot;, command=crud_delete)
+
+delete_button = Button(botones_frame, text=&quot;Delete&quot;, command=crud_delete)
+</code></pre>
+<p>A continuación, analicemos cómo modificar algunas de las consultas <em>SQL</em> para hacerlas parametrizadas y que su escritura sea mucho más sencilla:</p>
+<pre><code class="language-python"># Función que inserta registros en la BBDD
+def crud_create():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    datos = name_data.get(), lastname_data.get(), address_data.get(), password_data.get(), comment_text.get(&quot;1.0&quot;, END)
+    cursor.execute(&quot;INSERT INTO DATOS_USUARIOS VALUES (NULL, ?, ?, ?, ?, ?)&quot;, (datos))
+    conexion.commit()
+    messagebox.showinfo(
+        title=&quot;Crear registro&quot;,
+        message=&quot;Registro insertado con éxito en la base de datos.&quot;)
+    conexion.close()
+</code></pre>
+<pre><code class="language-python"># Función que actualiza registros de la BBDD
+def crud_update():
+    conexion = sqlite3.connect(&quot;usuarios&quot;)
+    cursor = conexion.cursor()
+    datos = name_data.get(), lastname_data.get(), address_data.get(), password_data.get(), comment_text.get(&quot;1.0&quot;, END)
+    cursor.execute(&quot;UPDATE DATOS_USUARIOS SET NOMBRE_USUARIO=?, APELLIDO=?, DIRECCION=?, PASSWORD=?, COMENTARIOS=? WHERE ID=&quot; + id_data.get(), (datos))
+    conexion.commit()
+    messagebox.showinfo(
+        title=&quot;Actualizar registro&quot;,
+        message=&quot;Registro actualizado con éxito en la base de datos.&quot;)
+    conexion.close()
+</code></pre>
+<p>Finalmente, como extra, incluyamos funcionalidad para los dos elementos del menú <em>Ayuda</em>:</p>
+<pre><code class="language-python"># Función licencia
+def licencia():
+    messagebox.showwarning(title=&quot;Licencia&quot;,
+                           message=&quot;Producto bajo licencia GNU.&quot;)
+
+
+# Función acerca de...
+def acerca_de():
+    messagebox.showinfo(title=&quot;Acerca de...&quot;,
+                        message=&quot;Aplicación creada por Alexis Sáez.&quot;)
+</code></pre>
+<p>Ahora, incorporemos dicha funcionalidad en los elementos del menú:</p>
+<pre><code class="language-python">help_menu.add_command(label=&quot;Licencia&quot;, command=licencia)
+
+help_menu.add_command(label=&quot;Acerca de...&quot;, command=acerca_de)
+</code></pre>
+<h3 id="código-fuente-5">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/65/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+          </div>
+
+          
+
+
+
+          
+          
+          <div class="article-widget">
+            
+<div class="post-nav">
+  
+  
+</div>
+
+          </div>
+          
+        </div>
+
+        <div class="body-footer">
+          <p>Última actualización el 2019-06-01</p>
+
+          
+
+
+
+
+
+          
+
+
+
+
+          
+
+
+
+
+        </div>
+
+      </article>
+
+      <footer class="site-footer">
+
+  
+
+  
+
+  
+  <p class="powered-by">
+    Alexis Sáez ©2021
+  </p>
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+
+    </main>
+  </div>
+</div>
+
+  </div>
+
+  <div class="page-footer">
+    
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.c7dbcd0a03997d954a216caf59fc7681.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
