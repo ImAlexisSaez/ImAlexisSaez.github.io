@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -283,7 +334,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/" />
@@ -376,10 +436,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -397,178 +494,206 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -592,9 +717,8 @@
 
 
 
+
   
-  
-    
   
 
 
@@ -629,7 +753,7 @@
     
       
     
-    Jun 1, 2019
+    06/01/19
   </span>
   
 
@@ -642,8 +766,6 @@
   </span>
   
 
-  
-  
   
   
   
@@ -708,7 +830,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/featured_huf18e6d0e39e7f25c18df37edaf3629ee_308756_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <img src="/2019/06/01/unos-cambios-rapidos-a-las-plantillas/featured_huf18e6d0e39e7f25c18df37edaf3629ee_308756_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
     <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@mar28mar" target="_blank" rel="noopener">Mar Bustos</a>, disponible en <a href="https://unsplash.com/photos/HsEz1XZ1TO8" target="_blank" rel="noopener">Unsplash</a>.</span>
   </div>
 </div>
@@ -720,202 +842,183 @@
     <div class="article-style">
       <p>En esta entrada recojo el código necesario para localizar a español ciertas secciones de la página web, incluyendo un experimento que al final no terminó de convencerme, pero que comparto por si sirviera de inspiración a la creatividad ajena.</p>
 <p>Al final de cada una de las entradas del blog aparece un apartado de <em>etiquetas</em>, que permite agrupar fácilmente contenidos relacionados. Cambiemos la cabecera de esta sección de <code>Tags:</code> a <code>Etiquetas:</code>. Para ello, editamos con <em>Sublime Text 3</em> el archivo <code>main.css</code> (ubicado en la ruta <code>\static\css\</code>) y buscamos el siguiente bloque de código:</p>
-<pre><code class="language-css">.blog-tags:before {
-  content: &quot;Tags: &quot;;
-}
-</code></pre>
-<p>Acto seguido, modificamos el valor del atributo <code>content</code>:</p>
-<pre><code class="language-css">.blog-tags:before {
-  content: &quot;Etiquetas: &quot;;
-}
-</code></pre>
-<p>y guardamos los cambios realizados.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-tags</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;Tags: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Acto seguido, modificamos el valor del atributo <code>content</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-tags</span><span class="p">:</span><span class="nd">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">content</span><span class="p">:</span> <span class="s2">&#34;Etiquetas: &#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>y guardamos los cambios realizados.</p>
 <p>Siguiendo con esta misma filosofía, traduzcamos ese <code>View all</code> que aparece en las páginas de índice que agrupan contenidos por taxonomías. Para ello, editamos el archivo <code>terms.html</code> (ubicado en la ruta <code>\layouts\_default\</code>) y, utilizando el buscador de <em>Sublime Text 3</em>, nos situamos donde aparece la mencionada cadena de caracteres y la sustituimos, por ejemplo, por <code>Ver todos</code>.</p>
 <p>Todavía podemos mejorar un tanto la localización a español del tema a través de las taxonomías. Con tal objetivo en mente, modifiquemos el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) como sigue, de</p>
-<pre><code class="language-toml">#
-# Configuración de taxonomías
-#
-[taxonomies]
-  category = &quot;categories&quot;
-  tag      = &quot;tags&quot;
-  project  = &quot;projects&quot;
-</code></pre>
-<p>a</p>
-<pre><code class="language-toml">#
-# Configuración de taxonomías
-#
-[taxonomies]
-  category = &quot;categories&quot;
-  tag      = &quot;tags&quot;
-  apartado = &quot;apartados&quot;
-  proyecto = &quot;proyectos&quot;
-  etiqueta = &quot;etiquetas&quot;
-</code></pre>
-<p>Ahora, editamos la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default\</code>) y sustituimos el bloque de código:</p>
-<pre><code class="language-html">{{ if .Params.tags }}
-  &lt;div class=&quot;blog-tags&quot;&gt;
-    {{ range .Params.tags }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>por</p>
-<pre><code class="language-html">{{ if .Params.etiquetas }}
-  &lt;div class=&quot;blog-tags&quot;&gt;
-    {{ range .Params.etiquetas }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>Si queremos que aparezca en las entradas del blog información sobre el apartado o proyecto al que pertenecen, no tendríamos más que incorporar dos nuevos bloques a continuación, utilizando el anterior como guía y llevando a cabo las adaptaciones pertinentes. Por otro lado, sería más que recomendable crear en el archivo de estilos <em>css</em> las clases <code>blog-etiquetas</code>, <code>blog-apartados</code> y <code>blog-proyectos</code>, para mejorar el mantenimiento de la localización del tema en un futuro.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración de taxonomías</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tag</span>      <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">project</span>  <span class="p">=</span> <span class="s2">&#34;projects&#34;</span>
+</span></span></code></pre></div><p>a</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración de taxonomías</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tag</span>      <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">apartado</span> <span class="p">=</span> <span class="s2">&#34;apartados&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">proyecto</span> <span class="p">=</span> <span class="s2">&#34;proyectos&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">etiqueta</span> <span class="p">=</span> <span class="s2">&#34;etiquetas&#34;</span>
+</span></span></code></pre></div><p>Ahora, editamos la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default\</code>) y sustituimos el bloque de código:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.tags }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-tags&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.tags }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>por</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-tags&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>Si queremos que aparezca en las entradas del blog información sobre el apartado o proyecto al que pertenecen, no tendríamos más que incorporar dos nuevos bloques a continuación, utilizando el anterior como guía y llevando a cabo las adaptaciones pertinentes. Por otro lado, sería más que recomendable crear en el archivo de estilos <em>css</em> las clases <code>blog-etiquetas</code>, <code>blog-apartados</code> y <code>blog-proyectos</code>, para mejorar el mantenimiento de la localización del tema en un futuro.</p>
 <p>A continuación, hemos de editar las plantillas <code>list.html</code> e <code>index.html</code> (ubicadas ambas en la ruta <code>\layouts\_default</code>), substituyendo los bloques de código</p>
-<pre><code class="language-html">{{ if .Params.tags }}
-  &lt;div class=&quot;blog-tags&quot;&gt;
-    {{ range .Params.tags }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>por</p>
-<pre><code class="language-html">{{ if .Params.etiquetas }}
-  &lt;div class=&quot;blog-tags&quot;&gt;
-    {{ range .Params.etiquetas }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>Añadiendo, acto seguido, bloques análogos para <code>apartados</code> y <code>proyectos</code> si lo hemos considerado oportuno.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.tags }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-tags&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.tags }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>por</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-tags&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>Añadiendo, acto seguido, bloques análogos para <code>apartados</code> y <code>proyectos</code> si lo hemos considerado oportuno.</p>
 <p>Este cambio nos obliga a actualizar la ruta de acceso a la página de etiquetas, por lo que debemos editar el archivo <code>config.toml</code> (ubicado en el directorio raíz de la página web) de manera que el bloque de código</p>
-<pre><code class="language-toml">[[menu.main]]
-    name = &quot;Etiquetas&quot;
-    url = &quot;tags&quot;
-    weight = 3
-</code></pre>
-<p>pase a ser</p>
-<pre><code class="language-toml">[[menu.main]]
-    name = &quot;Etiquetas&quot;
-    url = &quot;etiquetas&quot;
-    weight = 3
-</code></pre>
-<p>Finalmente, nos queda modificar el estilo de la cabecera de la página de etiquetas. Para ello editamos el archivo <code>main.css</code> (ubicado en la ruta <code>\static\css\</code>) buscando el término <code>header</code> y añadiendo la cadena correspondiente a etiquetas. Por ejemplo, para el bloque de código</p>
-<pre><code class="language-css">.intro-header .page-heading,
-.intro-header .tags-heading {
-  text-align: center;
-}
-</code></pre>
-<p>la modificación quedaría como sigue</p>
-<pre><code class="language-css">.intro-header .page-heading,
-.intro-header .tags-heading,
-.intro-header .etiquetas-heading {
-  text-align: center;
-}
-</code></pre>
-<p>En total, hemos de proceder de esta manera en tres ocasiones.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Etiquetas&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span></code></pre></div><p>pase a ser</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Etiquetas&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;etiquetas&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span></code></pre></div><p>Finalmente, nos queda modificar el estilo de la cabecera de la página de etiquetas. Para ello editamos el archivo <code>main.css</code> (ubicado en la ruta <code>\static\css\</code>) buscando el término <code>header</code> y añadiendo la cadena correspondiente a etiquetas. Por ejemplo, para el bloque de código</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">page-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">tags-heading</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>la modificación quedaría como sigue</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">page-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">tags-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">etiquetas-heading</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>En total, hemos de proceder de esta manera en tres ocasiones.</p>
 <p>Y ya que estamos con las manos en la masa, creemos las clases de estilos para <code>etiquetas</code>, <code>apartados</code> y <code>proyectos</code> trabajando sobre los bloques de código originales que aparecen tras el comentario <code>/* --- Tags --- */</code> (recordemos que cualquier modificación puede implicar después que hayamos de editar la cabeceras de las páginas tal y como hicimos hace un instante). Así pues, nos van a quedar bloques como el que aparece a continuación:</p>
-<pre><code class="language-css">.blog-tags,
-.blog-apartados,
-.blog-etiquetas,
-.blog-proyectos {
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #999;
-  font-size: 15px;
-  margin-bottom: 30px;
-}
-</code></pre>
-<p>Aquellos en los que aparece el atributo <code>before</code> no los podemos agrupar tan fácilmente. No obstante, no deja de ser trabajo de <em>copy&amp;paste</em>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-tags</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-apartados</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-etiquetas</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">blog-proyectos</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;Open Sans&#39;</span><span class="p">,</span> <span class="s1">&#39;Helvetica Neue&#39;</span><span class="p">,</span> <span class="n">Helvetica</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="kc">sans-serif</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#999</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-size</span><span class="p">:</span> <span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Aquellos en los que aparece el atributo <code>before</code> no los podemos agrupar tan fácilmente. No obstante, no deja de ser trabajo de <em>copy&amp;paste</em>.</p>
 <p>Como he comentado arriba, no debemos olvidar añadir a las clases de las cabeceras las líneas correspondientes, de forma que nos aparezcan bloques como el que figura acto seguido:</p>
-<pre><code class="language-css">.intro-header .page-heading,
-.intro-header .tags-heading,
-.intro-header .apartados-heading,
-.intro-header .etiquetas-heading,
-.intro-header .proyectos-heading {
-  text-align: center;
-}
-</code></pre>
-<p>A continuación, hacemos una nueva modificación sobre el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) y cambiamos el nombre del menú principal <em>Blog</em> por <em>Inicio</em>. Así, el bloque de código</p>
-<pre><code class="language-toml">[[menu.main]]
-    name = &quot;Blog&quot;
-    url = &quot;&quot;
-    weight = 1
-</code></pre>
-<p>pasa a ser</p>
-<pre><code class="language-toml">[[menu.main]]
-    name = &quot;Inicio&quot;
-    url = &quot;&quot;
-    weight = 1
-</code></pre>
-<p>Acto seguido, en la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default</code>) añado, en la ubicación donde aparecen las etiquetas, información sobre el apartado y el proyecto al que pertenece una entrada en particular. Por tanto, el bloque de código</p>
-<pre><code class="language-html">{{ if .Params.etiquetas }}
-  &lt;div class=&quot;blog-etiquetas&quot;&gt;
-    {{ range .Params.etiquetas }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>a</p>
-<pre><code class="language-html">{{ if .Params.apartados }}
-  &lt;div class=&quot;blog-apartados&quot;&gt;
-    {{ range .Params.apartados }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/apartados/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-
-{{ if .Params.etiquetas }}
-  &lt;div class=&quot;blog-etiquetas&quot;&gt;
-    {{ range .Params.etiquetas }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-
-{{ if .Params.proyectos }}
-  &lt;div class=&quot;blog-proyectos&quot;&gt;
-    {{ range .Params.proyectos }}
-      &lt;a href=&quot;{{ $.Site.LanguagePrefix | absURL }}/proyectos/{{ . | urlize }}/&quot;&gt;{{ . }}&lt;/a&gt;&amp;nbsp;
-    {{ end }}
-  &lt;/div&gt;
-{{ end }}
-</code></pre>
-<p>Sin embargo, aunque es una opción razonable, no me convence cómo queda, por lo que, en mi caso, voy a dejarlo como estaba. No obstante, comparto el código fuente por si alguien tiene interés en realizar esta modificación.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">page-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">tags-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">apartados-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">etiquetas-heading</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">intro-header</span> <span class="p">.</span><span class="nc">proyectos-heading</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>A continuación, hacemos una nueva modificación sobre el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) y cambiamos el nombre del menú principal <em>Blog</em> por <em>Inicio</em>. Así, el bloque de código</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Blog&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span></code></pre></div><p>pasa a ser</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Inicio&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span></code></pre></div><p>Acto seguido, en la plantilla <code>single.html</code> (ubicada en la ruta <code>\layouts\_default</code>) añado, en la ubicación donde aparecen las etiquetas, información sobre el apartado y el proyecto al que pertenece una entrada en particular. Por tanto, el bloque de código</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-etiquetas&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>a</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.apartados }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-apartados&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.apartados }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/apartados/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ if .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-etiquetas&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.etiquetas }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/etiquetas/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{{ if .Params.proyectos }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;blog-proyectos&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ range .Params.proyectos }}
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ $.Site.LanguagePrefix | absURL }}/proyectos/{{ . | urlize }}/&#34;</span><span class="p">&gt;</span>{{ . }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{{ end }}
+</span></span></code></pre></div><p>Sin embargo, aunque es una opción razonable, no me convence cómo queda, por lo que, en mi caso, voy a dejarlo como estaba. No obstante, comparto el código fuente por si alguien tiene interés en realizar esta modificación.</p>
 <p>Por último, quizá quede todo un poco mejor si damos acceso a las diferentes secciones desde el menú superior derecho, con un desplegable. Para ello, modificamos el fichero <code>config.toml</code> (ubicado en el directorio raíz de la página web) y dejamos la sección dedicada al menú como figura a continuación:</p>
-<pre><code class="language-toml">#
-# Configuración del menú superior derecho
-#
-[[menu.main]]
-    identifier = &quot;menu&quot;
-    name       = &quot;Menú&quot;
-    weight     = 1
-
-[[menu.main]]
-    parent = &quot;menu&quot;
-    name   = &quot;Apartados&quot;
-    url    = &quot;apartados/&quot;
-    weight = 1
-
-[[menu.main]]
-    parent = &quot;menu&quot;
-    name   = &quot;Etiquetas&quot;
-    url    = &quot;etiquetas/&quot;
-    weight = 2
-
-[[menu.main]]
-    parent = &quot;menu&quot;
-    name   = &quot;Proyectos&quot;
-    url    = &quot;proyectos/&quot;
-    weight = 3
-
-[[menu.main]]
-    name   = &quot;Acerca de&quot;
-    url    = &quot;page/about/&quot;
-    weight = 2
-</code></pre>
-<p>Concluyo aquí esta extensa entrada, dejando el <a href="/proyecto/metablog/">Proyecto MetaBlog</a> en espera, pues en estos momentos estoy más centrado en la generación de contenido para la página web, que en la edición de la misma.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración del menú superior derecho</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;menu&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>       <span class="p">=</span> <span class="s2">&#34;Menú&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span>     <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;menu&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>   <span class="p">=</span> <span class="s2">&#34;Apartados&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span>    <span class="p">=</span> <span class="s2">&#34;apartados/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;menu&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>   <span class="p">=</span> <span class="s2">&#34;Etiquetas&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span>    <span class="p">=</span> <span class="s2">&#34;etiquetas/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;menu&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>   <span class="p">=</span> <span class="s2">&#34;Proyectos&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span>    <span class="p">=</span> <span class="s2">&#34;proyectos/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span>   <span class="p">=</span> <span class="s2">&#34;Acerca de&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span>    <span class="p">=</span> <span class="s2">&#34;page/about/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span></code></pre></div><p>Concluyo aquí esta extensa entrada, dejando el <a href="/proyecto/metablog/">Proyecto MetaBlog</a> en espera, pues en estos momentos estoy más centrado en la generación de contenido para la página web, que en la edición de la misma.</p>
 
     </div>
 
@@ -935,6 +1038,90 @@
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/&amp;text=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/&amp;t=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas&amp;body=https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/&amp;title=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas%20https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/06/01/unos-cambios-rapidos-a-las-plantillas/&amp;title=Unos%20cambios%20r%c3%a1pidos%20a%20las%20plantillas" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -1002,6 +1189,14 @@
 
 
 
+  
+  
+  
+
+  
+
+  
+
 
 
 
@@ -1039,6 +1234,15 @@
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -1049,7 +1253,7 @@
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1058,7 +1262,113 @@
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1084,66 +1394,7 @@
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

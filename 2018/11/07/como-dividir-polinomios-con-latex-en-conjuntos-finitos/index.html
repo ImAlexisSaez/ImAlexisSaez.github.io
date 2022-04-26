@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -66,27 +82,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -95,22 +125,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -239,21 +253,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -286,7 +337,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/" />
@@ -379,10 +439,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -400,178 +497,206 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -595,9 +720,8 @@
 
 
 
+
   
-  
-    
   
 
 
@@ -632,7 +756,7 @@
     
       
     
-    Nov 7, 2018
+    11/07/18
   </span>
   
 
@@ -645,8 +769,6 @@
   </span>
   
 
-  
-  
   
   
   
@@ -672,7 +794,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/featured_hu99ca3f5e2b9dbd41476a3161303fa70e_158804_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <img src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/featured_hu99ca3f5e2b9dbd41476a3161303fa70e_158804_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
     <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@eberhardgross" target="_blank" rel="noopener">eberhard grossgasteiger</a>, disponible en <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</span>
   </div>
 </div>
@@ -693,21 +815,21 @@ $$</p>
 $$</p>
 <p>en $\mathbb{Z}_7$. Para ello, &lsquo;&lsquo;dibujaremos&rsquo;&rsquo; la operación matemática en una matriz, método que nos permitirá organizar fácilmente los pasos y, de paso, imprimir algunas rayas horizontales cuando proceda.</p>
 <p>Para empezar, en el preámbulo del documento, insertamos las dos siguientes líneas:</p>
-<pre><code class="language-tex">\usepackage{tikz}
-\usetikzlibrary{matrix}
-</code></pre>
-<p>Ahora, donde deseemos ubicar la división de los anteriores polinomios, tecleamos:</p>
-<pre><code class="language-tex">\begin{center}
-\begin{tikzpicture}
-\matrix (a) [matrix of math nodes, column sep=0pt]
-{
-5x^5 &amp; -2x^4 &amp; +2x^3 &amp; -5x^2 &amp; +2x &amp; +1 &amp;  &amp; 3x^3+x^2-5x+2 \\
-};
-\draw (a-1-8.north west) |- (a-1-8.south east);
-\end{tikzpicture}
-\end{center}
-</code></pre>
-<p>dando el resultado que figura en la siguiente imagen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\usetikzlibrary</span><span class="nb">{</span>matrix<span class="nb">}</span>
+</span></span></code></pre></div><p>Ahora, donde deseemos ubicar la división de los anteriores polinomios, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\matrix</span> (a) [matrix of math nodes, column sep=0pt]
+</span></span><span class="line"><span class="cl"><span class="nb">{</span>
+</span></span><span class="line"><span class="cl">5x<span class="nb">^</span>5 <span class="nb">&amp;</span> -2x<span class="nb">^</span>4 <span class="nb">&amp;</span> +2x<span class="nb">^</span>3 <span class="nb">&amp;</span> -5x<span class="nb">^</span>2 <span class="nb">&amp;</span> +2x <span class="nb">&amp;</span> +1 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> 3x<span class="nb">^</span>3+x<span class="nb">^</span>2-5x+2 <span class="k">\\</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>;
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-1-8.north west) |- (a-1-8.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span></code></pre></div><p>dando el resultado que figura en la siguiente imagen:</p>
+
+
 
 
 
@@ -725,10 +847,10 @@ $$</p>
 <figure  id="figure-primer-resultado-parcial">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Primer resultado parcial." srcset="
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_9de647705bb7362d4fd2db8863b6625d.png 400w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_6c30c21938088cca2dc628cd433ed37f.png 760w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_9de647705bb7362d4fd2db8863b6625d.png"
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_9f2e17804829a95f0b3406b2e50d805d.webp 400w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_2b5b395a4abba5090a778ed88d202acf.webp 760w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img01_hu683a0bd7e6990a9bf037298805477941_4718_9f2e17804829a95f0b3406b2e50d805d.webp"
                width="760"
                height="53"
                loading="lazy" data-zoomable /></div>
@@ -737,20 +859,21 @@ $$</p>
     </figcaption></figure>
 <p>Organizar los monomios del dividendo como elementos individuales de una matriz nos facilitará la empresa de &lsquo;&lsquo;alinear&rsquo;&rsquo; las posteriores operaciones de la división. Por otro lado, el comando <code>draw</code> es el que dibuja la &lsquo;&lsquo;caja&rsquo;&rsquo; de esta operación matemática, tomando como referencia las posiciones de los elementos de la matriz.</p>
 <p>Continuemos la división, siempre teniendo en cuenta que trabajamos en $\mathbb{Z}_7$. Así, para la primera etapa, teclearíamos acto seguido:</p>
-<pre><code class="language-tex">\begin{center}
-\begin{tikzpicture}
-\matrix (a) [matrix of math nodes, column sep=0pt]
-{
- 5x^5 &amp; -2x^4 &amp; +2x^3 &amp; -5x^2 &amp; +2x &amp; +1 &amp;  &amp; 3x^3+x^2-5x+2 \\
--5x^2 &amp; +3x^4 &amp;  -x^3 &amp;  -x^2 &amp;     &amp;    &amp;  &amp; 4x^2\\
-      &amp;  +x^4 &amp;  +x^3 &amp;  +x^2 &amp; +2x &amp;    &amp;  &amp; \\
-};
-\draw (a-1-8.north west) |- (a-1-8.south east);
-\draw (a-2-1.south west) -- (a-2-4.south east);
-\end{tikzpicture}
-\end{center}
-</code></pre>
-<p>cuyo resultado se recoge en la siguiente figura:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\matrix</span> (a) [matrix of math nodes, column sep=0pt]
+</span></span><span class="line"><span class="cl"><span class="nb">{</span>
+</span></span><span class="line"><span class="cl"> 5x<span class="nb">^</span>5 <span class="nb">&amp;</span> -2x<span class="nb">^</span>4 <span class="nb">&amp;</span> +2x<span class="nb">^</span>3 <span class="nb">&amp;</span> -5x<span class="nb">^</span>2 <span class="nb">&amp;</span> +2x <span class="nb">&amp;</span> +1 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> 3x<span class="nb">^</span>3+x<span class="nb">^</span>2-5x+2 <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">-5x<span class="nb">^</span>2 <span class="nb">&amp;</span> +3x<span class="nb">^</span>4 <span class="nb">&amp;</span>  -x<span class="nb">^</span>3 <span class="nb">&amp;</span>  -x<span class="nb">^</span>2 <span class="nb">&amp;</span>     <span class="nb">&amp;</span>    <span class="nb">&amp;</span>  <span class="nb">&amp;</span> 4x<span class="nb">^</span>2<span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>  +x<span class="nb">^</span>4 <span class="nb">&amp;</span>  +x<span class="nb">^</span>3 <span class="nb">&amp;</span>  +x<span class="nb">^</span>2 <span class="nb">&amp;</span> +2x <span class="nb">&amp;</span>    <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>;
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-1-8.north west) |- (a-1-8.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-2-1.south west) -- (a-2-4.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span></code></pre></div><p>cuyo resultado se recoge en la siguiente figura:</p>
+
+
 
 
 
@@ -768,10 +891,10 @@ $$</p>
 <figure  id="figure-segundo-resultado-parcial">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Segundo resultado parcial." srcset="
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_2c005d7b7e07ec56a1c7d78a6c04581e.png 400w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_9d2397edaba08389466a20d50d0281b3.png 760w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_2c005d7b7e07ec56a1c7d78a6c04581e.png"
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_13ee02f28af85cc07be12cc61a0308cc.webp 400w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_87edcb3a3167a6dfa852cdc6eca0a195.webp 760w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img02_hu8a4ae0a56f32da6a4118a0371203d64e_9788_13ee02f28af85cc07be12cc61a0308cc.webp"
                width="760"
                height="123"
                loading="lazy" data-zoomable /></div>
@@ -780,26 +903,27 @@ $$</p>
     </figcaption></figure>
 <p>Efectivamente, no queda tan estético como el que conseguíamos la semana pasada con el paquete <code>polynom</code>. No obstante, funcionalmente hablando, los pequeños desajustes horizontales de signos no molestan en exceso.</p>
 <p>Una vez asimilada la idea del procedimiento a seguir, únicamente nos resta continuar con la división, escribiendo ahora:</p>
-<pre><code class="language-tex">\begin{center}
-\begin{tikzpicture}
-\matrix (a) [matrix of math nodes, column sep=0pt]
-{
- 5x^5 &amp; -2x^4 &amp; +2x^3 &amp; -5x^2 &amp; +2x &amp; +1 &amp;  &amp; 3x^3+x^2-5x+2 \\
--5x^2 &amp; +3x^4 &amp;  -x^3 &amp;  -x^2 &amp;     &amp;    &amp;  &amp; 4x^2 + 5x + 1\\
-      &amp;  +x^4 &amp;  +x^3 &amp;  +x^2 &amp; +2x &amp;    &amp;  &amp; \\
-      &amp;  -x^4 &amp; +2x^3 &amp; -3x^2 &amp; -3x &amp;    &amp;  &amp; \\
-      &amp;       &amp; +3x^3 &amp; -2x^2 &amp;  -x &amp; +1 &amp;  &amp; \\
-      &amp;       &amp; -3x^3 &amp;  -x^2 &amp; -2x &amp; -2 &amp;  &amp; \\
-      &amp;       &amp;       &amp; -3x^2 &amp; -3x &amp; -1 &amp;  &amp; \\
-};
-\draw (a-1-8.north west) |- (a-1-8.south east);
-\draw (a-2-1.south west) -- (a-2-4.south east);
-\draw (a-4-2.south west) -- (a-4-5.south east);
-\draw (a-6-3.south west) -- (a-6-6.south east);
-\end{tikzpicture}
-\end{center}
-</code></pre>
-<p>Obteniendo como resultado el que aparece en la siguiente imagen:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tex" data-lang="tex"><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\matrix</span> (a) [matrix of math nodes, column sep=0pt]
+</span></span><span class="line"><span class="cl"><span class="nb">{</span>
+</span></span><span class="line"><span class="cl"> 5x<span class="nb">^</span>5 <span class="nb">&amp;</span> -2x<span class="nb">^</span>4 <span class="nb">&amp;</span> +2x<span class="nb">^</span>3 <span class="nb">&amp;</span> -5x<span class="nb">^</span>2 <span class="nb">&amp;</span> +2x <span class="nb">&amp;</span> +1 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> 3x<span class="nb">^</span>3+x<span class="nb">^</span>2-5x+2 <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">-5x<span class="nb">^</span>2 <span class="nb">&amp;</span> +3x<span class="nb">^</span>4 <span class="nb">&amp;</span>  -x<span class="nb">^</span>3 <span class="nb">&amp;</span>  -x<span class="nb">^</span>2 <span class="nb">&amp;</span>     <span class="nb">&amp;</span>    <span class="nb">&amp;</span>  <span class="nb">&amp;</span> 4x<span class="nb">^</span>2 + 5x + 1<span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>  +x<span class="nb">^</span>4 <span class="nb">&amp;</span>  +x<span class="nb">^</span>3 <span class="nb">&amp;</span>  +x<span class="nb">^</span>2 <span class="nb">&amp;</span> +2x <span class="nb">&amp;</span>    <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>  -x<span class="nb">^</span>4 <span class="nb">&amp;</span> +2x<span class="nb">^</span>3 <span class="nb">&amp;</span> -3x<span class="nb">^</span>2 <span class="nb">&amp;</span> -3x <span class="nb">&amp;</span>    <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>       <span class="nb">&amp;</span> +3x<span class="nb">^</span>3 <span class="nb">&amp;</span> -2x<span class="nb">^</span>2 <span class="nb">&amp;</span>  -x <span class="nb">&amp;</span> +1 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>       <span class="nb">&amp;</span> -3x<span class="nb">^</span>3 <span class="nb">&amp;</span>  -x<span class="nb">^</span>2 <span class="nb">&amp;</span> -2x <span class="nb">&amp;</span> -2 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">&amp;</span>       <span class="nb">&amp;</span>       <span class="nb">&amp;</span> -3x<span class="nb">^</span>2 <span class="nb">&amp;</span> -3x <span class="nb">&amp;</span> -1 <span class="nb">&amp;</span>  <span class="nb">&amp;</span> <span class="k">\\</span>
+</span></span><span class="line"><span class="cl"><span class="nb">}</span>;
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-1-8.north west) |- (a-1-8.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-2-1.south west) -- (a-2-4.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-4-2.south west) -- (a-4-5.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\draw</span> (a-6-3.south west) -- (a-6-6.south east);
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>center<span class="nb">}</span>
+</span></span></code></pre></div><p>Obteniendo como resultado el que aparece en la siguiente imagen:</p>
+
+
 
 
 
@@ -817,10 +941,10 @@ $$</p>
 <figure  id="figure-resultado-final">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Resultado final." srcset="
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_0ee9d8a2f9f48e3afdb24f38dee00b79.png 400w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_c8d92c459febf403c43b0ff4affcc808.png 760w,
-               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_0ee9d8a2f9f48e3afdb24f38dee00b79.png"
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_a7699097136ee9d32f5ba1ec9ddabd20.webp 400w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_17645e8f9fa64cb46286b34feaf80849.webp 760w,
+               /2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/20181107-img03_hu8a1b45e33a56ecb259f4c02f12d6343e_19017_a7699097136ee9d32f5ba1ec9ddabd20.webp"
                width="760"
                height="226"
                loading="lazy" data-zoomable /></div>
@@ -842,6 +966,90 @@ $$</p>
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/&amp;text=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/&amp;t=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?&amp;body=https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/&amp;title=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?%20https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2018/11/07/como-dividir-polinomios-con-latex-en-conjuntos-finitos/&amp;title=%c2%bfC%c3%b3mo%20dividir%20polinomios%20con%20LaTeX%20en%20conjuntos%20finitos?" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -909,6 +1117,14 @@ $$</p>
 
 
 
+  
+  
+  
+
+  
+
+  
+
 
 
 
@@ -946,6 +1162,15 @@ $$</p>
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -956,7 +1181,7 @@ $$</p>
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -965,7 +1190,113 @@ $$</p>
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -991,66 +1322,7 @@ $$</p>
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

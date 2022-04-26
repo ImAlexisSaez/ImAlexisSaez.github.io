@@ -29,25 +29,24 @@
 &lt;p&gt;Dentro del &amp;ldquo;peligro&amp;rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?&lt;/p&gt;
 &lt;p&gt;Veamos qué nos ofrece el código de &lt;em&gt;Daniël Lakens&lt;/em&gt;. Una vez digerido el &lt;em&gt;README&lt;/em&gt; del repositorio, e instalado los paquetes necesarios (así como actualizado &lt;em&gt;JAGS&lt;/em&gt;, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;He escogido el conjunto de datos &lt;code&gt;hsb2&lt;/code&gt; (incluido en el paquete &lt;code&gt;openintro&lt;/code&gt;), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# Carga la librería que contiene el conjunto de datos hsb2
-library(openintro)
-
-# Carga el conjunto de datos hsb2
-data(hsb2)
-
-# Documentación del conjunto de datos
-?hsb2
-
-# Exploración básica del conjunto de datos
-str(hsb2)
-
-# Crea el archivo que se usará con &amp;quot;perfect_independent_t-test.Rmd&amp;quot;
-write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot;math&amp;quot;)],
-            file = &amp;quot;datos_hsb2_math.txt&amp;quot;,
-            row.names = FALSE,
-            sep = &amp;quot;,&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-r&#34; data-lang=&#34;r&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Carga la librería que contiene el conjunto de datos hsb2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;library&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;openintro&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Carga el conjunto de datos hsb2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hsb2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Documentación del conjunto de datos&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;o&#34;&gt;?&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hsb2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Exploración básica del conjunto de datos&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hsb2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Crea el archivo que se usará con &amp;#34;perfect_independent_t-test.Rmd&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nf&#34;&gt;write.table&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hsb2&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;[c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;id&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;gender&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;math&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;file&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;datos_hsb2_math.txt&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;row.names&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;FALSE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;n&#34;&gt;sep&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;,&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba &lt;em&gt;t&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Ahora, con &lt;code&gt;datos_hsb2_math.txt&lt;/code&gt; ubicado en el mismo directorio que &lt;code&gt;perfect_independent_t-test.Rmd&lt;/code&gt;, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable &lt;code&gt;alldata&lt;/code&gt; (y, en mi caso, añadir &lt;code&gt;sep = &amp;quot;,&amp;quot;&lt;/code&gt;), así como correctamente asignar las variables &lt;code&gt;xlabel&lt;/code&gt;, &lt;code&gt;ylabel&lt;/code&gt;, &lt;code&gt;factorlabel&lt;/code&gt;, &lt;code&gt;measurelabel&lt;/code&gt;, &lt;code&gt;xlabelstring&lt;/code&gt; e &lt;code&gt;ylabelstring&lt;/code&gt; siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.&lt;/p&gt;
 &lt;p&gt;En mi caso, he cambiado el formato del documento de salida de &lt;em&gt;Word&lt;/em&gt; a &lt;em&gt;PDF&lt;/em&gt;, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba &lt;em&gt;t&lt;/em&gt;! A la próxima persona que escuche quejarse de que &lt;em&gt;SPSS&lt;/em&gt; devuelve una miríada de resultados voy a invitarle amablemente a que utilice este &lt;em&gt;script&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente &lt;em&gt;boxplot&lt;/em&gt; (creo que en español se llama &lt;em&gt;diagrama de caja y bigotes&lt;/em&gt;, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:&lt;/p&gt;
@@ -65,13 +64,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-boxplot&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Boxplot.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_7aa3cedbdc1ea78ab58fc791ef061a88.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_ad552eda594185f1e9e2821a3e8cbcb2.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -93,13 +94,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-resultados-de-los-contrastes-de-hipótesis&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Resultados de los contrastes de hipótesis.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a1094d747b0fac7f9fbe5f0ec9fc604e.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1296a041527b65c0ef4858ec24280b14.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a1094d747b0fac7f9fbe5f0ec9fc604e.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a8cf50872f1f6866f78264ffa507b6b2.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_b367e73440c99b01dba76c631d503dd6.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a8cf50872f1f6866f78264ffa507b6b2.webp&#34;
                width=&#34;477&#34;
                height=&#34;157&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -122,13 +125,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-distribución-de-las-puntuaciones-de-los-chicos&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Distribución de las puntuaciones de los chicos.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_f47c92cef72fbd4cab5583326f1e7fe8.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_687359b7acef25536836b67fe6721498.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_f47c92cef72fbd4cab5583326f1e7fe8.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_bc5b449e2d7e14731b893259a582d324.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_c59452a45d52b6c7b1c4b1ff21baa574.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_bc5b449e2d7e14731b893259a582d324.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -149,13 +154,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-distribución-de-las-puntuaciones-de-las-chicas&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Distribución de las puntuaciones de las chicas.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_f76a1bb47af482c7308599322cbe7311.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_94fc46b5404fc57219fe08f1f75af00b.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_f76a1bb47af482c7308599322cbe7311.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ad7c7a9f5ea396572b610842bbc22ff1.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ae625b1198166749b37ad50a0880c990.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ad7c7a9f5ea396572b610842bbc22ff1.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -177,13 +184,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-gráfico-q-q&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Gráfico Q-Q.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_7aa3cedbdc1ea78ab58fc791ef061a88.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_ad552eda594185f1e9e2821a3e8cbcb2.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -214,13 +223,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-violin-plot&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Violin plot.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_08932532a7e4376e6361bd50630b6872.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_3e9a131ad679abc90b83ff4671eb14b7.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_08932532a7e4376e6361bd50630b6872.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_83cdaf715ecfb3d669766a7a1f28038c.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_6c4a2fd3a0aac95af90a9d6cd3c0a336.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_83cdaf715ecfb3d669766a7a1f28038c.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -241,13 +252,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-gráfico-de-dispersión&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Gráfico de dispersión.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_adac1bd06f9a54eeb82d0b5365f0bde4.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_e2b22c7e35db5cc794342b4b0b42a5cb.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_adac1bd06f9a54eeb82d0b5365f0bde4.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_13e794195fca7b3cb1403e2d2deae04a.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_07c0fd51f3e1adbdb628bcd511985b61.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_13e794195fca7b3cb1403e2d2deae04a.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -268,13 +281,15 @@ write.table(hsb2[c(&amp;quot;id&amp;quot;, &amp;quot;gender&amp;quot;, &amp;quot
 
 
 
+
+
 &lt;figure  id=&#34;figure-intervalos-de-confianza&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Intervalos de confianza.&#34; srcset=&#34;
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_6bdb017a81451872683eff733af15adf.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_94b91b81a311bbc481885a9f95e6ae0f.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_6bdb017a81451872683eff733af15adf.png&#34;
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_be4ac6ba0aa9a6a8d76c7456eb881a3e.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_7869c7603bb9fc62861a3ba97a9bdffd.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_be4ac6ba0aa9a6a8d76c7456eb881a3e.webp&#34;
                width=&#34;760&#34;
                height=&#34;467&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;

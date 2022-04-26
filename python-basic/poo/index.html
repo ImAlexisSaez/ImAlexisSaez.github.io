@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/python-basic/poo/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -286,7 +337,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/python-basic/poo/" />
@@ -326,10 +386,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -347,180 +444,207 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
     
+    
+    
 
+    
 
 
 
@@ -540,6 +664,12 @@
     </div>
   </button>
 
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Buscar...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
   
 </form>
 
@@ -1021,81 +1151,73 @@
 
 <h3 id="notas-personales-2">Notas personales</h3>
 <p>Traslademos a código fuente algunos de los conceptos examinados en las dos lecciones anteriores. La sintaxis para crear la clase <code>Coche</code> sería:</p>
-<pre><code class="language-python">class Coche():
-    instrucciones
-</code></pre>
-<p>Empecemos declarando las <strong>propiedades</strong> de la clase <code>Coche</code>:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-</code></pre>
-<p>Definamos <strong>comportamientos</strong> para los futuros objetos que pertenezcan a esta clase, que vienen determinados por distintos métodos:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def function(self):
-        pass
-</code></pre>
-<p>En <em>Sublime Text 3</em> cuando empezamos a escribir <code>def</code> nos ofrece dos opciones, crear una <strong>función</strong> o un <strong>método</strong>. La principal diferencia radica en que la primera no pertenece a ninguna clase, al contrario que la segunda. Podemos, a través de los cursores, escoger en el editor la opción que apunta a un método y se nos proporciona la sintaxis de uno por defecto, como el que se muestra arriba.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>Empecemos declarando las <strong>propiedades</strong> de la clase <code>Coche</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span></code></pre></div><p>Definamos <strong>comportamientos</strong> para los futuros objetos que pertenezcan a esta clase, que vienen determinados por distintos métodos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></div><p>En <em>Sublime Text 3</em> cuando empezamos a escribir <code>def</code> nos ofrece dos opciones, crear una <strong>función</strong> o un <strong>método</strong>. La principal diferencia radica en que la primera no pertenece a ninguna clase, al contrario que la segunda. Podemos, a través de los cursores, escoger en el editor la opción que apunta a un método y se nos proporciona la sintaxis de uno por defecto, como el que se muestra arriba.</p>
 <p>Una vez editado, el código queda:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self):
-        pass
-</code></pre>
-<p><em>Nota</em>: <code>self</code> hace referencia al propio objeto perteneciente a la clase, es decir, a la instancia perteneciente a la clase.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span></code></pre></div><p><em>Nota</em>: <code>self</code> hace referencia al propio objeto perteneciente a la clase, es decir, a la instancia perteneciente a la clase.</p>
 <p>Construyamos un objeto de la clase <code>Coche</code> y veamos cómo acceder a sus propiedades:</p>
-<pre><code class="language-python">mi_coche = Coche()  # Instanciación de una clase
-
-print(&quot;Largo del coche: &quot;, mi_coche.largo_chasis)  # Largo del coche:  250
-print(&quot;Número de ruedas: &quot;, mi_coche.ruedas)  # Número de ruedas:  4
-</code></pre>
-<p>Trabajemos en el método declarado, para ello, escribimos:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self):
-        self.en_marcha = True
-</code></pre>
-<p>Así, ahora:</p>
-<pre><code class="language-python">print(&quot;En marcha: &quot;, mi_coche.en_marcha)  # En marcha:  False
-mi_coche.arrancar()
-print(&quot;En marcha: &quot;, mi_coche.en_marcha)  # En marcha:  True
-</code></pre>
-<p>Esta última acción la podríamos haber llevado a cabo a través de otro comportamiento, <code>estado</code>:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self):
-        self.en_marcha = True
-
-    def estado(self):
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-
-print(mi_coche.estado())  # El coche está parado.
-mi_coche.arrancar()
-print(mi_coche.estado())  # El coche está en marcha.
-</code></pre>
-<p>En resumen, hemos creado la clase <code>Coche</code>, que se caracteriza por poseer cuatro propiedades y dos comportamientos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>  <span class="c1"># Instanciación de una clase</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Largo del coche: &#34;</span><span class="p">,</span> <span class="n">mi_coche</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">)</span>  <span class="c1"># Largo del coche:  250</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Número de ruedas: &#34;</span><span class="p">,</span> <span class="n">mi_coche</span><span class="o">.</span><span class="n">ruedas</span><span class="p">)</span>  <span class="c1"># Número de ruedas:  4</span>
+</span></span></code></pre></div><p>Trabajemos en el método declarado, para ello, escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span></code></pre></div><p>Así, ahora:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;En marcha: &#34;</span><span class="p">,</span> <span class="n">mi_coche</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">)</span>  <span class="c1"># En marcha:  False</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche</span><span class="o">.</span><span class="n">arrancar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;En marcha: &#34;</span><span class="p">,</span> <span class="n">mi_coche</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">)</span>  <span class="c1"># En marcha:  True</span>
+</span></span></code></pre></div><p>Esta última acción la podríamos haber llevado a cabo a través de otro comportamiento, <code>estado</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">estado</span><span class="p">())</span>  <span class="c1"># El coche está parado.</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche</span><span class="o">.</span><span class="n">arrancar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">estado</span><span class="p">())</span>  <span class="c1"># El coche está en marcha.</span>
+</span></span></code></pre></div><p>En resumen, hemos creado la clase <code>Coche</code>, que se caracteriza por poseer cuatro propiedades y dos comportamientos.</p>
 <h3 id="código-fuente">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/26/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="programación-oo-iv">Programación OO IV</h2>
@@ -1107,148 +1229,137 @@ print(mi_coche.estado())  # El coche está en marcha.
 
 <h3 id="notas-personales-3">Notas personales</h3>
 <p>Partamos del código del último ejemplo de la lección anterior:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self):
-        self.en_marcha = True
-
-    def estado(self):
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-</code></pre>
-<p>Generemos dos objetos y comparémoslos:</p>
-<pre><code class="language-python">mi_coche1 = Coche()
-mi_coche2 = Coche()
-
-print(&quot;Largo mi_coche1: &quot;, mi_coche1.largo_chasis)  # Largo mi_coche1:  250
-print(&quot;Largo mi_coche2: &quot;, mi_coche2.largo_chasis)  # Largo mi_coche2:  250
-
-mi_coche1.arrancar()
-print(mi_coche1.estado())  # El coche está en marcha.
-print(mi_coche2.estado())  # El coche está parado.
-</code></pre>
-<p>Sería buena idea que el método <code>arrancar()</code>, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método <code>estado()</code> para que nos ofrezca información del coche:</p>
-<pre><code class="language-python">class Coche():
-    largo_chasis = 250
-    ancho_chasis = 120
-    ruedas = 4
-    en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
-
-
-mi_coche1 = Coche()
-mi_coche2 = Coche()
-
-print(mi_coche1.arrancar(True))  # El coche está en marcha.
-print(mi_coche2.arrancar(False))  # # El coche está parado.
-mi_coche1.estado()
-# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-mi_coche2.estado()
-# El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
-<p>En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como <strong>estado inicial</strong>. Para especificar dicho estado utilizaremos un <strong>constructor</strong>, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por</p>
-<pre><code class="language-python">def __init__(self):
-    propiedades
-</code></pre>
-<p>Así, el código de la clase quedaría:</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.largo_chasis = 250
-        self.ancho_chasis = 120
-        self.ruedas = 4
-        self.en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
-</code></pre>
-<p>¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?</p>
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-
-mi_coche2.ruedas = 5
-
-mi_coche2.estado()
-</code></pre>
-<pre><code class="language-bash">El coche está parado.
-El coche tiene 5 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
-<p>Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de <strong>encapsulación</strong>, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con <code>__</code> el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.largo_chasis = 250
-        self.ancho_chasis = 120
-        self.__ruedas = 4
-        self.en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.en_marcha = arrancamos
-        if self.en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.ancho_chasis, &quot;cm y un largo de&quot;, self.largo_chasis, &quot;cm.&quot;)
-</code></pre>
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-
-mi_coche2.__ruedas = 5
-
-mi_coche2.estado()
-</code></pre>
-<pre><code class="language-bash">El coche está parado.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
-<p>En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso <code>en_marcha</code>, ya que queremos modificarla únicamente desde el interior de la clase.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span></code></pre></div><p>Generemos dos objetos y comparémoslos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche1</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Largo mi_coche1: &#34;</span><span class="p">,</span> <span class="n">mi_coche1</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">)</span>  <span class="c1"># Largo mi_coche1:  250</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Largo mi_coche2: &#34;</span><span class="p">,</span> <span class="n">mi_coche2</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">)</span>  <span class="c1"># Largo mi_coche2:  250</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche1</span><span class="o">.</span><span class="n">arrancar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche1</span><span class="o">.</span><span class="n">estado</span><span class="p">())</span>  <span class="c1"># El coche está en marcha.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">())</span>  <span class="c1"># El coche está parado.</span>
+</span></span></code></pre></div><p>Sería buena idea que el método <code>arrancar()</code>, además de arrancar el coche, nos informase de su estado (en marcha o parado). También, programaremos el método <code>estado()</code> para que nos ofrezca información del coche:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">,</span> <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche1</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche1</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>  <span class="c1"># El coche está en marcha.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>  <span class="c1"># # El coche está parado.</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche1</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.</span>
+</span></span></code></pre></div><p>En programación orientada a objetos, las características comunes suelen formar parte de lo que se conoce como <strong>estado inicial</strong>. Para especificar dicho estado utilizaremos un <strong>constructor</strong>, que es un método especial que le da estado a los objetos que pertenecen a una clase. Su sintaxis vendrá dada por</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">propiedades</span>
+</span></span></code></pre></div><p>Así, el código de la clase quedaría:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">,</span> <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>¿Qué sucede si intentamos ahora incrementar a cinco el número de ruedas del segundo coche?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">ruedas</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El coche está parado.
+</span></span><span class="line"><span class="cl">El coche tiene <span class="m">5</span> ruedas. Un ancho de <span class="m">120</span> cm y un largo de <span class="m">250</span> cm.
+</span></span></code></pre></div><p>Esta acción, en ciertos casos, no debería estar permitida. Para ello, entra en juego el concepto de <strong>encapsulación</strong>, que nos permitirá proteger propiedades para que no se puedan modificar desde fuera de la propia clase. Su aplicación es tan sencilla como preceder con <code>__</code> el nombre de la propiedad a proteger y en aquellos lugares donde luego aparezca:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">largo_chasis</span><span class="p">,</span> <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El coche está parado.
+</span></span><span class="line"><span class="cl">El coche tiene <span class="m">4</span> ruedas. Un ancho de <span class="m">120</span> cm y un largo de <span class="m">250</span> cm.
+</span></span></code></pre></div><p>En esta ocasión, las cuatro propiedades deberían encapsularse. Incluso <code>en_marcha</code>, ya que queremos modificarla únicamente desde el interior de la clase.</p>
 <p>La clase entonces quedaría:</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-        if self.__en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-</code></pre>
-<p>De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>De la misma manera, se pueden encapsular métodos, opción que estudiaremos en futuras lecciones.</p>
 <h3 id="código-fuente-1">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/27/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="programación-oo-v">Programación OO V</h2>
@@ -1260,152 +1371,143 @@ El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
 
 <h3 id="notas-personales-4">Notas personales</h3>
 <p>A continuación, abordaremos la encapsulación de métodos partiendo del último ejemplo de la lección anterior:</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-        if self.__en_marcha:
-            return &quot;El coche está en marcha.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-</code></pre>
-<p>Encapsular un método es hacer que sea únicamente accesible desde la propia clase, no desde fuera.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Encapsular un método es hacer que sea únicamente accesible desde la propia clase, no desde fuera.</p>
 <p>Como aplicación práctica de este procedimiento, generemos un método que compruebe que todo está en orden antes de arrancar, <code>chequeo_interno(self)</code>, que llamaremos desde <code>arrancar()</code>.</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-
-        if self.__en_marcha:
-            chequeo = self.chequeo_interno()
-
-        if self.__en_marcha and chequeo:
-            return &quot;El coche está en marcha.&quot;
-        elif self.__en_marcha and not chequeo:
-            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-
-    def chequeo_interno(self):
-        print(&quot;Realizando chequeo interno.&quot;)
-
-        self.gas = &quot;Ok&quot;
-        self.aceite = &quot;Ok&quot;
-        self.puertas = &quot;Ok&quot;
-
-        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
-            return True
-        else:
-            return False
-</code></pre>
-<p>Así, si ahora tecleamos:</p>
-<pre><code class="language-python">mi_coche1 = Coche()
-
-print(mi_coche1.arrancar(True))
-
-mi_coche1.estado()
-
-print(&quot;---- Segundo vehículo ----&quot;)
-
-mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-
-mi_coche2.estado()
-</code></pre>
-<p>El resultado será:</p>
-<pre><code class="language-bash">Realizando chequeo interno.
-El coche está en marcha.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
----- Segundo vehículo ----
-El coche está parado.
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
-<p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &lsquo;&lsquo;protegerlo&rsquo;&rsquo;.</p>
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-print(mi_coche2.chequeo_interno())  # Absurdo en este caso
-mi_coche2.estado()
-</code></pre>
-<pre><code class="language-bash">El coche está parado.
-Realizando chequeo interno.
-True
-El coche tiene 4 ruedas. Un ancho de 120 cm y un largo de 250 cm.
-</code></pre>
-<p>Para encapsular el mencionado método, utilizamos la estrategia de <code>__</code>:</p>
-<pre><code class="language-python">class Coche():
-    def __init__(self):
-        self.__largo_chasis = 250
-        self.__ancho_chasis = 120
-        self.__ruedas = 4
-        self.__en_marcha = False
-
-    def arrancar(self, arrancamos):
-        self.__en_marcha = arrancamos
-
-        if self.__en_marcha:
-            chequeo = self.__chequeo_interno()
-
-        if self.__en_marcha and chequeo:
-            return &quot;El coche está en marcha.&quot;
-        elif self.__en_marcha and not chequeo:
-            return &quot;Algo ha ido mal en el chequeo. No podemos arrancar.&quot;
-        else:
-            return &quot;El coche está parado.&quot;
-
-    def estado(self):
-        print(&quot;El coche tiene&quot;, self.__ruedas, &quot;ruedas. Un ancho de&quot;,
-              self.__ancho_chasis, &quot;cm y un largo de&quot;, self.__largo_chasis,
-              &quot;cm.&quot;)
-
-    def __chequeo_interno(self):
-        print(&quot;Realizando chequeo interno.&quot;)
-
-        self.gas = &quot;Ok&quot;
-        self.aceite = &quot;Ok&quot;
-        self.puertas = &quot;Ok&quot;
-
-        if self.gas == &quot;Ok&quot; and self.aceite == &quot;Ok&quot; and self.puertas == &quot;Ok&quot;:
-            return True
-        else:
-            return False
-</code></pre>
-<p>De forma que si ahora escribimos:</p>
-<pre><code class="language-python">mi_coche2 = Coche()
-
-print(mi_coche2.arrancar(False))
-print(mi_coche2.__chequeo_interno())
-mi_coche2.estado()
-</code></pre>
-<p>El resultado es:</p>
-<pre><code class="language-bash">El coche está parado.
-Traceback (most recent call last):
-  File &quot;prac28_poo5_1.py&quot;, line 50, in &lt;module&gt;
-    print(mi_coche2.__chequeo_interno())
-AttributeError: 'Coche' object has no attribute '__chequeo_interno'
-</code></pre>
-<p>Es decir, <em>Python</em> arroja un error. No nos deja llamar al método <code>__chequeo_interno()</code> desde fuera de la propia clase <code>Coche</code> porque está encapsulado.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">chequeo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chequeo_interno</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="ow">and</span> <span class="n">chequeo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">chequeo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;Algo ha ido mal en el chequeo. No podemos arrancar.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">chequeo_interno</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Realizando chequeo interno.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">aceite</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">puertas</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">aceite</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">puertas</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span></code></pre></div><p>Así, si ahora tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche1</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche1</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche1</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;---- Segundo vehículo ----&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><p>El resultado será:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Realizando chequeo interno.
+</span></span><span class="line"><span class="cl">El coche está en marcha.
+</span></span><span class="line"><span class="cl">El coche tiene <span class="m">4</span> ruedas. Un ancho de <span class="m">120</span> cm y un largo de <span class="m">250</span> cm.
+</span></span><span class="line"><span class="cl">---- Segundo vehículo ----
+</span></span><span class="line"><span class="cl">El coche está parado.
+</span></span><span class="line"><span class="cl">El coche tiene <span class="m">4</span> ruedas. Un ancho de <span class="m">120</span> cm y un largo de <span class="m">250</span> cm.
+</span></span></code></pre></div><p>El método <code>chequeo_interno()</code> es accesible desde fuera de la clase (no está encapsulado), pero, ¿es lógico que podamos acceder a él en cualquier momento? ¿Incluso si está parado? Si el método está diseñado para ejecutarse únicamente en el momento previo a arrancar, hemos de &lsquo;&lsquo;protegerlo&rsquo;&rsquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">chequeo_interno</span><span class="p">())</span>  <span class="c1"># Absurdo en este caso</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El coche está parado.
+</span></span><span class="line"><span class="cl">Realizando chequeo interno.
+</span></span><span class="line"><span class="cl">True
+</span></span><span class="line"><span class="cl">El coche tiene <span class="m">4</span> ruedas. Un ancho de <span class="m">120</span> cm y un largo de <span class="m">250</span> cm.
+</span></span></code></pre></div><p>Para encapsular el mencionado método, utilizamos la estrategia de <code>__</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span> <span class="o">=</span> <span class="mi">250</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span> <span class="o">=</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arrancamos</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="o">=</span> <span class="n">arrancamos</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">chequeo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__chequeo_interno</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="ow">and</span> <span class="n">chequeo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está en marcha.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">__en_marcha</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">chequeo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;Algo ha ido mal en el chequeo. No podemos arrancar.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;El coche está parado.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El coche tiene&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__ruedas</span><span class="p">,</span> <span class="s2">&#34;ruedas. Un ancho de&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">__ancho_chasis</span><span class="p">,</span> <span class="s2">&#34;cm y un largo de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__largo_chasis</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="s2">&#34;cm.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__chequeo_interno</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Realizando chequeo interno.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">aceite</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">puertas</span> <span class="o">=</span> <span class="s2">&#34;Ok&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">gas</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">aceite</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">puertas</span> <span class="o">==</span> <span class="s2">&#34;Ok&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">False</span>
+</span></span></code></pre></div><p>De forma que si ahora escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_coche2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">arrancar</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche2</span><span class="o">.</span><span class="n">__chequeo_interno</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche2</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><p>El resultado es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El coche está parado.
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac28_poo5_1.py&#34;</span>, line 50, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>mi_coche2.__chequeo_interno<span class="o">())</span>
+</span></span><span class="line"><span class="cl">AttributeError: <span class="s1">&#39;Coche&#39;</span> object has no attribute <span class="s1">&#39;__chequeo_interno&#39;</span>
+</span></span></code></pre></div><p>Es decir, <em>Python</em> arroja un error. No nos deja llamar al método <code>__chequeo_interno()</code> desde fuera de la propia clase <code>Coche</code> porque está encapsulado.</p>
 <p>¿Cuándo encapsular una variable o un método? No existe una &lsquo;&lsquo;regla de oro&rsquo;&rsquo;, esto es, habremos de hacerlo cuando la clase así lo precise, dependiendo del comportamiento que posea una clase y en función del criterio del propio programador.</p>
 <h3 id="código-fuente-2">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/28/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
@@ -1420,46 +1522,44 @@ AttributeError: 'Coche' object has no attribute '__chequeo_interno'
 <p>En programación orientada a objetos, el concepto de <strong>herencia</strong> intenta dar una réplica aproximada de su contrapartida en la vida real. De una clase, denominada en ocasiones <strong>clase padre</strong> o <strong>superclase</strong>, heredarán otras clases atributos, métodos&hellip; Se conocen estas últimas como <strong>subclases</strong> de la anterior (y también como <strong>superclases</strong> si de ellas también heredan otras).</p>
 <p>La principal utilidad de la herencia es la reutilización de código cuando se generan clases &lsquo;&lsquo;similares&rsquo;&rsquo;. Hemos de estudiar las características y comportamientos que poseen en común todos los objetos con los que deseamos trabajar. Todo ello lo englobaremos en una <strong>superclase</strong>, de la cual luego heredarán otras clases, que aun teniendo características en común, también es cierto que existen otras peculiaridades que las diferencian.</p>
 <p>Veamos un ejemplo práctico:</p>
-<pre><code class="language-python"># Clase Padre
-class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-# Clase hija
-class Moto(Vehiculo):
-    pass
-
-
-mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
-
-mi_moto.estado()
-</code></pre>
-<pre><code class="language-bash">Marca: Honda 
-Modelo: CBR 
-En marcha: False 
-Acelerando: False 
-Frenando: False
-</code></pre>
-<p>Estamos utilizando métodos de la clase <code>Vehiculo</code> a través de la clase <code>Moto</code> gracias a la herencia.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Clase Padre</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clase hija</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">(</span><span class="s2">&#34;Honda&#34;</span><span class="p">,</span> <span class="s2">&#34;CBR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Honda 
+</span></span><span class="line"><span class="cl">Modelo: CBR 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><p>Estamos utilizando métodos de la clase <code>Vehiculo</code> a través de la clase <code>Moto</code> gracias a la herencia.</p>
 <h3 id="código-fuente-3">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/29/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="programación-oo-vii">Programación OO VII</h2>
@@ -1471,161 +1571,143 @@ Frenando: False
 
 <h3 id="notas-personales-6">Notas personales</h3>
 <p>Continuemos con el ejemplo de la lección anterior:</p>
-<pre><code class="language-python"># Clase Padre
-class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-# Clase hija
-class Moto(Vehiculo):
-    pass
-</code></pre>
-<p>Construyamos la clase <code>Moto</code>, añadiendo un comportamiento nuevo, <code>caballito</code>, que se va a sumar a los cuatro heredados de la clase <code>Vehiculo</code>:</p>
-<pre><code class="language-python">class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        hcaballito = &quot;Voy haciendo el caballito.&quot;
-</code></pre>
-<p>Ahora podríamos teclear:</p>
-<pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
-
-mi_moto.caballito()
-
-mi_moto.estado()
-</code></pre>
-<pre><code class="language-bash">Marca: Honda 
-Modelo: CBR 
-En marcha: False 
-Acelerando: False 
-Frenando: False
-</code></pre>
-<p>El programa &lsquo;&lsquo;funciona&rsquo;&rsquo; (al menos no arroja errores), pero no nos está informando si estamos haciendo el caballito o no.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Clase Padre</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Clase hija</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><p>Construyamos la clase <code>Moto</code>, añadiendo un comportamiento nuevo, <code>caballito</code>, que se va a sumar a los cuatro heredados de la clase <code>Vehiculo</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">caballito</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;Voy haciendo el caballito.&#34;</span>
+</span></span></code></pre></div><p>Ahora podríamos teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_moto</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">(</span><span class="s2">&#34;Honda&#34;</span><span class="p">,</span> <span class="s2">&#34;CBR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span><span class="o">.</span><span class="n">caballito</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Honda 
+</span></span><span class="line"><span class="cl">Modelo: CBR 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><p>El programa &lsquo;&lsquo;funciona&rsquo;&rsquo; (al menos no arroja errores), pero no nos está informando si estamos haciendo el caballito o no.</p>
 <p>Abordemos esta situación sobreescribiendo el método <code>estado</code> heredado de la clase <code>Vehiculo</code>, para así incorporar la información sobre el nuevo comportamiento de la clase <code>Moto</code>.</p>
 <p>Para sobreescribir un método de la clase padre definimos uno en la clase hija que se caracterice por tener el mismo nombre y número de parámetros:</p>
-<pre><code class="language-python">class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-</code></pre>
-<p>De esta manera, la ejecución del siguiente bloque de código:</p>
-<pre><code class="language-python">mi_moto = Moto(&quot;Honda&quot;, &quot;CBR&quot;)
-
-mi_moto.caballito()
-
-mi_moto.estado()
-</code></pre>
-<p>Produce como resultado ahora:</p>
-<pre><code class="language-bash">Marca: Honda 
-Modelo: CBR 
-En marcha: False 
-Acelerando: False 
-Frenando: False 
- Voy haciendo el caballito.
-</code></pre>
-<p>Modifiquemos el código para albergar la posibilidad de trabajar con furgonetas:</p>
-<pre><code class="language-python">class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-</code></pre>
-<p>Así,</p>
-<pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
-
-mi_furgo.arrancar()
-
-mi_furgo.estado()
-
-mi_furgo.carga(True)
-</code></pre>
-<pre><code class="language-bash">Marca: Renault 
-Modelo: Kangoo 
-En marcha: True 
-Acelerando: False 
-Frenando: False
-</code></pre>
-<p>Todo funciona de manera adecuada, con la salvedad de que no estamos viendo que la furgoneta está cargada. Como el método <code>carga()</code> devuelve una cadena de texto, añadiendo una función <code>print()</code> solucionamos el entuerto:</p>
-<pre><code class="language-python">mi_furgo = Furgoneta(&quot;Renault&quot;, &quot;Kangoo&quot;)
-
-mi_furgo.arrancar()
-
-mi_furgo.estado()
-
-print(mi_furgo.carga(True))
-</code></pre>
-<pre><code class="language-bash">Marca: Renault 
-Modelo: Kangoo 
-En marcha: True 
-Acelerando: False 
-Frenando: False
-La furgoneta está cargada.
-</code></pre>
-<p>Obviamente, una instrucción del tipo <code>mi_moto.carga()</code> arroja un error, ya que no hereda de <code>Furgoneta</code> la clase <code>Moto</code>, sino de <code>Vehiculo</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">caballito</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;Voy haciendo el caballito.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span><span class="p">)</span>
+</span></span></code></pre></div><p>De esta manera, la ejecución del siguiente bloque de código:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_moto</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">(</span><span class="s2">&#34;Honda&#34;</span><span class="p">,</span> <span class="s2">&#34;CBR&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span><span class="o">.</span><span class="n">caballito</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_moto</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><p>Produce como resultado ahora:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Honda 
+</span></span><span class="line"><span class="cl">Modelo: CBR 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False 
+</span></span><span class="line"><span class="cl"> Voy haciendo el caballito.
+</span></span></code></pre></div><p>Modifiquemos el código para albergar la posibilidad de trabajar con furgonetas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Furgoneta</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">carga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cargar</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span> <span class="o">=</span> <span class="n">cargar</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta no está cargada.&#34;</span>
+</span></span></code></pre></div><p>Así,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_furgo</span> <span class="o">=</span> <span class="n">Furgoneta</span><span class="p">(</span><span class="s2">&#34;Renault&#34;</span><span class="p">,</span> <span class="s2">&#34;Kangoo&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_furgo</span><span class="o">.</span><span class="n">arrancar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_furgo</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_furgo</span><span class="o">.</span><span class="n">carga</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Renault 
+</span></span><span class="line"><span class="cl">Modelo: Kangoo 
+</span></span><span class="line"><span class="cl">En marcha: True 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><p>Todo funciona de manera adecuada, con la salvedad de que no estamos viendo que la furgoneta está cargada. Como el método <code>carga()</code> devuelve una cadena de texto, añadiendo una función <code>print()</code> solucionamos el entuerto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_furgo</span> <span class="o">=</span> <span class="n">Furgoneta</span><span class="p">(</span><span class="s2">&#34;Renault&#34;</span><span class="p">,</span> <span class="s2">&#34;Kangoo&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_furgo</span><span class="o">.</span><span class="n">arrancar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_furgo</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_furgo</span><span class="o">.</span><span class="n">carga</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Renault 
+</span></span><span class="line"><span class="cl">Modelo: Kangoo 
+</span></span><span class="line"><span class="cl">En marcha: True 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span><span class="line"><span class="cl">La furgoneta está cargada.
+</span></span></code></pre></div><p>Obviamente, una instrucción del tipo <code>mi_moto.carga()</code> arroja un error, ya que no hereda de <code>Furgoneta</code> la clase <code>Moto</code>, sino de <code>Vehiculo</code>.</p>
 <p>Añademos soporte para vehículos electrónicos:</p>
-<pre><code class="language-python">class VehiculoElec():
-    def __init__(self):
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
-</code></pre>
-<p>Y, a continuación, generemos una clase para trabajar con biciletas eléctricas. Estas tienen marca, modelo, pueden arrancar, frenar&hellip; y a la vez también poseen autonomia y la posibilidad de cargar energía. <em>Python</em> nos permite heredar de dos o más clases, que se conoce como <strong>herencia múltiple</strong>:</p>
-<pre><code class="language-python">class BicicletaElec(VehiculoElec, Vehiculo):
-    pass
-</code></pre>
-<p>Hemos de tener en cuenta que cuando se da herencia múltiple, a la hora de tomar el constructor o los diferentes métodos, se da la preferencia según hayamos ordenado las clases padres de las que hereda. En este caso, no podemos iniciar una bicicleta eléctrica con marca y modelo, aprovechando así el constructor de la clase <code>Vehiculo</code>, ya que la clase <code>VehiculoElec</code> posee su propio constructor y este último tiene preferencia por haber colocado esta clase primero en la definición de <code>BicicletaElec</code>.</p>
-<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
-</code></pre>
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;prac30_poo7_3.py&quot;, line 58, in &lt;module&gt;
-    mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
-TypeError: __init__() takes 1 positional argument but 3 were given
-</code></pre>
-<p>No obstante, si intercambiamos el orden de las clases padre en la definición de <code>BicicletaElec</code>:</p>
-<pre><code class="language-python">class BicicletaElec(Vehiculo, VehiculoElec):
-    pass
-
-
-mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
-
-mi_bici.estado()
-</code></pre>
-<p>La ejecución ya no arroja errores, mostrando el siguiente resultado:</p>
-<pre><code class="language-bash">Marca: Orbea 
-Modelo: HCI30 
-En marcha: False 
-Acelerando: False 
-Frenando: False
-</code></pre>
-<h3 id="código-fuente-4">Código fuente</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">VehiculoElec</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">autonomia</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cargar_energia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargando</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span></code></pre></div><p>Y, a continuación, generemos una clase para trabajar con biciletas eléctricas. Estas tienen marca, modelo, pueden arrancar, frenar&hellip; y a la vez también poseen autonomia y la posibilidad de cargar energía. <em>Python</em> nos permite heredar de dos o más clases, que se conoce como <strong>herencia múltiple</strong>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BicicletaElec</span><span class="p">(</span><span class="n">VehiculoElec</span><span class="p">,</span> <span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><p>Hemos de tener en cuenta que cuando se da herencia múltiple, a la hora de tomar el constructor o los diferentes métodos, se da la preferencia según hayamos ordenado las clases padres de las que hereda. En este caso, no podemos iniciar una bicicleta eléctrica con marca y modelo, aprovechando así el constructor de la clase <code>Vehiculo</code>, ya que la clase <code>VehiculoElec</code> posee su propio constructor y este último tiene preferencia por haber colocado esta clase primero en la definición de <code>BicicletaElec</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_bici</span> <span class="o">=</span> <span class="n">BicicletaElec</span><span class="p">(</span><span class="s2">&#34;Orbea&#34;</span><span class="p">,</span> <span class="s2">&#34;HCI30&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac30_poo7_3.py&#34;</span>, line 58, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    <span class="nv">mi_bici</span> <span class="o">=</span> BicicletaElec<span class="o">(</span><span class="s2">&#34;Orbea&#34;</span>, <span class="s2">&#34;HCI30&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">TypeError: __init__<span class="o">()</span> takes <span class="m">1</span> positional argument but <span class="m">3</span> were given
+</span></span></code></pre></div><p>No obstante, si intercambiamos el orden de las clases padre en la definición de <code>BicicletaElec</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BicicletaElec</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">,</span> <span class="n">VehiculoElec</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_bici</span> <span class="o">=</span> <span class="n">BicicletaElec</span><span class="p">(</span><span class="s2">&#34;Orbea&#34;</span><span class="p">,</span> <span class="s2">&#34;HCI30&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_bici</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><p>La ejecución ya no arroja errores, mostrando el siguiente resultado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Orbea 
+</span></span><span class="line"><span class="cl">Modelo: HCI30 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><h3 id="código-fuente-4">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/30/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="programación-oo-viii">Programación OO VIII</h2>
 <h3 id="vídeo-7">Vídeo</h3>
@@ -1641,230 +1723,214 @@ Frenando: False
 <li><code>isinstance()</code>.</li>
 </ul>
 <p>Partimos del último ejemplo de la lección anterior:</p>
-<pre><code class="language-python">class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-
-
-class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-
-
-class VehiculoElec():
-    def __init__(self):
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
-
-
-class BicicletaElec(VehiculoElec, Vehiculo):
-    pass
-</code></pre>
-<p>Si queremos crear un objeto de la clase <code>BicicletaElec</code> que posea una marca y un modelo, tenemos dos opciones disponibles:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Furgoneta</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">carga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cargar</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span> <span class="o">=</span> <span class="n">cargar</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta no está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">caballito</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;Voy haciendo el caballito.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">VehiculoElec</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">autonomia</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cargar_energia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargando</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BicicletaElec</span><span class="p">(</span><span class="n">VehiculoElec</span><span class="p">,</span> <span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><p>Si queremos crear un objeto de la clase <code>BicicletaElec</code> que posea una marca y un modelo, tenemos dos opciones disponibles:</p>
 <ul>
 <li>Acudir al método <code>__init__()</code> de la clase <code>VehiculoElec</code> y copiar las líneas que nos interesen del método homónimo de la clase <code>Vehiculo</code>. No obstante, este enfoque es, cuanto menos, poco elegante.</li>
 <li>Utilizar la función <code>super()</code>, cuya utilidad reside en que procede a llamar al método de la clase padre.</li>
 </ul>
 <p>Veamos esta segunda aproximación con un ejemplo un tanto más sencillo:</p>
-<pre><code class="language-python">class Persona():
-    def __init__(self, nombre, edad, residencia):
-        self.nombre = nombre
-        self.edad = edad
-        self.residencia = residencia
-
-    def describir(self):
-        print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
-              self.residencia)
-
-
-class Empleado(Persona):
-    def __init__(self, salario, antiguedad):
-        self.salario = salario
-        self.antiguedad = antiguedad
-</code></pre>
-<p>Ahora podríamos comenzar a construir objetos de ambas clases:</p>
-<pre><code class="language-python">antonio = Persona(&quot;Antonio&quot;, 55, &quot;España&quot;)
-
-antonio.describir()
-</code></pre>
-<pre><code class="language-bash">Nombre: Antonio 
-Edad: 55 
-Residencia: España
-</code></pre>
-<p>Para constuir un objeto de la clase <code>Empleado</code>, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de <code>Persona</code>. No obstante, a la hora de emplear el método <code>describir()</code> encontraremos problemas tal y como están programadas ambas clases:</p>
-<pre><code class="language-python">juan = Empleado(1500, 15)
-
-juan.describir()
-</code></pre>
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;prac31_poo8_2.py&quot;, line 24, in &lt;module&gt;
-    juan.describir()
-  File &quot;prac31_poo8_2.py&quot;, line 8, in describir
-    print(&quot;Nombre:&quot;, self.nombre, &quot;\nEdad:&quot;, self.edad, &quot;\nResidencia:&quot;,
-AttributeError: 'Empleado' object has no attribute 'nombre'
-</code></pre>
-<p>Podemos reescribir el constructor de la clase <code>Empleado</code>, haciendo uso de la función <code>super()</code>, como sigue:</p>
-<pre><code class="language-python">class Empleado(Persona):
-    def __init__(self, salario, antiguedad):
-        super().__init__(&quot;Juan&quot;, 33, &quot;Italia&quot;)
-        self.salario = salario
-        self.antiguedad = antiguedad
-</code></pre>
-<p>De manera que ahora el código no arrojará error alguno:</p>
-<pre><code class="language-python">juan = Empleado(1500, 15)
-
-juan.describir()
-</code></pre>
-<pre><code class="language-bash">Nombre: Juan 
-Edad: 33 
-Residencia: Italia
-</code></pre>
-<p>No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:</p>
-<pre><code class="language-python">class Empleado(Persona):
-    def __init__(self, salario, antiguedad, nombre_empleado, edad_empleado,
-                 residencia_empleado):
-        super().__init__(nombre_empleado, edad_empleado, residencia_empleado)
-        self.salario = salario
-        self.antiguedad = antiguedad
-
-    def describir(self):
-        super().describir()
-        print(&quot;Salario:&quot;, self.salario, &quot;\nAntigüedad:&quot;, self.antiguedad)
-</code></pre>
-<p>De paso, hemos mejorado también el método <code>describir()</code>, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,</p>
-<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
-
-juan.describir()
-</code></pre>
-<pre><code class="language-bash">Nombre: Juan 
-Edad: 33 
-Residencia: Italia
-Salario: 1500 
-Antigüedad: 15
-</code></pre>
-<p>La función <code>isinstance()</code> nos informa si un objeto es instancia de una clase determinada:</p>
-<pre><code class="language-python">juan = Empleado(1500, 15, &quot;Juan&quot;, 33, &quot;Italia&quot;)
-
-juan.describir()
-
-print(isinstance(juan, Persona))  # True
-print(isinstance(juan, Empleado))  # True
-
-marco = Persona(&quot;Marco&quot;, 51, &quot;Francia&quot;)
-
-print(isinstance(marco, Persona))  # True
-print(isinstance(marco, Empleado))  # False
-</code></pre>
-<p>Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.</p>
-<pre><code class="language-python">class Vehiculo():
-    def __init__(self, marca, modelo):
-        self.marca = marca
-        self.modelo = modelo
-        self.enmarcha = False
-        self.acelera = False
-        self.frena = False
-
-    def arrancar(self):
-        self.enmarcha = True
-
-    def acelerar(self):
-        self.acelera = True
-
-    def frenar(self):
-        self.frena = True
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena)
-
-
-class Furgoneta(Vehiculo):
-    def carga(self, cargar):
-        self.cargado = cargar
-        if self.cargado:
-            return &quot;La furgoneta está cargada.&quot;
-        else:
-            return &quot;La furgoneta no está cargada.&quot;
-
-
-class Moto(Vehiculo):
-    hcaballito = &quot;&quot;
-
-    def caballito(self):
-        self.hcaballito = &quot;Voy haciendo el caballito.&quot;
-
-    def estado(self):
-        print(&quot;Marca:&quot;, self.marca, &quot;\nModelo:&quot;, self.modelo, &quot;\nEn marcha:&quot;,
-              self.enmarcha, &quot;\nAcelerando:&quot;, self.acelera, &quot;\nFrenando:&quot;,
-              self.frena, &quot;\n&quot;, self.hcaballito)
-
-
-class VehiculoElec(Vehiculo):
-    def __init__(self, marca, modelo):
-        super().__init__(marca, modelo)
-        self.autonomia = 100
-
-    def cargar_energia(self):
-        self.cargando = True
-
-
-class BicicletaElec(VehiculoElec, Vehiculo):
-    pass
-</code></pre>
-<p>Notemos que:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Persona</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">edad</span><span class="p">,</span> <span class="n">residencia</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">edad</span> <span class="o">=</span> <span class="n">edad</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">residencia</span> <span class="o">=</span> <span class="n">residencia</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">describir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nombre:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Edad:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Residencia:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">residencia</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">(</span><span class="n">Persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">salario</span><span class="p">,</span> <span class="n">antiguedad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">antiguedad</span> <span class="o">=</span> <span class="n">antiguedad</span>
+</span></span></code></pre></div><p>Ahora podríamos comenzar a construir objetos de ambas clases:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">antonio</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="s2">&#34;España&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">antonio</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Nombre: Antonio 
+</span></span><span class="line"><span class="cl">Edad: <span class="m">55</span> 
+</span></span><span class="line"><span class="cl">Residencia: España
+</span></span></code></pre></div><p>Para constuir un objeto de la clase <code>Empleado</code>, hemos de tener en cuenta que tomará como argumentos los parámetros declarados en dicha clase, y no los de <code>Persona</code>. No obstante, a la hora de emplear el método <code>describir()</code> encontraremos problemas tal y como están programadas ambas clases:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">juan</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">juan</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac31_poo8_2.py&#34;</span>, line 24, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    juan.describir<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac31_poo8_2.py&#34;</span>, line 8, in describir
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span><span class="s2">&#34;Nombre:&#34;</span>, self.nombre, <span class="s2">&#34;\nEdad:&#34;</span>, self.edad, <span class="s2">&#34;\nResidencia:&#34;</span>,
+</span></span><span class="line"><span class="cl">AttributeError: <span class="s1">&#39;Empleado&#39;</span> object has no attribute <span class="s1">&#39;nombre&#39;</span>
+</span></span></code></pre></div><p>Podemos reescribir el constructor de la clase <code>Empleado</code>, haciendo uso de la función <code>super()</code>, como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">(</span><span class="n">Persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">salario</span><span class="p">,</span> <span class="n">antiguedad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="s2">&#34;Italia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">antiguedad</span> <span class="o">=</span> <span class="n">antiguedad</span>
+</span></span></code></pre></div><p>De manera que ahora el código no arrojará error alguno:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">juan</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">juan</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Nombre: Juan 
+</span></span><span class="line"><span class="cl">Edad: <span class="m">33</span> 
+</span></span><span class="line"><span class="cl">Residencia: Italia
+</span></span></code></pre></div><p>No obstante, programado así, todos nuestros empleados se llamarían Juan, tendrían 33 años y serían italianos. Veamos cómo generalizar el funcionamiento de la anterior clase:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">(</span><span class="n">Persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">salario</span><span class="p">,</span> <span class="n">antiguedad</span><span class="p">,</span> <span class="n">nombre_empleado</span><span class="p">,</span> <span class="n">edad_empleado</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">residencia_empleado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">nombre_empleado</span><span class="p">,</span> <span class="n">edad_empleado</span><span class="p">,</span> <span class="n">residencia_empleado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">antiguedad</span> <span class="o">=</span> <span class="n">antiguedad</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">describir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">salario</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Antigüedad:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">antiguedad</span><span class="p">)</span>
+</span></span></code></pre></div><p>De paso, hemos mejorado también el método <code>describir()</code>, que procede a llamar al de la clase padre y, además, añade la información correspondiente al salario y a la antigüedad. De este modo,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">juan</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="s2">&#34;Italia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">juan</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Nombre: Juan 
+</span></span><span class="line"><span class="cl">Edad: <span class="m">33</span> 
+</span></span><span class="line"><span class="cl">Residencia: Italia
+</span></span><span class="line"><span class="cl">Salario: <span class="m">1500</span> 
+</span></span><span class="line"><span class="cl">Antigüedad: <span class="m">15</span>
+</span></span></code></pre></div><p>La función <code>isinstance()</code> nos informa si un objeto es instancia de una clase determinada:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">juan</span> <span class="o">=</span> <span class="n">Empleado</span><span class="p">(</span><span class="mi">1500</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="s2">&#34;Italia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">juan</span><span class="o">.</span><span class="n">describir</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">juan</span><span class="p">,</span> <span class="n">Persona</span><span class="p">))</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">juan</span><span class="p">,</span> <span class="n">Empleado</span><span class="p">))</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">marco</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Marco&#34;</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="s2">&#34;Francia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">marco</span><span class="p">,</span> <span class="n">Persona</span><span class="p">))</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">marco</span><span class="p">,</span> <span class="n">Empleado</span><span class="p">))</span>  <span class="c1"># False</span>
+</span></span></code></pre></div><p>Con todo, modifiquemos el ejemplo inicial para permitir que una bicicleta eléctrica admita marca y modelo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Furgoneta</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">carga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cargar</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span> <span class="o">=</span> <span class="n">cargar</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta no está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">caballito</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;Voy haciendo el caballito.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">VehiculoElec</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">autonomia</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cargar_energia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargando</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">BicicletaElec</span><span class="p">(</span><span class="n">VehiculoElec</span><span class="p">,</span> <span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><p>Notemos que:</p>
 <ul>
 <li>Hemos utilizado la función <code>super()</code> en el método <code>__init__()</code> de <code>VehiculoElec</code>.</li>
 <li>Hemos declarado que la clase <code>VehiculoElec</code> hereda de <code>Vehiculo</code>.</li>
 </ul>
 <p>Así,</p>
-<pre><code class="language-python">mi_bici = BicicletaElec(&quot;Orbea&quot;, &quot;HCI30&quot;)
-
-mi_bici.estado()
-</code></pre>
-<pre><code class="language-bash">Marca: Orbea 
-Modelo: HCI30 
-En marcha: False 
-Acelerando: False 
-Frenando: False
-</code></pre>
-<h3 id="código-fuente-5">Código fuente</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_bici</span> <span class="o">=</span> <span class="n">BicicletaElec</span><span class="p">(</span><span class="s2">&#34;Orbea&#34;</span><span class="p">,</span> <span class="s2">&#34;HCI30&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_bici</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Orbea 
+</span></span><span class="line"><span class="cl">Modelo: HCI30 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><h3 id="código-fuente-5">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/31/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="programación-oo-ix">Programación OO IX</h2>
 <h3 id="vídeo-8">Vídeo</h3>
@@ -1877,61 +1943,55 @@ Frenando: False
 <p>En esta lección, abordaremos el concepto de <strong>polimorfismo</strong>. Un objeto puede cambiar de forma dependiendo del contexto en el que se utilice y, por tanto, modificar tanto sus propiedades como sus comportamientos asociados.</p>
 <p>Como <em>Python</em> es un lenguaje de tipado dinámico, esta característica es sencilla de utilizar.</p>
 <p>Veamos un ejemplo:</p>
-<pre><code class="language-python">class Coche():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando cuatro ruedas.&quot;)
-
-
-class Moto():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando dos ruedas.&quot;)
-
-
-class Camion():
-    def desplazamiento(self):
-        print(&quot;Me desplazo utilizando seis ruedas.&quot;)
-</code></pre>
-<p>Así, si ahora tecleamos:</p>
-<pre><code class="language-python">mi_vehiculo = Moto()
-
-mi_vehiculo.desplazamiento()
-
-mi_vehiculo2 = Coche()
-
-mi_vehiculo2.desplazamiento()
-
-mi_vehiculo3 = Camion()
-
-mi_vehiculo3.desplazamiento()
-</code></pre>
-<pre><code class="language-bash">Me desplazo utilizando dos ruedas.
-Me desplazo utilizando cuatro ruedas.
-Me desplazo utilizando seis ruedas.
-</code></pre>
-<p>Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Coche</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">desplazamiento</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Me desplazo utilizando cuatro ruedas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">desplazamiento</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Me desplazo utilizando dos ruedas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Camion</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">desplazamiento</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Me desplazo utilizando seis ruedas.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Así, si ahora tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_vehiculo</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo</span><span class="o">.</span><span class="n">desplazamiento</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo2</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo2</span><span class="o">.</span><span class="n">desplazamiento</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo3</span> <span class="o">=</span> <span class="n">Camion</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo3</span><span class="o">.</span><span class="n">desplazamiento</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Me desplazo utilizando dos ruedas.
+</span></span><span class="line"><span class="cl">Me desplazo utilizando cuatro ruedas.
+</span></span><span class="line"><span class="cl">Me desplazo utilizando seis ruedas.
+</span></span></code></pre></div><p>Si tuviésemos cientos de vehículos y quisiéramos utilizar sus comportamientos, habríamos de seguir el patrón esbozado arriba.</p>
 <p>No obstante, nos podemos aprovechar de la magia del polimorfismo creando una función como se muestra a continuación:</p>
-<pre><code class="language-python">def desplazamiento_vehiculo(vehiculo):
-    vehiculo.desplazamiento()
-</code></pre>
-<p>Y como el objeto <code>vehiculo</code> posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), <em>Python</em> en todo momento sabrá a qué método <code>desplazamiento()</code> acudir en cada instante.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">desplazamiento_vehiculo</span><span class="p">(</span><span class="n">vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vehiculo</span><span class="o">.</span><span class="n">desplazamiento</span><span class="p">()</span>
+</span></span></code></pre></div><p>Y como el objeto <code>vehiculo</code> posee la capacidad de adquirir el rol de cualquiera de los vehículos programados arriba (coche, moto o camión), <em>Python</em> en todo momento sabrá a qué método <code>desplazamiento()</code> acudir en cada instante.</p>
 <p>Así, si escribimos:</p>
-<pre><code class="language-python">mi_vehiculo = Camion()
-
-desplazamiento_vehiculo(mi_vehiculo)
-
-mi_vehiculo = Coche()
-
-desplazamiento_vehiculo(mi_vehiculo)
-
-mi_vehiculo = Moto()
-
-desplazamiento_vehiculo(mi_vehiculo)
-</code></pre>
-<pre><code class="language-bash">Me desplazo utilizando seis ruedas.
-Me desplazo utilizando cuatro ruedas.
-Me desplazo utilizando dos ruedas.
-</code></pre>
-<h3 id="código-fuente-6">Código fuente</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_vehiculo</span> <span class="o">=</span> <span class="n">Camion</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">desplazamiento_vehiculo</span><span class="p">(</span><span class="n">mi_vehiculo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">desplazamiento_vehiculo</span><span class="p">(</span><span class="n">mi_vehiculo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_vehiculo</span> <span class="o">=</span> <span class="n">Moto</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">desplazamiento_vehiculo</span><span class="p">(</span><span class="n">mi_vehiculo</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Me desplazo utilizando seis ruedas.
+</span></span><span class="line"><span class="cl">Me desplazo utilizando cuatro ruedas.
+</span></span><span class="line"><span class="cl">Me desplazo utilizando dos ruedas.
+</span></span></code></pre></div><h3 id="código-fuente-6">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/32/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 
           </div>
@@ -1954,7 +2014,7 @@ Me desplazo utilizando dos ruedas.
         </div>
 
         <div class="body-footer">
-          <p>Última actualización el May 8, 2019</p>
+          <p>Última actualización el 05/08/19</p>
 
           
 
@@ -1962,6 +2022,14 @@ Me desplazo utilizando dos ruedas.
 
           
 
+
+  
+  
+  
+
+  
+
+  
 
 
 
@@ -1992,6 +2060,15 @@ Me desplazo utilizando dos ruedas.
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -2002,7 +2079,7 @@ Me desplazo utilizando dos ruedas.
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -2019,7 +2096,117 @@ Me desplazo utilizando dos ruedas.
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/bryanbraun/anchorjs@4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":false}</script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -2045,71 +2232,7 @@ Me desplazo utilizando dos ruedas.
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
-    <script>
-      anchors.add();
-    </script>
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

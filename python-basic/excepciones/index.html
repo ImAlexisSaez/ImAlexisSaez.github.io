@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/python-basic/excepciones/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -286,7 +337,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/python-basic/excepciones/" />
@@ -326,10 +386,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -347,180 +444,207 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
     
+    
+    
 
+    
 
 
 
@@ -540,6 +664,12 @@
     </div>
   </button>
 
+  
+  <button class="form-control sidebar-search js-search d-none d-md-flex">
+    <i class="fas fa-search pr-2"></i>
+    <span class="sidebar-search-text">Buscar...</span>
+    <span class="sidebar-search-shortcut">/</span>
+  </button>
   
 </form>
 
@@ -886,121 +1016,113 @@
 <h3 id="notas-personales">Notas personales</h3>
 <p>Una <strong>excepción</strong> es un error que acontece durante la ejecución de un programa. La sintaxis del código es correcta, pero, en el momento de ejecutarse el algoritmo, sucede &lsquo;&lsquo;algo inesperado&rsquo;&rsquo;.</p>
 <p>Para ilustrar la aparición de excepciones, trabajemos con el siguiente código:</p>
-<pre><code class="language-python">def suma(num1, num2):
-    return num1 + num2
-
-
-def resta(num1, num2):
-    return num1 - num2
-
-
-def multiplica(num1, num2):
-    return num1 * num2
-
-
-def divide(num1, num2):
-    return num1 / num2
-
-
-op1 = (int(input(&quot;Introduce el primer número: &quot;)))
-op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-
-print(&quot;Operaciones disponibles: &quot;)
-print(&quot;- Suma&quot;)
-print(&quot;- Resta&quot;)
-print(&quot;- Multiplica&quot;)
-print(&quot;- Divide&quot;)
-
-operacion = input(&quot;Introduce la operación a realizar: &quot;)
-
-if operacion == &quot;Suma&quot;:
-    print(suma(op1, op2))
-elif operacion == &quot;Resta&quot;:
-    print(resta(op1, op2))
-elif operacion == &quot;Multiplica&quot;:
-    print(multiplica(op1, op2))
-elif operacion == &quot;Divide&quot;:
-    print(divide(op1, op2))
-else:
-    print(&quot;Operación no contemplada.&quot;)
-
-print(&quot;Operación ejecutada. Continuación de ejecución del programa &quot;)
-</code></pre>
-<p>Un posible ejemplo de ejecución sería:</p>
-<pre><code class="language-bash">Introduce el primer número: 16
-Introduce el segundo número: 4
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Multiplica
-64
-Operación ejecutada. Continuación de ejecución del programa
-</code></pre>
-<p>Sin embargo, si por accidente intentamos realizar una división entre 0:</p>
-<pre><code class="language-bash">Introduce el primer número: 2
-Introduce el segundo número: 0
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Divide
-Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 35, in &lt;module&gt;
-    print(divide(op1, op2))
-  File &quot;prac21_excepciones1_1.py&quot;, line 14, in divide
-    return num1 / num2
-ZeroDivisionError: division by zero
-</code></pre>
-<p>De forma que el código se detiene en el preciso instante de la llamada a la función <code>divide()</code> y deja de ejecutar las restantes líneas (la instrucción <code>print()</code> final en esta ocasión), cuya importancia puede ser vital para nosotros.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplica</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operaciones disponibles: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Suma&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Resta&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Multiplica&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Divide&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">operacion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la operación a realizar: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Suma&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">suma</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Resta&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">resta</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Multiplica&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">multiplica</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Divide&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operación no contemplada.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operación ejecutada. Continuación de ejecución del programa &#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Un posible ejemplo de ejecución sería:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">16</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">Operaciones disponibles: 
+</span></span><span class="line"><span class="cl">- Suma
+</span></span><span class="line"><span class="cl">- Resta
+</span></span><span class="line"><span class="cl">- Multiplica
+</span></span><span class="line"><span class="cl">- Divide
+</span></span><span class="line"><span class="cl">Introduce la operación a realizar: Multiplica
+</span></span><span class="line"><span class="cl"><span class="m">64</span>
+</span></span><span class="line"><span class="cl">Operación ejecutada. Continuación de ejecución del programa
+</span></span></code></pre></div><p>Sin embargo, si por accidente intentamos realizar una división entre 0:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Operaciones disponibles: 
+</span></span><span class="line"><span class="cl">- Suma
+</span></span><span class="line"><span class="cl">- Resta
+</span></span><span class="line"><span class="cl">- Multiplica
+</span></span><span class="line"><span class="cl">- Divide
+</span></span><span class="line"><span class="cl">Introduce la operación a realizar: Divide
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac21_excepciones1_1.py&#34;</span>, line 35, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>divide<span class="o">(</span>op1, op2<span class="o">))</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac21_excepciones1_1.py&#34;</span>, line 14, in divide
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> num1 / num2
+</span></span><span class="line"><span class="cl">ZeroDivisionError: division by zero
+</span></span></code></pre></div><p>De forma que el código se detiene en el preciso instante de la llamada a la función <code>divide()</code> y deja de ejecutar las restantes líneas (la instrucción <code>print()</code> final en esta ocasión), cuya importancia puede ser vital para nosotros.</p>
 <p>Este tipo de situaciones se aborda mediante una <strong>captura</strong> o <strong>control de excepción</strong>. La idea es intentar realizar un bloque de código y, en el caso de no poderse llevar a cabo dicha acción, que al menos el resto de programa siga adelante.</p>
 <p>Si nos fijamos en la <strong>pila de llamadas</strong> que nos muestran antes de arrojar el error:</p>
-<pre><code class="language-bash">Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 35, in &lt;module&gt;
-    print(divide(op1, op2))
-  File &quot;prac21_excepciones1_1.py&quot;, line 14, in divide
-    return num1 / num2
-ZeroDivisionError: division by zero
-</code></pre>
-<p>Leyendo de abajo hacia arriba, la instrucción <code>return num1 / num2</code>, ubicada en la línea 14 del código, arroja un error de división por cero (<code>ZeroDivisionError</code>). Para controlar esta circunstancia, usaremos un bloque de tipo:</p>
-<pre><code class="language-python">try:
-    instrucciones
-except error:
-    instrucciones
-</code></pre>
-<p>Así, nuestra función <code>divide()</code> la podríamos reescribir como sigue:</p>
-<pre><code class="language-python">def divide(num1, num2):
-    try:
-        return num1 / num2
-    except ZeroDivisionError:
-        print(&quot;No se puede dividir entre 0.&quot;)
-        return &quot;Operación errónea.&quot;
-</code></pre>
-<p>De manera que, replicando el anterior conflictivo ejemplo:</p>
-<pre><code class="language-bash">Introduce el primer número: 2
-Introduce el segundo número: 0
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Divide
-No se puede dividir entre 0.
-Operación errónea.
-Operación ejecutada. Continuación de ejecución del programa 
-</code></pre>
-<p>Apreciamos que la última línea de código, aquel <code>print()</code> final, ahora efectivamente sí llega a ejecutarse.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac21_excepciones1_1.py&#34;</span>, line 35, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>divide<span class="o">(</span>op1, op2<span class="o">))</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac21_excepciones1_1.py&#34;</span>, line 14, in divide
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> num1 / num2
+</span></span><span class="line"><span class="cl">ZeroDivisionError: division by zero
+</span></span></code></pre></div><p>Leyendo de abajo hacia arriba, la instrucción <code>return num1 / num2</code>, ubicada en la línea 14 del código, arroja un error de división por cero (<code>ZeroDivisionError</code>). Para controlar esta circunstancia, usaremos un bloque de tipo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="n">error</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>Así, nuestra función <code>divide()</code> la podríamos reescribir como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No se puede dividir entre 0.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Operación errónea.&#34;</span>
+</span></span></code></pre></div><p>De manera que, replicando el anterior conflictivo ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Operaciones disponibles: 
+</span></span><span class="line"><span class="cl">- Suma
+</span></span><span class="line"><span class="cl">- Resta
+</span></span><span class="line"><span class="cl">- Multiplica
+</span></span><span class="line"><span class="cl">- Divide
+</span></span><span class="line"><span class="cl">Introduce la operación a realizar: Divide
+</span></span><span class="line"><span class="cl">No se puede dividir entre 0.
+</span></span><span class="line"><span class="cl">Operación errónea.
+</span></span><span class="line"><span class="cl">Operación ejecutada. Continuación de ejecución del programa 
+</span></span></code></pre></div><p>Apreciamos que la última línea de código, aquel <code>print()</code> final, ahora efectivamente sí llega a ejecutarse.</p>
 <p>Por desgracia, no es el único punto conflictivo que presenta el código mostrado. Por ejemplo, ¿qué sucede si introducimos una cadena de texto en lugar de un número?</p>
-<pre><code class="language-bash">Introduce el primer número: 3
-Introduce el segundo número: a
-Traceback (most recent call last):
-  File &quot;prac21_excepciones1_1.py&quot;, line 22, in &lt;module&gt;
-    op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-ValueError: invalid literal for int() with base 10: 'a'
-</code></pre>
-<p><em>Python</em> arroja un error de tipo <code>ValueError</code> que también habríamos de controlar a través de un bloque <code>try</code> - <code>except</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">3</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: a
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac21_excepciones1_1.py&#34;</span>, line 22, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    <span class="nv">op2</span> <span class="o">=</span> <span class="o">(</span>int<span class="o">(</span>input<span class="o">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="o">)))</span>
+</span></span><span class="line"><span class="cl">ValueError: invalid literal <span class="k">for</span> int<span class="o">()</span> with base 10: <span class="s1">&#39;a&#39;</span>
+</span></span></code></pre></div><p><em>Python</em> arroja un error de tipo <code>ValueError</code> que también habríamos de controlar a través de un bloque <code>try</code> - <code>except</code>.</p>
 <h3 id="código-fuente">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/21/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 <h2 id="excepciones-ii">Excepciones II</h2>
@@ -1012,179 +1134,167 @@ ValueError: invalid literal for int() with base 10: 'a'
 
 <h3 id="notas-personales-1">Notas personales</h3>
 <p>Recordemos el código final de la lección anterior:</p>
-<pre><code class="language-python">def suma(num1, num2):
-    return num1 + num2
-
-
-def resta(num1, num2):
-    return num1 - num2
-
-
-def multiplica(num1, num2):
-    return num1 * num2
-
-
-def divide(num1, num2):
-    try:
-        return num1 / num2
-    except ZeroDivisionError:
-        print(&quot;No se puede dividir entre 0.&quot;)
-        return &quot;Operación errónea.&quot;
-
-
-op1 = (int(input(&quot;Introduce el primer número: &quot;)))
-op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-
-print(&quot;Operaciones disponibles: &quot;)
-print(&quot;- Suma&quot;)
-print(&quot;- Resta&quot;)
-print(&quot;- Multiplica&quot;)
-print(&quot;- Divide&quot;)
-
-operacion = input(&quot;Introduce la operación a realizar: &quot;)
-
-if operacion == &quot;Suma&quot;:
-    print(suma(op1, op2))
-elif operacion == &quot;Resta&quot;:
-    print(resta(op1, op2))
-elif operacion == &quot;Multiplica&quot;:
-    print(multiplica(op1, op2))
-elif operacion == &quot;Divide&quot;:
-    print(divide(op1, op2))
-else:
-    print(&quot;Operación no contemplada.&quot;)
-
-print(&quot;Operación ejecutada. Continuación de ejecución del programa.&quot;)
-</code></pre>
-<p>No obstante, este código es susceptible de presentar más errores. Por ejemplo, introduciendo una cadena de texto en lugar de un número cuando nos solicitan los datos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">-</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplica</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num1</span> <span class="o">*</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num1</span> <span class="o">/</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No se puede dividir entre 0.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Operación errónea.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operaciones disponibles: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Suma&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Resta&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Multiplica&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Divide&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">operacion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la operación a realizar: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Suma&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">suma</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Resta&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">resta</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Multiplica&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">multiplica</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">operacion</span> <span class="o">==</span> <span class="s2">&#34;Divide&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">divide</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operación no contemplada.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Operación ejecutada. Continuación de ejecución del programa.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>No obstante, este código es susceptible de presentar más errores. Por ejemplo, introduciendo una cadena de texto en lugar de un número cuando nos solicitan los datos.</p>
 <p>Para solucionar ese detalle, podemos reescribir el correspondiente bloque de código como sigue:</p>
-<pre><code class="language-python">try:
-    op1 = (int(input(&quot;Introduce el primer número: &quot;)))
-    op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-except ValueError:
-    print(&quot;Los valores introducidos no son correctos.&quot;)
-</code></pre>
-<p>El programa así modificado, presenta errores de lógica ahora, ya que si introducimos una cadena de texto como dato, <em>Python</em> no arroja error, pero continua la ejecución del programa y al intentar llevar a cabo cualquier operación de las disponibles, lanza un error de tipo <code>NameError</code>:</p>
-<pre><code class="language-bash">Introduce el primer número: 5
-Introduce el segundo número: a
-Los valores introducidos no son correctos.
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Suma
-Traceback (most recent call last):
-  File &quot;prac22_excepciones2_1.py&quot;, line 36, in &lt;module&gt;
-    print(suma(op1, op2))
-NameError: name 'op2' is not defined
-</code></pre>
-<p>Una manera de abordar esta problemática es mediante un bucle infinito de tipo <code>while</code>, forzando que el usuario introduzca valores admisibles para continuar la ejecución del programa:</p>
-<pre><code class="language-python">while True:
-    try:
-        op1 = (int(input(&quot;Introduce el primer número: &quot;)))
-        op2 = (int(input(&quot;Introduce el segundo número: &quot;)))
-        break
-    except ValueError:
-        print(&quot;Los valores introducidos no son correctos. Inténtalo de nuevo.&quot;)
-</code></pre>
-<p>Siendo una posible ejecución del programa la que se muestra acto seguido:</p>
-<pre><code class="language-bash">Introduce el primer número: 5
-Introduce el segundo número: a
-Los valores introducidos no son correctos. Inténtalo de nuevo.
-Introduce el primer número: ag
-Los valores introducidos no son correctos. Inténtalo de nuevo.
-Introduce el primer número: 5
-Introduce el segundo número: 0
-Operaciones disponibles: 
-- Suma
-- Resta
-- Multiplica
-- Divide
-Introduce la operación a realizar: Suma
-5
-Operación ejecutada. Continuación de ejecución del programa.
-</code></pre>
-<p>Elaboremos ahora una función <code>divide()</code> diferente a la vista en el ejemplo anterior:</p>
-<pre><code class="language-python">def divide():
-    op1 = (float(input(&quot;Dividendo: &quot;)))
-    op2 = (float(input(&quot;Divisor: &quot;)))
-    print(&quot;La división resulta: &quot; + str(op1 / op2))
-    print(&quot;Cálculo finalizado.&quot;)
-
-
-divide()
-</code></pre>
-<p>Como antes, el programa arroja excepciones si intentamos dividir por cero o introducimos cadenas de texto como datos. Capturémoslas de manera consecutiva:</p>
-<pre><code class="language-python">def divide():
-    try:
-        op1 = (float(input(&quot;Dividendo: &quot;)))
-        op2 = (float(input(&quot;Divisor: &quot;)))
-        print(&quot;La división resulta: &quot; + str(op1 / op2))
-    except ValueError:
-        print(&quot;El valor introducido es erróneo.&quot;)
-    except ZeroDivisionError:
-        print(&quot;No se puede dividir entre cero.&quot;)
-    print(&quot;Cálculo finalizado.&quot;)
-
-
-divide()
-</code></pre>
-<p>Existe una alternativa genérica, aunque poco recomendable, que consiste en teclear <code>except:</code> sin más e imprimir un mensaje neutro de error. Captura una excepción de forma general, pero no informa sobre lo acontencido.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Los valores introducidos no son correctos.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>El programa así modificado, presenta errores de lógica ahora, ya que si introducimos una cadena de texto como dato, <em>Python</em> no arroja error, pero continua la ejecución del programa y al intentar llevar a cabo cualquier operación de las disponibles, lanza un error de tipo <code>NameError</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: a
+</span></span><span class="line"><span class="cl">Los valores introducidos no son correctos.
+</span></span><span class="line"><span class="cl">Operaciones disponibles: 
+</span></span><span class="line"><span class="cl">- Suma
+</span></span><span class="line"><span class="cl">- Resta
+</span></span><span class="line"><span class="cl">- Multiplica
+</span></span><span class="line"><span class="cl">- Divide
+</span></span><span class="line"><span class="cl">Introduce la operación a realizar: Suma
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac22_excepciones2_1.py&#34;</span>, line 36, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>suma<span class="o">(</span>op1, op2<span class="o">))</span>
+</span></span><span class="line"><span class="cl">NameError: name <span class="s1">&#39;op2&#39;</span> is not defined
+</span></span></code></pre></div><p>Una manera de abordar esta problemática es mediante un bucle infinito de tipo <code>while</code>, forzando que el usuario introduzca valores admisibles para continuar la ejecución del programa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Los valores introducidos no son correctos. Inténtalo de nuevo.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Siendo una posible ejecución del programa la que se muestra acto seguido:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce el primer número: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: a
+</span></span><span class="line"><span class="cl">Los valores introducidos no son correctos. Inténtalo de nuevo.
+</span></span><span class="line"><span class="cl">Introduce el primer número: ag
+</span></span><span class="line"><span class="cl">Los valores introducidos no son correctos. Inténtalo de nuevo.
+</span></span><span class="line"><span class="cl">Introduce el primer número: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">Introduce el segundo número: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Operaciones disponibles: 
+</span></span><span class="line"><span class="cl">- Suma
+</span></span><span class="line"><span class="cl">- Resta
+</span></span><span class="line"><span class="cl">- Multiplica
+</span></span><span class="line"><span class="cl">- Divide
+</span></span><span class="line"><span class="cl">Introduce la operación a realizar: Suma
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl">Operación ejecutada. Continuación de ejecución del programa.
+</span></span></code></pre></div><p>Elaboremos ahora una función <code>divide()</code> diferente a la vista en el ejemplo anterior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Dividendo: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Divisor: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La división resulta: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">op1</span> <span class="o">/</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cálculo finalizado.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">()</span>
+</span></span></code></pre></div><p>Como antes, el programa arroja excepciones si intentamos dividir por cero o introducimos cadenas de texto como datos. Capturémoslas de manera consecutiva:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Dividendo: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Divisor: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La división resulta: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">op1</span> <span class="o">/</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El valor introducido es erróneo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No se puede dividir entre cero.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cálculo finalizado.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">()</span>
+</span></span></code></pre></div><p>Existe una alternativa genérica, aunque poco recomendable, que consiste en teclear <code>except:</code> sin más e imprimir un mensaje neutro de error. Captura una excepción de forma general, pero no informa sobre lo acontencido.</p>
 <p>Por otro lado, cuando queremos que un código se ejecute siempre, existe la posibilidad de ubicarlo en el interior de una claúsula <code>finally</code>:</p>
-<pre><code class="language-python">def divide():
-    try:
-        op1 = (float(input(&quot;Dividendo: &quot;)))
-        op2 = (float(input(&quot;Divisor: &quot;)))
-        print(&quot;La división resulta: &quot; + str(op1 / op2))
-    except ValueError:
-        print(&quot;El valor introducido es erróneo.&quot;)
-    except ZeroDivisionError:
-        print(&quot;No se puede dividir entre cero.&quot;)
-    finally:
-        print(&quot;Cálculo finalizado.&quot;)
-
-
-divide()
-</code></pre>
-<p>Además, es posible también programar utilizando la combinación <code>try</code> - <code>finally</code>:</p>
-<pre><code class="language-python">def divide():
-    try:
-        op1 = (float(input(&quot;Dividendo: &quot;)))
-        op2 = (float(input(&quot;Divisor: &quot;)))
-        print(&quot;La división resulta: &quot; + str(op1 / op2))
-    finally:
-        print(&quot;Cálculo finalizado.&quot;)
-
-
-divide()
-</code></pre>
-<p>Veamos algunas posibles ejecuciones de este último bloque de código:</p>
-<pre><code class="language-bash">Dividendo: 4
-Divisor: 2
-La división resulta: 2.0
-Cálculo finalizado.
-</code></pre>
-<pre><code class="language-bash">Dividendo: aaa
-Cálculo finalizado.
-Traceback (most recent call last):
-  File &quot;prac22_excepciones2_3.py&quot;, line 10, in &lt;module&gt;
-    divide()
-  File &quot;prac22_excepciones2_3.py&quot;, line 3, in divide
-    op1 = (float(input(&quot;Dividendo: &quot;)))
-ValueError: could not convert string to float: 'aaa'
-</code></pre>
-<pre><code class="language-bash">Dividendo: 5
-Divisor: 0
-Cálculo finalizado.
-Traceback (most recent call last):
-  File &quot;prac22_excepciones2_3.py&quot;, line 10, in &lt;module&gt;
-    divide()
-  File &quot;prac22_excepciones2_3.py&quot;, line 5, in divide
-    print(&quot;La división resulta: &quot; + str(op1 / op2))
-ZeroDivisionError: float division by zero
-</code></pre>
-<p>La cadena de texto <code>&quot;Cálculo finalizado&quot;</code> se muestra por pantalla, independientemente de la presencia o no de excepciones durante la ejecución del algoritmo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Dividendo: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Divisor: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La división resulta: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">op1</span> <span class="o">/</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El valor introducido es erróneo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No se puede dividir entre cero.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cálculo finalizado.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">()</span>
+</span></span></code></pre></div><p>Además, es posible también programar utilizando la combinación <code>try</code> - <code>finally</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">divide</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op1</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Dividendo: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">op2</span> <span class="o">=</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Divisor: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La división resulta: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">op1</span> <span class="o">/</span> <span class="n">op2</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cálculo finalizado.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">divide</span><span class="p">()</span>
+</span></span></code></pre></div><p>Veamos algunas posibles ejecuciones de este último bloque de código:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Dividendo: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">Divisor: <span class="m">2</span>
+</span></span><span class="line"><span class="cl">La división resulta: 2.0
+</span></span><span class="line"><span class="cl">Cálculo finalizado.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Dividendo: aaa
+</span></span><span class="line"><span class="cl">Cálculo finalizado.
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac22_excepciones2_3.py&#34;</span>, line 10, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    divide<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac22_excepciones2_3.py&#34;</span>, line 3, in divide
+</span></span><span class="line"><span class="cl">    <span class="nv">op1</span> <span class="o">=</span> <span class="o">(</span>float<span class="o">(</span>input<span class="o">(</span><span class="s2">&#34;Dividendo: &#34;</span><span class="o">)))</span>
+</span></span><span class="line"><span class="cl">ValueError: could not convert string to float: <span class="s1">&#39;aaa&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Dividendo: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">Divisor: <span class="m">0</span>
+</span></span><span class="line"><span class="cl">Cálculo finalizado.
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac22_excepciones2_3.py&#34;</span>, line 10, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    divide<span class="o">()</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac22_excepciones2_3.py&#34;</span>, line 5, in divide
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span><span class="s2">&#34;La división resulta: &#34;</span> + str<span class="o">(</span>op1 / op2<span class="o">))</span>
+</span></span><span class="line"><span class="cl">ZeroDivisionError: float division by zero
+</span></span></code></pre></div><p>La cadena de texto <code>&quot;Cálculo finalizado&quot;</code> se muestra por pantalla, independientemente de la presencia o no de excepciones durante la ejecución del algoritmo.</p>
 <p><em>Nota técnica</em>: toda instrucción <code>try</code> ha de estar acompañada bien de su correspondiente <code>except</code>, bien de <code>finally</code>, bien de ambas; pero no puede aparecer en solitario.</p>
 <h3 id="código-fuente-1">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/22/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
@@ -1198,99 +1308,91 @@ ZeroDivisionError: float division by zero
 <h3 id="notas-personales-2">Notas personales</h3>
 <p>Estudiemos cómo lanzar excepciones, de forma intencionada, a través de la instrucción <code>raise</code>. Veremos su utilidad cuando trabajemos, más adelante, con clases.</p>
 <p>Generemos un sencillo programa cuyo objetivo sea evaluar nuestra edad:</p>
-<pre><code class="language-python">def evalua_edad(edad):
-    if edad &lt; 20:
-        return &quot;Eres muy joven.&quot;
-    elif edad &lt; 40:
-        return &quot;Eres joven.&quot;
-    elif edad &lt; 65:
-        return &quot;Eres maduro.&quot;
-    elif edad &lt; 100:
-        return &quot;Cuídate.&quot;
-
-
-print(evalua_edad(18))  # Eres muy joven.
-print(evalua_edad(70))  # Cuídate.
-</code></pre>
-<p>Sin embargo, la función así definida presenta este curioso comportamiento:</p>
-<pre><code class="language-python">print(evalua_edad(-15))  # Eres muy joven.
-</code></pre>
-<p>Evidentemente, podemos arreglar esta situación mediante estructuras condicionales, pero veremos a continuación cómo emplear la instrucción <code>raise</code> para abordar el presente caso.</p>
-<pre><code class="language-python">def evalua_edad(edad):
-    if edad &lt; 0:
-        raise TypeError(&quot;No se permiten edades negativas.&quot;)
-    if edad &lt; 20:
-        return &quot;Eres muy joven.&quot;
-    elif edad &lt; 40:
-        return &quot;Eres joven.&quot;
-    elif edad &lt; 65:
-        return &quot;Eres maduro.&quot;
-    elif edad &lt; 100:
-        return &quot;Cuídate.&quot;
-
-
-print(evalua_edad(18))
-print(evalua_edad(70))
-print(evalua_edad(-15))
-</code></pre>
-<p>Al ejecutar el anterior programa, obtenemos:</p>
-<pre><code class="language-bash">Eres muy joven.
-Cuídate.
-Traceback (most recent call last):
-  File &quot;prac23_excepciones3_2.py&quot;, line 16, in &lt;module&gt;
-    print(evalua_edad(-15))
-  File &quot;prac23_excepciones3_2.py&quot;, line 3, in evalua_edad
-    raise TypeError(&quot;No se permiten edades negativas.&quot;)
-TypeError: No se permiten edades negativas.
-</code></pre>
-<p><em>Nota</em>: hemos de usar alguno de los tipos de error disponibles en <em>Python</em>, no pdemos cualquier cadena de texto sin más ahí. No obstante, dicho esto, cuando generemos clases podremos elaborar también errores personalizados.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_edad</span><span class="p">(</span><span class="n">edad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres muy joven.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres joven.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres maduro.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Cuídate.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>  <span class="c1"># Eres muy joven.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="mi">70</span><span class="p">))</span>  <span class="c1"># Cuídate.</span>
+</span></span></code></pre></div><p>Sin embargo, la función así definida presenta este curioso comportamiento:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">))</span>  <span class="c1"># Eres muy joven.</span>
+</span></span></code></pre></div><p>Evidentemente, podemos arreglar esta situación mediante estructuras condicionales, pero veremos a continuación cómo emplear la instrucción <code>raise</code> para abordar el presente caso.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_edad</span><span class="p">(</span><span class="n">edad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&#34;No se permiten edades negativas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres muy joven.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres joven.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">65</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Eres maduro.&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">elif</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;Cuídate.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="mi">18</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="mi">70</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evalua_edad</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">))</span>
+</span></span></code></pre></div><p>Al ejecutar el anterior programa, obtenemos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Eres muy joven.
+</span></span><span class="line"><span class="cl">Cuídate.
+</span></span><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac23_excepciones3_2.py&#34;</span>, line 16, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>evalua_edad<span class="o">(</span>-15<span class="o">))</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;prac23_excepciones3_2.py&#34;</span>, line 3, in evalua_edad
+</span></span><span class="line"><span class="cl">    raise TypeError<span class="o">(</span><span class="s2">&#34;No se permiten edades negativas.&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">TypeError: No se permiten edades negativas.
+</span></span></code></pre></div><p><em>Nota</em>: hemos de usar alguno de los tipos de error disponibles en <em>Python</em>, no pdemos cualquier cadena de texto sin más ahí. No obstante, dicho esto, cuando generemos clases podremos elaborar también errores personalizados.</p>
 <p>Pasemos a programar un algoritmo que calcule la raíz cuadrada de un número mayor o igual que cero:</p>
-<pre><code class="language-python">import math
-
-
-def calcula_raiz(num):
-    if num &lt; 0:
-        raise ValueError(&quot;El número no puede ser negativo.&quot;)
-    else:
-        return math.sqrt(num)
-
-
-op = (int(input(&quot;Introduce un número mayor o igual que cero: &quot;)))
-
-print(calcula_raiz(op))
-
-print(&quot;Programa terminado.&quot;)
-</code></pre>
-<p>Controlemos la excepción que aparece si introducimos un número negativo:</p>
-<pre><code class="language-python">import math
-
-
-def calcula_raiz(num):
-    if num &lt; 0:
-        raise ValueError(&quot;El número no puede ser negativo.&quot;)
-    else:
-        return math.sqrt(num)
-
-
-op = (int(input(&quot;Introduce un número mayor o igual que cero: &quot;)))
-
-try:
-    print(calcula_raiz(op))
-except ValueError as ErrorDeNumeroNegativo:
-    print(ErrorDeNumeroNegativo)
-
-print(&quot;Programa terminado.&quot;)
-</code></pre>
-<p>Un par de ejecuciones del anterior programa, por ejemplo, podrían ser:</p>
-<pre><code class="language-bash">Introduce un número mayor o igual que cero: 144
-12.0
-Programa terminado.
-</code></pre>
-<pre><code class="language-bash">Introduce un número mayor o igual que cero: -144
-El número no puede ser negativo.
-Programa terminado.
-</code></pre>
-<h3 id="código-fuente-2">Código fuente</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calcula_raiz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;El número no puede ser negativo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">op</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número mayor o igual que cero: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">calcula_raiz</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa terminado.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Controlemos la excepción que aparece si introducimos un número negativo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calcula_raiz</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&#34;El número no puede ser negativo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">op</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número mayor o igual que cero: &#34;</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">calcula_raiz</span><span class="p">(</span><span class="n">op</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ErrorDeNumeroNegativo</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">ErrorDeNumeroNegativo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa terminado.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Un par de ejecuciones del anterior programa, por ejemplo, podrían ser:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce un número mayor o igual que cero: <span class="m">144</span>
+</span></span><span class="line"><span class="cl">12.0
+</span></span><span class="line"><span class="cl">Programa terminado.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce un número mayor o igual que cero: -144
+</span></span><span class="line"><span class="cl">El número no puede ser negativo.
+</span></span><span class="line"><span class="cl">Programa terminado.
+</span></span></code></pre></div><h3 id="código-fuente-2">Código fuente</h3>
 <p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/23/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
 
           </div>
@@ -1313,7 +1415,7 @@ Programa terminado.
         </div>
 
         <div class="body-footer">
-          <p>Última actualización el May 6, 2019</p>
+          <p>Última actualización el 05/06/19</p>
 
           
 
@@ -1321,6 +1423,14 @@ Programa terminado.
 
           
 
+
+  
+  
+  
+
+  
+
+  
 
 
 
@@ -1351,6 +1461,15 @@ Programa terminado.
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -1361,7 +1480,7 @@ Programa terminado.
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1378,7 +1497,117 @@ Programa terminado.
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/bryanbraun/anchorjs@4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
+    <script>
+      anchors.add();
+    </script>
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":false}</script>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1404,71 +1633,7 @@ Programa terminado.
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
-    <script>
-      anchors.add();
-    </script>
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -283,7 +334,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/" />
@@ -376,10 +436,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -397,178 +494,206 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -592,9 +717,8 @@
 
 
 
+
   
-  
-    
   
 
 
@@ -629,7 +753,7 @@
     
       
     
-    Aug 14, 2018
+    08/14/18
   </span>
   
 
@@ -642,8 +766,6 @@
   </span>
   
 
-  
-  
   
   
   
@@ -669,7 +791,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <img src="/2018/08/14/breve-introduccion-a-la-libreria-readr/featured_hu277db6dcabc545b3ea2453a49f1dff32_207719_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
     <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@danmagatti" target="_blank" rel="noopener">Dan Magatti</a>, disponible en <a href="https://unsplash.com/photos/AjAGGScv-nE" target="_blank" rel="noopener">Unsplash</a>.</span>
   </div>
 </div>
@@ -687,32 +809,27 @@
 <h3 id="11-archivos-csv">1.1. Archivos <code>.csv</code></h3>
 <p>A la hora de importar conjuntos de datos en <em>R</em>, uno de los formatos más habituales en los que hallamos información es en archivos separados por comas (<em>comma separated values</em>), cuya extensión suele ser <code>.csv</code>. En ellos encontramos múltiples líneas que recogen la tabla de interés, y en las cuales los valores aparecen, de manera consecutiva, separados por el carácter <code>,</code>.</p>
 <p>Para importar este tipo de ficheros en nuestra sesión de <em>R</em>, utilizaremos la función <code>read_csv()</code>. Para acceder a su documentación, en primer lugar, cargaremos la librería <em>readr</em> (o la instalaremos si todavía no lo hemos hecho).</p>
-<pre><code class="language-r">if(!require(readr)) {install.packages(&quot;readr&quot;)}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">if</span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">readr</span><span class="p">))</span> <span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#34;readr&#34;</span><span class="p">)}</span>
+</span></span></code></pre></div><pre><code>## Loading required package: readr
 </code></pre>
-<pre><code>## Loading required package: readr
-</code></pre>
-<pre><code class="language-r">library(readr)
-</code></pre>
-<pre><code class="language-r">?read_csv
-</code></pre>
-<p>El único argumento que hemos de pasar a esta función, de manera obligatoria, es <code>file</code>, el nombre del archivo que pretendemos importar (o bien la ruta completa donde éste se encuentra). El resto son opcionales, y deberían resultarnos familiares la mayoría de ellos si hemos trabajado alguna vez con funciones del tipo <code>read.table()</code> o <code>read.csv()</code>. Algunas de las ventajas que utilizar <code>read_csv()</code> ofrece son:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">readr</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">read_csv</span>
+</span></span></code></pre></div><p>El único argumento que hemos de pasar a esta función, de manera obligatoria, es <code>file</code>, el nombre del archivo que pretendemos importar (o bien la ruta completa donde éste se encuentra). El resto son opcionales, y deberían resultarnos familiares la mayoría de ellos si hemos trabajado alguna vez con funciones del tipo <code>read.table()</code> o <code>read.csv()</code>. Algunas de las ventajas que utilizar <code>read_csv()</code> ofrece son:</p>
 <ul>
 <li>No convierte, automáticamente, las columnas con cadenas de caracteres a factores, como sí hacen por defecto las otras funciones referidas en el párrafo anterior.</li>
 <li>Reconoce ocho clases diferentes de datos (<code>integer</code>, <code>logical</code>, etc.), dejando el resto como cadenas de caracteres.</li>
 </ul>
 <p>Pongamos a prueba su uso importando un conjunto de datos que contiene tanto los pesos, como el tipo de alimentación, de 71 pollos. El archivo de interés es <code>chickwts.csv</code>, por lo que empezaremos especificando la ruta para acceder a él en el argumento <code>file</code>. Como en el segundo capítulo llevaremos a cabo algunas acciones sobre los conjuntos de datos que aparecerán en esta sección, todos los ficheros que importemos los almacenaremos en objetos dentro de <em>R</em>.</p>
-<pre><code class="language-r">cwts &lt;- read_csv(file = &quot;datasets/chickwts.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cwts</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="s">&#34;datasets/chickwts.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
 <p>Es interesante el mensaje que aparece en la consola al ejecutar la anterior instrucción, ya que nos informa el resultado del análisis, que la función realiza, para inferir las clases de cada una de las columnas que componen la tabla. Echemos un vistazo al contenido del archivo que acabamos de importar.</p>
-<pre><code class="language-r">head(cwts)
-</code></pre>
-<pre><code>## # A tibble: 6 × 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cwts</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 2
 ##   weight      feed
 ##    &lt;int&gt;     &lt;chr&gt;
 ## 1    179 horsebean
@@ -722,9 +839,8 @@
 ## 5    217 horsebean
 ## 6    168 horsebean
 </code></pre>
-<pre><code class="language-r">str(cwts)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    71 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">cwts</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    71 obs. of  2 variables:
 ##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
 ##  $ feed  : chr  &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; ...
 ##  - attr(*, &quot;spec&quot;)=List of 2
@@ -739,17 +855,15 @@
 </code></pre>
 <p>A primera vista, la columna <code>feed</code> posiblemente estaría mejor codificada bajo la clase <code>factor</code> (aunque esto siempre va a depender de nuestros intereses y el uso que tengamos en mente para esta variable). No obstante, recordemos que éste no es el comportamiento que por defecto incorpora la función <code>read_csv()</code> (aunque después veremos cómo declarar con antelación las clases para las columnas de un archivo y posibilitar su lectura como factores).</p>
 <p>Utilicemos de nuevo esta función con otro conjunto de datos, <code>chickwts2.csv</code> (más información relativa al peso y tipo de alimentación de 18 pollos distintos), que usaremos más adelante en este capítulo, cuando lleguemos al apartado de exportar tablas a ficheros.</p>
-<pre><code class="language-r">cwts2 &lt;- read_csv(&quot;datasets/chickwts2.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cwts2</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;datasets/chickwts2.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
-<pre><code class="language-r">head(cwts2)
-</code></pre>
-<pre><code>## # A tibble: 6 × 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cwts2</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 2
 ##   weight  feed
 ##    &lt;int&gt; &lt;chr&gt;
 ## 1    309  corn
@@ -759,9 +873,8 @@
 ## 5    244  corn
 ## 6    271  corn
 </code></pre>
-<pre><code class="language-r">str(cwts2)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    18 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">cwts2</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    18 obs. of  2 variables:
 ##  $ weight: int  309 229 213 257 244 271 243 248 257 303 ...
 ##  $ feed  : chr  &quot;corn&quot; &quot;corn&quot; &quot;corn&quot; &quot;corn&quot; ...
 ##  - attr(*, &quot;spec&quot;)=List of 2
@@ -776,18 +889,16 @@
 </code></pre>
 <h3 id="12-archivos-tsv">1.2. Archivos <code>.tsv</code></h3>
 <p>La librería <em>readr</em> posee también una función específica para la lectura de los archivos separados por tabulaciones, cuya extensión suele ser <code>.tsv</code> (aunque personalmente también he visto alguno que utiliza <code>.tab</code>). Se trata de <code>read_tsv()</code> y si accedemos a su documentación comprobaremos que su uso es exactamente idéntico al de la función que exploramos en la sección anterior.</p>
-<pre><code class="language-r">?read_tsv
-</code></pre>
-<p>Investiguemos alguno de los argumentos que podemos declarar, de manera opcional, en esta función (y, por tanto, lo que aprendamos será de utilidad también de cara al uso de <code>read_csv()</code>). Por ejemplo, para controlar el nombre de las columnas de la tabla que deseamos importar, el argumento <code>col_names</code> es el indicado, y puede tomar los siguientes valores:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">read_tsv</span>
+</span></span></code></pre></div><p>Investiguemos alguno de los argumentos que podemos declarar, de manera opcional, en esta función (y, por tanto, lo que aprendamos será de utilidad también de cara al uso de <code>read_csv()</code>). Por ejemplo, para controlar el nombre de las columnas de la tabla que deseamos importar, el argumento <code>col_names</code> es el indicado, y puede tomar los siguientes valores:</p>
 <ul>
 <li><code>TRUE</code>: utiliza la información disponible en la primera línea del archivo para declarar los nombres de las columnas, no incluyéndolos por tanto en el interior de la propia tabla.</li>
 <li><code>FALSE</code>: genera, de manera automática, los clásicos nombres <code>X1</code>, <code>X2</code>, <code>X3</code>, etc., para las columnas, y empieza a incluir la información en la tabla desde la primera fila.</li>
 <li>La última opción disponible es utilizar un vector que contenga los nombres de las columnas, y, como antes, desde la primera fila se insertarán los datos en el interior de la tabla.</li>
 </ul>
 <p>Por ejemplo, importemos a continuación el fichero <code>salaries.tsv</code>. Si abrimos el archivo con un editor de texto plano cualquiera, comprobaremos que la primera línea no contiene los respectivos nombres para cada una de las columnas, y dado que no conocemos de antemano qué declara cada una, usar el argumento <code>col_names = FALSE</code> parece la opción más adecuada.</p>
-<pre><code class="language-r">salaries &lt;- read_tsv(&quot;datasets/Salaries.tsv&quot;, col_names = FALSE)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">salaries</span> <span class="o">&lt;-</span> <span class="nf">read_tsv</span><span class="p">(</span><span class="s">&#34;datasets/Salaries.tsv&#34;</span><span class="p">,</span> <span class="n">col_names</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   X1 = col_character(),
 ##   X2 = col_character(),
@@ -797,9 +908,8 @@
 ##   X6 = col_integer()
 ## )
 </code></pre>
-<pre><code class="language-r">head(salaries)
-</code></pre>
-<pre><code>## # A tibble: 6 × 6
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 6
 ##          X1    X2    X3    X4    X5     X6
 ##       &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;  &lt;int&gt;
 ## 1      Prof     B    19    18  Male 139750
@@ -809,9 +919,8 @@
 ## 5      Prof     B    40    41  Male 141500
 ## 6 AssocProf     B     6     6  Male  97000
 </code></pre>
-<pre><code class="language-r">str(salaries)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  6 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  6 variables:
 ##  $ X1: chr  &quot;Prof&quot; &quot;Prof&quot; &quot;AsstProf&quot; &quot;Prof&quot; ...
 ##  $ X2: chr  &quot;B&quot; &quot;B&quot; &quot;B&quot; &quot;B&quot; ...
 ##  $ X3: int  19 20 4 45 40 6 30 45 21 18 ...
@@ -850,16 +959,14 @@ cols(
 <p>Como ya comentábamos en la sección anterior, esta información nos indica la clase que la función <code>read_tsv()</code> ha inferido para todas y cada una de las columnas contenidas en el archivo. De hecho, este comportamiento no se restringe únicamente a las funciones <code>read_csv()</code> y <code>read_tsv()</code>, sino a todas las implementadas en la librería <em>readr</em> cuya empresa es, precisamente, la lectura de ficheros de datos.</p>
 <p>A través del argumento <code>col_types</code> tenemos cierto control sobre la declaración de la clase de las columnas, utilizando funciones predefinidas del estilo <code>col_*()</code> (como <code>col_integer()</code>, <code>col_character()</code>, etc.). La forma de usar este argumento es muy sencilla: simplemente tenemos que escribir <code>col_types = cols()</code> e incluir en el interior de <code>cols()</code> los nombres de las columnas y la clase que deseamos posean (siguiendo el estilo de, por ejemplo, el mensaje por consola que mostrábamos arriba).</p>
 <p>Una función que nos puede interesar, en este momento, es <code>col_skip()</code>, que le indica a <em>R</em> que omita una determinada columna a la hora de importar la información de un archivo de datos. Veamos su uso con más detalle a través de un ejemplo. Supongamos que sólo estamos interesados en las columnas primera, quinta y sexta del anterior fichero de datos. Así pues, no tendríamos más que escribir:</p>
-<pre><code class="language-r">salaries &lt;- read_tsv(&quot;datasets/Salaries.tsv&quot;, col_names = FALSE,
-                     col_types = cols(
-                         X2 = col_skip(),
-                         X3 = col_skip(), 
-                         X4 = col_skip()
-                     ))
-</code></pre>
-<pre><code class="language-r">head(salaries)
-</code></pre>
-<pre><code>## # A tibble: 6 × 3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">salaries</span> <span class="o">&lt;-</span> <span class="nf">read_tsv</span><span class="p">(</span><span class="s">&#34;datasets/Salaries.tsv&#34;</span><span class="p">,</span> <span class="n">col_names</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">col_types</span> <span class="o">=</span> <span class="nf">cols</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">X2</span> <span class="o">=</span> <span class="nf">col_skip</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">                         <span class="n">X3</span> <span class="o">=</span> <span class="nf">col_skip</span><span class="p">(),</span> 
+</span></span><span class="line"><span class="cl">                         <span class="n">X4</span> <span class="o">=</span> <span class="nf">col_skip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">                     <span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 3
 ##          X1    X5     X6
 ##       &lt;chr&gt; &lt;chr&gt;  &lt;int&gt;
 ## 1      Prof  Male 139750
@@ -869,9 +976,8 @@ cols(
 ## 5      Prof  Male 141500
 ## 6 AssocProf  Male  97000
 </code></pre>
-<pre><code class="language-r">str(salaries)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
 ##  $ X1: chr  &quot;Prof&quot; &quot;Prof&quot; &quot;AsstProf&quot; &quot;Prof&quot; ...
 ##  $ X5: chr  &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; &quot;Male&quot; ...
 ##  $ X6: int  139750 173200 79750 115000 141500 97000 175000 147765 119250 129000 ...
@@ -897,9 +1003,8 @@ cols(
 <p>En muchos países de este continente, usamos la coma como separador decimal, de manera que los archivos separados por comas, en realidad, terminan siendo separados por el símbolo <code>;</code> (punto y coma). Por curiosidad, puedes probar a crear una tabla sencilla en, por ejemplo, <em>Excel</em> y exportarla como archivo separado por comas, para luego abrir el archivo con un editor de texto plano y verificar que, efectivamente, los valores están separados por <code>;</code> (en realidad este comportamiento se puede modificar desde las opciones de formato del sistema operativo, pero no entraremos en ese tipo de detalles).</p>
 <p>En previsión de esta particularidad, la librería <em>readr</em> pone a nuestra disposición la función <code>read_csv2()</code>, que identifica el símbolo <code>;</code> como separador de valores, mientras que <code>,</code> queda como separador decimal. Obviando esta salvedad, su uso es idéntico al de las funciones presentadas en los anteriores apartados.</p>
 <p>Tomemos ahora el archivo <code>trees.csv</code> (que contiene información sobre la circunferencia, la altura y el volumen de cerezos negros), el cual viene dado en el formato al que nos estamos refiriendo aquí, e importémoslo directamente con la función <code>read_csv()</code>, en lugar de con <code>read_csv2()</code>, para ver qué sucede.</p>
-<pre><code class="language-r">trees_wrong &lt;- read_csv(&quot;datasets/trees.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trees_wrong</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;datasets/trees.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   `Girth&quot;;&quot;Height&quot;;&quot;Volume` = col_character()
 ## )
@@ -915,13 +1020,11 @@ cols(
 ## See problems(...) for more details.
 </code></pre>
 <p>En favor de la función <code>read_csv()</code> hay que decir que, al menos, nos indica la existencia de ciertos problemas, o situaciones inesperadas, durante la importación del archivo. De todas formas, podemos observar cómo ha procedido a generar una tabla con una única columna, en lugar de las correspondientes tres que hubiese sido lo adecuado en esta ocasión. Comprobemos qué contiene el objeto <code>trees_wrong</code>.</p>
-<pre><code class="language-r">dim(trees_wrong)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">trees_wrong</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## [1] 31  1
 </code></pre>
-<pre><code>## [1] 31  1
-</code></pre>
-<pre><code class="language-r">head(trees_wrong)
-</code></pre>
-<pre><code>## # A tibble: 6 × 1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">trees_wrong</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 1
 ##   `Girth&quot;;&quot;Height&quot;;&quot;Volume`
 ##                       &lt;chr&gt;
 ## 1                         8
@@ -931,9 +1034,8 @@ cols(
 ## 5                        10
 ## 6                        10
 </code></pre>
-<pre><code class="language-r">str(trees_wrong)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  1 variable:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">trees_wrong</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  1 variable:
 ##  $ Girth&quot;;&quot;Height&quot;;&quot;Volume: chr  &quot;8&quot; &quot;8&quot; &quot;8&quot; &quot;10&quot; ...
 ##  - attr(*, &quot;problems&quot;)=Classes 'tbl_df', 'tbl' and 'data.frame': 30 obs. of  4 variables:
 ##   ..$ row     : int  1 2 3 4 5 6 7 8 9 10 ...
@@ -949,22 +1051,19 @@ cols(
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
 <p>Veamos ahora el resultado que obtenemos al utilizar la función <code>read_csv2()</code>.</p>
-<pre><code class="language-r">trees &lt;- read_csv2(&quot;datasets/trees.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trees</span> <span class="o">&lt;-</span> <span class="nf">read_csv2</span><span class="p">(</span><span class="s">&#34;datasets/trees.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   Girth = col_double(),
 ##   Height = col_integer(),
 ##   Volume = col_double()
 ## )
 </code></pre>
-<pre><code class="language-r">dim(trees)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">dim</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## [1] 31  3
 </code></pre>
-<pre><code>## [1] 31  3
-</code></pre>
-<pre><code class="language-r">head(trees)
-</code></pre>
-<pre><code>## # A tibble: 6 × 3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 3
 ##   Girth Height Volume
 ##   &lt;dbl&gt;  &lt;int&gt;  &lt;dbl&gt;
 ## 1   8.3     70   10.3
@@ -974,9 +1073,8 @@ cols(
 ## 5  10.7     81   18.8
 ## 6  10.8     83   19.7
 </code></pre>
-<pre><code class="language-r">str(trees)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">trees</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
 ##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
 ##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
 ##  $ Volume: num  10.3 10.3 10.2 16.4 18.8 19.7 15.6 18.2 22.6 19.9 ...
@@ -996,15 +1094,13 @@ cols(
 <p>En ocasiones, el formato en el que encontramos los archivos de datos es similar al mostrado en <em>R</em> a la hora de imprimir en consola un <code>data.frame</code>. Es decir, cada columna posee un total de caracteres fijos y éstas se separan usando espacios en blanco (que también se utilizan para rellenar aquellos valores cuya longitud es menor que la correspondiente a su columna).</p>
 <p>El archivo <code>names.txt</code> constituye un ejemplo de lo comentado en el párrafo anterior. En su interior encontramos los nombres de ciertos personajes famosos, el estado donde supuestamente residen y, como no podía ser de otra manera, sus falsos números de teléfono.</p>
 <p>La función adecuada para lidiar con estos casos es <code>read_table()</code>, cuya documentación ofrece un listado de argumentos bastante familiares a estas alturas.</p>
-<pre><code class="language-r">?read_table
-</code></pre>
-<p>Importemos pues el fichero <code>names.txt</code>, declarando adecuadamente los nombres para las columnas utilizando el parámetro <code>col_names</code>.</p>
-<pre><code class="language-r">names &lt;- read_table(&quot;datasets/names.txt&quot;,
-                    col_names = c(&quot;name&quot;, &quot;state&quot;, &quot;phone&quot;))
-
-names                   
-</code></pre>
-<pre><code>## # A tibble: 6 × 3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">read_table</span>
+</span></span></code></pre></div><p>Importemos pues el fichero <code>names.txt</code>, declarando adecuadamente los nombres para las columnas utilizando el parámetro <code>col_names</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">names</span> <span class="o">&lt;-</span> <span class="nf">read_table</span><span class="p">(</span><span class="s">&#34;datasets/names.txt&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">col_names</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="s">&#34;state&#34;</span><span class="p">,</span> <span class="s">&#34;phone&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">names</span>                   
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 3
 ##                  name        state        phone
 ##                 &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;
 ## 1       Oprah Winfrey         null 800-555-4111
@@ -1014,9 +1110,8 @@ names
 ## 5 Rutherford B. Hayes         Ohio 220-555-1388
 ## 6   Chester A. Arthur      Vermont 802-555-8383
 </code></pre>
-<pre><code class="language-r">str(names)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  3 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    6 obs. of  3 variables:
 ##  $ name : chr  &quot;Oprah Winfrey&quot; &quot;Walt Disney&quot; &quot;Michael Scott&quot; &quot;Cosmo Kramer&quot; ...
 ##  $ state: chr  &quot;null&quot; &quot;Florida&quot; &quot;Pennsylvania&quot; &quot;New York&quot; ...
 ##  $ phone: chr  &quot;800-555-4111&quot; &quot;407-555-4341&quot; &quot;570-555-2301&quot; &quot;212-555-9337&quot; ...
@@ -1034,12 +1129,11 @@ names
 </code></pre>
 <p>Aprovechemos este particular ejemplo para ilustrar el tratamiento de los valores perdidos con las funciones de la librería <em>readr</em> dedicadas a importar archivos de datos. Por defecto, sólo se reconoce <code>NA</code> como valor perdido, pero, en esta ocasión, si nos fijamos en la primera fila de la tabla, han optado por usar <code>null</code> para registrar la ausencia de información para ciertos atributos concretos.</p>
 <p>No supone esto demasiado inconveniente, puesto que utilizando el parámetro <code>na</code> podemos declarar, mediante un vector, qué cadenas de texto deben ser consideradas como valores perdidos (y automáticamente pasarán a ser <code>NA</code> en el objeto que creemos en <em>R</em>). Por defecto, <code>na = &quot;NA&quot;</code>, de manera que simplemente tenemos que declarar <code>na = c(&quot;NA&quot;, &quot;null&quot;)</code> en nuestro caso.</p>
-<pre><code class="language-r">names2 &lt;- read_table(&quot;datasets/names.txt&quot;, 
-                     col_names = c(&quot;name&quot;, &quot;state&quot;, &quot;phone&quot;),
-                     na = c(&quot;NA&quot;, &quot;null&quot;))
-head(names2)                     
-</code></pre>
-<pre><code>## # A tibble: 6 × 3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">names2</span> <span class="o">&lt;-</span> <span class="nf">read_table</span><span class="p">(</span><span class="s">&#34;datasets/names.txt&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                     <span class="n">col_names</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;name&#34;</span><span class="p">,</span> <span class="s">&#34;state&#34;</span><span class="p">,</span> <span class="s">&#34;phone&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                     <span class="n">na</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;NA&#34;</span><span class="p">,</span> <span class="s">&#34;null&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">names2</span><span class="p">)</span>                     
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 3
 ##                  name        state        phone
 ##                 &lt;chr&gt;        &lt;chr&gt;        &lt;chr&gt;
 ## 1       Oprah Winfrey         &lt;NA&gt; 800-555-4111
@@ -1054,36 +1148,30 @@ head(names2)
 <ul>
 <li><code>read_lines()</code>: devuelve un vector de cadenas de texto, donde cada elemento recoge una línea del archivo de datos original.</li>
 </ul>
-<pre><code class="language-r">?read_lines
-</code></pre>
-<ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">read_lines</span>
+</span></span></code></pre></div><ul>
 <li><code>read_file()</code>: devuelve un vector de dimensión unitaria que contiene el texto completo del archivo de datos original, y donde los saltos de línea se representan utilizando <code>\n</code>.</li>
 </ul>
-<pre><code class="language-r">?read_file
-</code></pre>
-<p>En el fichero <code>tweets.txt</code> encontramos algunos <em>tuits</em> correspondientes a la cuenta <code>@RealCarrotFacts</code> (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.</p>
-<pre><code class="language-r">tweets &lt;- read_lines(&quot;datasets/tweets.txt&quot;)
-tweets
-</code></pre>
-<pre><code>## [1] &quot;carrots  can be eat by most people&quot;                                                                                          
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">read_file</span>
+</span></span></code></pre></div><p>En el fichero <code>tweets.txt</code> encontramos algunos <em>tuits</em> correspondientes a la cuenta <code>@RealCarrotFacts</code> (puedes comprobar que, efectivamente, existe dicha cuenta y que es un tanto curiosa). Procedamos a importar su contenido utilizando ambas funciones, para así apreciar de manera práctica la diferencia.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">tweets</span> <span class="o">&lt;-</span> <span class="nf">read_lines</span><span class="p">(</span><span class="s">&#34;datasets/tweets.txt&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tweets</span>
+</span></span></code></pre></div><pre><code>## [1] &quot;carrots  can be eat by most people&quot;                                                                                          
 ## [2] &quot;On predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america's carrot&quot;
 ## [3] &quot;knock knoc who is there? yup: carosot   ( joke )&quot;                                                                            
 ## [4] &quot;it is 2016 time for a carot emoji   please!&quot;                                                                                 
 ## [5] &quot;when life give you lemnos ,  have a carrot&quot;                                                                                  
 ## [6] &quot;If you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&quot;
 </code></pre>
-<pre><code class="language-r">str(tweets)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>##  chr [1:6] &quot;carrots  can be eat by most people&quot; ...
 </code></pre>
-<pre><code>##  chr [1:6] &quot;carrots  can be eat by most people&quot; ...
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">tweets_all</span> <span class="o">&lt;-</span> <span class="nf">read_file</span><span class="p">(</span><span class="s">&#34;datasets/tweets.txt&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tweets_all</span>
+</span></span></code></pre></div><pre><code>## [1] &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america's carrot\nknock knoc who is there? yup: carosot   ( joke )\nit is 2016 time for a carot emoji   please!\nwhen life give you lemnos ,  have a carrot\nIf you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&quot;
 </code></pre>
-<pre><code class="language-r">tweets_all &lt;- read_file(&quot;datasets/tweets.txt&quot;)
-tweets_all
-</code></pre>
-<pre><code>## [1] &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and cruncy - he was america's carrot\nknock knoc who is there? yup: carosot   ( joke )\nit is 2016 time for a carot emoji   please!\nwhen life give you lemnos ,  have a carrot\nIf you squent your eyes real hard a football  look like  a dry brown carrot   Honestly&quot;
-</code></pre>
-<pre><code class="language-r">str(tweets_all)
-</code></pre>
-<pre><code>##  chr &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and&quot;| __truncated__
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">tweets_all</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>##  chr &quot;carrots  can be eat by most people\nOn predisents day we honor the big US man himself: Aberham Liclon.   Tall, skinny, dry, and&quot;| __truncated__
 </code></pre>
 <h3 id="16-escribiendo-archivos-csv-y-tsv">1.6. Escribiendo archivos <code>.csv</code> y <code>.tsv</code></h3>
 <p>Una vez hemos importado nuestro conjunto de datos de interés, y realizamos sobre él ciertas manipulaciones, es bastante probable que deseemos almacenar el resultado en un archivo para su posterior uso y disfrute. La librería <em>readr</em> contiene varias funciones del estilo <code>write_*()</code> (por ejemplo, <code>write_csv()</code> o <code>write_tsv()</code>) orientadas a satisfacer esta necesidad, y que se caracterizan por un par de detalles realmente interesantes:</p>
@@ -1092,22 +1180,19 @@ tweets_all
 <li>El parámetro <code>col_names</code> adopta como valor el contrario al que posee <code>append</code>, manera de actuar que tiene todo el sentido del mundo. Si decidimos continuar añadiendo datos a un archivo que previamente hemos exportado, declararemos <code>append = TRUE</code> y, por tanto, no aparecerán de nuevo, y en mitad del fichero, los nombres de las columnas.</li>
 </ul>
 <p>Veamos este último punto con mayor detalle a través de un ejemplo. En primer lugar, exportaremos a un archivo separado por comas el objeto <code>cwts</code> que generamos en una sección anterior. A Continuación, añadiremos al mencionado archivo el contenido del objeto <code>cwts2</code>.</p>
-<pre><code class="language-r">write_csv(cwts, &quot;chickwts.csv&quot;)
-
-write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
-</code></pre>
-<p>Procedamos ahora a importar el fichero recién generado y examinémoslo.</p>
-<pre><code class="language-r">cwts3 &lt;- read_csv(&quot;chickwts.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">write_csv</span><span class="p">(</span><span class="n">cwts</span><span class="p">,</span> <span class="s">&#34;chickwts.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">write_csv</span><span class="p">(</span><span class="n">cwts2</span><span class="p">,</span> <span class="s">&#34;chickwts.csv&#34;</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+</span></span></code></pre></div><p>Procedamos ahora a importar el fichero recién generado y examinémoslo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">cwts3</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;chickwts.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
 ## )
 </code></pre>
-<pre><code class="language-r">head(cwts3)
-</code></pre>
-<pre><code>## # A tibble: 6 × 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">cwts3</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 2
 ##   weight      feed
 ##    &lt;int&gt;     &lt;chr&gt;
 ## 1    179 horsebean
@@ -1117,9 +1202,8 @@ write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
 ## 5    217 horsebean
 ## 6    168 horsebean
 </code></pre>
-<pre><code class="language-r">str(cwts3)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    89 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">cwts3</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    89 obs. of  2 variables:
 ##  $ weight: int  179 160 136 227 217 168 108 124 143 140 ...
 ##  $ feed  : chr  &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; &quot;horsebean&quot; ...
 ##  - attr(*, &quot;spec&quot;)=List of 2
@@ -1134,37 +1218,32 @@ write_csv(cwts2, &quot;chickwts.csv&quot;, append=TRUE)
 </code></pre>
 <h3 id="17-escribiendo-archivos-rds">1.7. Escribiendo archivos <code>.rds</code></h3>
 <p>Es posible que estemos interesados en exportar no solamente los valores de una tabla, sino ciertos <em>metadatos</em> asociados a ella, como pueden ser, por ejemplo, las clases de las diferentes columnas que la compongan. No es fácil incorporar este tipo de información a un archivo separado por comas o tabulaciones, por lo que la librería <em>readr</em> nos ofrece la posibilidad de exportar un objeto completo de <em>R</em> a través de la función <code>write_rds()</code>.</p>
-<pre><code class="language-r">?write_rds
-</code></pre>
-<p>La mencionada función no es más que un <em>wrapper</em> (desconozco la traducción a español de este término) de la función <code>saveRDS()</code>, con la única particularidad de que, por defecto, no comprime el archivo resultante (aunque este comportamiento se puede definir a través del parámetro <code>compress</code>).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">write_rds</span>
+</span></span></code></pre></div><p>La mencionada función no es más que un <em>wrapper</em> (desconozco la traducción a español de este término) de la función <code>saveRDS()</code>, con la única particularidad de que, por defecto, no comprime el archivo resultante (aunque este comportamiento se puede definir a través del parámetro <code>compress</code>).</p>
 <p>Ilustremos su aplicación mediante un ejemplo. Exportaremos el objeto <code>trees</code> que generamos en una sección anterior utilizando la función <code>write_rds()</code>, para a continuación importarlo inmediatamente con <code>read_rds()</code> y asignarlo a <code>trees2</code>. Finalmente, compararemos si ambos objetos son idénticos, empleando para ello la función <code>identical()</code>.</p>
-<pre><code class="language-r">write_rds(trees, &quot;trees.rds&quot;)
-
-trees2 &lt;- read_rds(&quot;trees.rds&quot;)
-
-identical(trees, trees2)
-</code></pre>
-<pre><code>## [1] TRUE
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">write_rds</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="s">&#34;trees.rds&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">trees2</span> <span class="o">&lt;-</span> <span class="nf">read_rds</span><span class="p">(</span><span class="s">&#34;trees.rds&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">identical</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="n">trees2</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## [1] TRUE
 </code></pre>
 <h2 id="2-analizando-datos-con-readr">2. Analizando datos con readr</h2>
 <h3 id="21-modificando-la-clase-de-las-columnas">2.1. Modificando la clase de las columnas</h3>
 <p>Aunque las funciones para importar archivos de datos que pone a nuestra disposición la librería <em>readr</em>, realizan una labor estupenda a la hora de inferir la clase de cada una de las columnas que componen una tabla, su comportamiento dista de ser perfecto. Esto se traducirá, seguramente, en la necesidad de llevar a cabo ciertas modificaciones, sobre las mencionadas clases, para algunos casos concretos.</p>
 <p>Para ello, la función adecuada a utilizar es <code>type_convert()</code>, que incorpora el conocido argumento <code>col_types</code> en su llamada. Ilustremos su uso y aprovechemos, además, para emplear la notación abreviada para los tipos de datos que <strong>readr</strong> ofrece. Tomaremos el objeto <code>trees</code> y declararemos todas sus columnas de tipo <code>numeric</code>.</p>
-<pre><code class="language-r">?type_convert
-</code></pre>
-<pre><code class="language-r">trees3 &lt;- type_convert(trees, 
-                       col_types = cols(
-                           Girth  = &quot;d&quot;, 
-                           Height = &quot;d&quot;, 
-                           Volume = &quot;d&quot;)
-                       )
-</code></pre>
-<pre><code>## Warning: The following named parsers don't match the column names: Girth,
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">type_convert</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">trees3</span> <span class="o">&lt;-</span> <span class="nf">type_convert</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                       <span class="n">col_types</span> <span class="o">=</span> <span class="nf">cols</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                           <span class="n">Girth</span>  <span class="o">=</span> <span class="s">&#34;d&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                           <span class="n">Height</span> <span class="o">=</span> <span class="s">&#34;d&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                           <span class="n">Volume</span> <span class="o">=</span> <span class="s">&#34;d&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                       <span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Warning: The following named parsers don't match the column names: Girth,
 ## Height, Volume
 </code></pre>
-<pre><code class="language-r">str(trees3)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">trees3</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    31 obs. of  3 variables:
 ##  $ Girth : num  8.3 8.6 8.8 10.5 10.7 10.8 11 11 11.1 11.2 ...
 ##  $ Height: int  70 65 63 72 81 83 66 75 80 75 ...
 ##  $ Volume: num  10.3 10.3 10.2 16.4 18.8 19.7 15.6 18.2 22.6 19.9 ...
@@ -1184,18 +1263,15 @@ identical(trees, trees2)
 <h3 id="22-transformando-columnas-de-texto-en-factores">2.2. Transformando columnas de texto en factores</h3>
 <p>Una de las características de las funciones de importación de datos de la librería <em>readr</em> es que no interpretan, de manera automática, las columnas que poseen cadenas de texto como factores. No obstante, en ocasiones nos puede interesar que la clase de algunas columnas sea <code>factor</code>.</p>
 <p>En estas situaciones, podemos utilizar la función <code>parse_factor()</code> sobre las columnas del objeto recién importado que buscamos sean factores, especificando, si queremos, los niveles que adoptan.</p>
-<pre><code class="language-r">?parse_factor
-</code></pre>
-<p>Ilustremos su uso mediante un ejemplo. En el objeto <code>salaries</code>, que generamos en el capítulo anterior, la primera columna, <code>X1</code>, contiene el tipo de profesor universitario; mientras que la segunda, <code>X5</code>, hace referencia al sexo de la persona. Transformemos ambas en factores.</p>
-<pre><code class="language-r">salaries$X1 &lt;- parse_factor(salaries$X1,
-                            levels = c(&quot;Prof&quot;, &quot;AsstProf&quot;, &quot;AssocProf&quot;))
-
-salaries$X5 &lt;- parse_factor(salaries$X5, 
-                            levels = c(&quot;Male&quot;, &quot;Female&quot;))
-</code></pre>
-<pre><code class="language-r">head(salaries)
-</code></pre>
-<pre><code>## # A tibble: 6 × 3
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">parse_factor</span>
+</span></span></code></pre></div><p>Ilustremos su uso mediante un ejemplo. En el objeto <code>salaries</code>, que generamos en el capítulo anterior, la primera columna, <code>X1</code>, contiene el tipo de profesor universitario; mientras que la segunda, <code>X5</code>, hace referencia al sexo de la persona. Transformemos ambas en factores.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">salaries</span><span class="o">$</span><span class="n">X1</span> <span class="o">&lt;-</span> <span class="nf">parse_factor</span><span class="p">(</span><span class="n">salaries</span><span class="o">$</span><span class="n">X1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Prof&#34;</span><span class="p">,</span> <span class="s">&#34;AsstProf&#34;</span><span class="p">,</span> <span class="s">&#34;AssocProf&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">salaries</span><span class="o">$</span><span class="n">X5</span> <span class="o">&lt;-</span> <span class="nf">parse_factor</span><span class="p">(</span><span class="n">salaries</span><span class="o">$</span><span class="n">X5</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                            <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#34;Male&#34;</span><span class="p">,</span> <span class="s">&#34;Female&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 3
 ##          X1     X5     X6
 ##      &lt;fctr&gt; &lt;fctr&gt;  &lt;int&gt;
 ## 1      Prof   Male 139750
@@ -1205,9 +1281,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 5      Prof   Male 141500
 ## 6 AssocProf   Male  97000
 </code></pre>
-<pre><code class="language-r">str(salaries)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">salaries</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    397 obs. of  3 variables:
 ##  $ X1: Factor w/ 3 levels &quot;Prof&quot;,&quot;AsstProf&quot;,..: 1 1 2 1 1 3 1 1 1 1 ...
 ##  $ X5: Factor w/ 2 levels &quot;Male&quot;,&quot;Female&quot;: 1 1 1 1 1 1 1 1 1 2 ...
 ##  $ X6: int  139750 173200 79750 115000 141500 97000 175000 147765 119250 129000 ...
@@ -1232,12 +1307,10 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 <h3 id="23-trabajando-con-fechas">2.3. Trabajando con fechas</h3>
 <p>Si una de las columnas del archivo de datos viene dada en la forma <code>YYYY-MM-DD</code>, las funciones de importación de la librería <em>readr</em> la interpretarán automáticamente como de tipo <code>Date</code> (fecha).</p>
 <p>No obstante, si en la tabla están presentes algunos valores que son fechas y no se ajustan a la estructura comentada arriba, a través de la función <code>parse_date()</code> (y su argumento <code>format</code>) podemos lidiar con esta situación.</p>
-<pre><code class="language-r">?parse_date
-</code></pre>
-<p>Consideremos el siguiente ejemplo: en el archivo <code>weather.csv</code>, donde se recogen distintos indicadores relacionados con el clima, la columna <code>date</code> contiene la fecha en el formato &ldquo;mes/día/año&rdquo;. Con esta información, procedamos a transformar la clase de la columna de manera oportuna.</p>
-<pre><code class="language-r">weather &lt;- read_csv(&quot;datasets/weather.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">parse_date</span>
+</span></span></code></pre></div><p>Consideremos el siguiente ejemplo: en el archivo <code>weather.csv</code>, donde se recogen distintos indicadores relacionados con el clima, la columna <code>date</code> contiene la fecha en el formato &ldquo;mes/día/año&rdquo;. Con esta información, procedamos a transformar la clase de la columna de manera oportuna.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">weather</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;datasets/weather.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   origin = col_character(),
 ##   date = col_character(),
@@ -1253,9 +1326,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   visib = col_double()
 ## )
 </code></pre>
-<pre><code class="language-r">head(weather)
-</code></pre>
-<pre><code>## # A tibble: 6 × 12
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 12
 ##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
 ##    &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
 ## 1    EWR 12/22/2013     9 64.94 60.98 87.00      190   13.80936 15.891535
@@ -1266,9 +1338,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 6    EWR   5/5/2013    15 57.92 37.04 45.58       NA    4.60312  5.297178
 ## # ... with 3 more variables: precip &lt;dbl&gt;, pressure &lt;dbl&gt;, visib &lt;dbl&gt;
 </code></pre>
-<pre><code class="language-r">str(weather)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
 ##  $ origin    : chr  &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; ...
 ##  $ date      : chr  &quot;12/22/2013&quot; &quot;7/23/2013&quot; &quot;10/30/2013&quot; &quot;12/25/2013&quot; ...
 ##  $ hour      : int  9 6 11 21 9 15 11 11 15 20 ...
@@ -1311,12 +1382,10 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   .. ..- attr(*, &quot;class&quot;)= chr  &quot;collector_guess&quot; &quot;collector&quot;
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
-<pre><code class="language-r">weather$date &lt;- parse_date(weather$date, 
-                           format = &quot;%m/%d/%Y&quot;)
-</code></pre>
-<pre><code class="language-r">head(weather)
-</code></pre>
-<pre><code>## # A tibble: 6 × 12
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">weather</span><span class="o">$</span><span class="n">date</span> <span class="o">&lt;-</span> <span class="nf">parse_date</span><span class="p">(</span><span class="n">weather</span><span class="o">$</span><span class="n">date</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">                           <span class="n">format</span> <span class="o">=</span> <span class="s">&#34;%m/%d/%Y&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 12
 ##   origin       date  hour  temp  dewp humid wind_dir wind_speed wind_gust
 ##    &lt;chr&gt;     &lt;date&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;int&gt;      &lt;dbl&gt;     &lt;dbl&gt;
 ## 1    EWR 2013-12-22     9 64.94 60.98 87.00      190   13.80936 15.891535
@@ -1327,9 +1396,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 6    EWR 2013-05-05    15 57.92 37.04 45.58       NA    4.60312  5.297178
 ## # ... with 3 more variables: precip &lt;dbl&gt;, pressure &lt;dbl&gt;, visib &lt;dbl&gt;
 </code></pre>
-<pre><code class="language-r">str(weather)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">weather</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    500 obs. of  12 variables:
 ##  $ origin    : chr  &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; &quot;EWR&quot; ...
 ##  $ date      : Date, format: &quot;2013-12-22&quot; &quot;2013-07-23&quot; ...
 ##  $ hour      : int  9 6 11 21 9 15 11 11 15 20 ...
@@ -1375,20 +1443,17 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 <h3 id="24-trabajando-con-números">2.4. Trabajando con números</h3>
 <p>Es posible que la tabla que deseamos importar contenga, entre sus valores, expresiones numéricas asociadas cantidades monetarias, de manera que incluyan caracteres no numéricos (como el símbolo de la moneda o diversos separadores de millares, por ejemplo).</p>
 <p>En estos casos, la función a utilizar, de la librería <em>readr</em>, es <code>parse_number()</code>, que omite los mencionados caracteres no numéricos presentes en los valores de una columna.</p>
-<pre><code class="language-r">?parse_number
-</code></pre>
-<p>En el archivo <code>debt.csv</code> tenemos datos relacionados con la deuda nacional de <em>Estados Unidos</em> para ciertos años. Importemos el archivo y examinemos su contenido.</p>
-<pre><code class="language-r">debt &lt;- read_csv(&quot;datasets/national_debt.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">parse_number</span>
+</span></span></code></pre></div><p>En el archivo <code>debt.csv</code> tenemos datos relacionados con la deuda nacional de <em>Estados Unidos</em> para ciertos años. Importemos el archivo y examinemos su contenido.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">debt</span> <span class="o">&lt;-</span> <span class="nf">read_csv</span><span class="p">(</span><span class="s">&#34;datasets/national_debt.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   V1 = col_character(),
 ##   V2 = col_character()
 ## )
 </code></pre>
-<pre><code class="language-r">head(debt)
-</code></pre>
-<pre><code>## # A tibble: 6 × 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">debt</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 2
 ##        V1                     V2
 ##     &lt;chr&gt;                  &lt;chr&gt;
 ## 1 9/30/15 $18,150,617,666,484.30
@@ -1398,9 +1463,8 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ## 5 9/30/11 $14,790,340,328,557.10
 ## 6 9/30/10 $13,561,623,030,891.70
 </code></pre>
-<pre><code class="language-r">str(debt)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">debt</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
 ##  $ V1: chr  &quot;9/30/15&quot; &quot;9/30/14&quot; &quot;9/30/13&quot; &quot;9/30/12&quot; ...
 ##  $ V2: chr  &quot;$18,150,617,666,484.30&quot; &quot;$17,824,071,380,733.80&quot; &quot;$16,738,183,526,697.30&quot; &quot;$16,066,241,407,385.80&quot; ...
 ##  - attr(*, &quot;spec&quot;)=List of 2
@@ -1414,10 +1478,9 @@ salaries$X5 &lt;- parse_factor(salaries$X5,
 ##   ..- attr(*, &quot;class&quot;)= chr &quot;col_spec&quot;
 </code></pre>
 <p>Apliquemos ahora la función <code>parse_number()</code> a la segunda columna de la tabla.</p>
-<pre><code class="language-r">debt$V2 &lt;- parse_number(debt$V2)
-head(debt)
-</code></pre>
-<pre><code>## # A tibble: 6 × 2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="n">debt</span><span class="o">$</span><span class="n">V2</span> <span class="o">&lt;-</span> <span class="nf">parse_number</span><span class="p">(</span><span class="n">debt</span><span class="o">$</span><span class="n">V2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">head</span><span class="p">(</span><span class="n">debt</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## # A tibble: 6 × 2
 ##        V1           V2
 ##     &lt;chr&gt;        &lt;dbl&gt;
 ## 1 9/30/15 1.815062e+13
@@ -1427,9 +1490,8 @@ head(debt)
 ## 5 9/30/11 1.479034e+13
 ## 6 9/30/10 1.356162e+13
 </code></pre>
-<pre><code class="language-r">str(debt)
-</code></pre>
-<pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">debt</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Classes 'tbl_df', 'tbl' and 'data.frame':    16 obs. of  2 variables:
 ##  $ V1: chr  &quot;9/30/15&quot; &quot;9/30/14&quot; &quot;9/30/13&quot; &quot;9/30/12&quot; ...
 ##  $ V2: num  1.82e+13 1.78e+13 1.67e+13 1.61e+13 1.48e+13 ...
 ##  - attr(*, &quot;spec&quot;)=List of 2
@@ -1445,12 +1507,10 @@ head(debt)
 <h3 id="25-accediendo-a-los-metadatos-de-un-archivo">2.5. Accediendo a los metadatos de un archivo</h3>
 <p>En ocasiones, puede resultar de utilidad tener una idea previa de cómo las funciones de la librería <em>readr</em> van a interpretar las columnas de un conjunto de datos antes de importarlo. De esta forma, en el caso de que las clases inferidas no sean las adecuadas, podemos optar por declarar el tipo de alguna de ellas con antelación.</p>
 <p>Con tal fin existen las funciones <code>spec_csv()</code> y <code>spec_tsv()</code>, para los archivos separados por comas y por tabulaciones, respectivamente. En el caso de tener que trabajar con otro tipo de ficheros (por ejemplo, <code>.csv</code> en formato europeo), usaremos <code>spec_delim()</code>, especificando el símbolo que hace las veces de separador de columnas en el archivo de datos.</p>
-<pre><code class="language-r">?spec_csv
-</code></pre>
-<p>Por ejemplo, retomemos el primer ejemplo de este documento, aquel que trabajaba con el archivo <code>chickwts.csv</code>, que contenía información relativa al peso y tipo de alimentación de ciertos pollos. Veamos cuáles serían las clases que la función <code>read_csv()</code> inferiría para sus columnas a la hora de importarlo.</p>
-<pre><code class="language-r">spec_csv(&quot;datasets/chickwts.csv&quot;)
-</code></pre>
-<pre><code>## Parsed with column specification:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="o">?</span><span class="n">spec_csv</span>
+</span></span></code></pre></div><p>Por ejemplo, retomemos el primer ejemplo de este documento, aquel que trabajaba con el archivo <code>chickwts.csv</code>, que contenía información relativa al peso y tipo de alimentación de ciertos pollos. Veamos cuáles serían las clases que la función <code>read_csv()</code> inferiría para sus columnas a la hora de importarlo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="nf">spec_csv</span><span class="p">(</span><span class="s">&#34;datasets/chickwts.csv&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><pre><code>## Parsed with column specification:
 ## cols(
 ##   weight = col_integer(),
 ##   feed = col_character()
@@ -1478,6 +1538,90 @@ head(debt)
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/&amp;text=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/&amp;t=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr&amp;body=https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/&amp;title=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr%20https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2018/08/14/breve-introduccion-a-la-libreria-readr/&amp;title=Breve%20introducci%c3%b3n%20a%20la%20librer%c3%ada%20readr" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -1545,6 +1689,14 @@ head(debt)
 
 
 
+  
+  
+  
+
+  
+
+  
+
 
 
 
@@ -1582,6 +1734,15 @@ head(debt)
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -1592,7 +1753,7 @@ head(debt)
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1601,7 +1762,113 @@ head(debt)
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1627,66 +1894,7 @@ head(debt)
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

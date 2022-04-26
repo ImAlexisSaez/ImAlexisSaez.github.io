@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -283,7 +334,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/" />
@@ -376,10 +436,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -397,178 +494,206 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -592,9 +717,8 @@
 
 
 
+
   
-  
-    
   
 
 
@@ -629,7 +753,7 @@
     
       
     
-    Aug 25, 2018
+    08/25/18
   </span>
   
 
@@ -642,8 +766,6 @@
   </span>
   
 
-  
-  
   
   
   
@@ -669,7 +791,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <img src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/featured_hu27a37d6acad2d139208bdf4d23da223b_147833_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
     <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@iswanto" target="_blank" rel="noopener">Iswanto Arif</a>, disponible en <a href="https://unsplash.com/photos/rBSRJxzymNk" target="_blank" rel="noopener">Unsplash</a>.</span>
   </div>
 </div>
@@ -691,25 +813,24 @@
 <p>Dentro del &ldquo;peligro&rdquo; que supone emplear algoritmos que automatizan análisis de datos, que pueden provocar que llevemos a cabo todo tipo de acciones sin saber muy bien las razones para ello, dado que los vamos a utilizar igualmente, siempre será más recomendable que escojamos aquellos que mejor diseñados estén, ¿verdad?</p>
 <p>Veamos qué nos ofrece el código de <em>Daniël Lakens</em>. Una vez digerido el <em>README</em> del repositorio, e instalado los paquetes necesarios (así como actualizado <em>JAGS</em>, que aún estaba utilizando la versión 3), sólo tengo que encontrar algún conjunto de datos que me permita llevar a cabo una prueba <em>t</em>.</p>
 <p>He escogido el conjunto de datos <code>hsb2</code> (incluido en el paquete <code>openintro</code>), que está formado por los registros de una encuesta realizada a 200 estudiantes de secundaria. Vamos a investigar una simple cuestión, ¿existen diferencias en las puntuaciones, asociadas a matemáticas, entre chicos y chicas? Para resolver el interrogante, lo primero que debemos hacer es generar un archivo de texto que contenga los datos de interés, siguiendo el formato que se nos especifica en el archivo <code>perfect_independent_t-test.Rmd</code>.</p>
-<pre><code class="language-r"># Carga la librería que contiene el conjunto de datos hsb2
-library(openintro)
-
-# Carga el conjunto de datos hsb2
-data(hsb2)
-
-# Documentación del conjunto de datos
-?hsb2
-
-# Exploración básica del conjunto de datos
-str(hsb2)
-
-# Crea el archivo que se usará con &quot;perfect_independent_t-test.Rmd&quot;
-write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
-            file = &quot;datos_hsb2_math.txt&quot;,
-            row.names = FALSE,
-            sep = &quot;,&quot;)
-</code></pre>
-<p><em>Nota</em>: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba <em>t</em>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-r" data-lang="r"><span class="line"><span class="cl"><span class="c1"># Carga la librería que contiene el conjunto de datos hsb2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">library</span><span class="p">(</span><span class="n">openintro</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Carga el conjunto de datos hsb2</span>
+</span></span><span class="line"><span class="cl"><span class="nf">data</span><span class="p">(</span><span class="n">hsb2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Documentación del conjunto de datos</span>
+</span></span><span class="line"><span class="cl"><span class="o">?</span><span class="n">hsb2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Exploración básica del conjunto de datos</span>
+</span></span><span class="line"><span class="cl"><span class="nf">str</span><span class="p">(</span><span class="n">hsb2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Crea el archivo que se usará con &#34;perfect_independent_t-test.Rmd&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nf">write.table</span><span class="p">(</span><span class="n">hsb2</span><span class="nf">[c</span><span class="p">(</span><span class="s">&#34;id&#34;</span><span class="p">,</span> <span class="s">&#34;gender&#34;</span><span class="p">,</span> <span class="s">&#34;math&#34;</span><span class="p">)</span><span class="n">]</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">file</span> <span class="o">=</span> <span class="s">&#34;datos_hsb2_math.txt&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">row.names</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">sep</span> <span class="o">=</span> <span class="s">&#34;,&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Nota</em>: en lugar de crear un archivo de texto cuyas columnas estuvieran delimitadas por tabuladores, escogí utilizar comas. Eso luego implica realizar modificaciones menores en el fichero de la prueba <em>t</em>.</p>
 <p>Ahora, con <code>datos_hsb2_math.txt</code> ubicado en el mismo directorio que <code>perfect_independent_t-test.Rmd</code>, únicamente tenemos que actualizar la ruta que aparece en la línea 62 para la variable <code>alldata</code> (y, en mi caso, añadir <code>sep = &quot;,&quot;</code>), así como correctamente asignar las variables <code>xlabel</code>, <code>ylabel</code>, <code>factorlabel</code>, <code>measurelabel</code>, <code>xlabelstring</code> e <code>ylabelstring</code> siguiendo las instrucciones. El resto de variables, para una primera aproximación a esta herramienta, podemos dejarlas con los valores que han recibido por defecto.</p>
 <p>En mi caso, he cambiado el formato del documento de salida de <em>Word</em> a <em>PDF</em>, y, tras pulsar el botón correspondiente, he acabado con un documento ¡de 15 páginas para una simple prueba <em>t</em>! A la próxima persona que escuche quejarse de que <em>SPSS</em> devuelve una miríada de resultados voy a invitarle amablemente a que utilice este <em>script</em>.</p>
 <p>Sin embargo, una vez superado el susto inicial, gran parte del documento son explicaciones generales que justifican el modo de proceder seguido. La primera figura que encontramos es el siguiente <em>boxplot</em> (creo que en español se llama <em>diagrama de caja y bigotes</em>, pero no estoy completamente seguro), con el objeto de identificar la existencia de posibles valores atípicos:</p>
@@ -727,13 +848,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-boxplot">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Boxplot." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_7aa3cedbdc1ea78ab58fc791ef061a88.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_ad552eda594185f1e9e2821a3e8cbcb2.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -755,13 +878,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-resultados-de-los-contrastes-de-hipótesis">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Resultados de los contrastes de hipótesis." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a1094d747b0fac7f9fbe5f0ec9fc604e.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1296a041527b65c0ef4858ec24280b14.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a1094d747b0fac7f9fbe5f0ec9fc604e.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a8cf50872f1f6866f78264ffa507b6b2.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_b367e73440c99b01dba76c631d503dd6.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img02_huc4922b9677c579b5e3550a02664f44ee_19028_a8cf50872f1f6866f78264ffa507b6b2.webp"
                width="477"
                height="157"
                loading="lazy" data-zoomable /></div>
@@ -784,13 +909,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-distribución-de-las-puntuaciones-de-los-chicos">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Distribución de las puntuaciones de los chicos." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_f47c92cef72fbd4cab5583326f1e7fe8.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_687359b7acef25536836b67fe6721498.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_f47c92cef72fbd4cab5583326f1e7fe8.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_bc5b449e2d7e14731b893259a582d324.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_c59452a45d52b6c7b1c4b1ff21baa574.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img03_hu636086683020ead99df18da15743c08f_7219_bc5b449e2d7e14731b893259a582d324.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -811,13 +938,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-distribución-de-las-puntuaciones-de-las-chicas">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Distribución de las puntuaciones de las chicas." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_f76a1bb47af482c7308599322cbe7311.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_94fc46b5404fc57219fe08f1f75af00b.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_f76a1bb47af482c7308599322cbe7311.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ad7c7a9f5ea396572b610842bbc22ff1.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ae625b1198166749b37ad50a0880c990.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img04_hu8bf1a7a017aac92c7575bdf2e89f8799_8077_ad7c7a9f5ea396572b610842bbc22ff1.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -839,13 +968,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-gráfico-q-q">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Gráfico Q-Q." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_7aa3cedbdc1ea78ab58fc791ef061a88.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_d3e3c7fb984c8b13dfca1e954638b5f6.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_ad552eda594185f1e9e2821a3e8cbcb2.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img01_hu9c6bdc73270ba63f2e72b167d1bb48a2_4674_4d082d680da3f9667f2e862d45bd91a7.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -876,13 +1007,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-violin-plot">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Violin plot." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_08932532a7e4376e6361bd50630b6872.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_3e9a131ad679abc90b83ff4671eb14b7.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_08932532a7e4376e6361bd50630b6872.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_83cdaf715ecfb3d669766a7a1f28038c.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_6c4a2fd3a0aac95af90a9d6cd3c0a336.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img06_hu0fd2fffb39e2b3fa0c9c5ccc5424cd0a_6236_83cdaf715ecfb3d669766a7a1f28038c.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -903,13 +1036,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-gráfico-de-dispersión">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Gráfico de dispersión." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_adac1bd06f9a54eeb82d0b5365f0bde4.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_e2b22c7e35db5cc794342b4b0b42a5cb.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_adac1bd06f9a54eeb82d0b5365f0bde4.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_13e794195fca7b3cb1403e2d2deae04a.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_07c0fd51f3e1adbdb628bcd511985b61.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img07_hua194142b9eac16deee0bfb61ba418233_4767_13e794195fca7b3cb1403e2d2deae04a.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -930,13 +1065,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+
+
 <figure  id="figure-intervalos-de-confianza">
   <div class="d-flex justify-content-center">
     <div class="w-100" ><img alt="Intervalos de confianza." srcset="
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_6bdb017a81451872683eff733af15adf.png 400w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_94b91b81a311bbc481885a9f95e6ae0f.png 760w,
-               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_1200x1200_fit_lanczos_3.png 1200w"
-               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_6bdb017a81451872683eff733af15adf.png"
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_be4ac6ba0aa9a6a8d76c7456eb881a3e.webp 400w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_7869c7603bb9fc62861a3ba97a9bdffd.webp 760w,
+               /2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+               src="/2018/08/25/anatomia-de-una-prueba-t-perfecta/20180825-img08_hu7fa173db3ba5ded3d43629fb4fbec4ff_4465_be4ac6ba0aa9a6a8d76c7456eb881a3e.webp"
                width="760"
                height="467"
                loading="lazy" data-zoomable /></div>
@@ -960,6 +1097,90 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/&amp;text=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/&amp;t=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta&amp;body=https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/&amp;title=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta%20https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2018/08/25/anatomia-de-una-prueba-t-perfecta/&amp;title=Anatom%c3%ada%20de%20una%20prueba%20t%20perfecta" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -1027,6 +1248,14 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+  
+  
+  
+
+  
+
+  
+
 
 
 
@@ -1064,6 +1293,15 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -1074,7 +1312,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -1083,7 +1321,113 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1109,66 +1453,7 @@ write.table(hsb2[c(&quot;id&quot;, &quot;gender&quot;, &quot;math&quot;)],
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

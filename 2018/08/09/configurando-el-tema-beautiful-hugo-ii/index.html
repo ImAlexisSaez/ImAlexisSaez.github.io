@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="es" >
 
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,9 +8,42 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.5.0 for Hugo" />
   
 
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
   
 
   
@@ -36,24 +70,6 @@
   <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/" />
 
   
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-
-  
   
   
     <meta name="theme-color" content="#1565c0" />
@@ -63,27 +79,41 @@
   
 
   
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
   
   
   
     
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous" media="print" onload="this.media='all'">
-
-    
-    
-    
-    
-      
-      
-    
-    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
     
     
     
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
 
     
     
@@ -92,22 +122,6 @@
     
 
     
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
     
       
       
@@ -236,21 +250,58 @@
   
   
   
-
   
   
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.04560f2d852a4f507fd3445a9ee3c72d.css" />
+  <link rel="stylesheet" href="/css/wowchemy.1052fab8b7700a3dc49ee23683097d66.css" />
 
   
 
 
 
-  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
 
   
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
 
   
 
@@ -283,7 +334,16 @@
     
   
   
+
+  
+  
+    
+    
+  
   <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
   
   <meta property="og:site_name" content="Infinitos Contrastes" />
   <meta property="og:url" content="https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/" />
@@ -376,10 +436,47 @@
   
   
   
-  <script src="/js/wowchemy-init.min.fccf491147236875a545acccaebaf369.js"></script>
+  <script src="/js/wowchemy-init.min.2ed908358299dd7ab553faae685c746c.js"></script>
 
   
 
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
 
 
 
@@ -397,178 +494,206 @@
 
 
 
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-    <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Infinitos Contrastes</a>
-    </div>
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
 
       
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#posts"><span>Blog</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about"><span>Acerca de</span></a>
-        </li>
-
-        
-        
-
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
       
 
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
         
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
       </ul>
+
     </div>
-
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
-
-      
-      
-        
-      
-
-      
-      
-
-      
-      
-
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
+  </nav>
+</header>
 
 
   </div>
 
   <div class="page-body">
+    
+    
+    
+
     <article class="article">
 
   
@@ -592,9 +717,8 @@
 
 
 
+
   
-  
-    
   
 
 
@@ -629,7 +753,7 @@
     
       
     
-    Aug 9, 2018
+    08/09/18
   </span>
   
 
@@ -642,8 +766,6 @@
   </span>
   
 
-  
-  
   
   
   
@@ -708,7 +830,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
   <div style="position: relative">
-    <img src="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/featured_hue5c79c46871f00548de0000e34534051_368311_720x0_resize_q75_lanczos.jpg" alt="" class="featured-image">
+    <img src="/2018/08/09/configurando-el-tema-beautiful-hugo-ii/featured_hue5c79c46871f00548de0000e34534051_368311_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
     <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/@theandrewwilliam" target="_blank" rel="noopener">Andrew Charney</a>, disponible en <a href="https://unsplash.com/photos/UsbMGphPWw4" target="_blank" rel="noopener">Unsplash</a>.</span>
   </div>
 </div>
@@ -720,142 +842,135 @@
     <div class="article-style">
       <p>Nos quedamos, en la <a href="/2018/08/07/configurando-el-tema-beautiful-hugo-i/">anterior entrada</a> del <a href="/proyecto/metablog/">Proyecto Metablog</a>, a falta de revisar la parte final del archivo de configuración <code>config.toml</code>. Terminemos pues de echarle un vistazo a dicho fichero en este artículo.</p>
 <p>Al finalizar la personalización de los parámetros básicos del sitio web, se asomaba ante nosotros el siguiente, y muy extraño, bloque de código:</p>
-<pre><code class="language-toml">#[[Params.bigimg]]
-#  src = &quot;img/triangle.jpg&quot;
-#  desc = &quot;Triangle&quot;
-#[[Params.bigimg]]
-#  src = &quot;img/sphere.jpg&quot;
-#  desc = &quot;Sphere&quot;
-#  # position: see values of CSS background-position.
-#  position = &quot;center top&quot;
-#[[Params.bigimg]]
-#  src = &quot;img/hexagon.jpg&quot;
-#  desc = &quot;Hexagon&quot;
-</code></pre>
-<p>Nada intuitivo su contenido y carente por completo de comentarios, hecho nada halagüeño. Sin embargo, basta que experimentemos un poco con la anteriores líneas para comprobar que esta sección del archivo <code>config.toml</code> es la dedicada a gestionar la aparición de un carrusel de imágenes en la página web de acceso, situándolo justo detrás del título.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#[[Params.bigimg]]</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  src = &#34;img/triangle.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  desc = &#34;Triangle&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#[[Params.bigimg]]</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  src = &#34;img/sphere.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  desc = &#34;Sphere&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  # position: see values of CSS background-position.</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  position = &#34;center top&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#[[Params.bigimg]]</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  src = &#34;img/hexagon.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c">#  desc = &#34;Hexagon&#34;</span>
+</span></span></code></pre></div><p>Nada intuitivo su contenido y carente por completo de comentarios, hecho nada halagüeño. Sin embargo, basta que experimentemos un poco con la anteriores líneas para comprobar que esta sección del archivo <code>config.toml</code> es la dedicada a gestionar la aparición de un carrusel de imágenes en la página web de acceso, situándolo justo detrás del título.</p>
 <p>Conviene que le echemos un vistazo a la entrada que aparece en el propio blog de ejemplo del tema <em>Beautiful Hugo</em> hablando de la gestión de imágenes de cabecera. En el caso de haber varias declaradas, estas rotan cada diez segundos. Por otro lado, tenemos a nuestra disposición los siguientes parámetros de configuración:</p>
 <ul>
 <li><code>src</code>: ruta que apunta a la ubicación de la imagen de cabecera.</li>
 <li><code>desc</code>: parámetro opcional que nos permite incorporar un pequeño texto sobre la imagen, a modo de pie de figura.</li>
 </ul>
 <p>En mi caso, tras navegar un rato por <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>, descargué fotografías hasta componer un carrusel de cinco imágenes a las que no incorporé pie de figura alguno. Por tanto, el anterior bloque de código me ha quedado como sigue:</p>
-<pre><code class="language-toml">#
-# Configuración del carrusel de imágenes de la página de inicio
-#
-[[Params.bigimg]]
-  src = &quot;img/homepage-cabecera-01.jpg&quot;
-[[Params.bigimg]]
-  src = &quot;img/homepage-cabecera-02.jpg&quot;
-[[Params.bigimg]]
-  src = &quot;img/homepage-cabecera-03.jpg&quot;
-[[Params.bigimg]]
-  src = &quot;img/homepage-cabecera-04.jpg&quot;
-[[Params.bigimg]]
-  src = &quot;img/homepage-cabecera-05.jpg&quot;
-</code></pre>
-<p>Desvelado el anterior misterio, continuemos con la revisión del archivo <code>config.toml</code>. El siguiente bloque de instrucciones hace referencia a los datos sobre el autor del sitio web (nombre, correo electrónico, etc.). Nos permite, además, configurar una amplia gama de enlaces a nuestras cuentas de redes sociales para así facilitar la conexión entre personas. Originalmente, dicho bloque presenta el siguiente aspecto:</p>
-<pre><code class="language-toml">[Author]
-  name = &quot;Some Person&quot;
-  website = &quot;yourwebsite.com&quot;
-  email = &quot;youremail@domain.com&quot;
-  facebook = &quot;username&quot;
-  googleplus = &quot;+username&quot; # or xxxxxxxxxxxxxxxxxxxxx
-  github = &quot;username&quot;
-  gitlab = &quot;username&quot;
-  bitbucket = &quot;username&quot;
-  twitter = &quot;username&quot;
-  reddit = &quot;username&quot;
-  linkedin = &quot;username&quot;
-  xing = &quot;username&quot;
-  stackoverflow = &quot;users/XXXXXXX/username&quot;
-  snapchat = &quot;username&quot;
-  instagram = &quot;username&quot;
-  youtube = &quot;user/username&quot; # or channel/channelname
-  soundcloud = &quot;username&quot;
-  spotify = &quot;username&quot;
-  bandcamp = &quot;username&quot;
-  itchio = &quot;username&quot;
-  vk = &quot;username&quot;
-  paypal = &quot;username&quot;
-  telegram = &quot;username&quot;
-</code></pre>
-<p>Personalmente, no utilizo apenas las redes sociales y confieso que, del anterior listado, ni siquiera conozco algunas de ellas. Así pues, como no podía ser de otra manera, en mi caso el anterior bloque de código ha quedado ciertamente reducido:</p>
-<pre><code class="language-toml">#
-# Configuración del autor
-#
-[Author]
-  name    = &quot;Alexis Sáez&quot;
-  website = &quot;https://imalexissaez.github.io/&quot;
-  email   = &quot;imalexissaez@gmail.com&quot;
-  github  = &quot;ImAlexisSaez&quot;
-  twitter = &quot;imalexissaez&quot;
-</code></pre>
-<p>El último bloque de instrucciones que se presenta ante nosotros nos ofrece la posibilidad de configurar el menú que aparece en la parte superior derecha y presenta el siguiente aspecto:</p>
-<pre><code class="language-toml">[[menu.main]]
-    name = &quot;Blog&quot;
-    url = &quot;&quot;
-    weight = 1
-
-[[menu.main]]
-    name = &quot;About&quot;
-    url = &quot;page/about/&quot;
-    weight = 3
-
-[[menu.main]]
-    identifier = &quot;samples&quot;
-    name = &quot;Samples&quot;
-    weight = 2
-
-[[menu.main]]
-    parent = &quot;samples&quot;
-    name = &quot;Big Image Sample&quot;
-    url = &quot;post/2017-03-07-bigimg-sample&quot;
-    weight = 1
-
-[[menu.main]]
-    parent = &quot;samples&quot;
-    name = &quot;Math Sample&quot;
-    url = &quot;post/2017-03-05-math-sample&quot;
-    weight = 2
-
-[[menu.main]]
-    parent = &quot;samples&quot;
-    name = &quot;Code Sample&quot;
-    url = &quot;post/2016-03-08-code-sample&quot;
-    weight = 3
-
-[[menu.main]]
-    name = &quot;Tags&quot;
-    url = &quot;tags&quot;
-    weight = 3
-</code></pre>
-<p>No obstante, de momento, dejaremos el anterior bloque tal cual figura arriba y ya procederemos en un futuro a su modificación, cuando incorporemos algunos cambios adicionales al sitio web.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración del carrusel de imágenes de la página de inicio</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Params</span><span class="p">.</span><span class="nx">bigimg</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/homepage-cabecera-01.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Params</span><span class="p">.</span><span class="nx">bigimg</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/homepage-cabecera-02.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Params</span><span class="p">.</span><span class="nx">bigimg</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/homepage-cabecera-03.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Params</span><span class="p">.</span><span class="nx">bigimg</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/homepage-cabecera-04.jpg&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">Params</span><span class="p">.</span><span class="nx">bigimg</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">src</span> <span class="p">=</span> <span class="s2">&#34;img/homepage-cabecera-05.jpg&#34;</span>
+</span></span></code></pre></div><p>Desvelado el anterior misterio, continuemos con la revisión del archivo <code>config.toml</code>. El siguiente bloque de instrucciones hace referencia a los datos sobre el autor del sitio web (nombre, correo electrónico, etc.). Nos permite, además, configurar una amplia gama de enlaces a nuestras cuentas de redes sociales para así facilitar la conexión entre personas. Originalmente, dicho bloque presenta el siguiente aspecto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Author</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Some Person&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">website</span> <span class="p">=</span> <span class="s2">&#34;yourwebsite.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span> <span class="p">=</span> <span class="s2">&#34;youremail@domain.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">facebook</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">googleplus</span> <span class="p">=</span> <span class="s2">&#34;+username&#34;</span> <span class="c"># or xxxxxxxxxxxxxxxxxxxxx</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">github</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">gitlab</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">bitbucket</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">twitter</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">reddit</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">linkedin</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">xing</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">stackoverflow</span> <span class="p">=</span> <span class="s2">&#34;users/XXXXXXX/username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">snapchat</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">instagram</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">youtube</span> <span class="p">=</span> <span class="s2">&#34;user/username&#34;</span> <span class="c"># or channel/channelname</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">soundcloud</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">spotify</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">bandcamp</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">itchio</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">vk</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">paypal</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">telegram</span> <span class="p">=</span> <span class="s2">&#34;username&#34;</span>
+</span></span></code></pre></div><p>Personalmente, no utilizo apenas las redes sociales y confieso que, del anterior listado, ni siquiera conozco algunas de ellas. Así pues, como no podía ser de otra manera, en mi caso el anterior bloque de código ha quedado ciertamente reducido:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración del autor</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Author</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">name</span>    <span class="p">=</span> <span class="s2">&#34;Alexis Sáez&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">website</span> <span class="p">=</span> <span class="s2">&#34;https://imalexissaez.github.io/&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">email</span>   <span class="p">=</span> <span class="s2">&#34;imalexissaez@gmail.com&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">github</span>  <span class="p">=</span> <span class="s2">&#34;ImAlexisSaez&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">twitter</span> <span class="p">=</span> <span class="s2">&#34;imalexissaez&#34;</span>
+</span></span></code></pre></div><p>El último bloque de instrucciones que se presenta ante nosotros nos ofrece la posibilidad de configurar el menú que aparece en la parte superior derecha y presenta el siguiente aspecto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Blog&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;About&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;page/about/&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">identifier</span> <span class="p">=</span> <span class="s2">&#34;samples&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Samples&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;samples&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Big Image Sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;post/2017-03-07-bigimg-sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;samples&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Math Sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;post/2017-03-05-math-sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">parent</span> <span class="p">=</span> <span class="s2">&#34;samples&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Code Sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;post/2016-03-08-code-sample&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[[</span><span class="nx">menu</span><span class="p">.</span><span class="nx">main</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;Tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">url</span> <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">weight</span> <span class="p">=</span> <span class="mi">3</span>
+</span></span></code></pre></div><p>No obstante, de momento, dejaremos el anterior bloque tal cual figura arriba y ya procederemos en un futuro a su modificación, cuando incorporemos algunos cambios adicionales al sitio web.</p>
 <p>Fin del archivo <code>config.toml</code>, fin de la entrada, ¿verdad? Todavía no. Nos quedan un par de detalles a los que echarles un vistazo.</p>
 <p>Para empezar, a continuación, configuraremos las taxonomías de nuestro sitio web. ¿Qué es una taxonomía? Sin pretender entrar en detalles técnicos aquí, para que nos hagamos una idea, una taxonomía es un instrumento que nos permite agrupar contenido relacionado. Los ejemplos más habituales a los que estamos acostumbrados son <em>categorías</em> y <em>etiquetas</em> (que aquí se llamarán <em>categories</em> y <em>tags</em>), que facilitan al lector encontrar artículos que comparten cierta temática.</p>
 <p>En mi caso, para <em>Infinitos Contrastes</em>, conservaré ambas, aunque renombrando su versión inglesa al castellano, para facilitar después la configuración de la localización de la plantilla. Así, <code>categories</code> pasará a ser <code>apartados</code>, mientras que <code>tags</code> se convertirá en <code>etiquetas</code>. Además, declararé una nueva taxonomía denominada <code>proyectos</code>, que me facilitará agrupar fácilmente contenido, llegado el caso, de distintos apartados o etiquetas.</p>
 <p>Todo ello se traduce en incluir el siguiente bloque de código en el fichero <code>config.toml</code>:</p>
-<pre><code class="language-toml">#
-# Configuración de taxonomías
-#
-[taxonomies]
-  category = &quot;categories&quot;
-  tag      = &quot;tags&quot;
-  apartado = &quot;apartados&quot;
-  proyecto = &quot;proyectos&quot;
-  etiqueta = &quot;etiquetas&quot;
-</code></pre>
-<p>Recomiendo seguir la estructura <code>singular = plural</code> marcada en la <a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">guía oficial</a> de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración de taxonomías</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">taxonomies</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">category</span> <span class="p">=</span> <span class="s2">&#34;categories&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">tag</span>      <span class="p">=</span> <span class="s2">&#34;tags&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">apartado</span> <span class="p">=</span> <span class="s2">&#34;apartados&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">proyecto</span> <span class="p">=</span> <span class="s2">&#34;proyectos&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">etiqueta</span> <span class="p">=</span> <span class="s2">&#34;etiquetas&#34;</span>
+</span></span></code></pre></div><p>Recomiendo seguir la estructura <code>singular = plural</code> marcada en la <a href="https://gohugo.io/content-management/taxonomies/" target="_blank" rel="noopener">guía oficial</a> de taxonomías de <em>Hugo</em>. De hecho, dado que la formación de plurales en inglés y castellano es diferente, afinaría un poco la anterior recomendación señalando que conviene escoger parejas en donde el plural se diferencie del singular únicamente por el carácter <code>s</code> final.</p>
 <p>¿Por qué debemos cuidar tanto el detalle a la hora de declarar taxonomías? Es posible que en un futuro nos adentremos en la personalización de las plantillas del tema y <em>Hugo</em> incorpora útiles funciones para recorrer bucles apoyándose en esta curiosa relación singular-plural. Es por ello que no vamos a pegarnos un tiro en los pies declarando parejas de variables y valores que luego nos impidan aprovecharnos de las mencionadas herramientas.</p>
 <p>Por último, para finalizar este artículo, echaremos un vistazo a la configuración del <a href="https://gohugo.io/content-management/urls/" target="_blank" rel="noopener">permalink</a> de las entradas del sitio web. Por defecto, <em>Hugo</em> utiliza el directorio donde se encuentre el contenido (generalmente es <code>\post\</code>) y lo concatena con el título de la entrada, para el que sustituye espacios por guiones.</p>
 <p>Para empezar, me gustaría que apareciese el día de publicación del artículo en el <em>permalink</em>, siguiendo el formato <code>/año/mes/día</code>. Por otro lado, como soy consciente de que utilizar caracteres extraños a ojos del alfabeto inglés (tildes, eñes, etc.), en ocasiones, es fuente de problemas, en cada entrada definiré manualmente mi propio <em>slug</em>, para evitar que la traducción automática del título hacia su correspondiente parte del <em>permalink</em> dé lugar a resultados no deseados.</p>
 <p>Así pues, mi archivo <code>config.toml</code> finaliza con el siguiente bloque código:</p>
-<pre><code class="language-toml">#
-# Configuración del permalink
-#
-[permalinks]
-  post = &quot;/:year/:month/:day/:slug/&quot;
-</code></pre>
-<p>En el siguiente artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="c"># Configuración del permalink</span>
+</span></span><span class="line"><span class="cl"><span class="c">#</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">permalinks</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">post</span> <span class="p">=</span> <span class="s2">&#34;/:year/:month/:day/:slug/&#34;</span>
+</span></span></code></pre></div><p>En el siguiente artículo del <a href="/proyecto/metablog/">Proyecto Metablog</a> dejaremos a un lado, de momento, la configuración de la plantilla para estudiar cómo generar contenido (en forma de artículos) para nuestro sitio web.</p>
 
     </div>
 
@@ -873,6 +988,90 @@
 </div>
 
 
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&amp;text=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&amp;t=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29&amp;body=https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&amp;title=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29%20https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2018/08/09/configurando-el-tema-beautiful-hugo-ii/&amp;title=Configurando%20el%20tema%20Beautiful%20Hugo%20%28II%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
 
 
@@ -940,6 +1139,14 @@
 
 
 
+  
+  
+  
+
+  
+
+  
+
 
 
 
@@ -977,6 +1184,15 @@
 
 
 
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2022
+  </p>
+  
+
+
+
+
   <p class="powered-by">
     
     
@@ -987,7 +1203,7 @@
       
       
       
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
     
   </p>
 </footer>
@@ -996,7 +1212,113 @@
     
   </div>
 
-  
+      
+
+    
+    <script src="/js/vendor-bundle.min.fab8b449b814cc9f95b22fcf2e45f05b.js"></script>
+
+    
+    
+    
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+      <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/es/js/wowchemy.min.7945226d84d4e3897da8b3fe4e3ff8a4.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
 <div id="modal" class="modal fade" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -1022,66 +1344,7 @@
   </div>
 </div>
 
-      
-
-    
-    
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
-
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
-
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <script src="/es/js/wowchemy.min.21586ccbb6e799494c5db261641a6c60.js"></script>
-
-    
+      <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
 
 
 

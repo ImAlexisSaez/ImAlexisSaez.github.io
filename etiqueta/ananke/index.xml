@@ -21,48 +21,44 @@
 &lt;p&gt;Así pues, dedicaremos única y exclusivamente este cuarto artículo del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; a examinar con detalle el contenido del archivo &lt;code&gt;config.toml&lt;/code&gt;, que se ubica en la raíz del directorio donde hayamos decidido almacenar nuestro sitio web.&lt;/p&gt;
 &lt;p&gt;Si en su momento nos decantamos por seguir, al pie de la letra, el contenido de la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt;, dicho fichero debería figurar en el interior de la ruta &lt;code&gt;C:\Hugo\Sites\prueba&lt;/code&gt;. Desde el &lt;em&gt;explorador de archivos&lt;/em&gt; de &lt;em&gt;Windows&lt;/em&gt;, lo seleccionamos con el botón derecho del ratón y escogemos la opción &lt;code&gt;Open with Sublime Text&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Parte de su contenido nos resultará familiar a estas alturas, pues ya tuvimos que editar el mencionado archivo para solventar el &lt;em&gt;bug&lt;/em&gt; que nos impedía tener acceso local al sitio web. Empecemos examinando el primer bloque de código, aquel que comprende las siguientes cinco líneas:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;title = &amp;quot;Notre-Dame de Paris&amp;quot;
-baseURL = &amp;quot;https://example.com&amp;quot;
-languageCode = &amp;quot;en-us&amp;quot;
-theme = &amp;quot;gohugo-theme-ananke&amp;quot;
-# themesDir = &amp;quot;../..&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Estamos ante una serie de pares &lt;code&gt;variable = valor&lt;/code&gt;, en donde hemos de personalizar las cadenas de texto para que se ajusten a las opciones que deseamos de cara a nuestro sitio web.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Notre-Dame de Paris&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;baseURL&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;languageCode&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;en-us&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;gohugo-theme-ananke&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# themesDir = &amp;#34;../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Estamos ante una serie de pares &lt;code&gt;variable = valor&lt;/code&gt;, en donde hemos de personalizar las cadenas de texto para que se ajusten a las opciones que deseamos de cara a nuestro sitio web.&lt;/p&gt;
 &lt;p&gt;En el primero de ellos, la variable &lt;code&gt;title&lt;/code&gt;, como bien señala de manera descriptiva su nombre, nos permite indicar el título de la página web. En mi caso, me gustaría que fuese &lt;em&gt;Infinitos Contrastes&lt;/em&gt;, por lo que no tengo más que modificar esa primera línea y teclear &lt;code&gt;title = &amp;quot;Infinitos Contrastes&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Ahora, a &lt;code&gt;baseURL&lt;/code&gt; hemos de asignarle el enlace que utilizaremos para acceder a nuestro sitio web a través del navegador web. Dado que la idea es que alojemos la página web en &lt;em&gt;GitHub&lt;/em&gt;, dicha dirección será del estilo &lt;code&gt;https://&amp;lt;NOMBRE_DE_TU_CUENTA&amp;gt;.github.io&lt;/code&gt;. Para ilustrar esto último de manera más concreta, el nombre de mi cuenta en &lt;em&gt;GitHub&lt;/em&gt; es &lt;code&gt;ImAlexisSaez&lt;/code&gt;, por lo que el enlace que permitirá el acceso remoto a la página web será &lt;code&gt;https://imalexissaez.github.io/&lt;/code&gt;, valor que asignaré a la variable &lt;code&gt;baseURL&lt;/code&gt; en su correspondiente línea.&lt;/p&gt;
 &lt;p&gt;A continuación, en &lt;code&gt;languageCode&lt;/code&gt; reside el código del lenguaje en el que se generará nuestro sitio web, que, por defecto, es inglés estadounidense (&lt;code&gt;en-us&lt;/code&gt;). Si vamos a generar contenido un idioma diferente, conviene que modifiquemos el valor de dicha línea. Para el español, el código asociado es &lt;code&gt;es&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Aunque a primera vista no parezca un detalle relevante, es importante asignar el código adecuado a &lt;code&gt;languageCode&lt;/code&gt;, puesto que algunos temas de &lt;em&gt;Hugo&lt;/em&gt; incorporan la posibilidad de localización a diferentes lenguajes y la clave pasa, precisamente, por el valor indicado para dicha variable. Para muestra, un botón: el tema actual de este sitio web, &lt;em&gt;Beautiful Hugo&lt;/em&gt;, es uno de esos ejemplos y en un futuro veremos cómo lidiar con el asunto de la localización en &lt;em&gt;Hugo&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;La siguiente línea, &lt;code&gt;theme = &amp;quot;gohugo-theme-ananke&amp;quot;&lt;/code&gt;, le indica a &lt;em&gt;Hugo&lt;/em&gt; en qué ruta ha de buscar para acceder a los archivos correspondientes al tema de la web. Es posible que en la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/&#34;&gt;anterior entrada&lt;/a&gt; no nos diésemos cuenta, pero cuando instalamos el tema &lt;em&gt;Ananke&lt;/em&gt; automáticamente se generó una carpeta en nuestro disco duro llamada &lt;code&gt;gohugo-theme-ananke&lt;/code&gt;, en el interior del directorio &lt;code&gt;themes&lt;/code&gt;. La variable &lt;code&gt;theme&lt;/code&gt; simplemente apunta a esa ruta, de manera que si, por el extraño motivo que sea, nos vemos en la necesidad de modificar el nombre de la mencionada carpeta, también deberíamos cambiar el valor de esta línea en el archivo &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Por lo que respecta a la última línea de este bloque de código, para solventar el &lt;em&gt;bug&lt;/em&gt; que nos impedía revisar localmente el sitio web, usamos el símbolo de comentario (&lt;code&gt;#&lt;/code&gt;) para anularla. De esta forma, directamente podemos suprimirla, quedando definitivamente:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
-# Configuración básica del sitio web
-#
-title        = &amp;quot;Infinitos Contrastes&amp;quot;             # Título
-baseURL      = &amp;quot;https://imalexissaez.github.io/&amp;quot;  # Enlace de entrada
-languageCode = &amp;quot;es&amp;quot;                               # Idioma
-theme        = &amp;quot;gohugo-theme-ananke&amp;quot;              # Ruta al tema
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Recomiendo encarecidamente ir comentando el código fuente, para que en futuras revisiones sea más fácil encontrar aquello que andemos buscando. En cuanto a que todo quede alineado por el símbolo &lt;code&gt;=&lt;/code&gt;, es simplemente una manía mía, no es necesario en absoluto.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Configuración básica del sitio web&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Infinitos Contrastes&amp;#34;&lt;/span&gt;             &lt;span class=&#34;c&#34;&gt;# Título&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;baseURL&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://imalexissaez.github.io/&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c&#34;&gt;# Enlace de entrada&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;languageCode&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;                               &lt;span class=&#34;c&#34;&gt;# Idioma&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;gohugo-theme-ananke&amp;#34;&lt;/span&gt;              &lt;span class=&#34;c&#34;&gt;# Ruta al tema&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recomiendo encarecidamente ir comentando el código fuente, para que en futuras revisiones sea más fácil encontrar aquello que andemos buscando. En cuanto a que todo quede alineado por el símbolo &lt;code&gt;=&lt;/code&gt;, es simplemente una manía mía, no es necesario en absoluto.&lt;/p&gt;
 &lt;p&gt;Pasemos ahora al siguiente bloque de código, el dado por&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;MetaDataFormat = &amp;quot;yaml&amp;quot;
-DefaultContentLanguage = &amp;quot;en&amp;quot;
-SectionPagesMenu = &amp;quot;main&amp;quot;
-Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = &amp;quot;&amp;quot;
-enableRobotsTXT = true
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;En mi caso, ha quedado como sigue:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
-# Configuración adicional del sitio web
-#
-MetaDataFormat         = &amp;quot;yaml&amp;quot; # Formato cabeceras
-DefaultContentLanguage = &amp;quot;es&amp;quot;   # Idioma por defecto del contenido
-SectionPagesMenu       = &amp;quot;main&amp;quot; #
-Paginate               = 3      # Posts por página en main
-googleAnalytics        = &amp;quot;&amp;quot;     # Código para estadísticas web
-enableRobotsTXT        = true   # Buscadores
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;ya que:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;MetaDataFormat&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;yaml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;DefaultContentLanguage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;en&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;SectionPagesMenu&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;Paginate&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# this is set low for demonstrating with dummy content. Set to a higher number&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;googleAnalytics&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;enableRobotsTXT&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso, ha quedado como sigue:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Configuración adicional del sitio web&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;MetaDataFormat&lt;/span&gt;         &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;yaml&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;# Formato cabeceras&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;DefaultContentLanguage&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;es&amp;#34;&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;# Idioma por defecto del contenido&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;SectionPagesMenu&lt;/span&gt;       &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;main&amp;#34;&lt;/span&gt; &lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;Paginate&lt;/span&gt;               &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;      &lt;span class=&#34;c&#34;&gt;# Posts por página en main&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;googleAnalytics&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;     &lt;span class=&#34;c&#34;&gt;# Código para estadísticas web&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;enableRobotsTXT&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;   &lt;span class=&#34;c&#34;&gt;# Buscadores&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ya que:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;En &lt;code&gt;MetaDataFormat&lt;/code&gt; tenemos que indicar qué lenguaje emplearemos para escribir los metadatos de las cabeceras para nuestros artículos del sitio web (hablaremos de ello en detalle cuando, por fin, nos animemos a redactar el primer artículo para nuestra página web). &lt;em&gt;Hugo&lt;/em&gt; permite trabajar con &lt;em&gt;TOML&lt;/em&gt; (por defecto), &lt;em&gt;YAML&lt;/em&gt; y &lt;em&gt;JSON&lt;/em&gt;. Los dos primeros son muy similares y, en mi caso, dado que estuve un tiempo generando el sitio web con &lt;em&gt;Jekyll&lt;/em&gt;, estoy más acostumbrado al estilo &lt;em&gt;YAML&lt;/em&gt; que al &lt;em&gt;TOML&lt;/em&gt;. Por otro lado, aunque también es factible generar las mencionadas cabeceras con &lt;em&gt;JSON&lt;/em&gt;, es un lenguaje un tanto más tedioso a la hora de declarar los metadatos, por lo que recomendaría evitarlo de momento.&lt;/li&gt;
 &lt;li&gt;Para &lt;code&gt;DefaultContentLanguage&lt;/code&gt; declaramos el valor del código del idioma en el que tengamos pensado generar el contenido para nuestro sitio web. Para español, recuerdo que dicho código era &lt;code&gt;es&lt;/code&gt;.&lt;/li&gt;
@@ -72,54 +68,50 @@ enableRobotsTXT        = true   # Buscadores
 &lt;li&gt;Finalmente, con &lt;code&gt;enableRobotsTXT = true&lt;/code&gt; damos acceso a la &amp;ldquo;arañas&amp;rdquo; de los buscadores para que exploren todo nuestro sitio web e indexen aquello que estimen conveniente.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;El siguiente bloque de código:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[sitemap]
-  changefreq = &amp;quot;monthly&amp;quot;
-  priority = 0.5
-  filename = &amp;quot;sitemap.xml&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;está dedicado a los parámetros de configuración del mapa del sitio web. Al igual que sucedía con la variable &lt;code&gt;Paginate&lt;/code&gt;, configuraremos los valores de estas tres en función de la frecuencia con la que generemos contenido para nuestro sitio web. Seguramente, la única variable que modificaremos será &lt;code&gt;changefreq&lt;/code&gt;, cambiando &lt;code&gt;&amp;quot;monthly&amp;quot;&lt;/code&gt; por &lt;code&gt;&amp;quot;weekly&amp;quot;&lt;/code&gt; o, incluso, &lt;code&gt;&amp;quot;daily&amp;quot;&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sitemap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;changefreq&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;monthly&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;priority&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;sitemap.xml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;está dedicado a los parámetros de configuración del mapa del sitio web. Al igual que sucedía con la variable &lt;code&gt;Paginate&lt;/code&gt;, configuraremos los valores de estas tres en función de la frecuencia con la que generemos contenido para nuestro sitio web. Seguramente, la única variable que modificaremos será &lt;code&gt;changefreq&lt;/code&gt;, cambiando &lt;code&gt;&amp;quot;monthly&amp;quot;&lt;/code&gt; por &lt;code&gt;&amp;quot;weekly&amp;quot;&lt;/code&gt; o, incluso, &lt;code&gt;&amp;quot;daily&amp;quot;&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Así pues, en mi caso, únicamente he colocado un comentario introductorio al bloque y, por supuesto, he continuado alineando valores por el simbolo &lt;code&gt;=&lt;/code&gt;:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
-# Configuración del mapa de la web
-#
-[sitemap]
-  changefreq = &amp;quot;monthly&amp;quot;
-  priority   = 0.5
-  filename   = &amp;quot;sitemap.xml&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Para finalizar, el último bloque de código:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;[params]
-  favicon = &amp;quot;&amp;quot;
-  description = &amp;quot;The last theme you&#39;ll ever need. Maybe.&amp;quot;
-  facebook = &amp;quot;&amp;quot;
-  twitter = &amp;quot;https://twitter.com/GoHugoIO&amp;quot;
-  instagram = &amp;quot;&amp;quot;
-  youtube = &amp;quot;&amp;quot;
-  github = &amp;quot;&amp;quot;
-  linkedin = &amp;quot;&amp;quot;
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with &amp;quot;bg-&amp;quot;
-  background_color_class = &amp;quot;bg-black&amp;quot;
-  featured_image = &amp;quot;/images/gohugo-default-sample-hero-image.jpg&amp;quot;
-  recent_posts_number = 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;me ha quedado&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;#
-# Configuración de parámetros de la web
-#
-[params]
-  favicon     = &amp;quot;&amp;quot;
-  description = &amp;quot;Laboratorio de experimentos de un matemático&amp;quot;
-  facebook    = &amp;quot;&amp;quot;
-  twitter     = &amp;quot;https://twitter.com/GoHugoIO&amp;quot;
-  instagram   = &amp;quot;&amp;quot;
-  youtube     = &amp;quot;&amp;quot;
-  github      = &amp;quot;&amp;quot;
-  linkedin    = &amp;quot;&amp;quot;
-  background_color_class = &amp;quot;bg-black&amp;quot;
-  featured_image         = &amp;quot;/images/gohugo-default-sample-hero-image.jpg&amp;quot;
-  recent_posts_number    = 2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Estas líneas facilitan la configuración de algunas características de la web, como pueden ser:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Configuración del mapa de la web&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;sitemap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;changefreq&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;monthly&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;priority&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;filename&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;sitemap.xml&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para finalizar, el último bloque de código:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;favicon&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;description&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;The last theme you&amp;#39;ll ever need. Maybe.&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;facebook&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;twitter&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://twitter.com/GoHugoIO&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;instagram&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;youtube&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;github&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;linkedin&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;c&#34;&gt;# choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with &amp;#34;bg-&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;background_color_class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bg-black&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;featured_image&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/images/gohugo-default-sample-hero-image.jpg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;recent_posts_number&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;me ha quedado&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# Configuración de parámetros de la web&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;favicon&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;description&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Laboratorio de experimentos de un matemático&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;facebook&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;twitter&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;https://twitter.com/GoHugoIO&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;instagram&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;youtube&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;github&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;linkedin&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;background_color_class&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bg-black&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;featured_image&lt;/span&gt;         &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;/images/gohugo-default-sample-hero-image.jpg&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nx&#34;&gt;recent_posts_number&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Estas líneas facilitan la configuración de algunas características de la web, como pueden ser:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;favicon&lt;/code&gt;: es el icono que aparece, en el navegador, en la parte izquierda de la pestaña correspondiente a nuestro sitio web. El valor que hemos de asignar a esta variable será la ruta de acceso a la imagen que contiene el icono. Entraré en más detalles al respecto de este tema cuando aborde cómo configurar el &lt;em&gt;favicon&lt;/em&gt; para el tema &lt;em&gt;Beautiful Hugo&lt;/em&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;description&lt;/code&gt;: breve subtítulo o eslogan que podemos añadir a la página web.&lt;/li&gt;
@@ -141,14 +133,14 @@ enableRobotsTXT        = true   # Buscadores
 &lt;p&gt;Esta tercera entrada del &lt;a href=&#34;https://imalexissaez.github.io/proyecto/metablog/&#34;&gt;Proyecto Metablog&lt;/a&gt; se va a apoyar en la guía de inicio recogida en la documentación oficial de &lt;em&gt;Hugo&lt;/em&gt;, a la que podemos acceder a través de &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este enlace&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;En primer lugar, abrimos la terminal &lt;em&gt;Git Bash&lt;/em&gt; y nos dirigimos al directorio de nuestro disco duro donde tengamos pensado almacenar localmente el sitio web. En la mencionada guía recomiendan ubicar las páginas en la ruta &lt;code&gt;C:\Hugo\Sites\&lt;/code&gt;, aunque ya comenté en la &lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;anterior entrada&lt;/a&gt; que no era estrictamente necesario proceder de tal forma.&lt;/p&gt;
 &lt;p&gt;Dicho esto, en este artículo seguiremos al dedillo las indicaciones dadas en la guía, de manera que en la terminal tecleamos:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd c:/Hugo/Sites/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;El comando para generar un nuevo sitio web es &lt;code&gt;hugo new site [path] [flags]&lt;/code&gt;, donde sustituiremos &lt;code&gt;[path]&lt;/code&gt; por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las &lt;code&gt;[flags]&lt;/code&gt;, en el apartado de la documentación oficial dedicado a &lt;a href=&#34;https://gohugo.io/commands/hugo_new_site/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hugo new site&lt;/a&gt; tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; c:/Hugo/Sites/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El comando para generar un nuevo sitio web es &lt;code&gt;hugo new site [path] [flags]&lt;/code&gt;, donde sustituiremos &lt;code&gt;[path]&lt;/code&gt; por la ruta al directorio donde almacenaremos nuestra página web. Por lo que respecta a las &lt;code&gt;[flags]&lt;/code&gt;, en el apartado de la documentación oficial dedicado a &lt;a href=&#34;https://gohugo.io/commands/hugo_new_site/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hugo new site&lt;/a&gt; tenemos el listado de las disponibles. No obstante, para una primera toma de contacto, no añadiremos ninguna de ellas.&lt;/p&gt;
 &lt;p&gt;Así pues, generemos un primer sitio de prueba y, en un alarde de extrema originalidad, ubiquémoslo en el directorio &lt;code&gt;\prueba\&lt;/code&gt;. Para ello, escribimos en la terminal:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo new site prueba
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de &lt;em&gt;Hugo&lt;/em&gt; siguiendo las indicaciones de &lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;esta entrada&lt;/a&gt;) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site prueba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recibimos entonces un mensaje de felicitación (en caso contrario, convendría que revisáramos la instalación de &lt;em&gt;Hugo&lt;/em&gt; siguiendo las indicaciones de &lt;a href=&#34;https://imalexissaez.github.io/2018/07/08/instalando-hugo-en-windows/&#34;&gt;esta entrada&lt;/a&gt;) y algunas instrucciones relacionadas con el uso de temas, la creación de contenidos y el acceso local al sitio web.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Hugo&lt;/em&gt; ha creado el directorio &lt;code&gt;\prueba\&lt;/code&gt; en el interior de la ruta donde hemos ejecutado el comando &lt;code&gt;hugo new site&lt;/code&gt;. Además, ha poblado el mismo con algunas carpetas (vacías en su mayor parte), quedando una estructura como la que figura en la siguiente imagen:&lt;/p&gt;
+
+
 
 
 
@@ -166,10 +158,10 @@ enableRobotsTXT        = true   # Buscadores
 &lt;figure  id=&#34;figure-estructura-del-sitio-web&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Estructura del sitio web.&#34; srcset=&#34;
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_5e915b8da42e4da99db27d5480afd38d.png 400w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_b02a7a48309c0e99b79988a033801333.png 760w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_5e915b8da42e4da99db27d5480afd38d.png&#34;
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_271d4be3c999b0c02f0e6c26d76d30a3.webp 400w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_9d193298971fddc93d386e62e17b9e04.webp 760w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img01_hu7a3c76859068dd17c68c75e7f63178fa_2727_271d4be3c999b0c02f0e6c26d76d30a3.webp&#34;
                width=&#34;94&#34;
                height=&#34;154&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -178,17 +170,15 @@ enableRobotsTXT        = true   # Buscadores
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;En un futuro exploraremos con detalle el cometido de algunos de esos directorios que aparecen en la imagen (&lt;code&gt;\content\&lt;/code&gt; y &lt;code&gt;\layouts\&lt;/code&gt; son de extrema importancia, así como ese curioso archivo denominado &lt;code&gt;config.toml&lt;/code&gt;). No obstante, por el momento, evitemos distraernos en exceso y sigamos las indicaciones de la guía.&lt;/p&gt;
 &lt;p&gt;Volvemos a la terminal, nos movemos hacia el directorio &lt;code&gt;\prueba\&lt;/code&gt; e iniciamos un repositorio &lt;em&gt;Git&lt;/em&gt;, acciones que requieren teclear los dos siguientes comandos:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd prueba
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git init
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;En el siguiente paso de la guía nos invitan a instalar un tema para la web, &lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ananke&lt;/a&gt;, utilizando &lt;code&gt;submodule&lt;/code&gt; (un comando de &lt;em&gt;Git&lt;/em&gt;). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta &lt;code&gt;\themes\&lt;/code&gt; y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd themes
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/budparr/gohugo-theme-ananke.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;De esta manera, tenemos acceso localmente a un sitio web de prueba, con un poco de contenido ya generado, que nos permitirá hacernos una idea del aspecto final de nuestro sitio web utilizando el tema &lt;em&gt;Ananke&lt;/em&gt;. Aunque soy consciente de que me estoy desviando &amp;lsquo;&amp;rsquo;ligeramente&amp;rsquo;&amp;rsquo; de la guía oficial, vamos a tomar esta senda para ver cómo luce nuestro sitio web.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; prueba
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git init
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En el siguiente paso de la guía nos invitan a instalar un tema para la web, &lt;a href=&#34;https://themes.gohugo.io/gohugo-theme-ananke/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ananke&lt;/a&gt;, utilizando &lt;code&gt;submodule&lt;/code&gt; (un comando de &lt;em&gt;Git&lt;/em&gt;). No obstante, en este momento, me voy a desviar de las indicaciones dadas y optar por un método diferente de instalación de temas. A continuación, nos moveremos a la carpeta &lt;code&gt;\themes\&lt;/code&gt; y clonaremos en nuestro disco duro el propio repositorio del tema. Para ello, escribimos en la terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; themes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/budparr/gohugo-theme-ananke.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta manera, tenemos acceso localmente a un sitio web de prueba, con un poco de contenido ya generado, que nos permitirá hacernos una idea del aspecto final de nuestro sitio web utilizando el tema &lt;em&gt;Ananke&lt;/em&gt;. Aunque soy consciente de que me estoy desviando &amp;lsquo;&amp;rsquo;ligeramente&amp;rsquo;&amp;rsquo; de la guía oficial, vamos a tomar esta senda para ver cómo luce nuestro sitio web.&lt;/p&gt;
 &lt;p&gt;Abrimos el explorador de archivos de &lt;em&gt;Windows&lt;/em&gt; y en el directorio donde hemos ubicado la página web (&lt;code&gt;C:\Hugo\Sites\prueba\&lt;/code&gt;) accedemos a la carpeta &lt;code&gt;themes&lt;/code&gt;. Una vez dentro de ella, hacemos doble clic sobre el directorio &lt;code&gt;gohugo-theme-ananke&lt;/code&gt; y repetimos luego la acción con la carpeta denomiada &lt;code&gt;exampleSite&lt;/code&gt;, cuyos contenidos son:&lt;/p&gt;
+
+
 
 
 
@@ -206,10 +196,10 @@ enableRobotsTXT        = true   # Buscadores
 &lt;figure  id=&#34;figure-contenido-de-la-carpeta-del-sitio-web-de-ejemplo&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Contenido de la carpeta del sitio web de ejemplo.&#34; srcset=&#34;
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_c5be8dd0ceb4d0d764890fb7d977530a.png 400w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_b1486e1e0a9082a116e6fdc4aa9a3834.png 760w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_c5be8dd0ceb4d0d764890fb7d977530a.png&#34;
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_3159a60f00e5d9fe88c80235924ed21c.webp 400w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_a573fd9868873012a64346e477969e5c.webp 760w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img02_hu2fb7d8a8aa34797b983358bace71f1cd_1615_3159a60f00e5d9fe88c80235924ed21c.webp&#34;
                width=&#34;97&#34;
                height=&#34;72&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -218,24 +208,21 @@ enableRobotsTXT        = true   # Buscadores
     &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;p&gt;Copiamos tanto las dos carpetas, como el archivo &lt;code&gt;config.toml&lt;/code&gt;, y pegamos todo en el directorio &lt;code&gt;C:\Hugo\Sites\prueba\&lt;/code&gt;, reemplazando los ficheros existentes con el mismo nombre que en él se encuentran.&lt;/p&gt;
 &lt;p&gt;Ahora volvemos a la terminal, que todavía está apuntando a la carpeta &lt;code&gt;\themes\&lt;/code&gt; y tecleamos&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;para volver al directorio raíz de nuestro sitio web. A continuación, para revisar el sitio web localmente escribimos&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;y, para mi sorpresa, recibimos el siguiente mensaje de error &lt;code&gt;Error: Unable to find theme Directory: C:\Hugo\gohugo-theme-ananke&lt;/code&gt;, hecho que debe ser el &lt;em&gt;karma&lt;/em&gt; haciendo acto de presencia por haberme desviado de las indicaciones de la guía oficial.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;para volver al directorio raíz de nuestro sitio web. A continuación, para revisar el sitio web localmente escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y, para mi sorpresa, recibimos el siguiente mensaje de error &lt;code&gt;Error: Unable to find theme Directory: C:\Hugo\gohugo-theme-ananke&lt;/code&gt;, hecho que debe ser el &lt;em&gt;karma&lt;/em&gt; haciendo acto de presencia por haberme desviado de las indicaciones de la guía oficial.&lt;/p&gt;
 &lt;p&gt;Aunque no quería meterme en este artículo en el contenido del archivo &lt;code&gt;config.toml&lt;/code&gt;, para evitar ofrecer mucha información de golpe, solucionemos rápidamente este pequeño &lt;em&gt;bug&lt;/em&gt; para así poder revisar localmente el sitio web.&lt;/p&gt;
 &lt;p&gt;Hacemos clic derecho sobre el mencionado fichero y lo abrimos con &lt;em&gt;Sublime Text&lt;/em&gt;. Modificamos la quinta línea que aparece, de&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;themesDir = &amp;quot;../..&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;a&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;# themesDir = &amp;quot;../..&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;y guardamos los cambios.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;themesDir&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;a&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c&#34;&gt;# themesDir = &amp;#34;../..&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y guardamos los cambios.&lt;/p&gt;
 &lt;p&gt;Volvemos ahora a la terminal y tecleamos de nuevo&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Tras recibir cierta información sobre el sitio, únicamente nos resta abrir nuestro navegador web favorito y en la barra de direcciones escribir &lt;code&gt;http://localhost:1313/&lt;/code&gt;, accediendo así a la página de bienvenida de nuestro sitio web, que luce así de bien:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tras recibir cierta información sobre el sitio, únicamente nos resta abrir nuestro navegador web favorito y en la barra de direcciones escribir &lt;code&gt;http://localhost:1313/&lt;/code&gt;, accediendo así a la página de bienvenida de nuestro sitio web, que luce así de bien:&lt;/p&gt;
+
+
 
 
 
@@ -253,10 +240,10 @@ enableRobotsTXT        = true   # Buscadores
 &lt;figure  id=&#34;figure-sitio-web-con-el-tema-ananke&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Sitio web con el tema *Ananke*&#34; srcset=&#34;
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_1ed67da058910abee2dd8dd9b1acf019.png 400w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_280bfefd99d2a265b83986d61100b2f2.png 760w,
-               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_1200x1200_fit_lanczos_3.png 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_1ed67da058910abee2dd8dd9b1acf019.png&#34;
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_a55af20517fe1a7845a6d3f611abaeae.webp 400w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_413d89db0d3ffcc51094a057a12e6483.webp 760w,
+               /2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://imalexissaez.github.io/2018/07/11/creando-un-sitio-web-con-hugo/20180711-img03_hubbed8eeec85af9da71255570d12d6298_1066184_a55af20517fe1a7845a6d3f611abaeae.webp&#34;
                width=&#34;760&#34;
                height=&#34;360&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
