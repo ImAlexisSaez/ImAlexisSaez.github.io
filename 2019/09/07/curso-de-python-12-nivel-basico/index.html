@@ -1,0 +1,2288 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Temas avanzados" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #12 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Temas avanzados" /><meta property="og:image" content="https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-09-07T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-09-07T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/"
+  },
+  "headline": "Curso de Python #12 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-09-07T05:59:39+02:00",
+  "dateModified": "2019-09-07T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Temas avanzados"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #12 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="5ea29b6311d17216a5749a2bb495684d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #12 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Temas avanzados</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    09/07/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    28 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/09/07/curso-de-python-12-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-funciones-lambda">1. Funciones lambda</h2>
+<h3 id="11-vídeo">1.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/tfYLcHbjc_A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>En esta lección, estudiaremos las funciones <em>lambda</em>. Una función <strong>lambda</strong> es una función anónima, y se utilizan en <em>Python</em> a la hora de programar para abreviar, ya que aligera la sintaxis del código. Además, no ocupan lugar en el espacio de nombres asociado a las funciones de una aplicación.</p>
+<p>Cualquier tarea que llevemos a cabo con una función <em>lambda</em> se puede desarrollar mediante una función normal, pero no así a la inversa (sobre todo cuando su lógica es compleja).</p>
+<p>Por ejemplo, para calcular el área de un triángulo, podemos construir la función:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">b</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">2</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34;El área del triángulo de base </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> y altura </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> es </span><span class="si">{</span><span class="n">area_triangulo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El área del triángulo de base <span class="m">1</span> y altura <span class="m">1</span> es 0.5.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">1</span> y altura <span class="m">6</span> es 3.0.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">6</span> y altura <span class="m">1</span> es 3.0.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">6</span> y altura <span class="m">6</span> es 18.0.
+</span></span></code></pre></div><p>No obstante, una función tan sencilla puede ser abreviada como una función <em>lambda</em>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">area_triangulo</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">:</span> <span class="n">b</span> <span class="o">*</span> <span class="n">h</span> <span class="o">/</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="sa">f</span><span class="s2">&#34;El área del triángulo de base </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> y altura </span><span class="si">{</span><span class="n">h</span><span class="si">}</span><span class="s2"> es </span><span class="si">{</span><span class="n">area_triangulo</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span><span class="si">}</span><span class="s2">.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El área del triángulo de base <span class="m">1</span> y altura <span class="m">1</span> es 0.5.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">1</span> y altura <span class="m">6</span> es 3.0.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">6</span> y altura <span class="m">1</span> es 3.0.
+</span></span><span class="line"><span class="cl">El área del triángulo de base <span class="m">6</span> y altura <span class="m">6</span> es 18.0.
+</span></span></code></pre></div><p><em>Nota</em>: las funciones <em>lambda</em>, generalmente, no se asignan a variables. En tales casos, conviene hacer uso de la instrucción <code>def</code> y definir una función tal y como estamos habituados.</p>
+<p>Usadas &lsquo;&lsquo;al vuelo&rsquo;&rsquo;, su sintaxis queda como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El cubo de 3 es &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">3</span><span class="p">)))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El cubo de <span class="m">3</span> es <span class="m">27</span>
+</span></span></code></pre></div><h3 id="13-código-fuente">1.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/66/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="2-filter">2. Filter</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/mTJKU7IxL0U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>En esta lección, estudiaremos la función <code>filter()</code>, que forma parte de un conjunto de funciones conocidas como &lsquo;&lsquo;de orden superior&rsquo;&rsquo; y nos permiten utilizar en <em>Python</em> el paradigma de <strong>programación funcional</strong>. La mencionada función verifica que los elementos de una secuencia cumplen una condición, devolviendo un iterador compuesto por aquellos que la satisfacen.</p>
+<p>Por ejemplo, podemos construir un programa que detecte qué números son pares y cuáles no lo son, devolviéndonos una lista compuesta por los que verifiquen dicha condición:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">numero_par</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">numero_par</span><span class="p">,</span> <span class="n">numeros</span><span class="p">))</span>  <span class="c1"># objeto iterable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">numero_par</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;filter object at 0x0000029E5BA262B0&gt;
+</span></span><span class="line"><span class="cl"><span class="o">[</span>24, 8, 92<span class="o">]</span>
+</span></span></code></pre></div><p>La función <code>numero_par()</code> la podemos abreviar un tanto como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">numero_par</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+</span></span></code></pre></div><p>Es más, como es tan sencilla, incluso podemos prescindir de ella utilizando una función <em>lambda</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">numeros</span> <span class="o">=</span> <span class="p">[</span><span class="mi">17</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">92</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">numeros</span><span class="p">)))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>24, 8, 92<span class="o">]</span>
+</span></span></code></pre></div><p>Habitualmente, utilizaremos la función <code>filter()</code> para filtrar objetos. Por ejemplo, supongamos que tenemos varias instancias de la clase <code>Empleado</code> y deseamos filtrarlas por el valor de uno de sus atributos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cargo</span><span class="p">,</span> <span class="n">salario</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargo</span> <span class="o">=</span> <span class="n">cargo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> trabaja como </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cargo</span><span class="si">}</span><span class="s2"> y cobra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">salario</span><span class="si">}</span><span class="s2"> €.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_empleados</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="s2">&#34;Director&#34;</span><span class="p">,</span> <span class="mi">75000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Presidenta&#34;</span><span class="p">,</span> <span class="mi">85000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="s2">&#34;Administrativo&#34;</span><span class="p">,</span> <span class="mi">25000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Sara&#34;</span><span class="p">,</span> <span class="s2">&#34;Secretaria&#34;</span><span class="p">,</span> <span class="mi">27000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Mario&#34;</span><span class="p">,</span> <span class="s2">&#34;Botones&#34;</span><span class="p">,</span> <span class="mi">21000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">salarios_altos</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span><span class="o">.</span><span class="n">salario</span> <span class="o">&gt;</span> <span class="mi">50000</span><span class="p">,</span> <span class="n">lista_empleados</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">salarios_altos</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Juan trabaja como Director y cobra <span class="m">75000</span> €.
+</span></span><span class="line"><span class="cl">Ana trabaja como Presidenta y cobra <span class="m">85000</span> €.
+</span></span></code></pre></div><p>A modo de curiosidad, ya que me he avanzado y he utilizado comprensiones de listas (ver la última línea del bloque de código anterior), resulta que mediante ellas, en este ejemplo concreto, no es necesario recurrir al uso de la función <code>filter()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cargo</span><span class="p">,</span> <span class="n">salario</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargo</span> <span class="o">=</span> <span class="n">cargo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> trabaja como </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cargo</span><span class="si">}</span><span class="s2"> y cobra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">salario</span><span class="si">}</span><span class="s2"> €.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_empleados</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="s2">&#34;Director&#34;</span><span class="p">,</span> <span class="mi">75000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Presidenta&#34;</span><span class="p">,</span> <span class="mi">85000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="s2">&#34;Administrativo&#34;</span><span class="p">,</span> <span class="mi">25000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Sara&#34;</span><span class="p">,</span> <span class="s2">&#34;Secretaria&#34;</span><span class="p">,</span> <span class="mi">27000</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Mario&#34;</span><span class="p">,</span> <span class="s2">&#34;Botones&#34;</span><span class="p">,</span> <span class="mi">21000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">lista_empleados</span> <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">salario</span> <span class="o">&gt;</span> <span class="mi">50000</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Juan trabaja como Director y cobra <span class="m">75000</span> €.
+</span></span><span class="line"><span class="cl">Ana trabaja como Presidenta y cobra <span class="m">85000</span> €.
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/67/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-map">3. Map</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/4dkjpHI6vpA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>En esta lección, estudiaremos la función <code>map()</code>, que, como <code>filter()</code>, también forma parte de un conjunto de funciones conocidas como &lsquo;&lsquo;de orden superior&rsquo;&rsquo; y nos permiten utilizar en <em>Python</em> el paradigma de <strong>programación funcional</strong>.</p>
+<p>La filosofía de ambas funciones es ciertamente similar ya que, por ejemplo, <code>map()</code> aplica una función a cada elemento de un objeto de tipo iterable (listas, tuplas&hellip;) devolviendo a su vez un objeto de tipo iterable que contiene los resultados de dicha aplicación.</p>
+<p>Retomemos la clase definida en la lección anterior, junto con la lista de empleados generada:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Empleado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">cargo</span><span class="p">,</span> <span class="n">salario</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargo</span> <span class="o">=</span> <span class="n">cargo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">salario</span> <span class="o">=</span> <span class="n">salario</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> trabaja como </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">cargo</span><span class="si">}</span><span class="s2"> y cobra </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">salario</span><span class="si">}</span><span class="s2"> €.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_empleados</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="s2">&#34;Director&#34;</span><span class="p">,</span> <span class="mi">6700</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Presidenta&#34;</span><span class="p">,</span> <span class="mi">7500</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="s2">&#34;Administrativo&#34;</span><span class="p">,</span> <span class="mi">1200</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Sara&#34;</span><span class="p">,</span> <span class="s2">&#34;Secretaria&#34;</span><span class="p">,</span> <span class="mi">1250</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Empleado</span><span class="p">(</span><span class="s2">&#34;Mario&#34;</span><span class="p">,</span> <span class="s2">&#34;Botones&#34;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></div><p><em>Nota</em>: hemos modificado los salarios para que sus cantidades sean mensuales, en lugar de las anuales declaradas en la lección anterior.</p>
+<p>Imaginemos ahora que todos los empleados recibien un extra monetario en forma de comisión, que hemos de agregar a su salario mensual.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calcula_comision</span><span class="p">(</span><span class="n">empleado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">empleado</span><span class="o">.</span><span class="n">salario</span> <span class="o">*=</span> <span class="mf">1.03</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">empleado</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_empleados_comision</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">calcula_comision</span><span class="p">,</span> <span class="n">lista_empleados</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">lista_empleados_comision</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Juan trabaja como Director y cobra 6901.0 €.
+</span></span><span class="line"><span class="cl">Ana trabaja como Presidenta y cobra 7725.0 €.
+</span></span><span class="line"><span class="cl">Antonio trabaja como Administrativo y cobra 1236.0 €.
+</span></span><span class="line"><span class="cl">Sara trabaja como Secretaria y cobra 1287.5 €.
+</span></span><span class="line"><span class="cl">Mario trabaja como Botones y cobra 1030.0 €.
+</span></span></code></pre></div><p>¿Y si queremos aplicar la comisión solamente a aquellos trabajadores que tengan un salario inferior a 3000 euros?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">calcula_comision</span><span class="p">(</span><span class="n">empleado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">empleado</span><span class="o">.</span><span class="n">salario</span> <span class="o">&lt;=</span> <span class="mi">3000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">empleado</span><span class="o">.</span><span class="n">salario</span> <span class="o">*=</span> <span class="mf">1.03</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">empleado</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_empleados_comision</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">calcula_comision</span><span class="p">,</span> <span class="n">lista_empleados</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">lista_empleados_comision</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Juan trabaja como Director y cobra <span class="m">6700</span> €.
+</span></span><span class="line"><span class="cl">Ana trabaja como Presidenta y cobra <span class="m">7500</span> €.
+</span></span><span class="line"><span class="cl">Antonio trabaja como Administrativo y cobra 1236.0 €.
+</span></span><span class="line"><span class="cl">Sara trabaja como Secretaria y cobra 1287.5 €.
+</span></span><span class="line"><span class="cl">Mario trabaja como Botones y cobra 1030.0 €.
+</span></span></code></pre></div><h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/68/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-expresiones-regulares-i">4. Expresiones regulares I</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/qpwn3gRtxCo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>En esta lección, comenzaremos el estudio de las <strong>expresiones regulares</strong> en <em>Python</em>, que son una secuencia de caracteres que forman un patrón de búsqueda y sirven para el trabajo y procesamiento de texto. Por ejemplo, podemos estar interesados, entre otras tareas, en:</p>
+<ul>
+<li>Buscar un texto que se ajuste a un formato determinado (correo electrónico).</li>
+<li>Buscar si existe o no una cadena de caracteres dentro de un texto.</li>
+<li>Contar el número de coincidencias dentro de un texto.</li>
+</ul>
+<p>Conviene que consultemos la <a href="https://docs.python.org/3/library/re.html" target="_blank" rel="noopener">documentación oficial</a> del módulo asociado a las expresiones regulares, <code>re</code>, en <em>Python</em>.</p>
+<p>A continuación, veamos algunos ejemplos sencillos. Empecemos ilustrando el uso del método <code>search()</code>, que nos permite buscar una cadena de texto concreta y nos ofrece su localización:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&#34;Vamos a aprender expresiones regulares.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;aprender&#34;</span><span class="p">,</span> <span class="n">cadena</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;re.Match object<span class="p">;</span> <span class="nv">span</span><span class="o">=(</span>8, 16<span class="o">)</span>, <span class="nv">match</span><span class="o">=</span><span class="s1">&#39;aprender&#39;</span>&gt;
+</span></span></code></pre></div><p>Apreciamos que la ejecución nos devuelve un objeto, de tipo <code>Match</code>, que en el intervalo de caracteres <code>(8, 16)</code> ha encontrado la cadena de texto de interés, <code>aprender</code>.</p>
+<p>Ahora bien, si insertamos una cadena de texto que no figure en la variable <code>cadena</code>, el resultado que arroja la ejecución del programa es <code>None</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&#34;Vamos a aprender expresiones regulares.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;Python&#34;</span><span class="p">,</span> <span class="n">cadena</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">None
+</span></span></code></pre></div><p>Obviamente, podemos pasar variables a la función <code>search()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&#34;Vamos a aprender expresiones regulares.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto_buscar</span> <span class="o">=</span> <span class="s2">&#34;aprender&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">texto_buscar</span><span class="p">,</span> <span class="n">cadena</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Texto encontrado.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Texto no encontrado.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Texto encontrado.
+</span></span></code></pre></div><p>Hemos encontrado el texto, efectivamente, pero, ¿en qué carácter comienza? Utilizando el método <code>start()</code> hallamos la respuesta:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s2">&#34;Vamos a aprender expresiones regulares.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto_buscar</span> <span class="o">=</span> <span class="s2">&#34;aprender&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto_encontrado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">texto_buscar</span><span class="p">,</span> <span class="n">cadena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texto_encontrado</span><span class="o">.</span><span class="n">start</span><span class="p">())</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">8</span>
+</span></span></code></pre></div><p>Análogamente,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texto_encontrado</span><span class="o">.</span><span class="n">end</span><span class="p">())</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">16</span>
+</span></span></code></pre></div><p>Al hilo de las acciones anteriores, el método <code>span()</code> nos devuelve una tupla con los valores mostrados arriba:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texto_encontrado</span><span class="o">.</span><span class="n">span</span><span class="p">())</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">(</span>8, 16<span class="o">)</span>
+</span></span></code></pre></div><p>Finalmente, examinemos la utilidad del método <code>findall()</code>, para lo cual hemos de ampliar un poco la cadena de texto original suministrada:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Vamos a aprender expresiones regulares en Python.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Python es un lenguaje de sintaxis sencilla.&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto_buscar</span> <span class="o">=</span> <span class="s2">&#34;Python&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">texto_buscar</span><span class="p">,</span> <span class="n">cadena</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span><span class="s1">&#39;Python&#39;</span>, <span class="s1">&#39;Python&#39;</span><span class="o">]</span>
+</span></span></code></pre></div><p>Accedemos a una lista que contiene el texto de interés, tantas veces como repeticiones figuren en él. Empleando ahora la función <code>len()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">cadena</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Vamos a aprender expresiones regulares en Python.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Python es un lenguaje de sintaxis sencilla.&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto_buscar</span> <span class="o">=</span> <span class="s2">&#34;Python&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">texto_buscar</span><span class="p">,</span> <span class="n">cadena</span><span class="p">)))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">2</span>
+</span></span></code></pre></div><h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/69/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="5-expresiones-regulares-ii">5. Expresiones regulares II</h2>
+<h3 id="51-vídeo">5.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/V8316ao08tQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="52-notas-personales">5.2. Notas personales</h3>
+<p>En esta lección, continuaremos el estudio de las expresiones regulares abordando los denominados <strong>metacaracteres</strong> (o <em>caracteres comodín</em>).</p>
+<p>Empecemos con las <em>anclas</em>, que dentro de una lista nos van a permitir encontrar coincidencias al principio y al final de cada elemento de esta. Por ejemplo, mediante el ancla <code>^</code>, las buscamos al inicio de la cadena de texto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana Gómez&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;María Martín&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Sandra López&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Santiago Martín&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">lista_nombres</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^Sandra&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Sandra López
+</span></span></code></pre></div><p>El último bucle lo podemos compactar utilizando comprensiones de listas de la siguiente forma:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">lista_nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^Sandra&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><p>Así, podemos extraer de <code>lista_nombres</code>, si nos interesa, todos los nombres que comiencen por <code>S</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana Gómez&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;María Martín&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Sandra López&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Santiago Martín&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">lista_nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^S&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Sandra López
+</span></span><span class="line"><span class="cl">Santiago Martín
+</span></span></code></pre></div><p>¿Y si queremos todos los nombres cuyo apellido sea <code>Martín</code>? El ancla <code>$</code> es el metacarácter que hemos de emplear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana Gómez&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;María Martín&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Sandra López&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s2">&#34;Santiago Martín&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">lista_nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;Martín$&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">María Martín
+</span></span><span class="line"><span class="cl">Santiago Martín
+</span></span></code></pre></div><p>Veamos otro ejemplo de su uso, trabajando ahora con una lista de dominios, estamos interesados en encontrar aquellos que acaben en <code>.es</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;https://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;https://pildorasinformaticas.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.com&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;.es$&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://pildorasinformaticas.es
+</span></span><span class="line"><span class="cl">ftp://pildorasinformaticas.es
+</span></span></code></pre></div><p>Quizá nos interese hallar qué dominios son de tipo <code>ftp</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;https://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;https://pildorasinformaticas.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.com&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^ftp&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ftp://pildorasinformaticas.es
+</span></span><span class="line"><span class="cl">ftp://pildorasinformaticas.com
+</span></span></code></pre></div><p>Por otro lado, tenemos las <strong>clases de caracteres</strong>, que nos permiten introducir patrones de búsqueda utilizando el operador <code>[]</code>. Cambiemos ligeramente los dominios para ver su utilidad (buscando aquellos dominios que contengan el carácter <code>ñ</code>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;https://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.es&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;https://pildorasinformaticas.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;ftp://pildorasinformaticas.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;https://informaticaenespaña.es&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;[ñ]&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">https://informaticaenespaña.es
+</span></span></code></pre></div><p>Un ejemplo un tanto más complejo: en una lista de palabras, queremos encontrar si se hallan las palabras <code>niños</code> y <code>niñas</code>. Como solo se diferencias ambas cadenas en un carácter, podemos escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;hombres&#34;</span><span class="p">,</span> <span class="s2">&#34;mujeres&#34;</span><span class="p">,</span> <span class="s2">&#34;mascotas&#34;</span><span class="p">,</span> <span class="s2">&#34;niños&#34;</span><span class="p">,</span> <span class="s2">&#34;niñas&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;niñ[oa]s&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">niños
+</span></span><span class="line"><span class="cl">niñas
+</span></span></code></pre></div><p><em>Nota</em>: al escribir <code>[oa]</code> no exigimos que deban estar presentes los dos caracteres y en ese preciso orden. La función <code>findall()</code> nos arrojará una coincidencia cuando alguno de los dos esté presente (o ambos, siendo indiferente el orden en el que se encuentren en este último caso).</p>
+<p>Esta estrategia es también útil cuando lidiamos con tildes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;hombres&#34;</span><span class="p">,</span> <span class="s2">&#34;mujeres&#34;</span><span class="p">,</span> <span class="s2">&#34;mascotas&#34;</span><span class="p">,</span> <span class="s2">&#34;camión&#34;</span><span class="p">,</span> <span class="s2">&#34;camion&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;cami[oó]n&#34;</span><span class="p">,</span> <span class="n">url</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">camión
+</span></span><span class="line"><span class="cl">camion
+</span></span></code></pre></div><h3 id="53-código-fuente">5.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/70/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="6-expresiones-regulares-iii">6. Expresiones regulares III</h2>
+<h3 id="61-vídeo">6.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Q4vXCQd1zwc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="62-notas-personales">6.2. Notas personales</h3>
+<p>En esta lección, continuaremos el estudio de las expresiones regulares analizando cómo trabajar con <strong>rangos</strong>. Estos nos permiten buscar patrones indicando un rango de números, de caracteres, etc.</p>
+<p>Por ejemplo, a partir de una lista de nombres, supongamos que estamos interesados en hallar todos aquellos que tengan letras comprendidas entre la <code>o</code> y la <code>t</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Pedro&#34;</span><span class="p">,</span> <span class="s2">&#34;María&#34;</span><span class="p">,</span> <span class="s2">&#34;Rosa&#34;</span><span class="p">,</span> <span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Celia&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;[o-t]&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Pedro
+</span></span><span class="line"><span class="cl">María
+</span></span><span class="line"><span class="cl">Rosa
+</span></span><span class="line"><span class="cl">Sandra
+</span></span></code></pre></div><p><em>Nota</em>: los rangos son <em>case sensitive</em>, esto es, distinguen entre minúsculas y mayúsculas. Por ejemplo, si combinamos el rango anterior con el ancla <code>^</code>, la ejecución no arrojará resultado alguno, porque todos los nombres están declarados con su inicial en mayúscula.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Pedro&#34;</span><span class="p">,</span> <span class="s2">&#34;María&#34;</span><span class="p">,</span> <span class="s2">&#34;Rosa&#34;</span><span class="p">,</span> <span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Celia&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^[o-t]&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><p>No obstante, completando el rango solucionamos esta situación:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Pedro&#34;</span><span class="p">,</span> <span class="s2">&#34;María&#34;</span><span class="p">,</span> <span class="s2">&#34;Rosa&#34;</span><span class="p">,</span> <span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Celia&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;^[o-tO-T]&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Pedro
+</span></span><span class="line"><span class="cl">Rosa
+</span></span><span class="line"><span class="cl">Sandra
+</span></span></code></pre></div><p>A continuación, estudiemos el uso de rangos cuando se nos presenta una lista de códigos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">codigos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ma1&#34;</span><span class="p">,</span> <span class="s2">&#34;Se1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ba1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma3&#34;</span><span class="p">,</span> <span class="s2">&#34;Va1&#34;</span><span class="p">,</span> <span class="s2">&#34;Va2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma4&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span> <span class="k">for</span> <span class="n">codigo</span> <span class="ow">in</span> <span class="n">codigos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;Ma[0-3]&#34;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Ma1
+</span></span><span class="line"><span class="cl">Ma2
+</span></span><span class="line"><span class="cl">Ma3
+</span></span></code></pre></div><p>Por otro lado, <em>Python</em> nos permite la posibilidad de negar rangos, es decir, de obtener aquellos resultados que no se ajustan al patrón de búsqueda especificado. Para ello, antecediendo el rango, utilizamos el carácter <code>^</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">codigos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ma1&#34;</span><span class="p">,</span> <span class="s2">&#34;Se1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ba1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma3&#34;</span><span class="p">,</span> <span class="s2">&#34;Va1&#34;</span><span class="p">,</span> <span class="s2">&#34;Va2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma4&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span> <span class="k">for</span> <span class="n">codigo</span> <span class="ow">in</span> <span class="n">codigos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;Ma[^0-3]&#34;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Ma4
+</span></span></code></pre></div><p>Acto seguido, agreguemos algunos códigos nuevos y sigamos experimentando el uso de rangos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">codigos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ma1&#34;</span><span class="p">,</span> <span class="s2">&#34;Se1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ba1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma3&#34;</span><span class="p">,</span> <span class="s2">&#34;Va1&#34;</span><span class="p">,</span> <span class="s2">&#34;Va2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;MaA&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma5&#34;</span><span class="p">,</span> <span class="s2">&#34;MaB&#34;</span><span class="p">,</span> <span class="s2">&#34;MaC&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span> <span class="k">for</span> <span class="n">codigo</span> <span class="ow">in</span> <span class="n">codigos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;Ma[0-3A-B]&#34;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Ma1
+</span></span><span class="line"><span class="cl">Ma2
+</span></span><span class="line"><span class="cl">Ma3
+</span></span><span class="line"><span class="cl">MaA
+</span></span><span class="line"><span class="cl">MaB
+</span></span></code></pre></div><p>Ahora, insertemos algunos caracteres especiales en mitad de ciertos códigos y veamos entonces cómo lidiar con ellos. Imaginemos que buscamos todos aquellos cuyo tercer carácter sea bien un punto, bien dos puntos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">codigos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ma.1&#34;</span><span class="p">,</span> <span class="s2">&#34;Se1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ba1&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma:3&#34;</span><span class="p">,</span> <span class="s2">&#34;Va1&#34;</span><span class="p">,</span> <span class="s2">&#34;Va2&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma4&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;MaA&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma.5&#34;</span><span class="p">,</span> <span class="s2">&#34;MaB&#34;</span><span class="p">,</span> <span class="s2">&#34;Ma:C&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span> <span class="k">for</span> <span class="n">codigo</span> <span class="ow">in</span> <span class="n">codigos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s2">&#34;Ma[.:]&#34;</span><span class="p">,</span> <span class="n">codigo</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Ma.1
+</span></span><span class="line"><span class="cl">Ma:3
+</span></span><span class="line"><span class="cl">Ma.5
+</span></span><span class="line"><span class="cl">Ma:C
+</span></span></code></pre></div><h3 id="63-código-fuente">6.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/71/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="7-expresiones-regulares-iv">7. Expresiones regulares IV</h2>
+<h3 id="71-vídeo">7.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/u3WBRgpxQcc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="72-notas-personales">7.2. Notas personales</h3>
+<p>En esta lección, finaliremos la serie dedicada a expresiones regulares profundizando en el uso de las funciones <code>match()</code> y <code>search()</code> del módulo <code>re</code>. La función <code>match()</code> busca coincidencias, con respecto a un patrón determinado, siempre al comienzo del texto.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombre1</span> <span class="o">=</span> <span class="s2">&#34;Sandra López&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nombre2</span> <span class="o">=</span> <span class="s2">&#34;Antonio Gómez&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nombre3</span> <span class="o">=</span> <span class="s2">&#34;María López&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="n">nombre1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos encontrado el nombre.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No hemos encontrado el nombre.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Hemos encontrado el nombre.
+</span></span></code></pre></div><p>Por otro lado, podemos evitar el comportamiento <em>case sensitive</em> de esta función mediante el parámetro <code>re.IGNORECASE</code>. Cambiemos <code>Sandra</code> por <code>sandra</code> y comprobémoslo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombre1</span> <span class="o">=</span> <span class="s2">&#34;Sandra López&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nombre2</span> <span class="o">=</span> <span class="s2">&#34;Antonio Gómez&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">nombre3</span> <span class="o">=</span> <span class="s2">&#34;María López&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;sandra&#34;</span><span class="p">,</span> <span class="n">nombre1</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos encontrado el nombre.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No hemos encontrado el nombre.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Hemos encontrado el nombre.
+</span></span></code></pre></div><p>Además, tenemos a nuestra disposición el uso de comodines en los patrones de búsqueda. Así, si añadimos dos nuevos nombres &lsquo;&lsquo;parecidos&rsquo;&rsquo;, <code>Lara</code> y <code>Jara</code>, mediante el carácter <code>.</code> (que representa un carácter qualquiera sin determinar) podemos comprobar si ambos pertenecen o no a un listado de nombres:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Sandra López&#34;</span><span class="p">,</span> <span class="s2">&#34;Antonio Gómez&#34;</span><span class="p">,</span> <span class="s2">&#34;María López&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Jara Martín&#34;</span><span class="p">,</span> <span class="s2">&#34;Lara Pérez&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;.ara&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Jara Martín
+</span></span><span class="line"><span class="cl">Lara Pérez
+</span></span></code></pre></div><p>A continuación, veamos cómo emplear el patrón <code>\d</code> para averiguar si una cadena comienza o no por un número:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">datos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Alexis Sáez&#34;</span><span class="p">,</span> <span class="s2">&#34;123456789&#34;</span><span class="p">,</span> <span class="s2">&#34;Number1&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">datos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s2">&#34;\d&#34;</span><span class="p">,</span> <span class="n">d</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">123456789</span>
+</span></span></code></pre></div><p>Ahora, cambiemos de tercio y estudiemos la función <code>search()</code> que, a diferencia de <code>match()</code> (que se limita a buscar al comienzo de un texto), examina la cadena de texto completa. Retomemos el ejemplo de los nombres y busquemos la aparición de ciertos apellidos concretos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Sandra López&#34;</span><span class="p">,</span> <span class="s2">&#34;Antonio Gómez&#34;</span><span class="p">,</span> <span class="s2">&#34;María López&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Jara Martín&#34;</span><span class="p">,</span> <span class="s2">&#34;Lara Pérez&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="n">nombres</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;López&#34;</span><span class="p">,</span> <span class="n">nombre</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Sandra López
+</span></span><span class="line"><span class="cl">María López
+</span></span></code></pre></div><p>No obstante, la principal utilidad de <code>search()</code> reside en la búsqueda de determinados patrones dentro de una cadena de caracteres de extensión considerable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">codigos</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+</span></span></span><span class="line"><span class="cl"><span class="s1">    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+</span></span></span><span class="line"><span class="cl"><span class="s1">    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+</span></span></span><span class="line"><span class="cl"><span class="s1">    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+</span></span></span><span class="line"><span class="cl"><span class="s1">    purus massa, placerat id pretium ac, ornare eleifend ante.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+</span></span></span><span class="line"><span class="cl"><span class="s1">    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+</span></span></span><span class="line"><span class="cl"><span class="s1">    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+</span></span></span><span class="line"><span class="cl"><span class="s1">    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+</span></span></span><span class="line"><span class="cl"><span class="s1">    placerat id pretium ac, ornare eleifend ante.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+</span></span></span><span class="line"><span class="cl"><span class="s1">    leo erat, varius non laoreet sed, cursus ut tortor. Morbi maximus
+</span></span></span><span class="line"><span class="cl"><span class="s1">    pulvinar ante, ut pulvinar ex malesuada blandit. Maecenas venenatis,
+</span></span></span><span class="line"><span class="cl"><span class="s1">    sapien vitae sodales viverra, ante urna tincidunt tellus, a faucibus
+</span></span></span><span class="line"><span class="cl"><span class="s1">    elit dui congue dui. Quisque congue sed ex in sollicitudin.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Pellentesque luctus justo quis felis feugiat, et semper erat laoreet.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Curabitur id dui arcu. Curabitur purus massa, placerat id pretium ac,
+</span></span></span><span class="line"><span class="cl"><span class="s1">    ornare eleifend ante.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">codigos</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&#34;42&#34;</span><span class="p">,</span> <span class="n">c</span><span class="p">)]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">    Lorem ipsum dolor sit amet, 42consectetur adipiscing elit.
+</span></span><span class="line"><span class="cl">    Maecenas leo erat, varius non laoreet sed, cursus ut tortor.
+</span></span><span class="line"><span class="cl">    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+</span></span><span class="line"><span class="cl">    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+</span></span><span class="line"><span class="cl">    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue
+</span></span><span class="line"><span class="cl">    sed ex in sollicitudin. Pellentesque luctus justo quis felis
+</span></span><span class="line"><span class="cl">    feugiat, et semper erat laoreet. Curabitur id dui arcu. Curabitur
+</span></span><span class="line"><span class="cl">    purus massa, placerat id pretium ac, ornare eleifend ante.
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</span></span><span class="line"><span class="cl">    Maecenas 42leo erat, varius non laoreet sed, cursus ut tortor.
+</span></span><span class="line"><span class="cl">    Morbi maximus pulvinar ante, ut pulvinar ex malesuada blandit.
+</span></span><span class="line"><span class="cl">    Maecenas venenatis, sapien vitae sodales viverra, ante urna
+</span></span><span class="line"><span class="cl">    tincidunt tellus, a faucibus elit dui congue dui. Quisque congue sed
+</span></span><span class="line"><span class="cl">    ex in sollicitudin. Pellentesque luctus justo quis felis feugiat, et
+</span></span><span class="line"><span class="cl">    semper erat laoreet. Curabitur id dui arcu. Curabitur purus massa,
+</span></span><span class="line"><span class="cl">    placerat id pretium ac, ornare eleifend ante.
+</span></span></code></pre></div><h3 id="73-código-fuente">7.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/72/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="8-decoradoras-i">8. Decoradoras I</h2>
+<h3 id="81-vídeo">8.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/DQXm6bIZgvk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="82-notas-personales">8.2. Notas personales</h3>
+<p>En esta lección, introduciremos el uso de las <strong>decoradoras</strong> (o <em>funciones decoradoras</em>), que son funciones que añaden ciertos comportamientos a otras (de ahí el nombre, puesto que las &lsquo;&lsquo;decoran&rsquo;&rsquo; incorporando funcionalidades adicionales).</p>
+<p>La estructura de una decoradora, de forma abstracta, es la siguiente:</p>
+<ul>
+<li>Son tres funciones (<code>A</code>, <code>B</code> y <code>C</code>), donde <code>A</code> recibe como parámetro a <code>B</code> para devolver <code>C</code>.</li>
+<li>Esto es, una decoradora devuelve siempre una función.</li>
+</ul>
+<p>Su sintaxis queda como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">funcion_decoradora</span><span class="p">(</span><span class="n">funcion</span><span class="p">):</span>  <span class="c1"># funcion_A(funcion_B)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">funcion_interna</span><span class="p">():</span>        <span class="c1"># funcion_C</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># codigo funcion interna</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">funcion_interna</span>
+</span></span></code></pre></div><p>Veamos su aplicación práctica mediante un ejemplo muy sencillo, en el que la utilidad de la decoradora será casi nula y nos servirá únicamente para comprender su funcionamiento, sin añadir excesiva complejidad al código fuente.</p>
+<p>En primer lugar, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">resta</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="m">35</span>
+</span></span><span class="line"><span class="cl"><span class="m">20</span>
+</span></span></code></pre></div><p>Acto seguido, supongamos que deseamos añadir a todas las funciones cierto comportamiento adicional. Para ello, podemos acudir a su código y modificarlas una por una (en este ejemplo son dos, pero imaginemos un caso donde hubiera cientos de funciones) o utilizar una decoradora:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">funcion_decoradora</span><span class="p">(</span><span class="n">funcion_parametro</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">funcion_interior</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Vamos a realizar un cálculo: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">funcion_parametro</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos terminado el cálculo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">funcion_interior</span>
+</span></span></code></pre></div><p>A continuación, para añadir el decorador a cualquiera de las funciones ya previamente existentes, escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">resta</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Vamos a realizar un cálculo: 
+</span></span><span class="line"><span class="cl"><span class="m">35</span>
+</span></span><span class="line"><span class="cl">Hemos terminado el cálculo.
+</span></span><span class="line"><span class="cl"><span class="m">20</span>
+</span></span></code></pre></div><p>Notemos cómo el decorador solo afecta a la función <code>suma()</code>, pues así lo hemos declarado arriba. Bastaría replicar la estrategia para decorar asimismo la función <code>resta()</code>.</p>
+<h3 id="83-código-fuente">8.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/73/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="9-decoradoras-ii">9. Decoradoras II</h2>
+<h3 id="91-vídeo">9.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/_IwlE3Z7U04" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/KOw0tpcspH4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="92-notas-personales">9.2. Notas personales</h3>
+<p>En esta lección, continuamos el estudio de las funciones generadoras, analizando cómo utilizar parámetros con ellas. Para ello, retomemos el código del ejemplo de la lección anterior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">funcion_decoradora</span><span class="p">(</span><span class="n">funcion_parametro</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">funcion_interior</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Vamos a realizar un cálculo: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">funcion_parametro</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos terminado el cálculo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">funcion_interior</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">15</span> <span class="o">+</span> <span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="mi">30</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">resta</span><span class="p">()</span>
+</span></span></code></pre></div><p>Modifiquemos las funciones <code>suma()</code> y <code>resta()</code> para que admitan la posibilidad de recibir parámetros:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">resta</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">-</span> <span class="n">n2</span><span class="p">)</span>
+</span></span></code></pre></div><p>A continuación, en la <code>funcion_interior()</code> y en <code>funcion_parametros()</code>, que figuran dentro de la <code>funcion_decoradora()</code>, gestionamos esos parámetros utilizando <code>*args</code>, que posibilita que una función reciba un número indeterminado de parámetros. Así,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">funcion_decoradora</span><span class="p">(</span><span class="n">funcion_parametro</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">funcion_interior</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Vamos a realizar un cálculo: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">funcion_parametro</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos terminado el cálculo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">funcion_interior</span>
+</span></span></code></pre></div><p>De esta manera, si ejecutamos ahora el código para las siguientes llamadas de las funciones <code>suma()</code> y <code>resta()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">resta</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Vamos a realizar un cálculo: 
+</span></span><span class="line"><span class="cl"><span class="m">15</span>
+</span></span><span class="line"><span class="cl">Hemos terminado el cálculo.
+</span></span><span class="line"><span class="cl">Vamos a realizar un cálculo: 
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span><span class="line"><span class="cl">Hemos terminado el cálculo.
+</span></span></code></pre></div><p>Por otro lado, incluso podemos ampliar la funcionalidad de nuestra decoradora, permitiendo la posibilidad de admitir parámetros que sigan el patrón <em>key = value</em>. Para ello, utilizamos en la definición de <code>funcion_interior()</code> y <code>funcion_parametro()</code> la convención <code>**kwargs</code> como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">funcion_decoradora</span><span class="p">(</span><span class="n">funcion_parametro</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">funcion_interior</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Vamos a realizar un cálculo: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">funcion_parametro</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Acciones adicionales que decoran</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hemos terminado el cálculo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">funcion_interior</span>
+</span></span></code></pre></div><p>A continuación, construimos una función que realice la potenciación de un número y procedemos a su llamada, utilizando ahora el esquema <em>key = value</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@funcion_decoradora</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">potencia</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponente</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponente</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">potencia</span><span class="p">(</span><span class="n">base</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">exponente</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Vamos a realizar un cálculo: 
+</span></span><span class="line"><span class="cl"><span class="m">25</span>
+</span></span><span class="line"><span class="cl">Hemos terminado el cálculo.
+</span></span></code></pre></div><h3 id="93-código-fuente">9.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/74/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="10-documentación">10. Documentación</h2>
+<h3 id="101-vídeo">10.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/SJqANWdRG4I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="102-notas-personales">10.2. Notas personales</h3>
+<p>En esta lección, estudiaremos cómo documentar nuestros programas, esto es, incluir comentarios en clases, métodos, módulos, etc., con el objetivo de facilitar el trabajo en equipo sobre todo; resultando especialmente útil cuando las aplicaciones son complejas.</p>
+<p>Para empezar, tomemos como referencia este sencillo código, que contiene la definición de dos funciones y llamadas a estas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del cuadrado es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del triángulo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">area_cuadrado</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El área del cuadrado es: <span class="m">25</span>
+</span></span><span class="line"><span class="cl">El área del triángulo es: 9.0
+</span></span></code></pre></div><p>A continuación, para documentarlas, tras su definición insertamos el comentario oportuno encerrado por una triple comilla. De esta manera, mediante el atributo <code>__doc__</code>, incluso podemos acceder a la documentación de una función en tiempo de ejecución:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Calcula el área de un cuadrado dado su lado.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del cuadrado es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Calcula el área de un triángulo dada su base y su altura.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del triángulo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_cuadrado(5))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_triangulo(3, 6))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">area_cuadrado</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">area_triangulo</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Calcula el área de un cuadrado dado su lado.
+</span></span><span class="line"><span class="cl">Calcula el área de un triángulo dada su base y su altura.
+</span></span></code></pre></div><p>Por otro lado, obtenemos el mismo resultado empleando la función <code>help()</code> que, además, nos ofrece acceso a la cabecera de la definición de la función y al módulo donde se encuentra:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Calcula el área de un cuadrado dado su lado.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del cuadrado es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Calcula el área de un triángulo dada su base y su altura.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del triángulo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_cuadrado(5))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_triangulo(3, 6))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_cuadrado.__doc__)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(area_triangulo.__doc__)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">area_cuadrado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Help on <span class="k">function</span> area_cuadrado in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">area_cuadrado<span class="o">(</span>lado<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Calcula el área de un cuadrado dado su lado.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Help on <span class="k">function</span> area_triangulo in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">area_triangulo<span class="o">(</span>base, altura<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Calcula el área de un triángulo dada su base y su altura.
+</span></span></code></pre></div><p>Ahora, modifiquemos ligeramente el código para generar una clase <code>Areas</code>, en cuyo interior se encuentren las dos anteriores funciones, y veamos cómo acceder a la documentación generada antes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Calcula el área de un cuadrado dado su lado.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;El área del cuadrado es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Calcula el área de un triángulo dada su base y su altura.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;El área del triángulo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">Areas</span><span class="o">.</span><span class="n">area_cuadrado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">Areas</span><span class="o">.</span><span class="n">area_triangulo</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Help on <span class="k">function</span> area_cuadrado in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">area_cuadrado<span class="o">(</span>lado<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Calcula el área de un cuadrado dado su lado.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Help on <span class="k">function</span> area_triangulo in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">area_triangulo<span class="o">(</span>base, altura<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Calcula el área de un triángulo dada su base y su altura.
+</span></span></code></pre></div><p>Además, para obtener una documentación general de la clase basta teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">Areas</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Help on class Areas in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class Areas<span class="o">(</span>builtins.object<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  Methods defined here:
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  area_cuadrado<span class="o">(</span>lado<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      Calcula el área de un cuadrado dado su lado.
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  area_triangulo<span class="o">(</span>base, altura<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      Calcula el área de un triángulo dada su base y su altura.
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  ----------------------------------------------------------------------
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  Data descriptors defined here:
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  __dict__
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      dictionary <span class="k">for</span> instance variables <span class="o">(</span><span class="k">if</span> defined<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  __weakref__
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      list of weak references to the object <span class="o">(</span><span class="k">if</span> defined<span class="o">)</span>
+</span></span></code></pre></div><p>Finalmente, también podemos documentar la propia clase:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Esta clase calcula las áreas de diferentes figuras geométricas.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">area_cuadrado</span><span class="p">(</span><span class="n">lado</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Calcula el área de un cuadrado dado su lado.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;El área del cuadrado es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">lado</span> <span class="o">*</span> <span class="n">lado</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;Calcula el área de un triángulo dada su base y su altura.&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;El área del triángulo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="n">Areas</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Help on class Areas in module __main__:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">class Areas<span class="o">(</span>builtins.object<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  Esta clase calcula las áreas de diferentes figuras geométricas.
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  Methods defined here:
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  area_cuadrado<span class="o">(</span>lado<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      Calcula el área de un cuadrado dado su lado.
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  area_triangulo<span class="o">(</span>base, altura<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      Calcula el área de un triángulo dada su base y su altura.
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  ----------------------------------------------------------------------
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  Data descriptors defined here:
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  __dict__
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      dictionary <span class="k">for</span> instance variables <span class="o">(</span><span class="k">if</span> defined<span class="o">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>  __weakref__
+</span></span><span class="line"><span class="cl"> <span class="p">|</span>      list of weak references to the object <span class="o">(</span><span class="k">if</span> defined<span class="o">)</span>
+</span></span></code></pre></div><p><em>Nota</em>: utilizando esta misma estrategia, podemos documentar asimismo módulos.</p>
+<h3 id="103-código-fuente">10.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/75/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="11-pruebas-i">11. Pruebas I</h2>
+<h3 id="111-vídeo">11.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/BUNEkSFlmys" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="112-notas-personales">11.2. Notas personales</h3>
+<p>En esta lección, analizaremos cómo realizar pruebas, utilizando la documentación para ello. Esta forma de proceder la podemos llevar a cabo con el módulo <code>doctest</code> de <em>Python</em>.</p>
+<p>Para empezar, partamos de este sencillo código, que contiene una función que calcula el área del triángulo dada su base y su altura:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">area_triangulo</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">4.0
+</span></span></code></pre></div><p>A continuación, documentemos la función <code>area_triangulo()</code> siguiendo el procedimiento visto en la lección anterior e incluyamos ahí nuestra primera prueba (antecediéndola mediante <code>&gt;&gt;&gt;</code>). Luego, una vez importado el módulo <code>doctest</code>, incluimos la instrucción <code>doctest.testmod()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calcula el área de un triángulo dada su base y altura.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(3, 6)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    9.0
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><p>Al ejecutar el anterior bloque de código, no observamos respuesta alguna en la consola de <em>Python</em>, lo cual es una buena señal, pues significa que se han superado los tests planteados sin encontrar ningún problema.</p>
+<p>Ahora, imaginemos que nos hemos equivocado escribiendo el test (también valdría modificando la expresión que devuelve la instrucción <code>return</code>) y decimos que ha de resultar <code>8.0</code> el área de un triángulo de base <code>3</code> y altura <code>6</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calcula el área de un triángulo dada su base y altura.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(3, 6)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    8.0
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">**********************************************************************
+</span></span><span class="line"><span class="cl">File <span class="s2">&#34;pruebas_2.py&#34;</span>, line 8, in __main__.area_triangulo
+</span></span><span class="line"><span class="cl">Failed example:
+</span></span><span class="line"><span class="cl">    area_triangulo<span class="o">(</span>3, 6<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Expected:
+</span></span><span class="line"><span class="cl">    8.0
+</span></span><span class="line"><span class="cl">Got:
+</span></span><span class="line"><span class="cl">    9.0
+</span></span><span class="line"><span class="cl">**********************************************************************
+</span></span><span class="line"><span class="cl"><span class="m">1</span> items had failures:
+</span></span><span class="line"><span class="cl">   <span class="m">1</span> of   <span class="m">1</span> in __main__.area_triangulo
+</span></span><span class="line"><span class="cl">***Test Failed*** <span class="m">1</span> failures.
+</span></span></code></pre></div><p>Acto seguido, compliquemos ligeramente el ejemplo y hagamos que la función <code>area_triangulo()</code> devuelva una cadena de caracteres en lugar de un valor numérico. Ello implica redactar con cuidado la prueba:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calcula el área de un triángulo dada su base y altura.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(3, 6)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#39;El área del triángulo es 9.0&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del triángulo es &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><p><em>Nota</em>: hemos de proceder con cautela porque, en esta ocasión, las comillas <code>'</code> y <code>&quot;</code> no son intercambiables.</p>
+<p>Obviamente, tenemos la posibilidad de realizar varias pruebas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">area_triangulo</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Calcula el área de un triángulo dada su base y altura.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(3, 6)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#39;El área del triángulo es 9.0&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(2, 4)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#39;El área del triángulo es 4.0&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; area_triangulo(4, 5)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#39;El área del triángulo es 10.0&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s2">&#34;El área del triángulo es &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">base</span> <span class="o">*</span> <span class="n">altura</span> <span class="o">/</span> <span class="mf">2.</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><p>No obstante, llevar a cabo múltiples pruebas tiene sentido cuando la complejidad del código se incrementa. Recordemos el código que generamos para comprobar si una dirección de correo electrónico era correcta en función de si presentaba o no el carácter <code>@</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_mail</span><span class="p">(</span><span class="n">mail_user</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Evalúa un mail recibido en busca de @.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Si tiene una @ es correcto.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Si tiene más de una @ es incorrecto.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Si la @ está al final es incorrecto.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; check_mail(&#34;alexis@cursos.es&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    True
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; check_mail(&#34;alexiscursos.es@&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    False
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; check_mail(&#34;alexis.cursos.es&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    False
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; check_mail(&#34;alexis@cursos@es&#34;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    False
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">arroba</span> <span class="o">=</span> <span class="n">mail_user</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&#34;@&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="ow">not</span> <span class="p">(</span><span class="n">arroba</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">mail_user</span><span class="o">.</span><span class="n">rfind</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">mail_user</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="113-código-fuente">11.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/76/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="12-pruebas-ii">12. Pruebas II</h2>
+<h3 id="121-vídeo">12.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/64v9X7K-iuc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="122-notas-personales">12.2. Notas personales</h3>
+<p>En esta lección, continuaremos el estudio de las pruebas que realizamos utilizando la documentación, pero incrementando un tanto su complejidad (con expresiones anidadas), para así ver las opciones que nos plantea el módulo <code>doctest</code>.</p>
+<p>Para empezar, partamos del siguiente código fuente, que no es todo lo eficiente que debería, pero que cumple su propósito a efectos metodológicos para ilustrar pruebas con expresiones anidadas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">lista_numeros</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    La función devuelve una lista con la raíz cuadrada de
+</span></span></span><span class="line"><span class="cl"><span class="s2">    los elementos numéricos pasados por parámetros en otra
+</span></span></span><span class="line"><span class="cl"><span class="s2">    lista.
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lista_numeros</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>1.0, 2.0, 3.0, 4.0<span class="o">]</span>
+</span></span></code></pre></div><p>A continuación, para diseñar una prueba que contenta estructuras complejas como condicionales o bucles, simplemente hemos de utilizar <code>...</code> apropiadamente para anidar instrucciones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">lista_numeros</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    La función devuelve una lista con la raíz cuadrada de
+</span></span></span><span class="line"><span class="cl"><span class="s2">    los elementos numéricos pasados por parámetros en otra
+</span></span></span><span class="line"><span class="cl"><span class="s2">    lista.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; lista = []
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; for i in [4, 9, 16]:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ...     lista.append(i)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; raiz_cuadrada(lista)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    [2.0, 3.0, 4.0]
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lista_numeros</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><p>Acto seguido, analicemos cómo implementar pruebas que arrojen excepciones. Por ejemplo, incluyamos un elemento negativo en la lista que pasamos como argumento a la función <code>raiz_cuadrada()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">raiz_cuadrada</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">]))</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;pruebas_2.py&#34;</span>, line 27, in &lt;module&gt;
+</span></span><span class="line"><span class="cl">    print<span class="o">(</span>raiz_cuadrada<span class="o">([</span>4, -9, 16<span class="o">]))</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;pruebas_2.py&#34;</span>, line 22, in raiz_cuadrada
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">[</span>math.sqrt<span class="o">(</span>n<span class="o">)</span> <span class="k">for</span> n in lista_numeros<span class="o">]</span>
+</span></span><span class="line"><span class="cl">  File <span class="s2">&#34;pruebas_2.py&#34;</span>, line 22, in &lt;listcomp&gt;
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="o">[</span>math.sqrt<span class="o">(</span>n<span class="o">)</span> <span class="k">for</span> n in lista_numeros<span class="o">]</span>
+</span></span><span class="line"><span class="cl">ValueError: math domain error
+</span></span></code></pre></div><p>No obstante, para diseñar una prueba que contemple el uso de número negativos en general (y no el de esta lista en concreto), utilizaremos <code>...</code> y nos quedaremos únicamente con la primera y última línea de la excepción arrojada arriba:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">doctest</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">raiz_cuadrada</span><span class="p">(</span><span class="n">lista_numeros</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    La función devuelve una lista con la raíz cuadrada de
+</span></span></span><span class="line"><span class="cl"><span class="s2">    los elementos numéricos pasados por parámetros en otra
+</span></span></span><span class="line"><span class="cl"><span class="s2">    lista.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; lista = []
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; for i in [4, 9, 16]:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ...     lista.append(i)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; raiz_cuadrada(lista)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    [2.0, 3.0, 4.0]
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; lista = []
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; for i in [4, -9, 16]:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ...     lista.append(i)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &gt;&gt;&gt; raiz_cuadrada(lista)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Traceback (most recent call last):
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ...
+</span></span></span><span class="line"><span class="cl"><span class="s2">    ValueError: math domain error
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">lista_numeros</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="123-código-fuente">12.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/77/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="13-ejecutables">13. Ejecutables</h2>
+<h3 id="131-vídeo">13.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Vr9vl0qlggE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="132-notas-personales">13.2. Notas personales</h3>
+<p>En esta lección, estudiaremos cómo generar un ejecutable de una aplicación escrita en <em>Python</em> y que tomará el formato nativo del sistema operativo en el que estemos trabajando (<code>.exe</code> en <em>Windows</em>, por ejemplo).</p>
+<p>Para empezar, desde la terminal del sistema, instalamos <code>pyinstaller</code>, utilizando para ello la instrucción:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip3 install pyinstaller
+</span></span></code></pre></div><p>A continuación, rescatemos los archivos de la aplicación que simulaba una calculadora, correspondiente a la lección 50. Generemos una copia de ellos, por coherencia con la estructura del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>, en el directorio <code>/lecciones/78/</code>.</p>
+<p>Ahora, desde la terminal, nos desplazamos a dicho directorio y tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pyinstaller calculadora.py
+</span></span></code></pre></div><p>Esto es, la instrucción <code>pyinstaller</code> seguida del nombre del archivo del cual deseamos generar un ejecutable.</p>
+<p>El proceso da a luz a una cantidad considerable de ficheros y carpetas, siendo de nuestro interés la denominada <code>/dist/</code>, en cuyo interior encontraremos otra designada como <code>/calculadora/</code>, que contiene la aplicación lista para ser distribuida. Si hacemos doble clic sobre <code>calculadora.exe</code>, podemos corroborar que la aplicación funciona a la perfección.</p>
+<p>Ahora bien, tras ella aparece la propia terminal de <em>Python</em>, característica que quizá no nos interese y posiblemente solo deseemos trabajar con la interfaz gráfica de la calculadora. Para conseguirlo, hemos de incluir el modificador <code>--windowed</code>, en la llamada a <code>pyinstaller</code>, a la hora de crear el ejecutable:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pyinstaller --windowed calculadora.py
+</span></span></code></pre></div><p>No obstante, la aplicación requiere de la presencia de todos los ficheros contenidos en el directorio <code>/calculadora/</code> para su correcto funcionamiento. Sería deseable que todo ello se &lsquo;&lsquo;compilase&rsquo;&rsquo; en un único archivo y que se pudiera ejecutar en cualquier ordenador, independientemente de si tiene o no instalado <em>Python</em>. El mencionado comportamiento se obtiene agregando el modificador <code>--onefile</code> a la anterior instrucción, esto es,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pyinstaller --windowed --onefile calculadora.py
+</span></span></code></pre></div><p>Ahora, en la carpeta <code>/dist/</code> hallamos únicamente el archivo.</p>
+<p>Finalmente, de cara a modificar el icono de la aplicación, simplemente hemos de añadir un nuevo modificador a la instrucción <code>pyinstaller</code>: <code>--icon=./icon.ico</code>, siendo <code>icon.ico</code> el nombre del archivo que contiene el icono y que se ubica en el mismo directorio donde se halla el fichero <code>calculadora.py</code>. Así pues, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pyinstaller --windowed --onefile --icon<span class="o">=</span>./icon.ico calculadora.py
+</span></span></code></pre></div><h3 id="133-código-fuente">13.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/78/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/&amp;text=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/&amp;t=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/&amp;title=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/&amp;title=Curso%20de%20Python%20#12%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

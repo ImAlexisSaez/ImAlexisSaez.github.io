@@ -1,0 +1,1639 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Tipos y variables" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #02 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Tipos y variables" /><meta property="og:image" content="https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-07-07T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-07-07T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/"
+  },
+  "headline": "Curso de Python #02 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-07-07T05:59:39+02:00",
+  "dateModified": "2019-07-07T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Tipos y variables"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #02 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="787f685f9a22248e18736067434c7b41" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #02 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Tipos y variables</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    07/07/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    13 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/07/07/curso-de-python-02-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-tipos-operadores-y-variables">1. Tipos, operadores y variables</h2>
+<h3 id="11-vídeo">1.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/u4I9PqhqCo8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>Los <strong>tipos de datos</strong> disponibles en <em>Python</em> son:</p>
+<ul>
+<li>Numéricos
+<ul>
+<li>Enteros (<code>int</code>)</li>
+<li>Coma flotante (<code>float</code>)</li>
+<li>Complejos</li>
+</ul>
+</li>
+<li>Textos</li>
+<li>Booleanos
+<ul>
+<li><code>True</code></li>
+<li><code>False</code></li>
+</ul>
+</li>
+</ul>
+<p>Los principales <strong>operadores</strong> en <em>Python</em> son:</p>
+<ul>
+<li>Aritméticos: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code> y <code>//</code>.</li>
+<li>Comparación: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> y <code>&lt;=</code>.</li>
+<li>Lógicos: <code>AND</code>, <code>OR</code> y <code>NOT</code>.</li>
+<li>Asignación: <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>**=</code> y <code>//=</code>.</li>
+<li>Especiales: <code>is</code>, <code>is not</code>, <code>in</code> y <code>not in</code>.</li>
+</ul>
+<p>Los operadores aritméticos nos permiten utilizar <em>Python</em> a modo de calculadora.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">6</span> <span class="c1"># Suma</span>
+</span></span><span class="line"><span class="cl"><span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">11</span> <span class="o">-</span> <span class="mi">8</span> <span class="c1"># Resta</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">6</span> <span class="c1"># Multiplicación</span>
+</span></span><span class="line"><span class="cl"><span class="mi">12</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="o">/</span> <span class="mi">2</span> <span class="c1"># División</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.5</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">%</span> <span class="mi">3</span> <span class="c1"># Módulo</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">**</span> <span class="mi">2</span> <span class="c1"># Exponenciación</span>
+</span></span><span class="line"><span class="cl"><span class="mi">25</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="mi">7</span> <span class="o">//</span> <span class="mi">2</span> <span class="c1"># División entera</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span></code></pre></div><p>Una <strong>variable</strong> es un espacio en la memoria del ordenador donde se almacenará un valor que podrá cambiar durante la ejecución del programa. Para declararla, utilizamos el patrón <code>nombre = valor</code> y su tipo lo establece el contenido, no el contenedor.</p>
+<p><em>Nota</em>: en <em>Python</em> todo son objetos (variables, números&hellip;).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nombre</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">int</span><span class="s1">&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&#34;Alexis&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">nombre</span> <span class="o">=</span> <span class="mf">5.2</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">float</span><span class="s1">&#39;&gt;</span>
+</span></span></code></pre></div><p>Definimos cadenas de texto mediante los símbolos <code>'</code>, <code>&quot;</code> y <code>'''</code>, permitiendo esta última opción saltos de líneas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mensaje</span> <span class="o">=</span> <span class="s1">&#39;Esto es un mensaje.&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">mensaje</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&#34;Esto es un mensaje.&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">mensaje</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">mensaje</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Esto es un mensaje
+</span></span></span><span class="line"><span class="cl"><span class="s1">... con tres saltos
+</span></span></span><span class="line"><span class="cl"><span class="s1">... de línea.&#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Esto</span> <span class="n">es</span> <span class="n">un</span> <span class="n">mensaje</span>
+</span></span><span class="line"><span class="cl"><span class="n">con</span> <span class="n">tres</span> <span class="n">saltos</span>
+</span></span><span class="line"><span class="cl"><span class="n">de</span> <span class="n">línea</span><span class="o">.</span>
+</span></span></code></pre></div><p>Los operadores de comparación suelen aparecer en bloques condicionales.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">numero1</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">numero2</span> <span class="o">=</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">numero1</span> <span class="o">&gt;</span> <span class="n">numero2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El número 1 es mayor.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span> <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El número 2 es mayor.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span> 
+</span></span><span class="line"><span class="cl"><span class="n">El</span> <span class="n">número</span> <span class="mi">2</span> <span class="n">es</span> <span class="n">mayor</span><span class="o">.</span>
+</span></span></code></pre></div><p><em>Nota</em>: no confundir el operador de asignación <code>=</code> con el operador de comparación <code>==</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">numero1</span> <span class="o">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="n">numero2</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="o">&gt;&gt;&gt;</span> <span class="k">if</span> <span class="n">numero1</span> <span class="o">==</span> <span class="n">numero2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Los números son iguales.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span> <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Los números son diferentes.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">...</span> 
+</span></span><span class="line"><span class="cl"><span class="n">Los</span> <span class="n">números</span> <span class="n">son</span> <span class="n">diferentes</span><span class="o">.</span>
+</span></span></code></pre></div><h2 id="2-funciones-i">2. Funciones I</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/VY448UWAQ_0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>Una <strong>función</strong> es un conjunto de líneas de código agrupadas, que funcionan como una unidad realizando una tarea específica. Puede devolver valores, tener parámetros o argumentos y recibe el nombre de <strong>método</strong> cuando está definida dentro de una clase.</p>
+<p>En <em>Python</em> existen funciones predifinidas, como por ejemplo <code>print()</code>. Su principal utilidad es la reutilización de código y su sintaxis es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">nombre</span><span class="p">(</span><span class="n">parámetros</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span> <span class="n">de</span> <span class="n">la</span> <span class="n">función</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span><span class="p">(</span><span class="n">opcional</span><span class="p">)</span>
+</span></span></code></pre></div><p>Ejecutamos (o llamamos) una función tecleando <code>nombre_función(parámetros)</code>.</p>
+<p>A continuación, dejamos de lado el IDLE de <em>Sublime Text 3</em> y pasamos a compilar directamente ficheros desde el propio editor. Para ello, desplegamos el menú <code>Tools</code> y en el apartado <code>Build System</code> escogemos la opción <code>Python</code>. Acto seguido, creamos el fichero <code>funciones.py</code>, que contendrá la instrucción</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>y utilizamos la combinación de teclas <code>ctrl + b</code> para compilar. En la parte inferior de la ventana aparecerá el resultado de la ejecución y el tiempo invertido.</p>
+<p>Ampliemos el anterior fichero a</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>e imaginemos que necesitamos que las anteriores tres líneas se impriman cinco veces. Podemos, simplemente, copiar y pegar el anterior bloque de código reiteradamente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Las funciones nos permiten reutilizar código para, precisamente, evitar que actuemos como arriba. Definamos una función llamada <code>mensaje()</code> y ejecutémosla tantas veces como deseemos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">mensaje</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo Python.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Estamos aprendiendo instrucciones básicas.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Poco a poco iremos avanzando.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Ahora, la tarea que buscábamos realizar quedaría como:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span></code></pre></div><p>Entre distintas llamadas a una función puede haber cualquier otro tipo de instrucción:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ejecutando código fuera de función&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mensaje</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/05/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-funciones-ii">3. Funciones II</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/vawEHhV_HFA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>Comencemos definiendo una función que suma dos números dados (5 y 7), mediante el mecanismo aprendido en la lección anterior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num1</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num2</span> <span class="o">=</span> <span class="mi">7</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">()</span>
+</span></span></code></pre></div><p>Podemos reutilizar tantas veces como queramos la función <code>suma()</code>. No obstante, su utilidad así declarada es bastante limitada. Nos gustaría que no siempre sumara los dos mismos valores, sino aquellos que nos interesen en cada llamada. Para ello emplearemos los <strong>parámetros</strong> o <strong>argumentos</strong>.</p>
+<p><em>Nota</em>: aunque el autor del curso se refiere a los términos &lsquo;&lsquo;parámetros&rsquo;&rsquo; y &lsquo;&lsquo;argumentos&rsquo;&rsquo; casi como si fueran sinónimos, en realidad hay un sutil matiz que los diferencia: los <strong>parámetros</strong> son las variables que aparecen en la definición de una función o método; cuando se produce la llamada a dicha función, los <strong>argumentos</strong> son los datos que pasamos a los parámetros de la mencionada función.</p>
+<p>Definamos de nuevo la función <code>suma()</code>, ahora con dos parámetros, con el objetivo de que realice la suma de dos números que pasaremos como argumentos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># 12</span>
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># 5</span>
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">35</span><span class="p">,</span> <span class="mi">358</span><span class="p">)</span>  <span class="c1"># 393</span>
+</span></span></code></pre></div><p>Tal y como está declarada la nueva función de suma, <strong>obligatoriamente</strong> hemos de pasarle dos argumentos o sino aparecerán errores.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TypeError: suma() missing 1 required positional argument: &#39;num2&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># TypeError: suma() takes 2 positional arguments but 3 were given</span>
+</span></span></code></pre></div><p>Puede resultar conveniente, por legibilidad, pasar los argumentos a una función utilizando el esquema <code>parámetro=valor</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="n">num1</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">num2</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># 12</span>
+</span></span></code></pre></div><p>Además, las funciones</p>
+<ul>
+<li>pueden poseer parámetros de diferentes tipos y</li>
+<li>devuelven valores siempre y cuando empleemos la instrucción <code>return</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">suma</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">resultado</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">resultado</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span></code></pre></div><p>La ejecución del anterior bloque de código no muestra resultado alguno en la consola. La función devuelve el resultado, pero no lo hemos imprimido. Así,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">suma</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>  <span class="c1"># 12</span>
+</span></span></code></pre></div><p>Una ventaja de utilizar la instrucción <code>return</code> reside en que podemos almacenar los valores que devuelve una función en variables y trabajar posteriormente con ellas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">almacena_resultado</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">almacena_resultado</span><span class="p">)</span>  <span class="c1"># 13</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">actualiza_resultado</span> <span class="o">=</span> <span class="n">suma</span><span class="p">(</span><span class="n">almacena_resultado</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">actualiza_resultado</span><span class="p">)</span>  <span class="c1"># 13 + 8 = 21</span>
+</span></span></code></pre></div><p><em>Nota técnica</em>: <em>Python</em> pasa siempre los valores por referencia, no por valor.</p>
+<h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/06/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-listas">4. Listas</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Q8hugySbLQQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>Una <strong>lista</strong> es una estructura de datos que nos permite almacenar gran cantidad de valores. En <em>Python</em>, estos pueden añadirse de manera dinámica y ser de diferentes tipos.</p>
+<p>Su sintaxis es <code>nombre = [elem1, elem2, elem3...]</code> y los elementos están localizados mediante un índice, que en <em>Python</em> comienza por 0.</p>
+<p>A continuación, creemos una lista con cuatro elementos de tipo texto y veamos cómo imprimirla y acceder a elementos concretos de ella:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_lista</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;María&#34;</span><span class="p">,</span> <span class="s2">&#34;Pepe&#34;</span><span class="p">,</span> <span class="s2">&#34;Marta&#34;</span><span class="p">,</span> <span class="s2">&#34;Antonio&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;, &#34;Marta&#34;, &#34;Antonio&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[:])</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;, &#34;Marta&#34;, &#34;Antonio&#34;]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># Marta</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># María</span>
+</span></span></code></pre></div><p>Si empleamos índices que superan el rango de elementos de una lista, <em>Python</em> nos arroja un error:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># IndexError: list index out of range</span>
+</span></span></code></pre></div><p>No obstante, sí es posible utilizar índices con valor negativo, que nos permiten acceder (empezando por <code>-1</code>) a los elementos de una lista desde la derecha:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># Antonio</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># Pepe</span>
+</span></span></code></pre></div><p>Obviamente, esta estrategia también está limitada por el número de elementos de la lista y no podemos pasar índices negativos fuera de su correspondiente rango:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># IndexError: list index out of range</span>
+</span></span></code></pre></div><p>Además, podemos acceder a porciones de una lista, mediante la sintaxis <code>nombre[a:b]</code>, que extrae todos los elementos comprendidos entre los índices <code>a</code> y el anterior a <code>b</code>. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># [&#34;María&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># [&#34;Pepe&#34;, &#34;Marta&#34;]</span>
+</span></span></code></pre></div><p>Se pueden omitir algunos de los anteriores índices indicados y <em>Python</em> sobreentiende que comienza o acaba en el extremo correspondiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># [&#34;Marta&#34;, &#34;Antonio&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>  <span class="c1"># [&#34;Marta&#34;, &#34;Antonio&#34;]</span>
+</span></span></code></pre></div><p><em>Nota técnica</em>: cuando accedemos a una porción, se conserva el tipo lista, pero no así si se extrae un único elemento en particular.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>  <span class="c1"># &lt;class &#39;str&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]))</span>  <span class="c1"># &lt;class &#39;list&#39;&gt;</span>
+</span></span></code></pre></div><p>Agregamos elementos al final de la lista utilizando <code>.append()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_lista</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&#34;Sandra&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;, &#34;Marta&#34;, &#34;Antonio&#34;, &#34;Sandra&#34;]</span>
+</span></span></code></pre></div><p>Usaremos <code>.insert(posición, elemento)</code>, si buscamos añadir un elemento en un punto intermedio:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_lista</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&#34;Paco&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># [&#34;María&#34;, &#34;Pepe&#34;, &#34;Paco&#34;, &#34;Marta&#34;, &#34;Antonio&#34;, &#34;Sandra&#34;]</span>
+</span></span></code></pre></div><p>Es posible agregar varios elementos al final de una lista utilizando <code>.extend()</code> y pasando como argumento otra lista:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_compra</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Manzanas&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="p">)</span>  <span class="c1"># [&#34;Manzanas&#34;]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_compra</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s2">&#34;Aguacates&#34;</span><span class="p">,</span> <span class="s2">&#34;Sandía&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="p">)</span>  <span class="c1"># [&#34;Manzanas&#34;, &#34;Aguacates&#34;, &#34;Sandía&#34;]</span>
+</span></span></code></pre></div><p>Para acceder al índice de un elemento, empleamos <code>.index(elemento)</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">))</span>  <span class="c1"># 4</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&#34;Sandía&#34;</span><span class="p">))</span>  <span class="c1"># 2</span>
+</span></span></code></pre></div><p>Si intentamos acceder al índice de elementos que no están incluidos en la lista, <em>Python</em> arroja un error:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&#34;Melón&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ValueError: &#39;Melón&#39; is not in list</span>
+</span></span></code></pre></div><p>En una lista, puede haber elementos iguales en posiciones distintas. La función <code>.index()</code> nos devolverá el valor del índice del primer elemento repetido:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_compra</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">mi_compra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="p">)</span>  <span class="c1"># [&#34;Manzanas&#34;, &#34;Aguacates&#34;, &#34;Sandía&#34;, &#34;Manzanas&#34;, &#34;Aguacates&#34;, &#34;Sandía&#34;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_compra</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s2">&#34;Manzanas&#34;</span><span class="p">))</span>  <span class="c1"># 0</span>
+</span></span></code></pre></div><p>Para comprobar si un elemento se encuentra o no en una lista, utilizamos <code>in</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Pepe&#34;</span> <span class="ow">in</span> <span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span> <span class="ow">in</span> <span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># False</span>
+</span></span></code></pre></div><p>Tal y como mencionamos arriba, una lista puede almacenar sin problemas elementos de diferentes tipos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mezcla</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Alexis&#34;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mezcla</span><span class="p">)</span>  <span class="c1"># [&#34;Alexis&#34;, True, 10, 3.14]</span>
+</span></span></code></pre></div><p>Para eliminar elementos, usamos <code>.remove()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mezcla</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mezcla</span><span class="p">)</span>  <span class="c1"># [&#34;Alexis&#34;, 10, 3.14]</span>
+</span></span></code></pre></div><p>En particular, podemos suprimir el último elemento de una lista mediante <code>.pop()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mezcla</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mezcla</span><span class="p">)</span>  <span class="c1"># [&#34;Alexis&#34;, 10]</span>
+</span></span></code></pre></div><p>El operador <code>+</code> concatena listas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista2</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista3</span> <span class="o">=</span> <span class="n">lista1</span> <span class="o">+</span> <span class="n">lista2</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lista3</span><span class="p">)</span>  <span class="c1"># [&#34;Ana&#34;, 5, True, 2.1]</span>
+</span></span></code></pre></div><p>El operador <code>*</code> repite la lista un número determinado de veces.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lista1</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># [&#34;Ana&#34;, 5, &#34;Ana&#34;, 5]</span>
+</span></span></code></pre></div><h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/07/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="5-tuplas">5. Tuplas</h2>
+<h3 id="51-vídeo">5.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Ufqh8aoR9hE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="52-notas-personales">5.2. Notas personales</h3>
+<p>Una <strong>tupla</strong> es una lista inmutable que</p>
+<ul>
+<li>no permite añadir, eliminar, mover elementos&hellip;</li>
+<li>permite la extracción de porciones, que continuan siendo tuplas, y</li>
+<li>posibilita búsquedas de índice (<code>.index()</code>) y comprobaciones de si un elemento pertenece o no a ella (<code>in</code>).</li>
+</ul>
+<p>Son útiles porque</p>
+<ul>
+<li>son más rápidas en cuanto a ejecución se refiere,</li>
+<li>requieren menos espacio (mayor optimización),</li>
+<li>formatean cadenas de texto, y</li>
+<li>pueden utilizarse como claves en un diccionario, a diferencia de las listas.</li>
+</ul>
+<p>Su sintaxis es <code>nombre = (elem1, elem2, elem3...)</code>, siendo el uso de los paréntesis opcional aunque recomendable. El acceso a los elementos funciona como en las listas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;Alexis&#34;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1995</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>  <span class="c1"># (&#34;Alexis&#34;, 10, 1, 1995)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 10</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 1995</span>
+</span></span></code></pre></div><p>Existen funciones que nos permiten convertir tuplas en listas (<code>list()</code>) y viceversa (<code>tuple()</code>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_lista</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>  <span class="c1"># [&#34;Alexis&#34;, 10, 1, 1995]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">mi_lista</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>  <span class="c1"># (&#34;Alexis&#34;, 10, 1, 1995)</span>
+</span></span></code></pre></div><p>Comprobamos la pertenencia de un elemento a la tupla mediante <code>in</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Alexis&#34;</span> <span class="ow">in</span> <span class="n">mi_tupla</span><span class="p">)</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="mf">3.14</span> <span class="ow">in</span> <span class="n">mi_tupla</span><span class="p">)</span>  <span class="c1"># False</span>
+</span></span></code></pre></div><p>Con <code>.count()</code> obtenemos el número de elementos que se encuentran dentro de una tupla:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;Alexis&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&#34;Alexis&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&#34;Alexis&#34;</span><span class="p">))</span>  <span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># 2 (True cuenta como 1)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 3</span>
+</span></span></code></pre></div><p>El método <code>len</code> nos permite hallar la longitud de una tupla, siendo el índice del último elemento igual a <code>len - 1</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">))</span>  <span class="c1"># 7</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># &#34;Alexis&#34;</span>
+</span></span></code></pre></div><p>Podemos crear tuplas unitarias siguiendo el patrón <code>nombre = (elem,)</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;Alexis&#34;</span><span class="p">,)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">))</span>  <span class="c1"># 1</span>
+</span></span></code></pre></div><p>Como mencionamos, los paréntesis son opcionales:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="s2">&#34;Alexis&#34;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">))</span>  <span class="c1"># &lt;class &#39;tuple&#39;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_tupla</span><span class="p">)</span>  <span class="c1"># (&#34;Alexis&#34;, 3.14, True, 10)</span>
+</span></span></code></pre></div><p>Esta sintaxis se conoce como <strong>empaquetado de tupla</strong> y hemos de ser cautos, pues en un futuro, al combinarla con el uso de funciones, puede dar lugar a confusiones.</p>
+<p>El proceso inverso, <strong>desempaquetado de tuplas</strong>, nos permite asignar los elementos de una tupla a diferentes variables:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;Alexis&#34;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombre</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">alto</span><span class="p">,</span> <span class="n">mes</span> <span class="o">=</span> <span class="n">mi_tupla</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>  <span class="c1"># Alexis</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>  <span class="c1"># 3.14</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">alto</span><span class="p">)</span>  <span class="c1"># True</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mes</span><span class="p">)</span>  <span class="c1"># 10</span>
+</span></span></code></pre></div><h3 id="53-código-fuente">5.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/08/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="6-diccionarios">6. Diccionarios</h2>
+<h3 id="61-vídeo">6.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/2OmgHl8lp0I" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="62-notas-personales">6.2. Notas personales</h3>
+<p>Un <strong>diccionario</strong> es una estructura de datos que nos permite almacenar valores de diferentes tipos (enteros, cadenas de texto, decimales&hellip;) e incluso listas, tuplas y otros diccionarios.</p>
+<p>Su principal característica reside en que cada dato se almacena asociado a una clave única, de tal forma que se crea una relación de tipo <code>clave:valor</code> para cada elemento guardado. Además, los mencionados elementos no están ordenados, es decir, el orden es indiferente (por la presencia las referidas claves únicas) a la hora de guardar información en un diccionario.</p>
+<p>Su sintaxis es <code>nombre = {clave:valor}</code>.</p>
+<p>Creemos un diccionario que almacene países (clave) y capitales (valor), y veamos cómo se accede a cada uno de sus elementos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;Alemania&#34;</span><span class="p">:</span> <span class="s2">&#34;Berlin&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Francia&#34;</span><span class="p">:</span> <span class="s2">&#34;París&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Reino Unido&#34;</span><span class="p">:</span> <span class="s2">&#34;Londres&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;España&#34;</span><span class="p">:</span> <span class="s2">&#34;Madrid&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Francia&#34;</span><span class="p">])</span>  <span class="c1"># París</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;España&#34;</span><span class="p">])</span>  <span class="c1"># Madrid</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;}</span>
+</span></span></code></pre></div><p>Agregamos nuevos elementos al diccionario con el patrón <code>nombre[clave] = valor</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Italia&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Lisboa&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Lisboa&#39;}</span>
+</span></span></code></pre></div><p>Modificamos un valor asignado a una clave simplemente sobreescribiéndolo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Italia&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Roma&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}</span>
+</span></span></code></pre></div><p>Suprimimos elementos con <code>del</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">del</span> <span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Reino Unido&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;Alemania&#39;: &#39;Berlin&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;España&#39;: &#39;Madrid&#39;, &#39;Italia&#39;: &#39;Roma&#39;}</span>
+</span></span></code></pre></div><p>Generemos un diccionario que presente diferentes tipos de datos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;Alemania&#34;</span><span class="p">:</span> <span class="s2">&#34;Berlín&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="mi">23</span><span class="p">:</span> <span class="s2">&#34;Jordan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Mosqueteros&#34;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;Alemania&#39;: &#39;Berlín&#39;, 23: &#39;Jordan&#39;, &#39;Mosqueteros&#39;: 3}</span>
+</span></span></code></pre></div><p>Empleemos una tupla (el procedimiento sería similar si optamos por una lista) para asignar la clave a cada uno de los valores:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_tupla</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&#34;España&#34;</span><span class="p">,</span> <span class="s2">&#34;Francia&#34;</span><span class="p">,</span> <span class="s2">&#34;Reino Unido&#34;</span><span class="p">,</span> <span class="s2">&#34;Alemania&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_dicc</span> <span class="o">=</span> <span class="p">{</span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="s2">&#34;Madrid&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">mi_tupla</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s2">&#34;París&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">mi_tupla</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s2">&#34;Londres&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="n">mi_tupla</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="s2">&#34;Berlín&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {&#39;España&#39;: &#39;Madrid&#39;, &#39;Francia&#39;: &#39;París&#39;, &#39;Reino Unido&#39;: &#39;Londres&#39;, &#39;Alemania&#39;: &#39;Berlín&#39;}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;España&#34;</span><span class="p">])</span>  <span class="c1"># Madrid</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="n">mi_tupla</span><span class="p">[</span><span class="mi">0</span><span class="p">]])</span>  <span class="c1"># Madrid</span>
+</span></span></code></pre></div><p>También podemos almacenar tuplas (o listas&hellip;) como valores:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">:</span> <span class="s2">&#34;Jordan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Nombre&#34;</span><span class="p">:</span> <span class="s2">&#34;Michael&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Equipo&#34;</span><span class="p">:</span> <span class="s2">&#34;Chicago&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Anillos&#34;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1991</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">1998</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Equipo&#34;</span><span class="p">])</span>  <span class="c1"># Chicago</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Anillos&#34;</span><span class="p">])</span>  <span class="c1"># (1991, 1992, 1993, 1996, 1997, 1998)</span>
+</span></span></code></pre></div><p>Asimismo, guardemos un diccionario dentro de otro:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">mi_dicc</span> <span class="o">=</span> <span class="p">{</span><span class="mi">23</span><span class="p">:</span> <span class="s2">&#34;Jordan&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Nombre&#34;</span><span class="p">:</span> <span class="s2">&#34;Michael&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Equipo&#34;</span><span class="p">:</span> <span class="s2">&#34;Chicago&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">           <span class="s2">&#34;Anillos&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;Temporadas&#34;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1991</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="mi">1993</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="mi">1997</span><span class="p">,</span> <span class="mi">1998</span><span class="p">)}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">)</span>  <span class="c1"># {23: &#39;Jordan&#39;, &#39;Nombre&#39;: &#39;Michael&#39;, &#39;Equipo&#39;: &#39;Chicago&#39;, &#39;Anillos&#39;: {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">[</span><span class="s2">&#34;Anillos&#34;</span><span class="p">])</span>  <span class="c1"># {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}</span>
+</span></span></code></pre></div><p>Algunos métodos interesantes a conocer son:</p>
+<ul>
+<li><code>.keys()</code>, para acceder a las claves de un diccionario;</li>
+<li><code>.values()</code>, para conocer los valores de un diccionario; y</li>
+<li><code>len()</code>, para averiguar la longitud de un diccionario:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>  <span class="c1"># dict_keys([23, &#39;Nombre&#39;, &#39;Equipo&#39;, &#39;Anillos&#39;])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">mi_dicc</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>  <span class="c1"># dict_values([&#39;Jordan&#39;, &#39;Michael&#39;, &#39;Chicago&#39;, {&#39;Temporadas&#39;: (1991, 1992, 1993, 1996, 1997, 1998)}])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mi_dicc</span><span class="p">))</span>  <span class="c1"># 4</span>
+</span></span></code></pre></div><h3 id="63-código-fuente">6.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/09/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/&amp;text=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/&amp;t=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/&amp;title=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/07/07/curso-de-python-02-nivel-basico/&amp;title=Curso%20de%20Python%20#02%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -884,18 +884,18 @@
     </figcaption></figure>
 <p>A continuación, de las tres opciones que nos ofrece la página que aparece ante nosotros, vamos a escoger la segunda, ya que cuando en <a href="/2018/07/11/creando-un-sitio-web-con-hugo/">esta entrada</a> generamos nuestro primer sitio web, a la vez iniciamos un repositorio <em>Git</em>. Aquella acción, que en su momento podía parecer un tanto extraña, queda ahora totalmente justificada.</p>
 <p>Así pues, abrimos la terminal del sistema, nos desplazamos hasta el directorio raíz donde hayamos decidido almacenar localmente nuestro sitio web y tecleamos:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git remote add origin https://github.com/&lt;USERNAME&gt;/sitio-web.git
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git remote add origin https://github.com/&lt;USERNAME&gt;/sitio-web.git
 </span></span></code></pre></div><p>En mi caso, en lugar de <code>&lt;USERNAME&gt;</code>, aparece directamente <code>ImAlexisSaez</code>. Cada uno de nosotros tendrá definida esa parte del comando de manera diferente, por lo que recomiendo encarecidamente copiar la instrucción de la página de <em>GitHub</em> en lugar de la que aparece arriba.</p>
 <p>Acto seguido, escribimos en la terminal:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git push -u origin master
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git push -u origin master
 </span></span></code></pre></div><p>De esta manera, transcurridos unos segundos, tendremos disponible en <em>GitHub</em> una copia del código fuente que permite generar nuestra página web estática.</p>
 <p>A continuación, volvemos a <em>GitHub</em> y creamos un nuevo repositorio. Este último tendrá un nombre especial que será, además, la dirección de acceso a nuestro sitio web. Hemos de combinar nuestra cuenta de usuario en <em>GitHub</em> con la extensión <code>.github.io</code>. Por ejemplo, en mi caso queda <code>ImAlexisSaez.github.io</code> y así es como rellené en su momento el campo <code>Repository name</code>. Una vez escrito, simplemente tenemos que hacer clic en el botón <code>Create repository</code>.</p>
 <p>Volvemos a la terminal del sistema y tecleamos <code>hugo server</code>, para poder dar así una última revisión local a nuestro sitio web, utilizando la dirección ``http://localhost:1313<code>, y comprobar que todo está en perfecto estado. Cuando estemos satisfechos, acudimos de nuevo a la terminal del sistema y cerramos el servidor local, empleando para ello la combinación de teclas </code>Ctrl + c`.</p>
 <p>Acto seguido, escribimos:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm -rf public
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">rm -rf public
 </span></span></code></pre></div><p>Este comando borra por completo la carpeta <code>public</code>, que se encuentra en el directorio donde tenemos almacenado localmente nuestro sitio web. Dicha carpeta se genera automáticamente cada vez que tecleamos <code>hugo server</code> en la terminal del sistema, y contiene la versión final de nuestra página web.</p>
 <p>El siguiente paso, precisamente, es crear un submódulo de manera que la carpeta <code>public</code> apunte a otra dirección de <em>GitHub</em>. Para ello, desde la terminal del sistema, tecleamos</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git submodule add -b master git@github.com:&lt;USERNAME&gt;/&lt;USERNAME&gt;.github.io.git public
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-v" data-lang="v"><span class="line"><span class="cl"><span class="nv">git</span> <span class="nv">submodule</span> <span class="nv">add</span> <span class="o">-</span><span class="nv">b</span> <span class="nv">master</span> <span class="nv">git</span><span class="o">@</span><span class="nv">github</span><span class="p">.</span><span class="nv">com</span><span class="p">:&lt;</span><span class="nc">USERNAME</span><span class="p">&gt;</span><span class="o">/</span><span class="p">&lt;</span><span class="nc">USERNAME</span><span class="p">&gt;.</span><span class="nv">github</span><span class="p">.</span><span class="nv">io</span><span class="p">.</span><span class="nv">git</span> <span class="nv">public</span>
 </span></span></code></pre></div><p>donde sustituiremos <code>&lt;USERNAME&gt;</code> por el nombre de nuestra cuenta de usuario en <em>GitHub</em> (por ejemplo, <code>ImAlexisSaez</code> en mi caso).</p>
 <p>¡Ya casi tenemos todo a punto! Únicamente hemos de abrir <em>Sublime Text 3</em> y en un archivo, que guardaremos como <code>deploy.sh</code> en el directorio raíz donde hayamos almacenado localmente nuestro sitio web, copiamos el siguiente bloque de código:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
@@ -923,10 +923,10 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># Come Back up to the Project Root</span>
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
 </span></span></code></pre></div><p>El anterior bloque de código se encarga, de manera automática, del proceso de subida de nuestro sitio web a <em>GitHub</em>. Para utilizarlo, desde la terminal del sistema, nos situaremos en el directorio raíz donde hayamos decidido almacenar nuestro sitio web y teclearemos</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">./deploy.sh <span class="s2">&#34;Mensaje que resuma los cambios&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./deploy.sh &#34;Mensaje que resuma los cambios&#34;
 </span></span></code></pre></div><p>En mi caso, no me suelo esforzar mucho en declarar mensajes óptimamente descriptivos y, por ejemplo, cuando suba esta entrada el comando será del estilo <code>./deploy.sh &quot;Añade entrada 20180901&quot;</code>. Los mensajes asociados al repositorio donde guardo el código fuente sí que intento que sean más expresivos y reflejen adecuadamente los cambios de las diferentes versiones.</p>
 <p>Con esto, damos por finalizado el proceso y nuestro sitio web será ahora accesible para todo el mundo a través de la dirección web que proporciona el segundo repositorio que hemos creado (en mi caso <code>https://imalexissaez.github.io/</code>).</p>
-<p>En la siguiente entrada correspondiente a la etiqueta <a href="/etiqueta/metablog/">Metablog</a> posiblemente empecemos a realizar cambios en la hoja de estilos <em>CSS</em> y personalizar todavía más el tema <em>Beautiful Hugo</em>.</p>
+<p>En la siguiente entrada catalogada bajo la etiqueta <a href="/etiqueta/metablog/">Metablog</a> posiblemente empecemos a realizar cambios en la hoja de estilos <em>CSS</em> y personalizar todavía más el tema <em>Beautiful Hugo</em>.</p>
 
     </div>
 
@@ -1183,7 +1183,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
 
 
 
@@ -1268,7 +1268,7 @@
   
 
 
-<script src="/es/js/wowchemy.min.686ba6142fc35e6946910777a1c001b3.js"></script>
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
 
 
 

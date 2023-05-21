@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux | Infinitos Contrastes</title>
+    <link>https://imalexissaez.github.io/etiqueta/linux/</link>
+      <atom:link href="https://imalexissaez.github.io/etiqueta/linux/index.xml" rel="self" type="application/rss+xml" />
+    <description>Linux</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sun, 21 May 2023 00:00:01 +0200</lastBuildDate>
+    <image>
+      <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
+      <title>Linux</title>
+      <link>https://imalexissaez.github.io/etiqueta/linux/</link>
+    </image>
+    
+    <item>
+      <title>Comandos de Linux #01</title>
+      <link>https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/</link>
+      <pubDate>Sun, 21 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/</guid>
+      <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;Esta semana he estado echando un vistazo a la plataforma &lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt; y más concretamente a su curso de fundamentos, &lt;a href=&#34;https://www.theodinproject.com/paths/foundations/courses/foundations&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Foundations&lt;/a&gt;. Este es el punto de partida común que comparten las dos especializaciones de desarrollo web ofrecidas en este sitio: una basada en &lt;em&gt;Ruby&lt;/em&gt; y otra en &lt;em&gt;JavaScript&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Su primera sección, &lt;em&gt;Introduction&lt;/em&gt;, es ciertamente interesante, pues trata temas tan variados como el aprendizaje en sí, la gestión de la frustración o la manera de realizar preguntas adecuadamente para obtener ayuda útil. Es un aspecto que la mayoría de los cursos no aborda y los recursos que ofrece esta plataforma son muy interesantes.&lt;/p&gt;
+&lt;p&gt;Completada dicha sección, la siguiente lleva por título &lt;em&gt;Prerequisites&lt;/em&gt; y se centra en el funcionamiento básico de los ordenadores y de Internet. Además, es donde empezamos a configurar nuestro entorno de desarrollo para trabajar a lo largo de este curso. Como no podía ser de otra manera, sin ni tan siquiera haber generado un solo fichero, ya comienzan a aparecer los retos (que, por otra parte, bienvenidos sean tras las conclusiones que se extraen de las charlas que figuran en la sección &lt;em&gt;Introduction&lt;/em&gt;):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;The Odin Project&lt;/em&gt; no da soporte oficial para &lt;em&gt;Windows&lt;/em&gt;. ¿Qué sistema operativo utiliza un servidor? Efectivamente, &lt;em&gt;Windows&lt;/em&gt;. No obstante, la plataforma no nos deja de lado y ofrece alternativas muy bien detalladas para seguir los contenidos de la especialización. A la hora de escribir estas líneas, estoy probando la emulación de una distribución de &lt;em&gt;Linux&lt;/em&gt;, &lt;em&gt;Xubuntu&lt;/em&gt;, a través de &lt;em&gt;Oracle VM VirtualBox&lt;/em&gt; (he tenido hasta que trastear la &lt;em&gt;BIOS&lt;/em&gt; para permitir la emulación en mi ordenador).&lt;/li&gt;
+&lt;li&gt;La propia plataforma nos aconseja no caer en &lt;em&gt;rabbit holes&lt;/em&gt; que nos distraigan y centrarnos en seguir sus contenidos. La misma plataforma, casi en cada uno de sus apartados, nos enseña docenas de tentadores &lt;em&gt;rabbit holes&lt;/em&gt; en los que perdernos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;De hecho, esta serie de artículos para el blog son fruto de haber caído en uno de esos &lt;em&gt;rabbit holes&lt;/em&gt;, pues una vez instalado &lt;em&gt;Xubuntu&lt;/em&gt; recomiendan aprender los principales comandos que se emplean en su terminal. Para ello enlazan a una lista de reproducción en &lt;em&gt;YouTube&lt;/em&gt; de 24 vídeos del canal &lt;em&gt;LearnLinuxTV&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación, comparto las notas tomadas durante el cuarto vídeo, que corresponde al primero del curso en el cual se empieza a utilizar la terminal.&lt;/p&gt;
+&lt;h2 id=&#34;navegando-por-el-sistema-de-ficheros&#34;&gt;Navegando por el sistema de ficheros&lt;/h2&gt;
+&lt;p&gt;Para empezar, el comando&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;muestra el contenido del directorio actual de trabajo (&lt;code&gt;ls&lt;/code&gt; es la abreviatura de &lt;em&gt;list storage&lt;/em&gt;). Así, al iniciar una nueva terminal, accederíamos con él a los contenidos de la carpeta del usuario.&lt;/p&gt;
+&lt;p&gt;Si tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls /
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;accedemos a los contenidos almacenados en la raíz del sistema (&lt;code&gt;/&lt;/code&gt;). Asimismo, con&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls /home
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;se muestran las carpetas habilitadas para los distintos usuarios del sistema. En mi caso, tras la instalación de &lt;em&gt;Xubuntu&lt;/em&gt; siguiendo las instrucciones de la plataforma, únicamente aparece la carpeta &lt;code&gt;alexis&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: Por comodidad, para limpiar la terminal y dejar de mostrar la información acumulada hasta el momento, podemos emplear el comando &lt;code&gt;clear&lt;/code&gt; o, en ocasiones, dependiendo de la distribución de &lt;em&gt;Linux&lt;/em&gt; que tengamos en nuestro sistema, la combinación de teclas &lt;code&gt;Ctrl + L&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Por otra parte, podemos añadir atributos a un comando de la terminal. Por ejemplo, si tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;obtendremos mucha más información que antes de cada una de las carpetas y de los ficheros ubicados en la raíz del sistema (el atributo &lt;code&gt;-l&lt;/code&gt; indica &lt;em&gt;long listing&lt;/em&gt;). Además, cada carpeta o fichero aparece en su propia línea. Al inicio de cada una de las mencionadas líneas aparece una extraña secuencia de caracteres que, en su mayor parte, recoge los permisos asociados a la correspondiente carpeta o archivo. De momento, si nos centramos únicamente en el primer carácter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;: indica directorio o carpeta.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-&lt;/code&gt;: indica que es un archivo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: indica un enlace a otro archivo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: Una alternativa a la combinación &lt;code&gt;ls -l&lt;/code&gt; es el comando &lt;code&gt;ll&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En la raíz del sistema encontramos algunos directorios de vital importancia. Aunque de momento no entraremos en profundidad en los detalles de cada uno de ellos, para hacernos una idea resulta que:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: es el directorio que contiene los programas ejecutables del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boot&lt;/code&gt;: es el directorio que contiene los archivos necesarios para iniciar el sistema operativo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;home&lt;/code&gt;: es el directorio asociado a los usuarios del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;etc&lt;/code&gt;: es el directorio que contiene los archivos de configuración del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;media&lt;/code&gt;: es el directorio donde se montan dispositivos externos (usb, cd-rom&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt;: es el directorio que contiene &lt;em&gt;logs&lt;/em&gt; del sistema.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la terminal de algunas distribuciones de &lt;em&gt;Linux&lt;/em&gt; emplea un código de colores para diferenciar los distintos tipos de elementos almacenados. Así, el color azul suele indicar carpetas; el blanco, archivos; y el verde, archivos binarios.&lt;/p&gt;
+&lt;p&gt;Para cambiar de directorio y navegar por el sistema de archivos utilizamos el comando&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que es la abreviatura de &lt;em&gt;change directory&lt;/em&gt;. Por ejemplo, &lt;code&gt;cd /&lt;/code&gt; nos lleva a la raíz del sistema y combinando los comandos &lt;code&gt;cd&lt;/code&gt; y &lt;code&gt;ls&lt;/code&gt; es como habitualmente nos desplazaremos por el interior del sistema de archivos. En cualquier momento podemos acceder a la ruta del directorio actual de trabajo en el que nos encontramos sin más que teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que es la abreviatura de &lt;em&gt;print working directory&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la tilde o virgulilla, &lt;code&gt;~&lt;/code&gt;, actúa como atajo hacia la carpeta del usuario. Así, con &lt;code&gt;cd ~&lt;/code&gt; acudimos directamente a nuestra carpeta de usuario.&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/MnY0K-3_Fjk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 04 - Navigating the Filesystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

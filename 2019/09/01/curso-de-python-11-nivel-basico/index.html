@@ -1,0 +1,1560 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Práctica guiada" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #11 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Práctica guiada" /><meta property="og:image" content="https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-09-01T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-09-01T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/"
+  },
+  "headline": "Curso de Python #11 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-09-01T05:59:39+02:00",
+  "dateModified": "2019-09-01T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Práctica guiada"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #11 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="a419e0bab6d7c4dafa11c0fab9ff065d" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #11 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Práctica guiada</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    09/01/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    9 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/09/01/curso-de-python-11-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-práctica-guiada-i">1. Práctica guiada I</h2>
+<h3 id="11-vídeo">1.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/E0OqddzjFUY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>En esta lección, y con el objetivo de reforzar los contenidos vistos hasta la fecha, comenzaremos a esbozar una aplicación gráfica de tipo <em>CRUD</em>. Mediante ella, conectaremos con una base de datos (BBDD) y podremos realizar las operaciones básicas: <em>Create</em>, <em>Read</em>, <em>Update</em> y <em>Delete</em>.</p>
+<p>En el vídeo se explican los diferentes elementos y funcionalidades que caracterizan a la aplicación propuesta, por si queremos lanzarnos a su elaboración de antemano. No obstante, se procederá a su implementación en posteriores lecciones.</p>
+<h2 id="2-práctica-guiada-ii">2. Práctica guiada II</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/o8E869dmK3U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>En esta lección, comenzaremos a esbozar la interfaz gráfica de nuestra aplicación <em>CRUD</em>. Para ello, empezamos tecleando:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">Tk</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Raíz de la aplicación</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&#34;Aplicación CRUD&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s2">&#34;icon.ico&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Ejecución de la aplicación</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</span></span></code></pre></div><p>A continuación, generamos la barra de menú superior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Menú superior de la aplicación</span>
+</span></span><span class="line"><span class="cl"><span class="n">barra_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">menu</span><span class="o">=</span><span class="n">barra_menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">bbdd_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">barra_menu</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bbdd_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Conectar&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">bbdd_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">bbdd_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Salir&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">borrar_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">barra_menu</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">borrar_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Borrar campos&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">crud_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">barra_menu</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Crear&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Leer&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Actualizar&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Borrar&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">help_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">barra_menu</span><span class="p">,</span> <span class="n">tearoff</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">help_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Licencia&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">help_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">help_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Acerca de...&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">barra_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;BBDD&#34;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">bbdd_menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">barra_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Borrar&#34;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">borrar_menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">barra_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;CRUD&#34;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">crud_menu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">barra_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Ayuda&#34;</span><span class="p">,</span> <span class="n">menu</span><span class="o">=</span><span class="n">help_menu</span><span class="p">)</span>
+</span></span></code></pre></div><p>Por lo que respecta al cuerpo de la aplicación, lo dividiremos en dos <em>frames</em>: uno superior para organizar los campos de introducción de datos y otro inferior para distribuir los cuatro botones que nos permitirán llevar a cabo acciones de tipo <em>CRUD</em>.</p>
+<p>Así pues, si, por ejemplo, optamos por construir los diferentes campos de entrada que poseerá la aplicación, el bloque de código a escribir será:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Frame superior</span>
+</span></span><span class="line"><span class="cl"><span class="n">campos_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">campos_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">id_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">id_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">name_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">name_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lastname_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lastname_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">address_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">address_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">password_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">password_entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">password_entry</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">show</span><span class="o">=</span><span class="s2">&#34;*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">comment_text</span> <span class="o">=</span> <span class="n">Text</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">comment_text</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">comment_text_scrollvert</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">comment_text</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">comment_text_scrollvert</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;nsew&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">comment_text</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">yscrollcommand</span><span class="o">=</span><span class="n">comment_text_scrollvert</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/60/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-práctica-guiada-iii">3. Práctica guiada III</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/OJzFGgOSpvI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>En esta lección, una vez declarados los campos de introducción de datos en la anterior, nos centraremos en ubicar las etiquetas en la aplicación:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">id_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;ID:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">id_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">name_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Nombre:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">name_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lastname_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Apellido:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lastname_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">address_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Dirección:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">address_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">password_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Contraseña:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">password_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">comment_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Comentarios:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">comment_label</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;ne&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></div><p>A continuación, ocupémonos de construir un <em>frame</em> en la parte inferior del ya disponible y disponer cuatro botones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Frame inferior</span>
+</span></span><span class="line"><span class="cl"><span class="n">botones_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">botones_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">crear_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Create&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">crear_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">read_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Read&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">read_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">update_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Update&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">update_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">delete_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Delete&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">delete_button</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="s2">&#34;e&#34;</span><span class="p">,</span> <span class="n">padx</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></div><p>Así, ya únicamente nos resta programar la funcionalidad de la aplicación, tanto para el menú, como para los botones recién creados.</p>
+<h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/61/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-práctica-guiada-iv">4. Práctica guiada IV</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/5XPLCDp7nDk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>En esta lección, implementaremos cierta funcionalidad a nuestra aplicación, comenzando por el menú <em>BBDD</em>. Programaremos la función que realiza la conexión a la base de datos (BBDD) y la que posibilita la opción de salir de la aplicación.</p>
+<p>Por lo que respecta a la conexión de la BBDD, como la primera vez que pulsemos la función va a encargarse de crear la tabla, después hemos de controlar la excepción que aparece al volver a llamar la función con dicha tabla ya creada.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función para conectar a la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">conecta_bbdd</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">            CREATE TABLE DATOS_USUARIOS (
+</span></span></span><span class="line"><span class="cl"><span class="s1">            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+</span></span></span><span class="line"><span class="cl"><span class="s1">            NOMBRE_USUARIO VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s1">            APELLIDO VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s1">            DIRECCION VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s1">            PASSWORD VARCHAR(50),
+</span></span></span><span class="line"><span class="cl"><span class="s1">            COMENTARIOS VARCHAR(250))
+</span></span></span><span class="line"><span class="cl"><span class="s1">            &#39;&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">OperationalError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">pass</span>
+</span></span><span class="line"><span class="cl">    <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Conexión a la base de datos&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">message</span><span class="o">=</span><span class="s2">&#34;La conexión a la base de datos se ha realizado con éxito.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span></code></pre></div><p>Acto seguido, acudimos a la instrucción que gestiona el elemento del menú <em>BBDD</em> correspondiente y la modificamos como sigue:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">bbdd_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Conectar&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">conecta_bbdd</span><span class="p">)</span>
+</span></span></code></pre></div><p>Finalmente, implementemos la función que gestiona la salida de la aplicación. El código es idéntico al visto en lecciones anteriores:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función para salir de la aplicación</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sale_aplicacion</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valor</span> <span class="o">=</span> <span class="n">messagebox</span><span class="o">.</span><span class="n">askquestion</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Salir&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;¿Deseas realmente salir de la aplicación?&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">valor</span> <span class="o">==</span> <span class="s2">&#34;yes&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</span></span></code></pre></div><p>Y añadimos la funcionalidad al correspondiente elemento del menú <em>BBDD</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">bbdd_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Salir&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">sale_aplicacion</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/62/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="5-práctica-guiada-v">5. Práctica guiada V</h2>
+<h3 id="51-vídeo">5.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/mNzHPglBuUk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="52-notas-personales">5.2. Notas personales</h3>
+<p>En esta lección, analizaremos cómo limpiar los campos de registros (por si el usuario comete algún error al transcribir los datos) e insertar datos en la base de datos (BBDD), es decir, ejecutar la operación de tipo <em>Create</em>.</p>
+<p>Para empezar, de cara a poder realizar manipulaciones sobre el texto que un usuario escriba en los campos de registros, hemos de emplear variables de tipo <code>StringVar</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">id_data</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">name_data</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">lastname_data</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">address_data</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">password_data</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
+</span></span></code></pre></div><p>A continuación, las asignamos a sus correspondientes <code>Entry</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">id_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">id_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">name_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">name_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lastname_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">lastname_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">address_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">address_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">password_entry</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">campos_frame</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">textvariable</span><span class="o">=</span><span class="n">password_data</span><span class="p">)</span>
+</span></span></code></pre></div><p>Después, construimos la función que limpia los campos de registros:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que limpia los registros de la aplicación</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">limpia_registros</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">id_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lastname_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">address_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">password_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">comment_text</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Notas</em>:</p>
+<ul>
+<li>Notemos cómo se limpia un cuadro de comentario, ya que el procedimiento a seguir es un tanto diferente. Hemos de utilizar la función <code>delete()</code>, indicándole el punto de partida (<code>1.0</code>) y el de finalización (<code>END</code>).</li>
+<li>Al hilo de lo anterior, <code>END</code> es asimismo una instrucción de la librería <code>tkinter</code>, de manera que hemos de importarla si estamos siguiendo la estrategia de <code>from tkinter import ...</code>. De hecho, en mi código dicha instrucción comienza a adquirir una longitud considerable, siendo en la actualidad:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">Button</span><span class="p">,</span> <span class="n">END</span><span class="p">,</span> <span class="n">Entry</span><span class="p">,</span> <span class="n">Frame</span><span class="p">,</span> <span class="n">Label</span><span class="p">,</span> <span class="n">Menu</span><span class="p">,</span> <span class="n">messagebox</span><span class="p">,</span> <span class="n">Scrollbar</span><span class="p">,</span> <span class="n">StringVar</span><span class="p">,</span> <span class="n">Text</span><span class="p">,</span> <span class="n">Tk</span>
+</span></span></code></pre></div><p>Ahora, asignamos esta funcionalidad al elemento correspondiente el menú:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">borrar_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Borrar campos&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">limpia_registros</span><span class="p">)</span>
+</span></span></code></pre></div><p>Acto seguido, abordemos la primera operación <em>CRUD</em>, <em>Create</em>, que nos permitirá añadir registros a la BBDD.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que inserta registros en la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_create</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;INSERT INTO DATOS_USUARIOS VALUES (NULL, &#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">name_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;, &#39;&#34;</span> <span class="o">+</span> <span class="n">lastname_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;,&#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">address_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;,&#39;&#34;</span> <span class="o">+</span> <span class="n">password_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;,&#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">comment_text</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;1.0&#34;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;&#39;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Crear registro&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Registro insertado con éxito en la base de datos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p><em>Notas</em>:</p>
+<ul>
+<li>No recogemos aquello que el usuario escribe en el campo <em>ID</em>, ya que lo hemos declarado en la tabla como clave primaria autoincrementable (de ahí el <code>NULL</code> en la instrucción <em>SQL</em> de arriba). Este proceder puede resultar un tanto confuso para el usuario y admite margen de mejora.</li>
+<li>Es muy sencillo equivocarse a la hora de escribir la anterior instrucción <em>SQL</em> por el elevado número de concatenaciones. Un enfoque alternativo consiste en escribir primero una serie de datos concretos de ejemplo y, después, poco a poco sustituir dichos datos por las correspondientes variables con sus métodos <code>get()</code> asociados.</li>
+</ul>
+<p>Finalmente, añadimos la funcionalidad, tanto al elemento de menú correspondiente, como al botón que figura en la parte inferior de la aplicación:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Crear&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_create</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">crear_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Create&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_create</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="53-código-fuente">5.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/63/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="6-práctica-guiada-vi">6. Práctica guiada VI</h2>
+<h3 id="61-vídeo">6.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nx3OE31y0IY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="62-notas-personales">6.2. Notas personales</h3>
+<p>En esta lección, abordaremos la implementación de las operaciones de tipo <em>Read</em> y <em>Update</em>. El criterio para posibilitar la lectura de registros será que el usuario introduzca en el formulario la <em>ID</em> de la cual desea consultar la información pertinente.</p>
+<p>En primer lugar, implementemos la función de lectura, apoyándonos en cómo procedimos en anteriores lecciones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que lee registros de la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_read</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM DATOS_USUARIOS WHERE ID=&#34;</span> <span class="o">+</span> <span class="n">id_data</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">usuario</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">usuario</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">id_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lastname_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">address_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">password_data</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">u</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="n">comment_text</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">u</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>Luego, añadimos la funcionalidad, tanto al elemento del menú correspondiente, como al botón asociado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Leer&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_read</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">read_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Read&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_read</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Nota</em>: así programa la funcionalidad, la aplicación no responde cuando se inserta un <em>ID</em> que no figura en la base de datos. Habría de mostrar un mensaje de advertencia mediante la clase <code>messagebox</code>.</p>
+<p>Acto seguido, ocupémonos de la función de tipo <em>Update</em>, que será muy similar a la programada para <em>Create</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que actualiza registros de la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_update</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;UPDATE DATOS_USUARIOS SET NOMBRE_USUARIO=&#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">name_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;, APELLIDO=&#39;&#34;</span> <span class="o">+</span> <span class="n">lastname_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="s2">&#34;&#39;, DIRECCION=&#39;&#34;</span> <span class="o">+</span> <span class="n">address_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;, PASSWORD=&#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">password_data</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&#34;&#39;, COMENTARIOS=&#39;&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                   <span class="n">comment_text</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;1.0&#34;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;&#39;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Actualizar registro&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Registro actualizado con éxito en la base de datos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>Después, añadimos el comportamiento, tanto al elemento del menú asociado, como al botón correspondiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Actualizar&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_update</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">update_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Update&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_update</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="63-código-fuente">6.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/64/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="7-práctica-guiada-vii">7. Práctica guiada VII</h2>
+<h3 id="71-vídeo">7.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nj-alxd7YvM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="72-notas-personales">7.2. Notas personales</h3>
+<p>En esta lección, abordaremos cómo borrar registros (operación de tipo <em>Delete</em>) y la creación de consultas parametrizadas.</p>
+<p>En cuanto a la primera tarea, empecemos construyendo la correspondiente función:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que borra registros de la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_delete</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;DELETE FROM DATOS_USUARIOS WHERE ID=&#34;</span> <span class="o">+</span> <span class="n">id_data</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Borrar registro&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Registro borrado con éxito en la base de datos.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Acto seguido, añadimos la funcionalidad, tanto al elemento del menú asociado, como al botón correspondiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">crud_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Borrar&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_delete</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">delete_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">botones_frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&#34;Delete&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">crud_delete</span><span class="p">)</span>
+</span></span></code></pre></div><p>A continuación, analicemos cómo modificar algunas de las consultas <em>SQL</em> para hacerlas parametrizadas y que su escritura sea mucho más sencilla:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que inserta registros en la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_create</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">datos</span> <span class="o">=</span> <span class="n">name_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">lastname_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">address_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">password_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">comment_text</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;1.0&#34;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;INSERT INTO DATOS_USUARIOS VALUES (NULL, ?, ?, ?, ?, ?)&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">datos</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Crear registro&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Registro insertado con éxito en la base de datos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función que actualiza registros de la BBDD</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">crud_update</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&#34;usuarios&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span> <span class="o">=</span> <span class="n">conexion</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">datos</span> <span class="o">=</span> <span class="n">name_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">lastname_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">address_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">password_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">comment_text</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&#34;1.0&#34;</span><span class="p">,</span> <span class="n">END</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;UPDATE DATOS_USUARIOS SET NOMBRE_USUARIO=?, APELLIDO=?, DIRECCION=?, PASSWORD=?, COMENTARIOS=? WHERE ID=&#34;</span> <span class="o">+</span> <span class="n">id_data</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="p">(</span><span class="n">datos</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">title</span><span class="o">=</span><span class="s2">&#34;Actualizar registro&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Registro actualizado con éxito en la base de datos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conexion</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>Finalmente, como extra, incluyamos funcionalidad para los dos elementos del menú <em>Ayuda</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># Función licencia</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">licencia</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showwarning</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;Licencia&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                           <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Producto bajo licencia GNU.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Función acerca de...</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">acerca_de</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">messagebox</span><span class="o">.</span><span class="n">showinfo</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&#34;Acerca de...&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">message</span><span class="o">=</span><span class="s2">&#34;Aplicación creada por Alexis Sáez.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Ahora, incorporemos dicha funcionalidad en los elementos del menú:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Licencia&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">licencia</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">help_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&#34;Acerca de...&#34;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">acerca_de</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="73-código-fuente">7.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/65/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/&amp;text=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/&amp;t=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/&amp;title=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/09/01/curso-de-python-11-nivel-basico/&amp;title=Curso%20de%20Python%20#11%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

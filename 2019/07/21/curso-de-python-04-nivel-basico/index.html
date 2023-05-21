@@ -1,0 +1,1604 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Bucles" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #04 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Bucles" /><meta property="og:image" content="https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-07-21T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-07-21T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/"
+  },
+  "headline": "Curso de Python #04 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-07-21T05:59:39+02:00",
+  "dateModified": "2019-07-21T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Bucles"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #04 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="43b2dcc9668e3333d336ee705cfe7d81" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #04 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Bucles</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    07/21/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    11 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/07/21/curso-de-python-04-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-bucles-i">1. Bucles I</h2>
+<h3 id="11-vídeo">1.1 Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/GQGhU1526Oo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>Abordaremos ahora otro tipo de estructura de control de flujo (las estructuras condicionales asimismo lo eran): los <strong>bucles</strong>.</p>
+<p>La utilidad de un <strong>bucle</strong> es repetir una o varias líneas de código tantas veces como sea preciso (siendo esta cantidad conocida de antemano o no). En <em>Python</em> tenemos dos tipos de bucles:</p>
+<ul>
+<li><em>determinados</em>: sabemos a priori cuántas veces se repetirá el bloque de código, e</li>
+<li><em>indeterminados</em>: desconocemos a priori el número de repeticiones del bloque de código.</li>
+</ul>
+<p>Empecemos viendo el primer tipo, al que pertenece la instrucción <code>for</code>, cuya sintaxis es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">elemento_a_recorrer</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>donde el <code>elemento_a_recorrer</code> puede ser una lista, una tupla, una cadena de texto&hellip;</p>
+<p>Por ejemplo, para imprimir tres veces una palabra, una posible estrategia sería:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hola&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Aunque hemos utilizado una lista de números, no es imprescindible. El siguiente ejemplo consigue el mismo resultado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;enero&#34;</span><span class="p">,</span> <span class="s2">&#34;febrero&#34;</span><span class="p">,</span> <span class="s2">&#34;marzo&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hola&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>En ambos casos, el elemento a recorrer es una lista de tres elementos y es por ello que el mensaje <code>&quot;Hola&quot;</code> se repite en tres ocasiones, tantas como el mencionado número de elementos de la correspondiente lista.</p>
+<p>Si en lugar de un texto predeterminado optamos por imprimir la propia variable en ambos casos, el resultado es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;enero&#34;</span><span class="p">,</span> <span class="s2">&#34;febrero&#34;</span><span class="p">,</span> <span class="s2">&#34;marzo&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># enero</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># febrero</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># marzo</span>
+</span></span></code></pre></div><p>La variable no tiene que denominarse necesariamente <code>i</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">meses</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;enero&#34;</span><span class="p">,</span> <span class="s2">&#34;febrero&#34;</span><span class="p">,</span> <span class="s2">&#34;marzo&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">meses</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># enero</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># febrero</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># marzo</span>
+</span></span></code></pre></div><h3 id="13-código-fuente">1.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/14/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="2-bucles-ii">2. Bucles II</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/D416qOEDrhI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>Las instrucciones <code>print()</code> que aparecen en los bucles de tipo <code>for</code> insertan un salto de línea en cada iteración:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;Píldoras&#34;</span><span class="p">,</span> <span class="s2">&#34;Informáticas&#34;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hola&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Hola</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Hola</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Hola</span>
+</span></span></code></pre></div><p>Si deseamos que la impresión se produzca en la misma línea, hemos de declarar adecuadamente el argumento <code>end</code> de la función <code>print()</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&#34;Píldoras&#34;</span><span class="p">,</span> <span class="s2">&#34;Informáticas&#34;</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hola&#34;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Hola Hola Hola</span>
+</span></span></code></pre></div><p>Si el elemento a recorrer es una cadena de texto, el bucle <code>for</code> ejecutará tantas iteraciones como letras tenga esta:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s2">&#34;Alexis&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34;-&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># A-l-e-x-i-s-</span>
+</span></span></code></pre></div><p>Esta característica nos permite, por ejemplo, programar una primera aproximación a un verificador de direcciones de correo electrónico, que nos indique que una es correcta si alberga una arroba en su declaración:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">email</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s2">&#34;direccion@dominio.com&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">email</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">email</span> <span class="o">==</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email no es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># El email es correcto.</span>
+</span></span></code></pre></div><p>El anterior bloque de código se puede simplificar un tanto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="s2">&#34;direccion@dominio.com&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">email</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">email</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email no es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># El email es correcto.</span>
+</span></span></code></pre></div><p>Generemos una versión interactiva de este programa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_email</span><span class="p">(</span><span class="n">direcc</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">email</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">direcc</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">email</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">email</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email no es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">direcc</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu dirección de correo electrónico: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">evalua_email</span><span class="p">(</span><span class="n">direcc</span><span class="p">)</span>
+</span></span></code></pre></div><p>Podemos ampliar la función de verificación de correos electrónicos para que compruebe si también hay un carácter <code>.</code> en la cadena de texto:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_email</span><span class="p">(</span><span class="n">direcc</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arroba</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">punto</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">direcc</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">arroba</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;.&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">punto</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">arroba</span> <span class="ow">and</span> <span class="n">punto</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email no es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">direcc</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu dirección de correo electrónico: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">evalua_email</span><span class="p">(</span><span class="n">direcc</span><span class="p">)</span>
+</span></span></code></pre></div><p>Veamos el uso del tipo <code>range</code> en combinación con el bucle <code>for</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 4</span>
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/15/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-bucles-iii">3. Bucles III</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/KFz-mXB7qVI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>Veamos algunas opciones de la función <code>print()</code> a la hora de imprimir el valor de variables durante la ejecución de un bucle:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;valor de la variable </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 0</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 1</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 2</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 3</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 4</span>
+</span></span></code></pre></div><p>La <code>f</code> que aparece antes del texto entrecomillado indica el uso de <strong>funciones f</strong>, que permiten interesantes opciones de cara a la impresión de textos en la consola. En esta ocasión, concatena la cadena de caracteres con el valor que toma la variable en cada iteración, indicada por <code>{i}</code>.</p>
+<p>El tipo <code>range</code> admite el uso de argumentos adicionales:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;valor de la variable </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 6</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 7</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 8</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 9</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;valor de la variable </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 5</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 10</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 15</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 20</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 25</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 30</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 35</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 40</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># valor de la variable 45</span>
+</span></span></code></pre></div><p>La función <code>len</code> también resulta de utilidad a la hora de emplear bucles <code>for</code>. Veámosla en acción retomando el ejemplo de la validación de una dirección de correo electrónico visto en la lección anterior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">valido</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu email: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">email</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">email</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valido</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">valido</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email es correcto.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El email no es correcto.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Ejercicio 1</strong>: crea un programa que muestre los números impares del 1 al 100. Los números deberán aparecer una al lado del otro sin salto de línea.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&#34; &#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Ejercicio 2</strong>: crea un programa que pida por teclado introducir una contraseña. La contraseña no podrá tener menos de 8 caracteres ni espacios en blanco. Si la contraseña es correcta, el programa imprime &lsquo;&lsquo;Contraseña OK&rsquo;&rsquo;. En caso contrario imprime &lsquo;&lsquo;Contraseña errónea&rsquo;&rsquo;.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valido</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">or</span> <span class="s2">&#34; &#34;</span> <span class="ow">in</span> <span class="n">password</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valido</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valido</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce contraseña: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">evalua_password</span><span class="p">(</span><span class="n">password</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Constraseña OK.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Contraseña errónea.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Ejercicio 3</strong>: crea un programa que evalúe si una dirección de correo electrónico es válida o no en función de si tiene <code>@</code> o <code>.</code> Hay que tener en cuenta que la dirección se considera correcta si solo tiene una <code>@</code> y si tiene uno o más <code>.</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evalua_mail</span><span class="p">(</span><span class="n">mail</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arroba</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="n">punto</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;.&#34;</span> <span class="ow">in</span> <span class="n">mail</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">punto</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mail</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">contador</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arroba</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">punto</span> <span class="ow">and</span> <span class="n">arroba</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mail</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce dirección de correo electrónico: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">evalua_mail</span><span class="p">(</span><span class="n">mail</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dirección de correo electrónico VÁLIDA.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dirección de correo electrónico INVÁLIDA.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/16/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-bucles-iv">4. Bucles IV</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/UfUM6uzl5SM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>Estudiemos el bucle <strong>while</strong>, que es tipo <em>indeterminado</em> porque no sabemos a priori cuántas veces ejecutará el bloque de código contenido en su interior. Su sintaxis es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">while</span> <span class="n">condición</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>En el siguiente ejemplo, no obstante, vemos cómo programar un bucle <code>while</code> para que funcione como uno de tipo <em>determinado</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Iteración: </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Fin de ejecución del bucle while.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 1.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 2.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 3.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 4.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 5.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 6.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 7.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 8.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 9.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Iteración: 10.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Fin de ejecución del bucle while.</span>
+</span></span></code></pre></div><p>Generemos ahora un programa que nos solicite la edad y, en caso de ser el dato introducido un número negativo, vuelva a preguntarnos de nuevo (siendo así un ejemplo de bucle <code>while</code> de tipo <em>indeterminado</em>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu edad: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">edad</span> <span class="o">&gt;</span> <span class="mi">110</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Has introducido una edad incorrecta. Vuelve a intentarlo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">edad</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu edad: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años. Gracias por colaborar.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Si un usuario se empeña en introducir datos negativos o muy elevados, puede dar lugar a la aparición de un bucle &lsquo;&lsquo;infinito&rsquo;&rsquo;. Veamos una estrategia para evitar este tipo de situaciones con un programa que nos permita hallar la raíz cuadrada de un número:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de cálculo de raíces cuadradas&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">intentos</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Para ejecutar el bucle while un número de veces determinado</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No se puede hallar la raíz de un número negativo.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">intentos</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Has consumido demasiados intentos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El programa ha finalizado&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">intentos</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">intentos</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">solucion</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;La raíz cuadrada de </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> es </span><span class="si">{</span><span class="n">solucion</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Notas</em>:</p>
+<ul>
+<li>La instrucción <code>break</code> detiene la ejecución del bucle. Es decir, si durante el transcurso de la ejecución de un bucle llegamos a una situación donde se lee una instrucción <code>break</code>, en ese instante, el flujo del programa deja el bucle y salta a la primera línea de código que se encuentra a continuación del mencionado bucle.</li>
+<li>En la línea <code>solucion = math.sqrt(numero)</code> introducimos el uso de la clase <code>math</code>, que hemos importado en la primera línea de código (<code>import math</code>). Es un concepto que se estudiará posteriormente en el curso, pero dicha instrucción sirve para encontrar la raíz cuadrada de un número. La utilidad de importar clases reside en que podemos aprovechar funciones ya programadas y no hemos de &lsquo;&lsquo;reinventar la rueda&rsquo;&rsquo;.</li>
+</ul>
+<p><strong>Ejercicio 1</strong>: crea un programa que pida números infinitamente. Los números introducidos deben ser cada vez mayores. El programa finalizará cuando se introduce un número menor que el anterior.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número entero: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">condicion</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">condicion</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num1</span> <span class="o">=</span> <span class="n">numero</span>
+</span></span><span class="line"><span class="cl">    <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número entero mayor que el anterior: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">num1</span> <span class="o">&gt;</span> <span class="n">numero</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Valor incorrecto: </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2"> no es mayor que </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">condicion</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Valor correcto: </span><span class="si">{</span><span class="n">numero</span><span class="si">}</span><span class="s2"> es mayor que </span><span class="si">{</span><span class="n">num1</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><strong>Ejercicio 2</strong>: crea un programa que pida números positivos indefinidamente. El programa termina cuando se introduce un número negativo. Finalmente el programa muestras la suma de todos los números introducidos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Cálculo de la suma de una serie de números positivos.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Instrucciones: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Introduce tantos números positivos como desees sumar.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Introduce un número negativo para calcular la suma.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">suma</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número positivo: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">suma</span> <span class="o">+=</span> <span class="n">num</span>
+</span></span><span class="line"><span class="cl">    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce un número positivo: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;La suma de los valores positivos introducios es </span><span class="si">{</span><span class="n">suma</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/17/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="5-bucles-v">5. Bucles V</h2>
+<h3 id="51-vídeo">5.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/c8WCRTU4udo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="52-notas-personales">5.2. Notas personales</h3>
+<p>En esta lección, abordaremos el uso de las instrucciones:</p>
+<ul>
+<li><code>continue</code>: provoca que el flujo de ejecución de un programa, dentro de un bucle, salte a la siguiente iteración de este.</li>
+<li><code>pass</code>: en cuanto se lee en el interior de un bucle, devuelve <code>null</code> (es como si no ejecutara el bucle). Su uso es reducido, salvo en definición de clases o casos muy concretos (dejar bucles vacíos, que sabemos serán precisos, para programar en un futuro próximo).</li>
+<li><code>else</code>: cuando un bucle finaliza todas sus iteraciones, entonces comienza a leer las contenidas en el bloque de código asociado a esta instrucción.</li>
+</ul>
+<p>Veamos algunos ejemplos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="s2">&#34;Python&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Viendo la letra </span><span class="si">{</span><span class="n">letra</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra P.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra y.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra t.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra h.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra o.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra n.</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="s2">&#34;Python&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">letra</span> <span class="o">==</span> <span class="s2">&#34;h&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Viendo la letra </span><span class="si">{</span><span class="n">letra</span><span class="si">}</span><span class="s2">.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra P.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra y.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra t.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra o.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Viendo la letra n.</span>
+</span></span></code></pre></div><p>Elaboremos, a continuación, un programa que cuente el número de caracteres de una cadena de texto, ignorando los espacios en blanco:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nombre</span> <span class="o">=</span> <span class="s2">&#34;Píldoras Informáticas&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nombre</span><span class="p">))</span>  <span class="c1"># 21 (considera espacio en blanco como carácter)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">contador</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nombre</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34; &#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="n">contador</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">contador</span><span class="p">)</span>  <span class="c1"># 20</span>
+</span></span></code></pre></div><p>Cuando queremos crear una clase (o función), tan pequeña como sea posible, pero que seguramente en un futuro ampliemos, la instrucción <code>pass</code> es de suma utilidad:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">mi_clase</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">pass</span>  <span class="c1"># A implementar más tarde</span>
+</span></span></code></pre></div><p>Por lo que respecta a la instrucción <code>else</code>, veamos un código para comprobar si una dirección de correo electrónico posee o no una arroba:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu email: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">email</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="s2">&#34;@&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">arroba</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arroba</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">arroba</span><span class="p">)</span>
+</span></span></code></pre></div><p>Hemos de ser cautos, pues generalmente asociamos la instrucción <code>else</code> a estructuras condicionales y no a bucles. Fijarse en la identación del programa es clave.</p>
+<h3 id="53-código-fuente">5.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/18/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/&amp;text=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/&amp;t=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/&amp;title=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/07/21/curso-de-python-04-nivel-basico/&amp;title=Curso%20de%20Python%20#04%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

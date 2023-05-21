@@ -1,0 +1,1518 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Condicionales" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #03 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Condicionales" /><meta property="og:image" content="https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-07-14T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-07-14T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/"
+  },
+  "headline": "Curso de Python #03 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-07-14T05:59:39+02:00",
+  "dateModified": "2019-07-14T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Condicionales"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #03 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="cd24919f30e9a69650e7afda1b599a60" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #03 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Condicionales</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    07/14/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    8 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/07/14/curso-de-python-03-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-condicionales-i">1. Condicionales I</h2>
+<h3 id="11-vídeo">1.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/iV-4F0jGWak" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>Las estructuras condicionales nos permiten alterar el flujo de ejecución de un programa. Por lo que respecta al condicional <code>if</code>, tiene la siguiente sintaxis:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">condición</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>La anterior condición suele venir expresada a través de operadores de comparación (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>). Veamos un sencillo ejemplo de aplicación de una estructura condicional <code>if</code> en la definición de una función:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluacion</span><span class="p">(</span><span class="n">nota</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Aprobado&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Suspenso&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valoracion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>  <span class="c1"># Aprobado</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>  <span class="c1"># Suspenso</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="mf">2.1</span><span class="p">))</span>  <span class="c1"># Suspenso</span>
+</span></span></code></pre></div><p>Programemos una versión interactiva del anterior bloque de instrucciones, donde el usuario ha de introducir la nota durante la ejecución del código (a través de la función <code>input()</code>). Para ello, necesitamos activar la consola mediante el menú <code>Tools</code>, opción <code>SublimeREPL</code> y en el apartado <code>Python</code> seleccionamos <code>Python - RUN current file</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluacion</span><span class="p">(</span><span class="n">nota</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Aprobado&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Suspenso&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valoracion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de evaluación de notas de alumnos&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nota_alumno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="n">nota_alumno</span><span class="p">))</span>
+</span></span></code></pre></div><p>No obstante, si ejecutamos e insertamos una nota numérica (por ejemplo, <code>8</code>), <em>Python</em> nos arroja el siguiente error:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># TypeError: &#39;&lt;&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;</span>
+</span></span></code></pre></div><p>Ello es debido a que cualquier información introducida por el usuario desde el teclado se almacena como cadena de texto (<code>&quot;8&quot;</code>), y el operador <code>&lt;</code> no está preparado para comparar textos y números. Resolvemos esta situación empleando la función <code>int()</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluacion</span><span class="p">(</span><span class="n">nota</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Aprobado&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Suspenso&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valoracion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de evaluación de notas de alumnos&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nota_alumno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nota_alumno</span><span class="p">)))</span>
+</span></span></code></pre></div><p>Siendo una iteración del programa, por ejemplo,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Programa de evaluación de notas de alumnos
+</span></span><span class="line"><span class="cl"><span class="m">8</span>
+</span></span><span class="line"><span class="cl">Aprobado
+</span></span></code></pre></div><p>La función <code>input()</code> admite la posibilidad de indicar un mensaje:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">evaluacion</span><span class="p">(</span><span class="n">nota</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Aprobado&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">valoracion</span> <span class="o">=</span> <span class="s2">&#34;Suspenso&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">valoracion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de evaluación de notas de alumnos&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nota_alumno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la nota del alumno: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">evaluacion</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">nota_alumno</span><span class="p">)))</span>
+</span></span></code></pre></div><p>Siendo ahora una iteración del programa, por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Programa de evaluación de notas de alumnos
+</span></span><span class="line"><span class="cl">Introduce la nota del alumno: <span class="m">8</span>
+</span></span><span class="line"><span class="cl">Aprobado
+</span></span></code></pre></div><h3 id="13-código-fuente">1.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/10/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="2-condicionales-ii">2. Condicionales II</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/cf7o4s9nFu8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>En este vídeo ampliaremos las posibilidades de la estructura condicional <code>if</code> mediante <code>else</code> y <code>elif</code>, quedando entonces su sintaxis como</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">condicion</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">condicion</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">instrucciones</span>
+</span></span></code></pre></div><p>Empecemos creando un programa de control de acceso:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Verificación de acceso&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">edad_usuario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu edad: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">edad_usuario</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No puedes pasar.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Puedes pasar.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Veamos el resultado de algunas ejecuciones de este programa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Verificación de acceso
+</span></span><span class="line"><span class="cl">Introduce tu edad: <span class="m">19</span>
+</span></span><span class="line"><span class="cl">Puedes pasar.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Verificación de acceso
+</span></span><span class="line"><span class="cl">Introduce tu edad: <span class="m">15</span>
+</span></span><span class="line"><span class="cl">No puedes pasar.
+</span></span></code></pre></div><p>Añadamos al programa la posibilidad de mostrar un mensaje de error si el usuario introduce un dato excesivamente elevado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Verificación de acceso&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">edad_usuario</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu edad: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">edad_usuario</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No puedes pasar.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">edad_usuario</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Edad incorrecta.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Puedes pasar.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Veamos el resultado de ejecutar el anterior programa con distintos valores de edad:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Verificación de acceso
+</span></span><span class="line"><span class="cl">Introduce tu edad: <span class="m">25</span>
+</span></span><span class="line"><span class="cl">Puedes pasar.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Verificación de acceso
+</span></span><span class="line"><span class="cl">Introduce tu edad: <span class="m">15</span>
+</span></span><span class="line"><span class="cl">No puedes pasar.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Verificación de acceso
+</span></span><span class="line"><span class="cl">Introduce tu edad: <span class="m">124</span>
+</span></span><span class="line"><span class="cl">Edad incorrecta.
+</span></span></code></pre></div><p>Para reforzar el uso de esta estructura condicional, elaboremos un programa que asigna a cada calificación numérica su correspondiente etiqueta:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Control de calificaciones&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nota_alumno</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la nota: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">nota_alumno</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nota incorrecta.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">nota_alumno</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Insuficiente.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">nota_alumno</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Suficiente.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">nota_alumno</span> <span class="o">&lt;</span> <span class="mi">7</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Bien.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">nota_alumno</span> <span class="o">&lt;</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Notable.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> <span class="n">nota_alumno</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Sobresaliente.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Nota incorrecta.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Veamos el resultado de ejecutar el anterior programa con distintas calificaciones:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: -6
+</span></span><span class="line"><span class="cl">Nota incorrecta.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">Insuficiente.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: <span class="m">6</span>
+</span></span><span class="line"><span class="cl">Bien.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: <span class="m">7</span>
+</span></span><span class="line"><span class="cl">Notable.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: <span class="m">10</span>
+</span></span><span class="line"><span class="cl">Sobresaliente.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Control de calificaciones
+</span></span><span class="line"><span class="cl">Introduce la nota: <span class="m">12</span>
+</span></span><span class="line"><span class="cl">Nota incorrecta.
+</span></span></code></pre></div><p><strong>Ejercicio 1</strong>: crea un programa que pida dos números <em>enteros</em> por teclado. El programa tendrá una función llamada <code>devuelve_max</code> encargada de devolver el número más alto de los dos introducidos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">devuelve_max</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">n1</span> <span class="o">&lt;</span> <span class="n">n2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">n1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El máximo es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">devuelve_max</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)))</span>
+</span></span></code></pre></div><p><strong>Ejercicio 2</strong>: crea un programa que pida por teclado &lsquo;&lsquo;Nombre&rsquo;&rsquo;, &lsquo;&lsquo;Apellido&rsquo;&rsquo; y &lsquo;&lsquo;Tfno&rsquo;&rsquo;. Esos tres datos deberán ser almacenados en una lista y mostrar en consola el mensaje: &lsquo;&lsquo;Los datos personales son: nombre apellido teléfono&rsquo;&rsquo; (Se mostrarán los datos introducidos por teclado).</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Nombre: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">apell</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Apellido: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">tfno</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Teléfono: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">datos</span> <span class="o">=</span> <span class="p">[</span><span class="n">nombre</span><span class="p">,</span> <span class="n">apell</span><span class="p">,</span> <span class="n">tfno</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Los datos personales son: &#34;</span> <span class="o">+</span> 
+</span></span><span class="line"><span class="cl">      <span class="n">datos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="n">datos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&#34; &#34;</span> <span class="o">+</span> <span class="n">datos</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span></code></pre></div><p><strong>Ejercicio 3</strong>: crea un programa que pida tres números por teclado. El programa imprime en consola la media aritmética de los números introducidos.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">num1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el primer número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">num2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el segundo número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">num3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el tercer número: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">media</span> <span class="o">=</span> <span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="n">num3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La media aritmética es: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">media</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/11/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-condicionales-iii">3. Condicionales III</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/qxgEolsC6rg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>Aunque en <em>Python</em> no existe una instrucción de tipo <code>switch</code>, como en otros lenguajes de programación, veremos que, gracias a la concatenación de operadores de comparación, a los operadores lógicos <code>and</code> y <code>or</code>, y al operador <code>in</code>, disponemos de bastante versatilidad a la hora de trabajar con estructuras condicionales.</p>
+<p>Antes de nada, siguiendo las instrucciones de <a href="https://stackoverflow.com/a/19977184" target="_blank" rel="noopener">este post</a>, creamos un atajo para ejecutar de manera más ágil nuestros programas. Ahora ya no hemos de navegar por los menús cada vez que deseemos realizar una ejecución en la consola, simplemente hemos de emplear la combinación de teclas <code>ctrl + alt + b</code> (mientras que para cerrarla usamos la combinación de teclas <code>ctrl + w</code>).</p>
+<p>Empecemos creando un programa que controle si un dato numérico introducido para la edad es válido, es decir, no es negativo ni un valor muy elevado. Para ello, utilizaremos la concatenación de operadores de comparación, teniendo en cuenta que su lectura se realiza de izquierda a derecha:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">comprueba_edad</span><span class="p">(</span><span class="n">edad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">edad</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La edad es correcta.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La edad es incorrecta.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">comprueba_edad</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># La edad es correcta.</span>
+</span></span><span class="line"><span class="cl"><span class="n">comprueba_edad</span><span class="p">(</span><span class="mi">135</span><span class="p">)</span>  <span class="c1"># La edad es incorrecta.</span>
+</span></span><span class="line"><span class="cl"><span class="n">comprueba_edad</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">)</span>  <span class="c1"># La edad es incorrecta.</span>
+</span></span></code></pre></div><p>Creemos ahora un programa que evaluará el salario de diferentes trabajadores de una empresa:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">sal_presidente</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario del presidente: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario presidente: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sal_presidente</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sal_director</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario del director: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario director: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sal_director</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sal_jefe_area</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario del jefe de área: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario jefe de área: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sal_jefe_area</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sal_administrativo</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario del administrativo: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario administrativo: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sal_administrativo</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">sal_administrativo</span> <span class="o">&lt;</span> <span class="n">sal_jefe_area</span> <span class="o">&lt;</span> <span class="n">sal_director</span> <span class="o">&lt;</span> <span class="n">sal_presidente</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Todo funciona correctamente.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Algo falla en esta empresa.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/12/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-condicionales-iv">4. Condicionales IV</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/rDGsWYnQEJY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>A continuación, veremos el uso de los operadores lógicos <code>and</code> y <code>or</code>, y del operador <code>in</code>. Para ello, crearemos un programa que evalúe si un alumno tiene o no derecho a beca, dependiendo de</p>
+<ul>
+<li>la distancia a la que vive del centro,</li>
+<li>el número de hermanos, y</li>
+<li>el salario familiar.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de evaluación de becas - Curso 2018/19&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dist_escuela</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la distancia a la escuela (en km): &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Distancia a la escuela: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">dist_escuela</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">num_hermanos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el número de hermanos en el centro: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Número de hermanos: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">num_hermanos</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sal_familiar</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario anual bruto: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario anual bruto: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sal_familiar</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">dist_escuela</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">num_hermanos</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">sal_familiar</span> <span class="o">&lt;=</span> <span class="mi">20000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Tienes derecho a beca&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No tienes derecho a beca&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Revisemos la estrutura condicional para que no sea tan complicado tener derecho a una beca:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Programa de evaluación de becas - Curso 2018/19&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">distancia_escuela</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la distancia a la escuela (en km): &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Distancia a la escuela: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">distancia_escuela</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">numero_hermanos</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el número de hermanos en el centro: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Número de hermanos: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numero_hermanos</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">salario_familiar</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce el salario anual bruto: &#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Salario anual bruto: &#34;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">salario_familiar</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">distancia_escuela</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="ow">or</span> <span class="n">numero_hermanos</span> <span class="o">&gt;</span> <span class="mi">2</span> <span class="ow">or</span> <span class="n">salario_familiar</span> <span class="o">&lt;=</span> <span class="mi">20000</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Tienes derecho a beca&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No tienes derecho a beca&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Estudiemos ahora el uso del operador <code>in</code>. Crearemos un programa donde un alumno debe escoger una asignatura opcional de entre un listado predeterminado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Asignaturas optativas - Curso 2018/19&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Informática gráfica&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Pruebas de software&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Usabilidad y accesibilidad&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">asignatura</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Escoge la asignatura optativa: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">asignatura</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&#34;Informática gráfica&#34;</span><span class="p">,</span> <span class="s2">&#34;Pruebas de software&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="s2">&#34;Usabilidad y accesibilidad&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Asignatura elegida: &#34;</span> <span class="o">+</span> <span class="n">asignatura</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La asignatura escogida no está contemplada.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Python</em> es <strong>case sensitive</strong> (distingue entre mayúsculas y minúsculas). Para solucionar esta situación, utilizamos las funciones <code>lower()</code> y <code>upper()</code>, funciones que escriben, respectivamente, una cadena de caracteres toda en minúsculas o mayúsculas.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Asignaturas optativas - Curso 2018/19&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Informática gráfica&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Pruebas de software&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;- Usabilidad y accesibilidad&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">opcion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Escoge la asignatura optativa: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">asignatura</span> <span class="o">=</span> <span class="n">opcion</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">asignatura</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&#34;informática gráfica&#34;</span><span class="p">,</span> <span class="s2">&#34;pruebas de software&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                  <span class="s2">&#34;usabilidad y accesibilidad&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Asignatura elegida: &#34;</span> <span class="o">+</span> <span class="n">asignatura</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La asignatura escogida no está contemplada.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/13/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/&amp;text=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/&amp;t=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/&amp;title=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/07/14/curso-de-python-03-nivel-basico/&amp;title=Curso%20de%20Python%20#03%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,2085 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Métodos y archivos" />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/" />
+  <meta property="og:title" content="Curso de Python #08 (Nivel básico) | Infinitos Contrastes" />
+  <meta property="og:description" content="Métodos y archivos" /><meta property="og:image" content="https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-08-14T05:59:39&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-08-14T05:59:39&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/"
+  },
+  "headline": "Curso de Python #08 (Nivel básico)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/featured.jpg"
+  ],
+  
+  "datePublished": "2019-08-14T05:59:39+02:00",
+  "dateModified": "2019-08-14T05:59:39+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Métodos y archivos"
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de Python #08 (Nivel básico) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="8134a9498a94addf2688b5b4c44f8acc" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de Python #08 (Nivel básico)</h1>
+
+  
+  <p class="page-subtitle">Métodos y archivos</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    08/14/19
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    21 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2019/08/14/curso-de-python-08-nivel-basico/featured_hu8a1db6368a9edb51055e6181dc8f1078_102751_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@cdr6934" target="_blank" rel="noopener">Chris Ried</a>, disponible en <a href="https://unsplash.com/es/fotos/ieic5Tq8YMk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="1-cadenas">1. Cadenas</h2>
+<h3 id="11-vídeo">1.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/zH0VsRuD2ok" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="12-notas-personales">1.2. Notas personales</h3>
+<p>Examinemos algunos de los métodos disponibles en <em>Python</em> a la hora de trabajar con cadenas de texto, que son objetos de tipo <code>String</code>. Entre los más habituales encontramos:</p>
+<ul>
+<li><code>upper()</code></li>
+<li><code>lower()</code></li>
+<li><code>capitalize()</code></li>
+<li><code>count()</code></li>
+<li><code>find()</code></li>
+<li><code>isdigit()</code></li>
+<li><code>isalum()</code></li>
+<li><code>isalpha()</code></li>
+<li><code>split()</code></li>
+<li><code>strip()</code></li>
+<li><code>replace()</code></li>
+<li><code>rfind()</code></li>
+</ul>
+<p>Para obtener más información sobre su utilización, conviene que visitemos <a href="http://pyspanishdoc.sourceforge.net/lib/string-methods.html" target="_blank" rel="noopener">esta página</a>.</p>
+<p>Veamos algunos ejemplos sencillos que ilustren el uso de algunos de los anteriores métodos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">nombre_usuario</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce tu nombre de usuario: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El nombre es:&#34;</span><span class="p">,</span> <span class="n">nombre_usuario</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El nombre es:&#34;</span><span class="p">,</span> <span class="n">nombre_usuario</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El nombre es:&#34;</span><span class="p">,</span> <span class="n">nombre_usuario</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El nombre es:&#34;</span><span class="p">,</span> <span class="n">nombre_usuario</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce tu nombre de usuario: Alexis Sáez
+</span></span><span class="line"><span class="cl">El nombre es: Alexis Sáez
+</span></span><span class="line"><span class="cl">El nombre es: ALEXIS SÁEZ
+</span></span><span class="line"><span class="cl">El nombre es: alexis sáez
+</span></span><span class="line"><span class="cl">El nombre es: Alexis sáez
+</span></span></code></pre></div><p>Algunas de estas funciones resultan útiles a la hora de validar los datos que un usuario proporciona a nuestros programas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la edad: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="ow">not</span> <span class="n">edad</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Por favor, introduce un valor numérico.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">edad</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce la edad: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">18</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;No puede pasar.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Puede pasar.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Introduce la edad: 8iu9
+</span></span><span class="line"><span class="cl">Por favor, introduce un valor numérico.
+</span></span><span class="line"><span class="cl">Introduce la edad: o9098
+</span></span><span class="line"><span class="cl">Por favor, introduce un valor numérico.
+</span></span><span class="line"><span class="cl">Introduce la edad: <span class="m">99</span>
+</span></span><span class="line"><span class="cl">Puede pasar.
+</span></span></code></pre></div><p><strong>Ejercicio</strong>: crea un programa que pida introducir una dirección de email por teclado. El programa debe imprimir en consola si la dirección de email es correcta o no en función de si esta tiene el símbolo <code>@</code>. Si tiene una <code>@</code> la dirección será correcta. Si tiene más de una o ninguna <code>@</code> la dirección será errónea. Si la <code>@</code> está al comienzo de la dirección de email o al final, la dirección también será errónea</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">email</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;Introduce email: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">email</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&#34;@&#34;</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">email</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&#34;@&#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">email</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La dirección de correo es correcta.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La dirección de correo es incorrecta.&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="13-código-fuente">1.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/33/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="2-módulos">2. Módulos</h2>
+<h3 id="21-vídeo">2.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/t93x-vnFvP4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="22-notas-personales">2.2. Notas personales</h3>
+<p>Un <strong>módulo</strong> es un archivo con extensión <code>.py</code>, <code>.pyc</code> (Python compilado) o fichero escrito en <em>C</em> para <em>CPython</em>, que posee su propio espacio de nombres y que puede contener variables, funciones, clases e incluso otros módulos.</p>
+<p>Sirve para organizar y reutilizar el código (<strong>modularización</strong> y <strong>reutilización</strong>). Se genera uno creando un archivo con extensión <code>.py</code> (o <code>.pyc</code> o archivo en C) y guardándolo donde nos interese.</p>
+<p>Vamos a crear un módulo que, siguiendo la organización del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> de código, se llamará <code>modulo_matematicas.py</code>. En su interior tecleamos las siguientes líneas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la suma es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">+</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">restar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la resta es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">-</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplicar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la multiplicación es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">*</span> <span class="n">op2</span><span class="p">)</span>
+</span></span></code></pre></div><p>Ahora, generamos otro archivo, <code>script_1.py</code>, e importamos el anterior módulo, utilizando para ello la instrucción <code>import</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">modulo_matematicas</span> <span class="k">as</span> <span class="nn">modulo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">modulo</span><span class="o">.</span><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">modulo</span><span class="o">.</span><span class="n">restar</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">modulo</span><span class="o">.</span><span class="n">multiplicar</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">12</span>
+</span></span><span class="line"><span class="cl">El resultado de la resta es: <span class="m">4</span>
+</span></span><span class="line"><span class="cl">El resultado de la multiplicación es: <span class="m">36</span>
+</span></span></code></pre></div><p>Como el nombre del módulo generado es un tanto extenso, he utilizado la instrucción <code>as</code>, que permite reescribir dicho nombre y, en mi caso, abreviarlo para que su uso sea más cómodo.</p>
+<p>Una alternativa a esta estrategia la encontramos en el fichero <code>script_2.py</code>, donde se utiliza <code>from ... import ...</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modulo_matematicas</span> <span class="kn">import</span> <span class="n">sumar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">12</span>
+</span></span></code></pre></div><p>En el bloque de código anterior, únicamente hemos importado la función <code>sumar()</code> de nuestro módulo. Podemos añadir más funciones separándolas mediante comas o importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modulo_matematicas</span> <span class="kn">import</span> <span class="n">sumar</span><span class="p">,</span> <span class="n">restar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">restar</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">12</span>
+</span></span><span class="line"><span class="cl">El resultado de la resta es: <span class="m">6</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modulo_matematicas</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">restar</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">multiplicar</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">12</span>
+</span></span><span class="line"><span class="cl">El resultado de la resta es: <span class="m">6</span>
+</span></span><span class="line"><span class="cl">El resultado de la multiplicación es: <span class="m">144</span>
+</span></span></code></pre></div><p>No obstante, es peligroso actuar así, pues, en ocasiones, podemos reescribir métodos de manera accidental y arribar a resultados no deseados. Además, en aplicaciones complejas, por motivos de optimización, utilizar el carácter <code>*</code> provoca que se reserve demasiado espacio en memoria al tener que almacenar todo el contenido del módulo importado.</p>
+<p>Creemos un módulo, <code>modulo_vehiculos.py</code> con las clases utilizadas en la lección de herencia asociada al apartado de programación orientada a objetos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Furgoneta</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">carga</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cargar</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span> <span class="o">=</span> <span class="n">cargar</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cargado</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;La furgoneta no está cargada.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Moto</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">caballito</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span> <span class="o">=</span> <span class="s2">&#34;Voy haciendo el caballito.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hcaballito</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">VehiculoElec</span><span class="p">(</span><span class="n">Vehiculo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">autonomia</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cargar_energia</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cargando</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span></code></pre></div><p>Y ahora, en el fichero <code>script_5.py</code> tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">modulo_vehiculos</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche</span> <span class="o">=</span> <span class="n">Vehiculo</span><span class="p">(</span><span class="s2">&#34;Mazda&#34;</span><span class="p">,</span> <span class="s2">&#34;MX5&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">mi_coche</span><span class="o">.</span><span class="n">estado</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Mazda 
+</span></span><span class="line"><span class="cl">Modelo: MX5 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span></code></pre></div><p><em>Python</em> busca los módulos en el mismo directorio donde está guardado el fichero desde el cual se realiza la llamada de importación. En caso de no hallarlo ahí, pasa a revisar el <code>syspath</code> (es un conjunto de directorios entre los que está, por ejemplo, el de instalación de <em>Python</em>).</p>
+<p>Si no tenemos los módulos en ninguna de ambas ubicaciones, <em>Python</em> arrojará un error al ejecutar el programa. Para solucionar esta situación estudiaremos el uso de <strong>paquetes</strong> en la próxima lección.</p>
+<h3 id="código-fuente">Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/34/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="paquetes-i">Paquetes I</h2>
+<h3 id="vídeo">Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nRieWujis4s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="notas-personales">Notas personales</h3>
+<p>Los <strong>paquetes</strong> son directorios donde se almacenarán módulos relacionados entre sí. Sirven para organizar el código de una aplicación y reutilizar los mencionados módulos.</p>
+<p>Un paquete se crea generando un directorio en cuyo interior haya presente un archivo denominado <code>__init__.py</code>.</p>
+<p>Imaginemos que nuestro objetivo es elaborar un programa que realice diversos cálculos matemáticos y estadísticos. Vamos a empezar creando un directorio denominado <code>calculos</code>, en consonancia con la nomenclatura que estamos siguiendo para los ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<p>En su interior creamos el mencionado archivo <code>__init__.py</code> (sin contenido alguno), acción que le transmite a <em>Python</em> la información de que la carpeta <code>calculos</code> funcionará como un paquete.</p>
+<p>Añadimos ahora a la carpeta el módulo <code>calculos_generales.py</code>, cuyo contenido es el siguiente:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la suma es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">+</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">restar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la resta es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">-</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplicar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la multiplicación es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">*</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dividir</span><span class="p">(</span><span class="n">dividendo</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la división es:&#34;</span><span class="p">,</span> <span class="n">dividendo</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">potenciar</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponente</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la potenciación es:&#34;</span><span class="p">,</span> <span class="n">base</span><span class="o">**</span><span class="n">exponente</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">redondear</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado del redondeo es:&#34;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">numero</span><span class="p">))</span>
+</span></span></code></pre></div><p>Ahora, desde la raíz del directorio, veamos cómo podemos utilizar nuestro paquete recién creado:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">calculos.calculos_generales</span> <span class="kn">import</span> <span class="n">dividir</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dividir</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la división es: 3.3333333333333335
+</span></span></code></pre></div><p>Recordemos que podemos importar todo el contenido del módulo utilizando el carácter <code>*</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">calculos.calculos_generales</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dividir</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">redondear</span><span class="p">(</span><span class="mf">4.6</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">potenciar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la división es: 3.3333333333333335
+</span></span><span class="line"><span class="cl">El resultado del redondeo es: <span class="m">5</span>
+</span></span><span class="line"><span class="cl">El resultado de la potenciación es: <span class="m">1024</span>
+</span></span></code></pre></div><p>Podemos crear <strong>subpaquetes</strong>, esto es, un paquete dentro de otro, siguiendo de manera recursiva el procedimiento explicado.</p>
+<p>Por ejemplo, para afinar un poco más, creemos dos directorios dentro de la carpeta del paquete, denominados <code>basicos</code> (para suma, resta, multiplicación y división) y <code>redondeo-potencia</code> (para redondear y calcular potencias). Cada una de ellas ha de llevar en su interior su correspondiente fichero <code>__init__.py</code>.</p>
+<p>En la carpeta <code>basicos</code> incluimos el módulo <code>operaciones_basicas.py</code>, cuyo contenido será:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">sumar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la suma es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">+</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">restar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la resta es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">-</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiplicar</span><span class="p">(</span><span class="n">op1</span><span class="p">,</span> <span class="n">op2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la multiplicación es:&#34;</span><span class="p">,</span> <span class="n">op1</span> <span class="o">*</span> <span class="n">op2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">dividir</span><span class="p">(</span><span class="n">dividendo</span><span class="p">,</span> <span class="n">divisor</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la división es:&#34;</span><span class="p">,</span> <span class="n">dividendo</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">)</span>
+</span></span></code></pre></div><p>Mientras que en la carpeta <code>redondeo_potencia</code> generamos el módulo <code>redondea_y_potencia</code>, compuesto por el siguiente bloque de código:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">potenciar</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponente</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado de la potenciación es:&#34;</span><span class="p">,</span> <span class="n">base</span><span class="o">**</span><span class="n">exponente</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">redondear</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El resultado del redondeo es:&#34;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">numero</span><span class="p">))</span>
+</span></span></code></pre></div><p>Para utilizar estos últimos módulos creados, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">calculos.basicos.operaciones_basicas</span> <span class="kn">import</span> <span class="n">sumar</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">calculos.redondeo_potencia.redondea_y_potencia</span> <span class="kn">import</span> <span class="n">potenciar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sumar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">potenciar</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">12</span>
+</span></span><span class="line"><span class="cl">El resultado de la potenciación es: <span class="m">1024</span>
+</span></span></code></pre></div><h3 id="23-código-fuente">2.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/35/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="3-paquetes-ii">3. Paquetes II</h2>
+<h3 id="31-vídeo">3.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/Zf9sN-w0BVE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="32-notas-personales">3.2. Notas personales</h3>
+<p>Veamos cómo crear <strong>paquetes distribuibles</strong> para que otras personas puedan utilizar nuestro código fuente. El proceso a seguir se reduce a dos sencillos pasos:</p>
+<ol>
+<li>Crear el paquete.</li>
+<li>Instalar el paquete.</li>
+</ol>
+<p>En la lección anterior generamos el paquete <code>calculos</code> como una carpeta en el interior del directorio del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> donde estamos almacenando todos los archivos de este curso. Desde la raíz del mencionado directorio, utilizamos los módulos contenidos en dicho paquete en, por ejemplo, <code>paquetes_1.py</code>.</p>
+<p>Ahora bien, si movemos este último archivo a otro directorio, <em>Python</em> seguramente no será capaz de encontrar el paquete <code>calculos</code>. Para solventar esta situación, hemos de proceder a su instalación.</p>
+<p>En primer lugar, creamos un archivo denominado <code>setup.py</code> en la raíz del directorio, que contendrá una descripción del paquete que vamos a distribuir (nombre, versión, autor&hellip;). En su interior, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">setup</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&#34;prac35_calculos&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">version</span><span class="o">=</span><span class="s2">&#34;1.0&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">description</span><span class="o">=</span><span class="s2">&#34;Paquete de cálculos matemáticos&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">author</span><span class="o">=</span><span class="s2">&#34;Alexis Sáez&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">author_email</span><span class="o">=</span><span class="s2">&#34;cucoalexis@hotmail.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">url</span><span class="o">=</span><span class="s2">&#34;https://imalexissaez.github.io/&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="n">packages</span><span class="o">=</span><span class="p">[</span><span class="s2">&#34;prac35_calculos&#34;</span><span class="p">])</span>
+</span></span></code></pre></div><p>A continuación, abrimos la terminal de <em>Windows</em> y nos dirigimos a la carpeta donde hemos almacenado el fichero <code>setup.py</code> (la instrucción <code>cd</code> es clave en este proceso). Escribimos ahora</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python setup.py sdist
+</span></span></code></pre></div><p>Si todo ha ido bien, habrán aparecido dos nuevas carpetas:</p>
+<ul>
+<li><code>calculos.egg-info</code></li>
+<li><code>dist</code></li>
+</ul>
+<p>En esta última hallamos el archivo comprimido denominado <code>calculos-1.0.tar.gz</code>. Este es el fichero que podemos enviar por correo electrónico o subir a alguna plataforma online para distribuirlo a otras personas.</p>
+<p>Acto seguido, imaginemos que lo hemos recibido y queremos instalarlo. Para ello, desde la terminal de <em>Windows</em> acudimos al directorio donde resida el fichero comprimido y tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip3 install calculos-1.0.tar.gz
+</span></span></code></pre></div><p>Recibiremos rápidamente en la consola el mensaje &lsquo;&lsquo;Successfully installed calculos-1.0&rsquo;&rsquo;.</p>
+<p>Ahora, desde cualquier carpeta de nuestro ordenador, podemos emplear el paquete recién instalado escribiendo, por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">calculos.calculos_generales</span> <span class="kn">import</span> <span class="n">sumar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sumar</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El resultado de la suma es: <span class="m">13</span>
+</span></span></code></pre></div><p><em>Nota</em>: para comprobar que efectivamente el procedimiento se ha llevado a cabo con éxito, he creado una nueva carpeta, <code>test_paquete</code>, y allí he ubicado el archivo <code>paquetes.py</code>. De no haber instalado correctamente el paquete, <em>Python</em> habría sido incapaz de encontrar la función <code>sumar()</code> utilizando la instrucción dada arriba.</p>
+<p>Finalmente, para desinstalar el paquete, desde la terminal de <em>Windows</em> tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip3 uninstall calculos
+</span></span></code></pre></div><h3 id="33-código-fuente">3.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/36/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="4-archivos-i">4. Archivos I</h2>
+<h3 id="41-vídeo">4.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/V87m9SltcI8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="42-notas-personales">4.2. Notas personales</h3>
+<p>En esta lección abordaremos cómo trabajar con ficheros externos de texto, utilizando para tal empresa el módulo <code>io</code>. Nuestro objetivo será conseguir la <strong>persistencia de datos</strong>, es decir, salvaguardar los datos que estamos manipulando para que no se pierdan al finalizar una sesión de <em>Python</em>.</p>
+<p>Existen dos alternativas para conseguir el mencionado objetivo:</p>
+<ul>
+<li>Manejar archivos externos.</li>
+<li>Trabajar con bases de datos (BBDD).</li>
+</ul>
+<p>Las fases necesarias para guardar cierta información en archivos externos son:</p>
+<ol>
+<li>Creación del archivo externo.</li>
+<li>Apertura del archivo externo.</li>
+<li>Manipulación del archivo externo.</li>
+<li>Cierre del archivo externo.</li>
+</ol>
+<p>La documentación del módulo <code>io</code> la podemos encontrar en <a href="https://docs.python.org/3/library/io.html" target="_blank" rel="noopener">este enlace</a>.</p>
+<p>Veamos un ejemplo sencillo en el que crearemos un archivo donde almacenar una frase. Empecemos tecleando:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Nota</em>: un archivo lo podemos abrir en modo lectura (<code>r</code>), escritura (<code>w</code>), agregar (<code>a</code>)&hellip;</p>
+<p>Si ahora acudimos al interior de la carpeta, encontraremos un archivo de texto vacío denominado <code>archivo.txt</code>. En absoluto es necesario que almacenemos el fichero en una carpeta, pero únicamente procedo así para que el <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a> mantenga una estructura coherente.</p>
+<p>A continuación, veamos cómo incluir información (texto) en dicho archivo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Creación + Apertura</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">frase</span> <span class="o">=</span> <span class="s2">&#34;Es un estupendo día para estudiar Python</span><span class="se">\n</span><span class="s2">en Youtube.&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Manipulación</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">frase</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Cierre</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>De esta manera, hemos incluido el texto declarado en la variable <code>frase</code> en el fichero <code>archivo.txt</code>.</p>
+<p>Acto seguido, estudiemos cómo abrir un archivo en modo lectura y acceder a su contenido:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">texto</span> <span class="o">=</span> <span class="n">archivo_texto</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Es un estupendo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span></code></pre></div><p>Otro método que nos puede resultar de utilidad a la hora de leer un archivo es <code>readlines()</code>, que accede a la información almacenada línea a línea y la guarda en una lista:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lineas_texto</span> <span class="o">=</span> <span class="n">archivo_texto</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo_texto</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lineas_texto</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span><span class="s1">&#39;Es un estupendo día para estudiar Python\n&#39;</span>, <span class="s1">&#39;en Youtube.&#39;</span><span class="o">]</span>
+</span></span></code></pre></div><p>Al ser una lista, podemos utilizar ahora todo lo que hemos aprendido sobre ellas:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lineas_texto</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Es un estupendo día para estudiar Python
+</span></span></code></pre></div><p>Finalmente, veamos cómo abrir un archivo para agregar información. Para no alterar el contenido de <code>archivo.txt</code>, almacenaremos sus frases en una variable, las escribiremos en un nuevo fichero, <code>archivo2.txt</code>, y sobre este último será donde agreguemos contenido adicional:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo1</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">texto</span> <span class="o">=</span> <span class="n">archivo1</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo1</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;w&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">texto</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;a&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">¡Mañana más!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">archivo2</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>Si acudimos a la carpeta, comprobaremos la existencia de un fichero denominado <code>archivo2.txt</code>, que contiene tres líneas.</p>
+<h3 id="43-código-fuente">4.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/37/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="5-archivos-ii">5. Archivos II</h2>
+<h3 id="51-vídeo">5.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/0dEYVSRYl_s" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="52-notas-personales">5.2. Notas personales</h3>
+<p>Continuemos el estudio de la manipulación de ficheros externos de texto, con el módulo <code>io</code>, analizando en esta ocasión cómo manejar punteros en texto.</p>
+<p>Para ello, movamos el último archivo de texto generado en la lección anterior (<code>archivo2.txt</code>) a la carpeta, para así mantener la coherencia de la estructura de ficheros del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>. Tras ello, tecleemos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Es un estupendo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>Si no indicamos lo contrario, la función <code>.read()</code> sitúa el puntero al inicio del archivo y comienza entonces su lectura. Cuando finaliza esta, la posición del puntero se ubica tras el último carácter. Esto implica que si ahora escribimos de nuevo la instrucción <code>print(archivo.read())</code>, nada se mostraría en la consola, puesto que tras la posición que ha quedado el puntero no existe información alguna.</p>
+<p>Se puede inicializar la posición del puntero utilizando la función <code>.seek()</code>, que como argumento recibe el carácter desde el que deseamos comenzar la lectura del archivo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Reinicio posición puntero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Establezco posición puntero en carácter 10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Es un estupendo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span><span class="line"><span class="cl">Es un estupendo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span><span class="line"><span class="cl">pendo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>Con el método <code>.read()</code> también podemos modificar la función del puntero, aunque de manera algo diferente a cómo se lleva a cabo el proceso con <code>.seek()</code>. La primera lee hasta la posición del puntero que le indiquemos como argumento, mientras que la segunda posiciona el puntero en una posición y la lectura se efectúa a partir de dicha posición.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">11</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Es un estup
+</span></span><span class="line"><span class="cl">endo día para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>Para situar el puntero justo en medio de un archivo de texto podemos emplear la siguiente estrategia:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">r Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>¿Y si queremos situar el puntero al final de la primera línea?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo2.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">readline</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>Un archivo lo podemos abrir, simultáneamente, en modo lectura y escritura (<code>&quot;r+&quot;</code>), para realizar ambas acciones a la vez si nos es preciso. Generemos un fichero denominado <code>archivo3.txt</code>, con el mismo contenido que aquel con el que llevamos trabajando a lo largo de toda esta lección. Después, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo3.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r+&#34;</span><span class="p">)</span>  <span class="c1"># lectura y escritura</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&#34;Comienzo del texto: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Comienzo del texto: para estudiar Python
+</span></span><span class="line"><span class="cl">en Youtube.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><p>Al abrir el archivo, el puntero se posiciona al principio del mismo. Así, cuando usamos el método <code>.write()</code>, efectivamente sobreescribimos el contenido que originalmente hubiera (en tantas posiciones como longitud posea la nueva cadena de texto).</p>
+<p>Así, para incluir una línea en mitad del documento (la segunda en este caso particular), un posible enfoque sería:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="nb">open</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;archivo3.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r+&#34;</span><span class="p">)</span>  <span class="c1"># lectura y escritura</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lineas</span> <span class="o">=</span> <span class="n">archivo</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lineas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Esta línea ha sido incluida desde el exterior.</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lineas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">archivo</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">archivo</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Comienzo del texto: para estudiar Python
+</span></span><span class="line"><span class="cl">Esta línea ha sido incluida desde el exterior.
+</span></span><span class="line"><span class="cl">¡Mañana más!
+</span></span></code></pre></div><h3 id="53-código-fuente">5.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/38/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="6-serialización-i">6. Serialización I</h2>
+<h3 id="61-vídeo">6.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/SOimkkfQIOM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="62-notas-personales">6.2. Notas personales</h3>
+<p>En esta lección estudiaremos cómo serializar colecciones de ciertos objetos. La <strong>serialización</strong> consiste en guardar en un fichero externo una lista, un diccionario o, incluso, un objeto; con la particularidad de que la codificación de dicho fichero es binaria.</p>
+<p>Esta estrategia resulta de utilidad a la hora de compartir archivos por Internet, ya que su distribución es más sencilla, o bien si deseamos guardarlo en un dispositivo de almacenamiento externo o en una base de datos.</p>
+<p>Para tal empresa utilizaremos la biblioteca de <em>Python</em> <code>pickle</code>, para aprovechar los métodos:</p>
+<ul>
+<li><code>dump()</code>: vuelca datos en un fichero binario externo, y</li>
+<li><code>load()</code>: carga datos de un fichero binario externo.</li>
+</ul>
+<p>Veamos un ejemplo sencillo de aplicación de ambas funciones. Almacenaremos en un archivo binario externo una lista de nombres y, posteriormente, la rescataremos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nombres</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;Pedro&#34;</span><span class="p">,</span> <span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;María&#34;</span><span class="p">,</span> <span class="s2">&#34;Isabel&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_nombres&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">nombres</span><span class="p">,</span> <span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">del</span> <span class="n">fichero</span>
+</span></span></code></pre></div><p><em>Notas</em>:</p>
+<ul>
+<li>A la hora de crear el fichero externo en modo escritura, con el método <code>open()</code>, hemos de indicarle que esta será binaria, para lo cual el correspondiente parámetro toma como valor de argumento <code>&quot;wb&quot;</code>.</li>
+<li>La instrucción <code>del</code> borra el puntero de la memoria hacia la variable <code>fichero</code>, dejando de estar disponible su acceso a partir de ese momento.</li>
+<li>Al ejecutar el anterior bloque de código, en la carpeta correspondiente del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>), aparecerá un archivo externo de tipo binario denominado <code>lista_nombres</code>.</li>
+</ul>
+<p>A continuamos, veamos cómo rescatar la información que reside en el interior del mencionado fichero.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_nombres&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span><span class="s1">&#39;Pedro&#39;</span>, <span class="s1">&#39;Ana&#39;</span>, <span class="s1">&#39;María&#39;</span>, <span class="s1">&#39;Isabel&#39;</span><span class="o">]</span>
+</span></span></code></pre></div><p><em>Nota</em>: para activar el modo de lectura de archivos binarios, el  parámetro correspondiente de la función <code>open()</code> ha de tomar el valor de argumento <code>&quot;rb&quot;</code>.</p>
+<h3 id="63-código-fuente">6.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/39/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="7-serialización-ii">7. Serialización II</h2>
+<h3 id="71-vídeo">7.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/CkfDnMC79b4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="72-notas-personales">7.2. Notas personales</h3>
+<p>En esta lección, continuaremos estudiando el tema de la serialización, analizando ahora cómo llevar a cabo el proceso cuando hay objetos implicados.</p>
+<p>Aprovechemos la clase <code>Vehiculo</code> que generamos anteriormente y cuyo código fuente recordemos era:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span></code></pre></div><p>A continuación, importemos la librería <code>pickle</code> y creemos una lista con algunas instancias de la clase <code>Vehiculo</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coche1</span> <span class="o">=</span> <span class="n">Vehiculo</span><span class="p">(</span><span class="s2">&#34;Mazda&#34;</span><span class="p">,</span> <span class="s2">&#34;MX5&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">coche2</span> <span class="o">=</span> <span class="n">Vehiculo</span><span class="p">(</span><span class="s2">&#34;Seat&#34;</span><span class="p">,</span> <span class="s2">&#34;León&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">coche3</span> <span class="o">=</span> <span class="n">Vehiculo</span><span class="p">(</span><span class="s2">&#34;Renault&#34;</span><span class="p">,</span> <span class="s2">&#34;Megane&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coches</span> <span class="o">=</span> <span class="p">[</span><span class="n">coche1</span><span class="p">,</span> <span class="n">coche2</span><span class="p">,</span> <span class="n">coche3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;coches&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">coches</span><span class="p">,</span> <span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">del</span> <span class="n">fichero</span>
+</span></span></code></pre></div><p><em>Notas:</em></p>
+<ul>
+<li>Recordemos que estamos creando ficheros externos cuya codificación es binaria, es por ello que el valor del parámetro correspondiente de la función <code>open()</code> es <code>&quot;wb&quot;</code>.</li>
+<li>Al ejecutar el anterior bloque de código, aparecerá en la carpeta asociada del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>) el fichero <code>coches</code>.</li>
+</ul>
+<p>Para rescatar la información de este archivo que acabamos de generar, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vehiculo</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">arrancar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">acelerar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">frenar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">frena</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">estado</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Marca:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">marca</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Modelo:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">En marcha:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">enmarcha</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Acelerando:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">acelera</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Frenando:&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">              <span class="bp">self</span><span class="o">.</span><span class="n">frena</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;coches&#34;</span><span class="p">,</span> <span class="s2">&#34;rb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">coches</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">coches</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>&lt;__main__.Vehiculo object at 0x00000259428D65C0&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F28&gt;, &lt;__main__.Vehiculo object at 0x00000259428F7F98&gt;<span class="o">]</span>
+</span></span></code></pre></div><p>Efectivamente, disponemos ahora de una lista con tres objetos. No obstante, recordemos que tenemos el método <code>estado</code> para acceder a información de interés sobre dichos objetos. Así, si escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">coche</span> <span class="ow">in</span> <span class="n">coches</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">coche</span><span class="o">.</span><span class="n">estado</span><span class="p">())</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Marca: Mazda 
+</span></span><span class="line"><span class="cl">Modelo: MX5 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span><span class="line"><span class="cl">None
+</span></span><span class="line"><span class="cl">Marca: Seat 
+</span></span><span class="line"><span class="cl">Modelo: León 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span><span class="line"><span class="cl">None
+</span></span><span class="line"><span class="cl">Marca: Renault 
+</span></span><span class="line"><span class="cl">Modelo: Megane 
+</span></span><span class="line"><span class="cl">En marcha: False 
+</span></span><span class="line"><span class="cl">Acelerando: False 
+</span></span><span class="line"><span class="cl">Frenando: False
+</span></span><span class="line"><span class="cl">None
+</span></span></code></pre></div><p><em>Nota</em>: como podemos comprobar arriba, si hacemos la recuperación de la serialización en un fichero distinto, la definición de la clase <code>Vehiculo</code> es necesario que figure asimismo (en caso contrario arroja <em>Python</em> un error). El problema radica en que el nuevo archivo no tiene información sobre la clase <code>Vehiculo</code> ni, por supuesto, del método <code>estado()</code>.</p>
+<h3 id="73-código-fuente">7.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/40/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+<h2 id="8-guardado-permanente">8. Guardado permanente</h2>
+<h3 id="81-vídeo">8.1. Vídeo</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/J3qvf1fTCsU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h3 id="82-notas-personales">8.2. Notas personales</h3>
+<p>En esta lección, continuaremos estudiando cómo guardar datos de forma permanente en ficheros externos, reforzando así los contenidos aprendidos hasta el momento.</p>
+<p>Empecemos importando la librería <code>pickle</code> y creando una clase sencilla: <code>Persona</code>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Persona</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">genero</span><span class="p">,</span> <span class="n">edad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">genero</span> <span class="o">=</span> <span class="n">genero</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">edad</span> <span class="o">=</span> <span class="n">edad</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Se ha creado una persona nueva con el nombre de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">genero</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
+</span></span></code></pre></div><p><em>Nota</em>: el método <code>__str__()</code> convierte en cadena de texto la información de un objeto.</p>
+<p>Así, si ahora tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">sandra</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Femenino&#34;</span><span class="p">,</span> <span class="s2">&#34;29&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Sandra
+</span></span></code></pre></div><p>El objetivo será crear algunos objetos de dicha clase, almacenarlos en una lista (empresa que realizaremos a través de otra clase, <code>ListaPersonas</code>) y después volcar la información en un fichero externo, al cual podamos acceder en cualquier instante.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pickle</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Persona</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">genero</span><span class="p">,</span> <span class="n">edad</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span> <span class="o">=</span> <span class="n">nombre</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">genero</span> <span class="o">=</span> <span class="n">genero</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">edad</span> <span class="o">=</span> <span class="n">edad</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Se ha creado una persona nueva con el nombre de&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s2">&#34;</span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2"> </span><span class="si">{}</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nombre</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">genero</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">edad</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ListaPersonas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">personas</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">agregar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mostrar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span> <span class="o">=</span> <span class="n">ListaPersonas</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sandra</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Femenino&#34;</span><span class="p">,</span> <span class="s2">&#34;29&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">sandra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">antonio</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="s2">&#34;Masculino&#34;</span><span class="p">,</span> <span class="s2">&#34;39&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">antonio</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ana</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Femenino&#34;</span><span class="p">,</span> <span class="s2">&#34;20&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">ana</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">mostrar_personas</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Sandra
+</span></span><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Antonio
+</span></span><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Ana
+</span></span><span class="line"><span class="cl">Sandra Femenino <span class="m">29</span>
+</span></span><span class="line"><span class="cl">Antonio Masculino <span class="m">39</span>
+</span></span><span class="line"><span class="cl">Ana Femenino <span class="m">20</span>
+</span></span></code></pre></div><p>Almacenemos ahora la lista de personas que hemos generado en un fichero externo. Para ello, incluiremos los pasos necesarios del mencionado proceso en el constructor de la clase <code>ListaPersonas</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ListaPersonas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">personas</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_de_personas&#34;</span><span class="p">,</span> <span class="s2">&#34;ab+&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Desplazamos cursor al principio</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">personas</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>  <span class="c1"># Cargamos información</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Se cargaron </span><span class="si">{}</span><span class="s2"> personas.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El fichero está vacío.&#34;</span><span class="p">)</span>  <span class="c1"># Para la primera vez que abrimos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">del</span> <span class="n">fichero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">agregar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mostrar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span> <span class="o">=</span> <span class="n">ListaPersonas</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El fichero está vacío.
+</span></span></code></pre></div><p><em>Nota</em>: en la función <code>open()</code>, el valor del argumento <code>&quot;ab+&quot;</code> nos permite agregar información a un fichero de codificación binaria.</p>
+<p>A continuación, modifiquemos el método <code>agregar_personas()</code> para que una vez añadida a la lista la nueva información, la almacene en el fichero externo.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ListaPersonas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">personas</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_de_personas&#34;</span><span class="p">,</span> <span class="s2">&#34;ab+&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Desplazamos cursor al principio</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">personas</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>  <span class="c1"># Cargamos información</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Se cargaron </span><span class="si">{}</span><span class="s2"> personas.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El fichero está vacío.&#34;</span><span class="p">)</span>  <span class="c1"># Para la primera vez que abrimos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">del</span> <span class="n">fichero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">agregar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">guardar_personas</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mostrar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">guardar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_de_personas&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">,</span> <span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">del</span> <span class="n">fichero</span>
+</span></span></code></pre></div><p>Así, si ejecutamos ahora el siguiente bloque de código:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">lista_personas</span> <span class="o">=</span> <span class="n">ListaPersonas</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sandra</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Sandra&#34;</span><span class="p">,</span> <span class="s2">&#34;Femenino&#34;</span><span class="p">,</span> <span class="s2">&#34;29&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">sandra</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">antonio</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Antonio&#34;</span><span class="p">,</span> <span class="s2">&#34;Masculino&#34;</span><span class="p">,</span> <span class="s2">&#34;39&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">antonio</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">ana</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Ana&#34;</span><span class="p">,</span> <span class="s2">&#34;Femenino&#34;</span><span class="p">,</span> <span class="s2">&#34;20&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">ana</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">El fichero está vacío.
+</span></span><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Sandra
+</span></span><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Antonio
+</span></span><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Ana
+</span></span></code></pre></div><p>Recuperemos la información guardada en el fichero externo, utilizando para ello un método que añadiremos a la clase <code>ListaPersonas</code>, <code>mostrar_informacion</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ListaPersonas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">personas</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_de_personas&#34;</span><span class="p">,</span> <span class="s2">&#34;ab+&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span><span class="o">.</span><span class="n">seek</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Desplazamos cursor al principio</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">personas</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fichero</span><span class="p">)</span>  <span class="c1"># Cargamos información</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Se cargaron </span><span class="si">{}</span><span class="s2"> personas.&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">EOFError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;El fichero está vacío.&#34;</span><span class="p">)</span>  <span class="c1"># Para la primera vez que abrimos</span>
+</span></span><span class="line"><span class="cl">        <span class="k">finally</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="k">del</span> <span class="n">fichero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">agregar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">persona</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">persona</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">guardar_personas</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mostrar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">guardar_personas</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;lista_de_personas&#34;</span><span class="p">,</span> <span class="s2">&#34;wb&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">,</span> <span class="n">fichero</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fichero</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">del</span> <span class="n">fichero</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mostrar_informacion</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;La información del fichero externo es la siguiente:&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">persona</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">personas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">persona</span><span class="o">.</span><span class="fm">__str__</span><span class="p">())</span>
+</span></span></code></pre></div><p>Así,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">mostrar_informacion</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">La información del fichero externo es la siguiente:
+</span></span><span class="line"><span class="cl">Sandra Femenino <span class="m">29</span>
+</span></span><span class="line"><span class="cl">Antonio Masculino <span class="m">39</span>
+</span></span><span class="line"><span class="cl">Ana Femenino <span class="m">20</span>
+</span></span></code></pre></div><p>Agreguemos una nueva persona. Para ello, tecleamos por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">juan</span> <span class="o">=</span> <span class="n">Persona</span><span class="p">(</span><span class="s2">&#34;Juan&#34;</span><span class="p">,</span> <span class="s2">&#34;Masculino&#34;</span><span class="p">,</span> <span class="s2">&#34;47&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">agregar_personas</span><span class="p">(</span><span class="n">juan</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">lista_personas</span><span class="o">.</span><span class="n">mostrar_informacion</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Se ha creado una persona nueva con el nombre de Juan
+</span></span><span class="line"><span class="cl">La información del fichero externo es la siguiente:
+</span></span><span class="line"><span class="cl">Sandra Femenino <span class="m">29</span>
+</span></span><span class="line"><span class="cl">Antonio Masculino <span class="m">39</span>
+</span></span><span class="line"><span class="cl">Ana Femenino <span class="m">20</span>
+</span></span><span class="line"><span class="cl">Juan Masculino <span class="m">47</span>
+</span></span></code></pre></div><h3 id="83-código-fuente">8.3. Código fuente</h3>
+<p>El código fuente y los posibles ficheros externos generados correspondientes a esta lección se encuentran disponibles para su consulta en la carpeta <code>/lecciones/41/</code> del <a href="https://github.com/ImAlexisSaez/curso-python-desde-0" target="_blank" rel="noopener">repositorio</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/python/">Python</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/&amp;text=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/&amp;t=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29&amp;body=https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/&amp;title=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29%20https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2019/08/14/curso-de-python-08-nivel-basico/&amp;title=Curso%20de%20Python%20#08%20%28Nivel%20b%c3%a1sico%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

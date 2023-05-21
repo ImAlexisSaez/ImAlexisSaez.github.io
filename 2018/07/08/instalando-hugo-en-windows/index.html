@@ -814,12 +814,12 @@
 
     <div class="article-style">
       <p>Llevar a cabo la instalación de <em>Hugo</em> en <em>Windows</em> es extremadamente fácil, hecho que nos permite empezar a experimentar con esta tecnología en apenas unos minutos. Veamos, sin más dilación, todo el proceso en detalle.</p>
-<p>Así pues, en este segundo artículo correspondiente a la etiqueta <a href="/etiqueta/metablog/">Metablog</a>, retomaremos la senda en el lugar que nos quedamos al finalizar la <a href="/2018/07/05/preparando-el-equipo-para-hugo/">primera entrada</a>. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (<em>git</em> y <em>Sublime Text 3</em>) y nos creamos una cuenta en el portal <em>GitHub</em>, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.</p>
+<p>Así pues, en este segundo artículo catalogado bajo la etiqueta <a href="/etiqueta/metablog/">Metablog</a>, retomaremos la senda en el lugar que nos quedamos al finalizar la <a href="/2018/07/05/preparando-el-equipo-para-hugo/">primera entrada</a>. Recuerdo que, en ella, instalamos un par de útiles herramientas en nuestro equipo (<em>git</em> y <em>Sublime Text 3</em>) y nos creamos una cuenta en el portal <em>GitHub</em>, que será donde alojemos tanto el código fuente de nuestros futuros sitios web, como los propios sitios web en sí.</p>
 <p>En la documentación oficial de <em>Hugo</em>, existe una extensa página dedicada a su instalación, con una sección que orienta específicamente a los usuarios de <em>Windows</em> y a la que podemos acceder directamente a través de <a href="https://gohugo.io/getting-started/installing#windows" target="_blank" rel="noopener">este enlace</a>.</p>
 <p>Los desarrolladores han intentado que la experiencia de instalación sea muy intuitiva, pero, en mi opinión, alguna de las indicaciones puede no ser coherente con la estructura de archivos y carpetas que hayamos decidido implementar en nuestros equipos. ¿A qué se debe esta afirmación? Por ejemplo:</p>
 <ul>
 <li><em>Hugo</em> no deja de ser simplemente un programa, por lo que en lugar de instalarlo donde indica la guía, quizá sería mejor opción ubicarlo en la carpeta <code>Archivos de programa</code>.</li>
-<li>Nos señalan, en la menciona guía, un directorio muy específico donde almacenar nuestros sitios web. No obstante, aunque vayamos a utilizar la pareja <em>git</em> + <em>GitHub</em>, es posible que nos interese, además, utilizar un servicio de alojamiento de archivos y, por tanto, ubicar las páginas en otra ruta diferente.</li>
+<li>Nos señalan, en la menciona guía, un directorio muy específico donde almacenar nuestros sitios web. No obstante, aunque vayamos a utilizar la pareja <em>git + GitHub</em>, es posible que nos interese, además, utilizar un servicio de alojamiento de archivos y, por tanto, ubicar las páginas en otra ruta diferente.</li>
 </ul>
 <p>Simplemente lo comento para que quede claro que las instrucciones que, a continuación, compartiré admiten cierta flexibilidad a la hora de llevarlas a cabo. Dicho esto, sin más preámbulos, veamos cómo instalar <em>Hugo</em> en <em>Windows</em>.</p>
 <p>En primer lugar, bien desde la terminal, bien desde el explorador de archivos de <em>Windows</em>, creamos en el directorio raíz de nuestro disco duro (generalmente <code>C:\</code>) una carpeta denominada <code>Hugo</code>. En su interior engendramos otras dos carpetas: <code>bin</code>, donde almacenaremos la aplicación, y <code>Sites</code>, donde ubicaremos nuestros futuros sitios web. Al final, debemos tener disponibles las siguientes dos rutas:</p>
@@ -828,10 +828,10 @@
 <li><code>C:\Hugo\Sites\</code>.</li>
 </ul>
 <p>Para ir acostumbrándonos al uso de la terminal <em>Git Bash</em>, todo el anterior proceso lo podíamos haber conseguido escribiendo en ella la siguiente serie de comandos:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> c:
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir Hugo
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> Hugo
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir bin Sites
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd c:
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir Hugo
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd Hugo
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mkdir bin Sites
 </span></span></code></pre></div><p>A continuación, abrimos la página de descarga de <em>Hugo</em> siguiendo <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener">este enlace</a>. A la hora de escribir estas líneas, la versión más reciente es la etiquetada como <code>v0.42.2</code>. Ahora, desplazamos con cuidado hacia abajo el extenso listado de ficheros, hasta dar con el adecuado para nuestro sistema operativo (en mi caso es <code>hugo_0.42.2_Windows-64bit.zip</code>). Hacemos clic sobre él e inmediatamente comenzará la descarga a nuestro disco duro de un archivo comprimido.</p>
 <p>Acto seguido, descomprimimos el contenido de dicho archivo en la ruta <code>C:\Hugo\bin\</code> (o donde hayamos decidido que sería un buen sitio para almacenar la aplicación) y borramos el fichero que hemos descargado, pues no vamos a necesitarlo en un futuro próximo.</p>
 <p>De esta manera, si desde la terminal nos desplazamos hasta la anterior ruta y escribimos <code>hugo version</code>, recibiremos el siguiente mensaje <code>Hugo Static Site Generator v0.42.2 windows/amd64 BuildDate: 2018-06-28T12:36:53Z</code>, que indica que hemos llevado a cabo la instalación con éxito.</p>
@@ -958,7 +958,7 @@
     </figcaption></figure>
 <p>Surge, cual capricho de un diabólico destino que parece que quiere poner nuestro temple a prueba, otra nueva ventana (ya por fin la última), donde tenemos que hacer clic sobre el botón <em>Nuevo</em> y escribir <code>C:\Hugo\bin\</code>. Finalmente, solo nos resta ir pulsando sobre el botón <em>Aceptar</em> sucesivas veces, hasta cerrar por completo la ristra de ventanas precedentes que en unos segundos hemos acumulado.</p>
 <p>Así, si en cualquier ruta del sistema ahora tecleamos en la terminal <code>hugo version</code>, no aparecerá el anterior mensaje de comando desconocido, sino la versión de la aplicación instalada, tal y como pretendíamos.</p>
-<p>En el próximo artículo correspondiente a la etiqueta <a href="/etiqueta/metablog/">Metablog</a> exploraremos el proceso de creación de un sitio web utilizando <em>Hugo</em>.</p>
+<p>En el próximo artículo catalogado bajo la etiqueta <a href="/etiqueta/metablog/">Metablog</a> exploraremos el proceso de creación de un sitio web utilizando <em>Hugo</em>.</p>
 
     </div>
 
@@ -1215,7 +1215,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.46271ef31da3f018e9cd1b59300aa265.js"></script>
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
 
 
 
@@ -1300,7 +1300,7 @@
   
 
 
-<script src="/es/js/wowchemy.min.686ba6142fc35e6946910777a1c001b3.js"></script>
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
 
 
 

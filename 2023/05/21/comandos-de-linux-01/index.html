@@ -1,0 +1,1261 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Lección 1: Navegando por el sistema de ficheros." />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/" />
+  <meta property="og:title" content="Comandos de Linux #01 | Infinitos Contrastes" />
+  <meta property="og:description" content="Lección 1: Navegando por el sistema de ficheros." /><meta property="og:image" content="https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2023-05-21T00:00:01&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2023-05-21T00:00:01&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/"
+  },
+  "headline": "Comandos de Linux #01",
+  
+  "image": [
+    "https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/featured.jpg"
+  ],
+  
+  "datePublished": "2023-05-21T00:00:01+02:00",
+  "dateModified": "2023-05-21T00:00:01+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Lección 1: Navegando por el sistema de ficheros."
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Comandos de Linux #01 | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="805d6444d89ad2f2b5475072c5191291" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Comandos de Linux #01</h1>
+
+  
+  <p class="page-subtitle">Examinando los comandos <code>cd</code>, <code>ll</code>, <code>ls</code> y <code>pwd</code></p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    05/21/23
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    5 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2023/05/21/comandos-de-linux-01/featured_hudc6d3cfca3dbd652fcf3dd334d33fc1f_47879_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@6heinz3r" target="_blank" rel="noopener">Gabriel Heinzer</a>, disponible en <a href="https://unsplash.com/es/fotos/4Mw7nkQDByk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="introducción">Introducción</h2>
+<p>Esta semana he estado echando un vistazo a la plataforma <a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a> y más concretamente a su curso de fundamentos, <a href="https://www.theodinproject.com/paths/foundations/courses/foundations" target="_blank" rel="noopener">Foundations</a>. Este es el punto de partida común que comparten las dos especializaciones de desarrollo web ofrecidas en este sitio: una basada en <em>Ruby</em> y otra en <em>JavaScript</em>.</p>
+<p>Su primera sección, <em>Introduction</em>, es ciertamente interesante, pues trata temas tan variados como el aprendizaje en sí, la gestión de la frustración o la manera de realizar preguntas adecuadamente para obtener ayuda útil. Es un aspecto que la mayoría de los cursos no aborda y los recursos que ofrece esta plataforma son muy interesantes.</p>
+<p>Completada dicha sección, la siguiente lleva por título <em>Prerequisites</em> y se centra en el funcionamiento básico de los ordenadores y de Internet. Además, es donde empezamos a configurar nuestro entorno de desarrollo para trabajar a lo largo de este curso. Como no podía ser de otra manera, sin ni tan siquiera haber generado un solo fichero, ya comienzan a aparecer los retos (que, por otra parte, bienvenidos sean tras las conclusiones que se extraen de las charlas que figuran en la sección <em>Introduction</em>):</p>
+<ul>
+<li><em>The Odin Project</em> no da soporte oficial para <em>Windows</em>. ¿Qué sistema operativo utiliza un servidor? Efectivamente, <em>Windows</em>. No obstante, la plataforma no nos deja de lado y ofrece alternativas muy bien detalladas para seguir los contenidos de la especialización. A la hora de escribir estas líneas, estoy probando la emulación de una distribución de <em>Linux</em>, <em>Xubuntu</em>, a través de <em>Oracle VM VirtualBox</em> (he tenido hasta que trastear la <em>BIOS</em> para permitir la emulación en mi ordenador).</li>
+<li>La propia plataforma nos aconseja no caer en <em>rabbit holes</em> que nos distraigan y centrarnos en seguir sus contenidos. La misma plataforma, casi en cada uno de sus apartados, nos enseña docenas de tentadores <em>rabbit holes</em> en los que perdernos.</li>
+</ul>
+<p>De hecho, esta serie de artículos para el blog son fruto de haber caído en uno de esos <em>rabbit holes</em>, pues una vez instalado <em>Xubuntu</em> recomiendan aprender los principales comandos que se emplean en su terminal. Para ello enlazan a una lista de reproducción en <em>YouTube</em> de 24 vídeos del canal <em>LearnLinuxTV</em>.</p>
+<p>A continuación, comparto las notas tomadas durante el cuarto vídeo, que corresponde al primero del curso en el cual se empieza a utilizar la terminal.</p>
+<h2 id="navegando-por-el-sistema-de-ficheros">Navegando por el sistema de ficheros</h2>
+<p>Para empezar, el comando</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls
+</span></span></code></pre></div><p>muestra el contenido del directorio actual de trabajo (<code>ls</code> es la abreviatura de <em>list storage</em>). Así, al iniciar una nueva terminal, accederíamos con él a los contenidos de la carpeta del usuario.</p>
+<p>Si tecleamos</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls /
+</span></span></code></pre></div><p>accedemos a los contenidos almacenados en la raíz del sistema (<code>/</code>). Asimismo, con</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls /home
+</span></span></code></pre></div><p>se muestran las carpetas habilitadas para los distintos usuarios del sistema. En mi caso, tras la instalación de <em>Xubuntu</em> siguiendo las instrucciones de la plataforma, únicamente aparece la carpeta <code>alexis</code>.</p>
+<p><em>Nota</em>: Por comodidad, para limpiar la terminal y dejar de mostrar la información acumulada hasta el momento, podemos emplear el comando <code>clear</code> o, en ocasiones, dependiendo de la distribución de <em>Linux</em> que tengamos en nuestro sistema, la combinación de teclas <code>Ctrl + L</code>.</p>
+<p>Por otra parte, podemos añadir atributos a un comando de la terminal. Por ejemplo, si tecleamos</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l /
+</span></span></code></pre></div><p>obtendremos mucha más información que antes de cada una de las carpetas y de los ficheros ubicados en la raíz del sistema (el atributo <code>-l</code> indica <em>long listing</em>). Además, cada carpeta o fichero aparece en su propia línea. Al inicio de cada una de las mencionadas líneas aparece una extraña secuencia de caracteres que, en su mayor parte, recoge los permisos asociados a la correspondiente carpeta o archivo. De momento, si nos centramos únicamente en el primer carácter:</p>
+<ul>
+<li><code>d</code>: indica directorio o carpeta.</li>
+<li><code>-</code>: indica que es un archivo.</li>
+<li><code>l</code>: indica un enlace a otro archivo.</li>
+</ul>
+<p><em>Nota</em>: Una alternativa a la combinación <code>ls -l</code> es el comando <code>ll</code>.</p>
+<p>En la raíz del sistema encontramos algunos directorios de vital importancia. Aunque de momento no entraremos en profundidad en los detalles de cada uno de ellos, para hacernos una idea resulta que:</p>
+<ul>
+<li><code>bin</code>: es el directorio que contiene los programas ejecutables del sistema.</li>
+<li><code>boot</code>: es el directorio que contiene los archivos necesarios para iniciar el sistema operativo.</li>
+<li><code>home</code>: es el directorio asociado a los usuarios del sistema.</li>
+<li><code>etc</code>: es el directorio que contiene los archivos de configuración del sistema.</li>
+<li><code>media</code>: es el directorio donde se montan dispositivos externos (usb, cd-rom&hellip;).</li>
+<li><code>var</code>: es el directorio que contiene <em>logs</em> del sistema.</li>
+</ul>
+<p><em>Nota</em>: la terminal de algunas distribuciones de <em>Linux</em> emplea un código de colores para diferenciar los distintos tipos de elementos almacenados. Así, el color azul suele indicar carpetas; el blanco, archivos; y el verde, archivos binarios.</p>
+<p>Para cambiar de directorio y navegar por el sistema de archivos utilizamos el comando</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span>
+</span></span></code></pre></div><p>que es la abreviatura de <em>change directory</em>. Por ejemplo, <code>cd /</code> nos lleva a la raíz del sistema y combinando los comandos <code>cd</code> y <code>ls</code> es como habitualmente nos desplazaremos por el interior del sistema de archivos. En cualquier momento podemos acceder a la ruta del directorio actual de trabajo en el que nos encontramos sin más que teclear</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span></code></pre></div><p>que es la abreviatura de <em>print working directory</em>.</p>
+<p><em>Nota</em>: la tilde o virgulilla, <code>~</code>, actúa como atajo hacia la carpeta del usuario. Así, con <code>cd ~</code> acudimos directamente a nuestra carpeta de usuario.</p>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://youtu.be/MnY0K-3_Fjk" target="_blank" rel="noopener">Linux Commands for Beginners 04 - Navigating the Filesystem</a></li>
+<li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/linux/">Linux</a>
+  
+  <a class="badge badge-light" href="/etiqueta/terminal/">Terminal</a>
+  
+  <a class="badge badge-light" href="/etiqueta/the-odin-project/">The Odin Project</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/&amp;text=Comandos%20de%20Linux%20#01" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/&amp;t=Comandos%20de%20Linux%20#01" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Comandos%20de%20Linux%20#01&amp;body=https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/&amp;title=Comandos%20de%20Linux%20#01" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Comandos%20de%20Linux%20#01%20https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/&amp;title=Comandos%20de%20Linux%20#01" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
