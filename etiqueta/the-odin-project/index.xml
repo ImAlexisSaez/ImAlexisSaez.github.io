@@ -5,12 +5,59 @@
     <link>https://imalexissaez.github.io/etiqueta/the-odin-project/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/the-odin-project/index.xml" rel="self" type="application/rss+xml" />
     <description>The Odin Project</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sun, 21 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Mon, 22 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>The Odin Project</title>
       <link>https://imalexissaez.github.io/etiqueta/the-odin-project/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #02</title>
+      <link>https://imalexissaez.github.io/2023/05/22/comandos-de-linux-02/</link>
+      <pubDate>Mon, 22 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/22/comandos-de-linux-02/</guid>
+      <description>&lt;h2 id=&#34;edición-básica-de-archivos&#34;&gt;Edición básica de archivos&lt;/h2&gt;
+&lt;p&gt;Para empezar, creamos un archivo mediante el comando &lt;code&gt;touch&lt;/code&gt;, al que pasamos como argumento el nombre deseado para el mencionado archivo. Por ejemplo, para generar un fichero denominado &lt;code&gt;testfile.txt&lt;/code&gt; tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch testfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, si escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;observamos que un nuevo archivo aparece en el listado, cuyo tamaño es &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora, para acceder al contenido de un archivo, empleamos el comando &lt;code&gt;cat&lt;/code&gt;. Por ejemplo, en el caso del fichero que acabamos de generar, teclearíamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat testfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;aunque, al estar vacío, la terminal no arroja información alguna cuando ejecutamos el anterior comando. Por otro lado, si tecleamos de nuevo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch testfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;como resultado se actualizará la fecha de creación del fichero.&lt;/p&gt;
+&lt;p&gt;Por otro lado, podemos editar archivos empleando el comando&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que nos da acceso a un editor de texto plano. Si lo iniciamos de esta manera, no estaremos modificando ningún archivo (basta observar que en la parte superior aparece &lt;code&gt;New Buffer&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;En la parte inferior de la aplicación figura el menú con todas sus opciones. El símbolo &lt;code&gt;^&lt;/code&gt;, que aparece en todas ellas, ha de ser interpretado como el uso de la tecla &lt;code&gt;Ctrl&lt;/code&gt;. Así, el atajo &lt;code&gt;^X&lt;/code&gt;, para salir del programa, ha de ser ejecutado mediante la combinación &lt;code&gt;Ctrl + X&lt;/code&gt;. Asimismo, para guardar (o salvar) un archivo tras escribir cierto texto, el atajo es &lt;code&gt;^O&lt;/code&gt;, que equivale a la combinación &lt;code&gt;Ctrl + O&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si cerramos el editor de texto y ejecutamos &lt;code&gt;ls -l&lt;/code&gt;, observaremos que aparece el nuevo archivo y este, a diferencia del anterior, posee cierto tamaño y podemos revisar sus contenidos mediante el comando &lt;code&gt;cat&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Al comando &lt;code&gt;nano&lt;/code&gt; le podemos añadir un atributo con el nombre del fichero que queremos editar. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano test3.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este archivo no existía en el directorio actual, de manera que cuando salvemos lo creará con los contenidos que hayamos escrito. Siguiendo esta lógica, podríamos editar el archivo &lt;code&gt;testfile.txt&lt;/code&gt; que generamos al principio de la sección&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano testfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la terminal posee autocompletado a través de la tecla &lt;code&gt;Tab&lt;/code&gt;. Así, escribiendo el principio del nombre de un archivo o directorio y pulsando dicha tecla, se autocompleta la línea.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con el comando &lt;code&gt;which&lt;/code&gt; podemos saber si una instrucción está disponible para su uso en la terminar. Por ejemplo, &lt;code&gt;which nano&lt;/code&gt; nos devuelve la ruta hacia el ejecutable, mientras que &lt;code&gt;which prueba&lt;/code&gt; no muestra salida, es decir, no existe ningún comando o aplicación en mi sistema con el nombre &lt;code&gt;prueba&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;una-breve-mirada-a-vim&#34;&gt;Una breve mirada a &lt;em&gt;Vim&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Un editor de texto plano muy completo es &lt;em&gt;Vim&lt;/em&gt; y, por tanto, es recomendable aprender su uso. Quizá no a corto plazo, dada su elevada curva de aprendizaje; pero por sus muchos beneficios merece la pena invertir un tiempo a medio plazo para dominar esta aplicación si continuamos por la senda de la programación.&lt;/p&gt;
+&lt;p&gt;En mi caso particular, al teclear en la terminal &lt;code&gt;which vim&lt;/code&gt;, esta no arroja respuesta alguna. Es decir, la mencionada aplicación no está instalada en mi sistema. Para solventar esta situación, basta teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install vim-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Vim&lt;/em&gt;, como ya hemos mencionado, es un editor de texto plano más avanzado que &lt;code&gt;nano&lt;/code&gt;, por lo que su uso es más complejo. Para empezar, salir de la propia aplicación no es nada intuitivo y lo haremos tecleando &lt;code&gt;:q&lt;/code&gt; en el modo &lt;em&gt;command&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, ya apreciamos que existen diversos modos o estados en &lt;em&gt;Vim&lt;/em&gt;. Por ejemplo, pulsando la tecla &lt;code&gt;i&lt;/code&gt; activamos el modo &lt;em&gt;insert&lt;/em&gt; (mediante el cual podemos editar un archivo de la manera habitual) y con la tecla &lt;code&gt;Esc&lt;/code&gt; retrocederíamos de nuevo al modo &lt;em&gt;command&lt;/em&gt;. En este último modo, no podemos escribir como habitualmente estamos acostumbrados, sino que es el modo que empleamos en &lt;em&gt;Vim&lt;/em&gt; para introducir instrucciones o comandos al programa.&lt;/p&gt;
+&lt;p&gt;De esta forma, para salvar el archivo que hemos escrito a través del modo &lt;em&gt;insert&lt;/em&gt;, volvemos al modo &lt;em&gt;command&lt;/em&gt; y escribimos &lt;code&gt;:w&lt;/code&gt; (si pulsamos intro a continuación, recibiremos un error por no asignar un nombre al archivo). Así, tecleamos &lt;code&gt;:w test4.txt&lt;/code&gt;. Al igual que sucedía con &lt;code&gt;nano&lt;/code&gt;, podemos lanzar &lt;em&gt;Vim&lt;/em&gt; con el nombre de un archivo como atributo, de manera que abrirá dicho fichero al iniciarse.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: el atajo &lt;code&gt;shift + I&lt;/code&gt; es muy útil, pues activa el modo &lt;em&gt;insert&lt;/em&gt; y coloca el cursor al final del archivo.&lt;/p&gt;
+&lt;p&gt;Si usamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim test4.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y añadimos texto, bastará en el modo &lt;em&gt;command&lt;/em&gt; teclear para &lt;code&gt;:w&lt;/code&gt; para guardar el archivo (pues ya posee nombre asignado).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para borrar una línea por completo, podemos emplear el atajo que consiste en pulsar &lt;code&gt;d&lt;/code&gt; dos veces en el modo &lt;em&gt;command&lt;/em&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/T20jXu7rDCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 05 - Basic File Editing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #01</title>
