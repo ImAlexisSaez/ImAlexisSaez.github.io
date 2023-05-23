@@ -5,12 +5,56 @@
     <link>https://imalexissaez.github.io/etiqueta/vim/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/vim/index.xml" rel="self" type="application/rss+xml" />
     <description>Vim</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Mon, 22 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 23 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Vim</title>
       <link>https://imalexissaez.github.io/etiqueta/vim/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #03</title>
+      <link>https://imalexissaez.github.io/2023/05/23/comandos-de-linux-03/</link>
+      <pubDate>Tue, 23 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/23/comandos-de-linux-03/</guid>
+      <description>&lt;h2 id=&#34;moviendo-y-renombrando-archivos&#34;&gt;Moviendo y renombrando archivos&lt;/h2&gt;
+&lt;p&gt;Para empezar, de cara a copiar un archivo usamos el comando &lt;code&gt;cp&lt;/code&gt;, que posee dos argumentos: el archivo a copiar y el nombre del nuevo archivo donde será copiado. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp test2.txt newfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, con el comando &lt;code&gt;cat&lt;/code&gt; podemos comprobar que el contenido de ambos archivos es exactamente el mismo. No obstante, existe otro comando más apropiado para llevar a cabo esta tarea de comparación: &lt;code&gt;diff&lt;/code&gt;, que nos indica en qué difieren dos archivos. Así,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test2.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No arroja salida alguna, es decir, no hay ninguna diferencia entre ambos archivos. Sin embargo,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test3.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sí arroja resultados, pues son ficheros cuyos contenidos difieren.&lt;/p&gt;
+&lt;p&gt;Por otra parte, de cara a borrar un archivo, el comando a usar es &lt;code&gt;rm&lt;/code&gt;. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm newfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este comando también elimina directorios (con el atributo &lt;code&gt;-r&lt;/code&gt; que activa la recursión), por lo que hemos de ser cautos cuando lo empleamos. Esta instrucción no mueve el archivo a una suerte de &lt;em&gt;Papelera de reciclaje&lt;/em&gt; como en &lt;em&gt;Windows&lt;/em&gt;, sino que lo elimina por completo del sistema. Si después lo queremos recuperar tendríamos que usar herramientas específicas de recuperación de archivos en memoria.&lt;/p&gt;
+&lt;p&gt;A continuación, antes de aprender a mover archivos, creemos un nuevo directorio, con el comando &lt;code&gt;mkdir&lt;/code&gt; para almacenarlos. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, para mover los archivos, el comando a emplear es &lt;code&gt;mv&lt;/code&gt; cuyo primer argumento será el nombre del archivo a mover y el segundo su destino.&lt;/p&gt;
+&lt;p&gt;Podemos emplear &lt;em&gt;comodines&lt;/em&gt; en las instrucciones de la terminal para algunos comandos. Por ejemplo, &lt;code&gt;*.txt&lt;/code&gt; se traduce en todos los archivos cuya extensión sea &lt;code&gt;.txt&lt;/code&gt;. De esta manera, podemos mover en bloque todos los ficheros de prueba que hemos creado hasta el momento.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv *.txt linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que con el comando &lt;code&gt;cd&lt;/code&gt; cambiamos el directorio y si tecleamos &lt;code&gt;cd ..&lt;/code&gt; volvemos un paso atrás en la ruta (o a un nivel inferior). Así, siguiendo la misma lógica, si queremos mover un paso atrás en la ruta alguno de los archivos, basta escribir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv testfile.txt ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, hemos de tener en cuenta que si &lt;code&gt;..&lt;/code&gt; indica un nivel inferior, &lt;code&gt;.&lt;/code&gt; indica el nivel actual (el directorio de trabajo). Esto nos permite usar el comando &lt;code&gt;mv&lt;/code&gt; para mover archivos hacia la actual ruta donde nos encontremos. Por ejemplo, para traer de vuelta el archivo &lt;code&gt;testfile.txt&lt;/code&gt; al directorio &lt;code&gt;linux-notes&lt;/code&gt;, bastaría teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;md ../testfile.txt .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, de cara a renombrar archivos, empleamos el mismo comando que para moverlos. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv test3.txt abc.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con este comando también hemos de ser cautos para no renombrar un archivo con el nombre de un fichero existente, pues podemos sobrescribirlo. En algunas distribuciones de &lt;em&gt;Linux&lt;/em&gt; esto sucede directamente (&lt;em&gt;Xubuntu&lt;/em&gt; es un ejemplo de esta forma de proceder) y en otras pregunta si deseamos realizar dicha acción.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv abc.txt test4.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/cSBYvSA9rDM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 06 - Moving and Renaming Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #02</title>
