@@ -5,12 +5,48 @@
     <link>https://imalexissaez.github.io/categoria/programacion/</link>
       <atom:link href="https://imalexissaez.github.io/categoria/programacion/index.xml" rel="self" type="application/rss+xml" />
     <description>Programación</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Wed, 24 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Thu, 25 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Programación</title>
       <link>https://imalexissaez.github.io/categoria/programacion/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #05</title>
+      <link>https://imalexissaez.github.io/2023/05/25/comandos-de-linux-05/</link>
+      <pubDate>Thu, 25 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/25/comandos-de-linux-05/</guid>
+      <description>&lt;h2 id=&#34;abordando-el-uso-de-alias&#34;&gt;Abordando el uso de &lt;em&gt;alias&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Al final de la &lt;a href=&#34;https://imalexissaez.github.io/2023/05/24/comandos-de-linux-04/&#34;&gt;lección anterior&lt;/a&gt;, incluimos un &lt;em&gt;alias&lt;/em&gt; en el archivo de configuración de la terminal que nos permite limpiar esta tecleando únicamente &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, un &lt;em&gt;alias&lt;/em&gt; nos ofrece la posibilidad de crear nuevos comandos a partir de los ya existentes. En la mayoría de los casos se busca automatizar tareas cotidianas de una manera más corta o incluir ciertos atributos por defecto cuando tecleamos la versión sin atributos de un determinado comando.&lt;/p&gt;
+&lt;p&gt;Para tener acceso a un listado de los &lt;em&gt;alias&lt;/em&gt; disponibles en nuestra terminal, basta teclear en ella&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En ella podemos apreciar que uno de los comandos que examinamos en lecciones anteriores, &lt;code&gt;ll&lt;/code&gt;, no es más que un &lt;em&gt;alias&lt;/em&gt; del comando &lt;code&gt;ls&lt;/code&gt;, al que añade los atributos &lt;code&gt;-alF&lt;/code&gt;. De hecho, el propio comando &lt;code&gt;ls&lt;/code&gt; es un &lt;em&gt;alias&lt;/em&gt; de sí mismo configurando cierta opción para colorear.&lt;/p&gt;
+&lt;p&gt;En mi caso, el anterior listado es reducido, ya que apenas cuenta con diez líneas. Sin embargo, es posible acceder a la definición concreta de un &lt;em&gt;alias&lt;/em&gt; como el generado para la tecla &lt;code&gt;c&lt;/code&gt; escribiendo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; c
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La terminal devuelve &lt;code&gt;alias c=&#39;clear&#39;&lt;/code&gt;. A medida que incorporemos más y más &lt;em&gt;alias&lt;/em&gt;, puede resultar conveniente acceder a la definición concreta de uno de ellos para disponer de todos sus detalles.&lt;/p&gt;
+&lt;p&gt;Si en algún momento precisamos eliminar un &lt;em&gt;alias&lt;/em&gt;, simplemente hemos de utilizar el comando &lt;code&gt;unalias&lt;/code&gt; declarando como argumento el atajo correspondiente. Por ejemplo,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;unalias&lt;/span&gt; c
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Desactivaría la posibilidad de limpiar la pantalla de la terminar utilizando únicamente la tecla &lt;code&gt;c&lt;/code&gt;. No obstante, como dicho &lt;em&gt;alias&lt;/em&gt; está incluido en el archivo de configuración de la terminal, cuando iniciemos una nueva sesión de esta, volverá a estar disponible el &lt;em&gt;alias&lt;/em&gt; asignado a la tecla &lt;code&gt;c&lt;/code&gt;. Para eliminarlo por completo, deberíamos editar el mencionado archivo de configuración y suprimir la línea correspondiente a la definición de dicho &lt;em&gt;alias&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Es posible que nos resulte útil los cinco procesos que más uso están haciendo de la &lt;em&gt;CPU&lt;/em&gt;. El comando asociado a ello es un tanto complejo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps auxf &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sort -nr -k &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; head -5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta forma, si este es un dato que queremos consultar con cierta frecuencia, tiene sentido definir un &lt;em&gt;alias&lt;/em&gt; para el mismo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cp5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 3 | head -5&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en realidad, el anterior&lt;em&gt;alias&lt;/em&gt; no es un comando, sino una composición de comandos. Como podemos apreciar, usa el símbolo &lt;code&gt;|&lt;/code&gt; para redirigir los resultados de un comando hacia el argumento de entrada para otro. En el ejemplo anterior, se ejecuta el comando &lt;code&gt;ps&lt;/code&gt; con ciertos atributos, la salida del cual se envía al comando &lt;code&gt;sort&lt;/code&gt; y esta al comando &lt;code&gt;head&lt;/code&gt; para producir el resultado final que se muestra en la terminal.&lt;/p&gt;
+&lt;p&gt;Para conocer el mismo dato, pero asociado al uso de la memoria, podemos definir un &lt;em&gt;alias&lt;/em&gt; que es ciertamente similar al anterior&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mem5&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 4 | head -5&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, algunos &lt;em&gt;alias&lt;/em&gt; recomendados son&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;history&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;install&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo apt install&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aunque, como hemos visto arriba, si nos encontramos en una situación donde habitualmente escribimos largos comandos o encadenamos siempre la misma secuencia de comandos, es recomendable definir un &lt;em&gt;alias&lt;/em&gt; que nos ahorre tiempo.&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/ehKAIWJWI8Y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 08 - Command Aliases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #04</title>
