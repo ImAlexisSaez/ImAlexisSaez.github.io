@@ -5,12 +5,69 @@
     <link>https://imalexissaez.github.io/etiqueta/linux/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/linux/index.xml" rel="self" type="application/rss+xml" />
     <description>Linux</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Thu, 25 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Fri, 26 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Linux</title>
       <link>https://imalexissaez.github.io/etiqueta/linux/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #06</title>
+      <link>https://imalexissaez.github.io/2023/05/26/comandos-de-linux-06/</link>
+      <pubDate>Fri, 26 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/26/comandos-de-linux-06/</guid>
+      <description>&lt;h2 id=&#34;introducción-a-los-permisos-en-linux&#34;&gt;Introducción a los permisos en &lt;em&gt;Linux&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;Para empezar, la manera en que &lt;em&gt;Linux&lt;/em&gt; gestiona los permisos es un tanto diferente a la que lleva a cabo &lt;em&gt;Windows&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Por ejemplo, al teclear &lt;code&gt;ls -l&lt;/code&gt; en la terminal, dentro de la carpeta de usuario (&lt;code&gt;cd ~&lt;/code&gt; para acceder a ella si estamos ubicados en un directorio de trabajo distinto), para la carpeta &lt;code&gt;Desktop&lt;/code&gt; la línea comienza con la secuencia&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;drwxr-xr-x
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El primer carácter, &lt;code&gt;d&lt;/code&gt;, recordemos, indica que es un directorio. (&lt;code&gt;-&lt;/code&gt; para archivos). El resto de los caracteres de la secuencia nos indica lo que podemos hacer (o no) con el directorio o archivo en cuestión.&lt;/p&gt;
+&lt;p&gt;Para interpretar la secuencia de caracteres, hemos de dividirla en cuatro secciones:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Sección 1&lt;/em&gt;: el primer carácter, que sabemos indica el tipo de elemento del que se trata (archivo, directorio o enlace).&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Sección 2&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del usuario al que pertenece el archivo o directorio. Dicho usuario aparece en la tercera columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Sección 3&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del grupo al cual pertenece el archivo o directorio. Dicho grupo aparece en la cuarta columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Sección 4&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del resto de usuarios que ni son propietarios ni pertenecen al grupo en cuestión (se denomina &lt;em&gt;world&lt;/em&gt; en ocasiones a los usuarios a los que afecta esta sección).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En cada una de las posiciones de las secciones 2, 3 y 4 encontramos una letra de la secuencia &lt;code&gt;rwx&lt;/code&gt; o bien un guion, &lt;code&gt;-&lt;/code&gt;, que indica que el correspondiente permiso no está disponible. El orden siempre es &lt;code&gt;rwx&lt;/code&gt; en dichas secciones, por lo que una subsecuencia como &lt;code&gt;r-x&lt;/code&gt; indica la ausencia del permiso &lt;code&gt;w&lt;/code&gt; para ese elemento en concreto en la sección asociada.&lt;/p&gt;
+&lt;p&gt;Ahora bien, ¿qué significa cada una de las letras?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt; es para &lt;em&gt;read&lt;/em&gt;, esto es, es la letra asociada al permiso de lectura.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; es para &lt;em&gt;write&lt;/em&gt;, esto es, es la letra asociada al permiso de escritura o edición (incluso nos permitiría eliminar el elemento en concreto).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; es para &lt;em&gt;execute&lt;/em&gt;, esto es, es la letra asociada al permiso de ejecución. Está reservada para aquellos elementos en los que podemos insertar comandos y ejecutarlos como si fueran programas.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Para editar permisos en un elemento, empleamos el comando &lt;code&gt;chmod&lt;/code&gt;. Por ejemplo, si deseamos añadir el permiso de ejecución a un archivo denominado &lt;code&gt;test.txt&lt;/code&gt;, escribiríamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al volver a ejecutar &lt;code&gt;ls -l&lt;/code&gt; observamos que el permiso &lt;code&gt;x&lt;/code&gt; está disponible para el usuario, para el grupo y para el resto. Además, la terminal cambia su color a verde, para indicar que ahora es un archivo ejecutable.&lt;/p&gt;
+&lt;p&gt;Para devolver los permisos a su estado inicial, basta teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod -x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, como cabría esperar, podemos configurar el permiso &lt;code&gt;x&lt;/code&gt; de manera que afecte solo a una sección. Por ejemplo, para asignar únicamente al propietario del archivo el permiso &lt;code&gt;x&lt;/code&gt; hemos de escribir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u+x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para habilitar todos los permisos en un elemento a cualquier usuario, hemos de teclear &lt;code&gt;chmod a+rwx&lt;/code&gt;. Por ejemplo,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod a+rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: no es una práctica recomendable para directorios o archivos que contengan información sensible.&lt;/p&gt;
+&lt;p&gt;Por otro lado, la letra correspondiente para el grupo es &lt;code&gt;g&lt;/code&gt;, de manera que si deseo retirar todos los permisos al grupo tendría que teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g-rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: esta configuración tiene poco sentido, pues todo el mundo tiene los permisos &lt;code&gt;rwx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finalmente, para hacer referencia al resto de usuarios que ni son propietarios, ni pertenecen al grupo, la letra es &lt;code&gt;o&lt;/code&gt;. Así, para retirarlos los permisos &lt;code&gt;rwx&lt;/code&gt; teclearíamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o-rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, devolvamos los permisos a su estado original&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u-x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g+rw test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o+r test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Cambiando de tercio, los permisos se gestionan de manera diferente si se trata de archivos o de directorios. En el caso de los directorios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt; nos permite visualizar su contenido.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; nos permite editar o modificar el directorio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; nos permite acceder a su interior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/T269zebUSj8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 09 - Understanding Permissions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #05</title>
