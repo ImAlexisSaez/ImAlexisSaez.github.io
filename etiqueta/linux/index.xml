@@ -5,12 +5,56 @@
     <link>https://imalexissaez.github.io/etiqueta/linux/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/linux/index.xml" rel="self" type="application/rss+xml" />
     <description>Linux</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Fri, 26 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sat, 27 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Linux</title>
       <link>https://imalexissaez.github.io/etiqueta/linux/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #07</title>
+      <link>https://imalexissaez.github.io/2023/05/27/comandos-de-linux-07/</link>
+      <pubDate>Sat, 27 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/27/comandos-de-linux-07/</guid>
+      <description>&lt;h2 id=&#34;examinando-el-uso-de-recursos-del-sistema&#34;&gt;Examinando el uso de recursos del sistema&lt;/h2&gt;
+&lt;p&gt;En esta lección abordaremos la gestión de recursos del sistema como, por ejemplo, uso de memoria, uso de espacio en disco, etc. El primer comando que analizaremos es&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;free
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este nos ofrece información relevante sobre el uso de memoria del sistema. No obstante, por defecto, la ofrece en &lt;em&gt;bytes&lt;/em&gt;, comportamiento que podemos modificar haciendo uso del atributo &lt;code&gt;-m&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;free -m
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso, al estar la distribución de &lt;em&gt;Xubuntu&lt;/em&gt; virtualizada, los datos corresponden a los declarados en la configuración de la máquina virtual y no a los correspondientes al ordenador en sí.&lt;/p&gt;
+&lt;p&gt;Por otro lado, ¿cuál es la diferencia entre las columnas &lt;em&gt;free&lt;/em&gt; y &lt;em&gt;available&lt;/em&gt;? El dato que aparece en la columna &lt;em&gt;free&lt;/em&gt; está verdaderamente libre de uso, mientras que &lt;em&gt;available&lt;/em&gt; tiene en cuenta que algunas aplicaciones reservan parte de la memoria para su uso y puede que actualmente no estén haciendo uso de dicha reserva. Por ello este dato es más elevado, aunque, según las necesidades de las aplicaciones, es bastante variable.&lt;/p&gt;
+&lt;p&gt;A continuación, para analizar el espacio en disco usado, empleamos el comando &lt;code&gt;df&lt;/code&gt; (abreviatura de &lt;em&gt;disk free&lt;/em&gt;)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;df
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para una lectura más cómoda de los números que aparecen en su salida, conviene agregar el atributo &lt;code&gt;-h&lt;/code&gt;, que transforma las cantidades a &lt;em&gt;megabytes&lt;/em&gt; o &lt;em&gt;gigabytes&lt;/em&gt; según convenga.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;df -h
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A modo anecdótico, el espacio en disco puede agotarse:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cuando almacenamos demasiados elementos cuyo tamaño es considerable (películas, videojuegos&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;Cuando almacenamos demasiados elementos, aunque su tamaño sea reducido. Cada distribución tiene un límite a este respecto y viene dado por el concepto de &lt;em&gt;Inodes&lt;/em&gt;. Para acceder al listado de &lt;em&gt;Inodes&lt;/em&gt; disponibles, basta teclear &lt;code&gt;df -i&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Acto seguido, otro comando de gran utilidad es &lt;code&gt;htop&lt;/code&gt;, que, en mi caso, no viene instalado por defecto en &lt;em&gt;Xubuntu&lt;/em&gt;. Así pues, para solventar esta situación&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install htop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;htop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A primera vista, nos recuerda al administrador de tareas de &lt;em&gt;Windows&lt;/em&gt; y nos ofrece una cantidad enorme de información acerca de los recursos del sistema. Aún siendo una herramienta que se ofrece en la línea de comandos, podemos emplear el ratón para movernos por los diferentes menús disponibles.&lt;/p&gt;
+&lt;p&gt;Desde esta herramienta podemos cerrar procesos haciendo uso de la combinación &lt;code&gt;F9 + 15 SIGTERM&lt;/code&gt; o, de haber quedado la aplicación totalmente congelada, con &lt;code&gt;F9 + 9 SIGKILL&lt;/code&gt;. Para cerrar, hacemos clic sobre la opción correspondiente o simplemente pulsamos &lt;code&gt;F10&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finalmente, otro comando útil es&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uptime
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este indica cuánto tiempo lleva en marcha la sesión actual y la carga media. Estos tres últimos valores no han de ser interpretados como porcentajes, pues los ordenadores de hoy en día poseen varios núcleos (un &lt;code&gt;0.12&lt;/code&gt; no equivale pues a un 12% de carga, a no ser que nuestra máquina tenga un único núcleo). Además,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El primer valor hace referencia a la carga media durante el último minuto.&lt;/li&gt;
+&lt;li&gt;El segundo valor es con respecto a los últimos cinco minutos.&lt;/li&gt;
+&lt;li&gt;El tercer valor es con respecto a los últimos quince minutos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los valores hemos de interpretarlos como tareas a la espera de ser ejecutadas por el sistema. Por ejemplo, &lt;code&gt;0,12&lt;/code&gt; indica que, de media, menos de una tarea está en espera de ser ejecutada; es decir, el sistema está trabajando de manera bastante desahogada.&lt;/p&gt;
+&lt;p&gt;En otras palabras, y utilizando como analogía un supermercado, el número de núcleos del ordenador haría las veces de cajeros, mientras que las tareas serían los clientes a la espera de pagar sus compras. Si tenemos 2 núcleos y hay un cliente, el sistema funcionará bien e incluso habrá un cajero que se estará aburriendo en ese momento determinado. Con dos clientes todavía no encontramos problema, pues cada cajero está atendiendo su tarea asociada. El problema es cuando el número de clientes asciende, por ejemplo, a 20, pues los dos cajeros no dan abasto y las colas serán largas. En este último caso, algunas de las tareas del sistema tardarán en poder llevarse a cabo.&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/kyt1xAlXITE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 10 - Checking Resource Usage&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #06</title>
