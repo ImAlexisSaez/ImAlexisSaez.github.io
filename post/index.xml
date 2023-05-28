@@ -5,12 +5,55 @@
     <link>https://imalexissaez.github.io/post/</link>
       <atom:link href="https://imalexissaez.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sat, 27 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sun, 28 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://imalexissaez.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #08</title>
+      <link>https://imalexissaez.github.io/2023/05/28/comandos-de-linux-08/</link>
+      <pubDate>Sun, 28 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/28/comandos-de-linux-08/</guid>
+      <description>&lt;h2 id=&#34;gestionando-los-paquetes&#34;&gt;Gestionando los paquetes&lt;/h2&gt;
+&lt;p&gt;En esta lección abordaremos la instalación, eliminación y actualización de paquetes en nuestro sistema.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: los métodos que se describen a continuación están diseñados para distribuciones basadas en &lt;em&gt;Debian&lt;/em&gt; o &lt;em&gt;Ubuntu&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;El primer paso a llevar a cabo es la actualización de nuestro índice local de paquetes disponibles en el repositorio, es decir, en el servidor online desde el cual los descargaremos. Para ello, tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso concreto, la mayoría de servidores con los que conecta son de &lt;em&gt;Ubuntu&lt;/em&gt;, pero también observamos que aparece alguno de &lt;em&gt;Google&lt;/em&gt; o de &lt;em&gt;Microsoft&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación, una vez actualizado el índice de paquetes, podemos buscar paquetes concretos en él desde la propia línea de comandos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search firefox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en esta ocasión no necesitamos anteceder el comando con &lt;code&gt;sudo&lt;/code&gt;, pues no vamos a realizar cambios en el sistema. Cuando queramos instalar un paquete, por ejemplo, sí será necesario incluir ese comando en la sentencia.&lt;/p&gt;
+&lt;p&gt;El listado es bastante extenso en este ejemplo concreto, pues muestra todos los paquetes relacionados con &lt;em&gt;Firefox&lt;/em&gt; (desde idiomas a extensiones, pasando por el propio navegador en sí).&lt;/p&gt;
+&lt;p&gt;Para instalar un paquete concreto, la instrucción es &lt;code&gt;sudo apt install&lt;/code&gt; seguida el nombre del paquete a instalar. Por ejemplo, para instalar el editor de texto plano &lt;em&gt;Vim&lt;/em&gt; escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install vim-nox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Como ejemplo más práctico, instalemos a continuación &lt;a href=&#34;https://ubuntu.com/server/docs/web-servers-apache&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache&lt;/a&gt;, que es un servidor web que utilizamos a diario&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search apache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A la hora de instalar este paquete, el comando &lt;code&gt;apt&lt;/code&gt; se encarga de gestionar sus dependencias, de manera que nos indica qué paquetes adicionales son necesarios para realizar la instalación del que nos interesa. Como esta operación implica llevar a cabo más cambios de los que indicamos desde la línea de comandos, la instalación se detiene y espera a que el usuario confirme si realmente desea instalar tanto el paquete indicado como sus correspondientes dependencias.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: además de las dependencias, &lt;code&gt;apt&lt;/code&gt; recomienda la instalación de paquetes adicionales por su utilidad, aunque no fuerza a su instalación y deberíamos llevar a cabo el proceso después de manera manual.&lt;/p&gt;
+&lt;p&gt;Una vez instalado &lt;em&gt;Apache&lt;/em&gt;, si escribimos en la barra de direcciones de &lt;em&gt;Chrome&lt;/em&gt; (o cualquier navegador), &lt;code&gt;localhost&lt;/code&gt; nos aparecerá la página por defecto de &lt;em&gt;Apache&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Por otro lado, para eliminar un paquete del sistema, la instrucción es &lt;code&gt;sudo apt remove&lt;/code&gt; seguida el nombre del paquete a eliminar. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt remove apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por defecto, no elimina las dependencias asociadas a &lt;em&gt;Apache&lt;/em&gt;. Para solventar la situación tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt autoremove
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, actualicemos los paquetes que tenemos instalados en nuestro sistema. En mi caso, desde que iniciamos la lección, la terminal me ha indicado cada vez que poseo 21 paquetes que no están actualizados. Para ello tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt dist-upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la última instrucción conviene ejecutarla cuando hayan quedado paquetes a eliminar o haya algunos que deban instalarse por primera vez, pues &lt;code&gt;sudo apt upgrade&lt;/code&gt; no realiza estas labores por defecto.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: por cuestiones de seguridad, conviene actualizar los paquetes con frecuencia.&lt;/p&gt;
+&lt;p&gt;Finalmente, en el caso que se hayan realizado actualizaciones del &lt;em&gt;kernel&lt;/em&gt;, conviene reiniciar el sistema, para lo cual escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo reboot
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/yxc2ntmH9xY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 11 - Intro to Package Management on Debian-based Distributions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #07</title>
