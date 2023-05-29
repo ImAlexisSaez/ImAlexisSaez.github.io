@@ -5,12 +5,56 @@
     <link>https://imalexissaez.github.io/etiqueta/linux/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/linux/index.xml" rel="self" type="application/rss+xml" />
     <description>Linux</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sun, 28 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Mon, 29 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Linux</title>
       <link>https://imalexissaez.github.io/etiqueta/linux/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #09</title>
+      <link>https://imalexissaez.github.io/2023/05/29/comandos-de-linux-09/</link>
+      <pubDate>Mon, 29 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/29/comandos-de-linux-09/</guid>
+      <description>&lt;h2 id=&#34;gestionando-procesos-en-linux&#34;&gt;Gestionando procesos en &lt;em&gt;Linux&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;En esta lección abordaremos cómo gestionar procesos en &lt;em&gt;Linux&lt;/em&gt;. Estudiaremos el comando &lt;code&gt;systemctl&lt;/code&gt;, que permite iniciar, detener y reiniciar servicios que se ejecutan en segundo plano (que habitualmente reciben el nombre de &lt;em&gt;units&lt;/em&gt;).&lt;/p&gt;
+&lt;p&gt;Comencemos instalando de nuevo &lt;em&gt;Apache&lt;/em&gt;, que nos servirá de base para los ejemplos de esta lección&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que si ahora abrimos el navegador y escribimos en la barra de direcciones &lt;code&gt;localhost&lt;/code&gt;, accederemos a la página por defecto de &lt;em&gt;Apache&lt;/em&gt;. Esto es posible debido a que &lt;em&gt;Apache&lt;/em&gt; se ejecuta en segundo plano, como podemos comprobar si tecleamos en la terminal&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece &lt;code&gt;enabled&lt;/code&gt; en la fila correspondiente a &lt;code&gt;Loaded:&lt;/code&gt;, esto es, cuando iniciemos el sistema, &lt;em&gt;Apache&lt;/em&gt; automáticamente se iniciará. Además, es el comportamiento que viene predefinido al instalar este paquete, pues así está declarado en &lt;code&gt;vendor preset&lt;/code&gt;, con un valor asimismo de &lt;code&gt;enabled&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: estas características son las responsables de que una vez hayamos instalado el paquete, hayamos podido acceder a la página por defecto de &lt;em&gt;Apache&lt;/em&gt; en el navegador sin tener que iniciar proceso alguno para ello.&lt;/p&gt;
+&lt;p&gt;En la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; observamos que está activo el proceso y en funcionamiento, indicándonos desde cuándo.&lt;/p&gt;
+&lt;p&gt;Por otro lado, en la parte final deberíamos haber tenido acceso a cierta información (&lt;em&gt;logs&lt;/em&gt;), pero en mi distribución no aparece por defecto. Para visualizar los &lt;em&gt;logs&lt;/em&gt; hemos de anteceder el anterior comando con &lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos desactivar &lt;em&gt;Apache&lt;/em&gt; sin más que teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl disable apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si ahora ejecutamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Observaremos que el proceso sigue en funcionamiento (&lt;code&gt;active (running)&lt;/code&gt;), pero en la línea encabezada con &lt;code&gt;Loaded:&lt;/code&gt; ahora aparece &lt;code&gt;disabled&lt;/code&gt;, lo cual indica que la próxima vez que iniciemos el sistema, &lt;em&gt;Apache&lt;/em&gt; no se iniciará de manera automática.&lt;/p&gt;
+&lt;p&gt;Para detener el proceso, hemos de teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora podemos observar como en la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; figura &lt;code&gt;inactive (dead)&lt;/code&gt;. De hecho, si refrescamos la página del navegador aparece un error en la misma.&lt;/p&gt;
+&lt;p&gt;A continuación, restauremos el comportamiento por defecto de &lt;em&gt;Apache&lt;/em&gt;. Para empezar, asegurémosnos que arranca automáticamente la próxima vez que iniciemos el sistema. Para ello&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Comprobamos que vuelve a aparecer &lt;code&gt;enabled&lt;/code&gt; en la línea encabezada por &lt;code&gt;Loaded:&lt;/code&gt;. Ahora, iniciamos el proceso sin más que teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De manera que todo vuelve a funcionar como al principio de la lección.&lt;/p&gt;
+&lt;p&gt;Finalmente, para reiniciar un proceso, hemos de escribir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Comprobaremos que se ha reiniciado el proceso observando desde cuándo está activo.&lt;/p&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/ZhW6mzzyqlM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 12 - Managing systemd Units&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #08</title>
