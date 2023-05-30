@@ -5,12 +5,62 @@
     <link>https://imalexissaez.github.io/post/</link>
       <atom:link href="https://imalexissaez.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Mon, 29 May 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 30 May 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://imalexissaez.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Comandos de Linux #10</title>
+      <link>https://imalexissaez.github.io/2023/05/30/comandos-de-linux-10/</link>
+      <pubDate>Tue, 30 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/30/comandos-de-linux-10/</guid>
+      <description>&lt;h2 id=&#34;revisando-logs&#34;&gt;Revisando &lt;em&gt;logs&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;En esta lección examinaremos la gestión de &lt;em&gt;logs&lt;/em&gt;, a los que recurriremos habitualmente para examinar la información que recopilen nuestras aplicaciones (errores, acciones&amp;hellip;).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: a la hora de trabajar con &lt;em&gt;logs&lt;/em&gt; es posible que necesitemos privilegios de administrador (&lt;em&gt;root&lt;/em&gt;) para revisar algunos de ellos, por lo que quizá nos veamos forzados a emplear el comando &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Empecemos revisando &lt;code&gt;syslog&lt;/code&gt;, que contiene una enorme cantidad de información que el sistema va almacenando en dicho archivo. Para ello, emplearemos el comando &lt;code&gt;cat&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Qué más &lt;em&gt;logs&lt;/em&gt; tenemos a nuestra disposición?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/log/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: a modo de curiosidad, el sistema gestiona &lt;em&gt;logs&lt;/em&gt; como &lt;code&gt;syslog&lt;/code&gt; de manera inteligente, rotándolos y comprimiéndolos para que ocupen el menor espacio posible.&lt;/p&gt;
+&lt;p&gt;En el interior del directorio de &lt;em&gt;logs&lt;/em&gt; observamos que existen asimismo carpetas. Por ejemplo, hay una asociada al paquete &lt;em&gt;Apache&lt;/em&gt; que instalamos en lecciones anteriores&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; apache2/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat error.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: mi usuario no tiene permiso para acceder a la carpeta de &lt;em&gt;logs&lt;/em&gt; de &lt;em&gt;Apache&lt;/em&gt;. Buscando en &lt;em&gt;Google&lt;/em&gt; &lt;a href=&#34;https://stackoverflow.com/questions/8221820/cd-into-directory-without-having-permission&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este post&lt;/a&gt; de &lt;em&gt;stackoverflow&lt;/em&gt; ha resultado de ayuda. Activamos un modo de &amp;ldquo;súper usuario&amp;rdquo; con &lt;code&gt;sudo su&lt;/code&gt;, ejecutamos los comandos deseados y salimos de dicho modo con &lt;code&gt;exit&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;En el &lt;em&gt;log&lt;/em&gt; &lt;code&gt;dmesg&lt;/code&gt; encontramos información principalmente referente al &lt;em&gt;hardware&lt;/em&gt; del sistema&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat dmesg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A modo de curiosidad, &lt;em&gt;Linux&lt;/em&gt; posee un comando específico para acceder a este tipo de información sin necesidad de revisar el correspondiente &lt;em&gt;log&lt;/em&gt;. Por ejemplo, podemos volver a nuestra carpeta de usuario y teclear &lt;code&gt;sudo dmesg&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dmesg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, tenemos acceso a una cantidad de información apabullante de bajo nivel sobre el sistema.&lt;/p&gt;
+&lt;p&gt;Por otra parte, como estamos trabajando con archivos de extensión considerable, quizá sea conveniente utilizar de manera adicional los comandos &lt;code&gt;head&lt;/code&gt; o &lt;code&gt;tail&lt;/code&gt; para centrar el foco de atención, respectivamente, en el principio o el final del archivo (10 líneas por defecto).&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con el atributo &lt;code&gt;-n&lt;/code&gt; declaramos el número de líneas que deseamos consultar&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head -n &lt;span class=&#34;m&#34;&gt;15&lt;/span&gt; /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Un atributo muy útil para &lt;code&gt;tail&lt;/code&gt; es &lt;code&gt;-f&lt;/code&gt; (&lt;em&gt;follow&lt;/em&gt;), que deja la terminal en suspenso y nos permite ver cambios en tiempo real en el correspondiente &lt;em&gt;log&lt;/em&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -f /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, podemos controlar cualquier cambio en el sistema (por ejemplo, el reinicio de un proceso) que añada información a &lt;code&gt;syslog&lt;/code&gt;. Para terminar el seguimiento del archivo, usamos la combinación de teclas &lt;code&gt;Ctrl + c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: una aplicación práctica la encontramos a la hora de reproducir errores que los usuarios reportan en tiempo real para cierto servidor.&lt;/p&gt;
+&lt;p&gt;Finalmente, otro comando de utilidad para revisar &lt;em&gt;logs&lt;/em&gt; es &lt;code&gt;journalctl&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo journalctl -u apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: este comando también permite realizar seguimiento con el atributo &lt;code&gt;-f&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Podemos conseguir resultados similares concatenando &lt;code&gt;cat&lt;/code&gt; y &lt;code&gt;grep&lt;/code&gt; (este último comando nos permite realizar búsqueda de texto sobre un archivo o salida de otro comando)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/Ei276TjyxCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 13 - Viewing Logs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Comandos de Linux #09</title>
