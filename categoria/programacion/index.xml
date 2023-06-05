@@ -5,7 +5,7 @@
     <link>https://imalexissaez.github.io/categoria/programacion/</link>
       <atom:link href="https://imalexissaez.github.io/categoria/programacion/index.xml" rel="self" type="application/rss+xml" />
     <description>Programación</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Thu, 01 Jun 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Mon, 05 Jun 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Programación</title>
@@ -13,388 +13,177 @@
     </image>
     
     <item>
-      <title>Comandos de Linux #12</title>
-      <link>https://imalexissaez.github.io/2023/06/01/comandos-de-linux-12/</link>
-      <pubDate>Thu, 01 Jun 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/06/01/comandos-de-linux-12/</guid>
-      <description>&lt;h2 id=&#34;examinando-el-historial-de-la-terminal&#34;&gt;Examinando el historial de la terminal&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos cómo aprovechar de nuevo acciones llevadas a cabo en la terminal.&lt;/p&gt;
-&lt;p&gt;En primer lugar, con las teclas de los cursores (arriba y abajo en este caso particular), podemos desplazarnos por el historial de comandos ejecutados. Ello nos permite ejecutarlos de nuevo o editarlos para lanzarlos de una forma ligeramente diferente a la terminal.&lt;/p&gt;
-&lt;p&gt;En segundo lugar, a través del comando&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;history&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Tenemos acceso a la totalidad de comandos ejecutados en la terminal. Cada uno de ellos posee un número de referencia al principio de la línea, de manera que podemos ejecutarlos haciendo uso de dicho número, siempre y cuando antecedamos la referencia con el símbolo de exclamación &lt;code&gt;!&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;!283
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si queremos que un comando no figure en el historial, basta pulsar la tecla de espacio antes de empezar a escribir el comando en cuestión&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; sudo apt upgrade
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: No obstante, este comportamiento depende de la distribución de &lt;em&gt;Linux&lt;/em&gt; empleada. En &lt;em&gt;Xubuntu&lt;/em&gt;, efectivamente, podemos emplear este recurso para evitar que ciertos comandos aparezcan listados en el historial.&lt;/p&gt;
-&lt;p&gt;¿Qué puede llevarnos a querer omitir comandos en el historial de &lt;em&gt;Bash&lt;/em&gt;? Por ejemplo, quizá sea una práctica recomendable para aquellos que posean cierta información sensible (datos, contraseñas&amp;hellip;).&lt;/p&gt;
-&lt;p&gt;El historial también es una herramienta útil para averiguar cómo se han resueltos incidencias en el pasado (por otras personas, si es la primera vez que administramos cierto servidor que lleva operativo un tiempo).&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+      <title>Curso de comandos de Linux</title>
+      <link>https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/</link>
+      <pubDate>Mon, 05 Jun 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/</guid>
+      <description>&lt;details class=&#34;toc-inpage d-print-none  &#34; open&gt;
+  &lt;summary class=&#34;font-weight-bold&#34;&gt;Índice&lt;/summary&gt;
+  &lt;nav id=&#34;TableOfContents&#34;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href=&#34;#1-introducción&#34;&gt;1. Introducción&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#2-navegando-por-el-sistema-de-ficheros&#34;&gt;2. Navegando por el sistema de ficheros&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#3-edición-básica-de-archivos&#34;&gt;3. Edición básica de archivos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#4-una-breve-mirada-a-vim&#34;&gt;4. Una breve mirada a Vim&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#5-moviendo-y-renombrando-archivos&#34;&gt;5. Moviendo y renombrando archivos&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#6-configurando-la-terminal&#34;&gt;6. Configurando la terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#7-el-archivo-bashrc-original&#34;&gt;7. El archivo &lt;code&gt;.bashrc&lt;/code&gt; original&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#8-abordando-el-uso-de-alias&#34;&gt;8. Abordando el uso de alias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#9-introducción-a-los-permisos-en-linux&#34;&gt;9. Introducción a los permisos en Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#10-examinando-el-uso-de-recursos-del-sistema&#34;&gt;10. Examinando el uso de recursos del sistema&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#11-gestionando-los-paquetes&#34;&gt;11. Gestionando los paquetes&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#12-gestionando-procesos-en-linux&#34;&gt;12. Gestionando procesos en Linux&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#13-revisando-logs&#34;&gt;13. Revisando &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#14-gestionando-usuarios&#34;&gt;14. Gestionando usuarios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#15-examinando-el-historial-de-la-terminal&#34;&gt;15. Examinando el historial de la terminal&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#16-referencias&#34;&gt;16. Referencias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#17-historial-de-versiones-del-artículo&#34;&gt;17. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/details&gt;
+
+&lt;h2 id=&#34;1-introducción&#34;&gt;1. Introducción&lt;/h2&gt;
+&lt;p&gt;Esta semana he estado echando un vistazo a la plataforma &lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt; y más concretamente a su curso de fundamentos, &lt;a href=&#34;https://www.theodinproject.com/paths/foundations/courses/foundations&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Foundations&lt;/a&gt;. Este es el punto de partida común que comparten las dos especializaciones de desarrollo web ofrecidas en este sitio: una basada en &lt;strong&gt;Ruby&lt;/strong&gt; y otra en &lt;strong&gt;JavaScript&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Su primera sección, &amp;lsquo;&amp;lsquo;Introduction&amp;rsquo;&amp;rsquo;, es ciertamente interesante, pues trata temas tan variados como el aprendizaje en sí, la gestión de la frustración o la manera de realizar preguntas adecuadamente para obtener ayuda útil. Es un aspecto que la mayoría de los cursos no aborda y los recursos que ofrece esta plataforma son muy interesantes.&lt;/p&gt;
+&lt;p&gt;Completada dicha sección, la siguiente lleva por título &amp;lsquo;&amp;lsquo;Prerequisites&amp;rsquo;&amp;rsquo; y se centra en el funcionamiento básico de los ordenadores y de Internet. Además, es donde empezamos a configurar nuestro entorno de desarrollo para trabajar a lo largo de este curso. Como no podía ser de otra manera, sin ni tan siquiera haber generado un solo fichero, ya comienzan a aparecer los retos (que, por otra parte, bienvenidos sean tras las conclusiones que se extraen de las charlas que figuran en la sección &amp;lsquo;&amp;lsquo;Introduction&amp;rsquo;&amp;rsquo;):&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/U7ODlrzF41s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 15 - Bash History&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The Odin Project&lt;/strong&gt; no da soporte oficial para Windows. ¿Qué sistema operativo utiliza un servidor? Efectivamente, Windows. No obstante, la plataforma no nos deja de lado y ofrece alternativas muy bien detalladas para seguir los contenidos de la especialización. A la hora de escribir estas líneas, estoy probando la emulación de una distribución de Linux, &lt;strong&gt;Xubuntu&lt;/strong&gt;, a través de &lt;strong&gt;Oracle VM VirtualBox&lt;/strong&gt; (he tenido hasta que trastear la BIOS para permitir la emulación en mi ordenador).&lt;/li&gt;
+&lt;li&gt;La propia plataforma nos aconseja no caer en &amp;lsquo;&amp;lsquo;rabbit holes&amp;rsquo;&amp;rsquo; que nos distraigan y centrarnos en seguir sus contenidos. La misma plataforma, casi en cada uno de sus apartados, nos enseña docenas de tentadores &amp;lsquo;&amp;lsquo;rabbit holes&amp;rsquo;&amp;rsquo; en los que perdernos.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #11</title>
-      <link>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</link>
-      <pubDate>Wed, 31 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</guid>
-      <description>&lt;h2 id=&#34;gestionando-usuarios&#34;&gt;Gestionando usuarios&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos la gestión de usuarios, en concreto la creación y eliminación de usuarios, así como la creación y eliminación de grupos. Antes de empezar, es importante conocer la existencia del siguiente archivo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/passwd
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En él encontramos un listado de todos los usuarios existentes en nuestro sistema. En la mayoría de los casos, la línea finaliza con &lt;code&gt;/nologin&lt;/code&gt;, es decir, son usuarios necesarios para llevar a cabo ciertas tareas de determinadas aplicaciones y no para acceder al sistema en sí.&lt;/p&gt;
-&lt;p&gt;En la línea correspondiente a mi usuario, &lt;code&gt;alexis&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alexis❌1000:1000:alexis,,,:/home/alexis:/bin/bash
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Los números &lt;code&gt;1000&lt;/code&gt; que aparecen son, respectivamente, las referencias para el usuario (&lt;em&gt;uid&lt;/em&gt;) y el grupo al que pertenece (también denominado &lt;code&gt;alexis&lt;/code&gt; en este caso particular). A continuación, figura nuestro directorio de usuario (&lt;code&gt;/home/alexis&lt;/code&gt;) y nuestra terminal por defecto (&lt;code&gt;/bin/bash&lt;/code&gt;). Tras mi nombre de usuario aparece una &lt;code&gt;x&lt;/code&gt;, que es la posición que ocuparía nuestra contraseña (oculta ahora mismo bajo ese carácter &lt;code&gt;x&lt;/code&gt;). La contraseña, de hecho, se almacena en otro archivo diferente, ya que dista de ser idóneo que las contraseñas de los usuarios estén en un archivo de texto de libre acceso.&lt;/p&gt;
-&lt;p&gt;En general, si el &lt;em&gt;uid&lt;/em&gt; es mayor o igual que &lt;code&gt;1000&lt;/code&gt; se tratará de un usuario real, mientras que aquellos que posean referencias inferiores seguramente sean usuarios de sistema (y no aparecerán por defecto en las ventanas de &lt;em&gt;login&lt;/em&gt; de usuario).&lt;/p&gt;
-&lt;p&gt;A continuación, si tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /etc/shadow
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: un atajo útil de teclado es &lt;code&gt;!!&lt;/code&gt; que ejecuta el anterior comando escrito en la terminal. Cuando escribimos una instrucción y no se lleva a cabo por falta de permisos, simplemente hemos de teclear &lt;code&gt;sudo !!&lt;/code&gt; para intentar ejecutarla con permisos de &lt;em&gt;super user&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;El archivo muestra información sensible, pero no de forma abierta. En lugar de aparecer nuestra contraseña, aparece su &lt;em&gt;hash&lt;/em&gt; (para los usuarios de sistema sí que aparece directamente su contraseña).&lt;/p&gt;
-&lt;p&gt;Otro archivo importante para conocer es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nos muestra un listado de los grupos definidos en nuestro sistema, con sus respectivas referencias (así como sus contraseñas ocultas por el carácter &lt;code&gt;x&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Si estamos interesados en conocer a qué grupos pertenecemos, no es necesario revisar el anterior fichero, ya que basta con teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Cómo creamos un usuario? Mediante &lt;code&gt;adduser&lt;/code&gt; seguido del nombre del nuevo usuario&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adduser batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sin embargo, encontramos un problema al ejecutar el anterior comando, ya que la terminal nos indica que solo el usuario &lt;code&gt;root&lt;/code&gt; puede añadir un usuario o un grupo al sistema. Como en anteriores ocasiones, solventamos la situación escribiendo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo adduser batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esta acción añade el usuario &lt;code&gt;batman&lt;/code&gt;, así como el grupo &lt;code&gt;batman&lt;/code&gt;, además de generar un directorio de usuario para él y proporcionarle ciertos archivos de configuración por defecto del sistema desde &lt;code&gt;/etc/skel&lt;/code&gt;. Después, nos pide una contraseña para dicho usuario. A continuación, podemos indicar (o dejar en blanco) algunos datos del usuario, como su nombre completo, número de habitación, número de teléfono&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Si ahora escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /home/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece un nuevo directorio asociado al usuario &lt;code&gt;batman&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Para cambiar a este usuario, hemos de escribir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su - batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;e introducir su correspondiente contraseña (la que hemos definido al crear el usuario). Si ahora tecleamos &lt;code&gt;logout&lt;/code&gt; (o usamos la combinación de teclas &lt;code&gt;Ctrl + d&lt;/code&gt;), volvemos a nuestro usuario principal. Por otro lado, si escribimos &lt;code&gt;sudo su - batman&lt;/code&gt; cambiamos de usuario sin necesidad de introducir la contraseña (al trabajar con &lt;code&gt;sudo&lt;/code&gt; es como si adoptáramos el papel del todopoderoso usuario &lt;code&gt;root&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con el comando &lt;code&gt;passwd&lt;/code&gt; podemos cambiar la contraseña de un usuario.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para cambiar de usuario a &lt;code&gt;root&lt;/code&gt;, hemos de teclear &lt;code&gt;sudo su -&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora, para eliminar un usuario el comando es &lt;code&gt;userdel -r&lt;/code&gt; seguido del nombre del usuario a suprimir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo userdel -r batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El atributo &lt;code&gt;-r&lt;/code&gt; se emplea para eliminar asimismo el directorio del usuario, por lo que hemos de actuar con cautela cuando llevamos a cabo este proceso.&lt;/p&gt;
-&lt;p&gt;Acto seguido, para añadir un grupo, el comando es &lt;code&gt;groupadd&lt;/code&gt; seguido del nombre del grupo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupadd heroes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para introducir nuestro usuario en este nuevo grupo, el comando a emplear es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG heroes alexis
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No obstante, aunque hemos ejecutado el comando, no aparece el grupo &lt;code&gt;heroes&lt;/code&gt; asociado a nuestro usuario. Para ello, hemos de hacer &lt;em&gt;logout&lt;/em&gt; y &lt;em&gt;login&lt;/em&gt; en el sistema. Sin embargo, en este momento, basta teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para comprobar que, efectivamente, mi usuario pertenece al grupo &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Eliminar un usuario de un grupo es también sencillo, ya que basta teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo gpasswd -d alexis heroes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, para eliminar un grupo, escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupdel heroes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y podemos comprobar que, efectivamente, no pertenece al listado de grupos tecleando, por ejemplo, &lt;code&gt;tail /etc/group&lt;/code&gt; y observando que no aparece al final ninguna línea asociada a &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;p&gt;De hecho, esta serie de artículos para el blog son fruto de haber caído en uno de ellos, pues una vez instalado Xubuntu recomiendan aprender los principales comandos que se emplean en su terminal. Para ello enlazan a una lista de reproducción en YouTube de 24 vídeos del canal &lt;a href=&#34;https://www.youtube.com/channel/UCxQKHvKbmSzGMvUrVtJYnUA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LearnLinuxTV&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación, comparto las notas tomadas durante el cuarto vídeo, que corresponde al primero del curso en el cual se empieza a utilizar la terminal.&lt;/p&gt;
+&lt;h2 id=&#34;2-navegando-por-el-sistema-de-ficheros&#34;&gt;2. Navegando por el sistema de ficheros&lt;/h2&gt;
+&lt;p&gt;Para empezar, el comando &lt;code&gt;ls&lt;/code&gt; muestra el contenido del directorio actual de trabajo (&lt;code&gt;ls&lt;/code&gt; es la abreviatura de &amp;lsquo;&amp;rsquo;list storage&amp;rsquo;&amp;rsquo;). Así, al iniciar una nueva terminal, accederíamos con él a los contenidos de la carpeta del usuario.&lt;/p&gt;
+&lt;p&gt;Si tecleamos &lt;code&gt;ls /&lt;/code&gt; accedemos a los contenidos almacenados en la raíz del sistema (&lt;code&gt;/&lt;/code&gt;). Asimismo, con &lt;code&gt;ls /home&lt;/code&gt; se muestran las carpetas habilitadas para los distintos usuarios del sistema. En mi caso, tras la instalación de Xubuntu siguiendo las instrucciones de la plataforma, únicamente aparece la carpeta &lt;code&gt;alexis&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Por comodidad, para limpiar la terminal y dejar de mostrar la información acumulada hasta el momento, podemos emplear el comando &lt;code&gt;clear&lt;/code&gt; o, en ocasiones, dependiendo de la distribución de Linux que tengamos en nuestro sistema, la combinación de teclas &lt;code&gt;Ctrl + L&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Por otra parte, podemos añadir atributos a un comando de la terminal. Por ejemplo, si tecleamos &lt;code&gt;ls -l /&lt;/code&gt; obtendremos mucha más información que antes de cada una de las carpetas y de los ficheros ubicados en la raíz del sistema (el atributo &lt;code&gt;-l&lt;/code&gt; indica &amp;lsquo;&amp;rsquo;long listing&amp;rsquo;&amp;rsquo;). Además, cada carpeta o fichero aparece en su propia línea. Al inicio de cada una de las mencionadas líneas aparece una extraña secuencia de caracteres que, en su mayor parte, recoge los permisos asociados a la correspondiente carpeta o archivo. De momento, si nos centramos únicamente en el primer carácter:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/DmdyxEJdt3k&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 14 - Managing Users&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;d&lt;/code&gt;: indica directorio o carpeta.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-&lt;/code&gt;: indica que es un archivo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: indica un enlace a otro archivo.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #10</title>
-      <link>https://imalexissaez.github.io/2023/05/30/comandos-de-linux-10/</link>
-      <pubDate>Tue, 30 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/30/comandos-de-linux-10/</guid>
-      <description>&lt;h2 id=&#34;revisando-logs&#34;&gt;Revisando &lt;em&gt;logs&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;En esta lección examinaremos la gestión de &lt;em&gt;logs&lt;/em&gt;, a los que recurriremos habitualmente para examinar la información que recopilen nuestras aplicaciones (errores, acciones&amp;hellip;).&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: a la hora de trabajar con &lt;em&gt;logs&lt;/em&gt; es posible que necesitemos privilegios de administrador (&lt;em&gt;root&lt;/em&gt;) para revisar algunos de ellos, por lo que quizá nos veamos forzados a emplear el comando &lt;code&gt;sudo&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Empecemos revisando &lt;code&gt;syslog&lt;/code&gt;, que contiene una enorme cantidad de información que el sistema va almacenando en dicho archivo. Para ello, emplearemos el comando &lt;code&gt;cat&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Qué más &lt;em&gt;logs&lt;/em&gt; tenemos a nuestra disposición?&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/log/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: a modo de curiosidad, el sistema gestiona &lt;em&gt;logs&lt;/em&gt; como &lt;code&gt;syslog&lt;/code&gt; de manera inteligente, rotándolos y comprimiéndolos para que ocupen el menor espacio posible.&lt;/p&gt;
-&lt;p&gt;En el interior del directorio de &lt;em&gt;logs&lt;/em&gt; observamos que existen asimismo carpetas. Por ejemplo, hay una asociada al paquete &lt;em&gt;Apache&lt;/em&gt; que instalamos en lecciones anteriores&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo su
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; apache2/
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat error.log
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: mi usuario no tiene permiso para acceder a la carpeta de &lt;em&gt;logs&lt;/em&gt; de &lt;em&gt;Apache&lt;/em&gt;. Buscando en &lt;em&gt;Google&lt;/em&gt; &lt;a href=&#34;https://stackoverflow.com/questions/8221820/cd-into-directory-without-having-permission&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este post&lt;/a&gt; de &lt;em&gt;stackoverflow&lt;/em&gt; ha resultado de ayuda. Activamos un modo de &amp;ldquo;súper usuario&amp;rdquo; con &lt;code&gt;sudo su&lt;/code&gt;, ejecutamos los comandos deseados y salimos de dicho modo con &lt;code&gt;exit&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;En el &lt;em&gt;log&lt;/em&gt; &lt;code&gt;dmesg&lt;/code&gt; encontramos información principalmente referente al &lt;em&gt;hardware&lt;/em&gt; del sistema&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat dmesg
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A modo de curiosidad, &lt;em&gt;Linux&lt;/em&gt; posee un comando específico para acceder a este tipo de información sin necesidad de revisar el correspondiente &lt;em&gt;log&lt;/em&gt;. Por ejemplo, podemos volver a nuestra carpeta de usuario y teclear &lt;code&gt;sudo dmesg&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dmesg
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, tenemos acceso a una cantidad de información apabullante de bajo nivel sobre el sistema.&lt;/p&gt;
-&lt;p&gt;Por otra parte, como estamos trabajando con archivos de extensión considerable, quizá sea conveniente utilizar de manera adicional los comandos &lt;code&gt;head&lt;/code&gt; o &lt;code&gt;tail&lt;/code&gt; para centrar el foco de atención, respectivamente, en el principio o el final del archivo (10 líneas por defecto).&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con el atributo &lt;code&gt;-n&lt;/code&gt; declaramos el número de líneas que deseamos consultar&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head -n &lt;span class=&#34;m&#34;&gt;15&lt;/span&gt; /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Un atributo muy útil para &lt;code&gt;tail&lt;/code&gt; es &lt;code&gt;-f&lt;/code&gt; (&lt;em&gt;follow&lt;/em&gt;), que deja la terminal en suspenso y nos permite ver cambios en tiempo real en el correspondiente &lt;em&gt;log&lt;/em&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -f /var/log/syslog
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, podemos controlar cualquier cambio en el sistema (por ejemplo, el reinicio de un proceso) que añada información a &lt;code&gt;syslog&lt;/code&gt;. Para terminar el seguimiento del archivo, usamos la combinación de teclas &lt;code&gt;Ctrl + c&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: una aplicación práctica la encontramos a la hora de reproducir errores que los usuarios reportan en tiempo real para cierto servidor.&lt;/p&gt;
-&lt;p&gt;Finalmente, otro comando de utilidad para revisar &lt;em&gt;logs&lt;/em&gt; es &lt;code&gt;journalctl&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo journalctl -u apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: este comando también permite realizar seguimiento con el atributo &lt;code&gt;-f&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Podemos conseguir resultados similares concatenando &lt;code&gt;cat&lt;/code&gt; y &lt;code&gt;grep&lt;/code&gt; (este último comando nos permite realizar búsqueda de texto sobre un archivo o salida de otro comando)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Una alternativa a la combinación &lt;code&gt;ls -l&lt;/code&gt; es el comando &lt;code&gt;ll&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En la raíz del sistema encontramos algunos directorios de vital importancia. Aunque de momento no entraremos en profundidad en los detalles de cada uno de ellos, para hacernos una idea resulta que:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/Ei276TjyxCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 13 - Viewing Logs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: es el directorio que contiene los programas ejecutables del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boot&lt;/code&gt;: es el directorio que contiene los archivos necesarios para iniciar el sistema operativo.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;home&lt;/code&gt;: es el directorio asociado a los usuarios del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;etc&lt;/code&gt;: es el directorio que contiene los archivos de configuración del sistema.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;media&lt;/code&gt;: es el directorio donde se montan dispositivos externos (usb, cd-rom&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;var&lt;/code&gt;: es el directorio que contiene &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; del sistema.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #09</title>
-      <link>https://imalexissaez.github.io/2023/05/29/comandos-de-linux-09/</link>
-      <pubDate>Mon, 29 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/29/comandos-de-linux-09/</guid>
-      <description>&lt;h2 id=&#34;gestionando-procesos-en-linux&#34;&gt;Gestionando procesos en &lt;em&gt;Linux&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos cómo gestionar procesos en &lt;em&gt;Linux&lt;/em&gt;. Estudiaremos el comando &lt;code&gt;systemctl&lt;/code&gt;, que permite iniciar, detener y reiniciar servicios que se ejecutan en segundo plano (que habitualmente reciben el nombre de &lt;em&gt;units&lt;/em&gt;).&lt;/p&gt;
-&lt;p&gt;Comencemos instalando de nuevo &lt;em&gt;Apache&lt;/em&gt;, que nos servirá de base para los ejemplos de esta lección&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que si ahora abrimos el navegador y escribimos en la barra de direcciones &lt;code&gt;localhost&lt;/code&gt;, accederemos a la página por defecto de &lt;em&gt;Apache&lt;/em&gt;. Esto es posible debido a que &lt;em&gt;Apache&lt;/em&gt; se ejecuta en segundo plano, como podemos comprobar si tecleamos en la terminal&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece &lt;code&gt;enabled&lt;/code&gt; en la fila correspondiente a &lt;code&gt;Loaded:&lt;/code&gt;, esto es, cuando iniciemos el sistema, &lt;em&gt;Apache&lt;/em&gt; automáticamente se iniciará. Además, es el comportamiento que viene predefinido al instalar este paquete, pues así está declarado en &lt;code&gt;vendor preset&lt;/code&gt;, con un valor asimismo de &lt;code&gt;enabled&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: estas características son las responsables de que una vez hayamos instalado el paquete, hayamos podido acceder a la página por defecto de &lt;em&gt;Apache&lt;/em&gt; en el navegador sin tener que iniciar proceso alguno para ello.&lt;/p&gt;
-&lt;p&gt;En la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; observamos que está activo el proceso y en funcionamiento, indicándonos desde cuándo.&lt;/p&gt;
-&lt;p&gt;Por otro lado, en la parte final deberíamos haber tenido acceso a cierta información (&lt;em&gt;logs&lt;/em&gt;), pero en mi distribución no aparece por defecto. Para visualizar los &lt;em&gt;logs&lt;/em&gt; hemos de anteceder el anterior comando con &lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos desactivar &lt;em&gt;Apache&lt;/em&gt; sin más que teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl disable apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si ahora ejecutamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Observaremos que el proceso sigue en funcionamiento (&lt;code&gt;active (running)&lt;/code&gt;), pero en la línea encabezada con &lt;code&gt;Loaded:&lt;/code&gt; ahora aparece &lt;code&gt;disabled&lt;/code&gt;, lo cual indica que la próxima vez que iniciemos el sistema, &lt;em&gt;Apache&lt;/em&gt; no se iniciará de manera automática.&lt;/p&gt;
-&lt;p&gt;Para detener el proceso, hemos de teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora podemos observar como en la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; figura &lt;code&gt;inactive (dead)&lt;/code&gt;. De hecho, si refrescamos la página del navegador aparece un error en la misma.&lt;/p&gt;
-&lt;p&gt;A continuación, restauremos el comportamiento por defecto de &lt;em&gt;Apache&lt;/em&gt;. Para empezar, asegurémosnos que arranca automáticamente la próxima vez que iniciemos el sistema. Para ello&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Comprobamos que vuelve a aparecer &lt;code&gt;enabled&lt;/code&gt; en la línea encabezada por &lt;code&gt;Loaded:&lt;/code&gt;. Ahora, iniciamos el proceso sin más que teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De manera que todo vuelve a funcionar como al principio de la lección.&lt;/p&gt;
-&lt;p&gt;Finalmente, para reiniciar un proceso, hemos de escribir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Comprobaremos que se ha reiniciado el proceso observando desde cuándo está activo.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/ZhW6mzzyqlM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 12 - Managing systemd Units&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #08</title>
-      <link>https://imalexissaez.github.io/2023/05/28/comandos-de-linux-08/</link>
-      <pubDate>Sun, 28 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/28/comandos-de-linux-08/</guid>
-      <description>&lt;h2 id=&#34;gestionando-los-paquetes&#34;&gt;Gestionando los paquetes&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos la instalación, eliminación y actualización de paquetes en nuestro sistema.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: los métodos que se describen a continuación están diseñados para distribuciones basadas en &lt;em&gt;Debian&lt;/em&gt; o &lt;em&gt;Ubuntu&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;El primer paso a llevar a cabo es la actualización de nuestro índice local de paquetes disponibles en el repositorio, es decir, en el servidor online desde el cual los descargaremos. Para ello, tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso concreto, la mayoría de servidores con los que conecta son de &lt;em&gt;Ubuntu&lt;/em&gt;, pero también observamos que aparece alguno de &lt;em&gt;Google&lt;/em&gt; o de &lt;em&gt;Microsoft&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;A continuación, una vez actualizado el índice de paquetes, podemos buscar paquetes concretos en él desde la propia línea de comandos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search firefox
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en esta ocasión no necesitamos anteceder el comando con &lt;code&gt;sudo&lt;/code&gt;, pues no vamos a realizar cambios en el sistema. Cuando queramos instalar un paquete, por ejemplo, sí será necesario incluir ese comando en la sentencia.&lt;/p&gt;
-&lt;p&gt;El listado es bastante extenso en este ejemplo concreto, pues muestra todos los paquetes relacionados con &lt;em&gt;Firefox&lt;/em&gt; (desde idiomas a extensiones, pasando por el propio navegador en sí).&lt;/p&gt;
-&lt;p&gt;Para instalar un paquete concreto, la instrucción es &lt;code&gt;sudo apt install&lt;/code&gt; seguida el nombre del paquete a instalar. Por ejemplo, para instalar el editor de texto plano &lt;em&gt;Vim&lt;/em&gt; escribimos&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    La terminal de algunas distribuciones de Linux emplea un código de colores para diferenciar los distintos tipos de elementos almacenados. Así, el color azul suele indicar carpetas; el blanco, archivos; y el verde, archivos binarios.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Para cambiar de directorio y navegar por el sistema de archivos utilizamos el comando &lt;code&gt;cd&lt;/code&gt;, que es la abreviatura de &amp;lsquo;&amp;lsquo;change directory&amp;rsquo;&amp;rsquo;. Por ejemplo, &lt;code&gt;cd /&lt;/code&gt; nos lleva a la raíz del sistema y combinando los comandos &lt;code&gt;cd&lt;/code&gt; y &lt;code&gt;ls&lt;/code&gt; es como habitualmente nos desplazaremos por el interior del sistema de archivos. En cualquier momento podemos acceder a la ruta del directorio actual de trabajo en el que nos encontramos sin más que teclear &lt;code&gt;pwd&lt;/code&gt;, que es la abreviatura de &amp;lsquo;&amp;lsquo;print working directory&amp;rsquo;&amp;rsquo;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    La tilde o virgulilla, &lt;code&gt;~&lt;/code&gt;, actúa como atajo hacia la carpeta del usuario. Así, con &lt;code&gt;cd ~&lt;/code&gt; acudimos directamente a nuestra carpeta de usuario.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;3-edición-básica-de-archivos&#34;&gt;3. Edición básica de archivos&lt;/h2&gt;
+&lt;p&gt;Para empezar, creamos un archivo mediante el comando &lt;code&gt;touch&lt;/code&gt;, al que pasamos como argumento el nombre deseado para el mencionado archivo. Por ejemplo, para generar un fichero denominado &lt;code&gt;testfile.txt&lt;/code&gt; tecleamos &lt;code&gt;touch testfile.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Acto seguido, si escribimos &lt;code&gt;ls -l&lt;/code&gt;, observamos que un nuevo archivo aparece en el listado, cuyo tamaño es &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora, para acceder al contenido de un archivo, empleamos el comando &lt;code&gt;cat&lt;/code&gt;. Por ejemplo, en el caso del fichero que acabamos de generar, teclearíamos &lt;code&gt;cat testfile.txt&lt;/code&gt;, aunque, al estar vacío, la terminal no arroja información alguna cuando ejecutamos el anterior comando. Por otro lado, si tecleamos de nuevo &lt;code&gt;touch testfile.txt&lt;/code&gt;, se actualizará la fecha de creación del fichero.&lt;/p&gt;
+&lt;p&gt;Cambiando de tercio, podemos editar archivos empleando el comando &lt;code&gt;nano&lt;/code&gt;, que nos da acceso a un editor de texto plano. Si lo iniciamos de esta manera, no estaremos modificando ningún archivo (basta observar que en la parte superior aparece &lt;code&gt;New Buffer&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;En la parte inferior de la aplicación figura el menú con todas sus opciones. El símbolo &lt;code&gt;^&lt;/code&gt;, que aparece en todas ellas, ha de ser interpretado como el uso de la tecla &lt;code&gt;Ctrl&lt;/code&gt;. Así, el atajo &lt;code&gt;^X&lt;/code&gt;, para salir del programa, ha de ser ejecutado mediante la combinación &lt;code&gt;Ctrl + X&lt;/code&gt;. Asimismo, para guardar (o salvar) un archivo tras escribir cierto texto, el atajo es &lt;code&gt;^O&lt;/code&gt;, que equivale a la combinación &lt;code&gt;Ctrl + O&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Si cerramos el editor de texto y ejecutamos &lt;code&gt;ls -l&lt;/code&gt;, observaremos que aparece el nuevo archivo y este, a diferencia del anterior, posee cierto tamaño y podemos revisar sus contenidos mediante el comando &lt;code&gt;cat&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Al comando &lt;code&gt;nano&lt;/code&gt; le podemos añadir un atributo con el nombre del fichero que queremos editar. Por ejemplo, &lt;code&gt;nano test3.txt&lt;/code&gt;. Este archivo no existía en el directorio actual, de manera que cuando salvemos lo creará con los contenidos que hayamos escrito. Siguiendo esta lógica, podríamos editar el archivo &lt;code&gt;testfile.txt&lt;/code&gt; que generamos al principio de la sección tecleando &lt;code&gt;nano testfile.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    La terminal posee autocompletado a través de la tecla &lt;code&gt;Tab&lt;/code&gt;. Así, escribiendo el principio del nombre de un archivo o directorio y pulsando dicha tecla, se autocompleta la línea.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Con el comando &lt;code&gt;which&lt;/code&gt; podemos saber si una instrucción está disponible para su uso en la terminal. Por ejemplo, &lt;code&gt;which nano&lt;/code&gt; nos devuelve la ruta hacia el ejecutable, mientras que &lt;code&gt;which prueba&lt;/code&gt; no muestra salida, es decir, no existe ningún comando o aplicación en mi sistema con el nombre &lt;code&gt;prueba&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;4-una-breve-mirada-a-vim&#34;&gt;4. Una breve mirada a Vim&lt;/h2&gt;
+&lt;p&gt;Un editor de texto plano muy completo es &lt;strong&gt;Vim&lt;/strong&gt; y, por tanto, es recomendable aprender su uso. Quizá no a corto plazo, dada su elevada curva de aprendizaje; pero por sus muchos beneficios merece la pena invertir un tiempo a medio plazo para dominar esta aplicación si continuamos por la senda de la programación.&lt;/p&gt;
+&lt;p&gt;En mi caso particular, al teclear en la terminal &lt;code&gt;which vim&lt;/code&gt;, esta no arroja respuesta alguna. Es decir, la mencionada aplicación no está instalada en mi sistema. Para solventar esta situación, basta teclear:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install vim-nox
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Como ejemplo más práctico, instalemos a continuación &lt;a href=&#34;https://ubuntu.com/server/docs/web-servers-apache&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache&lt;/a&gt;, que es un servidor web que utilizamos a diario&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search apache
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A la hora de instalar este paquete, el comando &lt;code&gt;apt&lt;/code&gt; se encarga de gestionar sus dependencias, de manera que nos indica qué paquetes adicionales son necesarios para realizar la instalación del que nos interesa. Como esta operación implica llevar a cabo más cambios de los que indicamos desde la línea de comandos, la instalación se detiene y espera a que el usuario confirme si realmente desea instalar tanto el paquete indicado como sus correspondientes dependencias.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: además de las dependencias, &lt;code&gt;apt&lt;/code&gt; recomienda la instalación de paquetes adicionales por su utilidad, aunque no fuerza a su instalación y deberíamos llevar a cabo el proceso después de manera manual.&lt;/p&gt;
-&lt;p&gt;Una vez instalado &lt;em&gt;Apache&lt;/em&gt;, si escribimos en la barra de direcciones de &lt;em&gt;Chrome&lt;/em&gt; (o cualquier navegador), &lt;code&gt;localhost&lt;/code&gt; nos aparecerá la página por defecto de &lt;em&gt;Apache&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Por otro lado, para eliminar un paquete del sistema, la instrucción es &lt;code&gt;sudo apt remove&lt;/code&gt; seguida el nombre del paquete a eliminar. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt remove apache2
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por defecto, no elimina las dependencias asociadas a &lt;em&gt;Apache&lt;/em&gt;. Para solventar la situación tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt autoremove
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, actualicemos los paquetes que tenemos instalados en nuestro sistema. En mi caso, desde que iniciamos la lección, la terminal me ha indicado cada vez que poseo 21 paquetes que no están actualizados. Para ello tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt upgrade
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt dist-upgrade
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la última instrucción conviene ejecutarla cuando hayan quedado paquetes a eliminar o haya algunos que deban instalarse por primera vez, pues &lt;code&gt;sudo apt upgrade&lt;/code&gt; no realiza estas labores por defecto.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: por cuestiones de seguridad, conviene actualizar los paquetes con frecuencia.&lt;/p&gt;
-&lt;p&gt;Finalmente, en el caso que se hayan realizado actualizaciones del &lt;em&gt;kernel&lt;/em&gt;, conviene reiniciar el sistema, para lo cual escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo reboot
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/yxc2ntmH9xY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 11 - Intro to Package Management on Debian-based Distributions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #07</title>
-      <link>https://imalexissaez.github.io/2023/05/27/comandos-de-linux-07/</link>
-      <pubDate>Sat, 27 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/27/comandos-de-linux-07/</guid>
-      <description>&lt;h2 id=&#34;examinando-el-uso-de-recursos-del-sistema&#34;&gt;Examinando el uso de recursos del sistema&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos la gestión de recursos del sistema como, por ejemplo, uso de memoria, uso de espacio en disco, etc. El primer comando que analizaremos es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;free
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este nos ofrece información relevante sobre el uso de memoria del sistema. No obstante, por defecto, la ofrece en &lt;em&gt;bytes&lt;/em&gt;, comportamiento que podemos modificar haciendo uso del atributo &lt;code&gt;-m&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;free -m
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso, al estar la distribución de &lt;em&gt;Xubuntu&lt;/em&gt; virtualizada, los datos corresponden a los declarados en la configuración de la máquina virtual y no a los correspondientes al ordenador en sí.&lt;/p&gt;
-&lt;p&gt;Por otro lado, ¿cuál es la diferencia entre las columnas &lt;em&gt;free&lt;/em&gt; y &lt;em&gt;available&lt;/em&gt;? El dato que aparece en la columna &lt;em&gt;free&lt;/em&gt; está verdaderamente libre de uso, mientras que &lt;em&gt;available&lt;/em&gt; tiene en cuenta que algunas aplicaciones reservan parte de la memoria para su uso y puede que actualmente no estén haciendo uso de dicha reserva. Por ello este dato es más elevado, aunque, según las necesidades de las aplicaciones, es bastante variable.&lt;/p&gt;
-&lt;p&gt;A continuación, para analizar el espacio en disco usado, empleamos el comando &lt;code&gt;df&lt;/code&gt; (abreviatura de &lt;em&gt;disk free&lt;/em&gt;)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;df
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para una lectura más cómoda de los números que aparecen en su salida, conviene agregar el atributo &lt;code&gt;-h&lt;/code&gt;, que transforma las cantidades a &lt;em&gt;megabytes&lt;/em&gt; o &lt;em&gt;gigabytes&lt;/em&gt; según convenga.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;df -h
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A modo anecdótico, el espacio en disco puede agotarse:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Cuando almacenamos demasiados elementos cuyo tamaño es considerable (películas, videojuegos&amp;hellip;).&lt;/li&gt;
-&lt;li&gt;Cuando almacenamos demasiados elementos, aunque su tamaño sea reducido. Cada distribución tiene un límite a este respecto y viene dado por el concepto de &lt;em&gt;Inodes&lt;/em&gt;. Para acceder al listado de &lt;em&gt;Inodes&lt;/em&gt; disponibles, basta teclear &lt;code&gt;df -i&lt;/code&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Acto seguido, otro comando de gran utilidad es &lt;code&gt;htop&lt;/code&gt;, que, en mi caso, no viene instalado por defecto en &lt;em&gt;Xubuntu&lt;/em&gt;. Así pues, para solventar esta situación&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install htop
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;htop
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A primera vista, nos recuerda al administrador de tareas de &lt;em&gt;Windows&lt;/em&gt; y nos ofrece una cantidad enorme de información acerca de los recursos del sistema. Aún siendo una herramienta que se ofrece en la línea de comandos, podemos emplear el ratón para movernos por los diferentes menús disponibles.&lt;/p&gt;
-&lt;p&gt;Desde esta herramienta podemos cerrar procesos haciendo uso de la combinación &lt;code&gt;F9 + 15 SIGTERM&lt;/code&gt; o, de haber quedado la aplicación totalmente congelada, con &lt;code&gt;F9 + 9 SIGKILL&lt;/code&gt;. Para cerrar, hacemos clic sobre la opción correspondiente o simplemente pulsamos &lt;code&gt;F10&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Finalmente, otro comando útil es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uptime
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este indica cuánto tiempo lleva en marcha la sesión actual y la carga media. Estos tres últimos valores no han de ser interpretados como porcentajes, pues los ordenadores de hoy en día poseen varios núcleos (un &lt;code&gt;0.12&lt;/code&gt; no equivale pues a un 12% de carga, a no ser que nuestra máquina tenga un único núcleo). Además,&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;El primer valor hace referencia a la carga media durante el último minuto.&lt;/li&gt;
-&lt;li&gt;El segundo valor es con respecto a los últimos cinco minutos.&lt;/li&gt;
-&lt;li&gt;El tercer valor es con respecto a los últimos quince minutos.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Los valores hemos de interpretarlos como tareas a la espera de ser ejecutadas por el sistema. Por ejemplo, &lt;code&gt;0,12&lt;/code&gt; indica que, de media, menos de una tarea está en espera de ser ejecutada; es decir, el sistema está trabajando de manera bastante desahogada.&lt;/p&gt;
-&lt;p&gt;En otras palabras, y utilizando como analogía un supermercado, el número de núcleos del ordenador haría las veces de cajeros, mientras que las tareas serían los clientes a la espera de pagar sus compras. Si tenemos 2 núcleos y hay un cliente, el sistema funcionará bien e incluso habrá un cajero que se estará aburriendo en ese momento determinado. Con dos clientes todavía no encontramos problema, pues cada cajero está atendiendo su tarea asociada. El problema es cuando el número de clientes asciende, por ejemplo, a 20, pues los dos cajeros no dan abasto y las colas serán largas. En este último caso, algunas de las tareas del sistema tardarán en poder llevarse a cabo.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/kyt1xAlXITE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 10 - Checking Resource Usage&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #06</title>
-      <link>https://imalexissaez.github.io/2023/05/26/comandos-de-linux-06/</link>
-      <pubDate>Fri, 26 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/26/comandos-de-linux-06/</guid>
-      <description>&lt;h2 id=&#34;introducción-a-los-permisos-en-linux&#34;&gt;Introducción a los permisos en &lt;em&gt;Linux&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;Para empezar, la manera en que &lt;em&gt;Linux&lt;/em&gt; gestiona los permisos es un tanto diferente a la que lleva a cabo &lt;em&gt;Windows&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Por ejemplo, al teclear &lt;code&gt;ls -l&lt;/code&gt; en la terminal, dentro de la carpeta de usuario (&lt;code&gt;cd ~&lt;/code&gt; para acceder a ella si estamos ubicados en un directorio de trabajo distinto), para la carpeta &lt;code&gt;Desktop&lt;/code&gt; la línea comienza con la secuencia&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;drwxr-xr-x
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El primer carácter, &lt;code&gt;d&lt;/code&gt;, recordemos, indica que es un directorio. (&lt;code&gt;-&lt;/code&gt; para archivos). El resto de los caracteres de la secuencia nos indica lo que podemos hacer (o no) con el directorio o archivo en cuestión.&lt;/p&gt;
-&lt;p&gt;Para interpretar la secuencia de caracteres, hemos de dividirla en cuatro secciones:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;Sección 1&lt;/em&gt;: el primer carácter, que sabemos indica el tipo de elemento del que se trata (archivo, directorio o enlace).&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Sección 2&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del usuario al que pertenece el archivo o directorio. Dicho usuario aparece en la tercera columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Sección 3&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del grupo al cual pertenece el archivo o directorio. Dicho grupo aparece en la cuarta columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Sección 4&lt;/em&gt;: los siguientes tres caracteres, que hacen referencia a los permisos del resto de usuarios que ni son propietarios ni pertenecen al grupo en cuestión (se denomina &lt;em&gt;world&lt;/em&gt; en ocasiones a los usuarios a los que afecta esta sección).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;En cada una de las posiciones de las secciones 2, 3 y 4 encontramos una letra de la secuencia &lt;code&gt;rwx&lt;/code&gt; o bien un guion, &lt;code&gt;-&lt;/code&gt;, que indica que el correspondiente permiso no está disponible. El orden siempre es &lt;code&gt;rwx&lt;/code&gt; en dichas secciones, por lo que una subsecuencia como &lt;code&gt;r-x&lt;/code&gt; indica la ausencia del permiso &lt;code&gt;w&lt;/code&gt; para ese elemento en concreto en la sección asociada.&lt;/p&gt;
-&lt;p&gt;Ahora bien, ¿qué significa cada una de las letras?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;r&lt;/code&gt; es para &lt;em&gt;read&lt;/em&gt;, esto es, es la letra asociada al permiso de lectura.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;w&lt;/code&gt; es para &lt;em&gt;write&lt;/em&gt;, esto es, es la letra asociada al permiso de escritura o edición (incluso nos permitiría eliminar el elemento en concreto).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;x&lt;/code&gt; es para &lt;em&gt;execute&lt;/em&gt;, esto es, es la letra asociada al permiso de ejecución. Está reservada para aquellos elementos en los que podemos insertar comandos y ejecutarlos como si fueran programas.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Para editar permisos en un elemento, empleamos el comando &lt;code&gt;chmod&lt;/code&gt;. Por ejemplo, si deseamos añadir el permiso de ejecución a un archivo denominado &lt;code&gt;test.txt&lt;/code&gt;, escribiríamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al volver a ejecutar &lt;code&gt;ls -l&lt;/code&gt; observamos que el permiso &lt;code&gt;x&lt;/code&gt; está disponible para el usuario, para el grupo y para el resto. Además, la terminal cambia su color a verde, para indicar que ahora es un archivo ejecutable.&lt;/p&gt;
-&lt;p&gt;Para devolver los permisos a su estado inicial, basta teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod -x test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, como cabría esperar, podemos configurar el permiso &lt;code&gt;x&lt;/code&gt; de manera que afecte solo a una sección. Por ejemplo, para asignar únicamente al propietario del archivo el permiso &lt;code&gt;x&lt;/code&gt; hemos de escribir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u+x test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para habilitar todos los permisos en un elemento a cualquier usuario, hemos de teclear &lt;code&gt;chmod a+rwx&lt;/code&gt;. Por ejemplo,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod a+rwx test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: no es una práctica recomendable para directorios o archivos que contengan información sensible.&lt;/p&gt;
-&lt;p&gt;Por otro lado, la letra correspondiente para el grupo es &lt;code&gt;g&lt;/code&gt;, de manera que si deseo retirar todos los permisos al grupo tendría que teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g-rwx test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: esta configuración tiene poco sentido, pues todo el mundo tiene los permisos &lt;code&gt;rwx&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Finalmente, para hacer referencia al resto de usuarios que ni son propietarios, ni pertenecen al grupo, la letra es &lt;code&gt;o&lt;/code&gt;. Así, para retirarlos los permisos &lt;code&gt;rwx&lt;/code&gt; teclearíamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o-rwx test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, devolvamos los permisos a su estado original&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u-x test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g+rw test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o+r test.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Cambiando de tercio, los permisos se gestionan de manera diferente si se trata de archivos o de directorios. En el caso de los directorios:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;r&lt;/code&gt; nos permite visualizar su contenido.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;w&lt;/code&gt; nos permite editar o modificar el directorio.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;x&lt;/code&gt; nos permite acceder a su interior.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/T269zebUSj8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 09 - Understanding Permissions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #05</title>
-      <link>https://imalexissaez.github.io/2023/05/25/comandos-de-linux-05/</link>
-      <pubDate>Thu, 25 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/25/comandos-de-linux-05/</guid>
-      <description>&lt;h2 id=&#34;abordando-el-uso-de-alias&#34;&gt;Abordando el uso de &lt;em&gt;alias&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;Al final de la &lt;a href=&#34;https://imalexissaez.github.io/2023/05/24/comandos-de-linux-04/&#34;&gt;lección anterior&lt;/a&gt;, incluimos un &lt;em&gt;alias&lt;/em&gt; en el archivo de configuración de la terminal que nos permite limpiar esta tecleando únicamente &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Así pues, un &lt;em&gt;alias&lt;/em&gt; nos ofrece la posibilidad de crear nuevos comandos a partir de los ya existentes. En la mayoría de los casos se busca automatizar tareas cotidianas de una manera más corta o incluir ciertos atributos por defecto cuando tecleamos la versión sin atributos de un determinado comando.&lt;/p&gt;
-&lt;p&gt;Para tener acceso a un listado de los &lt;em&gt;alias&lt;/em&gt; disponibles en nuestra terminal, basta teclear en ella&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En ella podemos apreciar que uno de los comandos que examinamos en lecciones anteriores, &lt;code&gt;ll&lt;/code&gt;, no es más que un &lt;em&gt;alias&lt;/em&gt; del comando &lt;code&gt;ls&lt;/code&gt;, al que añade los atributos &lt;code&gt;-alF&lt;/code&gt;. De hecho, el propio comando &lt;code&gt;ls&lt;/code&gt; es un &lt;em&gt;alias&lt;/em&gt; de sí mismo configurando cierta opción para colorear.&lt;/p&gt;
-&lt;p&gt;En mi caso, el anterior listado es reducido, ya que apenas cuenta con diez líneas. Sin embargo, es posible acceder a la definición concreta de un &lt;em&gt;alias&lt;/em&gt; como el generado para la tecla &lt;code&gt;c&lt;/code&gt; escribiendo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; c
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;La terminal devuelve &lt;code&gt;alias c=&#39;clear&#39;&lt;/code&gt;. A medida que incorporemos más y más &lt;em&gt;alias&lt;/em&gt;, puede resultar conveniente acceder a la definición concreta de uno de ellos para disponer de todos sus detalles.&lt;/p&gt;
-&lt;p&gt;Si en algún momento precisamos eliminar un &lt;em&gt;alias&lt;/em&gt;, simplemente hemos de utilizar el comando &lt;code&gt;unalias&lt;/code&gt; declarando como argumento el atajo correspondiente. Por ejemplo,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;unalias&lt;/span&gt; c
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Desactivaría la posibilidad de limpiar la pantalla de la terminar utilizando únicamente la tecla &lt;code&gt;c&lt;/code&gt;. No obstante, como dicho &lt;em&gt;alias&lt;/em&gt; está incluido en el archivo de configuración de la terminal, cuando iniciemos una nueva sesión de esta, volverá a estar disponible el &lt;em&gt;alias&lt;/em&gt; asignado a la tecla &lt;code&gt;c&lt;/code&gt;. Para eliminarlo por completo, deberíamos editar el mencionado archivo de configuración y suprimir la línea correspondiente a la definición de dicho &lt;em&gt;alias&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Es posible que nos resulte útil los cinco procesos que más uso están haciendo de la &lt;em&gt;CPU&lt;/em&gt;. El comando asociado a ello es un tanto complejo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps auxf &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sort -nr -k &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; head -5
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta forma, si este es un dato que queremos consultar con cierta frecuencia, tiene sentido definir un &lt;em&gt;alias&lt;/em&gt; para el mismo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cp5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 3 | head -5&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en realidad, el anterior&lt;em&gt;alias&lt;/em&gt; no es un comando, sino una composición de comandos. Como podemos apreciar, usa el símbolo &lt;code&gt;|&lt;/code&gt; para redirigir los resultados de un comando hacia el argumento de entrada para otro. En el ejemplo anterior, se ejecuta el comando &lt;code&gt;ps&lt;/code&gt; con ciertos atributos, la salida del cual se envía al comando &lt;code&gt;sort&lt;/code&gt; y esta al comando &lt;code&gt;head&lt;/code&gt; para producir el resultado final que se muestra en la terminal.&lt;/p&gt;
-&lt;p&gt;Para conocer el mismo dato, pero asociado al uso de la memoria, podemos definir un &lt;em&gt;alias&lt;/em&gt; que es ciertamente similar al anterior&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mem5&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 4 | head -5&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, algunos &lt;em&gt;alias&lt;/em&gt; recomendados son&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;history&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;install&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo apt install&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aunque, como hemos visto arriba, si nos encontramos en una situación donde habitualmente escribimos largos comandos o encadenamos siempre la misma secuencia de comandos, es recomendable definir un &lt;em&gt;alias&lt;/em&gt; que nos ahorre tiempo.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/ehKAIWJWI8Y&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 08 - Command Aliases&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #04</title>
-      <link>https://imalexissaez.github.io/2023/05/24/comandos-de-linux-04/</link>
-      <pubDate>Wed, 24 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/24/comandos-de-linux-04/</guid>
-      <description>&lt;h2 id=&#34;configurando-la-terminal&#34;&gt;Configurando la terminal&lt;/h2&gt;
-&lt;p&gt;En esta lección nos adentraremos en la configuración de la terminal (&lt;em&gt;Bash&lt;/em&gt; por defecto en la mayoría de las distribuciones de &lt;em&gt;Linux&lt;/em&gt;). Para ello, hemos de ser conscientes de la existencia de archivos escondidos (&lt;em&gt;hidden files&lt;/em&gt;) en nuestro sistema operativo, que no se muestran por defecto al listar los contenidos de un directorio mediante el comando &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Para que dicho listado incluya los mencionados ficheros escondidos, tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -a
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Los archivos que aparecen con un punto delante de su nombre son los ficheros escondidos a los que hacíamos referencia antes y que no se listan por defecto al emplear el comando &lt;code&gt;ls&lt;/code&gt; sin atributos.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: podemos encadenar atributos en un comando de una manera bastante cómoda. Por ejemplo, teclear &lt;code&gt;ls -la&lt;/code&gt; tiene el efecto de añadir los atributos &lt;code&gt;-l&lt;/code&gt; y &lt;code&gt;-a&lt;/code&gt; al comando &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Así pues, si ejecutamos &lt;code&gt;ls -la&lt;/code&gt; en la carpeta &lt;code&gt;/home&lt;/code&gt; y observamos el principio de largo listado que aparece, nos daremos cuenta de la existencia de un archivo denominado &lt;code&gt;.bashrc&lt;/code&gt;. Utilizando&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano .bashrc
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;podemos acceder a su contenido. Las líneas que comienzan con el símbolo &lt;code&gt;#&lt;/code&gt; son comentarios. Por otra parte, hemos de llevar cuidado de realizar modificaciones en este archivo y luego sobrescribir, pues las consecuencias pueden distar de ser deseables.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en caso de realizar alguna modificación con catastróficas consecuencias, podemos recuperar una especie de configuración por defecto en &lt;code&gt;/etc/skel/.bashrc&lt;/code&gt;. La carpeta &lt;code&gt;skel&lt;/code&gt; `contiene ciertos ficheros de configuración por defecto para asignarlos cuando creamos un nuevo usuario en el sistema. Por otro lado, si en &lt;em&gt;Google&lt;/em&gt; buscamos &lt;em&gt;Xubuntu .bashrc&lt;/em&gt;, el primer resultado contiene las líneas de la configuración por defecto de la terminal en &lt;em&gt;Xubuntu&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;En esta lección únicamente nos vamos a limitar a crear un &lt;em&gt;alias&lt;/em&gt;. Para ello, añadimos al archivo la línea:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Vim, como ya hemos mencionado, es un editor de texto plano más avanzado que &lt;code&gt;nano&lt;/code&gt;, por lo que su uso es más complejo. Para empezar, salir de la propia aplicación no es nada intuitivo y lo haremos tecleando &lt;code&gt;:q&lt;/code&gt; en el modo &amp;lsquo;&amp;lsquo;command&amp;rsquo;&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;Así pues, ya apreciamos que existen diversos modos o estados en Vim. Por ejemplo, pulsando la tecla &lt;code&gt;i&lt;/code&gt; activamos el modo &amp;lsquo;&amp;lsquo;insert&amp;rsquo;&amp;rsquo; (mediante el cual podemos editar un archivo de la manera habitual) y con la tecla &lt;code&gt;Esc&lt;/code&gt; retrocederíamos de nuevo al modo &amp;lsquo;&amp;lsquo;command&amp;rsquo;&amp;rsquo;. En este último modo, no podemos escribir como habitualmente estamos acostumbrados, sino que es el modo que empleamos en Vim para introducir instrucciones o comandos al programa.&lt;/p&gt;
+&lt;p&gt;De esta forma, para salvar el archivo que hemos escrito a través del modo &amp;lsquo;&amp;lsquo;insert&amp;rsquo;&amp;rsquo;, volvemos al modo &amp;lsquo;&amp;lsquo;command&amp;rsquo;&amp;rsquo; y escribimos &lt;code&gt;:w&lt;/code&gt; (si pulsamos intro a continuación, recibiremos un error por no asignar un nombre al archivo). Así, tecleamos &lt;code&gt;:w test4.txt&lt;/code&gt;. Al igual que sucedía con &lt;code&gt;nano&lt;/code&gt;, podemos lanzar Vim con el nombre de un archivo como atributo, de manera que abrirá dicho fichero al iniciarse.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    El atajo &lt;code&gt;shift + I&lt;/code&gt; es muy útil, pues activa el modo &amp;lsquo;&amp;lsquo;insert&amp;rsquo;&amp;rsquo; y coloca el cursor al final del archivo.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Si usamos &lt;code&gt;vim test4.txt&lt;/code&gt; y añadimos texto, bastará en el modo &amp;lsquo;&amp;lsquo;command&amp;rsquo;&amp;rsquo; teclear para &lt;code&gt;:w&lt;/code&gt; para guardar el archivo (pues ya posee nombre asignado).&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Para borrar una línea por completo, podemos emplear el atajo que consiste en pulsar &lt;code&gt;d&lt;/code&gt; dos veces en el modo &amp;lsquo;&amp;lsquo;command&amp;rsquo;&amp;rsquo;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;5-moviendo-y-renombrando-archivos&#34;&gt;5. Moviendo y renombrando archivos&lt;/h2&gt;
+&lt;p&gt;Para empezar, de cara a copiar un archivo usamos el comando &lt;code&gt;cp&lt;/code&gt;, que posee dos argumentos: el archivo a copiar y el nombre del nuevo archivo donde será copiado. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp test2.txt newfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, con el comando &lt;code&gt;cat&lt;/code&gt; podemos comprobar que el contenido de ambos archivos es exactamente el mismo. No obstante, existe otro comando más apropiado para llevar a cabo esta tarea de comparación: &lt;code&gt;diff&lt;/code&gt;, que nos indica en qué difieren dos archivos. Así,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test2.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No arroja salida alguna, es decir, no hay ninguna diferencia entre ambos archivos. Sin embargo,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test3.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sí arroja resultados, pues son ficheros cuyos contenidos difieren.&lt;/p&gt;
+&lt;p&gt;Por otra parte, de cara a borrar un archivo, el comando a usar es &lt;code&gt;rm&lt;/code&gt;. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm newfile.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este comando también elimina directorios (con el atributo &lt;code&gt;-r&lt;/code&gt; que activa la recursión), por lo que hemos de ser cautos cuando lo empleamos. Esta instrucción no mueve el archivo a una suerte de &amp;lsquo;&amp;lsquo;Papelera de reciclaje&amp;rsquo;&amp;rsquo; como en Windows, sino que lo elimina por completo del sistema. Si después lo queremos recuperar tendríamos que usar herramientas específicas de recuperación de archivos en memoria.&lt;/p&gt;
+&lt;p&gt;A continuación, antes de aprender a mover archivos, creemos un nuevo directorio, con el comando &lt;code&gt;mkdir&lt;/code&gt; para almacenarlos. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, para mover los archivos, el comando a emplear es &lt;code&gt;mv&lt;/code&gt; cuyo primer argumento será el nombre del archivo a mover y el segundo su destino.&lt;/p&gt;
+&lt;p&gt;Podemos emplear &amp;lsquo;&amp;lsquo;comodines&amp;rsquo;&amp;rsquo; en las instrucciones de la terminal para algunos comandos. Por ejemplo, &lt;code&gt;*.txt&lt;/code&gt; se traduce en todos los archivos cuya extensión sea &lt;code&gt;.txt&lt;/code&gt;. De esta manera, podemos mover en bloque todos los ficheros de prueba que hemos creado hasta el momento.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv *.txt linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que con el comando &lt;code&gt;cd&lt;/code&gt; cambiamos el directorio y si tecleamos &lt;code&gt;cd ..&lt;/code&gt; volvemos un paso atrás en la ruta (o a un nivel inferior). Así, siguiendo la misma lógica, si queremos mover un paso atrás en la ruta alguno de los archivos, basta escribir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv testfile.txt ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, hemos de tener en cuenta que si &lt;code&gt;..&lt;/code&gt; indica un nivel inferior, &lt;code&gt;.&lt;/code&gt; indica el nivel actual (el directorio de trabajo). Esto nos permite usar el comando &lt;code&gt;mv&lt;/code&gt; para mover archivos hacia la actual ruta donde nos encontremos. Por ejemplo, para traer de vuelta el archivo &lt;code&gt;testfile.txt&lt;/code&gt; al directorio &lt;code&gt;linux-notes&lt;/code&gt;, bastaría teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;md ../testfile.txt .
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, de cara a renombrar archivos, empleamos el mismo comando que para moverlos. Por ejemplo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv test3.txt abc.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con este comando también hemos de ser cautos para no renombrar un archivo con el nombre de un fichero existente, pues podemos sobrescribirlo. En algunas distribuciones de Linux esto sucede directamente (Xubuntu es un ejemplo de esta forma de proceder) y en otras pregunta si deseamos realizar dicha acción.&lt;/p&gt;
+&lt;h2 id=&#34;6-configurando-la-terminal&#34;&gt;6. Configurando la terminal&lt;/h2&gt;
+&lt;p&gt;En esta sección nos adentraremos en la configuración de la terminal (Bash por defecto en la mayoría de las distribuciones de Linux). Para ello, hemos de ser conscientes de la existencia de archivos escondidos (&amp;lsquo;&amp;lsquo;hidden files&amp;rsquo;&amp;rsquo;) en nuestro sistema operativo, que no se muestran por defecto al listar los contenidos de un directorio mediante el comando &lt;code&gt;ls&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para que dicho listado incluya los mencionados ficheros escondidos, tecleamos &lt;code&gt;ls -a&lt;/code&gt;. Los archivos que aparecen con un punto delante de su nombre son los ficheros escondidos a los que hacíamos referencia antes y que no se listan por defecto al emplear el comando &lt;code&gt;ls&lt;/code&gt; sin atributos.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Podemos encadenar atributos en un comando de una manera bastante cómoda. Por ejemplo, teclear &lt;code&gt;ls -la&lt;/code&gt; tiene el efecto de añadir los atributos &lt;code&gt;-l&lt;/code&gt; y &lt;code&gt;-a&lt;/code&gt; al comando &lt;code&gt;ls&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Así pues, si ejecutamos &lt;code&gt;ls -la&lt;/code&gt; en la carpeta &lt;code&gt;/home&lt;/code&gt; y observamos el principio de largo listado que aparece, nos daremos cuenta de la existencia de un archivo denominado &lt;code&gt;.bashrc&lt;/code&gt;. Utilizando &lt;code&gt;nano .bashrc&lt;/code&gt; podemos acceder a su contenido. Las líneas que comienzan con el símbolo &lt;code&gt;#&lt;/code&gt; son comentarios. Por otra parte, hemos de llevar cuidado de realizar modificaciones en este archivo y luego sobrescribir, pues las consecuencias pueden distar de ser deseables.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    En caso de realizar alguna modificación con catastróficas consecuencias, podemos recuperar una especie de configuración por defecto en &lt;code&gt;/etc/skel/.bashrc&lt;/code&gt;. La carpeta &lt;code&gt;skel&lt;/code&gt; `contiene ciertos ficheros de configuración por defecto para asignarlos cuando creamos un nuevo usuario en el sistema. Por otro lado, si en Google buscamos &amp;lsquo;&amp;lsquo;Xubuntu .bashrc&amp;rsquo;&amp;rsquo;, el primer resultado contiene las líneas de la configuración por defecto de la terminal en Xubuntu.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En esta lección únicamente nos vamos a limitar a crear un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo;. Para ello, añadimos al archivo la línea:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;clear
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Guardamos el fichero (con &lt;code&gt;Ctrl + O&lt;/code&gt;, como indica en el menú inferior) y ahora, en la terminal, no es necesario escribir &lt;code&gt;clear&lt;/code&gt; para limpiar la pantalla. Basta con teclear &lt;code&gt;c&lt;/code&gt; y pulsar intro.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: en mi caso, ha sido necesario reiniciar la terminal para que el cambio tuviera efecto.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    En mi caso, ha sido necesario reiniciar la terminal para que el cambio tuviera efecto.
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;Así, al abrir la terminal, esta accede al archivo de su configuración y tiene en cuenta las instrucciones allí declaradas. Si en un futuro hemos de realizar modificaciones al comportamiento de esta herramienta, seguramente lo hagamos a través de este archivo de configuración.&lt;/p&gt;
-&lt;h2 id=&#34;el-archivo-bashrc-original&#34;&gt;El archivo &lt;code&gt;.bashrc&lt;/code&gt; original&lt;/h2&gt;
+&lt;h2 id=&#34;7-el-archivo-bashrc-original&#34;&gt;7. El archivo &lt;code&gt;.bashrc&lt;/code&gt; original&lt;/h2&gt;
 &lt;p&gt;Como temo que fruto de experimentar con este archivo surja alguna consecuencia desastrosa, dejo a continuación una copia del contenido original del mismo.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ~/.bashrc: executed by bash(1) for non-login shells.&lt;/span&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-12&#34;&gt;
+  &lt;summary&gt;Clic para acceder al código fuente&lt;/summary&gt;
+  &lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ~/.bashrc: executed by bash(1) for non-login shells.&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# for examples&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
@@ -511,158 +300,382 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    . /etc/bash_completion
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;fi&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;8-abordando-el-uso-de-alias&#34;&gt;8. Abordando el uso de alias&lt;/h2&gt;
+&lt;p&gt;Al final de la sección anterior, incluimos un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; en el archivo de configuración de la terminal que nos permite limpiar esta tecleando únicamente &lt;code&gt;c&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Así pues, un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; nos ofrece la posibilidad de crear nuevos comandos a partir de los ya existentes. En la mayoría de los casos se busca automatizar tareas cotidianas de una manera más corta o incluir ciertos atributos por defecto cuando tecleamos la versión sin atributos de un determinado comando.&lt;/p&gt;
+&lt;p&gt;Para tener acceso a un listado de los &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; disponibles en nuestra terminal, basta teclear en ella &lt;code&gt;alias&lt;/code&gt;. En ella podemos apreciar que uno de los comandos que examinamos en lecciones anteriores, &lt;code&gt;ll&lt;/code&gt;, no es más que un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; del comando &lt;code&gt;ls&lt;/code&gt;, al que añade los atributos &lt;code&gt;-alF&lt;/code&gt;. De hecho, el propio comando &lt;code&gt;ls&lt;/code&gt; es un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; de sí mismo configurando cierta opción para colorear.&lt;/p&gt;
+&lt;p&gt;En mi caso, el anterior listado es reducido, ya que apenas cuenta con diez líneas. Sin embargo, es posible acceder a la definición concreta de un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo;, como el generado para la tecla &lt;code&gt;c&lt;/code&gt;, escribiendo
+&lt;code&gt;alias c&lt;/code&gt;. La terminal devuelve &lt;code&gt;alias c=&#39;clear&#39;&lt;/code&gt;. A medida que incorporemos más y más &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo;, puede resultar conveniente acceder a la definición concreta de uno de ellos para disponer de todos sus detalles.&lt;/p&gt;
+&lt;p&gt;Si en algún momento precisamos eliminar un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo;, simplemente hemos de utilizar el comando &lt;code&gt;unalias&lt;/code&gt; declarando como argumento el atajo correspondiente. Por ejemplo, &lt;code&gt;unalias c&lt;/code&gt; desactivaría la posibilidad de limpiar la pantalla de la terminar utilizando únicamente la tecla &lt;code&gt;c&lt;/code&gt;. No obstante, como dicho &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; está incluido en el archivo de configuración de la terminal, cuando iniciemos una nueva sesión de esta, volverá a estar disponible el &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; asignado a la tecla &lt;code&gt;c&lt;/code&gt;. Para eliminarlo por completo, deberíamos editar el mencionado archivo de configuración y suprimir la línea correspondiente a la definición de dicho &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;Cambiando de tercio, es posible que nos resulte útil conocer los cinco procesos que más uso están haciendo de la CPU. El comando asociado a ello es un tanto complejo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ps auxf &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sort -nr -k &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; head -5
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta forma, si este es un dato que queremos consultar con cierta frecuencia, tiene sentido definir un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; para el mismo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;cp5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 3 | head -5&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    En realidad, el anterior &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; no es un comando, sino una composición de comandos. Como podemos apreciar, usa el símbolo &lt;code&gt;|&lt;/code&gt; para redirigir los resultados de un comando hacia el argumento de entrada para otro. En el ejemplo anterior, se ejecuta el comando &lt;code&gt;ps&lt;/code&gt; con ciertos atributos, la salida del cual se envía al comando &lt;code&gt;sort&lt;/code&gt; y esta al comando &lt;code&gt;head&lt;/code&gt; para producir el resultado final que se muestra en la terminal.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Así, para conocer el mismo dato, pero asociado al uso de la memoria, podemos definir un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; que es ciertamente similar al anterior:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;mem5&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ps auxf | sort -nr -k 4 | head -5&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, algunos &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; recomendados son&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;history&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;alias&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;install&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;sudo apt install&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aunque, como hemos visto arriba, si nos encontramos en una situación donde habitualmente escribimos largos comandos o encadenamos siempre la misma secuencia de comandos, es recomendable definir un &amp;lsquo;&amp;lsquo;alias&amp;rsquo;&amp;rsquo; que nos ahorre tiempo.&lt;/p&gt;
+&lt;h2 id=&#34;9-introducción-a-los-permisos-en-linux&#34;&gt;9. Introducción a los permisos en Linux&lt;/h2&gt;
+&lt;p&gt;Para empezar, la manera en que Linux gestiona los permisos es un tanto diferente a la que lleva a cabo Windows. Por ejemplo, al teclear &lt;code&gt;ls -l&lt;/code&gt; en la terminal, dentro de la carpeta de usuario (&lt;code&gt;cd ~&lt;/code&gt; para acceder a ella si estamos ubicados en un directorio de trabajo distinto), para la carpeta &lt;code&gt;Desktop&lt;/code&gt; la línea comienza con la secuencia:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;drwxr-xr-x
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El primer carácter, &lt;code&gt;d&lt;/code&gt;, recordemos, indica que es un directorio. (&lt;code&gt;-&lt;/code&gt; para archivos). El resto de los caracteres de la secuencia nos indica lo que podemos hacer (o no) con el directorio o archivo en cuestión. Para interpretar dicha secuencia de caracteres, hemos de dividirla en cuatro secciones:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/esNITi0RkPE&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 07 - The Bash Configuration File&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sección 1: el primer carácter, que sabemos indica el tipo de elemento del que se trata (archivo, directorio o enlace).&lt;/li&gt;
+&lt;li&gt;Sección 2: los siguientes tres caracteres, que hacen referencia a los permisos del usuario al que pertenece el archivo o directorio. Dicho usuario aparece en la tercera columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Sección 3: los siguientes tres caracteres, que hacen referencia a los permisos del grupo al cual pertenece el archivo o directorio. Dicho grupo aparece en la cuarta columna del listado que genera el comando &lt;code&gt;ls -l&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Sección 4: los siguientes tres caracteres, que hacen referencia a los permisos del resto de usuarios que ni son propietarios ni pertenecen al grupo en cuestión (se denomina &amp;lsquo;&amp;lsquo;world&amp;rsquo;&amp;rsquo; en ocasiones a los usuarios a los que afecta esta sección).&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #03</title>
-      <link>https://imalexissaez.github.io/2023/05/23/comandos-de-linux-03/</link>
-      <pubDate>Tue, 23 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/23/comandos-de-linux-03/</guid>
-      <description>&lt;h2 id=&#34;moviendo-y-renombrando-archivos&#34;&gt;Moviendo y renombrando archivos&lt;/h2&gt;
-&lt;p&gt;Para empezar, de cara a copiar un archivo usamos el comando &lt;code&gt;cp&lt;/code&gt;, que posee dos argumentos: el archivo a copiar y el nombre del nuevo archivo donde será copiado. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cp test2.txt newfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, con el comando &lt;code&gt;cat&lt;/code&gt; podemos comprobar que el contenido de ambos archivos es exactamente el mismo. No obstante, existe otro comando más apropiado para llevar a cabo esta tarea de comparación: &lt;code&gt;diff&lt;/code&gt;, que nos indica en qué difieren dos archivos. Así,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test2.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No arroja salida alguna, es decir, no hay ninguna diferencia entre ambos archivos. Sin embargo,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;diff newfile.text test3.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sí arroja resultados, pues son ficheros cuyos contenidos difieren.&lt;/p&gt;
-&lt;p&gt;Por otra parte, de cara a borrar un archivo, el comando a usar es &lt;code&gt;rm&lt;/code&gt;. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;rm newfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este comando también elimina directorios (con el atributo &lt;code&gt;-r&lt;/code&gt; que activa la recursión), por lo que hemos de ser cautos cuando lo empleamos. Esta instrucción no mueve el archivo a una suerte de &lt;em&gt;Papelera de reciclaje&lt;/em&gt; como en &lt;em&gt;Windows&lt;/em&gt;, sino que lo elimina por completo del sistema. Si después lo queremos recuperar tendríamos que usar herramientas específicas de recuperación de archivos en memoria.&lt;/p&gt;
-&lt;p&gt;A continuación, antes de aprender a mover archivos, creemos un nuevo directorio, con el comando &lt;code&gt;mkdir&lt;/code&gt; para almacenarlos. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mkdir linux-notes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora, para mover los archivos, el comando a emplear es &lt;code&gt;mv&lt;/code&gt; cuyo primer argumento será el nombre del archivo a mover y el segundo su destino.&lt;/p&gt;
-&lt;p&gt;Podemos emplear &lt;em&gt;comodines&lt;/em&gt; en las instrucciones de la terminal para algunos comandos. Por ejemplo, &lt;code&gt;*.txt&lt;/code&gt; se traduce en todos los archivos cuya extensión sea &lt;code&gt;.txt&lt;/code&gt;. De esta manera, podemos mover en bloque todos los ficheros de prueba que hemos creado hasta el momento.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv *.txt linux-notes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que con el comando &lt;code&gt;cd&lt;/code&gt; cambiamos el directorio y si tecleamos &lt;code&gt;cd ..&lt;/code&gt; volvemos un paso atrás en la ruta (o a un nivel inferior). Así, siguiendo la misma lógica, si queremos mover un paso atrás en la ruta alguno de los archivos, basta escribir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv testfile.txt ..
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ..
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, hemos de tener en cuenta que si &lt;code&gt;..&lt;/code&gt; indica un nivel inferior, &lt;code&gt;.&lt;/code&gt; indica el nivel actual (el directorio de trabajo). Esto nos permite usar el comando &lt;code&gt;mv&lt;/code&gt; para mover archivos hacia la actual ruta donde nos encontremos. Por ejemplo, para traer de vuelta el archivo &lt;code&gt;testfile.txt&lt;/code&gt; al directorio &lt;code&gt;linux-notes&lt;/code&gt;, bastaría teclear:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; linux-notes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;md ../testfile.txt .
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, de cara a renombrar archivos, empleamos el mismo comando que para moverlos. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv test3.txt abc.txt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con este comando también hemos de ser cautos para no renombrar un archivo con el nombre de un fichero existente, pues podemos sobrescribirlo. En algunas distribuciones de &lt;em&gt;Linux&lt;/em&gt; esto sucede directamente (&lt;em&gt;Xubuntu&lt;/em&gt; es un ejemplo de esta forma de proceder) y en otras pregunta si deseamos realizar dicha acción.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;mv abc.txt test4.txt
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;p&gt;En cada una de las posiciones de las secciones 2, 3 y 4 encontramos una letra de la secuencia &lt;code&gt;rwx&lt;/code&gt; o bien un guion, &lt;code&gt;-&lt;/code&gt;, que indica que el correspondiente permiso no está disponible. El orden siempre es &lt;code&gt;rwx&lt;/code&gt; en dichas secciones, por lo que una subsecuencia como &lt;code&gt;r-x&lt;/code&gt; indica la ausencia del permiso &lt;code&gt;w&lt;/code&gt; para ese elemento en concreto en la sección asociada.&lt;/p&gt;
+&lt;p&gt;Ahora bien, ¿qué significa cada una de las letras?&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/cSBYvSA9rDM&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 06 - Moving and Renaming Files&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt; es para &amp;lsquo;&amp;lsquo;read&amp;rsquo;&amp;rsquo;, esto es, es la letra asociada al permiso de lectura.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; es para &amp;lsquo;&amp;lsquo;write&amp;rsquo;&amp;rsquo;, esto es, es la letra asociada al permiso de escritura o edición (incluso nos permitiría eliminar el elemento en concreto).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; es para &amp;lsquo;&amp;rsquo;execute&amp;rsquo;&amp;rsquo;, esto es, es la letra asociada al permiso de ejecución. Está reservada para aquellos elementos en los que podemos insertar comandos y ejecutarlos como si fueran programas.&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Comandos de Linux #02</title>
-      <link>https://imalexissaez.github.io/2023/05/22/comandos-de-linux-02/</link>
-      <pubDate>Mon, 22 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/22/comandos-de-linux-02/</guid>
-      <description>&lt;h2 id=&#34;edición-básica-de-archivos&#34;&gt;Edición básica de archivos&lt;/h2&gt;
-&lt;p&gt;Para empezar, creamos un archivo mediante el comando &lt;code&gt;touch&lt;/code&gt;, al que pasamos como argumento el nombre deseado para el mencionado archivo. Por ejemplo, para generar un fichero denominado &lt;code&gt;testfile.txt&lt;/code&gt; tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch testfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, si escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;observamos que un nuevo archivo aparece en el listado, cuyo tamaño es &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora, para acceder al contenido de un archivo, empleamos el comando &lt;code&gt;cat&lt;/code&gt;. Por ejemplo, en el caso del fichero que acabamos de generar, teclearíamos:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat testfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;aunque, al estar vacío, la terminal no arroja información alguna cuando ejecutamos el anterior comando. Por otro lado, si tecleamos de nuevo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch testfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;como resultado se actualizará la fecha de creación del fichero.&lt;/p&gt;
-&lt;p&gt;Por otro lado, podemos editar archivos empleando el comando&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que nos da acceso a un editor de texto plano. Si lo iniciamos de esta manera, no estaremos modificando ningún archivo (basta observar que en la parte superior aparece &lt;code&gt;New Buffer&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;En la parte inferior de la aplicación figura el menú con todas sus opciones. El símbolo &lt;code&gt;^&lt;/code&gt;, que aparece en todas ellas, ha de ser interpretado como el uso de la tecla &lt;code&gt;Ctrl&lt;/code&gt;. Así, el atajo &lt;code&gt;^X&lt;/code&gt;, para salir del programa, ha de ser ejecutado mediante la combinación &lt;code&gt;Ctrl + X&lt;/code&gt;. Asimismo, para guardar (o salvar) un archivo tras escribir cierto texto, el atajo es &lt;code&gt;^O&lt;/code&gt;, que equivale a la combinación &lt;code&gt;Ctrl + O&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Si cerramos el editor de texto y ejecutamos &lt;code&gt;ls -l&lt;/code&gt;, observaremos que aparece el nuevo archivo y este, a diferencia del anterior, posee cierto tamaño y podemos revisar sus contenidos mediante el comando &lt;code&gt;cat&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Al comando &lt;code&gt;nano&lt;/code&gt; le podemos añadir un atributo con el nombre del fichero que queremos editar. Por ejemplo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano test3.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Este archivo no existía en el directorio actual, de manera que cuando salvemos lo creará con los contenidos que hayamos escrito. Siguiendo esta lógica, podríamos editar el archivo &lt;code&gt;testfile.txt&lt;/code&gt; que generamos al principio de la sección&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;nano testfile.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la terminal posee autocompletado a través de la tecla &lt;code&gt;Tab&lt;/code&gt;. Así, escribiendo el principio del nombre de un archivo o directorio y pulsando dicha tecla, se autocompleta la línea.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con el comando &lt;code&gt;which&lt;/code&gt; podemos saber si una instrucción está disponible para su uso en la terminar. Por ejemplo, &lt;code&gt;which nano&lt;/code&gt; nos devuelve la ruta hacia el ejecutable, mientras que &lt;code&gt;which prueba&lt;/code&gt; no muestra salida, es decir, no existe ningún comando o aplicación en mi sistema con el nombre &lt;code&gt;prueba&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;una-breve-mirada-a-vim&#34;&gt;Una breve mirada a &lt;em&gt;Vim&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;Un editor de texto plano muy completo es &lt;em&gt;Vim&lt;/em&gt; y, por tanto, es recomendable aprender su uso. Quizá no a corto plazo, dada su elevada curva de aprendizaje; pero por sus muchos beneficios merece la pena invertir un tiempo a medio plazo para dominar esta aplicación si continuamos por la senda de la programación.&lt;/p&gt;
-&lt;p&gt;En mi caso particular, al teclear en la terminal &lt;code&gt;which vim&lt;/code&gt;, esta no arroja respuesta alguna. Es decir, la mencionada aplicación no está instalada en mi sistema. Para solventar esta situación, basta teclear&lt;/p&gt;
+&lt;p&gt;Para editar permisos en un elemento, empleamos el comando &lt;code&gt;chmod&lt;/code&gt;. Por ejemplo, si deseamos añadir el permiso de ejecución a un archivo denominado &lt;code&gt;test.txt&lt;/code&gt;, escribiríamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod +x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Al volver a ejecutar &lt;code&gt;ls -l&lt;/code&gt; observamos que el permiso &lt;code&gt;x&lt;/code&gt; está disponible para el usuario, para el grupo y para el resto. Además, la terminal cambia su color a verde, para indicar que ahora es un archivo ejecutable.&lt;/p&gt;
+&lt;p&gt;Para devolver los permisos a su estado inicial, basta teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod -x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, como cabría esperar, podemos configurar el permiso &lt;code&gt;x&lt;/code&gt; de manera que afecte solo a una sección. Por ejemplo, para asignar únicamente al propietario del archivo el permiso &lt;code&gt;x&lt;/code&gt; hemos de escribir:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u+x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para habilitar todos los permisos en un elemento a cualquier usuario, hemos de teclear &lt;code&gt;chmod a+rwx&lt;/code&gt;. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod a+rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    No es una práctica recomendable para directorios o archivos que contengan información sensible.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Por otro lado, la letra correspondiente para el grupo es &lt;code&gt;g&lt;/code&gt;, de manera que si deseo retirar todos los permisos al grupo tendría que teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g-rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Esta configuración tiene poco sentido, pues todo el mundo tiene los permisos &lt;code&gt;rwx&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Finalmente, para hacer referencia al resto de usuarios que ni son propietarios, ni pertenecen al grupo, la letra es &lt;code&gt;o&lt;/code&gt;. Así, para retirarlos los permisos &lt;code&gt;rwx&lt;/code&gt; teclearíamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o-rwx test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Acto seguido, devolvamos los permisos a su estado original:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod u-x test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod g+rw test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod o+r test.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Cambiando de tercio, los permisos se gestionan de manera diferente si se trata de archivos o de directorios. En el caso de los directorios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;r&lt;/code&gt; nos permite visualizar su contenido.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;w&lt;/code&gt; nos permite editar o modificar el directorio.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;x&lt;/code&gt; nos permite acceder a su interior.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;10-examinando-el-uso-de-recursos-del-sistema&#34;&gt;10. Examinando el uso de recursos del sistema&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos la gestión de recursos del sistema como, por ejemplo, uso de memoria, uso de espacio en disco, etc. El primer comando que analizaremos es &lt;code&gt;free&lt;/code&gt;. Este nos ofrece información relevante sobre el uso de memoria del sistema. No obstante, por defecto, la ofrece en &amp;lsquo;&amp;lsquo;bytes&amp;rsquo;&amp;rsquo;, comportamiento que podemos modificar haciendo uso del atributo &lt;code&gt;-m&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;free -m
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso, al estar la distribución de Xubuntu virtualizada, los datos corresponden a los declarados en la configuración de la máquina virtual y no a los correspondientes al ordenador en sí.&lt;/p&gt;
+&lt;p&gt;Por otro lado, ¿cuál es la diferencia entre las columnas &amp;lsquo;&amp;lsquo;free&amp;rsquo;&amp;rsquo; y &amp;lsquo;&amp;lsquo;available&amp;rsquo;&amp;rsquo;? El dato que aparece en la columna &amp;lsquo;&amp;lsquo;free&amp;rsquo;&amp;rsquo; está verdaderamente libre de uso, mientras que &amp;lsquo;&amp;lsquo;available&amp;rsquo;&amp;rsquo; tiene en cuenta que algunas aplicaciones reservan parte de la memoria para su uso y puede que actualmente no estén haciendo uso de dicha reserva. Por ello este dato es más elevado, aunque, según las necesidades de las aplicaciones, es bastante variable.&lt;/p&gt;
+&lt;p&gt;A continuación, para analizar el espacio en disco usado, empleamos el comando &lt;code&gt;df&lt;/code&gt; (abreviatura de &amp;lsquo;&amp;lsquo;disk free&amp;rsquo;&amp;rsquo;). Para una lectura más cómoda de los números que aparecen en su salida, conviene agregar el atributo &lt;code&gt;-h&lt;/code&gt;, que transforma las cantidades a &amp;lsquo;&amp;lsquo;megabytes&amp;rsquo;&amp;rsquo; o &amp;lsquo;&amp;lsquo;gigabytes&amp;rsquo;&amp;rsquo; según convenga.&lt;/p&gt;
+&lt;p&gt;A modo anecdótico, el espacio en disco puede agotarse:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cuando almacenamos demasiados elementos cuyo tamaño es considerable (películas, videojuegos&amp;hellip;).&lt;/li&gt;
+&lt;li&gt;Cuando almacenamos demasiados elementos, aunque su tamaño sea reducido. Cada distribución tiene un límite a este respecto y viene dado por el concepto de &lt;strong&gt;Inodes&lt;/strong&gt;. Para acceder al listado de &amp;lsquo;&amp;lsquo;Inodes&amp;rsquo;&amp;rsquo; disponibles, basta teclear &lt;code&gt;df -i&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Acto seguido, otro comando de gran utilidad es &lt;code&gt;htop&lt;/code&gt;, que, en mi caso, no viene instalado por defecto en Xubuntu. Así pues, para solventar esta situación:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install htop
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;htop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A primera vista, nos recuerda al administrador de tareas de Windows y nos ofrece una cantidad enorme de información acerca de los recursos del sistema. Aún siendo una herramienta que se ofrece en la línea de comandos, podemos emplear el ratón para movernos por los diferentes menús disponibles.&lt;/p&gt;
+&lt;p&gt;Desde esta herramienta podemos cerrar procesos haciendo uso de la combinación &lt;code&gt;F9 + 15 SIGTERM&lt;/code&gt; o, de haber quedado la aplicación totalmente congelada, con &lt;code&gt;F9 + 9 SIGKILL&lt;/code&gt;. Para cerrar, hacemos clic sobre la opción correspondiente o simplemente pulsamos &lt;code&gt;F10&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Finalmente, otro comando útil es &lt;code&gt;uptime&lt;/code&gt;, que indica cuánto tiempo lleva en marcha la sesión actual y la carga media. Estos tres últimos valores no han de ser interpretados como porcentajes, pues los ordenadores de hoy en día poseen varios núcleos (un &lt;code&gt;0.12&lt;/code&gt; no equivale pues a un 12% de carga, a no ser que nuestra máquina tenga un único núcleo). Además,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;El primer valor hace referencia a la carga media durante el último minuto.&lt;/li&gt;
+&lt;li&gt;El segundo valor es con respecto a los últimos cinco minutos.&lt;/li&gt;
+&lt;li&gt;El tercer valor es con respecto a los últimos quince minutos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Los valores hemos de interpretarlos como tareas a la espera de ser ejecutadas por el sistema. Por ejemplo, &lt;code&gt;0,12&lt;/code&gt; indica que, de media, menos de una tarea está en espera de ser ejecutada; es decir, el sistema está trabajando de manera bastante desahogada.&lt;/p&gt;
+&lt;p&gt;En otras palabras, y utilizando como analogía un supermercado, el número de núcleos del ordenador haría las veces de cajeros, mientras que las tareas serían los clientes a la espera de pagar sus compras. Si tenemos 2 núcleos y hay un cliente, el sistema funcionará bien e incluso habrá un cajero que se estará aburriendo en ese momento determinado. Con dos clientes todavía no encontramos problema, pues cada cajero está atendiendo su tarea asociada. El problema es cuando el número de clientes asciende, por ejemplo, a 20, pues los dos cajeros no dan abasto y las colas serán largas. En este último caso, algunas de las tareas del sistema tardarán en poder llevarse a cabo.&lt;/p&gt;
+&lt;h2 id=&#34;11-gestionando-los-paquetes&#34;&gt;11. Gestionando los paquetes&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos la instalación, eliminación y actualización de paquetes en nuestro sistema.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Los métodos que se describen a continuación están diseñados para distribuciones basadas en &lt;strong&gt;Debian&lt;/strong&gt; o &lt;strong&gt;Ubuntu&lt;/strong&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;El primer paso a llevar a cabo es la actualización de nuestro índice local de paquetes disponibles en el repositorio, es decir, en el servidor online desde el cual los descargaremos. Para ello, tecleamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En mi caso concreto, la mayoría de servidores con los que conecta son de Ubuntu, pero también observamos que aparece alguno de Google o de Microsoft.&lt;/p&gt;
+&lt;p&gt;A continuación, una vez actualizado el índice de paquetes, podemos buscar paquetes concretos en él desde la propia línea de comandos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search firefox
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    En esta ocasión no necesitamos anteceder el comando con &lt;code&gt;sudo&lt;/code&gt;, pues no vamos a realizar cambios en el sistema. Cuando queramos instalar un paquete, por ejemplo, sí será necesario incluir ese comando en la sentencia.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;El listado es bastante extenso en este ejemplo concreto, pues muestra todos los paquetes relacionados con Firefox (desde idiomas a extensiones, pasando por el propio navegador en sí).&lt;/p&gt;
+&lt;p&gt;Para instalar un paquete concreto, la instrucción es &lt;code&gt;sudo apt install&lt;/code&gt; seguida el nombre del paquete a instalar. Por ejemplo, para instalar el editor de texto plano Vim escribimos:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install vim-nox
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Vim&lt;/em&gt;, como ya hemos mencionado, es un editor de texto plano más avanzado que &lt;code&gt;nano&lt;/code&gt;, por lo que su uso es más complejo. Para empezar, salir de la propia aplicación no es nada intuitivo y lo haremos tecleando &lt;code&gt;:q&lt;/code&gt; en el modo &lt;em&gt;command&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Así pues, ya apreciamos que existen diversos modos o estados en &lt;em&gt;Vim&lt;/em&gt;. Por ejemplo, pulsando la tecla &lt;code&gt;i&lt;/code&gt; activamos el modo &lt;em&gt;insert&lt;/em&gt; (mediante el cual podemos editar un archivo de la manera habitual) y con la tecla &lt;code&gt;Esc&lt;/code&gt; retrocederíamos de nuevo al modo &lt;em&gt;command&lt;/em&gt;. En este último modo, no podemos escribir como habitualmente estamos acostumbrados, sino que es el modo que empleamos en &lt;em&gt;Vim&lt;/em&gt; para introducir instrucciones o comandos al programa.&lt;/p&gt;
-&lt;p&gt;De esta forma, para salvar el archivo que hemos escrito a través del modo &lt;em&gt;insert&lt;/em&gt;, volvemos al modo &lt;em&gt;command&lt;/em&gt; y escribimos &lt;code&gt;:w&lt;/code&gt; (si pulsamos intro a continuación, recibiremos un error por no asignar un nombre al archivo). Así, tecleamos &lt;code&gt;:w test4.txt&lt;/code&gt;. Al igual que sucedía con &lt;code&gt;nano&lt;/code&gt;, podemos lanzar &lt;em&gt;Vim&lt;/em&gt; con el nombre de un archivo como atributo, de manera que abrirá dicho fichero al iniciarse.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: el atajo &lt;code&gt;shift + I&lt;/code&gt; es muy útil, pues activa el modo &lt;em&gt;insert&lt;/em&gt; y coloca el cursor al final del archivo.&lt;/p&gt;
-&lt;p&gt;Si usamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;vim test4.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;y añadimos texto, bastará en el modo &lt;em&gt;command&lt;/em&gt; teclear para &lt;code&gt;:w&lt;/code&gt; para guardar el archivo (pues ya posee nombre asignado).&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para borrar una línea por completo, podemos emplear el atajo que consiste en pulsar &lt;code&gt;d&lt;/code&gt; dos veces en el modo &lt;em&gt;command&lt;/em&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Como ejemplo más práctico, instalemos a continuación &lt;a href=&#34;https://ubuntu.com/server/docs/web-servers-apache&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Apache&lt;/a&gt;, que es un servidor web que utilizamos a diario:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;apt search apache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A la hora de instalar este paquete, el comando &lt;code&gt;apt&lt;/code&gt; se encarga de gestionar sus dependencias, de manera que nos indica qué paquetes adicionales son necesarios para realizar la instalación del que nos interesa. Como esta operación implica llevar a cabo más cambios de los que indicamos desde la línea de comandos, la instalación se detiene y espera a que el usuario confirme si realmente desea instalar tanto el paquete indicado como sus correspondientes dependencias.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Además de las dependencias, &lt;code&gt;apt&lt;/code&gt; recomienda la instalación de paquetes adicionales por su utilidad, aunque no fuerza a su instalación y deberíamos llevar a cabo el proceso después de manera manual.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Una vez instalado Apache, si escribimos en la barra de direcciones de Chrome (o cualquier navegador), &lt;code&gt;localhost&lt;/code&gt; nos aparecerá la página por defecto de Apache.&lt;/p&gt;
+&lt;p&gt;Por otro lado, para eliminar un paquete del sistema, la instrucción es &lt;code&gt;sudo apt remove&lt;/code&gt; seguida el nombre del paquete a eliminar. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt remove apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por defecto, no elimina las dependencias asociadas a Apache. Para solventar la situación tecleamos &lt;code&gt;sudo apt autoremove&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Acto seguido, actualicemos los paquetes que tenemos instalados en nuestro sistema. En mi caso, desde que iniciamos la lección, la terminal me ha indicado cada vez que poseo 21 paquetes que no están actualizados. Para ello tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt dist-upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    La última instrucción conviene ejecutarla cuando hayan quedado paquetes a eliminar o haya algunos que deban instalarse por primera vez, pues &lt;code&gt;sudo apt upgrade&lt;/code&gt; no realiza estas labores por defecto.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Por cuestiones de seguridad, conviene actualizar los paquetes con frecuencia.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Finalmente, en el caso que se hayan realizado actualizaciones del &amp;lsquo;&amp;lsquo;kernel&amp;rsquo;&amp;rsquo;, conviene reiniciar el sistema, para lo cual escribimos &lt;code&gt;sudo reboot&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;12-gestionando-procesos-en-linux&#34;&gt;12. Gestionando procesos en Linux&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos cómo gestionar procesos en Linux. Estudiaremos el comando &lt;code&gt;systemctl&lt;/code&gt;, que permite iniciar, detener y reiniciar servicios que se ejecutan en segundo plano (que habitualmente reciben el nombre de &amp;lsquo;&amp;lsquo;units&amp;rsquo;&amp;rsquo;).&lt;/p&gt;
+&lt;p&gt;Comencemos instalando de nuevo Apache, que nos servirá de base para los ejemplos de esta lección:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo apt install apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Recordemos que si ahora abrimos el navegador y escribimos en la barra de direcciones &lt;code&gt;localhost&lt;/code&gt;, accederemos a la página por defecto de Apache. Esto es posible debido a que se ejecuta en segundo plano, como podemos comprobar si tecleamos en la terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece &lt;code&gt;enabled&lt;/code&gt; en la fila correspondiente a &lt;code&gt;Loaded:&lt;/code&gt;, esto es, cuando iniciemos el sistema, Apache automáticamente se iniciará. Además, es el comportamiento que viene predefinido al instalar este paquete, pues así está declarado en &lt;code&gt;vendor preset&lt;/code&gt;, con un valor asimismo de &lt;code&gt;enabled&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Estas características son las responsables de que una vez hayamos instalado el paquete, hayamos podido acceder a la página por defecto de Apache en el navegador sin tener que iniciar proceso alguno para ello.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; observamos que está activo el proceso y en funcionamiento, indicándonos desde cuándo.&lt;/p&gt;
+&lt;p&gt;Por otro lado, en la parte final deberíamos haber tenido acceso a cierta información (&amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;), pero en mi distribución no aparece por defecto. Para visualizar los &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; hemos de anteceder el anterior comando con &lt;code&gt;sudo&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Podemos desactivar Apache sin más que teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl disable apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sin embargo, si ahora ejecutamos &lt;code&gt;systemctl status apache2&lt;/code&gt;, observamos que el proceso sigue en funcionamiento (&lt;code&gt;active (running)&lt;/code&gt;), pero en la línea encabezada con &lt;code&gt;Loaded:&lt;/code&gt; ahora aparece &lt;code&gt;disabled&lt;/code&gt;, lo cual indica que la próxima vez que iniciemos el sistema, Apache no se iniciará de manera automática.&lt;/p&gt;
+&lt;p&gt;Para detener el proceso, hemos de teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl stop apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Ahora podemos observar como en la línea encabezada por &lt;code&gt;Active:&lt;/code&gt; figura &lt;code&gt;inactive (dead)&lt;/code&gt;. De hecho, si refrescamos la página del navegador aparece un error en la misma.&lt;/p&gt;
+&lt;p&gt;A continuación, restauremos el comportamiento por defecto de Apache. Para empezar, asegurémosnos que arranca automáticamente la próxima vez que iniciemos el sistema. Para ello:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl &lt;span class=&#34;nb&#34;&gt;enable&lt;/span&gt; apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, comprobamos que vuelve a aparecer &lt;code&gt;enabled&lt;/code&gt; en la línea encabezada por &lt;code&gt;Loaded:&lt;/code&gt;. Ahora, iniciamos el proceso sin más que teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De manera que todo vuelve a funcionar como al principio de la lección.&lt;/p&gt;
+&lt;p&gt;Finalmente, para reiniciar un proceso, hemos de escribir:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl restart apache2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;systemctl status apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De forma que comprobamos que se ha reiniciado el proceso observando desde cuándo está activo.&lt;/p&gt;
+&lt;h2 id=&#34;13-revisando-logs&#34;&gt;13. Revisando &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos la gestión de &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;, a los que recurriremos habitualmente para examinar la información que recopilen nuestras aplicaciones (errores, acciones&amp;hellip;).&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    A la hora de trabajar con &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; es posible que necesitemos privilegios de administrador (&lt;strong&gt;root&lt;/strong&gt;) para revisar algunos de ellos, por lo que quizá nos veamos forzados a emplear el comando &lt;code&gt;sudo&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Empecemos revisando &lt;code&gt;syslog&lt;/code&gt;, que contiene una enorme cantidad de información que el sistema va almacenando en dicho archivo. Para ello, emplearemos el comando &lt;code&gt;cat&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Qué más &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; tenemos a nuestra disposición?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/log/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    A modo de curiosidad, el sistema gestiona &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; como &lt;code&gt;syslog&lt;/code&gt; de manera inteligente, rotándolos y comprimiéndolos para que ocupen el menor espacio posible.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En el interior del directorio de &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; observamos que existen asimismo carpetas. Por ejemplo, hay una asociada al paquete Apache que instalamos en lecciones anteriores&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo su
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; apache2/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat error.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;exit&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Mi usuario no tiene permiso para acceder a la carpeta de &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; de Apache. Buscando en Google &lt;a href=&#34;https://stackoverflow.com/questions/8221820/cd-into-directory-without-having-permission&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;este post&lt;/a&gt; de &lt;strong&gt;stackoverflow&lt;/strong&gt; ha resultado de ayuda. Activamos un modo de &amp;lsquo;&amp;lsquo;súper usuario&amp;rsquo;&amp;rsquo; con &lt;code&gt;sudo su&lt;/code&gt;, ejecutamos los comandos deseados y salimos de dicho modo con &lt;code&gt;exit&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En el &amp;lsquo;&amp;rsquo;log&amp;rsquo;&amp;rsquo; &lt;code&gt;dmesg&lt;/code&gt; encontramos información principalmente referente al &amp;lsquo;&amp;lsquo;hardware&amp;rsquo;&amp;rsquo; del sistema:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat dmesg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A modo de curiosidad, Linux posee un comando específico para acceder a este tipo de información sin necesidad de revisar el correspondiente &amp;lsquo;&amp;rsquo;log&amp;rsquo;&amp;rsquo;. Por ejemplo, podemos volver a nuestra carpeta de usuario y teclear &lt;code&gt;sudo dmesg&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo dmesg
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, tenemos acceso a una cantidad de información apabullante de bajo nivel sobre el sistema.&lt;/p&gt;
+&lt;p&gt;Por otra parte, como estamos trabajando con archivos de extensión considerable, quizá sea conveniente utilizar de manera adicional los comandos &lt;code&gt;head&lt;/code&gt; o &lt;code&gt;tail&lt;/code&gt; para centrar el foco de atención, respectivamente, en el principio o el final del archivo (10 líneas por defecto):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Con el atributo &lt;code&gt;-n&lt;/code&gt; declaramos el número de líneas que deseamos consultar:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo head -n &lt;span class=&#34;m&#34;&gt;15&lt;/span&gt; /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Un atributo muy útil para &lt;code&gt;tail&lt;/code&gt; es &lt;code&gt;-f&lt;/code&gt; (&amp;lsquo;&amp;lsquo;follow&amp;rsquo;&amp;rsquo;), que deja la terminal en suspenso y nos permite ver cambios en tiempo real en el correspondiente &amp;lsquo;&amp;rsquo;log&amp;rsquo;&amp;rsquo;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo tail -n &lt;span class=&#34;m&#34;&gt;5&lt;/span&gt; -f /var/log/syslog
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Así, podemos controlar cualquier cambio en el sistema (por ejemplo, el reinicio de un proceso) que añada información a &lt;code&gt;syslog&lt;/code&gt;. Para terminar el seguimiento del archivo, usamos la combinación de teclas &lt;code&gt;Ctrl + c&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Una aplicación práctica la encontramos a la hora de reproducir errores que los usuarios reportan en tiempo real para cierto servidor.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Finalmente, otro comando de utilidad para revisar &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; es &lt;code&gt;journalctl&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo journalctl -u apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Este comando también permite realizar seguimiento con el atributo &lt;code&gt;-f&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Podemos conseguir resultados similares concatenando &lt;code&gt;cat&lt;/code&gt; y &lt;code&gt;grep&lt;/code&gt; (este último comando nos permite realizar búsqueda de texto sobre un archivo o salida de otro comando):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /var/log/syslog &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep apache2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;14-gestionando-usuarios&#34;&gt;14. Gestionando usuarios&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos la gestión de usuarios, en concreto la creación y eliminación de usuarios, así como la creación y eliminación de grupos. Antes de empezar, es importante conocer la existencia del siguiente archivo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En él encontramos un listado de todos los usuarios existentes en nuestro sistema. En la mayoría de los casos, la línea finaliza con &lt;code&gt;/nologin&lt;/code&gt;, es decir, son usuarios necesarios para llevar a cabo ciertas tareas de determinadas aplicaciones y no para acceder al sistema en sí.&lt;/p&gt;
+&lt;p&gt;En la línea correspondiente a mi usuario, &lt;code&gt;alexis&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alexis❌1000:1000:alexis,,,:/home/alexis:/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Los números &lt;code&gt;1000&lt;/code&gt; que aparecen son, respectivamente, las referencias para el usuario (&amp;lsquo;&amp;lsquo;uid&amp;rsquo;&amp;rsquo;) y el grupo al que pertenece (también denominado &lt;code&gt;alexis&lt;/code&gt; en este caso particular). A continuación, figura nuestro directorio de usuario (&lt;code&gt;/home/alexis&lt;/code&gt;) y nuestra terminal por defecto (&lt;code&gt;/bin/bash&lt;/code&gt;). Tras mi nombre de usuario aparece una &lt;code&gt;x&lt;/code&gt;, que es la posición que ocuparía nuestra contraseña (oculta ahora mismo bajo ese carácter &lt;code&gt;x&lt;/code&gt;). La contraseña, de hecho, se almacena en otro archivo diferente, ya que dista de ser idóneo que las contraseñas de los usuarios estén en un archivo de texto de libre acceso.&lt;/p&gt;
+&lt;p&gt;En general, si el &amp;lsquo;&amp;lsquo;uid&amp;rsquo;&amp;rsquo; es mayor o igual que &lt;code&gt;1000&lt;/code&gt; se tratará de un usuario real, mientras que aquellos que posean referencias inferiores seguramente sean usuarios de sistema (y no aparecerán por defecto en las ventanas de &amp;lsquo;&amp;rsquo;login&amp;rsquo;&amp;rsquo; de usuario).&lt;/p&gt;
+&lt;p&gt;A continuación, si tecleamos &lt;code&gt;sudo cat /etc/shadow&lt;/code&gt;, el archivo muestra información sensible, pero no de forma abierta. En lugar de aparecer nuestra contraseña, aparece su &lt;em&gt;hash&lt;/em&gt; (para los usuarios de sistema sí que aparece directamente su contraseña).&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Un atajo útil de teclado es &lt;code&gt;!!&lt;/code&gt; que ejecuta el anterior comando escrito en la terminal. Cuando escribimos una instrucción y no se lleva a cabo por falta de permisos, simplemente hemos de teclear &lt;code&gt;sudo !!&lt;/code&gt; para intentar ejecutarla con permisos de &amp;lsquo;&amp;lsquo;super user&amp;rsquo;&amp;rsquo;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Otro archivo importante para conocer es &lt;code&gt;cat /etc/group&lt;/code&gt;, que nos muestra un listado de los grupos definidos en nuestro sistema, con sus respectivas referencias (así como sus contraseñas ocultas por el carácter &lt;code&gt;x&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Si estamos interesados en conocer a qué grupos pertenecemos, no es necesario revisar el anterior fichero, ya que basta con teclear &lt;code&gt;groups&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;¿Cómo creamos un usuario? Mediante &lt;code&gt;adduser&lt;/code&gt; seguido del nombre del nuevo usuario. Por ejemplo, &lt;code&gt;adduser batman&lt;/code&gt;. Sin embargo, encontramos un problema al ejecutar el anterior comando, ya que la terminal nos indica que solo el usuario &lt;code&gt;root&lt;/code&gt; puede añadir un usuario o un grupo al sistema. Como en anteriores ocasiones, solventamos la situación escribiendo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo adduser batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esta acción añade el usuario &lt;code&gt;batman&lt;/code&gt;, así como el grupo &lt;code&gt;batman&lt;/code&gt;, además de generar un directorio de usuario para él y proporcionarle ciertos archivos de configuración por defecto del sistema desde &lt;code&gt;/etc/skel&lt;/code&gt;. Después, nos pide una contraseña para dicho usuario. A continuación, podemos indicar (o dejar en blanco) algunos datos del usuario, como su nombre completo, número de habitación, número de teléfono&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Si ahora escribimos &lt;code&gt;ls -l /home/&lt;/code&gt;, aparece un nuevo directorio asociado al usuario &lt;code&gt;batman&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para cambiar a este usuario, hemos de escribir &lt;code&gt;su - batman&lt;/code&gt; e introducir su correspondiente contraseña (la que hemos definido al crear el usuario). Si ahora tecleamos &lt;code&gt;logout&lt;/code&gt; (o usamos la combinación de teclas &lt;code&gt;Ctrl + d&lt;/code&gt;), volvemos a nuestro usuario principal. Por otro lado, si escribimos &lt;code&gt;sudo su - batman&lt;/code&gt; cambiamos de usuario sin necesidad de introducir la contraseña (al trabajar con &lt;code&gt;sudo&lt;/code&gt; es como si adoptáramos el papel del todopoderoso usuario &lt;code&gt;root&lt;/code&gt;).&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Con el comando &lt;code&gt;passwd&lt;/code&gt; podemos cambiar la contraseña de un usuario.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Para cambiar de usuario a &lt;code&gt;root&lt;/code&gt;, hemos de teclear &lt;code&gt;sudo su -&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Ahora, para eliminar un usuario el comando es &lt;code&gt;userdel -r&lt;/code&gt; seguido del nombre del usuario a suprimir:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo userdel -r batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El atributo &lt;code&gt;-r&lt;/code&gt; se emplea para eliminar asimismo el directorio del usuario, por lo que hemos de actuar con cautela cuando llevamos a cabo este proceso.&lt;/p&gt;
+&lt;p&gt;Acto seguido, para añadir un grupo, el comando es &lt;code&gt;groupadd&lt;/code&gt; seguido del nombre del grupo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupadd heroes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para introducir nuestro usuario en este nuevo grupo, el comando a emplear es:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG heroes alexis
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No obstante, aunque hemos ejecutado el comando, no aparece el grupo &lt;code&gt;heroes&lt;/code&gt; asociado a nuestro usuario. Para ello, hemos de hacer &amp;lsquo;&amp;rsquo;logout&amp;rsquo;&amp;rsquo; y &amp;lsquo;&amp;rsquo;login&amp;rsquo;&amp;rsquo; en el sistema. Sin embargo, en este momento, basta teclear &lt;code&gt;groups alexis&lt;/code&gt; para comprobar que, efectivamente, mi usuario pertenece al grupo &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Eliminar un usuario de un grupo es también sencillo, ya que basta teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo gpasswd -d alexis heroes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, para eliminar un grupo, escribimos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupdel heroes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y podemos comprobar que, efectivamente, no pertenece al listado de grupos tecleando, por ejemplo, &lt;code&gt;tail /etc/group&lt;/code&gt; y observando que no aparece al final ninguna línea asociada a &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;15-examinando-el-historial-de-la-terminal&#34;&gt;15. Examinando el historial de la terminal&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos cómo aprovechar de nuevo acciones llevadas a cabo en la terminal.&lt;/p&gt;
+&lt;p&gt;En primer lugar, con las teclas de los cursores (arriba y abajo en este caso particular), podemos desplazarnos por el historial de comandos ejecutados. Ello nos permite ejecutarlos de nuevo o editarlos para lanzarlos de una forma ligeramente diferente a la terminal.&lt;/p&gt;
+&lt;p&gt;En segundo lugar, a través del comando &lt;code&gt;history&lt;/code&gt;, tenemos acceso a la totalidad de comandos ejecutados en la terminal. Cada uno de ellos posee un número de referencia al principio de la línea, de manera que podemos ejecutarlos haciendo uso de dicho número, siempre y cuando antecedamos la referencia con el símbolo de exclamación &lt;code&gt;!&lt;/code&gt; (por ejemplo &lt;code&gt;!283&lt;/code&gt;)&lt;/p&gt;
+&lt;p&gt;Ahora bien, si queremos que un comando no figure en el historial, basta pulsar la tecla de espacio antes de empezar a escribir el comando en cuestión:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; sudo apt upgrade
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    No obstante, este comportamiento depende de la distribución de Linux empleada. En Xubuntu, efectivamente, podemos emplear este recurso para evitar que ciertos comandos aparezcan listados en el historial.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;¿Qué puede llevarnos a querer omitir comandos en el historial? Por ejemplo, quizá sea una práctica recomendable para aquellos que posean cierta información sensible (datos, contraseñas&amp;hellip;).&lt;/p&gt;
+&lt;p&gt;Finalmente, el historial también es una herramienta útil para averiguar cómo se han resueltos incidencias en el pasado (por otras personas, si es la primera vez que administramos cierto servidor que lleva operativo un tiempo).&lt;/p&gt;
+&lt;h2 id=&#34;16-referencias&#34;&gt;16. Referencias&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/T20jXu7rDCA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 05 - Basic File Editing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;17-historial-de-versiones-del-artículo&#34;&gt;17. Historial de versiones del artículo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2023.06.05: Reunifica las doce primeras lecciones en un único artículo&lt;/li&gt;
+&lt;li&gt;2023.06.01: Escribe la sección sobre el historial de la terminal&lt;/li&gt;
+&lt;li&gt;2023.05.31: Escribe la sección sobre la gestión de usuarios&lt;/li&gt;
+&lt;li&gt;2023.05.30: Escribe la sección sobre la revisión de &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;&lt;/li&gt;
+&lt;li&gt;2023.05.29: Escribe la sección sobre la gestión de procesos&lt;/li&gt;
+&lt;li&gt;2023.06.28: Escribe la sección sobre la gestión de paquetes&lt;/li&gt;
+&lt;li&gt;2023.06.27: Escribe la sección sobre el control de recursos del sistema&lt;/li&gt;
+&lt;li&gt;2023.05.26: Escribe la sección sobre permisos&lt;/li&gt;
+&lt;li&gt;2023.06.25: Escribe la sección sobre el uso de alias&lt;/li&gt;
+&lt;li&gt;2023.06.24: Escribe la sección sobre la configuración de la terminal&lt;/li&gt;
+&lt;li&gt;2023.06.23: Escribe la sección sobre mover y renombrar archivos&lt;/li&gt;
+&lt;li&gt;2023.05.22: Escribe la sección sobre la edición de archivos&lt;/li&gt;
+&lt;li&gt;2023.06.21: Escribe las secciones de introducción y navegación por el sistema de ficheros&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>Comandos de Linux #01</title>
-      <link>https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/</link>
-      <pubDate>Sun, 21 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/21/comandos-de-linux-01/</guid>
-      <description>&lt;h2 id=&#34;introducción&#34;&gt;Introducción&lt;/h2&gt;
-&lt;p&gt;Esta semana he estado echando un vistazo a la plataforma &lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt; y más concretamente a su curso de fundamentos, &lt;a href=&#34;https://www.theodinproject.com/paths/foundations/courses/foundations&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Foundations&lt;/a&gt;. Este es el punto de partida común que comparten las dos especializaciones de desarrollo web ofrecidas en este sitio: una basada en &lt;em&gt;Ruby&lt;/em&gt; y otra en &lt;em&gt;JavaScript&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Su primera sección, &lt;em&gt;Introduction&lt;/em&gt;, es ciertamente interesante, pues trata temas tan variados como el aprendizaje en sí, la gestión de la frustración o la manera de realizar preguntas adecuadamente para obtener ayuda útil. Es un aspecto que la mayoría de los cursos no aborda y los recursos que ofrece esta plataforma son muy interesantes.&lt;/p&gt;
-&lt;p&gt;Completada dicha sección, la siguiente lleva por título &lt;em&gt;Prerequisites&lt;/em&gt; y se centra en el funcionamiento básico de los ordenadores y de Internet. Además, es donde empezamos a configurar nuestro entorno de desarrollo para trabajar a lo largo de este curso. Como no podía ser de otra manera, sin ni tan siquiera haber generado un solo fichero, ya comienzan a aparecer los retos (que, por otra parte, bienvenidos sean tras las conclusiones que se extraen de las charlas que figuran en la sección &lt;em&gt;Introduction&lt;/em&gt;):&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;The Odin Project&lt;/em&gt; no da soporte oficial para &lt;em&gt;Windows&lt;/em&gt;. ¿Qué sistema operativo utiliza un servidor? Efectivamente, &lt;em&gt;Windows&lt;/em&gt;. No obstante, la plataforma no nos deja de lado y ofrece alternativas muy bien detalladas para seguir los contenidos de la especialización. A la hora de escribir estas líneas, estoy probando la emulación de una distribución de &lt;em&gt;Linux&lt;/em&gt;, &lt;em&gt;Xubuntu&lt;/em&gt;, a través de &lt;em&gt;Oracle VM VirtualBox&lt;/em&gt; (he tenido hasta que trastear la &lt;em&gt;BIOS&lt;/em&gt; para permitir la emulación en mi ordenador).&lt;/li&gt;
-&lt;li&gt;La propia plataforma nos aconseja no caer en &lt;em&gt;rabbit holes&lt;/em&gt; que nos distraigan y centrarnos en seguir sus contenidos. La misma plataforma, casi en cada uno de sus apartados, nos enseña docenas de tentadores &lt;em&gt;rabbit holes&lt;/em&gt; en los que perdernos.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;De hecho, esta serie de artículos para el blog son fruto de haber caído en uno de esos &lt;em&gt;rabbit holes&lt;/em&gt;, pues una vez instalado &lt;em&gt;Xubuntu&lt;/em&gt; recomiendan aprender los principales comandos que se emplean en su terminal. Para ello enlazan a una lista de reproducción en &lt;em&gt;YouTube&lt;/em&gt; de 24 vídeos del canal &lt;em&gt;LearnLinuxTV&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;A continuación, comparto las notas tomadas durante el cuarto vídeo, que corresponde al primero del curso en el cual se empieza a utilizar la terminal.&lt;/p&gt;
-&lt;h2 id=&#34;navegando-por-el-sistema-de-ficheros&#34;&gt;Navegando por el sistema de ficheros&lt;/h2&gt;
-&lt;p&gt;Para empezar, el comando&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;muestra el contenido del directorio actual de trabajo (&lt;code&gt;ls&lt;/code&gt; es la abreviatura de &lt;em&gt;list storage&lt;/em&gt;). Así, al iniciar una nueva terminal, accederíamos con él a los contenidos de la carpeta del usuario.&lt;/p&gt;
-&lt;p&gt;Si tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls /
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;accedemos a los contenidos almacenados en la raíz del sistema (&lt;code&gt;/&lt;/code&gt;). Asimismo, con&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls /home
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;se muestran las carpetas habilitadas para los distintos usuarios del sistema. En mi caso, tras la instalación de &lt;em&gt;Xubuntu&lt;/em&gt; siguiendo las instrucciones de la plataforma, únicamente aparece la carpeta &lt;code&gt;alexis&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: Por comodidad, para limpiar la terminal y dejar de mostrar la información acumulada hasta el momento, podemos emplear el comando &lt;code&gt;clear&lt;/code&gt; o, en ocasiones, dependiendo de la distribución de &lt;em&gt;Linux&lt;/em&gt; que tengamos en nuestro sistema, la combinación de teclas &lt;code&gt;Ctrl + L&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Por otra parte, podemos añadir atributos a un comando de la terminal. Por ejemplo, si tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;obtendremos mucha más información que antes de cada una de las carpetas y de los ficheros ubicados en la raíz del sistema (el atributo &lt;code&gt;-l&lt;/code&gt; indica &lt;em&gt;long listing&lt;/em&gt;). Además, cada carpeta o fichero aparece en su propia línea. Al inicio de cada una de las mencionadas líneas aparece una extraña secuencia de caracteres que, en su mayor parte, recoge los permisos asociados a la correspondiente carpeta o archivo. De momento, si nos centramos únicamente en el primer carácter:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;d&lt;/code&gt;: indica directorio o carpeta.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-&lt;/code&gt;: indica que es un archivo.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;l&lt;/code&gt;: indica un enlace a otro archivo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: Una alternativa a la combinación &lt;code&gt;ls -l&lt;/code&gt; es el comando &lt;code&gt;ll&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;En la raíz del sistema encontramos algunos directorios de vital importancia. Aunque de momento no entraremos en profundidad en los detalles de cada uno de ellos, para hacernos una idea resulta que:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;bin&lt;/code&gt;: es el directorio que contiene los programas ejecutables del sistema.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;boot&lt;/code&gt;: es el directorio que contiene los archivos necesarios para iniciar el sistema operativo.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;home&lt;/code&gt;: es el directorio asociado a los usuarios del sistema.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;etc&lt;/code&gt;: es el directorio que contiene los archivos de configuración del sistema.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;media&lt;/code&gt;: es el directorio donde se montan dispositivos externos (usb, cd-rom&amp;hellip;).&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;var&lt;/code&gt;: es el directorio que contiene &lt;em&gt;logs&lt;/em&gt; del sistema.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la terminal de algunas distribuciones de &lt;em&gt;Linux&lt;/em&gt; emplea un código de colores para diferenciar los distintos tipos de elementos almacenados. Así, el color azul suele indicar carpetas; el blanco, archivos; y el verde, archivos binarios.&lt;/p&gt;
-&lt;p&gt;Para cambiar de directorio y navegar por el sistema de archivos utilizamos el comando&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que es la abreviatura de &lt;em&gt;change directory&lt;/em&gt;. Por ejemplo, &lt;code&gt;cd /&lt;/code&gt; nos lleva a la raíz del sistema y combinando los comandos &lt;code&gt;cd&lt;/code&gt; y &lt;code&gt;ls&lt;/code&gt; es como habitualmente nos desplazaremos por el interior del sistema de archivos. En cualquier momento podemos acceder a la ruta del directorio actual de trabajo en el que nos encontramos sin más que teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pwd&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;que es la abreviatura de &lt;em&gt;print working directory&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: la tilde o virgulilla, &lt;code&gt;~&lt;/code&gt;, actúa como atajo hacia la carpeta del usuario. Así, con &lt;code&gt;cd ~&lt;/code&gt; acudimos directamente a nuestra carpeta de usuario.&lt;/p&gt;
+      <title>Comandos de Linux #11</title>
+      <link>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</link>
+      <pubDate>Wed, 31 May 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</guid>
+      <description>&lt;h2 id=&#34;gestionando-usuarios&#34;&gt;Gestionando usuarios&lt;/h2&gt;
+&lt;p&gt;En esta lección abordaremos la gestión de usuarios, en concreto la creación y eliminación de usuarios, así como la creación y eliminación de grupos. Antes de empezar, es importante conocer la existencia del siguiente archivo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/passwd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En él encontramos un listado de todos los usuarios existentes en nuestro sistema. En la mayoría de los casos, la línea finaliza con &lt;code&gt;/nologin&lt;/code&gt;, es decir, son usuarios necesarios para llevar a cabo ciertas tareas de determinadas aplicaciones y no para acceder al sistema en sí.&lt;/p&gt;
+&lt;p&gt;En la línea correspondiente a mi usuario, &lt;code&gt;alexis&lt;/code&gt;,&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alexis❌1000:1000:alexis,,,:/home/alexis:/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Los números &lt;code&gt;1000&lt;/code&gt; que aparecen son, respectivamente, las referencias para el usuario (&lt;em&gt;uid&lt;/em&gt;) y el grupo al que pertenece (también denominado &lt;code&gt;alexis&lt;/code&gt; en este caso particular). A continuación, figura nuestro directorio de usuario (&lt;code&gt;/home/alexis&lt;/code&gt;) y nuestra terminal por defecto (&lt;code&gt;/bin/bash&lt;/code&gt;). Tras mi nombre de usuario aparece una &lt;code&gt;x&lt;/code&gt;, que es la posición que ocuparía nuestra contraseña (oculta ahora mismo bajo ese carácter &lt;code&gt;x&lt;/code&gt;). La contraseña, de hecho, se almacena en otro archivo diferente, ya que dista de ser idóneo que las contraseñas de los usuarios estén en un archivo de texto de libre acceso.&lt;/p&gt;
+&lt;p&gt;En general, si el &lt;em&gt;uid&lt;/em&gt; es mayor o igual que &lt;code&gt;1000&lt;/code&gt; se tratará de un usuario real, mientras que aquellos que posean referencias inferiores seguramente sean usuarios de sistema (y no aparecerán por defecto en las ventanas de &lt;em&gt;login&lt;/em&gt; de usuario).&lt;/p&gt;
+&lt;p&gt;A continuación, si tecleamos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /etc/shadow
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: un atajo útil de teclado es &lt;code&gt;!!&lt;/code&gt; que ejecuta el anterior comando escrito en la terminal. Cuando escribimos una instrucción y no se lleva a cabo por falta de permisos, simplemente hemos de teclear &lt;code&gt;sudo !!&lt;/code&gt; para intentar ejecutarla con permisos de &lt;em&gt;super user&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;El archivo muestra información sensible, pero no de forma abierta. En lugar de aparecer nuestra contraseña, aparece su &lt;em&gt;hash&lt;/em&gt; (para los usuarios de sistema sí que aparece directamente su contraseña).&lt;/p&gt;
+&lt;p&gt;Otro archivo importante para conocer es&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nos muestra un listado de los grupos definidos en nuestro sistema, con sus respectivas referencias (así como sus contraseñas ocultas por el carácter &lt;code&gt;x&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Si estamos interesados en conocer a qué grupos pertenecemos, no es necesario revisar el anterior fichero, ya que basta con teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Cómo creamos un usuario? Mediante &lt;code&gt;adduser&lt;/code&gt; seguido del nombre del nuevo usuario&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adduser batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sin embargo, encontramos un problema al ejecutar el anterior comando, ya que la terminal nos indica que solo el usuario &lt;code&gt;root&lt;/code&gt; puede añadir un usuario o un grupo al sistema. Como en anteriores ocasiones, solventamos la situación escribiendo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo adduser batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esta acción añade el usuario &lt;code&gt;batman&lt;/code&gt;, así como el grupo &lt;code&gt;batman&lt;/code&gt;, además de generar un directorio de usuario para él y proporcionarle ciertos archivos de configuración por defecto del sistema desde &lt;code&gt;/etc/skel&lt;/code&gt;. Después, nos pide una contraseña para dicho usuario. A continuación, podemos indicar (o dejar en blanco) algunos datos del usuario, como su nombre completo, número de habitación, número de teléfono&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Si ahora escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /home/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece un nuevo directorio asociado al usuario &lt;code&gt;batman&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para cambiar a este usuario, hemos de escribir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su - batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;e introducir su correspondiente contraseña (la que hemos definido al crear el usuario). Si ahora tecleamos &lt;code&gt;logout&lt;/code&gt; (o usamos la combinación de teclas &lt;code&gt;Ctrl + d&lt;/code&gt;), volvemos a nuestro usuario principal. Por otro lado, si escribimos &lt;code&gt;sudo su - batman&lt;/code&gt; cambiamos de usuario sin necesidad de introducir la contraseña (al trabajar con &lt;code&gt;sudo&lt;/code&gt; es como si adoptáramos el papel del todopoderoso usuario &lt;code&gt;root&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con el comando &lt;code&gt;passwd&lt;/code&gt; podemos cambiar la contraseña de un usuario.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para cambiar de usuario a &lt;code&gt;root&lt;/code&gt;, hemos de teclear &lt;code&gt;sudo su -&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora, para eliminar un usuario el comando es &lt;code&gt;userdel -r&lt;/code&gt; seguido del nombre del usuario a suprimir&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo userdel -r batman
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El atributo &lt;code&gt;-r&lt;/code&gt; se emplea para eliminar asimismo el directorio del usuario, por lo que hemos de actuar con cautela cuando llevamos a cabo este proceso.&lt;/p&gt;
+&lt;p&gt;Acto seguido, para añadir un grupo, el comando es &lt;code&gt;groupadd&lt;/code&gt; seguido del nombre del grupo&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupadd heroes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para introducir nuestro usuario en este nuevo grupo, el comando a emplear es&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG heroes alexis
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No obstante, aunque hemos ejecutado el comando, no aparece el grupo &lt;code&gt;heroes&lt;/code&gt; asociado a nuestro usuario. Para ello, hemos de hacer &lt;em&gt;logout&lt;/em&gt; y &lt;em&gt;login&lt;/em&gt; en el sistema. Sin embargo, en este momento, basta teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para comprobar que, efectivamente, mi usuario pertenece al grupo &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Eliminar un usuario de un grupo es también sencillo, ya que basta teclear&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo gpasswd -d alexis heroes
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, para eliminar un grupo, escribimos&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupdel heroes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y podemos comprobar que, efectivamente, no pertenece al listado de grupos tecleando, por ejemplo, &lt;code&gt;tail /etc/group&lt;/code&gt; y observando que no aparece al final ninguna línea asociada a &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/MnY0K-3_Fjk&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 04 - Navigating the Filesystem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://youtu.be/DmdyxEJdt3k&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 14 - Managing Users&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>

@@ -1,0 +1,1811 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="En este curso aprenderemos a utilizar la terminal de *Linux* empezando desde los comandos más básicos y con el objetivo de emplear esta herramienta de una forma eficiente para realizar las operaciones cotidianas." />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/" />
+  <meta property="og:title" content="Curso de comandos de Linux | Infinitos Contrastes" />
+  <meta property="og:description" content="En este curso aprenderemos a utilizar la terminal de *Linux* empezando desde los comandos más básicos y con el objetivo de emplear esta herramienta de una forma eficiente para realizar las operaciones cotidianas." /><meta property="og:image" content="https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2023-06-05T00:00:01&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2023-06-05T00:00:01&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/"
+  },
+  "headline": "Curso de comandos de Linux",
+  
+  "image": [
+    "https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/featured.jpg"
+  ],
+  
+  "datePublished": "2023-06-05T00:00:01+02:00",
+  "dateModified": "2023-06-05T00:00:01+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "En este curso aprenderemos a utilizar la terminal de *Linux* empezando desde los comandos más básicos y con el objetivo de emplear esta herramienta de una forma eficiente para realizar las operaciones cotidianas."
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>Curso de comandos de Linux | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="10b818af7ea554cf416cbeee469cc628" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>Curso de comandos de Linux</h1>
+
+  
+  <p class="page-subtitle">Aprendiendo a manejar la terminal de Linux desde cero</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    06/05/23
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    36 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/programacion/">Programación</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2023/06/05/curso-de-comandos-de-linux/featured_hudc6d3cfca3dbd652fcf3dd334d33fc1f_47879_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@6heinz3r" target="_blank" rel="noopener">Gabriel Heinzer</a>, disponible en <a href="https://unsplash.com/es/fotos/4Mw7nkQDByk" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <details class="toc-inpage d-print-none  " open>
+  <summary class="font-weight-bold">Índice</summary>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introducción">1. Introducción</a></li>
+    <li><a href="#2-navegando-por-el-sistema-de-ficheros">2. Navegando por el sistema de ficheros</a></li>
+    <li><a href="#3-edición-básica-de-archivos">3. Edición básica de archivos</a></li>
+    <li><a href="#4-una-breve-mirada-a-vim">4. Una breve mirada a Vim</a></li>
+    <li><a href="#5-moviendo-y-renombrando-archivos">5. Moviendo y renombrando archivos</a></li>
+    <li><a href="#6-configurando-la-terminal">6. Configurando la terminal</a></li>
+    <li><a href="#7-el-archivo-bashrc-original">7. El archivo <code>.bashrc</code> original</a></li>
+    <li><a href="#8-abordando-el-uso-de-alias">8. Abordando el uso de alias</a></li>
+    <li><a href="#9-introducción-a-los-permisos-en-linux">9. Introducción a los permisos en Linux</a></li>
+    <li><a href="#10-examinando-el-uso-de-recursos-del-sistema">10. Examinando el uso de recursos del sistema</a></li>
+    <li><a href="#11-gestionando-los-paquetes">11. Gestionando los paquetes</a></li>
+    <li><a href="#12-gestionando-procesos-en-linux">12. Gestionando procesos en Linux</a></li>
+    <li><a href="#13-revisando-logs">13. Revisando &lsquo;&rsquo;logs&rsquo;&rsquo;</a></li>
+    <li><a href="#14-gestionando-usuarios">14. Gestionando usuarios</a></li>
+    <li><a href="#15-examinando-el-historial-de-la-terminal">15. Examinando el historial de la terminal</a></li>
+    <li><a href="#16-referencias">16. Referencias</a></li>
+    <li><a href="#17-historial-de-versiones-del-artículo">17. Historial de versiones del artículo</a></li>
+  </ul>
+</nav>
+</details>
+
+<h2 id="1-introducción">1. Introducción</h2>
+<p>Esta semana he estado echando un vistazo a la plataforma <a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a> y más concretamente a su curso de fundamentos, <a href="https://www.theodinproject.com/paths/foundations/courses/foundations" target="_blank" rel="noopener">Foundations</a>. Este es el punto de partida común que comparten las dos especializaciones de desarrollo web ofrecidas en este sitio: una basada en <strong>Ruby</strong> y otra en <strong>JavaScript</strong>.</p>
+<p>Su primera sección, &lsquo;&lsquo;Introduction&rsquo;&rsquo;, es ciertamente interesante, pues trata temas tan variados como el aprendizaje en sí, la gestión de la frustración o la manera de realizar preguntas adecuadamente para obtener ayuda útil. Es un aspecto que la mayoría de los cursos no aborda y los recursos que ofrece esta plataforma son muy interesantes.</p>
+<p>Completada dicha sección, la siguiente lleva por título &lsquo;&lsquo;Prerequisites&rsquo;&rsquo; y se centra en el funcionamiento básico de los ordenadores y de Internet. Además, es donde empezamos a configurar nuestro entorno de desarrollo para trabajar a lo largo de este curso. Como no podía ser de otra manera, sin ni tan siquiera haber generado un solo fichero, ya comienzan a aparecer los retos (que, por otra parte, bienvenidos sean tras las conclusiones que se extraen de las charlas que figuran en la sección &lsquo;&lsquo;Introduction&rsquo;&rsquo;):</p>
+<ul>
+<li><strong>The Odin Project</strong> no da soporte oficial para Windows. ¿Qué sistema operativo utiliza un servidor? Efectivamente, Windows. No obstante, la plataforma no nos deja de lado y ofrece alternativas muy bien detalladas para seguir los contenidos de la especialización. A la hora de escribir estas líneas, estoy probando la emulación de una distribución de Linux, <strong>Xubuntu</strong>, a través de <strong>Oracle VM VirtualBox</strong> (he tenido hasta que trastear la BIOS para permitir la emulación en mi ordenador).</li>
+<li>La propia plataforma nos aconseja no caer en &lsquo;&lsquo;rabbit holes&rsquo;&rsquo; que nos distraigan y centrarnos en seguir sus contenidos. La misma plataforma, casi en cada uno de sus apartados, nos enseña docenas de tentadores &lsquo;&lsquo;rabbit holes&rsquo;&rsquo; en los que perdernos.</li>
+</ul>
+<p>De hecho, esta serie de artículos para el blog son fruto de haber caído en uno de ellos, pues una vez instalado Xubuntu recomiendan aprender los principales comandos que se emplean en su terminal. Para ello enlazan a una lista de reproducción en YouTube de 24 vídeos del canal <a href="https://www.youtube.com/channel/UCxQKHvKbmSzGMvUrVtJYnUA" target="_blank" rel="noopener">LearnLinuxTV</a>.</p>
+<p>A continuación, comparto las notas tomadas durante el cuarto vídeo, que corresponde al primero del curso en el cual se empieza a utilizar la terminal.</p>
+<h2 id="2-navegando-por-el-sistema-de-ficheros">2. Navegando por el sistema de ficheros</h2>
+<p>Para empezar, el comando <code>ls</code> muestra el contenido del directorio actual de trabajo (<code>ls</code> es la abreviatura de &lsquo;&rsquo;list storage&rsquo;&rsquo;). Así, al iniciar una nueva terminal, accederíamos con él a los contenidos de la carpeta del usuario.</p>
+<p>Si tecleamos <code>ls /</code> accedemos a los contenidos almacenados en la raíz del sistema (<code>/</code>). Asimismo, con <code>ls /home</code> se muestran las carpetas habilitadas para los distintos usuarios del sistema. En mi caso, tras la instalación de Xubuntu siguiendo las instrucciones de la plataforma, únicamente aparece la carpeta <code>alexis</code>.</p>
+<div class="alert alert-note">
+  <div>
+    Por comodidad, para limpiar la terminal y dejar de mostrar la información acumulada hasta el momento, podemos emplear el comando <code>clear</code> o, en ocasiones, dependiendo de la distribución de Linux que tengamos en nuestro sistema, la combinación de teclas <code>Ctrl + L</code>.
+  </div>
+</div>
+<p>Por otra parte, podemos añadir atributos a un comando de la terminal. Por ejemplo, si tecleamos <code>ls -l /</code> obtendremos mucha más información que antes de cada una de las carpetas y de los ficheros ubicados en la raíz del sistema (el atributo <code>-l</code> indica &lsquo;&rsquo;long listing&rsquo;&rsquo;). Además, cada carpeta o fichero aparece en su propia línea. Al inicio de cada una de las mencionadas líneas aparece una extraña secuencia de caracteres que, en su mayor parte, recoge los permisos asociados a la correspondiente carpeta o archivo. De momento, si nos centramos únicamente en el primer carácter:</p>
+<ul>
+<li><code>d</code>: indica directorio o carpeta.</li>
+<li><code>-</code>: indica que es un archivo.</li>
+<li><code>l</code>: indica un enlace a otro archivo.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    Una alternativa a la combinación <code>ls -l</code> es el comando <code>ll</code>.
+  </div>
+</div>
+<p>En la raíz del sistema encontramos algunos directorios de vital importancia. Aunque de momento no entraremos en profundidad en los detalles de cada uno de ellos, para hacernos una idea resulta que:</p>
+<ul>
+<li><code>bin</code>: es el directorio que contiene los programas ejecutables del sistema.</li>
+<li><code>boot</code>: es el directorio que contiene los archivos necesarios para iniciar el sistema operativo.</li>
+<li><code>home</code>: es el directorio asociado a los usuarios del sistema.</li>
+<li><code>etc</code>: es el directorio que contiene los archivos de configuración del sistema.</li>
+<li><code>media</code>: es el directorio donde se montan dispositivos externos (usb, cd-rom&hellip;).</li>
+<li><code>var</code>: es el directorio que contiene &lsquo;&rsquo;logs&rsquo;&rsquo; del sistema.</li>
+</ul>
+<div class="alert alert-note">
+  <div>
+    La terminal de algunas distribuciones de Linux emplea un código de colores para diferenciar los distintos tipos de elementos almacenados. Así, el color azul suele indicar carpetas; el blanco, archivos; y el verde, archivos binarios.
+  </div>
+</div>
+<p>Para cambiar de directorio y navegar por el sistema de archivos utilizamos el comando <code>cd</code>, que es la abreviatura de &lsquo;&lsquo;change directory&rsquo;&rsquo;. Por ejemplo, <code>cd /</code> nos lleva a la raíz del sistema y combinando los comandos <code>cd</code> y <code>ls</code> es como habitualmente nos desplazaremos por el interior del sistema de archivos. En cualquier momento podemos acceder a la ruta del directorio actual de trabajo en el que nos encontramos sin más que teclear <code>pwd</code>, que es la abreviatura de &lsquo;&lsquo;print working directory&rsquo;&rsquo;.</p>
+<div class="alert alert-note">
+  <div>
+    La tilde o virgulilla, <code>~</code>, actúa como atajo hacia la carpeta del usuario. Así, con <code>cd ~</code> acudimos directamente a nuestra carpeta de usuario.
+  </div>
+</div>
+<h2 id="3-edición-básica-de-archivos">3. Edición básica de archivos</h2>
+<p>Para empezar, creamos un archivo mediante el comando <code>touch</code>, al que pasamos como argumento el nombre deseado para el mencionado archivo. Por ejemplo, para generar un fichero denominado <code>testfile.txt</code> tecleamos <code>touch testfile.txt</code>.</p>
+<p>Acto seguido, si escribimos <code>ls -l</code>, observamos que un nuevo archivo aparece en el listado, cuyo tamaño es <code>0</code>.</p>
+<p>Ahora, para acceder al contenido de un archivo, empleamos el comando <code>cat</code>. Por ejemplo, en el caso del fichero que acabamos de generar, teclearíamos <code>cat testfile.txt</code>, aunque, al estar vacío, la terminal no arroja información alguna cuando ejecutamos el anterior comando. Por otro lado, si tecleamos de nuevo <code>touch testfile.txt</code>, se actualizará la fecha de creación del fichero.</p>
+<p>Cambiando de tercio, podemos editar archivos empleando el comando <code>nano</code>, que nos da acceso a un editor de texto plano. Si lo iniciamos de esta manera, no estaremos modificando ningún archivo (basta observar que en la parte superior aparece <code>New Buffer</code>).</p>
+<p>En la parte inferior de la aplicación figura el menú con todas sus opciones. El símbolo <code>^</code>, que aparece en todas ellas, ha de ser interpretado como el uso de la tecla <code>Ctrl</code>. Así, el atajo <code>^X</code>, para salir del programa, ha de ser ejecutado mediante la combinación <code>Ctrl + X</code>. Asimismo, para guardar (o salvar) un archivo tras escribir cierto texto, el atajo es <code>^O</code>, que equivale a la combinación <code>Ctrl + O</code>.</p>
+<p>Si cerramos el editor de texto y ejecutamos <code>ls -l</code>, observaremos que aparece el nuevo archivo y este, a diferencia del anterior, posee cierto tamaño y podemos revisar sus contenidos mediante el comando <code>cat</code>.</p>
+<p>Al comando <code>nano</code> le podemos añadir un atributo con el nombre del fichero que queremos editar. Por ejemplo, <code>nano test3.txt</code>. Este archivo no existía en el directorio actual, de manera que cuando salvemos lo creará con los contenidos que hayamos escrito. Siguiendo esta lógica, podríamos editar el archivo <code>testfile.txt</code> que generamos al principio de la sección tecleando <code>nano testfile.txt</code>.</p>
+<div class="alert alert-note">
+  <div>
+    La terminal posee autocompletado a través de la tecla <code>Tab</code>. Así, escribiendo el principio del nombre de un archivo o directorio y pulsando dicha tecla, se autocompleta la línea.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    Con el comando <code>which</code> podemos saber si una instrucción está disponible para su uso en la terminal. Por ejemplo, <code>which nano</code> nos devuelve la ruta hacia el ejecutable, mientras que <code>which prueba</code> no muestra salida, es decir, no existe ningún comando o aplicación en mi sistema con el nombre <code>prueba</code>.
+  </div>
+</div>
+<h2 id="4-una-breve-mirada-a-vim">4. Una breve mirada a Vim</h2>
+<p>Un editor de texto plano muy completo es <strong>Vim</strong> y, por tanto, es recomendable aprender su uso. Quizá no a corto plazo, dada su elevada curva de aprendizaje; pero por sus muchos beneficios merece la pena invertir un tiempo a medio plazo para dominar esta aplicación si continuamos por la senda de la programación.</p>
+<p>En mi caso particular, al teclear en la terminal <code>which vim</code>, esta no arroja respuesta alguna. Es decir, la mencionada aplicación no está instalada en mi sistema. Para solventar esta situación, basta teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install vim-nox
+</span></span></code></pre></div><p>Vim, como ya hemos mencionado, es un editor de texto plano más avanzado que <code>nano</code>, por lo que su uso es más complejo. Para empezar, salir de la propia aplicación no es nada intuitivo y lo haremos tecleando <code>:q</code> en el modo &lsquo;&lsquo;command&rsquo;&rsquo;.</p>
+<p>Así pues, ya apreciamos que existen diversos modos o estados en Vim. Por ejemplo, pulsando la tecla <code>i</code> activamos el modo &lsquo;&lsquo;insert&rsquo;&rsquo; (mediante el cual podemos editar un archivo de la manera habitual) y con la tecla <code>Esc</code> retrocederíamos de nuevo al modo &lsquo;&lsquo;command&rsquo;&rsquo;. En este último modo, no podemos escribir como habitualmente estamos acostumbrados, sino que es el modo que empleamos en Vim para introducir instrucciones o comandos al programa.</p>
+<p>De esta forma, para salvar el archivo que hemos escrito a través del modo &lsquo;&lsquo;insert&rsquo;&rsquo;, volvemos al modo &lsquo;&lsquo;command&rsquo;&rsquo; y escribimos <code>:w</code> (si pulsamos intro a continuación, recibiremos un error por no asignar un nombre al archivo). Así, tecleamos <code>:w test4.txt</code>. Al igual que sucedía con <code>nano</code>, podemos lanzar Vim con el nombre de un archivo como atributo, de manera que abrirá dicho fichero al iniciarse.</p>
+<div class="alert alert-note">
+  <div>
+    El atajo <code>shift + I</code> es muy útil, pues activa el modo &lsquo;&lsquo;insert&rsquo;&rsquo; y coloca el cursor al final del archivo.
+  </div>
+</div>
+<p>Si usamos <code>vim test4.txt</code> y añadimos texto, bastará en el modo &lsquo;&lsquo;command&rsquo;&rsquo; teclear para <code>:w</code> para guardar el archivo (pues ya posee nombre asignado).</p>
+<div class="alert alert-note">
+  <div>
+    Para borrar una línea por completo, podemos emplear el atajo que consiste en pulsar <code>d</code> dos veces en el modo &lsquo;&lsquo;command&rsquo;&rsquo;.
+  </div>
+</div>
+<h2 id="5-moviendo-y-renombrando-archivos">5. Moviendo y renombrando archivos</h2>
+<p>Para empezar, de cara a copiar un archivo usamos el comando <code>cp</code>, que posee dos argumentos: el archivo a copiar y el nombre del nuevo archivo donde será copiado. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cp test2.txt newfile.txt
+</span></span></code></pre></div><p>Ahora, con el comando <code>cat</code> podemos comprobar que el contenido de ambos archivos es exactamente el mismo. No obstante, existe otro comando más apropiado para llevar a cabo esta tarea de comparación: <code>diff</code>, que nos indica en qué difieren dos archivos. Así,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">diff newfile.text test2.txt
+</span></span></code></pre></div><p>No arroja salida alguna, es decir, no hay ninguna diferencia entre ambos archivos. Sin embargo,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">diff newfile.text test3.txt
+</span></span></code></pre></div><p>Sí arroja resultados, pues son ficheros cuyos contenidos difieren.</p>
+<p>Por otra parte, de cara a borrar un archivo, el comando a usar es <code>rm</code>. Por ejemplo</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">rm newfile.txt
+</span></span></code></pre></div><p>Este comando también elimina directorios (con el atributo <code>-r</code> que activa la recursión), por lo que hemos de ser cautos cuando lo empleamos. Esta instrucción no mueve el archivo a una suerte de &lsquo;&lsquo;Papelera de reciclaje&rsquo;&rsquo; como en Windows, sino que lo elimina por completo del sistema. Si después lo queremos recuperar tendríamos que usar herramientas específicas de recuperación de archivos en memoria.</p>
+<p>A continuación, antes de aprender a mover archivos, creemos un nuevo directorio, con el comando <code>mkdir</code> para almacenarlos. Por ejemplo</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir linux-notes
+</span></span></code></pre></div><p>Ahora, para mover los archivos, el comando a emplear es <code>mv</code> cuyo primer argumento será el nombre del archivo a mover y el segundo su destino.</p>
+<p>Podemos emplear &lsquo;&lsquo;comodines&rsquo;&rsquo; en las instrucciones de la terminal para algunos comandos. Por ejemplo, <code>*.txt</code> se traduce en todos los archivos cuya extensión sea <code>.txt</code>. De esta manera, podemos mover en bloque todos los ficheros de prueba que hemos creado hasta el momento.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv *.txt linux-notes
+</span></span></code></pre></div><p>Recordemos que con el comando <code>cd</code> cambiamos el directorio y si tecleamos <code>cd ..</code> volvemos un paso atrás en la ruta (o a un nivel inferior). Así, siguiendo la misma lógica, si queremos mover un paso atrás en la ruta alguno de los archivos, basta escribir</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> linux-notes
+</span></span><span class="line"><span class="cl">mv testfile.txt ..
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><p>Además, hemos de tener en cuenta que si <code>..</code> indica un nivel inferior, <code>.</code> indica el nivel actual (el directorio de trabajo). Esto nos permite usar el comando <code>mv</code> para mover archivos hacia la actual ruta donde nos encontremos. Por ejemplo, para traer de vuelta el archivo <code>testfile.txt</code> al directorio <code>linux-notes</code>, bastaría teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> linux-notes
+</span></span><span class="line"><span class="cl">md ../testfile.txt .
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><p>Finalmente, de cara a renombrar archivos, empleamos el mismo comando que para moverlos. Por ejemplo</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv test3.txt abc.txt
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><p>Con este comando también hemos de ser cautos para no renombrar un archivo con el nombre de un fichero existente, pues podemos sobrescribirlo. En algunas distribuciones de Linux esto sucede directamente (Xubuntu es un ejemplo de esta forma de proceder) y en otras pregunta si deseamos realizar dicha acción.</p>
+<h2 id="6-configurando-la-terminal">6. Configurando la terminal</h2>
+<p>En esta sección nos adentraremos en la configuración de la terminal (Bash por defecto en la mayoría de las distribuciones de Linux). Para ello, hemos de ser conscientes de la existencia de archivos escondidos (&lsquo;&lsquo;hidden files&rsquo;&rsquo;) en nuestro sistema operativo, que no se muestran por defecto al listar los contenidos de un directorio mediante el comando <code>ls</code>.</p>
+<p>Para que dicho listado incluya los mencionados ficheros escondidos, tecleamos <code>ls -a</code>. Los archivos que aparecen con un punto delante de su nombre son los ficheros escondidos a los que hacíamos referencia antes y que no se listan por defecto al emplear el comando <code>ls</code> sin atributos.</p>
+<div class="alert alert-note">
+  <div>
+    Podemos encadenar atributos en un comando de una manera bastante cómoda. Por ejemplo, teclear <code>ls -la</code> tiene el efecto de añadir los atributos <code>-l</code> y <code>-a</code> al comando <code>ls</code>.
+  </div>
+</div>
+<p>Así pues, si ejecutamos <code>ls -la</code> en la carpeta <code>/home</code> y observamos el principio de largo listado que aparece, nos daremos cuenta de la existencia de un archivo denominado <code>.bashrc</code>. Utilizando <code>nano .bashrc</code> podemos acceder a su contenido. Las líneas que comienzan con el símbolo <code>#</code> son comentarios. Por otra parte, hemos de llevar cuidado de realizar modificaciones en este archivo y luego sobrescribir, pues las consecuencias pueden distar de ser deseables.</p>
+<div class="alert alert-note">
+  <div>
+    En caso de realizar alguna modificación con catastróficas consecuencias, podemos recuperar una especie de configuración por defecto en <code>/etc/skel/.bashrc</code>. La carpeta <code>skel</code> `contiene ciertos ficheros de configuración por defecto para asignarlos cuando creamos un nuevo usuario en el sistema. Por otro lado, si en Google buscamos &lsquo;&lsquo;Xubuntu .bashrc&rsquo;&rsquo;, el primer resultado contiene las líneas de la configuración por defecto de la terminal en Xubuntu.
+  </div>
+</div>
+<p>En esta lección únicamente nos vamos a limitar a crear un &lsquo;&lsquo;alias&rsquo;&rsquo;. Para ello, añadimos al archivo la línea:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">c</span><span class="o">=</span>clear
+</span></span></code></pre></div><p>Guardamos el fichero (con <code>Ctrl + O</code>, como indica en el menú inferior) y ahora, en la terminal, no es necesario escribir <code>clear</code> para limpiar la pantalla. Basta con teclear <code>c</code> y pulsar intro.</p>
+<div class="alert alert-note">
+  <div>
+    En mi caso, ha sido necesario reiniciar la terminal para que el cambio tuviera efecto.
+  </div>
+</div>
+<p>Así, al abrir la terminal, esta accede al archivo de su configuración y tiene en cuenta las instrucciones allí declaradas. Si en un futuro hemos de realizar modificaciones al comportamiento de esta herramienta, seguramente lo hagamos a través de este archivo de configuración.</p>
+<h2 id="7-el-archivo-bashrc-original">7. El archivo <code>.bashrc</code> original</h2>
+<p>Como temo que fruto de experimentar con este archivo surja alguna consecuencia desastrosa, dejo a continuación una copia del contenido original del mismo.</p>
+<details class="spoiler "  id="spoiler-12">
+  <summary>Clic para acceder al código fuente</summary>
+  <p><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># for examples</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If not running interactively, don&#39;t do anything</span>
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="nv">$-</span> in
+</span></span><span class="line"><span class="cl">    *i*<span class="o">)</span> <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">      *<span class="o">)</span> <span class="k">return</span><span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># don&#39;t put duplicate lines or lines starting with space in the history.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See bash(1) for more options</span>
+</span></span><span class="line"><span class="cl"><span class="nv">HISTCONTROL</span><span class="o">=</span>ignoreboth
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># append to the history file, don&#39;t overwrite it</span>
+</span></span><span class="line"><span class="cl"><span class="nb">shopt</span> -s histappend
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># for setting history length see HISTSIZE and HISTFILESIZE in bash(1)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">HISTSIZE</span><span class="o">=</span><span class="m">1000</span>
+</span></span><span class="line"><span class="cl"><span class="nv">HISTFILESIZE</span><span class="o">=</span><span class="m">2000</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># check the window size after each command and, if necessary,</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># update the values of LINES and COLUMNS.</span>
+</span></span><span class="line"><span class="cl"><span class="nb">shopt</span> -s checkwinsize
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If set, the pattern &#34;**&#34; used in a pathname expansion context will</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># match all files and zero or more directories and subdirectories.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#shopt -s globstar</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># make less more friendly for non-text input files, see lesspipe(1)</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span> -x /usr/bin/lesspipe <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span><span class="nv">SHELL</span><span class="o">=</span>/bin/sh lesspipe<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set variable identifying the chroot you work in (used in the prompt below)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -z <span class="s2">&#34;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="k">:-</span><span class="si">}</span><span class="s2">&#34;</span> <span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="o">[</span> -r /etc/debian_chroot <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">debian_chroot</span><span class="o">=</span><span class="k">$(</span>cat /etc/debian_chroot<span class="k">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># set a fancy prompt (non-color, unless we know we &#34;want&#34; color)</span>
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$TERM</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">    xterm-color<span class="p">|</span>*-256color<span class="o">)</span> <span class="nv">color_prompt</span><span class="o">=</span>yes<span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># uncomment for a colored prompt, if the terminal has the capability; turned</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># off by default to not distract the user: the focus in a terminal window</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># should be on the output of commands, not on the prompt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#force_color_prompt=yes</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -n <span class="s2">&#34;</span><span class="nv">$force_color_prompt</span><span class="s2">&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="o">[</span> -x /usr/bin/tput <span class="o">]</span> <span class="o">&amp;&amp;</span> tput setaf <span class="m">1</span> &gt;<span class="p">&amp;</span>/dev/null<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># We have color support; assume it&#39;s compliant with Ecma-48</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># (ISO/IEC-6429). (Lack of such support is extremely rare, and such</span>
+</span></span><span class="line"><span class="cl"> <span class="c1"># a case would tend to support setf rather than setaf.)</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">color_prompt</span><span class="o">=</span>yes
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl"> <span class="nv">color_prompt</span><span class="o">=</span>
+</span></span><span class="line"><span class="cl">    <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$color_prompt</span><span class="s2">&#34;</span> <span class="o">=</span> yes <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">PS1</span><span class="o">=</span><span class="s1">&#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> color_prompt force_color_prompt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># If this is an xterm set the title to user@host:dir</span>
+</span></span><span class="line"><span class="cl"><span class="k">case</span> <span class="s2">&#34;</span><span class="nv">$TERM</span><span class="s2">&#34;</span> in
+</span></span><span class="line"><span class="cl">xterm*<span class="p">|</span>rxvt*<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">PS1</span><span class="o">=</span><span class="s2">&#34;\[\e]0;</span><span class="si">${</span><span class="nv">debian_chroot</span><span class="p">:+(</span><span class="nv">$debian_chroot</span><span class="p">)</span><span class="si">}</span><span class="s2">\u@\h: \w\a\]</span><span class="nv">$PS1</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">*<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># enable color support of ls and also add handy aliases</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -x /usr/bin/dircolors <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">test</span> -r ~/.dircolors <span class="o">&amp;&amp;</span> <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>dircolors -b ~/.dircolors<span class="k">)</span><span class="s2">&#34;</span> <span class="o">||</span> <span class="nb">eval</span> <span class="s2">&#34;</span><span class="k">$(</span>dircolors -b<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s1">&#39;ls --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#alias dir=&#39;dir --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#alias vdir=&#39;vdir --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">alias</span> <span class="nv">grep</span><span class="o">=</span><span class="s1">&#39;grep --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">alias</span> <span class="nv">fgrep</span><span class="o">=</span><span class="s1">&#39;fgrep --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">alias</span> <span class="nv">egrep</span><span class="o">=</span><span class="s1">&#39;egrep --color=auto&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># colored GCC warnings and errors</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#export GCC_COLORS=&#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># some more ls aliases</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">ll</span><span class="o">=</span><span class="s1">&#39;ls -alF&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">la</span><span class="o">=</span><span class="s1">&#39;ls -A&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">l</span><span class="o">=</span><span class="s1">&#39;ls -CF&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Add an &#34;alert&#34; alias for long running commands.  Use like so:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#   sleep 10; alert</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">alert</span><span class="o">=</span><span class="s1">&#39;notify-send --urgency=low -i &#34;$([ $? = 0 ] &amp;&amp; echo terminal || echo error)&#34; &#34;$(history|tail -n1|sed -e &#39;</span><span class="se">\&#39;</span><span class="s1">&#39;s/^\s*[0-9]\+\s*//;s/[;&amp;|]\s*alert$//&#39;</span><span class="se">\&#39;</span><span class="s1">&#39;)&#34;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Alias definitions.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># You may want to put all your additions into a separate file like</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># ~/.bash_aliases, instead of adding them here directly.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># See /usr/share/doc/bash-doc/examples in the bash-doc package.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> -f ~/.bash_aliases <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    . ~/.bash_aliases
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># enable programmable completion features (you don&#39;t need to enable</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># this, if it&#39;s already enabled in /etc/bash.bashrc and /etc/profile</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># sources /etc/bash.bashrc).</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> ! <span class="nb">shopt</span> -oq posix<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> -f /usr/share/bash-completion/bash_completion <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    . /usr/share/bash-completion/bash_completion
+</span></span><span class="line"><span class="cl">  <span class="k">elif</span> <span class="o">[</span> -f /etc/bash_completion <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    . /etc/bash_completion
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div></p>
+</details>
+<h2 id="8-abordando-el-uso-de-alias">8. Abordando el uso de alias</h2>
+<p>Al final de la sección anterior, incluimos un &lsquo;&lsquo;alias&rsquo;&rsquo; en el archivo de configuración de la terminal que nos permite limpiar esta tecleando únicamente <code>c</code>.</p>
+<p>Así pues, un &lsquo;&lsquo;alias&rsquo;&rsquo; nos ofrece la posibilidad de crear nuevos comandos a partir de los ya existentes. En la mayoría de los casos se busca automatizar tareas cotidianas de una manera más corta o incluir ciertos atributos por defecto cuando tecleamos la versión sin atributos de un determinado comando.</p>
+<p>Para tener acceso a un listado de los &lsquo;&lsquo;alias&rsquo;&rsquo; disponibles en nuestra terminal, basta teclear en ella <code>alias</code>. En ella podemos apreciar que uno de los comandos que examinamos en lecciones anteriores, <code>ll</code>, no es más que un &lsquo;&lsquo;alias&rsquo;&rsquo; del comando <code>ls</code>, al que añade los atributos <code>-alF</code>. De hecho, el propio comando <code>ls</code> es un &lsquo;&lsquo;alias&rsquo;&rsquo; de sí mismo configurando cierta opción para colorear.</p>
+<p>En mi caso, el anterior listado es reducido, ya que apenas cuenta con diez líneas. Sin embargo, es posible acceder a la definición concreta de un &lsquo;&lsquo;alias&rsquo;&rsquo;, como el generado para la tecla <code>c</code>, escribiendo
+<code>alias c</code>. La terminal devuelve <code>alias c='clear'</code>. A medida que incorporemos más y más &lsquo;&lsquo;alias&rsquo;&rsquo;, puede resultar conveniente acceder a la definición concreta de uno de ellos para disponer de todos sus detalles.</p>
+<p>Si en algún momento precisamos eliminar un &lsquo;&lsquo;alias&rsquo;&rsquo;, simplemente hemos de utilizar el comando <code>unalias</code> declarando como argumento el atajo correspondiente. Por ejemplo, <code>unalias c</code> desactivaría la posibilidad de limpiar la pantalla de la terminar utilizando únicamente la tecla <code>c</code>. No obstante, como dicho &lsquo;&lsquo;alias&rsquo;&rsquo; está incluido en el archivo de configuración de la terminal, cuando iniciemos una nueva sesión de esta, volverá a estar disponible el &lsquo;&lsquo;alias&rsquo;&rsquo; asignado a la tecla <code>c</code>. Para eliminarlo por completo, deberíamos editar el mencionado archivo de configuración y suprimir la línea correspondiente a la definición de dicho &lsquo;&lsquo;alias&rsquo;&rsquo;.</p>
+<p>Cambiando de tercio, es posible que nos resulte útil conocer los cinco procesos que más uso están haciendo de la CPU. El comando asociado a ello es un tanto complejo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ps auxf <span class="p">|</span> sort -nr -k <span class="m">3</span> <span class="p">|</span> head -5
+</span></span></code></pre></div><p>De esta forma, si este es un dato que queremos consultar con cierta frecuencia, tiene sentido definir un &lsquo;&lsquo;alias&rsquo;&rsquo; para el mismo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">cp5</span><span class="o">=</span><span class="s1">&#39;ps auxf | sort -nr -k 3 | head -5&#39;</span>
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    En realidad, el anterior &lsquo;&lsquo;alias&rsquo;&rsquo; no es un comando, sino una composición de comandos. Como podemos apreciar, usa el símbolo <code>|</code> para redirigir los resultados de un comando hacia el argumento de entrada para otro. En el ejemplo anterior, se ejecuta el comando <code>ps</code> con ciertos atributos, la salida del cual se envía al comando <code>sort</code> y esta al comando <code>head</code> para producir el resultado final que se muestra en la terminal.
+  </div>
+</div>
+<p>Así, para conocer el mismo dato, pero asociado al uso de la memoria, podemos definir un &lsquo;&lsquo;alias&rsquo;&rsquo; que es ciertamente similar al anterior:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">mem5</span> <span class="o">=</span> <span class="s1">&#39;ps auxf | sort -nr -k 4 | head -5&#39;</span>
+</span></span></code></pre></div><p>Finalmente, algunos &lsquo;&lsquo;alias&rsquo;&rsquo; recomendados son</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">h</span><span class="o">=</span><span class="s1">&#39;history&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">alias</span> <span class="nv">install</span><span class="o">=</span><span class="s1">&#39;sudo apt install&#39;</span>
+</span></span></code></pre></div><p>Aunque, como hemos visto arriba, si nos encontramos en una situación donde habitualmente escribimos largos comandos o encadenamos siempre la misma secuencia de comandos, es recomendable definir un &lsquo;&lsquo;alias&rsquo;&rsquo; que nos ahorre tiempo.</p>
+<h2 id="9-introducción-a-los-permisos-en-linux">9. Introducción a los permisos en Linux</h2>
+<p>Para empezar, la manera en que Linux gestiona los permisos es un tanto diferente a la que lleva a cabo Windows. Por ejemplo, al teclear <code>ls -l</code> en la terminal, dentro de la carpeta de usuario (<code>cd ~</code> para acceder a ella si estamos ubicados en un directorio de trabajo distinto), para la carpeta <code>Desktop</code> la línea comienza con la secuencia:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">drwxr-xr-x
+</span></span></code></pre></div><p>El primer carácter, <code>d</code>, recordemos, indica que es un directorio. (<code>-</code> para archivos). El resto de los caracteres de la secuencia nos indica lo que podemos hacer (o no) con el directorio o archivo en cuestión. Para interpretar dicha secuencia de caracteres, hemos de dividirla en cuatro secciones:</p>
+<ul>
+<li>Sección 1: el primer carácter, que sabemos indica el tipo de elemento del que se trata (archivo, directorio o enlace).</li>
+<li>Sección 2: los siguientes tres caracteres, que hacen referencia a los permisos del usuario al que pertenece el archivo o directorio. Dicho usuario aparece en la tercera columna del listado que genera el comando <code>ls -l</code>.</li>
+<li>Sección 3: los siguientes tres caracteres, que hacen referencia a los permisos del grupo al cual pertenece el archivo o directorio. Dicho grupo aparece en la cuarta columna del listado que genera el comando <code>ls -l</code>.</li>
+<li>Sección 4: los siguientes tres caracteres, que hacen referencia a los permisos del resto de usuarios que ni son propietarios ni pertenecen al grupo en cuestión (se denomina &lsquo;&lsquo;world&rsquo;&rsquo; en ocasiones a los usuarios a los que afecta esta sección).</li>
+</ul>
+<p>En cada una de las posiciones de las secciones 2, 3 y 4 encontramos una letra de la secuencia <code>rwx</code> o bien un guion, <code>-</code>, que indica que el correspondiente permiso no está disponible. El orden siempre es <code>rwx</code> en dichas secciones, por lo que una subsecuencia como <code>r-x</code> indica la ausencia del permiso <code>w</code> para ese elemento en concreto en la sección asociada.</p>
+<p>Ahora bien, ¿qué significa cada una de las letras?</p>
+<ul>
+<li><code>r</code> es para &lsquo;&lsquo;read&rsquo;&rsquo;, esto es, es la letra asociada al permiso de lectura.</li>
+<li><code>w</code> es para &lsquo;&lsquo;write&rsquo;&rsquo;, esto es, es la letra asociada al permiso de escritura o edición (incluso nos permitiría eliminar el elemento en concreto).</li>
+<li><code>x</code> es para &lsquo;&rsquo;execute&rsquo;&rsquo;, esto es, es la letra asociada al permiso de ejecución. Está reservada para aquellos elementos en los que podemos insertar comandos y ejecutarlos como si fueran programas.</li>
+</ul>
+<p>Para editar permisos en un elemento, empleamos el comando <code>chmod</code>. Por ejemplo, si deseamos añadir el permiso de ejecución a un archivo denominado <code>test.txt</code>, escribiríamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod +x test.txt
+</span></span></code></pre></div><p>Al volver a ejecutar <code>ls -l</code> observamos que el permiso <code>x</code> está disponible para el usuario, para el grupo y para el resto. Además, la terminal cambia su color a verde, para indicar que ahora es un archivo ejecutable.</p>
+<p>Para devolver los permisos a su estado inicial, basta teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod -x test.txt
+</span></span></code></pre></div><p>Además, como cabría esperar, podemos configurar el permiso <code>x</code> de manera que afecte solo a una sección. Por ejemplo, para asignar únicamente al propietario del archivo el permiso <code>x</code> hemos de escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod u+x test.txt
+</span></span></code></pre></div><p>Para habilitar todos los permisos en un elemento a cualquier usuario, hemos de teclear <code>chmod a+rwx</code>. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod a+rwx test.txt
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    No es una práctica recomendable para directorios o archivos que contengan información sensible.
+  </div>
+</div>
+<p>Por otro lado, la letra correspondiente para el grupo es <code>g</code>, de manera que si deseo retirar todos los permisos al grupo tendría que teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod g-rwx test.txt
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    Esta configuración tiene poco sentido, pues todo el mundo tiene los permisos <code>rwx</code>.
+  </div>
+</div>
+<p>Finalmente, para hacer referencia al resto de usuarios que ni son propietarios, ni pertenecen al grupo, la letra es <code>o</code>. Así, para retirarlos los permisos <code>rwx</code> teclearíamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod o-rwx test.txt
+</span></span></code></pre></div><p>Acto seguido, devolvamos los permisos a su estado original:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod u-x test.txt
+</span></span><span class="line"><span class="cl">chmod g+rw test.txt
+</span></span><span class="line"><span class="cl">chmod o+r test.txt
+</span></span></code></pre></div><p>Cambiando de tercio, los permisos se gestionan de manera diferente si se trata de archivos o de directorios. En el caso de los directorios:</p>
+<ul>
+<li><code>r</code> nos permite visualizar su contenido.</li>
+<li><code>w</code> nos permite editar o modificar el directorio.</li>
+<li><code>x</code> nos permite acceder a su interior.</li>
+</ul>
+<h2 id="10-examinando-el-uso-de-recursos-del-sistema">10. Examinando el uso de recursos del sistema</h2>
+<p>En esta sección abordaremos la gestión de recursos del sistema como, por ejemplo, uso de memoria, uso de espacio en disco, etc. El primer comando que analizaremos es <code>free</code>. Este nos ofrece información relevante sobre el uso de memoria del sistema. No obstante, por defecto, la ofrece en &lsquo;&lsquo;bytes&rsquo;&rsquo;, comportamiento que podemos modificar haciendo uso del atributo <code>-m</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">free -m
+</span></span></code></pre></div><p>En mi caso, al estar la distribución de Xubuntu virtualizada, los datos corresponden a los declarados en la configuración de la máquina virtual y no a los correspondientes al ordenador en sí.</p>
+<p>Por otro lado, ¿cuál es la diferencia entre las columnas &lsquo;&lsquo;free&rsquo;&rsquo; y &lsquo;&lsquo;available&rsquo;&rsquo;? El dato que aparece en la columna &lsquo;&lsquo;free&rsquo;&rsquo; está verdaderamente libre de uso, mientras que &lsquo;&lsquo;available&rsquo;&rsquo; tiene en cuenta que algunas aplicaciones reservan parte de la memoria para su uso y puede que actualmente no estén haciendo uso de dicha reserva. Por ello este dato es más elevado, aunque, según las necesidades de las aplicaciones, es bastante variable.</p>
+<p>A continuación, para analizar el espacio en disco usado, empleamos el comando <code>df</code> (abreviatura de &lsquo;&lsquo;disk free&rsquo;&rsquo;). Para una lectura más cómoda de los números que aparecen en su salida, conviene agregar el atributo <code>-h</code>, que transforma las cantidades a &lsquo;&lsquo;megabytes&rsquo;&rsquo; o &lsquo;&lsquo;gigabytes&rsquo;&rsquo; según convenga.</p>
+<p>A modo anecdótico, el espacio en disco puede agotarse:</p>
+<ul>
+<li>Cuando almacenamos demasiados elementos cuyo tamaño es considerable (películas, videojuegos&hellip;).</li>
+<li>Cuando almacenamos demasiados elementos, aunque su tamaño sea reducido. Cada distribución tiene un límite a este respecto y viene dado por el concepto de <strong>Inodes</strong>. Para acceder al listado de &lsquo;&lsquo;Inodes&rsquo;&rsquo; disponibles, basta teclear <code>df -i</code>.</li>
+</ul>
+<p>Acto seguido, otro comando de gran utilidad es <code>htop</code>, que, en mi caso, no viene instalado por defecto en Xubuntu. Así pues, para solventar esta situación:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install htop
+</span></span><span class="line"><span class="cl">htop
+</span></span></code></pre></div><p>A primera vista, nos recuerda al administrador de tareas de Windows y nos ofrece una cantidad enorme de información acerca de los recursos del sistema. Aún siendo una herramienta que se ofrece en la línea de comandos, podemos emplear el ratón para movernos por los diferentes menús disponibles.</p>
+<p>Desde esta herramienta podemos cerrar procesos haciendo uso de la combinación <code>F9 + 15 SIGTERM</code> o, de haber quedado la aplicación totalmente congelada, con <code>F9 + 9 SIGKILL</code>. Para cerrar, hacemos clic sobre la opción correspondiente o simplemente pulsamos <code>F10</code>.</p>
+<p>Finalmente, otro comando útil es <code>uptime</code>, que indica cuánto tiempo lleva en marcha la sesión actual y la carga media. Estos tres últimos valores no han de ser interpretados como porcentajes, pues los ordenadores de hoy en día poseen varios núcleos (un <code>0.12</code> no equivale pues a un 12% de carga, a no ser que nuestra máquina tenga un único núcleo). Además,</p>
+<ul>
+<li>El primer valor hace referencia a la carga media durante el último minuto.</li>
+<li>El segundo valor es con respecto a los últimos cinco minutos.</li>
+<li>El tercer valor es con respecto a los últimos quince minutos.</li>
+</ul>
+<p>Los valores hemos de interpretarlos como tareas a la espera de ser ejecutadas por el sistema. Por ejemplo, <code>0,12</code> indica que, de media, menos de una tarea está en espera de ser ejecutada; es decir, el sistema está trabajando de manera bastante desahogada.</p>
+<p>En otras palabras, y utilizando como analogía un supermercado, el número de núcleos del ordenador haría las veces de cajeros, mientras que las tareas serían los clientes a la espera de pagar sus compras. Si tenemos 2 núcleos y hay un cliente, el sistema funcionará bien e incluso habrá un cajero que se estará aburriendo en ese momento determinado. Con dos clientes todavía no encontramos problema, pues cada cajero está atendiendo su tarea asociada. El problema es cuando el número de clientes asciende, por ejemplo, a 20, pues los dos cajeros no dan abasto y las colas serán largas. En este último caso, algunas de las tareas del sistema tardarán en poder llevarse a cabo.</p>
+<h2 id="11-gestionando-los-paquetes">11. Gestionando los paquetes</h2>
+<p>En esta sección abordaremos la instalación, eliminación y actualización de paquetes en nuestro sistema.</p>
+<div class="alert alert-note">
+  <div>
+    Los métodos que se describen a continuación están diseñados para distribuciones basadas en <strong>Debian</strong> o <strong>Ubuntu</strong>.
+  </div>
+</div>
+<p>El primer paso a llevar a cabo es la actualización de nuestro índice local de paquetes disponibles en el repositorio, es decir, en el servidor online desde el cual los descargaremos. Para ello, tecleamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span></code></pre></div><p>En mi caso concreto, la mayoría de servidores con los que conecta son de Ubuntu, pero también observamos que aparece alguno de Google o de Microsoft.</p>
+<p>A continuación, una vez actualizado el índice de paquetes, podemos buscar paquetes concretos en él desde la propia línea de comandos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt search firefox
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    En esta ocasión no necesitamos anteceder el comando con <code>sudo</code>, pues no vamos a realizar cambios en el sistema. Cuando queramos instalar un paquete, por ejemplo, sí será necesario incluir ese comando en la sentencia.
+  </div>
+</div>
+<p>El listado es bastante extenso en este ejemplo concreto, pues muestra todos los paquetes relacionados con Firefox (desde idiomas a extensiones, pasando por el propio navegador en sí).</p>
+<p>Para instalar un paquete concreto, la instrucción es <code>sudo apt install</code> seguida el nombre del paquete a instalar. Por ejemplo, para instalar el editor de texto plano Vim escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install vim-nox
+</span></span></code></pre></div><p>Como ejemplo más práctico, instalemos a continuación <a href="https://ubuntu.com/server/docs/web-servers-apache" target="_blank" rel="noopener">Apache</a>, que es un servidor web que utilizamos a diario:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt search apache
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install apache2
+</span></span></code></pre></div><p>A la hora de instalar este paquete, el comando <code>apt</code> se encarga de gestionar sus dependencias, de manera que nos indica qué paquetes adicionales son necesarios para realizar la instalación del que nos interesa. Como esta operación implica llevar a cabo más cambios de los que indicamos desde la línea de comandos, la instalación se detiene y espera a que el usuario confirme si realmente desea instalar tanto el paquete indicado como sus correspondientes dependencias.</p>
+<div class="alert alert-note">
+  <div>
+    Además de las dependencias, <code>apt</code> recomienda la instalación de paquetes adicionales por su utilidad, aunque no fuerza a su instalación y deberíamos llevar a cabo el proceso después de manera manual.
+  </div>
+</div>
+<p>Una vez instalado Apache, si escribimos en la barra de direcciones de Chrome (o cualquier navegador), <code>localhost</code> nos aparecerá la página por defecto de Apache.</p>
+<p>Por otro lado, para eliminar un paquete del sistema, la instrucción es <code>sudo apt remove</code> seguida el nombre del paquete a eliminar. Por ejemplo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt remove apache2
+</span></span></code></pre></div><p>Por defecto, no elimina las dependencias asociadas a Apache. Para solventar la situación tecleamos <code>sudo apt autoremove</code>.</p>
+<p>Acto seguido, actualicemos los paquetes que tenemos instalados en nuestro sistema. En mi caso, desde que iniciamos la lección, la terminal me ha indicado cada vez que poseo 21 paquetes que no están actualizados. Para ello tecleamos</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt upgrade
+</span></span><span class="line"><span class="cl">sudo apt dist-upgrade
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    La última instrucción conviene ejecutarla cuando hayan quedado paquetes a eliminar o haya algunos que deban instalarse por primera vez, pues <code>sudo apt upgrade</code> no realiza estas labores por defecto.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    Por cuestiones de seguridad, conviene actualizar los paquetes con frecuencia.
+  </div>
+</div>
+<p>Finalmente, en el caso que se hayan realizado actualizaciones del &lsquo;&lsquo;kernel&rsquo;&rsquo;, conviene reiniciar el sistema, para lo cual escribimos <code>sudo reboot</code>.</p>
+<h2 id="12-gestionando-procesos-en-linux">12. Gestionando procesos en Linux</h2>
+<p>En esta sección abordaremos cómo gestionar procesos en Linux. Estudiaremos el comando <code>systemctl</code>, que permite iniciar, detener y reiniciar servicios que se ejecutan en segundo plano (que habitualmente reciben el nombre de &lsquo;&lsquo;units&rsquo;&rsquo;).</p>
+<p>Comencemos instalando de nuevo Apache, que nos servirá de base para los ejemplos de esta lección:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install apache2
+</span></span></code></pre></div><p>Recordemos que si ahora abrimos el navegador y escribimos en la barra de direcciones <code>localhost</code>, accederemos a la página por defecto de Apache. Esto es posible debido a que se ejecuta en segundo plano, como podemos comprobar si tecleamos en la terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl status apache2
+</span></span></code></pre></div><p>Aparece <code>enabled</code> en la fila correspondiente a <code>Loaded:</code>, esto es, cuando iniciemos el sistema, Apache automáticamente se iniciará. Además, es el comportamiento que viene predefinido al instalar este paquete, pues así está declarado en <code>vendor preset</code>, con un valor asimismo de <code>enabled</code>.</p>
+<div class="alert alert-note">
+  <div>
+    Estas características son las responsables de que una vez hayamos instalado el paquete, hayamos podido acceder a la página por defecto de Apache en el navegador sin tener que iniciar proceso alguno para ello.
+  </div>
+</div>
+<p>En la línea encabezada por <code>Active:</code> observamos que está activo el proceso y en funcionamiento, indicándonos desde cuándo.</p>
+<p>Por otro lado, en la parte final deberíamos haber tenido acceso a cierta información (&lsquo;&rsquo;logs&rsquo;&rsquo;), pero en mi distribución no aparece por defecto. Para visualizar los &lsquo;&rsquo;logs&rsquo;&rsquo; hemos de anteceder el anterior comando con <code>sudo</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl status apache2
+</span></span></code></pre></div><p>Podemos desactivar Apache sin más que teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl disable apache2
+</span></span></code></pre></div><p>Sin embargo, si ahora ejecutamos <code>systemctl status apache2</code>, observamos que el proceso sigue en funcionamiento (<code>active (running)</code>), pero en la línea encabezada con <code>Loaded:</code> ahora aparece <code>disabled</code>, lo cual indica que la próxima vez que iniciemos el sistema, Apache no se iniciará de manera automática.</p>
+<p>Para detener el proceso, hemos de teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl stop apache2
+</span></span><span class="line"><span class="cl">systemctl status apache2
+</span></span></code></pre></div><p>Ahora podemos observar como en la línea encabezada por <code>Active:</code> figura <code>inactive (dead)</code>. De hecho, si refrescamos la página del navegador aparece un error en la misma.</p>
+<p>A continuación, restauremos el comportamiento por defecto de Apache. Para empezar, asegurémosnos que arranca automáticamente la próxima vez que iniciemos el sistema. Para ello:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> apache2
+</span></span><span class="line"><span class="cl">systemctl status apache2
+</span></span></code></pre></div><p>Así, comprobamos que vuelve a aparecer <code>enabled</code> en la línea encabezada por <code>Loaded:</code>. Ahora, iniciamos el proceso sin más que teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl start apache2
+</span></span><span class="line"><span class="cl">systemctl status apache2
+</span></span></code></pre></div><p>De manera que todo vuelve a funcionar como al principio de la lección.</p>
+<p>Finalmente, para reiniciar un proceso, hemos de escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart apache2
+</span></span><span class="line"><span class="cl">systemctl status apache2
+</span></span></code></pre></div><p>De forma que comprobamos que se ha reiniciado el proceso observando desde cuándo está activo.</p>
+<h2 id="13-revisando-logs">13. Revisando &lsquo;&rsquo;logs&rsquo;&rsquo;</h2>
+<p>En esta sección abordaremos la gestión de &lsquo;&rsquo;logs&rsquo;&rsquo;, a los que recurriremos habitualmente para examinar la información que recopilen nuestras aplicaciones (errores, acciones&hellip;).</p>
+<div class="alert alert-note">
+  <div>
+    A la hora de trabajar con &lsquo;&rsquo;logs&rsquo;&rsquo; es posible que necesitemos privilegios de administrador (<strong>root</strong>) para revisar algunos de ellos, por lo que quizá nos veamos forzados a emplear el comando <code>sudo</code>.
+  </div>
+</div>
+<p>Empecemos revisando <code>syslog</code>, que contiene una enorme cantidad de información que el sistema va almacenando en dicho archivo. Para ello, emplearemos el comando <code>cat</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cat /var/log/syslog
+</span></span></code></pre></div><p>¿Qué más &lsquo;&rsquo;logs&rsquo;&rsquo; tenemos a nuestra disposición?</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /var/log/
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    A modo de curiosidad, el sistema gestiona &lsquo;&rsquo;logs&rsquo;&rsquo; como <code>syslog</code> de manera inteligente, rotándolos y comprimiéndolos para que ocupen el menor espacio posible.
+  </div>
+</div>
+<p>En el interior del directorio de &lsquo;&rsquo;logs&rsquo;&rsquo; observamos que existen asimismo carpetas. Por ejemplo, hay una asociada al paquete Apache que instalamos en lecciones anteriores</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo su
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> apache2/
+</span></span><span class="line"><span class="cl">ls -l
+</span></span><span class="line"><span class="cl">cat error.log
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    Mi usuario no tiene permiso para acceder a la carpeta de &lsquo;&rsquo;logs&rsquo;&rsquo; de Apache. Buscando en Google <a href="https://stackoverflow.com/questions/8221820/cd-into-directory-without-having-permission" target="_blank" rel="noopener">este post</a> de <strong>stackoverflow</strong> ha resultado de ayuda. Activamos un modo de &lsquo;&lsquo;súper usuario&rsquo;&rsquo; con <code>sudo su</code>, ejecutamos los comandos deseados y salimos de dicho modo con <code>exit</code>.
+  </div>
+</div>
+<p>En el &lsquo;&rsquo;log&rsquo;&rsquo; <code>dmesg</code> encontramos información principalmente referente al &lsquo;&lsquo;hardware&rsquo;&rsquo; del sistema:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cat dmesg
+</span></span></code></pre></div><p>A modo de curiosidad, Linux posee un comando específico para acceder a este tipo de información sin necesidad de revisar el correspondiente &lsquo;&rsquo;log&rsquo;&rsquo;. Por ejemplo, podemos volver a nuestra carpeta de usuario y teclear <code>sudo dmesg</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~
+</span></span><span class="line"><span class="cl">sudo dmesg
+</span></span></code></pre></div><p>Así, tenemos acceso a una cantidad de información apabullante de bajo nivel sobre el sistema.</p>
+<p>Por otra parte, como estamos trabajando con archivos de extensión considerable, quizá sea conveniente utilizar de manera adicional los comandos <code>head</code> o <code>tail</code> para centrar el foco de atención, respectivamente, en el principio o el final del archivo (10 líneas por defecto):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo head /var/log/syslog
+</span></span><span class="line"><span class="cl">sudo tail /var/log/syslog
+</span></span></code></pre></div><p>Con el atributo <code>-n</code> declaramos el número de líneas que deseamos consultar:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo head -n <span class="m">15</span> /var/log/syslog
+</span></span><span class="line"><span class="cl">sudo tail -n <span class="m">5</span> /var/log/syslog
+</span></span></code></pre></div><p>Un atributo muy útil para <code>tail</code> es <code>-f</code> (&lsquo;&lsquo;follow&rsquo;&rsquo;), que deja la terminal en suspenso y nos permite ver cambios en tiempo real en el correspondiente &lsquo;&rsquo;log&rsquo;&rsquo;:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo tail -n <span class="m">5</span> -f /var/log/syslog
+</span></span></code></pre></div><p>Así, podemos controlar cualquier cambio en el sistema (por ejemplo, el reinicio de un proceso) que añada información a <code>syslog</code>. Para terminar el seguimiento del archivo, usamos la combinación de teclas <code>Ctrl + c</code>.</p>
+<div class="alert alert-note">
+  <div>
+    Una aplicación práctica la encontramos a la hora de reproducir errores que los usuarios reportan en tiempo real para cierto servidor.
+  </div>
+</div>
+<p>Finalmente, otro comando de utilidad para revisar &lsquo;&rsquo;logs&rsquo;&rsquo; es <code>journalctl</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo journalctl -u apache2
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    Este comando también permite realizar seguimiento con el atributo <code>-f</code>.
+  </div>
+</div>
+<p>Podemos conseguir resultados similares concatenando <code>cat</code> y <code>grep</code> (este último comando nos permite realizar búsqueda de texto sobre un archivo o salida de otro comando):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cat /var/log/syslog <span class="p">|</span> grep apache2
+</span></span></code></pre></div><h2 id="14-gestionando-usuarios">14. Gestionando usuarios</h2>
+<p>En esta sección abordaremos la gestión de usuarios, en concreto la creación y eliminación de usuarios, así como la creación y eliminación de grupos. Antes de empezar, es importante conocer la existencia del siguiente archivo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/passwd
+</span></span></code></pre></div><p>En él encontramos un listado de todos los usuarios existentes en nuestro sistema. En la mayoría de los casos, la línea finaliza con <code>/nologin</code>, es decir, son usuarios necesarios para llevar a cabo ciertas tareas de determinadas aplicaciones y no para acceder al sistema en sí.</p>
+<p>En la línea correspondiente a mi usuario, <code>alexis</code>,</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">alexis❌1000:1000:alexis,,,:/home/alexis:/bin/bash
+</span></span></code></pre></div><p>Los números <code>1000</code> que aparecen son, respectivamente, las referencias para el usuario (&lsquo;&lsquo;uid&rsquo;&rsquo;) y el grupo al que pertenece (también denominado <code>alexis</code> en este caso particular). A continuación, figura nuestro directorio de usuario (<code>/home/alexis</code>) y nuestra terminal por defecto (<code>/bin/bash</code>). Tras mi nombre de usuario aparece una <code>x</code>, que es la posición que ocuparía nuestra contraseña (oculta ahora mismo bajo ese carácter <code>x</code>). La contraseña, de hecho, se almacena en otro archivo diferente, ya que dista de ser idóneo que las contraseñas de los usuarios estén en un archivo de texto de libre acceso.</p>
+<p>En general, si el &lsquo;&lsquo;uid&rsquo;&rsquo; es mayor o igual que <code>1000</code> se tratará de un usuario real, mientras que aquellos que posean referencias inferiores seguramente sean usuarios de sistema (y no aparecerán por defecto en las ventanas de &lsquo;&rsquo;login&rsquo;&rsquo; de usuario).</p>
+<p>A continuación, si tecleamos <code>sudo cat /etc/shadow</code>, el archivo muestra información sensible, pero no de forma abierta. En lugar de aparecer nuestra contraseña, aparece su <em>hash</em> (para los usuarios de sistema sí que aparece directamente su contraseña).</p>
+<div class="alert alert-note">
+  <div>
+    Un atajo útil de teclado es <code>!!</code> que ejecuta el anterior comando escrito en la terminal. Cuando escribimos una instrucción y no se lleva a cabo por falta de permisos, simplemente hemos de teclear <code>sudo !!</code> para intentar ejecutarla con permisos de &lsquo;&lsquo;super user&rsquo;&rsquo;.
+  </div>
+</div>
+<p>Otro archivo importante para conocer es <code>cat /etc/group</code>, que nos muestra un listado de los grupos definidos en nuestro sistema, con sus respectivas referencias (así como sus contraseñas ocultas por el carácter <code>x</code>).</p>
+<p>Si estamos interesados en conocer a qué grupos pertenecemos, no es necesario revisar el anterior fichero, ya que basta con teclear <code>groups</code>.</p>
+<p>¿Cómo creamos un usuario? Mediante <code>adduser</code> seguido del nombre del nuevo usuario. Por ejemplo, <code>adduser batman</code>. Sin embargo, encontramos un problema al ejecutar el anterior comando, ya que la terminal nos indica que solo el usuario <code>root</code> puede añadir un usuario o un grupo al sistema. Como en anteriores ocasiones, solventamos la situación escribiendo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo adduser batman
+</span></span></code></pre></div><p>Esta acción añade el usuario <code>batman</code>, así como el grupo <code>batman</code>, además de generar un directorio de usuario para él y proporcionarle ciertos archivos de configuración por defecto del sistema desde <code>/etc/skel</code>. Después, nos pide una contraseña para dicho usuario. A continuación, podemos indicar (o dejar en blanco) algunos datos del usuario, como su nombre completo, número de habitación, número de teléfono&hellip;</p>
+<p>Si ahora escribimos <code>ls -l /home/</code>, aparece un nuevo directorio asociado al usuario <code>batman</code>.</p>
+<p>Para cambiar a este usuario, hemos de escribir <code>su - batman</code> e introducir su correspondiente contraseña (la que hemos definido al crear el usuario). Si ahora tecleamos <code>logout</code> (o usamos la combinación de teclas <code>Ctrl + d</code>), volvemos a nuestro usuario principal. Por otro lado, si escribimos <code>sudo su - batman</code> cambiamos de usuario sin necesidad de introducir la contraseña (al trabajar con <code>sudo</code> es como si adoptáramos el papel del todopoderoso usuario <code>root</code>).</p>
+<div class="alert alert-note">
+  <div>
+    Con el comando <code>passwd</code> podemos cambiar la contraseña de un usuario.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    Para cambiar de usuario a <code>root</code>, hemos de teclear <code>sudo su -</code>.
+  </div>
+</div>
+<p>Ahora, para eliminar un usuario el comando es <code>userdel -r</code> seguido del nombre del usuario a suprimir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo userdel -r batman
+</span></span></code></pre></div><p>El atributo <code>-r</code> se emplea para eliminar asimismo el directorio del usuario, por lo que hemos de actuar con cautela cuando llevamos a cabo este proceso.</p>
+<p>Acto seguido, para añadir un grupo, el comando es <code>groupadd</code> seguido del nombre del grupo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo groupadd heroes
+</span></span><span class="line"><span class="cl">cat /etc/group
+</span></span></code></pre></div><p>Para introducir nuestro usuario en este nuevo grupo, el comando a emplear es:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo usermod -aG heroes alexis
+</span></span><span class="line"><span class="cl">groups
+</span></span></code></pre></div><p>No obstante, aunque hemos ejecutado el comando, no aparece el grupo <code>heroes</code> asociado a nuestro usuario. Para ello, hemos de hacer &lsquo;&rsquo;logout&rsquo;&rsquo; y &lsquo;&rsquo;login&rsquo;&rsquo; en el sistema. Sin embargo, en este momento, basta teclear <code>groups alexis</code> para comprobar que, efectivamente, mi usuario pertenece al grupo <code>heroes</code>.</p>
+<p>Eliminar un usuario de un grupo es también sencillo, ya que basta teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo gpasswd -d alexis heroes
+</span></span><span class="line"><span class="cl">groups alexis
+</span></span></code></pre></div><p>Finalmente, para eliminar un grupo, escribimos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo groupdel heroes
+</span></span></code></pre></div><p>Y podemos comprobar que, efectivamente, no pertenece al listado de grupos tecleando, por ejemplo, <code>tail /etc/group</code> y observando que no aparece al final ninguna línea asociada a <code>heroes</code>.</p>
+<h2 id="15-examinando-el-historial-de-la-terminal">15. Examinando el historial de la terminal</h2>
+<p>En esta sección abordaremos cómo aprovechar de nuevo acciones llevadas a cabo en la terminal.</p>
+<p>En primer lugar, con las teclas de los cursores (arriba y abajo en este caso particular), podemos desplazarnos por el historial de comandos ejecutados. Ello nos permite ejecutarlos de nuevo o editarlos para lanzarlos de una forma ligeramente diferente a la terminal.</p>
+<p>En segundo lugar, a través del comando <code>history</code>, tenemos acceso a la totalidad de comandos ejecutados en la terminal. Cada uno de ellos posee un número de referencia al principio de la línea, de manera que podemos ejecutarlos haciendo uso de dicho número, siempre y cuando antecedamos la referencia con el símbolo de exclamación <code>!</code> (por ejemplo <code>!283</code>)</p>
+<p>Ahora bien, si queremos que un comando no figure en el historial, basta pulsar la tecla de espacio antes de empezar a escribir el comando en cuestión:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> sudo apt upgrade
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    No obstante, este comportamiento depende de la distribución de Linux empleada. En Xubuntu, efectivamente, podemos emplear este recurso para evitar que ciertos comandos aparezcan listados en el historial.
+  </div>
+</div>
+<p>¿Qué puede llevarnos a querer omitir comandos en el historial? Por ejemplo, quizá sea una práctica recomendable para aquellos que posean cierta información sensible (datos, contraseñas&hellip;).</p>
+<p>Finalmente, el historial también es una herramienta útil para averiguar cómo se han resueltos incidencias en el pasado (por otras personas, si es la primera vez que administramos cierto servidor que lleva operativo un tiempo).</p>
+<h2 id="16-referencias">16. Referencias</h2>
+<ul>
+<li><a href="https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ" target="_blank" rel="noopener">Linux Commands for Beginners</a></li>
+<li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></li>
+</ul>
+<h2 id="17-historial-de-versiones-del-artículo">17. Historial de versiones del artículo</h2>
+<ul>
+<li>2023.06.05: Reunifica las doce primeras lecciones en un único artículo</li>
+<li>2023.06.01: Escribe la sección sobre el historial de la terminal</li>
+<li>2023.05.31: Escribe la sección sobre la gestión de usuarios</li>
+<li>2023.05.30: Escribe la sección sobre la revisión de &lsquo;&rsquo;logs&rsquo;&rsquo;</li>
+<li>2023.05.29: Escribe la sección sobre la gestión de procesos</li>
+<li>2023.06.28: Escribe la sección sobre la gestión de paquetes</li>
+<li>2023.06.27: Escribe la sección sobre el control de recursos del sistema</li>
+<li>2023.05.26: Escribe la sección sobre permisos</li>
+<li>2023.06.25: Escribe la sección sobre el uso de alias</li>
+<li>2023.06.24: Escribe la sección sobre la configuración de la terminal</li>
+<li>2023.06.23: Escribe la sección sobre mover y renombrar archivos</li>
+<li>2023.05.22: Escribe la sección sobre la edición de archivos</li>
+<li>2023.06.21: Escribe las secciones de introducción y navegación por el sistema de ficheros</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/linux/">Linux</a>
+  
+  <a class="badge badge-light" href="/etiqueta/terminal/">Terminal</a>
+  
+  <a class="badge badge-light" href="/etiqueta/the-odin-project/">The Odin Project</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/&amp;text=Curso%20de%20comandos%20de%20Linux" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/&amp;t=Curso%20de%20comandos%20de%20Linux" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Curso%20de%20comandos%20de%20Linux&amp;body=https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/&amp;title=Curso%20de%20comandos%20de%20Linux" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Curso%20de%20comandos%20de%20Linux%20https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2023/06/05/curso-de-comandos-de-linux/&amp;title=Curso%20de%20comandos%20de%20Linux" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
