@@ -621,67 +621,6 @@
     </item>
     
     <item>
-      <title>Comandos de Linux #11</title>
-      <link>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</link>
-      <pubDate>Wed, 31 May 2023 00:00:01 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2023/05/31/comandos-de-linux-11/</guid>
-      <description>&lt;h2 id=&#34;gestionando-usuarios&#34;&gt;Gestionando usuarios&lt;/h2&gt;
-&lt;p&gt;En esta lección abordaremos la gestión de usuarios, en concreto la creación y eliminación de usuarios, así como la creación y eliminación de grupos. Antes de empezar, es importante conocer la existencia del siguiente archivo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/passwd
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En él encontramos un listado de todos los usuarios existentes en nuestro sistema. En la mayoría de los casos, la línea finaliza con &lt;code&gt;/nologin&lt;/code&gt;, es decir, son usuarios necesarios para llevar a cabo ciertas tareas de determinadas aplicaciones y no para acceder al sistema en sí.&lt;/p&gt;
-&lt;p&gt;En la línea correspondiente a mi usuario, &lt;code&gt;alexis&lt;/code&gt;,&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;alexis❌1000:1000:alexis,,,:/home/alexis:/bin/bash
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Los números &lt;code&gt;1000&lt;/code&gt; que aparecen son, respectivamente, las referencias para el usuario (&lt;em&gt;uid&lt;/em&gt;) y el grupo al que pertenece (también denominado &lt;code&gt;alexis&lt;/code&gt; en este caso particular). A continuación, figura nuestro directorio de usuario (&lt;code&gt;/home/alexis&lt;/code&gt;) y nuestra terminal por defecto (&lt;code&gt;/bin/bash&lt;/code&gt;). Tras mi nombre de usuario aparece una &lt;code&gt;x&lt;/code&gt;, que es la posición que ocuparía nuestra contraseña (oculta ahora mismo bajo ese carácter &lt;code&gt;x&lt;/code&gt;). La contraseña, de hecho, se almacena en otro archivo diferente, ya que dista de ser idóneo que las contraseñas de los usuarios estén en un archivo de texto de libre acceso.&lt;/p&gt;
-&lt;p&gt;En general, si el &lt;em&gt;uid&lt;/em&gt; es mayor o igual que &lt;code&gt;1000&lt;/code&gt; se tratará de un usuario real, mientras que aquellos que posean referencias inferiores seguramente sean usuarios de sistema (y no aparecerán por defecto en las ventanas de &lt;em&gt;login&lt;/em&gt; de usuario).&lt;/p&gt;
-&lt;p&gt;A continuación, si tecleamos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo cat /etc/shadow
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: un atajo útil de teclado es &lt;code&gt;!!&lt;/code&gt; que ejecuta el anterior comando escrito en la terminal. Cuando escribimos una instrucción y no se lleva a cabo por falta de permisos, simplemente hemos de teclear &lt;code&gt;sudo !!&lt;/code&gt; para intentar ejecutarla con permisos de &lt;em&gt;super user&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;El archivo muestra información sensible, pero no de forma abierta. En lugar de aparecer nuestra contraseña, aparece su &lt;em&gt;hash&lt;/em&gt; (para los usuarios de sistema sí que aparece directamente su contraseña).&lt;/p&gt;
-&lt;p&gt;Otro archivo importante para conocer es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Nos muestra un listado de los grupos definidos en nuestro sistema, con sus respectivas referencias (así como sus contraseñas ocultas por el carácter &lt;code&gt;x&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;Si estamos interesados en conocer a qué grupos pertenecemos, no es necesario revisar el anterior fichero, ya que basta con teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;¿Cómo creamos un usuario? Mediante &lt;code&gt;adduser&lt;/code&gt; seguido del nombre del nuevo usuario&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;adduser batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sin embargo, encontramos un problema al ejecutar el anterior comando, ya que la terminal nos indica que solo el usuario &lt;code&gt;root&lt;/code&gt; puede añadir un usuario o un grupo al sistema. Como en anteriores ocasiones, solventamos la situación escribiendo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo adduser batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esta acción añade el usuario &lt;code&gt;batman&lt;/code&gt;, así como el grupo &lt;code&gt;batman&lt;/code&gt;, además de generar un directorio de usuario para él y proporcionarle ciertos archivos de configuración por defecto del sistema desde &lt;code&gt;/etc/skel&lt;/code&gt;. Después, nos pide una contraseña para dicho usuario. A continuación, podemos indicar (o dejar en blanco) algunos datos del usuario, como su nombre completo, número de habitación, número de teléfono&amp;hellip;&lt;/p&gt;
-&lt;p&gt;Si ahora escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /home/
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Aparece un nuevo directorio asociado al usuario &lt;code&gt;batman&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Para cambiar a este usuario, hemos de escribir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;su - batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;e introducir su correspondiente contraseña (la que hemos definido al crear el usuario). Si ahora tecleamos &lt;code&gt;logout&lt;/code&gt; (o usamos la combinación de teclas &lt;code&gt;Ctrl + d&lt;/code&gt;), volvemos a nuestro usuario principal. Por otro lado, si escribimos &lt;code&gt;sudo su - batman&lt;/code&gt; cambiamos de usuario sin necesidad de introducir la contraseña (al trabajar con &lt;code&gt;sudo&lt;/code&gt; es como si adoptáramos el papel del todopoderoso usuario &lt;code&gt;root&lt;/code&gt;).&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: con el comando &lt;code&gt;passwd&lt;/code&gt; podemos cambiar la contraseña de un usuario.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Nota&lt;/em&gt;: para cambiar de usuario a &lt;code&gt;root&lt;/code&gt;, hemos de teclear &lt;code&gt;sudo su -&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Ahora, para eliminar un usuario el comando es &lt;code&gt;userdel -r&lt;/code&gt; seguido del nombre del usuario a suprimir&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo userdel -r batman
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;El atributo &lt;code&gt;-r&lt;/code&gt; se emplea para eliminar asimismo el directorio del usuario, por lo que hemos de actuar con cautela cuando llevamos a cabo este proceso.&lt;/p&gt;
-&lt;p&gt;Acto seguido, para añadir un grupo, el comando es &lt;code&gt;groupadd&lt;/code&gt; seguido del nombre del grupo&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupadd heroes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat /etc/group
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para introducir nuestro usuario en este nuevo grupo, el comando a emplear es&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo usermod -aG heroes alexis
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;No obstante, aunque hemos ejecutado el comando, no aparece el grupo &lt;code&gt;heroes&lt;/code&gt; asociado a nuestro usuario. Para ello, hemos de hacer &lt;em&gt;logout&lt;/em&gt; y &lt;em&gt;login&lt;/em&gt; en el sistema. Sin embargo, en este momento, basta teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Para comprobar que, efectivamente, mi usuario pertenece al grupo &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Eliminar un usuario de un grupo es también sencillo, ya que basta teclear&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo gpasswd -d alexis heroes
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;groups alexis
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Finalmente, para eliminar un grupo, escribimos&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo groupdel heroes
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Y podemos comprobar que, efectivamente, no pertenece al listado de grupos tecleando, por ejemplo, &lt;code&gt;tail /etc/group&lt;/code&gt; y observando que no aparece al final ninguna línea asociada a &lt;code&gt;heroes&lt;/code&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://youtu.be/DmdyxEJdt3k&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners 14 - Managing Users&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Curso de Python #12 (Nivel básico)</title>
       <link>https://imalexissaez.github.io/2019/09/07/curso-de-python-12-nivel-basico/</link>
       <pubDate>Sat, 07 Sep 2019 05:59:39 +0200</pubDate>
