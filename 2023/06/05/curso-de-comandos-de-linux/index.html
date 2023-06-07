@@ -358,7 +358,7 @@
         content="2023-06-05T00:00:01&#43;02:00"
       />
     
-    <meta property="article:modified_time" content="2023-06-05T00:00:01&#43;02:00">
+    <meta property="article:modified_time" content="2023-06-07T00:00:01&#43;02:00">
   
 
   
@@ -391,7 +391,7 @@
   ],
   
   "datePublished": "2023-06-05T00:00:01+02:00",
-  "dateModified": "2023-06-05T00:00:01+02:00",
+  "dateModified": "2023-06-07T00:00:01+02:00",
   
   "author": {
     "@type": "Person",
@@ -764,8 +764,10 @@
     
     
       
+          Última actualización el
+      
     
-    06/05/23
+    06/07/23
   </span>
   
 
@@ -774,7 +776,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    36 min de lectura
+    37 min de lectura
   </span>
   
 
@@ -832,8 +834,9 @@
     <li><a href="#13-revisando-logs">13. Revisando &lsquo;&rsquo;logs&rsquo;&rsquo;</a></li>
     <li><a href="#14-gestionando-usuarios">14. Gestionando usuarios</a></li>
     <li><a href="#15-examinando-el-historial-de-la-terminal">15. Examinando el historial de la terminal</a></li>
-    <li><a href="#16-referencias">16. Referencias</a></li>
-    <li><a href="#17-historial-de-versiones-del-artículo">17. Historial de versiones del artículo</a></li>
+    <li><a href="#16-redirecciones">16. Redirecciones</a></li>
+    <li><a href="#17-referencias">17. Referencias</a></li>
+    <li><a href="#18-historial-de-versiones-del-artículo">18. Historial de versiones del artículo</a></li>
   </ul>
 </nav>
 </details>
@@ -1392,13 +1395,33 @@
 </div>
 <p>¿Qué puede llevarnos a querer omitir comandos en el historial? Por ejemplo, quizá sea una práctica recomendable para aquellos que posean cierta información sensible (datos, contraseñas&hellip;).</p>
 <p>Finalmente, el historial también es una herramienta útil para averiguar cómo se han resueltos incidencias en el pasado (por otras personas, si es la primera vez que administramos cierto servidor que lleva operativo un tiempo).</p>
-<h2 id="16-referencias">16. Referencias</h2>
+<h2 id="16-redirecciones">16. Redirecciones</h2>
+<p>En esta sección abordaremos cómo redirigir la salida de ciertos comandos para que esta asuma el papel de entrada para otras instrucciones.</p>
+<p>Empecemos redirigiendo la salida de un comando hacia un archivo, acción que nos puede resultar de gran utilidad para almacenar, por ejemplo, cierta información del sistema o de sus usuarios. Para llevar a cabo dicha acción, utilizamos el símbolo <code>&gt;</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l &gt; file.txt
+</span></span><span class="line"><span class="cl">cat file.txt
+</span></span></code></pre></div><p>A continuación, si volvemos a ejecutar el comando <code>ls -l &gt; file.txt</code>, no observaremos cambio alguno, pues el archivo se sobrescribe. Podemos modificar este comportamiento (un tanto peligroso y desaconsejable si no actuamos con extrema cautela) utilizando <code>&gt;&gt;</code>, pues añade la salida del comando al final del archivo en lugar de sobrescribirlo:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l &gt;&gt; file.txt
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    En general, se recomienda el uso de <code>&gt;&gt;</code> para evitar la pérdida de información que provoca <code>&gt;</code>.
+  </div>
+</div>
+<p>Por otra parte, podemos encadenar comandos con el símbolo <code>|</code> (&lsquo;&lsquo;pipe&rsquo;&rsquo;). Por ejemplo, imaginemos que queremos listar los contenidos de un directorio, pero filtrar (a través del comando <code>grep</code>) solo aquellos elementos que contengan la palabra <code>file</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l <span class="p">|</span> grep file
+</span></span></code></pre></div><p>Como no podía ser de otra manera, podemos emplear esta filosofía a la hora de examinar &lsquo;&rsquo;logs&rsquo;&rsquo;:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat file.txt <span class="p">|</span> sort <span class="p">|</span> uniq
+</span></span></code></pre></div><p>A primera vista, aunque hayamos usado el comando <code>uniq</code>, apreciamos elementos repetidos. No obstante, el diablo está en los detalles, pues a medida que hemos ido incorporando listados al archivo <code>file.txt</code> su tamaño ha ido incrementándose y de ahí que aparezca en varias ocasiones.</p>
+<p>Finalmente, para contar el número de elementos aproximadamente, puede resultar de utilidad la siguiente instrucción:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -l <span class="p">|</span> wc -l
+</span></span></code></pre></div><h2 id="17-referencias">17. Referencias</h2>
 <ul>
 <li><a href="https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ" target="_blank" rel="noopener">Linux Commands for Beginners</a></li>
 <li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></li>
 </ul>
-<h2 id="17-historial-de-versiones-del-artículo">17. Historial de versiones del artículo</h2>
+<h2 id="18-historial-de-versiones-del-artículo">18. Historial de versiones del artículo</h2>
 <ul>
+<li>2023.06.07: Escribe la sección sobre redirecciones</li>
 <li>2023.06.05: Reunifica las doce primeras lecciones en un único artículo</li>
 <li>2023.06.01: Escribe la sección sobre el historial de la terminal</li>
 <li>2023.05.31: Escribe la sección sobre la gestión de usuarios</li>
