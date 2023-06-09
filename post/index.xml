@@ -37,8 +37,9 @@
     &lt;li&gt;&lt;a href=&#34;#14-gestionando-usuarios&#34;&gt;14. Gestionando usuarios&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#15-examinando-el-historial-de-la-terminal&#34;&gt;15. Examinando el historial de la terminal&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#16-redirecciones&#34;&gt;16. Redirecciones&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#17-referencias&#34;&gt;17. Referencias&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#18-historial-de-versiones-del-artículo&#34;&gt;18. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#17-streams&#34;&gt;17. Streams&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#18-referencias&#34;&gt;18. Referencias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#19-historial-de-versiones-del-artículo&#34;&gt;19. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/details&gt;
@@ -616,13 +617,51 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A primera vista, aunque hayamos usado el comando &lt;code&gt;uniq&lt;/code&gt;, apreciamos elementos repetidos. No obstante, el diablo está en los detalles, pues a medida que hemos ido incorporando listados al archivo &lt;code&gt;file.txt&lt;/code&gt; su tamaño ha ido incrementándose y de ahí que aparezca en varias ocasiones.&lt;/p&gt;
 &lt;p&gt;Finalmente, para contar el número de elementos aproximadamente, puede resultar de utilidad la siguiente instrucción:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; wc -l
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;17-referencias&#34;&gt;17. Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;17-streams&#34;&gt;17. Streams&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos los &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;, un concepto relacionado con la redirección de la salida de comandos hacia la entrada de otros. Hay tres tipos de &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo; en Linux que conviene conocer:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;lsquo;&amp;lsquo;standard input&amp;rsquo;&amp;rsquo; (&lt;code&gt;stdin&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo; (&lt;code&gt;stdout&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&amp;lsquo;&amp;lsquo;standard error&amp;rsquo;&amp;rsquo; (&lt;code&gt;stderr&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Entre los tres anteriores, el más sencilla de entender es &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo;, pues es el &amp;lsquo;&amp;lsquo;stream&amp;rsquo;&amp;rsquo; que se genera al emplear comandos que producen cierta salida a la terminal. Por ejemplo, &lt;code&gt;ls -l&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A continuación, el &amp;lsquo;&amp;lsquo;stream&amp;rsquo;&amp;rsquo; de &amp;lsquo;&amp;lsquo;standard error&amp;rsquo;&amp;rsquo; aparece cuando los comandos que empleamos arrojan errores en la terminal (aunque produzca información, como en el caso anterior, no hemos de confundir este &amp;lsquo;&amp;lsquo;stream&amp;rsquo;&amp;rsquo; con &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo;, pues se trata de un mensaje de error). Por ejemplo, si en nuestro sistema no disponemos de ningún directorio denominado &lt;code&gt;Turtles&lt;/code&gt;, el siguiente comando produciría una salida al &amp;lsquo;&amp;lsquo;stream&amp;rsquo;&amp;rsquo; de &amp;lsquo;&amp;lsquo;standard error&amp;rsquo;&amp;rsquo;: &lt;code&gt;ls /Turtles&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Acto seguido, en el siguiente ejemplo, listemos los contenidos del directorio del usuario (en mi caso, &lt;code&gt;alexis&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /home/alexis/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Si ahora tecleamos &lt;code&gt;echo $?&lt;/code&gt;, la terminal arroja &lt;code&gt;0&lt;/code&gt; (que hemos de interpretar como que la operación ha sido llevada a cabo con éxito). La combinación &lt;code&gt;$?&lt;/code&gt; es una variable asociada a la salida producida por el comando anterior, mientras que &lt;code&gt;echo&lt;/code&gt; nos permite transmitir información a la consola (por ejemplo, &lt;code&gt;echo &amp;quot;Hola mundo&amp;quot;&lt;/code&gt; imprime en la terminal el mensaje &lt;code&gt;Hola mundo&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;No obstante, si ahora escribimos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l /Turtles/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$?&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En esta ocasión, la terminal arroja &lt;code&gt;2&lt;/code&gt;, que al ser un número distinto de cero hemos de interpretar como un error. Así, a la hora de escribir programas (conocidos generalmente como &amp;lsquo;&amp;lsquo;bash scripts&amp;rsquo;&amp;rsquo;), este comportamiento nos puede resultar de utilidad para distinguir &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo; de &amp;lsquo;&amp;lsquo;standard error&amp;rsquo;&amp;rsquo; y actuar de manera acorde a cada uno.&lt;/p&gt;
+&lt;p&gt;Al hilo de la anterior idea, el uso del comando &lt;code&gt;find&lt;/code&gt;, que se emplea para buscar archivos, aporta también buenos ejemplos para entender la distinción de los anteriores &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;. Por ejemplo, si tecleamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En el extenso listado observamos la presencia de numerosos errores (&lt;code&gt;Permission denied&lt;/code&gt;). Una vía de escape a esta situación es ejecutar el anterior comando bajo el auspicio de &lt;code&gt;sudo&lt;/code&gt;, aunque recurrir al usuario &lt;code&gt;root&lt;/code&gt; para evitar errores no es una buena práctica y únicamente deberíamos emplearlo cuando no existe alternativa posible. Así pues, en su lugar, escribimos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log 2&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Esto es, buscamos por nombre todos los archivos desde la raíz del sistema cuya extensión sea &lt;code&gt;log&lt;/code&gt;, capturamos los errores (de ahí el código &lt;code&gt;2&lt;/code&gt;) y los redirigimos a &lt;code&gt;/dev/null&lt;/code&gt;, que es una suerte de purgatorio.&lt;/p&gt;
+&lt;p&gt;Actuando de tal forma, observamos únicamente los &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; para los cuales tenemos permisos. No quiere decir esto que hayan desaparecido el resto de los anteriores &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo;, sino que han sido desviados a &lt;code&gt;/dev/null&lt;/code&gt;, en lugar de aparecer en el &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    No hemos hablado todavía del &amp;lsquo;&amp;lsquo;stream&amp;rsquo;&amp;rsquo; de &amp;lsquo;&amp;lsquo;standard input&amp;rsquo;&amp;rsquo;, pero hace referencia a todo &amp;lsquo;&amp;lsquo;input&amp;rsquo;&amp;rsquo; o entrada del usuario. Por ejemplo, se trata de &amp;lsquo;&amp;lsquo;standard input&amp;rsquo;&amp;rsquo; cuando recogemos en variables para un programa datos que el usuario introduce de alguna manera.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;En nuestros programas, podemos hacer referencia a cada uno de los &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo; por número:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;stdin&lt;/code&gt;, mediante &lt;code&gt;0&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stdout&lt;/code&gt;, mediante &lt;code&gt;1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;stderr&lt;/code&gt;, mediante &lt;code&gt;2&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Así, podemos modificar el anterior comando, de forma que los errores los almacene en un archivo, &lt;code&gt;errors.txt&lt;/code&gt;, y en la terminal aparezcan únicamente aquellos &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; para los cuales disponemos de permisos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log 2&amp;gt; errors.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Análogamente, podemos recopilar aquellos &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; para los cuales tenemos permisos en un archivo, &lt;code&gt;success.txt&lt;/code&gt;, sin más que capturar el &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log 1&amp;gt; success.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;18-referencias&#34;&gt;18. Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;18-historial-de-versiones-del-artículo&#34;&gt;18. Historial de versiones del artículo&lt;/h2&gt;
+&lt;h2 id=&#34;19-historial-de-versiones-del-artículo&#34;&gt;19. Historial de versiones del artículo&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;2023.06.09: Escribe la sección sobre &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;&lt;/li&gt;
 &lt;li&gt;2023.06.07: Escribe la sección sobre redirecciones&lt;/li&gt;
 &lt;li&gt;2023.06.05: Reunifica las doce primeras lecciones en un único artículo&lt;/li&gt;
 &lt;li&gt;2023.06.01: Escribe la sección sobre el historial de la terminal&lt;/li&gt;
