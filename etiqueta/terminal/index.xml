@@ -38,8 +38,9 @@
     &lt;li&gt;&lt;a href=&#34;#15-examinando-el-historial-de-la-terminal&#34;&gt;15. Examinando el historial de la terminal&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#16-redirecciones&#34;&gt;16. Redirecciones&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#17-streams&#34;&gt;17. Streams&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#18-referencias&#34;&gt;18. Referencias&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#19-historial-de-versiones-del-artículo&#34;&gt;19. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#18-variables&#34;&gt;18. Variables&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#19-referencias&#34;&gt;19. Referencias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#20-historial-de-versiones-del-artículo&#34;&gt;20. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/details&gt;
@@ -654,13 +655,50 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log 2&amp;gt; errors.txt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Análogamente, podemos recopilar aquellos &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; para los cuales tenemos permisos en un archivo, &lt;code&gt;success.txt&lt;/code&gt;, sin más que capturar el &amp;lsquo;&amp;lsquo;standard output&amp;rsquo;&amp;rsquo;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find / -name *.log 1&amp;gt; success.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;18-referencias&#34;&gt;18. Referencias&lt;/h2&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;18-variables&#34;&gt;18. Variables&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos el concepto de variable en Linux. Estudiaremos cómo crear una variable y cómo leer su contenido. Su uso está más enfocado a la programación de &lt;em&gt;scripts&lt;/em&gt;, pero ocasionalmente pueden surgir a la hora de manejar comandos en la terminal.&lt;/p&gt;
+&lt;p&gt;Para empezar, recodemos que el comando &lt;code&gt;echo&lt;/code&gt; devuelve a la terminal el contenido de una cadena de texto o, en este caso particular, de una variable:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A continuación, estudiemos cómo crear una variable. Por convención, el nombre de estas se suele escribir en mayúsculas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;HELLOMSG&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Hello world!&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta manera, hemos creado la variable &lt;code&gt;HELLOMSG&lt;/code&gt;, que contiene el mensaje &lt;code&gt;&amp;quot;Hello world!&amp;quot;&lt;/code&gt;. Para leer su contenido, accedemos a ella en la terminal a través del comando &lt;code&gt;echo&lt;/code&gt; y antecediendo el nombre de la variable con el símbolo &lt;code&gt;$&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$HELLOMSG&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por otra parte, las variables no tienen por qué siempre cadenas de texto:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MY_NUM&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MY_NUM2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$MY_NUM&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$MY_NUM2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Las variables son específicas a la sesión de la terminal. Su alcance está limitado a la terminal en concreto donde se han definido y se perderán una vez esta se cierre. Una forma de solventar esta situación es añadiéndolas al archivo de configuración &lt;code&gt;.bashrc&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Además, podemos insertar variables dentro de cadenas de texto, para así personalizar mensajes. Por ejemplo:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MY_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;Alexis&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$MY_NAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;My name es &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$MY_NAME&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por otra parte, también podemos emplear variables como argumentos de comandos que hemos visto en lecciones anteriores:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;MY_DIR&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/etc/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls &lt;span class=&#34;nv&#34;&gt;$MY_DIR&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Si nos encontramos en la tesitura de tener que escribir repetidamente largas cadenas de texto, el uso de variables nos puede ahorrar mucho tiempo.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Finalmente, a través del comando &lt;code&gt;env&lt;/code&gt; tenemos acceso al listado de variables de entorno definidas en el sistema.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Las que hemos definido anteriormente no aparecen en el anterior listado, pues no están definidas como variables de entorno. Para ello, deberíamos teclear &lt;code&gt;export MY_NAME=&amp;quot;Alexis&amp;quot;&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;19-referencias&#34;&gt;19. Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;19-historial-de-versiones-del-artículo&#34;&gt;19. Historial de versiones del artículo&lt;/h2&gt;
+&lt;h2 id=&#34;20-historial-de-versiones-del-artículo&#34;&gt;20. Historial de versiones del artículo&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;2023.06.10: Escribe la sección sobre variables&lt;/li&gt;
 &lt;li&gt;2023.06.09: Escribe la sección sobre &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;&lt;/li&gt;
 &lt;li&gt;2023.06.07: Escribe la sección sobre redirecciones&lt;/li&gt;
 &lt;li&gt;2023.06.05: Reunifica las doce primeras lecciones en un único artículo&lt;/li&gt;
