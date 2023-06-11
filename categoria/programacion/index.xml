@@ -39,8 +39,9 @@
     &lt;li&gt;&lt;a href=&#34;#16-redirecciones&#34;&gt;16. Redirecciones&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#17-streams&#34;&gt;17. Streams&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#18-variables&#34;&gt;18. Variables&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#19-referencias&#34;&gt;19. Referencias&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#20-historial-de-versiones-del-artículo&#34;&gt;20. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#19-el-comando-find&#34;&gt;19. El comando &lt;code&gt;find&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#20-referencias&#34;&gt;20. Referencias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#21-historial-de-versiones-del-artículo&#34;&gt;21. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/details&gt;
@@ -691,13 +692,38 @@
     Las que hemos definido anteriormente no aparecen en el anterior listado, pues no están definidas como variables de entorno. Para ello, deberíamos teclear &lt;code&gt;export MY_NAME=&amp;quot;Alexis&amp;quot;&lt;/code&gt;.
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;19-referencias&#34;&gt;19. Referencias&lt;/h2&gt;
+&lt;h2 id=&#34;19-el-comando-find&#34;&gt;19. El comando &lt;code&gt;find&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos un comando de extrema utilidad en Linux, &lt;code&gt;find&lt;/code&gt;, encargado de buscar archivos en el sistema.&lt;/p&gt;
+&lt;p&gt;Para empezar, si no indicamos un directorio como argumento del comando &lt;code&gt;find&lt;/code&gt;, este asume como valor por defecto el actual directorio de trabajo. Así, si queremos buscar por nombre el directorio &lt;code&gt;Music&lt;/code&gt;, basta con que escribamos:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find -name Music
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;De esta forma, obtenemos como salida la ruta &lt;code&gt;./Music&lt;/code&gt;, que nos ubica el mencionado directorio. Ahora, actuando de manera análoga:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; /var/
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find -name log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En esta ocasión, aparece un listado de extensión considerable (la mayoría compuesto por errores debidos a faltas de permisos) que podemos filtrar mediante el uso de otros parámetros. Por ejemplo, si únicamente estamos interesados en encontrar directorios, podemos añadir &lt;code&gt;-type d&lt;/code&gt; (el valor &lt;code&gt;f&lt;/code&gt; correspondería al tipo asociado a archivos):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find -type d -name log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por otra parte, recordemos que podemos redirigir los errores que aparecen en la salida hacia &lt;code&gt;/dev/null&lt;/code&gt;, para que así no se muestren en el listado de la terminal:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find -type d -name log 2&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A continuación, volvamos al directorio de usuario y desde allí busquemos en la carpeta &lt;code&gt;/var&lt;/code&gt; aquellos archivos terminados en &lt;code&gt;log&lt;/code&gt; (enviando cualquier error a &lt;code&gt;/dev/null&lt;/code&gt;):&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; ~
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find /var -type f -name &lt;span class=&#34;s2&#34;&gt;&amp;#34;*log&amp;#34;&lt;/span&gt; 2&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Es una buena práctica escribir la cadena a buscar entrecomillada.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Además, con el uso de comodines, es fácil modificar el comando anterior para que muestre los archivos que en su nombre contengan el texto &lt;code&gt;log&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find /var -type f -name &lt;span class=&#34;s2&#34;&gt;&amp;#34;*log*&amp;#34;&lt;/span&gt; 2&amp;gt; /dev/null
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por otro lado, ¿y si queremos encontrar los archivos que han sido modificados en la última semana? Usamos para ello el atributo &lt;code&gt;-mtime&lt;/code&gt; y le pasamos como argumento el número de días:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find /var/log -type f -name *.log -mtime -7
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, podemos ejecutar comandos a los resultados de la búsqueda a través del atributo &lt;code&gt;-exec&lt;/code&gt;. Por ejemplo, si queremos eliminar aquellos &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; que posean 7 días de antigüedad, añadiríamos al final &lt;code&gt;-exec rm {} \;&lt;/code&gt;, donde las llaves hacen referencia a cada línea de la salida del comando find. No obstante, como mencionamos en lecciones anteriores, hemos de ser cautos a la hora de emplear el comando &lt;code&gt;rm&lt;/code&gt; para no eliminar del sistema información importante.&lt;/p&gt;
+&lt;h2 id=&#34;20-referencias&#34;&gt;20. Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;20-historial-de-versiones-del-artículo&#34;&gt;20. Historial de versiones del artículo&lt;/h2&gt;
+&lt;h2 id=&#34;21-historial-de-versiones-del-artículo&#34;&gt;21. Historial de versiones del artículo&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;2023.06.11: Escribe la sección sobre el comando &lt;code&gt;find&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;2023.06.10: Escribe la sección sobre variables&lt;/li&gt;
 &lt;li&gt;2023.06.09: Escribe la sección sobre &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;&lt;/li&gt;
 &lt;li&gt;2023.06.07: Escribe la sección sobre redirecciones&lt;/li&gt;

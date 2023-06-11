@@ -358,7 +358,7 @@
         content="2023-06-05T00:00:01&#43;02:00"
       />
     
-    <meta property="article:modified_time" content="2023-06-10T00:00:01&#43;02:00">
+    <meta property="article:modified_time" content="2023-06-11T00:00:01&#43;02:00">
   
 
   
@@ -391,7 +391,7 @@
   ],
   
   "datePublished": "2023-06-05T00:00:01+02:00",
-  "dateModified": "2023-06-10T00:00:01+02:00",
+  "dateModified": "2023-06-11T00:00:01+02:00",
   
   "author": {
     "@type": "Person",
@@ -767,7 +767,7 @@
           Última actualización el
       
     
-    06/10/23
+    06/11/23
   </span>
   
 
@@ -776,7 +776,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    42 min de lectura
+    44 min de lectura
   </span>
   
 
@@ -837,8 +837,9 @@
     <li><a href="#16-redirecciones">16. Redirecciones</a></li>
     <li><a href="#17-streams">17. Streams</a></li>
     <li><a href="#18-variables">18. Variables</a></li>
-    <li><a href="#19-referencias">19. Referencias</a></li>
-    <li><a href="#20-historial-de-versiones-del-artículo">20. Historial de versiones del artículo</a></li>
+    <li><a href="#19-el-comando-find">19. El comando <code>find</code></a></li>
+    <li><a href="#20-referencias">20. Referencias</a></li>
+    <li><a href="#21-historial-de-versiones-del-artículo">21. Historial de versiones del artículo</a></li>
   </ul>
 </nav>
 </details>
@@ -1489,13 +1490,38 @@
     Las que hemos definido anteriormente no aparecen en el anterior listado, pues no están definidas como variables de entorno. Para ello, deberíamos teclear <code>export MY_NAME=&quot;Alexis&quot;</code>.
   </div>
 </div>
-<h2 id="19-referencias">19. Referencias</h2>
+<h2 id="19-el-comando-find">19. El comando <code>find</code></h2>
+<p>En esta sección abordaremos un comando de extrema utilidad en Linux, <code>find</code>, encargado de buscar archivos en el sistema.</p>
+<p>Para empezar, si no indicamos un directorio como argumento del comando <code>find</code>, este asume como valor por defecto el actual directorio de trabajo. Así, si queremos buscar por nombre el directorio <code>Music</code>, basta con que escribamos:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find -name Music
+</span></span></code></pre></div><p>De esta forma, obtenemos como salida la ruta <code>./Music</code>, que nos ubica el mencionado directorio. Ahora, actuando de manera análoga:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /var/
+</span></span><span class="line"><span class="cl">find -name log
+</span></span></code></pre></div><p>En esta ocasión, aparece un listado de extensión considerable (la mayoría compuesto por errores debidos a faltas de permisos) que podemos filtrar mediante el uso de otros parámetros. Por ejemplo, si únicamente estamos interesados en encontrar directorios, podemos añadir <code>-type d</code> (el valor <code>f</code> correspondería al tipo asociado a archivos):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find -type d -name log
+</span></span></code></pre></div><p>Por otra parte, recordemos que podemos redirigir los errores que aparecen en la salida hacia <code>/dev/null</code>, para que así no se muestren en el listado de la terminal:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find -type d -name log 2&gt; /dev/null
+</span></span></code></pre></div><p>A continuación, volvamos al directorio de usuario y desde allí busquemos en la carpeta <code>/var</code> aquellos archivos terminados en <code>log</code> (enviando cualquier error a <code>/dev/null</code>):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> ~
+</span></span><span class="line"><span class="cl">find /var -type f -name <span class="s2">&#34;*log&#34;</span> 2&gt; /dev/null
+</span></span></code></pre></div><div class="alert alert-note">
+  <div>
+    Es una buena práctica escribir la cadena a buscar entrecomillada.
+  </div>
+</div>
+<p>Además, con el uso de comodines, es fácil modificar el comando anterior para que muestre los archivos que en su nombre contengan el texto <code>log</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find /var -type f -name <span class="s2">&#34;*log*&#34;</span> 2&gt; /dev/null
+</span></span></code></pre></div><p>Por otro lado, ¿y si queremos encontrar los archivos que han sido modificados en la última semana? Usamos para ello el atributo <code>-mtime</code> y le pasamos como argumento el número de días:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find /var/log -type f -name *.log -mtime -7
+</span></span></code></pre></div><p>Además, podemos ejecutar comandos a los resultados de la búsqueda a través del atributo <code>-exec</code>. Por ejemplo, si queremos eliminar aquellos &lsquo;&rsquo;logs&rsquo;&rsquo; que posean 7 días de antigüedad, añadiríamos al final <code>-exec rm {} \;</code>, donde las llaves hacen referencia a cada línea de la salida del comando find. No obstante, como mencionamos en lecciones anteriores, hemos de ser cautos a la hora de emplear el comando <code>rm</code> para no eliminar del sistema información importante.</p>
+<h2 id="20-referencias">20. Referencias</h2>
 <ul>
 <li><a href="https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ" target="_blank" rel="noopener">Linux Commands for Beginners</a></li>
 <li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></li>
 </ul>
-<h2 id="20-historial-de-versiones-del-artículo">20. Historial de versiones del artículo</h2>
+<h2 id="21-historial-de-versiones-del-artículo">21. Historial de versiones del artículo</h2>
 <ul>
+<li>2023.06.11: Escribe la sección sobre el comando <code>find</code></li>
 <li>2023.06.10: Escribe la sección sobre variables</li>
 <li>2023.06.09: Escribe la sección sobre &lsquo;&lsquo;streams&rsquo;&rsquo;</li>
 <li>2023.06.07: Escribe la sección sobre redirecciones</li>
