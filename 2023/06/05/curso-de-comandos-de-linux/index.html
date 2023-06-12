@@ -358,7 +358,7 @@
         content="2023-06-05T00:00:01&#43;02:00"
       />
     
-    <meta property="article:modified_time" content="2023-06-11T00:00:01&#43;02:00">
+    <meta property="article:modified_time" content="2023-06-12T00:00:01&#43;02:00">
   
 
   
@@ -391,7 +391,7 @@
   ],
   
   "datePublished": "2023-06-05T00:00:01+02:00",
-  "dateModified": "2023-06-11T00:00:01+02:00",
+  "dateModified": "2023-06-12T00:00:01+02:00",
   
   "author": {
     "@type": "Person",
@@ -767,7 +767,7 @@
           Última actualización el
       
     
-    06/11/23
+    06/12/23
   </span>
   
 
@@ -776,7 +776,7 @@
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    44 min de lectura
+    45 min de lectura
   </span>
   
 
@@ -838,8 +838,9 @@
     <li><a href="#17-streams">17. Streams</a></li>
     <li><a href="#18-variables">18. Variables</a></li>
     <li><a href="#19-el-comando-find">19. El comando <code>find</code></a></li>
-    <li><a href="#20-referencias">20. Referencias</a></li>
-    <li><a href="#21-historial-de-versiones-del-artículo">21. Historial de versiones del artículo</a></li>
+    <li><a href="#20-cambiando-permisos-numéricamente">20. Cambiando permisos numéricamente</a></li>
+    <li><a href="#21-referencias">21. Referencias</a></li>
+    <li><a href="#22-historial-de-versiones-del-artículo">22. Historial de versiones del artículo</a></li>
   </ul>
 </nav>
 </details>
@@ -1514,13 +1515,51 @@
 </span></span></code></pre></div><p>Por otro lado, ¿y si queremos encontrar los archivos que han sido modificados en la última semana? Usamos para ello el atributo <code>-mtime</code> y le pasamos como argumento el número de días:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find /var/log -type f -name *.log -mtime -7
 </span></span></code></pre></div><p>Además, podemos ejecutar comandos a los resultados de la búsqueda a través del atributo <code>-exec</code>. Por ejemplo, si queremos eliminar aquellos &lsquo;&rsquo;logs&rsquo;&rsquo; que posean 7 días de antigüedad, añadiríamos al final <code>-exec rm {} \;</code>, donde las llaves hacen referencia a cada línea de la salida del comando find. No obstante, como mencionamos en lecciones anteriores, hemos de ser cautos a la hora de emplear el comando <code>rm</code> para no eliminar del sistema información importante.</p>
-<h2 id="20-referencias">20. Referencias</h2>
+<h2 id="20-cambiando-permisos-numéricamente">20. Cambiando permisos numéricamente</h2>
+<p>En esta sección abordaremos la gestión de permisos numéricamente. Recordemos que el tratamiento de permisos ya lo estudiamos en la novena sección, aunque en ella los establecimos a través de la secuencia de caracteres <code>rwx</code>.</p>
+<p>Así, las equivalencias numéricas de dichos permisos son:</p>
+<ul>
+<li><code>4</code> equivale a <code>r</code></li>
+<li><code>2</code> equivale a <code>w</code></li>
+<li><code>1</code> equivale a <code>x</code></li>
+</ul>
+<p>En la práctica, empleando el comando <code>chmod</code> podemos escribir:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">touch test-permissions.txt
+</span></span><span class="line"><span class="cl">ls -l
+</span></span><span class="line"><span class="cl">chmod <span class="m">400</span> test-permissions.txt
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><p>Como podemos observar, el propietario dispone del permiso de lectura (dado el <code>4</code> que figura al principio del código), mientras que el resto de los permisos quedan desactivados. Además, ni el grupo, ni el resto de los usuarios, posee permiso alguno, pues para ellos hemos declarado un <code>0</code> en cada caso (el primer cero hace referencia al grupo, mientras que el segundo está asociado al resto de usuarios).</p>
+<p>Siguiendo esta filosofía, con <code>chmod 444 test-permissions.txt</code>, tanto el administrador, como el grupo y el resto de los usuarios poseerían el permiso de lectura para este fichero en concreto.</p>
+<p>En cuanto al permiso para escritura, generamos ejemplos similares a los anteriores sin más que teclear <code>chmod 200 test-permissions.txt</code> o <code>chmod 222 test-permissions.txt</code>.</p>
+<p>Ahora bien, ¿cómo asignamos varios permisos simultáneamente? Por ejemplo, para que el administrador posea todos los permisos disponibles sobre el archivo, hemos de teclear:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">chmod <span class="m">700</span> test-permissions.txt
+</span></span><span class="line"><span class="cl">ls -l
+</span></span></code></pre></div><p>Por tanto:</p>
+<ul>
+<li><code>7</code> asigna los permisos <code>rwx</code>.</li>
+<li><code>6</code> asigna los permisos <code>rw-</code>.</li>
+<li><code>5</code> asigna los permisos <code>r-x</code>.</li>
+<li><code>3</code> asigna los permisos <code>-wx</code>.</li>
+</ul>
+<p>Seguramente, a estas alturas, hayamos detectado el patrón de funcionamiento. Si queremos asignar varios permisos, simplemente hemos de realizar la suma de sus valores e introducir ese resultado en el dígito deseado del código numérico. Por ejemplo, <code>rwx</code>, echando cuentas, equivale a <code>4 + 2 + 1</code>, esto es, a <code>7</code>. Análogamente, <code>-wx</code>, equivale a <code>0 + 2 + 1</code>, es decir, a <code>3</code>.</p>
+<div class="alert alert-note">
+  <div>
+    En la práctica, un código de permisos muy frecuente para archivos es <code>644</code>.
+  </div>
+</div>
+<div class="alert alert-note">
+  <div>
+    Aunque en la sección hemos trabajado únicamente con ficheros, la misma filosofía se emplea para directorios. No obstante, hemos de recordar que los permisos no tienen exactamente el mismo significado para archivos que para carpetas, como bien comentamos en la novena sección de este artículo.
+  </div>
+</div>
+<h2 id="21-referencias">21. Referencias</h2>
 <ul>
 <li><a href="https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ" target="_blank" rel="noopener">Linux Commands for Beginners</a></li>
 <li><a href="https://www.theodinproject.com/" target="_blank" rel="noopener">The Odin Project</a></li>
 </ul>
-<h2 id="21-historial-de-versiones-del-artículo">21. Historial de versiones del artículo</h2>
+<h2 id="22-historial-de-versiones-del-artículo">22. Historial de versiones del artículo</h2>
 <ul>
+<li>2023.06.12: Escribe la sección sobre el cambio numérico de permisos</li>
 <li>2023.06.11: Escribe la sección sobre el comando <code>find</code></li>
 <li>2023.06.10: Escribe la sección sobre variables</li>
 <li>2023.06.09: Escribe la sección sobre &lsquo;&lsquo;streams&rsquo;&rsquo;</li>

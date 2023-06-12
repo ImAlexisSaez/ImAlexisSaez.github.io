@@ -40,8 +40,9 @@
     &lt;li&gt;&lt;a href=&#34;#17-streams&#34;&gt;17. Streams&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#18-variables&#34;&gt;18. Variables&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&#34;#19-el-comando-find&#34;&gt;19. El comando &lt;code&gt;find&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#20-referencias&#34;&gt;20. Referencias&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&#34;#21-historial-de-versiones-del-artículo&#34;&gt;21. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#20-cambiando-permisos-numéricamente&#34;&gt;20. Cambiando permisos numéricamente&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#21-referencias&#34;&gt;21. Referencias&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;#22-historial-de-versiones-del-artículo&#34;&gt;22. Historial de versiones del artículo&lt;/a&gt;&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;/details&gt;
@@ -716,13 +717,51 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por otro lado, ¿y si queremos encontrar los archivos que han sido modificados en la última semana? Usamos para ello el atributo &lt;code&gt;-mtime&lt;/code&gt; y le pasamos como argumento el número de días:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;find /var/log -type f -name *.log -mtime -7
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Además, podemos ejecutar comandos a los resultados de la búsqueda a través del atributo &lt;code&gt;-exec&lt;/code&gt;. Por ejemplo, si queremos eliminar aquellos &amp;lsquo;&amp;rsquo;logs&amp;rsquo;&amp;rsquo; que posean 7 días de antigüedad, añadiríamos al final &lt;code&gt;-exec rm {} \;&lt;/code&gt;, donde las llaves hacen referencia a cada línea de la salida del comando find. No obstante, como mencionamos en lecciones anteriores, hemos de ser cautos a la hora de emplear el comando &lt;code&gt;rm&lt;/code&gt; para no eliminar del sistema información importante.&lt;/p&gt;
-&lt;h2 id=&#34;20-referencias&#34;&gt;20. Referencias&lt;/h2&gt;
+&lt;h2 id=&#34;20-cambiando-permisos-numéricamente&#34;&gt;20. Cambiando permisos numéricamente&lt;/h2&gt;
+&lt;p&gt;En esta sección abordaremos la gestión de permisos numéricamente. Recordemos que el tratamiento de permisos ya lo estudiamos en la novena sección, aunque en ella los establecimos a través de la secuencia de caracteres &lt;code&gt;rwx&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Así, las equivalencias numéricas de dichos permisos son:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;4&lt;/code&gt; equivale a &lt;code&gt;r&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;2&lt;/code&gt; equivale a &lt;code&gt;w&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;1&lt;/code&gt; equivale a &lt;code&gt;x&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En la práctica, empleando el comando &lt;code&gt;chmod&lt;/code&gt; podemos escribir:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;touch test-permissions.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod &lt;span class=&#34;m&#34;&gt;400&lt;/span&gt; test-permissions.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Como podemos observar, el propietario dispone del permiso de lectura (dado el &lt;code&gt;4&lt;/code&gt; que figura al principio del código), mientras que el resto de los permisos quedan desactivados. Además, ni el grupo, ni el resto de los usuarios, posee permiso alguno, pues para ellos hemos declarado un &lt;code&gt;0&lt;/code&gt; en cada caso (el primer cero hace referencia al grupo, mientras que el segundo está asociado al resto de usuarios).&lt;/p&gt;
+&lt;p&gt;Siguiendo esta filosofía, con &lt;code&gt;chmod 444 test-permissions.txt&lt;/code&gt;, tanto el administrador, como el grupo y el resto de los usuarios poseerían el permiso de lectura para este fichero en concreto.&lt;/p&gt;
+&lt;p&gt;En cuanto al permiso para escritura, generamos ejemplos similares a los anteriores sin más que teclear &lt;code&gt;chmod 200 test-permissions.txt&lt;/code&gt; o &lt;code&gt;chmod 222 test-permissions.txt&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Ahora bien, ¿cómo asignamos varios permisos simultáneamente? Por ejemplo, para que el administrador posea todos los permisos disponibles sobre el archivo, hemos de teclear:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;chmod &lt;span class=&#34;m&#34;&gt;700&lt;/span&gt; test-permissions.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ls -l
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Por tanto:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;7&lt;/code&gt; asigna los permisos &lt;code&gt;rwx&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;6&lt;/code&gt; asigna los permisos &lt;code&gt;rw-&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5&lt;/code&gt; asigna los permisos &lt;code&gt;r-x&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;3&lt;/code&gt; asigna los permisos &lt;code&gt;-wx&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Seguramente, a estas alturas, hayamos detectado el patrón de funcionamiento. Si queremos asignar varios permisos, simplemente hemos de realizar la suma de sus valores e introducir ese resultado en el dígito deseado del código numérico. Por ejemplo, &lt;code&gt;rwx&lt;/code&gt;, echando cuentas, equivale a &lt;code&gt;4 + 2 + 1&lt;/code&gt;, esto es, a &lt;code&gt;7&lt;/code&gt;. Análogamente, &lt;code&gt;-wx&lt;/code&gt;, equivale a &lt;code&gt;0 + 2 + 1&lt;/code&gt;, es decir, a &lt;code&gt;3&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    En la práctica, un código de permisos muy frecuente para archivos es &lt;code&gt;644&lt;/code&gt;.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Aunque en la sección hemos trabajado únicamente con ficheros, la misma filosofía se emplea para directorios. No obstante, hemos de recordar que los permisos no tienen exactamente el mismo significado para archivos que para carpetas, como bien comentamos en la novena sección de este artículo.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;21-referencias&#34;&gt;21. Referencias&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://youtube.com/playlist?list=PLT98CRl2KxKHaKA9-4_I38sLzK134p4GJ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Linux Commands for Beginners&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.theodinproject.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Odin Project&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;21-historial-de-versiones-del-artículo&#34;&gt;21. Historial de versiones del artículo&lt;/h2&gt;
+&lt;h2 id=&#34;22-historial-de-versiones-del-artículo&#34;&gt;22. Historial de versiones del artículo&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;2023.06.12: Escribe la sección sobre el cambio numérico de permisos&lt;/li&gt;
 &lt;li&gt;2023.06.11: Escribe la sección sobre el comando &lt;code&gt;find&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;2023.06.10: Escribe la sección sobre variables&lt;/li&gt;
 &lt;li&gt;2023.06.09: Escribe la sección sobre &amp;lsquo;&amp;lsquo;streams&amp;rsquo;&amp;rsquo;&lt;/li&gt;
