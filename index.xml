@@ -5,12 +5,139 @@
     <link>https://imalexissaez.github.io/</link>
       <atom:link href="https://imalexissaez.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Infinitos Contrastes</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 05 Sep 2023 00:00:01 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Sat, 09 Sep 2023 00:00:01 +0200</lastBuildDate>
     <image>
       <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Infinitos Contrastes</title>
       <link>https://imalexissaez.github.io/</link>
     </image>
+    
+    <item>
+      <title>VSCode &#43; LaTeX, solucionando el problema con latexindent</title>
+      <link>https://imalexissaez.github.io/2023/09/09/solucionando-el-problema-con-latexindent/</link>
+      <pubDate>Sat, 09 Sep 2023 00:00:01 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/09/09/solucionando-el-problema-con-latexindent/</guid>
+      <description>&lt;p&gt;Este artículo está dirigido a mi cada vez más olvidadizo &amp;lsquo;&amp;lsquo;yo del futuro&amp;rsquo;&amp;rsquo;, para cuando se encuentre en la misma tesitura que he experimentado estos días al realizar la transición de TeXMaker hacia VSCode como editor para trabajar con LaTeX. No obstante, bienvenida sea aquella persona que se haya topado con este problema y no desee dar todas esas vueltas al asunto que me he visto obligado a rodar.&lt;/p&gt;
+&lt;p&gt;Antes de nada, añado un poco de contexto a la entrada, con el objetivo de que no se reduzca a una mera receta de pasos a seguir (aunque al final del artículo habrá una de esas). Como suele ser habitual en estas fechas, con la llegada del verano arriban nuevos proyectos a puerto. Dado que he estado utiizando VSCode como editor en algunos cursos de programación, ¿por qué no investigar qué tal se comporta esta herramienta a la hora de trabajar con LaTeX?&lt;/p&gt;
+&lt;p&gt;Por tanto, en las siguientes líneas, parto de la base de que:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows es el sistema operativo instalado en el ordenador. De hecho, sin pretender desvelar demasiados &amp;lsquo;&amp;lsquo;spoilers&amp;rsquo;&amp;rsquo;, es el principal culpable del problema que da lugar a este texto. Tras leer algunos artículos y las discusiones de ciertos foros, en otros sistemas operativos no se produce conflicto alguno con la herramienta &lt;em&gt;latexindent&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://miktex.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MiKTeX&lt;/a&gt; y &lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VSCode&lt;/a&gt; se han instalado adecuadamente.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Así pues, para empezar, en VSCode existe una extensión bastante popular para trabajar con LaTeX: &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX Workshop&lt;/a&gt;. En su página de presentación me llaman la atención poderosamente algunas características llamativas, aunque también es cierto que la mayoría de ellas están disponibles en TeXMaker. Su instalación es sencilla y la configuración que viene por defecto parece adecuada en un primer vistazo por encima. Recalco aquí la palabra vistazo, pues la extensión cuenta, a la hora de escribir estas líneas, con la nada desdeñable cantidad de 157 opciones para afinar su comportamiento.&lt;/p&gt;
+&lt;p&gt;Además, puesto que había investigado brevemente la posible transición de TeXMaker a VSCode, aprovecho enseguida este interesante &lt;a href=&#34;https://mathjiajia.github.io/vscode-and-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;artículo&lt;/a&gt; e incluyo en las preferencias de usuario de VSCode las siguientes líneas:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;latex-workshop.latex.tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;latexmk&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;latexmk&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-synctex=1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-interaction=nonstopmode&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-file-line-error&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-pdf&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-outdir=%OUTDIR%&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DOC%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-synctex=1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-interaction=nonstopmode&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-file-line-error&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DOC%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-synctex=1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-interaction=nonstopmode&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;-file-line-error&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DOC%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bibtex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;command&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;bibtex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;args&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;%DOCFILE%&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;env&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;latex-workshop.latex.recipes&amp;#34;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdfLaTeX&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;latexmk 🔃&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;latexmk&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex ➞ bibtex ➞ pdflatex`×2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;nt&#34;&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;bibtex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;pdflatex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nt&#34;&gt;&amp;#34;name&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex ➞ bibtex ➞ xelatex`×2&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nt&#34;&gt;&amp;#34;tools&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;bibtex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;   &lt;span class=&#34;s2&#34;&gt;&amp;#34;xelatex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;En cuanto al primer bloque de código, muestra algunos de los comandos empleados a la hora de compilar documentos en LaTeX. Además, indica cómo pasar argumentos de cara a la compilación, ofreciéndome así una guía para que los personalice según mis intereses personales. En mis documentos utilizo habitualmente &lt;code&gt;pdflatex&lt;/code&gt; o &lt;code&gt;xelatex&lt;/code&gt;, pero nunca está de más disponer de plantillas adicionales de compilación.&lt;/p&gt;
+&lt;p&gt;Por lo que respecta al segundo bloque de código, es todavía más interesante, pues enseña cómo &amp;lsquo;&amp;rsquo;encadenar&amp;rsquo;&amp;rsquo; comandos para que se ejecuten de manera secuencial de forma sencilla. Para esta tarea, en mi caso particular, confieso que todavía utilizaba archivos de procesos por lotes. Al igual que antes, con los ejemplos incluidos es posible diseñar fácilmente la cadena de comandos que mejor se ajuste a mis necesidades.&lt;/p&gt;
+&lt;p&gt;Por otra parte, y cambiando de tercio completamente, una de las extensiones que más me ha convencido a la hora de trabajar con VSCode es &lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prettier&lt;/a&gt;. Se encarga de formatear la disposición del código de manera automática, ajustando espacios verticales y horizontales según unas reglas predefinidas, de manera que me ahorra el tiempo que antes invertía en ello (que no era poco, ya que cada cual tiene sus manías). Desafortunadamente, no soporta LaTeX y en este preciso instante comienza un pequeño calvario para mí.&lt;/p&gt;
+&lt;p&gt;Sin embargo, por fortuna, existe una herramienta destinada a ello: &lt;em&gt;latexindent&lt;/em&gt;. Ahora bien, aunque es la opción que por defecto incorpora la extensión LaTeX Workshop para esta tarea, en un primer momento no da signos de funcionar correctamente.&lt;/p&gt;
+&lt;p&gt;Como no podía ser de otra manera, empiezo a dar vueltas:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;En esta &lt;a href=&#34;https://tex.stackexchange.com/questions/577250/how-to-use-latexindent-on-windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;discusión&lt;/a&gt; descubro que es un problema que únicamente afecta a los usuarios de Windows. Además, aunque &lt;em&gt;latexindent&lt;/em&gt; está incluido dentro del ecosistema de paquetes de LaTeX, por mucho que desinstale e instale el mismo desde el gestor de paquetes de MiKTeX, el problema no se soluciona. En la respuesta de la mencionada discusión se incluye una sección denominada &amp;lsquo;&amp;lsquo;What works&amp;rsquo;&amp;rsquo;, pero ya directamente el primer paso no sé cómo llevarlo a cabo.&lt;/li&gt;
+&lt;li&gt;A continuación, acudo a la página web oficial de la herramienta: &lt;a href=&#34;https://github.com/cmhughes/latexindent.pl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;latexindent.pl&lt;/a&gt;. Su &lt;a href=&#34;http://mirrors.ctan.org/support/latexindent/documentation/latexindent.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;manual&lt;/a&gt; de usuario aconseja a los usuarios de Windows descargar un archivo ejecutable preparado específicamente para este sistema operativo. Actuar así, además, me permite esquivar la instalación de &lt;strong&gt;Perl&lt;/strong&gt;. Por consiguiente, accedo a la página de &lt;a href=&#34;https://github.com/cmhughes/latexindent.pl/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;releases&lt;/a&gt; y me hago con la versión &lt;code&gt;3.22.2&lt;/code&gt; del ejecutable, la más actual a la hora de escribir estas líneas.&lt;/li&gt;
+&lt;li&gt;Acto seguido, añado la ruta donde he ubicado dicho ejecutable al PATH del sistema y reinicio. Sin embargo, este camino tampoco arroja buenos frutos, pues &lt;em&gt;latexindent&lt;/em&gt; sigue sin funcionar en VSCode.&lt;/li&gt;
+&lt;li&gt;Finalmente, tras experimentar brevemente en la terminal del sistema, descubro que al ejecutar &lt;code&gt;latexindent&lt;/code&gt; el sistema no accede al ejecutable que acabo de descargar, sino al incluido en la instalación de MiKTeX. Es más, aunque desinstale el paquete desde el gestor de MiKTeX, ejecutar el comando lleva a su instalación. De esta forma, el problema se reduce a dar respuesta a la siguiente cuestión: ¿cómo puedo hacer que el sistema busque antes la herramienta en la nueva ruta? En esta ocasión la respuesta es sencilla: subir en el PATH la mencionada ruta por delante de la asociada a
+MiKTeX.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En resumen, a modo de &lt;strong&gt;TL;DR&lt;/strong&gt;, para utilizar en VSCode la herramienta &lt;em&gt;latexindent&lt;/em&gt; y dar formato de manera automática a los documentos de LaTeX:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Descarga el ejecutable para Windows desde la página oficial de &lt;a href=&#34;https://github.com/cmhughes/latexindent.pl/releases&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;releases&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Añade al PATH la ruta donde ubiques dicho ejecutable.&lt;/li&gt;
+&lt;li&gt;Posiciona dicha ruta por delante de la asociada a MiKTeX.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;referencias&#34;&gt;Referencias&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mathjiajia.github.io/vscode-and-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;A Fast Guide on Writing LaTeX with LaTeX Workshop in VS Code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tex.stackexchange.com/questions/577250/how-to-use-latexindent-on-windows&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;How to use latexindent on Windows?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/cmhughes/latexindent.pl&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;latexindent.pl&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://miktex.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MiKTeX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Prettier&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;VSCode&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Reseña: &#39;Los grandes problemas matemáticos&#39;</title>
@@ -37,10 +164,10 @@
 &lt;figure  id=&#34;figure-portada-del-libro-en-amazonhttpswwwamazoneslos-grandes-problemas-matemc3a1ticos-stewartdp8498926653&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Portada del libro en [Amazon](https://www.amazon.es/Los-grandes-problemas-matem%C3%A1ticos-Stewart/dp/8498926653).&#34; srcset=&#34;
-               /2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_68c6e9cb979c7dc8e2dc0dfd83611c89.webp 400w,
+               /2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_dd3174f1c02f1a0d529437a4db1b9fa6.webp 400w,
                /2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_de5701d106ecc7cf452fe2825eed4b5f.webp 760w,
                /2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://imalexissaez.github.io/2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_68c6e9cb979c7dc8e2dc0dfd83611c89.webp&#34;
+               src=&#34;https://imalexissaez.github.io/2023/09/05/resena-los-grandes-problemas-matematicos/portada-los-grandes-problemas-matematicos_hu536730b40b061e76534306db8fa447dd_288253_dd3174f1c02f1a0d529437a4db1b9fa6.webp&#34;
                width=&#34;516&#34;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
