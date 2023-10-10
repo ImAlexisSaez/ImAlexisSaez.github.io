@@ -5,91 +5,50 @@
     <link>https://imalexissaez.github.io/etiqueta/numeros-complejos/</link>
       <atom:link href="https://imalexissaez.github.io/etiqueta/numeros-complejos/index.xml" rel="self" type="application/rss+xml" />
     <description>Números complejos</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Alexis Sáez ©2021</copyright><lastBuildDate>Sat, 11 Aug 2018 05:59:39 +0200</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>es</language><lastBuildDate>Tue, 10 Oct 2023 00:00:00 +0200</lastBuildDate>
     <image>
-      <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_2.png</url>
+      <url>https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_512x512_fill_lanczos_center_3.png</url>
       <title>Números complejos</title>
       <link>https://imalexissaez.github.io/etiqueta/numeros-complejos/</link>
     </image>
     
     <item>
-      <title>Jugando con las propiedades del conjugado</title>
-      <link>https://imalexissaez.github.io/2018/08/11/jugando-con-las-propiedades-del-conjugado/</link>
-      <pubDate>Sat, 11 Aug 2018 05:59:39 +0200</pubDate>
-      <guid>https://imalexissaez.github.io/2018/08/11/jugando-con-las-propiedades-del-conjugado/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Problema 4:&lt;/strong&gt; Dada una constante real positiva, $a$, y el conjunto&lt;/p&gt;
-&lt;p&gt;$$
-M_a = \left\{z\in\mathbb{C}^* : \left|z+\dfrac{1}{z}\right|=a \right\},
-$$&lt;/p&gt;
-&lt;p&gt;donde $\mathbb{C}^* = \mathbb{C}\backslash{(0,0)}$, encuentre los valores mínimo y máximo de $|z|$ cuando $z\in M_a$.&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;Hemos de ser capaces de extraer información sobre el módulo de $z$, $|z|$, a partir de la expresión de la ecuación que define al conjunto $M_a$. Por las propiedades de la conjugación, sabemos que $z\overline{z} = |z|^2$, de manera que una posible estrategia a seguir sería elevar al cuadrado ambos miembros de la ecuación que define a $M_a$ y desarrollar la expresión resultante mediante las propiedades de la conjugación. Así,&lt;/p&gt;
-&lt;p&gt;$$
-\begin{aligned}
-a^2 &amp;amp;= \left|z+\dfrac{1}{z}\right|^2 = \left(z+\dfrac{1}{z}\right)\overline{\left(z+\dfrac{1}{z}\right)} = \left(z+\dfrac{1}{z}\right)\left(\overline{z}+\dfrac{1}{\overline{z}}\right)\\ &amp;amp;= z\overline{z} + \dfrac{z}{\overline{z}} + \dfrac{\overline{z}}{z} + \dfrac{1}{z\overline{z}} = z\overline{z} + \dfrac{z^2 + \overline{z}^2}{\overline{z}z} + \dfrac{1}{z\overline{z}},
-\end{aligned}
-$$&lt;/p&gt;
-&lt;p&gt;pero recordemos que $z\overline{z} = |z|^2$, por lo que la anterior ecuación quedaría&lt;/p&gt;
-&lt;p&gt;$$
-a^2 = |z|^2 + \dfrac{z^2+\overline{z}^2}{|z|^2}+\dfrac{1}{|z|^2},
-$$&lt;/p&gt;
-&lt;p&gt;y multiplicando ambos miembros por $|z|^2$, número que sabemos es distinto de cero porque $z\in\mathbb{C}^*$, tenemos&lt;/p&gt;
-&lt;p&gt;$$
-a^2|z|^2 = |z|^4 + z^2 + \overline{z}^2 + 1.
-$$&lt;/p&gt;
-&lt;p&gt;Ahora bien, a primera vista, la anterior expresión parece que quiere conducirnos hacia alguna especie de ecuación bicuadrada en $|z|$. Efectivamente, si reordenamos los términos de manera adecuada, llegamos a&lt;/p&gt;
-&lt;p&gt;$$
-|z|^4 - a^2|z|^2 + 1 = - (z^2 + \overline{z}^2)
-$$&lt;/p&gt;
-&lt;p&gt;y si completamos el cuadrado del miembro derecho,&lt;/p&gt;
-&lt;p&gt;$$
-\begin{aligned}
-|z|^4 - a^2|z|^2 + 1 &amp;amp;= - (z^2 + \overline{z}^2 + 2z\overline{z} - 2z\overline{z})\\ &amp;amp;= - (z + \overline{z})^2 + 2z\overline{z}\\ &amp;amp;= - (z + \overline{z})^2 + 2|z|^2, 
-\end{aligned}
-$$&lt;/p&gt;
-&lt;p&gt;es decir,&lt;/p&gt;
-&lt;p&gt;$$
-|z|^4 - (a^2+2)|z|^2 + 1 = - (z+\overline{z})^2 \leq 0.
-$$&lt;/p&gt;
-&lt;p&gt;Por lo tanto, tras realizar operaciones algebraicas sobre la ecuación que define al conjunto $M_a$, hemos llegado a que la expresión de cierta ecuación bicuadrada en $|z|$ debe ser menor o igual que cero. Investiguemos si de ella podemos extraer alguna condición sobre el módulo de $z$ que nos permita dar respuesta al problema planteado.&lt;/p&gt;
-&lt;p&gt;Resolviendo $|z|^4 - (a^2 + 2)|z|^2 + 1 = 0$ y teniendo en cuenta que es positivo el coeficiente asociado a $|z|^4$, tenemos que $|z|^4 - (a^2 + 2)|z|^2 + 1 \leq 0$  si, y solo si,&lt;/p&gt;
-&lt;p&gt;$$
-|z|^2\in \left[
-\dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2}, \dfrac{2+a^2 + \sqrt{a^4+4a^2}}{2}
-\right],
-$$&lt;/p&gt;
-&lt;p&gt;que es equivalente a decir que&lt;/p&gt;
-&lt;p&gt;$$
-|z|\in \left[
-\dfrac{-a + \sqrt{a^2+4}}{2}, \dfrac{a + \sqrt{a^2+4}}{2}
-\right].
-$$&lt;/p&gt;
-&lt;p&gt;Veamos esta última equivalencia en detalle, pues puede no resultarnos trivial a primera vista. La idea aquí es representar ambos extremos del intervalo que hemos obtenido para $|z|^2$ como cuadrados de ciertas expresiones. Si somos capaces de llevar a cabo tal tarea, únicamente bastará aplicar la raíz cuadrada (que, recordemos, es una transformación monótona creciente) para, de esta manera, llegar a la conclusión obtenida para $|z|$.&lt;/p&gt;
-&lt;p&gt;Centrémonos en la expresión del extremo inferior del intervalo definido para $|z|^2$ (el razonamiento a seguir sería análogo para el superior). Por un lado,&lt;/p&gt;
-&lt;p&gt;$$
-2+a^2 - \sqrt{a^4 + 4a^2} = 2+a^2 - a\sqrt{a^2 + 4},
-$$&lt;/p&gt;
-&lt;p&gt;expresión que nos invita a experimentar con el desarrollo de $(-a + \sqrt{a^2 + 4})^2$. Así,&lt;/p&gt;
-&lt;p&gt;$$
-\begin{aligned}
-(-a + \sqrt{a^2+4})^2 &amp;amp;= a^2 + a^2 + 4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2a^2+4 - 2a\sqrt{a^2+4}\\ &amp;amp;= 2(a^2+2-a\sqrt{a^2+4})\\ &amp;amp;= 2(a^2+2-\sqrt{a^4+4a^2}),
-\end{aligned}
-$$&lt;/p&gt;
-&lt;p&gt;de forma que&lt;/p&gt;
-&lt;p&gt;$$
-\dfrac{2+a^2 - \sqrt{a^4+4a^2}}{2} = \dfrac{(-a + \sqrt{a^2+4})^2}{2\cdot 2} = \left(\dfrac{-a + \sqrt{a^2+4}}{2}\right)^2.
-$$&lt;/p&gt;
-&lt;p&gt;Por tanto, hemos llegado a que&lt;/p&gt;
-&lt;p&gt;$$
-\begin{aligned}
-\min{|z|} &amp;amp;= \dfrac{-a+\sqrt{a^2+4}}{2},\\ \max{|z|} &amp;amp;= \dfrac{a+\sqrt{a^2+4}}{2},
-\end{aligned}
-$$&lt;/p&gt;
-&lt;p&gt;y los valores extremos se alcanzarán cuando se dé la igualdad en la inecuación considerada, es decir, cuando $-(z+\overline{z})^2 = 0$, que equivale a la condición $z=-\overline{z}$. Así pues, los valores extremos se alcanzarán para los números complejos $z\in M_a$ tales que $z=-\overline{z}$.&lt;/p&gt;
-&lt;p&gt;Referencia:&lt;/p&gt;
+      <title>La semana en problemas (S05)</title>
+      <link>https://imalexissaez.github.io/2023/10/10/la-semana-en-problemas-s05/</link>
+      <pubDate>Tue, 10 Oct 2023 00:00:00 +0200</pubDate>
+      <guid>https://imalexissaez.github.io/2023/10/10/la-semana-en-problemas-s05/</guid>
+      <description>&lt;p&gt;Esta semana se proponen algunos enunciados relacionados con los números complejos.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-1&#34;&gt;Ejercicio 1&lt;/h3&gt;
+&lt;p&gt;Los afijos $z_1$, $z_2$, $z_3$, $z_4$, $z_5$ y $z_6$ son los vértices de un hexágono regular. Sabiendo que $z_1=0$ y $z_4=4+6i$, halla $z_2$, $z_3$, $z_5$ y $z_6$.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-2&#34;&gt;Ejercicio 2&lt;/h3&gt;
+&lt;p&gt;Sean $r_1$, $r_2$, $r_3$, $r_4$ y $r_5$ las raíces quintas de la unidad. Estudia qué valores toma la expresión $E=r_1^n+r_2^n+r_3^n+r_4^n+r_5^n$ cuando $n$ recorre los números naturales.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-3&#34;&gt;Ejercicio 3&lt;/h3&gt;
+&lt;p&gt;Considera, en el plano complejo $\mathbb{C}$, las raíces $n$-ésimas de la unidad. Calcula la suma de los cuadrados de las distancias entre los afijos de dichas raíces $n$-ésimas.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-4&#34;&gt;Ejercicio 4&lt;/h3&gt;
+&lt;p&gt;Calcula la longitud de la hipotenusa de un triángulo rectángulo formado por los afijos de tres números complejos $w_a$, $w_b$ y $w_c$, tales que $w_a+w_b+w_c=0$ y $|w_a|^2 + |w_b|^2 + |w_c|^2 = 150$.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-5&#34;&gt;Ejercicio 5&lt;/h3&gt;
+&lt;p&gt;Resuelve la ecuación $z^4 - 24z^3 + 227z^2 - 986z + 1682 = 0$, sabiendo que todas sus raíces son de la forma $a + bi$, con $a$ y $b$ números enteros.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-6&#34;&gt;Ejercicio 6&lt;/h3&gt;
+&lt;p&gt;Se considera el polinomio con coeficientes complejos $P(z) = z^3 + (-6+5i)z^2 + (9-24i)z + 18 + 13i$.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Andreescu, T., &amp;amp; Andrica, D., (2006), &lt;em&gt;Complex Numbers from A to&amp;hellip; Z&lt;/em&gt;, Boston: Birkhäuser.&lt;/li&gt;
+&lt;li&gt;a) Calcula $a, b, c\in\mathbb{C}$ para que $P(z) = (z+i)(az^2+bz+c)$, para todo $z\in\mathbb{C}$.&lt;/li&gt;
+&lt;li&gt;b) Resuelve la ecuación $P(z) = 0$.&lt;/li&gt;
+&lt;li&gt;c) Dibuja, en el plano complejo, el triángulo cuyos vértices son los afijos $A_1$, $A_2$ y $A_3$ de las soluciones de la ecuación del apartado anterior.&lt;/li&gt;
+&lt;li&gt;d) ¿Qué tipo de triángulo es $A_1A_2A_3$?&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;ejercicio-7&#34;&gt;Ejercicio 7&lt;/h3&gt;
+&lt;p&gt;Sea el polinomio $P(z) = (1+i)z^3 - (2+6i)z^2 - (1-9i)z + 2 - 4i$.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;a) Halla las soluciones de la ecuación $P(z)=0$ que pertenecen al cuerpo de los números reales.&lt;/li&gt;
+&lt;li&gt;b) Encuentra todas las raíces de la ecuación anterior.&lt;/li&gt;
+&lt;li&gt;c) Sea $P(z)$ un polinomio con coeficientes complejos de grado tres. Se efectua un &amp;lsquo;&amp;lsquo;cambio de variable&amp;rsquo;&amp;rsquo; $z=aw+b$, $a\neq 0$, con la intención de obtener un polinomio de coeficientes reales. Demuestra que ello es posible si, y solo si, los ceros de $P(z)$ en $\mathbb{C}$ están alineados o forman un triángulo isósceles (posiblemente con múltiples vértices).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ejercicio-8&#34;&gt;Ejercicio 8&lt;/h3&gt;
+&lt;p&gt;Calcula las raíces de la siguiente ecuación, sabiendo que sus afijos forman un rombo con diagonales paralelas a los ejes y con centro en $z=i$: $$x^4-4ix^3-3x^2-2ix-6=0.$$&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-9&#34;&gt;Ejercicio 9&lt;/h3&gt;
+&lt;p&gt;Halla $a$ y $b$ para que el polinomio $P(x) = x^2 - ax + b$, con $a,b\in\mathbb{Z}$, una de sus raíces sea una raíz $n$-ésima de la unidad.&lt;/p&gt;
+&lt;h3 id=&#34;ejercicio-10&#34;&gt;Ejercicio 10&lt;/h3&gt;
+&lt;p&gt;Halla las condiciones que deben cumplir los coeficientes de las ecuaciones $$z^3+p_1z+q_1=0,\qquad z^3+p_2z+q_2=0,$$ para que los afijos de las soluciones de cada una de dichas ecuaciones formen triángulos semejantes.&lt;/p&gt;
 </description>
     </item>
     
