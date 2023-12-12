@@ -1,0 +1,1423 @@
+<!DOCTYPE html><html lang="es" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.6.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Alexis Sáez" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Esta semana se proponen algunos enunciados relacionados con matrices, estructuras algebraicas y espacios vectoriales." />
+
+  
+  <link rel="alternate" hreflang="es" href="https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+    
+    <script src="/js/mathjax-config.js"></script>
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.c7b8d9abd591ba2253ea42747e3ac3f5.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha512-W0xM4mr6dEP9nREo7Z9z+9X70wytKvMGeDsj7ps2+xg5QPrEBXC8tAW1IFnzjR6eoJ90JmCnFzerQJTLzIEHjA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.3495fc6150afdd177f1d04fbba9f5e2c.css" />
+
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/libs/chroma/github-light.min.css" title="hl-light" media="print" onload="this.media='all'" >
+    <link rel="stylesheet" href="/css/libs/chroma/dracula.min.css" title="hl-dark" media="print" onload="this.media='all'" disabled>
+  
+
+  
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-88993800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-88993800-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+  
+
+  
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  
+  <link rel="icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+    <meta property="twitter:site" content="@imalexissaez" />
+    <meta property="twitter:creator" content="@imalexissaez" />
+  
+  <meta property="og:site_name" content="Infinitos Contrastes" />
+  <meta property="og:url" content="https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/" />
+  <meta property="og:title" content="La semana en problemas (S14) | Infinitos Contrastes" />
+  <meta property="og:description" content="Esta semana se proponen algunos enunciados relacionados con matrices, estructuras algebraicas y espacios vectoriales." /><meta property="og:image" content="https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/featured.jpg" />
+    <meta property="twitter:image" content="https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/featured.jpg" /><meta property="og:locale" content="es" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2023-12-12T00:00:00&#43;02:00"
+      />
+    
+    <meta property="article:modified_time" content="2023-12-12T00:00:00&#43;02:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/"
+  },
+  "headline": "La semana en problemas (S14)",
+  
+  "image": [
+    "https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/featured.jpg"
+  ],
+  
+  "datePublished": "2023-12-12T00:00:00+02:00",
+  "dateModified": "2023-12-12T00:00:00+02:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Alexis Sáez"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Infinitos Contrastes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://imalexissaez.github.io/media/icon_hubd324007acfbf71c468514de6d8e3809_36197_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Esta semana se proponen algunos enunciados relacionados con matrices, estructuras algebraicas y espacios vectoriales."
+}
+</script>
+
+  
+
+  
+
+  
+
+
+  <title>La semana en problemas (S14) | Infinitos Contrastes</title>
+
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="db046ceb6fae25536ecf1e41b43aa37f" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.613040fe4f2c0f007b4dcb64404201cb.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Buscar</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Cerrar"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Buscar..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Buscar...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Barra de navegación">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Infinitos Contrastes</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Proyectos</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Blog</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Acerca de</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Buscar"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Mostrar preferencias">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Claro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Oscuro</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automático</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+<div class="article-container pt-3">
+  <h1>La semana en problemas (S14)</h1>
+
+  
+  <p class="page-subtitle">Problemas de matrices</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Alexis Sáez</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    12/12/23
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    4 min de lectura
+  </span>
+  
+
+  
+  
+  
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/categoria/problemas/">Problemas</a></span>
+  
+
+</div>
+
+  
+
+
+
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 480px;">
+  <div style="position: relative">
+    <img src="/2023/12/12/la-semana-en-problemas-s14/featured_hu8c5993a10930ba54f5c25cf9f167d7ea_26566_720x2500_fit_q75_h2_lanczos.webp" width="720" height="480" alt="" class="featured-image">
+    <span class="article-header-caption">Fotografía de <a href="https://unsplash.com/es/@jeswinthomas" target="_blank" rel="noopener">Jeswin Thomas</a>, disponible en <a href="https://unsplash.com/es/fotos/hecib2an4T4" target="_blank" rel="noopener">Unsplash</a>.</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>Esta semana se proponen algunos enunciados relacionados con matrices, estructuras algebraicas y espacios vectoriales.</p>
+<h3 id="ejercicio-1">Ejercicio 1</h3>
+<p>Considérese el conjunto $\mathcal{A}$ de las matrices cuadradas de orden tres de la forma siguiente:
+
+\begin{align*}
+    M(x) =
+    \begin{bmatrix}
+        1 & 0 & x \\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{bmatrix},
+    \quad\text{donde } x\in\mathbb{R}.
+\end{align*}
+</p>
+<ul>
+<li>a) Demuestre que el conjunto $\mathcal{A}$ tiene estructura de grupo conmutativo respecto del producto de matrices.</li>
+<li>b) En este ejercicio se aborda el concepto de grupo, estructura básica de la teoría de conjuntos. Relacione esta con el currículo de Secundaria y dé una aplicación didáctica de algún concepto que aparezca en dicha teoría.</li>
+</ul>
+<h3 id="ejercicio-2">Ejercicio 2</h3>
+<p>Para cada tres números enteros $x$, $y$ y $z$ se considera la matriz
+
+\begin{align*}
+    M(x, y, z) =
+    \begin{bmatrix}
+        1 & x & y \\
+        0 & 1 & z \\
+        0 & 0 & 1
+    \end{bmatrix}.
+\end{align*}
+</p>
+<ul>
+<li>a) Pruebe que el conjunto $\mathcal{A}$ de todas estas matrices $M(x,y,z)$ es un grupo respecto del producto de matrices.</li>
+<li>b) Halle el conjunto $\mathcal{B}$ de todas las matrices de $\mathcal{A}$ que conmutan con todas las matrices de este grupo.</li>
+<li>c) Pruebe que $\mathcal{B}$ es un subgrupo de $\mathcal{A}$ isomorfo al grupo aditivo de los enteros.</li>
+</ul>
+<h3 id="ejercicio-3">Ejercicio 3</h3>
+<p>Sea $\mathcal{M}_{\mathbb{C}}$ el conjunto de todas las matrices $2\times 2$ de la forma
+
+\begin{align*}
+    M(a, b) =
+    \begin{bmatrix}
+        a & -b \\
+        b & a
+    \end{bmatrix},
+    \quad (a,b\in\mathbb{R})
+\end{align*}
+</p>
+<ul>
+<li>a) Demuestre que $\mathcal{M}_{\mathbb{C}}$ tiene estructura algebraica de cuerpo conmutativo con las operaciones usuales de suma y producto de matrices.</li>
+<li>b) Demuestre que $\mathcal{M}_{\mathbb{C}}$ es isomorfo al cuerpo $\mathbb{C}$ de los números complejos, hallando el isomorfismo $f:\mathbb{C}\rightarrow\mathcal{M}_{\mathbb{C}}$ correspondiente.</li>
+<li>c) Utilizando el isomorfismo definido en b), calcule
+
+\begin{align*}
+    \sqrt[4]{
+        \begin{bmatrix}
+            -\frac{1}{2}       & -\frac{\sqrt{3}}{2} \\
+            \frac{\sqrt{3}}{2} & -\frac{1}{2}
+        \end{bmatrix}
+    }.
+\end{align*}
+</li>
+</ul>
+<h3 id="ejercicio-4">Ejercicio 4</h3>
+<p>Sea $\mathcal{M}_2(\mathbb{R})$ el espacio vectorial real de todas las matrices cuadradas de tamaño $2\times 2$, y sea $M\in\mathcal{M}_2(\mathbb{R})$ una matriz que cumple la igualdad:
+
+\begin{align}
+    M^2 - 2M - 3I = 0.\qquad (1)
+\end{align}
+</p>
+<p>Sea asimismo $V$ el subespacio vectorial de $\mathcal{M}_2(\mathbb{R})$ engendrado por $M$ e $I$.</p>
+<ul>
+<li>a) Determine todas las matrices $M$ que cumplen la relación (1) y que son tales que la dimensión de $V$ es $1$.</li>
+<li>b) Halle todas las soluciones de la ecuación (1) de la forma
+
+\begin{align*}
+    M =
+    \begin{bmatrix}
+        p & q \\
+        q & p
+    \end{bmatrix}.
+\end{align*}
+</li>
+<li>c) Se supone que $M$ cumple (1) y es distinta de las matrices obtenidas en a). Determine, en el espacio $V$ correspondiente, todas las matrices $P$ tales que $P^2 = P$.</li>
+</ul>
+<h3 id="ejercicio-5">Ejercicio 5</h3>
+<p>En el espacio vectorial de las matrices cuadradas de orden dos, consideramos los subespacios $L$ y $M$ siguientes:
+
+\begin{align*}
+    L & =
+    \left\{
+        \begin{bmatrix}
+            a-b+2c & b-2c\\
+            0 & 2c
+        \end{bmatrix}
+        :
+        a,b,c\in\mathbb{R}
+    \right\};\\
+    M &= \mathcal{L}
+    \left\{
+        \begin{bmatrix}
+            1 & -1\\
+            0 & 0
+        \end{bmatrix},
+        \begin{bmatrix}
+            1 & 0\\
+            0 & -1
+        \end{bmatrix},
+        \begin{bmatrix}
+            0 & 1\\
+            0 & -1
+        \end{bmatrix}
+    \right\}.
+\end{align*}
+</p>
+<ul>
+<li>a) Determine el subespacio $L\cap M$ y compruebe que $L = L + M$, decidiendo además si se trata de una suma directa.</li>
+<li>b) Sea $\mathcal{B}_L = \{U,V,W\}$ la base de $L$ en la que
+
+\begin{align*}
+    U = 
+    \begin{bmatrix}
+        1 & -1\\
+        0 & 0
+    \end{bmatrix},\quad
+    V = 
+    \begin{bmatrix}
+        1 & 0\\
+        0 & -1
+    \end{bmatrix},\quad
+    W = 
+    \begin{bmatrix}
+        1 & 1\\
+        0 & 1
+    \end{bmatrix}
+\end{align*}
+
+y sea $f:L\rightarrow L$ la aplicación lineal dada por $f(U) = V$, $f(V) = U$ y $f(W) = W$. Halle la matriz de $f$ respecto de la base $\mathcal{B}_L$ y los subespacios $ker(f)$ e $img(f)$.</li>
+</ul>
+<h3 id="ejercicio-6">Ejercicio 6</h3>
+<p>En el espacio vectorial $\mathcal{M}_2(\mathbb{R})$ de las matrices cuadradas de orden $2$ se considera la base
+
+\begin{align*}
+    \mathcal{B} =
+    \left\{
+    \begin{bmatrix}
+        1 & 0 \\
+        0 & 2
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & 2 \\
+        0 & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        0 & 0 \\
+        2 & 1
+    \end{bmatrix},
+    \begin{bmatrix}
+        -1 & 0 \\
+        2  & 0
+    \end{bmatrix}
+    \right\}
+\end{align*}
+
+y los conjuntos
+
+\begin{align*}
+    S & = \{A\in\mathcal{M}_2(\mathbb{R}: A^t = A)\} \\
+    U & =
+    \left\{
+    A\in\mathcal{M}_2(\mathbb{R}):
+    A\cdot
+    \begin{bmatrix}
+        1 & 2 \\
+        2 & 4
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        0 & 0 \\
+        0 & 0
+    \end{bmatrix}
+    \right\}                                         \\
+    V & = \mathcal{L}
+    \left\{
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 1
+    \end{bmatrix},
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 0
+    \end{bmatrix},
+    \begin{bmatrix}
+        1 & 1 \\
+        0 & 2
+    \end{bmatrix}
+    \right\}
+\end{align*}
+</p>
+<ul>
+<li>a) Demuestre que $U$ es un subespacio de $\mathcal{M}_2(\mathbb{R})$.</li>
+<li>b) Calcule ecuaciones paramétricas e implícitas de $S\cap V$ respecto de la base canónica de $\mathcal{M}_2(\mathbb{R})$.</li>
+<li>c) Dé ecuaciones paramétricas e implícitas de $U$ respecto de la base $\mathcal{B}$.</li>
+<li>d) Razone la veracidad o falsedad de las siguientes afirmaciones, en las que $W$ es un espacio vectorial de dimensión $2021$:
+<ul>
+<li>i) En $W$ puede existir un sistema generador con $2022$ vectores.</li>
+<li>ii) $2020$ vectores distintos de $W$ siempre son linealmente indpendientes.</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/etiqueta/espacios-vectoriales/">Espacios vectoriales</a>
+  
+  <a class="badge badge-light" href="/etiqueta/estructuras-algebraicas/">Estructuras algebraicas</a>
+  
+  <a class="badge badge-light" href="/etiqueta/matrices/">Matrices</a>
+  
+</div>
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/&amp;text=La%20semana%20en%20problemas%20%28S14%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/&amp;t=La%20semana%20en%20problemas%20%28S14%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=La%20semana%20en%20problemas%20%28S14%29&amp;body=https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/&amp;title=La%20semana%20en%20problemas%20%28S14%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=La%20semana%20en%20problemas%20%28S14%29%20https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://imalexissaez.github.io/2023/12/12/la-semana-en-problemas-s14/&amp;title=La%20semana%20en%20problemas%20%28S14%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://imalexissaez.github.io/"><img class="avatar mr-3 avatar-circle" src="/autor/alexis-saez/avatar_hua39f867b6310dd76c627bc5b9d3c9187_88643_270x270_fill_q75_lanczos_center.jpg" alt="Alexis Sáez"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://imalexissaez.github.io/">Alexis Sáez</a></h5>
+      <h6 class="card-subtitle">Profesor de matemáticas</h6>
+      <p class="card-text">Cazador de problemas matemáticos en parajes opositores.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/ImAlexisSaez" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+  <p class="powered-by copyright-license-text">
+    Alexis Sáez ©2023
+  </p>
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+
+
+<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+
+
+
+
+  
+
+  
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script id="search-hit-fuse-template" type="text/x-template">
+    <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+    </div>
+  </script>
+  
+    <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+
+  <script id="dsq-count-scr" src="https://infinitos-contrastes.disqus.com/count.js" async></script>
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+
+
+  <script src="/js/wowchemy-headroom.c251366b4128fd5e6b046d4c97a62a51.js" type="module"></script>
+
+
+
+
+
+
+
+
+  
+  
+
+
+<script src="/es/js/wowchemy.min.5f5e92e0cc3cfe1f39b704e67a705053.js"></script>
+
+
+
+
+
+
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Citar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <pre><code></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copiar
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Descargar
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
