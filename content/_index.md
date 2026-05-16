@@ -2,7 +2,7 @@
 # Leave the homepage title empty to use the site title
 title: ''
 summary: ''
-date: 2022-10-24
+date: 2026-05-16
 type: landing
 
 sections:
@@ -12,13 +12,13 @@ sections:
       username: me
       text: ''
       # Show a call-to-action button under your biography? (optional)
-      button:
-        text: Download CV
-        url: uploads/resume.pdf
+      #button:
+        #text: Download CV
+        #url: uploads/resume.pdf
       headings:
-        about: ''
-        education: ''
-        interests: ''
+        about: 'Acerca de'
+        education: 'Educación'
+        interests: 'Intereses'
     design:
       # Use the new Gradient Mesh which automatically adapts to the selected theme colors
       background:
