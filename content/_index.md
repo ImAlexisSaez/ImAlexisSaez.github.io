@@ -76,10 +76,10 @@ sections:
     design:
       view: card
   - block: collection
-    id: news
+    id: blog_posts
     content:
-      title: Recent News
-      subtitle: ''
+      title: Blog
+      subtitle: Pensando para escribir, escribiendo para pensar.
       text: ''
       # Page type to display. E.g. post, talk, publication...
       page_type: blog
