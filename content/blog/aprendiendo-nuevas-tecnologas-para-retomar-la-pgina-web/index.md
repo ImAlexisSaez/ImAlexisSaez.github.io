@@ -2,7 +2,6 @@
 title: Aprendiendo nuevas tecnologías para retomar la página web
 summary: Lidiando con un tsunami de cambios para la web.
 date: 2026-05-17
-draft: false
 image:
   caption: Imagen generada por Leonardo.Ai
 authors:
@@ -10,9 +9,8 @@ authors:
 tags:
   - Reflexiones
   - Página web
-
+status: published
 ---
-
 En uno de esos momentos ociosos que te plantea la vida un sábado por la tarde me propuse llevar a cabo una pequeña actualización de la página web. No se trataba de nada espectacular o muy elaborado, más bien al contrario. El objetivo era incluir un par de nuevas portadas de libros cuya lectura había finalizado recientemente (ambos muy recomendables: *Trenza del mar esmeralda* y *La rebelión de los buenos*).
 
 Así pues, un proceso que en condiciones normales llevaría aproximadamente cinco minutos derivó en una sucesión de problemas provocados por un "¿Y si...?". Al tener la página web un tanto abandonada, por no decir completamente, pensé que antes de realizar modificación alguna sería conveniente actualizar sus componentes. ¡Craso error!
