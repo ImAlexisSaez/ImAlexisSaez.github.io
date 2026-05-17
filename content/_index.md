@@ -76,7 +76,7 @@ sections:
     design:
       view: card
   - block: collection
-    id: blog_posts
+    id: blogposts
     content:
       title: Blog
       subtitle: Pensando para escribir, escribiendo para pensar.
