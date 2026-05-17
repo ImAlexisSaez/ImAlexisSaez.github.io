@@ -1,19 +1,25 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
-  "name": "HugoBlox Codespace",
-  "image": "ghcr.io/HugoBlox/hugo-blox-dev:hugo0.161.1",
-  "updateContentCommand": "pnpm install --frozen-lockfile --prefer-offline",
-  "postCreateCommand": "pnpm --version && hugo version",
-  "customizations": {
-    "vscode": {
-      "extensions": ["ownable.ownable"]
-    }
-  },
-  "mounts": ["source=pnpm-store,target=/home/vscode/.local/share/pnpm,type=volume"],
-  "remoteUser": "vscode",
-  "forwardPorts": [1313],
-  "portsAttributes": {
-    "1313": {
-      "label": "Hugo Server"
-    }
-  }
+	"name": "Node.js",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:4-24-trixie",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/pnpm:2": {}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
