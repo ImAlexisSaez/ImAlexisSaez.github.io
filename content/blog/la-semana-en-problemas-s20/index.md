@@ -54,13 +54,14 @@ $$
 \end{align*}
 $$
 
+<!--
 ### Ejercicio 5
 
 Dada la función
 
 $$
 \begin{align*}
-    F(x) = \int_{0}^{x^4+x^2}{e^{-t^2/2}dt}
+    F(x) = \int_{0}^{x^4 + x^2}{e^{-t^2/2}dt}
 \end{align*}
 $$
 
@@ -68,3 +69,4 @@ $$
 - (b) Calcule las asíntotas de $F(x)$, en caso de que existan.
 - (c) Desarrolle $f(x)$ en serie de potencias.
 - (d) Resuelva en $\mathbb{R}$ la ecuación $F(x) + a = 0$, con $a\in\mathbb{R}$, $a\geq 0$.
+-->
