@@ -58,13 +58,11 @@ $$
 
 Dada la función
 
-<!--
 $$
 \begin{align*}
-    F(x) = \int_{0}^{x^4+x^2}{e^{-\frac{t^2}{2}}dt}
+    F(x) = \int_{0}^{x^4+x^2}{e^{-t^2/2}dt}
 \end{align*}
 $$
--->
 
 - (a) Estudie la monotonía de $F(x)$.
 - (b) Calcule las asíntotas de $F(x)$, en caso de que existan.
