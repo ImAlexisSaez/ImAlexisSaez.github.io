@@ -3,15 +3,16 @@ title: La semana en problemas (S20)
 summary: Esta semana se proponen algunos enunciados relacionados con integrales.
 date: 2024-02-13
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
 tags:
-  - Problemas
-  - Integrales
+    - Problemas
+    - Integrales
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con integrales.
 
 ### Ejercicio 1
@@ -54,7 +55,6 @@ $$
 \end{align*}
 $$
 
-<!--
 ### Ejercicio 5
 
 Dada la función
@@ -68,5 +68,5 @@ $$
 - (a) Estudie la monotonía de $F(x)$.
 - (b) Calcule las asíntotas de $F(x)$, en caso de que existan.
 - (c) Desarrolle $f(x)$ en serie de potencias.
-- (d) Resuelva en $\mathbb{R}$ la ecuación $F(x) + a = 0$, con $a\in\mathbb{R}$, $a\geq 0$.
--->
+- (d) Resuelva en $\mathbb{R}$ la ecuación $F(x) + a = 0$, con $a\in\mathbb{R}$,
+  $a\geq 0$.
