@@ -32,10 +32,10 @@ mental y como persona no tiene precio.
 
 ### Registro de lecturas
 
-A continuación listo mis lecturas, en orden cronológico inverso, desde que
-comencé el registro en la página web. Además, en cada título incorporo el
-correspondiente enlace a [goodreads](https://www.goodreads.com/) para acceder a
-información adicional sobre el mismo.
+A continuación listo mis lecturas en orden cronológico inverso (de la más
+reciente a la más antigua), desde que comencé este registro en la web. Cada
+título incluye un enlace a [Goodreads](https://www.goodreads.com/) por si
+quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
