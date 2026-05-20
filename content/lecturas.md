@@ -6,7 +6,29 @@ type: page
 
 ### Introducción
 
-Prueba
+Ávido lector desde mi más tierna infancia. Me inicié de la mano del gran maestro
+Ibáñez, con sus tebeos de _Mortadelo y Filemón_, por simple imitación del hábito
+lector de mis padres. Tenía sus viñetas casi memorizadas de tantas relecturas.
+
+En la adolescencia logré despegarme parcialmente de ellos para caer en las redes
+de la fantasía, la ciencia ficción y el terror. En todos esos casos la elección
+de los títulos no fue en absoluto arriesgada y devoré libros de autores que hoy
+serían considerados clásicos. Por nombrar algunos, pasaron por mis manos textos
+de Tolkien, Tad Williams, Ursula K. Le Guin, Asimov, Herbert, Orson Scott Card,
+Orwell, Bradbury, Huxley, Wells, Simmons, Stephen King o Clive Barker.
+
+Después atravesé después una especie de "época oscura", donde apenas encontraba
+tiempo para la lectura. Por desgracia, siempre parecía haber alguna tarea más
+importante que realizar o, incluso, tenía la falsa sensación de que leer no era
+una labor productiva.
+
+Con el paso de los años, me di cuenta de que estaba enfocando este asunto desde
+un punto de vista equivocado: solo lanzaba excusas para esconder que la lectura
+había dejado de ser una de mis prioridades.
+
+Así que me replanteé qué debía ser importante para mí. Desde entonces, intento
+dedicar cada día un rato a la lectura, pues el beneficio que me aporta a nivel
+mental y como persona no tiene precio.
 
 ### Registro de lecturas
 
