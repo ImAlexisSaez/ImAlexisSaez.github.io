@@ -17,6 +17,27 @@ información adicional sobre el mismo.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [Aprendiz de asesino](https://www.goodreads.com/book/show/22064268-aprendiz-de-asesino)                                     | Robin Hobb                 |
+| [La rebelión de los buenos](https://www.goodreads.com/book/show/153894584-la-rebeli-n-de-los-buenos)                        | Roberto Santiago           |
+| [Trenza del mar esmeralda](https://www.goodreads.com/book/show/75509306-trenza-del-mar-esmeralda)                           | Brandon Sanderson          |
+| [El legado de la espada arcana](https://www.goodreads.com/book/show/19546160-el-legado-de-la-espada-arcana)                 | Margaret Weis              |
+| [El triunfo](https://www.goodreads.com/book/show/63290.La_Profecia_Vol_2_La_Espada_de_Joram)                                | Margaret Weis              |
+| [La profecía](https://www.goodreads.com/book/show/63290.La_Profecia_Vol_2_La_Espada_de_Joram)                               | Margaret Weis              |
+| [La forja](https://www.goodreads.com/book/show/63289.La_Forja)                                                              | Margaret Weis              |
+| [El libro negro de las horas](https://www.goodreads.com/book/show/59708201-el-libro-negro-de-las-horas)                     | Eva García Sáenz de Urturi |
+| [La paciente silenciosa](https://www.goodreads.com/book/show/52619546-la-paciente-silenciosa)                               | Alex Michaelides           |
+| [El último juego](https://www.goodreads.com/book/show/60381206-el-ltimo-juego)                                              | J. D. Barker               |
+| [Mi dieta cojea](https://www.goodreads.com/book/show/32176802-mi-dieta-cojea)                                               | Aitor Sánchez              |
+| [El reino](https://www.goodreads.com/book/show/57685669-el-reino)                                                           | Jo Nesbo                   |
+| [Un animal salvaje](https://www.goodreads.com/book/show/204780055-un-animal-salvaje)                                        | Joël Dicker                |
+| [El mentiroso](https://www.goodreads.com/book/show/52190954-el-mentiroso)                                                   | Mikel Santiago             |
+| [La asistenta](https://www.goodreads.com/book/show/195466446-la-asistenta)                                                  | Freida McFadden            |
+| [El botánico](https://www.goodreads.com/book/show/204780094-el-bot-nico)                                                    | M. W. Craven               |
+| [Zona muerta](https://www.goodreads.com/book/show/63208878-zona-muerta)                                                     | M. W. Craven               |
+| [Abandono](https://www.goodreads.com/book/show/58029303-abandono)                                                           | M. W. Craven               |
+| [El procurador](https://www.goodreads.com/book/show/60054187-el-procurador)                                                 | M. W. Craven               |
+| [Verano negro](https://www.goodreads.com/book/show/56448120-verano-negro)                                                   | M. W. Craven               |
+| [El show de las marionetas](https://www.goodreads.com/book/show/52212232-el-show-de-las-marionetas)                         | M. W. Craven               |
 | [La sexta trampa](https://www.goodreads.com/book/show/51878948-la-sexta-trampa)                                             | J. D. Barker               |
 | [La quinta víctima](https://www.goodreads.com/book/show/44154465-la-quinta-v-ctima)                                         | J. D. Barker               |
 | [El cuarto mono](https://www.goodreads.com/book/show/41484859-el-cuarto-mono)                                               | J. D. Barker               |
