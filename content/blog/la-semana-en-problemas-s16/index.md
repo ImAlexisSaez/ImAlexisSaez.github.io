@@ -2,16 +2,19 @@
 title: La semana en problemas (S16)
 summary: Esta semana se proponen algunos enunciados relacionados con funciones.
 date: 2023-12-26
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Problemas
-  - Funciones
+    - Funciones
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con funciones.
 
 ### Ejercicio 1

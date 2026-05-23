@@ -2,18 +2,21 @@
 title: La semana en problemas (S12)
 summary: Esta semana se proponen algunos enunciados relacionados con ecuaciones.
 date: 2023-11-28
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Problemas
-  - Ecuaciones
-  - Ecuaciones diofánticas
-  - Métodos numéricos
+    - Ecuaciones
+    - Ecuaciones diofánticas
+    - Métodos numéricos
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con ecuaciones (haciendo
 hincapié en su resolución numérica) y con ecuaciones diofánticas.
 
@@ -34,9 +37,11 @@ Responda a las siguientes cuestiones:
   menor que $0.07$.
 - g) Estudie la continuidad de la función $g:\mathbb{R}\rightarrow\mathbb{R}$
   dada por
-  $$g(x) = \left\{ \begin{aligned} x, &\quad
-  \text{si } x\in\mathbb{Q} \\ 2x, &\quad \text{si} x\notin\mathbb{Q}
-  \end{aligned} \right..$$
+    $$
+    g(x) = \left\{ \begin{aligned} x, &\quad
+    \text{si } x\in\mathbb{Q} \\ 2x, &\quad \text{si} x\notin\mathbb{Q}
+    \end{aligned} \right..
+    $$
 - h) Sea $f:\mathbb{R}\rightarrow\mathbb{R}$ una función continua tal que
   $f(x)\in\mathbb{Q}$ para todo $x\in\mathbb{R}$. Demuestre que $f$ es
   necesariamente una función constante.

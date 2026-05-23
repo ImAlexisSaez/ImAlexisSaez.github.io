@@ -2,16 +2,19 @@
 title: La semana en problemas (S17)
 summary: Esta semana se proponen algunos enunciados relacionados con límites.
 date: 2024-01-23
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Problemas
-  - Límites
+    - Límites
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con límites.
 
 ### Ejercicio 1

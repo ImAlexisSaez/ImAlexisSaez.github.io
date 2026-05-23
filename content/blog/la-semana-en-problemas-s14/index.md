@@ -4,13 +4,15 @@ summary:
     Esta semana se proponen algunos enunciados relacionados con matrices,
     estructuras algebraicas y espacios vectoriales.
 date: 2023-12-12
+lastmod: 2026-05-23
 image:
     caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
     - me
-tags:
+categories:
     - Problemas
+tags:
     - Estructuras algebraicas
     - Espacios vectoriales
     - Matrices

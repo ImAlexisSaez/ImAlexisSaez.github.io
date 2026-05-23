@@ -1,17 +1,23 @@
 ---
 title: La semana en problemas (S15)
-summary: Esta semana se proponen algunos enunciados relacionados con matrices y determinantes.
+summary:
+    Esta semana se proponen algunos enunciados relacionados con matrices y
+    determinantes.
 date: 2023-12-19
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Research
-  - Data Science
+    - Determinantes
+    - Matrices
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con matrices y
 determinantes.
 

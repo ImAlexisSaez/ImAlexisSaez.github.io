@@ -4,13 +4,15 @@ summary:
     Esta semana se proponen algunos enunciados relacionados con series de
     potencias y representación de funciones.
 date: 2024-02-06
+lastmod: 2026-05-23
 image:
     caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
     - me
-tags:
+categories:
     - Problemas
+tags:
     - Representación de funciones
     - Series de potencias
 status: published

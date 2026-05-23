@@ -2,16 +2,19 @@
 title: La semana en problemas (S18)
 summary: Esta semana se proponen algunos enunciados relacionados con derivadas.
 date: 2024-01-30
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Problemas
-  - Derivadas
+    - Derivadas
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con derivadas.
 
 ### Ejercicio 1

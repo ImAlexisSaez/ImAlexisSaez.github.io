@@ -2,13 +2,15 @@
 title: La semana en problemas (S20)
 summary: Esta semana se proponen algunos enunciados relacionados con integrales.
 date: 2024-02-13
+lastmod: 2026-05-23
 image:
     caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
     - me
-tags:
+categories:
     - Problemas
+tags:
     - Integrales
 status: published
 ---

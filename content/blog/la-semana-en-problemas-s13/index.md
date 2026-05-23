@@ -1,20 +1,25 @@
 ---
 title: La semana en problemas (S13)
-summary: Esta semana se proponen algunos enunciados relacionados con sistemas, matrices, programación lineal y determinantes.
+summary:
+    Esta semana se proponen algunos enunciados relacionados con sistemas,
+    matrices, programación lineal y determinantes.
 date: 2023-12-05
+lastmod: 2026-05-23
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
-  - me
+    - me
+categories:
+    - Problemas
 tags:
-  - Problemas
-  - Determinantes
-  - Matrices
-  - Programación lineal
-  - Sistemas de ecuaciones
+    - Determinantes
+    - Matrices
+    - Programación lineal
+    - Sistemas de ecuaciones
 status: published
 ---
+
 Esta semana se proponen algunos enunciados relacionados con matrices,
 programación lineal y determinantes.
 

@@ -2,13 +2,15 @@
 title: La semana en problemas (S11)
 summary: Esta semana se proponen algunos enunciados relacionados con ecuaciones.
 date: 2023-11-21
+lastmod: 2026-05-23
 image:
     caption: Imagen generada por Leonardo.Ai
 math: true
 authors:
     - me
-tags:
+categories:
     - Problemas
+tags:
     - Ecuaciones
 status: published
 ---
