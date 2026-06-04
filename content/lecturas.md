@@ -39,6 +39,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [La búsqueda del asesino](https://www.goodreads.com/book/show/24323495-la-b-squeda-del-asesino)                             | Robin Hobb                 |
 | [Asesino real](https://www.goodreads.com/book/show/22064295-asesino-real)                                                   | Robin Hobb                 |
 | [Aprendiz de asesino](https://www.goodreads.com/book/show/22064268-aprendiz-de-asesino)                                     | Robin Hobb                 |
 | [La rebelión de los buenos](https://www.goodreads.com/book/show/153894584-la-rebeli-n-de-los-buenos)                        | Roberto Santiago           |
