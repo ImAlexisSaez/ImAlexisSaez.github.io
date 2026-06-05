@@ -1,20 +1,24 @@
 ---
 title: Curso de Git y GitHub
-summary: En este curso aprenderemos a utilizar la herramienta de control de versiones más popular actualmente, Git. Además, examinaremos la plataforma GitHub, que facilita enormemente la posibilidad de trabajar de manera colaborativa.
+summary:
+    En este curso aprenderemos a utilizar la herramienta de control de versiones
+    más popular actualmente, Git. Además, examinaremos la plataforma GitHub, que
+    facilita enormemente la posibilidad de trabajar de manera colaborativa.
 date: 2023-06-25
 lastmod: 2026-06-04
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 authors:
-  - me
+    - me
 categories:
-  - Programación
+    - Programación
 tags:
-  - Git
-  - Github
-  - The Odin Project
+    - Git
+    - Github
+    - The Odin Project
 status: published
 ---
+
 ### 1. Introducción
 
 A estas alturas, he claudicado y me he resignado a que, seguramente, acabe el
@@ -121,7 +125,8 @@ herramienta:
 - `touch`: crea un archivo (o varios).
 
 Por otro lado, si deseamos consultar más detalles sobre el uso de una terminal
-de Linux de tipo Bash, podemos consultar el curso de comandos de Linux.
+de Linux de tipo Bash, podemos consultar el
+[curso de comandos de Linux](/blog/curso-de-comandos-de-linux/).
 
 ### 3. Referencias
 
