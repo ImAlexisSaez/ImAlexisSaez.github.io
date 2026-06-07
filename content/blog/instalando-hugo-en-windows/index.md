@@ -1,20 +1,21 @@
 ---
 title: Instalando Hugo en Windows
-summary: Lección 2, cómo instalar Hugo en Windows sin morir en el intento.
+summary: "Lección 2: cómo instalar Hugo en Windows sin morir en el intento."
 date: 2018-07-08
 lastmod: 2026-05-31
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 authors:
-  - me
+    - me
 categories:
-  - Tutoriales
+    - Tutoriales
 tags:
-  - Hugo
-  - Metablog
-  - Windows
+    - Hugo
+    - Metablog
+    - Windows
 status: published
 ---
+
 Llevar a cabo la instalación de _Hugo_ en _Windows_ es extremadamente fácil,
 hecho que nos permite empezar a experimentar con esta tecnología en apenas unos
 minutos. Veamos, sin más dilación, todo el proceso en detalle.

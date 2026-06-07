@@ -1,8 +1,8 @@
 ---
 title: Preparando el equipo para Hugo
 summary:
-    Lección 1, cómo instalar un buen sistema de control de versiones y un
-    excelente editor de texto plano.
+    "Lección 1: cómo instalar un buen sistema de control de versiones y un
+    excelente editor de texto plano."
 date: 2018-07-05
 lastmod: 2026-05-29
 image:

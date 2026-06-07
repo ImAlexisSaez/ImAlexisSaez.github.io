@@ -1,20 +1,22 @@
 ---
 title: Creando un sitio web con Hugo
-summary: Lección 3, damos a luz un sitio web de prueba y lo revisamos localmente.
+summary:
+    "Lección 3: damos a luz un sitio web de prueba y lo revisamos localmente."
 date: 2018-07-11
 lastmod: 2026-06-01
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 authors:
-  - me
+    - me
 categories:
-  - Tutoriales
+    - Tutoriales
 tags:
-  - Ananke
-  - Hugo
-  - Metablog
+    - Ananke
+    - Hugo
+    - Metablog
 status: published
 ---
+
 ¡Ha llegado el momento que todos estábamos esperando! Tras un par de artículos
 en los que hemos preparado nuestros equipos instalando las herramientas
 necesarias, hoy veremos cómo generar nuestro primer sitio web con _Hugo_.
