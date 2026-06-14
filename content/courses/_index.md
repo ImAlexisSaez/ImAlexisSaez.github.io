@@ -24,5 +24,5 @@ sections:
           show_read_time: false
           show_date: false
           show_read_more: false
-          columns: 1
+          columns: 2
 ---
