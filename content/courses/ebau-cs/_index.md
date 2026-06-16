@@ -1,7 +1,7 @@
 ---
 linkTitle: Preparación de EBAU (Ciencias Sociales)
 title: Preparación de EBAU (Ciencias Sociales)
-date: 2026-06-14
+date: 2026-06-13
 lastmod: 2026-06-14
 type: docs
 
@@ -41,3 +41,5 @@ con las que se proponen por estos lares.
 | Probabilidad | Pendiente  |
 
 ### Recursos adicionales
+
+Pendiente.
