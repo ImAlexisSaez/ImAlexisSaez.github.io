@@ -2,7 +2,7 @@
 linkTitle: Preparación de EBAU (Ciencias Sociales)
 title: Preparación de EBAU (Ciencias Sociales)
 date: 2026-06-13
-lastmod: 2026-06-14
+lastmod: 2026-06-17
 type: docs
 
 tags:
@@ -28,17 +28,17 @@ con las que se proponen por estos lares.
 
 ### Exámenes resueltos
 
-| Convocatoria | Enunciado                                                                                          | Resolución                                                                                          |
-| :----------- | :------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------- |
-| Junio 2026   | [Enunciado](https://drive.google.com/file/d/1ZrABxj3weU062zRRzj4wCmP5YSyGzz9g/view?usp=drive_link) | [Resolución](https://drive.google.com/file/d/1TcEb86U5bRj_p5VCH38vSeMBxdJkmMns/view?usp=drive_link) |
+| Enunciado                                                                                           | Resolución                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| :-------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| [Junio 2026](https://drive.google.com/file/d/1ZrABxj3weU062zRRzj4wCmP5YSyGzz9g/view?usp=drive_link) | [1. A.](https://drive.google.com/file/d/1OG9A8dhiiApwSXnICFSYmDhQYneTaiui/view?usp=sharing) --- [1. B.](https://drive.google.com/file/d/1YnM8_3L1D3o9LUeT7A4L8J0-jQcGmcHz/view?usp=sharing) --- [2. A.](https://drive.google.com/file/d/1I20p3PSCnYcOdFnWhARdB9O70UK3EEw7/view?usp=sharing) --- [2. B.](https://drive.google.com/file/d/1La8DAD_c0JjXGcfHsqW0O1BOexfbjq_y/view?usp=sharing) --- [3](https://drive.google.com/file/d/1CLTuyY_ns7v3Mc_LHhKe6EWZH_ZwKUzc/view?usp=sharing) --- [Completo](https://drive.google.com/file/d/1GenMSeYt3kHWw0NgOU7ifzMF2emACKP9/view?usp=sharing) |     |
 
 ### Recopilaciones por bloques
 
-| Bloque       | Enunciados |
-| :----------- | :--------- |
-| Álgebra      | Pendiente  |
-| Análisis     | Pendiente  |
-| Probabilidad | Pendiente  |
+| Bloque       | Enunciados                                                                                                                                                                                                            |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Álgebra      | [Junio 2026 - 1. A.](https://drive.google.com/file/d/1OG9A8dhiiApwSXnICFSYmDhQYneTaiui/view?usp=sharing) --- [Junio 2026 - 1. B.](https://drive.google.com/file/d/1YnM8_3L1D3o9LUeT7A4L8J0-jQcGmcHz/view?usp=sharing) |
+| Análisis     | [Junio 2026 - 2. A.](https://drive.google.com/file/d/1I20p3PSCnYcOdFnWhARdB9O70UK3EEw7/view?usp=sharing) --- [Junio 2026 - 2. B.](https://drive.google.com/file/d/1La8DAD_c0JjXGcfHsqW0O1BOexfbjq_y/view?usp=sharing) |
+| Probabilidad | [Junio 2026 - 3](https://drive.google.com/file/d/1CLTuyY_ns7v3Mc_LHhKe6EWZH_ZwKUzc/view?usp=sharing)                                                                                                                  |
 
 ### Recursos adicionales
 
