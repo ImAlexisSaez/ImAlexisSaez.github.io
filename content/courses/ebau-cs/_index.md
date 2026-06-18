@@ -2,7 +2,7 @@
 linkTitle: Preparación de EBAU (Ciencias Sociales)
 title: Preparación de EBAU (Ciencias Sociales)
 date: 2026-06-13
-lastmod: 2026-06-17
+lastmod: 2026-06-18
 type: docs
 
 tags:
@@ -42,4 +42,17 @@ con las que se proponen por estos lares.
 
 ### Recursos adicionales
 
-Pendiente.
+En la provincia de Alicante son bastante populares estas dos páginas web de cara
+a preparar la EBAU:
+
+- [BertoBlog](https://www.bertoblog.com/)
+- [Segundo Pérez](http://www.segundoperez.es/)
+
+Por otro lado, a nivel nacional, recomiendo encarecidamente bucear por la
+miríada de recursos que nos ofrece la siguiente página web:
+
+- [EBAU Matemáticas](https://www.ebaumatematicas.com/)
+
+No obstante, esta última hay que revisarla con cierta cautela, pues existen
+diferencias notables entre las pruebas de cada comunidad autónoma y puede haber
+ejercicios propuestos en una que no tengan lugar en otra.
