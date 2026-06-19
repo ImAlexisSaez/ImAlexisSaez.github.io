@@ -1,7 +1,9 @@
 ---
 title:
     Análisis de la convocatoria de junio de 2026 de la EBAU (Ciencias Sociales)
-summary: One-sentence takeaway for busy readers (also used in cards and SEO).
+summary:
+    Una convocatoria con dos bloques asequibles (álgebra y probabilidad) y uno
+    un tanto enrevesado (análisis).
 date: 2026-06-15
 lastmod: 2026-06-15
 image:
