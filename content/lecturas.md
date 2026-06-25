@@ -39,6 +39,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [El hambre de los dioses](https://www.goodreads.com/book/show/183534928-el-hambre-de-los-dioses)                            | John Gwynne                |
 | [La sombra de los dioses](https://www.goodreads.com/book/show/61631750-la-sombra-de-los-dioses)                             | John Gwynne                |
 | [La búsqueda del asesino](https://www.goodreads.com/book/show/24323495-la-b-squeda-del-asesino)                             | Robin Hobb                 |
 | [Asesino real](https://www.goodreads.com/book/show/22064295-asesino-real)                                                   | Robin Hobb                 |
