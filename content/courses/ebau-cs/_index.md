@@ -2,7 +2,7 @@
 linkTitle: Preparación de EBAU (Ciencias Sociales)
 title: Preparación de EBAU (Ciencias Sociales)
 date: 2026-06-13
-lastmod: 2026-06-25
+lastmod: 2026-07-01
 type: docs
 
 tags:
@@ -38,11 +38,11 @@ con las que se proponen por estos lares.
 | Bloque       | Enunciados                                                                                                                                                                                                                            |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Álgebra      | [Junio 2026 (extra) - 1. A.](https://drive.google.com/file/d/1sqfCSBqE0A3_WFM5JgmHwkEv4g11FmQI/view?usp=sharing) --- [Junio 2026 (extra) - 1. B.](https://drive.google.com/file/d/1DEnghX_97iPtrnEanr2E0OvoALgbJH8Y/view?usp=sharing) |
-| Álgebra      | [Junio 2026 - 1. A.](https://drive.google.com/file/d/1OG9A8dhiiApwSXnICFSYmDhQYneTaiui/view?usp=sharing) --- [Junio 2026 - 1. B.](https://drive.google.com/file/d/1YnM8_3L1D3o9LUeT7A4L8J0-jQcGmcHz/view?usp=sharing)                 |
+| &nbsp;       | [Junio 2026 - 1. A.](https://drive.google.com/file/d/1OG9A8dhiiApwSXnICFSYmDhQYneTaiui/view?usp=sharing) --- [Junio 2026 - 1. B.](https://drive.google.com/file/d/1YnM8_3L1D3o9LUeT7A4L8J0-jQcGmcHz/view?usp=sharing)                 |
 | Análisis     | [Junio 2026 (extra) - 2. A.](https://drive.google.com/file/d/1jkXObC97cJVBMuCtGdXIf3qqSiB22Dq6/view?usp=sharing) --- [Junio 2026 (extra) - 2. B.](https://drive.google.com/file/d/1AA36jFh9EbyhwhANBzTcSbwt0OnE8Tv1/view?usp=sharing) |
-| Análisis     | [Junio 2026 - 2. A.](https://drive.google.com/file/d/1I20p3PSCnYcOdFnWhARdB9O70UK3EEw7/view?usp=sharing) --- [Junio 2026 - 2. B.](https://drive.google.com/file/d/1La8DAD_c0JjXGcfHsqW0O1BOexfbjq_y/view?usp=sharing)                 |
+| &nbsp;       | [Junio 2026 - 2. A.](https://drive.google.com/file/d/1I20p3PSCnYcOdFnWhARdB9O70UK3EEw7/view?usp=sharing) --- [Junio 2026 - 2. B.](https://drive.google.com/file/d/1La8DAD_c0JjXGcfHsqW0O1BOexfbjq_y/view?usp=sharing)                 |
 | Probabilidad | [Junio 2026 (extra) - 3](https://drive.google.com/file/d/1dSc6PLdDlNvefRRJ2DGety_92BhK3bHJ/view?usp=sharing)                                                                                                                          |
-| Probabilidad | [Junio 2026 - 3](https://drive.google.com/file/d/1CLTuyY_ns7v3Mc_LHhKe6EWZH_ZwKUzc/view?usp=sharing)                                                                                                                                  |
+| &nbsp;       | [Junio 2026 - 3](https://drive.google.com/file/d/1CLTuyY_ns7v3Mc_LHhKe6EWZH_ZwKUzc/view?usp=sharing)                                                                                                                                  |
 
 ### Recursos adicionales
 
