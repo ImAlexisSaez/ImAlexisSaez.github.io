@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-06-25
+lastmod: 2026-07-06
 type: page
 ---
 
@@ -40,6 +40,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [La furia de los dioses](https://www.goodreads.com/book/show/221971611-la-furia-de-los-dioses)                              | John Gwynne                |
 | [El hambre de los dioses](https://www.goodreads.com/book/show/183534928-el-hambre-de-los-dioses)                            | John Gwynne                |
 | [La sombra de los dioses](https://www.goodreads.com/book/show/61631750-la-sombra-de-los-dioses)                             | John Gwynne                |
 | [La búsqueda del asesino](https://www.goodreads.com/book/show/24323495-la-b-squeda-del-asesino)                             | Robin Hobb                 |
