@@ -40,6 +40,8 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [Carl el mazmorrero](https://www.goodreads.com/book/show/231280059-carl-el-mazmorrero)                                      | Matt Dinniman              |
+| [Amanecer rojo](https://www.goodreads.com/book/show/23148013-amanecer-rojo)                                                 | Pierce Brown               |
 | [La furia de los dioses](https://www.goodreads.com/book/show/221971611-la-furia-de-los-dioses)                              | John Gwynne                |
 | [El hambre de los dioses](https://www.goodreads.com/book/show/183534928-el-hambre-de-los-dioses)                            | John Gwynne                |
 | [La sombra de los dioses](https://www.goodreads.com/book/show/61631750-la-sombra-de-los-dioses)                             | John Gwynne                |
