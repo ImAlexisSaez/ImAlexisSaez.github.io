@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-07-18
+lastmod: 2026-07-29
 type: page
 ---
 
@@ -40,6 +40,8 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [Mago: aprendiz](https://www.goodreads.com/book/show/40082213-mago)                                                         | Raymond E. Feist           |
+| [Los leones de Al-Rassan](https://www.goodreads.com/book/show/6749205-los-leones-de-al-rassan)                              | Guy Gavriel Kay            |
 | [Carl el mazmorrero](https://www.goodreads.com/book/show/231280059-carl-el-mazmorrero)                                      | Matt Dinniman              |
 | [Amanecer rojo](https://www.goodreads.com/book/show/23148013-amanecer-rojo)                                                 | Pierce Brown               |
 | [La furia de los dioses](https://www.goodreads.com/book/show/221971611-la-furia-de-los-dioses)                              | John Gwynne                |
