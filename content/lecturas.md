@@ -40,6 +40,15 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [Entre dos fuegos](https://www.goodreads.com/book/show/213462677-entre-dos-fuegos)                                          | Christopher Buehlman       |
+| [El cielo de piedra](https://www.goodreads.com/book/show/41577333-el-cielo-de-piedra)                                       | N. K. Jemisin              |
+| [El portal de los obeliscos](https://www.goodreads.com/book/show/36402881-el-portal-de-los-obeliscos)                       | N. K. Jemisin              |
+| [La quinta estación](https://www.goodreads.com/book/show/34418540-la-quinta-estaci-n)                                       | N. K. Jemisin              |
+| [Las tumbas de Atuan](https://www.goodreads.com/book/show/92615.Las_tumbas_de_Atuan)                                        | Ursula K. Le Guin          |
+| [El imperio del vampiro](https://www.goodreads.com/book/show/61228406-el-imperio-del-vampiro)                               | Jay Kristoff               |
+| [Un mago de Terramar](https://www.goodreads.com/book/show/68035.Un_mago_de_Terramar)                                        | Ursula K. Le Guin          |
+| [Los diablos](https://www.goodreads.com/book/show/224550978-los-diablos)                                                    | Joe Abercrombie            |
+| [Mago: maestro](https://www.goodreads.com/book/show/40082213-mago)                                                          | Raymond E. Feist           |
 | [Mago: aprendiz](https://www.goodreads.com/book/show/40082213-mago)                                                         | Raymond E. Feist           |
 | [Los leones de Al-Rassan](https://www.goodreads.com/book/show/6749205-los-leones-de-al-rassan)                              | Guy Gavriel Kay            |
 | [Carl el mazmorrero](https://www.goodreads.com/book/show/231280059-carl-el-mazmorrero)                                      | Matt Dinniman              |
