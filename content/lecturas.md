@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-07-29
+lastmod: 2026-09-17
 type: page
 ---
 
