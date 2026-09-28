@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-09-17
+lastmod: 2026-09-28
 type: page
 ---
 
@@ -40,6 +40,8 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [Mañana azul](https://www.goodreads.com/book/show/33820413-ma-ana-azul)                                                     | Pierce Brown               |
+| [Hijo dorado](https://www.goodreads.com/book/show/25420089-hijo-dorado)                                                     | Pierce Brown               |
 | [Entre dos fuegos](https://www.goodreads.com/book/show/213462677-entre-dos-fuegos)                                          | Christopher Buehlman       |
 | [El cielo de piedra](https://www.goodreads.com/book/show/41577333-el-cielo-de-piedra)                                       | N. K. Jemisin              |
 | [El portal de los obeliscos](https://www.goodreads.com/book/show/36402881-el-portal-de-los-obeliscos)                       | N. K. Jemisin              |
