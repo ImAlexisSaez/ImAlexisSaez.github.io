@@ -13,9 +13,10 @@ image:
 authors:
     - me
 categories:
-    - Recursos
+    - Reflexiones
 tags:
-    - Prensa
+    - Blog
+    - Proyectos
 status: published
 ---
 
