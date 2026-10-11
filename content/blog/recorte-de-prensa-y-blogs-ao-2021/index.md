@@ -1,17 +1,23 @@
 ---
 title: Recorte de prensa y blogs (año 2021)
-summary: El objetivo de esta entrada no es otro que listar *cronológicamente* una serie de artículos publicados en la prensa digital o en blogs personales relacionados bien con las matemáticas (tanto en su faceta educativa como en la divulgativa), bien con la educación en general.
+summary:
+    El objetivo de esta entrada no es otro que listar *cronológicamente* una
+    serie de artículos publicados en la prensa digital o en blogs personales
+    relacionados bien con las matemáticas (tanto en su faceta educativa como en
+    la divulgativa), bien con la educación en general.
 date: 2021-01-01
+lastmod: 2026-10-11
 image:
-  caption: Imagen generada por Leonardo.Ai
+    caption: Imagen generada por Leonardo.Ai
 authors:
-  - me
+    - me
 categories:
-  - Recursos
+    - Recursos
 tags:
-  - Prensa
+    - Prensa
 status: published
 ---
+
 El objetivo de esta entrada no es otro que listar _cronológicamente_ una serie
 de artículos publicados en la prensa digital o en blogs personales relacionados
 bien con las matemáticas (tanto en su faceta educativa como en la divulgativa),
