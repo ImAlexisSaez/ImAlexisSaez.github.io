@@ -39,6 +39,18 @@ $$
 
 halla el valor de $f(0)$.
 
+**6.** Considera el número áureo
+
+$$
+    \varphi = \dfrac{1 + \sqrt{5}}{2}.
+$$
+
+- a) Halla la relación que guarda $\varphi$ con la siguiente suma:
+    $$
+        \dfrac{1}{\varphi} + \dfrac{1}{\varphi^2} + \dfrac{1}{\varphi^3} + \ldots
+    $$
+- b) ¿Existe algún otro número real que guarde la anterior relación?
+
 ### Soluciones
 
 **1.** $-1$.
@@ -52,3 +64,11 @@ halla el valor de $f(0)$.
 **4.** $2021_{(12}$, $4344_{(12}$, $9594_{(12}$ y $A2A1_{(12}$.
 
 **5.** $1$.
+
+**6.**
+
+- a)
+    $$
+        \varphi = \sum_{n=1}^{\infty}{\dfrac{1}{\varphi_i^n}}.
+    $$
+- b) No.
