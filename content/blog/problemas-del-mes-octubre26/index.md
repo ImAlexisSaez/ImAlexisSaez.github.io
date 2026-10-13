@@ -2,7 +2,7 @@
 title: "Problemas del mes: octubre'26"
 summary: Problemas recopilados durante el mes de octubre de 2026.
 date: 2026-10-12
-lastmod: 2026-10-12
+lastmod: 2026-10-13
 image:
     caption: Imagen generada por Leonardo.Ai
 authors:
