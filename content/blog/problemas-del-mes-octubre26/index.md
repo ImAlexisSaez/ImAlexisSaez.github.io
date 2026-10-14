@@ -2,7 +2,7 @@
 title: "Problemas del mes: octubre'26"
 summary: Problemas recopilados durante el mes de octubre de 2026.
 date: 2026-10-12
-lastmod: 2026-10-13
+lastmod: 2026-10-14
 image:
     caption: Imagen generada por Leonardo.Ai
 authors:
@@ -51,6 +51,12 @@ $$
     $$
 - b) ¿Existe algún otro número real que guarde la anterior relación?
 
+**7.** Halla las soluciones enteras de la ecuación
+
+$$
+    x_1^2 + x_2^2 + \ldots + x_n^2 = x_1 + x_2 + \ldots + x_n.
+$$
+
 ### Soluciones
 
 **1.** $-1$.
@@ -72,3 +78,5 @@ $$
         \varphi = \sum_{n=1}^{\infty}{\dfrac{1}{\varphi_i^n}}.
     $$
 - b) No.
+
+**7.** Hay $2^n$ soluciones, donde $x_i\in\{0, 1\}, \forall i=1, \ldots, n$.
