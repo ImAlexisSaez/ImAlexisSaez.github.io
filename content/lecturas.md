@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-10-08
+lastmod: 2026-10-15
 type: page
 ---
 
@@ -40,6 +40,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [11/22/63](https://www.goodreads.com/book/show/10644930-11-22-63)                                                           | Stephen King               |
 | [Mañana azul](https://www.goodreads.com/book/show/33820413-ma-ana-azul)                                                     | Pierce Brown               |
 | [Hijo dorado](https://www.goodreads.com/book/show/25420089-hijo-dorado)                                                     | Pierce Brown               |
 | [Entre dos fuegos](https://www.goodreads.com/book/show/213462677-entre-dos-fuegos)                                          | Christopher Buehlman       |
