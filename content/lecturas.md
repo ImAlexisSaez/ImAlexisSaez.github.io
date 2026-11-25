@@ -1,7 +1,7 @@
 ---
 title: "Registro de lecturas"
 date: 2026-05-19
-lastmod: 2026-11-11
+lastmod: 2026-11-25
 type: page
 ---
 
@@ -40,6 +40,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [El rey de las cenizas](https://www.goodreads.com/book/show/243612921-el-rey-de-las-cenizas)                                | S. A. Cosby                |
 | [La corte de los cuchillos rotos](https://www.goodreads.com/book/show/242526303-la-corte-de-los-cuchillos-rotos)            | Anna Smith Spark           |
 | [11/22/63](https://www.goodreads.com/book/show/10644930-11-22-63)                                                           | Stephen King               |
 | [Mañana azul](https://www.goodreads.com/book/show/33820413-ma-ana-azul)                                                     | Pierce Brown               |
