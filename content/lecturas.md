@@ -40,6 +40,7 @@ quieres ampliar información.
 
 | **Título**                                                                                                                  | **Autoría**                |
 | :-------------------------------------------------------------------------------------------------------------------------- | :------------------------- |
+| [El último verdugo](https://www.goodreads.com/book/show/123597915-el-ltimo-verdugo)                                         | Toni Hill                  |
 | [El rey de las cenizas](https://www.goodreads.com/book/show/243612921-el-rey-de-las-cenizas)                                | S. A. Cosby                |
 | [La corte de los cuchillos rotos](https://www.goodreads.com/book/show/242526303-la-corte-de-los-cuchillos-rotos)            | Anna Smith Spark           |
 | [11/22/63](https://www.goodreads.com/book/show/10644930-11-22-63)                                                           | Stephen King               |
